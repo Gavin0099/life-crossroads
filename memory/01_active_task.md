@@ -17,3 +17,5 @@
 - P0-002：已固定八國完整人生路線、建立首次本機提交與基本 CI；LC-01 為下一產品切片，runtime 未驗證不阻擋開發。 <!-- memory_record_projection:active-task-summary:9f6bdb9916c62b39eff13d0671510ef9e2b135840ad3046794a1f6809f621941 -->
 
 - LC-01 純 Swift 實作完成：八國模型/16情境，七國14筆來源資料，台灣口徑缺口；25引擎測試通過，LC-02可開工，遠端本片CI待驗。 <!-- memory_record_projection:active-task-summary:866e38ed7d2af603d235fce10ff91858cdb01f115a527fa61f076d99558b64be -->
+
+- LC-01 PR #1 CI通過；已直接開工LC-02四國完整人生SwiftUI，31引擎/流程測試與1完整Simulator UI測試通過；實機、10～15分鐘節奏及兒少理解仍未驗收。 <!-- memory_record_projection:active-task-summary:dc98b17defb363b81b9e378be5114071879f4b3901cb8f301db1e5a63a241b81 -->

@@ -58,3 +58,14 @@
 - Validation boundary: PASS: artifacts/evidence/test-results/lc01-committed-swift.json -> exit_code=0, 25 XCTest, 560 skeleton lives; PASS: artifacts/evidence/test-results/lc01-release.json -> exit_code=0; PASS: artifacts/evidence/test-results/lc01-ios-library-native.json -> exit_code=0. FAIL preserved: artifacts/evidence/test-results/lc01-ios-library.json -> exit_code=1. Mutation and baseline CI references: artifacts/evidence/lc01/threshold-mutation.json, artifacts/evidence/lc01/baseline-publication-review.json.
 - Next action: 推送本片兩筆提交並建立LC-01 PR，確認Swift與基本CI；通過後直接開始四國完整人生SwiftUI，不新增文件Gate。
 - PLAN reconciliation: `updated`
+
+<!-- memory_record_projection:review-log:dc98b17defb363b81b9e378be5114071879f4b3901cb8f301db1e5a63a241b81 -->
+### Canonical memory checkpoint — LC02-2026-10-23
+
+- Writer: `governance_tools.memory_record`
+- Record identity: `dc98b17defb363b81b9e378be5114071879f4b3901cb8f301db1e5a63a241b81`
+- Commit binding: `7a404d087b4beb0a0a7c10ecfccde93200d7984f` (bound)
+- Record: LC-01 GO後依使用者授權接續LC-02；新增LifeSession、四國八家庭原生流程、15故事、原因說明、比較、三次人物回聲、回顧圖表與同背景重玩。畫面檢查抓到比較sheet空白，先以四國列斷言重現，再以帶資料sheet item修正。未擴充八國故事、50～70事件或持久存檔；沒有實機或玩家驗收宣稱。
+- Validation boundary: PASS: artifacts/evidence/test-results/lc02-committed-swift.json -> exit_code=0, 31 XCTest; PASS: artifacts/evidence/test-results/lc02-ui-fixed.json -> exit_code=0, 1 full Simulator UI test including four comparison rows and 15 decisions. Expected regression failure preserved: artifacts/evidence/test-results/lc02-ui-regression-before.json -> exit_code=143 after test assertion failed and Xcode was terminated during repeated graph resolution. Screenshots: artifacts/evidence/lc02/.
+- Next action: 推送獨立LC-02草稿PR並驗證CI；接實體iPhone後做操作、閱讀節奏與兒少試玩，LC-02維持驗收中。
+- PLAN reconciliation: `updated`
