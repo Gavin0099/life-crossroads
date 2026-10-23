@@ -1,0 +1,27 @@
+{
+  "pr": 2,
+  "head": "ad773f9b450612fe58513b5ce54d538b7cc0f215",
+  "predecessor_merge": "58a5786aec17c59c1bb93e8004e290ea8e500cac",
+  "base_main": "58a5786aec17c59c1bb93e8004e290ea8e500cac",
+  "merge_tree": "6e94b56c8142ea42a3931476e7c699672b20c8d4",
+  "tree_equals_reviewed_head": true,
+  "verified_after_retarget_ci_run": 39928709460,
+  "checks": [
+    {
+      "name": "swift-engine",
+      "conclusion": "success"
+    },
+    {
+      "name": "basic-checks",
+      "conclusion": "success"
+    },
+    {
+      "name": "governance-audit",
+      "conclusion": "success"
+    },
+    {
+      "name": "ios-app",
+      "conclusion": "success"
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "worktree": "/Users/macminim4/.codex/worktrees/ui-visual-loop/life-crossroads",
+  "head": "ee7bf1fa78b6ef6919d60e8ada1f99454d3fc61f",
+  "branch": "codex/ui-visual-loop-4h",
+  "files": [
+    {
+      "path": "PLAN.md",
+      "bytes": 13846,
+      "sha256": "cc0e2410bef4206c952f7d17a324e7e6f31eb6d2cb7457aab5f5b9f4aeba81e0"
+    },
+    {
+      "path": "UIPrototype/WorldGameplay/Assets.xcassets/va-friend-worktable-v2.imageset/Contents.json",
+      "bytes": 166,
+      "sha256": "2988b0c80d44998794fde4722cfbf7f2cb18b316c8ab0f0fe356374cc4c3ab73"
+    },
+    {
+      "path": "UIPrototype/WorldGameplay/Assets.xcassets/va-friend-worktable-v2.imageset/va-friend-worktable-v2.png",
+      "bytes": 2222035,
+      "sha256": "54fdef91ee578adc65320dee31e07a6c9d321cb3800fc561f39fcfc5943cd453"
+    },
+    {
+      "path": "UIPrototype/WorldGameplay/Assets.xcassets/va-materials-table-v1.imageset/Contents.json",
+      "bytes": 165,
+      "sha256": "994e47bbe6eb8313308492321a8aa34ad76f2578f13e436ec911faf8174caa28"
+    },
+    {
+      "path": "UIPrototype/WorldGameplay/Assets.xcassets/va-materials-table-v1.imageset/va-materials-table-v1.png",
+      "bytes": 1681916,
+      "sha256": "4e27f860c4bd0ed95b01d89e902be4aa9c5824ca11e4c003a146b23ae543ad71"
+    },
+    {
+      "path": "UIPrototype/WorldGameplay/Assets.xcassets/va-otter-emotions-v1.imageset/Contents.json",
+      "bytes": 164,
+      "sha256": "bbb644cf521936516218a1d4d37f5b23ff93c3ad8c1d16197ece1ee4b1208548"
+    },
+    {
+      "path": "UIPrototype/WorldGameplay/Assets.xcassets/va-otter-emotions-v1.imageset/va-otter-emotions-v1.png",
+      "bytes": 1939010,
+      "sha256": "5d0d8b681ce1ecd9b81ab39d85cb9149a7c896e1f03695cc08215549fdf934a3"
+    },
+    {
+      "path": "UIPrototype/WorldGameplay/Assets.xcassets/va-teacher-worktable-v2.imageset/Contents.json",
+      "bytes": 167,
+      "sha256": "ea882de2ae07af66d666f2da689bdcf00ceb6252a1d93c4850130dd73084f431"
+    },
+    {
+      "path": "UIPrototype/WorldGameplay/Assets.xcassets/va-teacher-worktable-v2.imageset/va-teacher-worktable-v2.png",
+      "bytes": 2323046,
+      "sha256": "7601280500210fc7c1c7eff1c850e2ee83a004234f65ef31993405c1986692fa"
+    },
+    {
+      "path": "UIPrototype/WorldGameplay/WorldGameplayApp.swift",
+      "bytes": 313,
+      "sha256": "d9faba8bb3c401697bfa5dbada0f04204f958e0a09dc1022024abf5570356c5f"
+    },
+    {
+      "path": "UIPrototype/WorldGameplay/WorldGameplayView.swift",
+      "bytes": 45512,
+      "sha256": "e3cc677a05689ec97c1dcb639b368cfef4453391cf6f09070972ff66ee1dccab"
+    },
+    {
+      "path": "UIPrototype/WorldGameplay/WorldModels.swift",
+      "bytes": 20359,
+      "sha256": "f0ccd5c18682b9f75bcde444d07ea3bc374c375f4f907a60435530afc963a115"
+    },
+    {
+      "path": "UIPrototype/WorldGameplayTests/WorldGameplayTests.swift",
+      "bytes": 21692,
+      "sha256": "e6184a8c9d21ca0c83ca95246adc8082ad2bc69ea903347eb269ded7a606a114"
+    },
+    {
+      "path": "artifacts/ui-loop/runner-status.json",
+      "bytes": 4136,
+      "sha256": "5dc0990d086825ba6da2fdd191fb4dea2b4cee3284b90b1c2621e0478e2a3ff9"
+    },
+    {
+      "path": "assets/gameplay/inspect-alpha.swift",
+      "bytes": 5617,
+      "sha256": "9c19347d81ba4e8419c128d1a12d0bddd584dccb7a933eead6dd905ed2a04378"
+    },
+    {
+      "path": "assets/gameplay/manifest.json",
+      "bytes": 20520,
+      "sha256": "d9a202437797caa2fb5d846c3c6f6d0c4784ded1cca488cb3bbc5cbbdcb2758c"
+    },
+    {
+      "path": "assets/gameplay/va-materials-table-v1.png",
+      "bytes": 1681916,
+      "sha256": "4e27f860c4bd0ed95b01d89e902be4aa9c5824ca11e4c003a146b23ae543ad71"
+    },
+    {
+      "path": "assets/gameplay/va-otter-emotions-v1.png",
+      "bytes": 1939010,
+      "sha256": "5d0d8b681ce1ecd9b81ab39d85cb9149a7c896e1f03695cc08215549fdf934a3"
+    },
+    {
+      "path": "assets/prompts/va-materials-table-v1.txt",
+      "bytes": 1209,
+      "sha256": "148afa619e554c2622a6ce445365671f6806f7c9cb52c35c59b87731784f7d5d"
+    },
+    {
+      "path": "assets/prompts/va-otter-emotions-v1.txt",
+      "bytes": 1714,
+      "sha256": "9c596a3a8f1113cc713462c4bcb9c91fde4654613338decc512abb99cb839aaf"
+    },
+    {
+      "path": "docs/ui-loop/ACTING_IMPLEMENTATION.md",
+      "bytes": 7902,
+      "sha256": "7b4a1b5af574a731938ffc0b7b39dfdbb67e070666515e24b66c9a80b433f854"
+    },
+    {
+      "path": "docs/ui-loop/AGENT_PROMPT.md",
+      "bytes": 7317,
+      "sha256": "a21796c8dc80f925bc1b4ba2be5f8b8777802b50b529ecec716b0a780e7fba8a"
+    },
+    {
+      "path": "docs/ui-loop/CHARACTER_ACTING_SPEC.md",
+      "bytes": 9933,
+      "sha256": "3dfa02f8f5f84abce23a0c885a71d0c15672091ae585a2c81e2998f2e6b60da3"
+    },
+    {
+      "path": "docs/ui-loop/FINAL_REVIEW.md",
+      "bytes": 6055,
+      "sha256": "7650286e192e256bd42e8f1eb6f0e2c0cd3cdfe601a0ff1a3460b230f27a41a6"
+    },
+    {
+      "path": "docs/ui-loop/LOOP_PLAN.md",
+      "bytes": 3770,
+      "sha256": "1915a9d6a895c589a1fa8a9ed5081eb8c39405c107e5f4318d8b02849d40a4bb"
+    },
+    {
+      "path": "docs/ui-loop/PROGRESS.md",
+      "bytes": 15618,
+      "sha256": "a0cd4e80661147cd205d94f3b0e8f546033cb5c0b4612e6d09b60ab0e3d6b5ed"
+    },
+    {
+      "path": "docs/ui-loop/source-kit-acting-v1.1/life_crossroads_ui_loop_4h/AGENT_PROMPT.md",
+      "bytes": 9634,
+      "sha256": "c196b900a97d2e4a46b29cfda747d6609990b1c35974d535fb1d3f1e138c0ae4"
+    },
+    {
+      "path": "docs/ui-loop/source-kit-acting-v1.1/life_crossroads_ui_loop_4h/CHARACTER_ACTING_SPEC.md",
+      "bytes": 9193,
+      "sha256": "89ac00432ad621cc5cbd2f215729b837565b1dd2bdc775cc581ea11029525257"
+    },
+    {
+      "path": "docs/ui-loop/source-kit-acting-v1.1/life_crossroads_ui_loop_4h/LOOP_PLAN.md",
+      "bytes": 9785,
+      "sha256": "16c11f42bfd059184057f0e03a366a1b102d84f1e81e4f542f199f8c3df815a9"
+    },
+    {
+      "path": "docs/ui-loop/source-kit-acting-v1.1/life_crossroads_ui_loop_4h/README.md",
+      "bytes": 4672,
+      "sha256": "158916c114dc0eb77a68080ab13ca485ad370f93b3c85a69ceca86981acdd91c"
+    },
+    {
+      "path": "docs/ui-loop/source-kit-acting-v1.1/life_crossroads_ui_loop_4h/run_ui_loop.py",
+      "bytes": 24981,
+      "sha256": "8e3763c76445f965a0cf2d369d6dd9f6454dc4bdbce71d3b85abd36ce4c4a5db"
+    },
+    {
+      "path": "docs/ui-loop/source-kit-acting-v1.1/life_crossroads_ui_loop_4h/tests/test_loop_runner.py",
+      "bytes": 7246,
+      "sha256": "684c0371aa3378793df55a04faf87e27119352c91697850820eafc156c0eadda"
+    },
+    {
+      "path": "tools/ui-loop/README.md",
+      "bytes": 9882,
+      "sha256": "0cd8fa8a2046039448d072e1b24c17f223ded0527331dad771f28869fab56f68"
+    },
+    {
+      "path": "tools/ui-loop/run_ui_loop.py",
+      "bytes": 53353,
+      "sha256": "b8364f88bc46be67a4e37eeb8e307195740b3aead2bc903755f0d747e2571ce0"
+    },
+    {
+      "path": "tools/ui-loop/test_run_ui_loop.py",
+      "bytes": 22205,
+      "sha256": "a37fe2f7e213ad279650a9908afc2a272e1ff26b4df530d426d83b34c65fc874"
+    }
+  ],
+  "scan_findings": [],
+  "claim": "WIP snapshot only; existing failed UI validation retained"
+}

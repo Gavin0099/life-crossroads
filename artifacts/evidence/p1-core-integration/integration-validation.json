@@ -1,0 +1,32 @@
+{
+  "tested_product_head": "c05ee5143f8f6b56ff0d71507e2c3f0580c84166",
+  "product_sources_unchanged": true,
+  "receipts": [
+    {
+      "path": "artifacts/evidence/test-results/p1-core-swift.json",
+      "exit_code": 0,
+      "test_count": 71
+    },
+    {
+      "path": "artifacts/evidence/test-results/p1-core-python.json",
+      "exit_code": 0,
+      "test_count": 15
+    },
+    {
+      "path": "artifacts/evidence/test-results/p1-core-ios.json",
+      "exit_code": 0,
+      "test_count": 5
+    }
+  ],
+  "simulator": {
+    "owned_uuid": "B5B68250-A3F9-479F-9755-B8A921536C9F",
+    "deleted": true,
+    "shared_runtimes_deleted": false
+  },
+  "xcresult": "artifacts/ios/LC02-20261023T134110Z.xcresult",
+  "not_claimed": [
+    "physical iPhone",
+    "manual VoiceOver",
+    "child playtests"
+  ]
+}

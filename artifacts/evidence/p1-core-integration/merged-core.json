@@ -1,0 +1,8 @@
+{
+  "main_core_head": "430fbf8555712d21fba4d2925399221bcbbf44b0",
+  "tree_matches_reviewed_c05ee51": true,
+  "all_four_heads_are_ancestors": true,
+  "method": "four sequential GitHub merge commits",
+  "visual_branches_merged": false,
+  "local_main_updated_by_fast_forward": true
+}

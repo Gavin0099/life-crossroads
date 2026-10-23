@@ -1,0 +1,32 @@
+{
+  "pr": 3,
+  "head": "4f268b8d195c212ab32da5c7471016b9f9646b9f",
+  "predecessor_merge": "336c1fe71820a78dfa68f5c12d3ce175bbe1e441",
+  "base_main": "336c1fe71820a78dfa68f5c12d3ce175bbe1e441",
+  "merge_tree": "765dc8e0aae206f438d61e3a8d5518e7e519b305",
+  "tree_equals_reviewed_head": true,
+  "verified_after_retarget_ci_run": 39935525025,
+  "checks": [
+    {
+      "name": "swift-engine",
+      "conclusion": "success"
+    },
+    {
+      "name": "basic-checks",
+      "conclusion": "success"
+    },
+    {
+      "name": "governance-audit",
+      "conclusion": "success"
+    },
+    {
+      "name": "ios-app",
+      "conclusion": "success"
+    }
+  ],
+  "result": {
+    "sha": "73d9f120226fc6200ac66effcfac46566cf6064f",
+    "merged": true,
+    "message": "Pull Request successfully merged"
+  }
+}

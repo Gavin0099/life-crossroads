@@ -1,0 +1,124 @@
+{
+  "owner_authorization": {
+    "source": "Current human message in this authoring session; supersedes prior Draft/HOLD merge restriction",
+    "quote": "最終決策：我建議現在開始整合核心 PR #1～#4，完成整合驗證後依序合併；圖片分支不合併，繼續做到可正式接入。",
+    "scope": "Merge existing four PR candidates as a development baseline after integration checks; preserve ancestry; no release or full-P1 acceptance",
+    "binding": "Current unchanged PR heads frozen before execution; bounded by reviewed PR4 c05ee51 and ordered ancestor chain; no authorization for substituted code"
+  },
+  "candidates": [
+    {
+      "pr": 1,
+      "head": "ae3253bc0d9f6227550e0c06bccf2bdc0f8312e2",
+      "base": "main",
+      "ci_run": 39916351265,
+      "jobs": [
+        {
+          "name": "basic-checks",
+          "conclusion": "success"
+        },
+        {
+          "name": "swift-engine",
+          "conclusion": "success"
+        },
+        {
+          "name": "governance-audit",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "pr": 2,
+      "head": "ad773f9b450612fe58513b5ce54d538b7cc0f215",
+      "base": "codex/lc-01-data-driven-rules",
+      "ci_run": 39928709460,
+      "jobs": [
+        {
+          "name": "swift-engine",
+          "conclusion": "success"
+        },
+        {
+          "name": "basic-checks",
+          "conclusion": "success"
+        },
+        {
+          "name": "governance-audit",
+          "conclusion": "success"
+        },
+        {
+          "name": "ios-app",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "pr": 3,
+      "head": "4f268b8d195c212ab32da5c7471016b9f9646b9f",
+      "base": "codex/lc-02-four-country-life",
+      "ci_run": 39935525025,
+      "jobs": [
+        {
+          "name": "swift-engine",
+          "conclusion": "success"
+        },
+        {
+          "name": "basic-checks",
+          "conclusion": "success"
+        },
+        {
+          "name": "governance-audit",
+          "conclusion": "success"
+        },
+        {
+          "name": "ios-app",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "pr": 4,
+      "head": "c05ee5143f8f6b56ff0d71507e2c3f0580c84166",
+      "base": "codex/lc-conditional-event-first",
+      "ci_run": 39956496533,
+      "jobs": [
+        {
+          "name": "basic-checks",
+          "conclusion": "success"
+        },
+        {
+          "name": "swift-engine",
+          "conclusion": "success"
+        },
+        {
+          "name": "governance-audit",
+          "conclusion": "success"
+        },
+        {
+          "name": "ios-app",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "main_initial": "7f34f784d2ed5ca946b6302bae3bea0dc51683e4",
+  "branch_protection": {
+    "protected": false,
+    "required_contexts": [],
+    "rulesets": [],
+    "source": "GitHub branches/main and rulesets GET"
+  },
+  "independent_review": {
+    "path": "artifacts/evidence/p1-core-integration/independent-review.md",
+    "sha256": "df60334636b7dbc466e2ff57922d4e6f647b7ff917fabe3341d9801b63b99068",
+    "verdict": "APPROVED for each frozen head; development integration only"
+  },
+  "merge_method": "merge",
+  "preserve_source_branches": true,
+  "local_product_diff_from_c05ee51": [],
+  "local_documentation_dirty": true,
+  "not_claimed": [
+    "P1 complete",
+    "release readiness",
+    "approved visual assets",
+    "physical device or child testing"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "snapshot_commit": "3438fc6e1ba8f73874239391c725c1c235b21037",
+  "snapshot_branch": "codex/ui-visual-loop-4h",
+  "remote_verified": true,
+  "paths_verified": 35,
+  "previous_visual_branch": "codex/lc-visual-design",
+  "previous_visual_head": "2b62a192ad43e23c806d029b353d49da61576ae2",
+  "gameplay_preview_branch": "codex/gs-visual-gameplay",
+  "gameplay_preview_head": "9bd75d23e6fed6057700fa23a71de31bf3e201d8",
+  "all_three_remote_refs_verified": true,
+  "working_tree_preserved": true,
+  "later_runner_status_changes_left_in_place": true,
+  "visual_thread_notified": "01a16763-cf44-76e0-9c23-31e763c68892",
+  "not_claimed": [
+    "visual validation passed",
+    "assets selected for app",
+    "visual branch merged"
+  ]
+}
