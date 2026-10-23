@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "swift test",
+  "exit_code": 0,
+  "started_at": "2026-10-23T10:39:19Z",
+  "finished_at": "2026-10-23T10:39:34Z",
+  "runner": "codex-root",
+  "linked_commit": "a6324399c00e1f35e178f26205a22c5ed337a6a2",
+  "output_artifacts": [
+    "artifacts/rng/test-evidence-receipt.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}

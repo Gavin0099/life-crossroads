@@ -1,0 +1,16 @@
+[memory_record] advisory: test_evidence claims success without an existing artifacts/ path; the memory authority guard will flag this entry as test_evidence_provenance_not_found. Wrap the validation command in governance_tools.test_evidence_receipt_writer and cite the receipt path inside --test-evidence.
+[memory_record] Written: /Users/macminim4/.codex/worktrees/rng-event-director/life-crossroads/memory/2026-10-23.md (surface identity=26393e5eda925b8c65a735761eda2ffb21fa1271c0432bcbdb292e9896b5d379)
+[memory_record] Written: /Users/macminim4/.codex/worktrees/rng-event-director/life-crossroads/memory/01_active_task.md (surface identity=26393e5eda925b8c65a735761eda2ffb21fa1271c0432bcbdb292e9896b5d379)
+- memory_type: session-derived
+  record_format_version: 1.0
+  writer: governance_tools.memory_record
+  what_changed: RNG-01～04獨立Swift事件導演完成：穩定key抽選、條件/冷卻/互斥、人物事實與實際trace、版本隔離及完整存檔重播；19定義/15決策。研究固定第三方版本但未複製內容；低資源救援與延遲後果反例已修正。
+  commit: a632439
+  commit_hash: a632439
+  session_id: 2026-10-23-05
+  memory_binding: bound
+  test_evidence: artifacts/rng/validation-manifest.json：70 Swift測試、1024人生及各1024重播/反序/續玩、19/19入選、違規0、3 mutation；ios-package-build.json雙架構編譯；7 Python及basic PASS；docs/rng/independent-review.md；未真人/實機或正式UI接線。
+  next_step: 推送codex/rng-event-director供review；通過有界審查後，再以DTO接正式UI與LC-03～05。兩既有PR維持HOLD，不合併或發布；Simulator每輪刪除偏好維持。
+  plan_reconciliation: updated
+  record_identity: 26393e5eda925b8c65a735761eda2ffb21fa1271c0432bcbdb292e9896b5d379
+

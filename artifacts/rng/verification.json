@@ -2,7 +2,7 @@
   "date": "2026-10-23",
   "branch": "codex/rng-event-director",
   "base_commit": "ad773f9b450612fe58513b5ce54d538b7cc0f215",
-  "implementation_commit": null,
+  "implementation_commit": "a6324399c00e1f35e178f26205a22c5ed337a6a2",
   "response_envelope": {
     "mode": "VALIDATION",
     "mode_source": "validation_command",
@@ -83,5 +83,6 @@
   "validation_manifest": "artifacts/rng/validation-manifest.json",
   "simulator_devices_created": 0,
   "publish_authority": "User instructed push before review; no merge or release authorization used",
-  "memory_validation": null
+  "memory_validation": "artifacts/rng/memory-workflow.json",
+  "format_check": "Source and documentation diff check passed; raw xcodebuild log trailing whitespace preserved byte-for-byte to retain receipt SHA."
 }
