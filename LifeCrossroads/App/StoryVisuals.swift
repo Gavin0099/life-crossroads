@@ -138,7 +138,6 @@ struct CountryContextCard: View {
         .padding(18)
         .background(.background, in: RoundedRectangle(cornerRadius: 22))
         .overlay(RoundedRectangle(cornerRadius: 22).stroke(StoryPalette.forest.opacity(0.15), lineWidth: 1))
-        .accessibilityIdentifier("countryContextCard")
     }
 
     private func observationRow(_ indicator: String) -> some View {
