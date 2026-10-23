@@ -1,0 +1,126 @@
+{
+  "date": "2026-10-23",
+  "task": "UI/UX event-first MVP",
+  "task_authority": "user_request",
+  "branch": "codex/ui-event-first-v1",
+  "base_commit": "2b62a192ad43e23c806d029b353d49da61576ae2",
+  "implementation_commit": "45585b2",
+  "implemented_slices": [
+    "UI-00",
+    "UI-01",
+    "UI-02",
+    "UI-04",
+    "UI-06"
+  ],
+  "checks": {
+    "ui": {
+      "result": "PASS",
+      "unique_test_methods": 8,
+      "devices": [
+        "iPhone 17 / iOS 27.0 Simulator / 72669DC6-3892-4292-B1E3-B8DC61F5B0A9",
+        "iPhone SE 3 / iOS 27.0 Simulator / 57CAF0DC-265F-44BF-B0FD-AF5DC0080773"
+      ],
+      "summary": "artifacts/ui/test-summary.json",
+      "screenshots": 30
+    },
+    "swift": {
+      "result": "PASS",
+      "tests": 25,
+      "log": "artifacts/ui/swift-tests.log"
+    },
+    "basic": {
+      "result": "PASS",
+      "log": "artifacts/ui/governance-basic.log"
+    },
+    "regression_before": {
+      "result": "FAIL",
+      "reason": "Parent accessibilityIdentifier overrode child button identifiers",
+      "summary": "artifacts/ui/before-footer-fix.json",
+      "log": "artifacts/ui/focused-tests.log"
+    },
+    "initial_attempt": {
+      "result": "INTERRUPTED",
+      "log": "artifacts/ui/initial-tests.log",
+      "counts_as_pass": false
+    },
+    "static": {
+      "result": "PASS",
+      "checks": [
+        "SVG XML parse",
+        "Python AST parse",
+        "new asset JSON parse",
+        "source artwork byte equality",
+        "staged JSON parse",
+        "UI document links resolve",
+        "git diff whitespace check"
+      ]
+    }
+  },
+  "artwork": {
+    "source": "assets/concepts/style-B/scene.png",
+    "copy": "UIPrototype/EventFirst/Assets.xcassets/workshop.imageset/workshop.png",
+    "new_generation": false,
+    "approved_for_app": false
+  },
+  "unchanged": [
+    "LifeCrossroads/Domain",
+    "LifeCrossroads/Data",
+    "Package.swift",
+    "UIPrototype/VisualPreview",
+    "assets/characters"
+  ],
+  "plan_inventory_refresh": {
+    "tool": "governance_tools.adopt_governance --refresh",
+    "framework_version_changed": false,
+    "purpose": "Refresh observed PLAN headings and local hashes only"
+  },
+  "response_envelope": {
+    "mode": "VALIDATION",
+    "mode_source": "validation_command",
+    "task": "Event-first UI MVP",
+    "task_authority": "user_request",
+    "scope": [
+      "UIPrototype/EventFirst.xcodeproj",
+      "UIPrototype/EventFirst",
+      "UIPrototype/EventFirstTests",
+      "docs/ui",
+      "tools/ui",
+      "artifacts/ui",
+      ".governance/baseline.yaml",
+      "PLAN.md",
+      "memory"
+    ],
+    "done": [
+      "UI-00/01/02/04/06 implemented locally with three structure studies and a two-event interactive loop",
+      "8 UI tests passed on each of two Simulators; 25 existing Swift tests and basic checks passed",
+      "30 native screenshots exported; fixture DTO and empty states implemented"
+    ],
+    "claim_ceiling": [
+      "Local fixture prototype, structured plans and simulator evidence"
+    ],
+    "not_claimed": [
+      "5-second user comprehension",
+      "child usability/preferences",
+      "physical iPhone",
+      "manual VoiceOver validation",
+      "formal art or licensing approval",
+      "all UI-00 to UI-10 complete",
+      "Domain integration",
+      "remote CI success",
+      "merge or release"
+    ],
+    "evidence_refs": [
+      "artifacts/ui/test-summary.json",
+      "artifacts/ui/screenshots",
+      "artifacts/ui/swift-tests.log",
+      "artifacts/ui/governance-basic.log",
+      "artifacts/ui/before-footer-fix.json",
+      "docs/ui/acceptance.md"
+    ],
+    "risk": [
+      "UI-10 human direction gate is pending; this does not shrink the full-life product scope"
+    ],
+    "next_action": "Review the new homepage hierarchy and the three structural studies before deciding on a bounded Domain integration slice."
+  },
+  "memory_workflow_raw": "[memory_workflow]\nstatus=memory_workflow_required\nrepo_root=/Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads\nrepo_root_resolved=True\ncanonical_writer_required=True\ntask_classification=governed_memory_task\nguard_ran=True\ncompletion_claim_allowed=True\nmemory_protocol_path=additional/ai-governance-framework/governance/MEMORY_PROTOCOL.md\ncanonical_writer_path=additional/ai-governance-framework/governance_tools/memory_record.py\nauthority_guard_path=additional/ai-governance-framework/governance_tools/memory_authority_guard.py\nMemory authority check ran and found no blocking item.\ncompletion_claim_allowed=True means this workflow currently does not block a completion claim.\nThis does not prove that all completed work has canonical memory.\n[memory_files_in_diff]\nmemory/01_active_task.md\nmemory/2026-10-23.md\n[guard_summary]\nactive_non_canonical_writer=0\nauthority_override_rejected=0\nauthority_override_used_current_diff=0\ncurrent_diff_b0_blocker_count=0\nmissing_canonical_memory=0\nnon_canonical_writer=0\nnon_daily_session_shaped_memory_entry=0\nrepo_state_b0_blocker_count=0\nsession_like_non_session_memory_type=0\ntest_evidence_artifact_metadata_invalid=0\ntest_evidence_artifact_metadata_missing=2\ntest_evidence_artifact_not_durable=0\ntest_evidence_exit_code_contradicts_claim=0\ntest_evidence_linked_commit_mismatch=0\ntest_evidence_provenance_not_found=2\nunbound_memory=3\n[recommended_workflow]\nStop editing memory/ files directly.\nUse canonical writer for session-derived memory.\nRun memory authority guard after memory changes.\nDo not claim memory DONE until guard result is reported.\n[warnings]\nunbound_memory\ntest_evidence_provenance_not_found\ntest_evidence_artifact_metadata_missing\n"
+}

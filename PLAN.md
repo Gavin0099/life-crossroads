@@ -116,3 +116,13 @@ LC-02 的四國可玩交付不等於 P1 全部完成。
 - 下一步建議：先人工檢視風格與年齡設定，再鎖定角色細節進三視圖/表情及正式透明素材；不自動擴張全量製作。
 - 交付與驗證索引：`docs/visual/review-gallery.md`、`docs/visual/acceptance.md`、`artifacts/visual/verification.json`。
 - 2026-10-23 追加授權推送視覺分支供 review；推送結果以遠端 ref 與交付回報為準，不包含合併或發布。
+
+## UI/UX Event-First Track — 2026-10-23
+
+本輪使用者提供整體 UI/UX Plan + Slices，優先 UI-00、UI-01、UI-02、UI-04、UI-06。
+以事件決策為首頁，家庭/人生地圖/紀錄為次頁；三種結構均留比較線框，預設事件卡主導。
+獨立分支 `codex/ui-event-first-v1` 從已公開視覺成果 `2b62a19` 延伸，不覆寫原引擎工作線。
+本輪 MVP 已本機實作並驗證：三方向線框、首頁 v1、兩事件可點流程、DTO 草案、空狀態與可讀性證據。
+八項 UI 測試在兩種 Simulator 各通過，另有 25 項既有 Swift 測試與基本檢查；保留 30 張原生截圖。
+不進正式美術或完整引擎接線；五秒辨識、兒少吸引力與實機驗收獨立待驗。
+整體切片與目前完成狀態：`docs/ui/SLICES.md`；可 review 成果：`docs/ui/review.md`。
