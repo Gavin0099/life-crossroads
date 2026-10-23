@@ -1,0 +1,25 @@
+Test Suite 'Selected tests' started at 2026-10-23 13:55:17.381.
+Test Suite 'LifeDomainTests.xctest' started at 2026-10-23 13:55:17.381.
+Test Suite 'LC01Tests' started at 2026-10-23 13:55:17.381.
+Test Case '-[LifeDomainTests.LC01Tests testDigitalThresholdBoundaries]' started.
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/LC01Tests.swift:171: error: -[LifeDomainTests.LC01Tests testDigitalThresholdBoundaries] : XCTAssertEqual failed: ("Cost(time: 4, energy: 2, materials: 1)") is not equal to ("Cost(time: 3, energy: 2, materials: 1)")
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/LC01Tests.swift:171: error: -[LifeDomainTests.LC01Tests testDigitalThresholdBoundaries] : XCTAssertEqual failed: ("Cost(time: 4, energy: 2, materials: 2)") is not equal to ("Cost(time: 3, energy: 2, materials: 2)")
+Test Case '-[LifeDomainTests.LC01Tests testDigitalThresholdBoundaries]' failed (0.117 seconds).
+Test Suite 'LC01Tests' failed at 2026-10-23 13:55:17.499.
+	 Executed 1 test, with 2 failures (0 unexpected) in 0.117 (0.117) seconds
+Test Suite 'LifeDomainTests.xctest' failed at 2026-10-23 13:55:17.499.
+	 Executed 1 test, with 2 failures (0 unexpected) in 0.117 (0.117) seconds
+Test Suite 'Selected tests' failed at 2026-10-23 13:55:17.499.
+	 Executed 1 test, with 2 failures (0 unexpected) in 0.117 (0.118) seconds
+Note: Some test targets reported failures:
+  - LifeDomainTests (XCTest)
+Building for debugging...
+[Pre-planning 1 / 211]
+[Planning deferred tasks]
+[3 / 22]
+[4 / 23] LifeDomain
+[6 / 25] LifeDomain
+[12 / 29] LifeData
+[20 / 21] life-demo-product
+[21 / 22] LifeDomainTests-product
+Build complete! (1.64秒)

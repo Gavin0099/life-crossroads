@@ -1,0 +1,1722 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "lc01-data-1",
+  "contentVersion": "lc02-skeleton-1",
+  "referenceYear": 2023,
+  "sources": [
+    {
+      "id": "wdi-internet-2023",
+      "publisher": "International Telecommunication Union (ITU)",
+      "indicator": "IT.NET.USER.ZS",
+      "url": "https://data.worldbank.org/indicator/IT.NET.USER.ZS",
+      "downloadURL": "https://api.worldbank.org/v2/country/JPN;USA;DEU;IND;BRA;VNM;KEN/indicator/IT.NET.USER.ZS?date=2023&format=json&per_page=100",
+      "license": "CC-BY-4.0",
+      "licenseURL": "https://www.worldbank.org/ext/en/legal/terms-conditions/datasets",
+      "licenseEvidenceURL": "https://data.worldbank.org/indicator/IT.NET.USER.ZS",
+      "attribution": "The World Bank: World Development Indicators: International Telecommunication Union (ITU). IT.NET.USER.ZS, 2023. CC BY 4.0; World Bank Dataset Terms apply. National data unchanged; game transformations are design assumptions. No endorsement.",
+      "retrievedAt": "2026-10-23",
+      "version": "wdi-2023-snapshot-2026-10-23",
+      "rawPath": "raw/wdi-internet-2023.json",
+      "sha256": "21b95c877b48a47ff474c856d6e723ceb8c3a4eab4c5b19a536e4ddb7ce859eb",
+      "missingPolicy": "Reject playable background if required value is null/absent. Never fill with zero, national neighbors or another year.",
+      "transformation": "Exact API numeric value; 2023 common-year slice, no rounding, interpolation, weighting or household inference. API lastupdated=2026-10-08"
+    },
+    {
+      "id": "wdi-electricity-2023",
+      "publisher": "World Bank / ESMAP, SDG 7.1.1 Electrification Dataset",
+      "indicator": "EG.ELC.ACCS.ZS",
+      "url": "https://data.worldbank.org/indicator/EG.ELC.ACCS.ZS",
+      "downloadURL": "https://api.worldbank.org/v2/country/JPN;USA;DEU;IND;BRA;VNM;KEN/indicator/EG.ELC.ACCS.ZS?date=2023&format=json&per_page=100",
+      "license": "CC-BY-4.0",
+      "licenseURL": "https://www.worldbank.org/ext/en/legal/terms-conditions/datasets",
+      "licenseEvidenceURL": "https://data.worldbank.org/indicator/EG.ELC.ACCS.ZS",
+      "attribution": "The World Bank: World Development Indicators: World Bank / ESMAP, SDG 7.1.1 Electrification Dataset. EG.ELC.ACCS.ZS, 2023. CC BY 4.0; World Bank Dataset Terms apply. National data unchanged; game transformations are design assumptions. No endorsement.",
+      "retrievedAt": "2026-10-23",
+      "version": "wdi-2023-snapshot-2026-10-23",
+      "rawPath": "raw/wdi-electricity-2023.json",
+      "sha256": "333a7f27d6ab8a9cb335fded93f07ed9e8e46de41f8ff24c3aa4a9ea54a2e58b",
+      "missingPolicy": "Reject playable background if required value is null/absent. Never fill with zero, national neighbors or another year.",
+      "transformation": "Exact API numeric value; 2023 common-year slice, no rounding, interpolation, weighting or household inference. API lastupdated=2026-10-08"
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "macro-friction",
+      "version": "1",
+      "statement": "需要數位資料的行動：網路使用率 >=90 時多用0格時間，60～<90多用1格，<60多用2格；電力取得率 <95 多用1格材料，否則0格。",
+      "limitation": "這些門檻及成本是教學用情境指數。全國人口比例不是個人/家庭連線機率，也不能代表設備品質、教育、供電穩定度或個人因果。"
+    },
+    {
+      "id": "household-scenarios",
+      "version": "1",
+      "statement": "每國兩個刻意對比的虛構家庭：設備、交通、成人照顧安排、材料及初始資源皆為手工情境；不抽樣國家平均值。",
+      "limitation": "不是家庭聯合分布、不代表典型家庭、沒有真實發生頻率；兩種情境可存在於任何國家，不能用於國家排名。"
+    },
+    {
+      "id": "life-stages",
+      "version": "1",
+      "statement": "0～12、13～22、23～40、41～60、61～100為五階段。每個關鍵事件重置時間/精力；跳躍時觸發到期故事。80歲回顧只為骨架收束。",
+      "limitation": "年齡段、回合預算與收束年齡是遊戲節奏，不是人口或死亡模型；沒有將平均壽命當作死亡年齡。"
+    },
+    {
+      "id": "agency",
+      "version": "1",
+      "statement": "童年學習由孩子表達意願並和可信任的大人共同安排；成人工作/照顧責任限23歲以上。家庭照顧安排只在23歲以上增加成本。",
+      "limitation": "遊戲控制權規則，不是法律或對兒童責任的要求；不能把成人/社會限制歸責於孩子。"
+    },
+    {
+      "id": "support-network",
+      "version": "1",
+      "statement": "情境支持0～2格：學習/求助/共同照顧可減少相同格數時間；學習有人陪伴增加人際2、技能1。",
+      "limitation": "虛構可用支持，不代表某國人民較友善或每次求助都成功；沒有支持也保留免費休息路線。"
+    },
+    {
+      "id": "choice-effects",
+      "version": "1",
+      "statement": "選項明列回合時間、精力、材料及四項資源變動；可行性不足不消耗資源、不產生後果。",
+      "limitation": "資源與代價皆是設計單位，不是健康量表、貨幣或教育成就估計；沒有合成人生成功分數。"
+    },
+    {
+      "id": "cost-fatigue",
+      "version": "1",
+      "statement": "學習準備佔去至少5格時間，健康暫減2格。",
+      "limitation": "簡化遊戲取捨，不是醫學或勞動風險估計。"
+    },
+    {
+      "id": "luck-encouragement",
+      "version": "1",
+      "statement": "可行的學習選項有25%額外鼓勵機會，人際+1。固定Seed+事件/年齡/機會通道的鍵控亂數，所有背景同一門檻。",
+      "limitation": "完全為遊戲假設，沒有國家成功倍率；不同選項不消耗共用亂數序列。"
+    },
+    {
+      "id": "resource-bounds",
+      "version": "1",
+      "statement": "四項長期資源各自限制0～100；成本最低0；clamp調整列入trace。",
+      "limitation": "設計邊界，不是真實人生評價；人物價值不能由數值推導。"
+    },
+    {
+      "id": "story-callback",
+      "version": "1",
+      "statement": "帶有後續標記的可行決策在4歲後由同一位虛構人物呼應，人際+2、技能+1；只觸發一次。",
+      "limitation": "為LC-02保留人物牽掛的最小故事契約，並非證實現實長期因果；完整事件內容及試玩仍待後續切片。"
+    }
+  ],
+  "countries": [
+    {
+      "code": "TWN",
+      "name": "台灣",
+      "dataStatus": "blocked",
+      "indicators": [],
+      "gaps": [
+        "尚未接入台灣官方同口徑2023網路與電力人口比例；不得以其他國家、不同分母或0填補。",
+        "待逐欄確認官方資料授權、可比定義及原始檔；此版本拒絕建立台灣可用背景。"
+      ]
+    },
+    {
+      "code": "JPN",
+      "name": "日本",
+      "dataStatus": "ready",
+      "indicators": [
+        {
+          "indicator": "IT.NET.USER.ZS",
+          "value": 85.00990295,
+          "year": 2023,
+          "region": "JPN",
+          "unit": "% of population",
+          "sourceID": "wdi-internet-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23"
+        },
+        {
+          "indicator": "EG.ELC.ACCS.ZS",
+          "value": 100,
+          "year": 2023,
+          "region": "JPN",
+          "unit": "% of population",
+          "sourceID": "wdi-electricity-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23"
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "code": "USA",
+      "name": "美國",
+      "dataStatus": "ready",
+      "indicators": [
+        {
+          "indicator": "IT.NET.USER.ZS",
+          "value": 93.52559662,
+          "year": 2023,
+          "region": "USA",
+          "unit": "% of population",
+          "sourceID": "wdi-internet-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23"
+        },
+        {
+          "indicator": "EG.ELC.ACCS.ZS",
+          "value": 100,
+          "year": 2023,
+          "region": "USA",
+          "unit": "% of population",
+          "sourceID": "wdi-electricity-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23"
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "code": "DEU",
+      "name": "德國",
+      "dataStatus": "ready",
+      "indicators": [
+        {
+          "indicator": "IT.NET.USER.ZS",
+          "value": 92.4763763,
+          "year": 2023,
+          "region": "DEU",
+          "unit": "% of population",
+          "sourceID": "wdi-internet-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23"
+        },
+        {
+          "indicator": "EG.ELC.ACCS.ZS",
+          "value": 100,
+          "year": 2023,
+          "region": "DEU",
+          "unit": "% of population",
+          "sourceID": "wdi-electricity-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23"
+        }
+      ],
+      "gaps": [
+        "LC-01兩項宏觀指標已驗證；LC-02在地故事用語與制度情境尚未考證，不在首批四國名單。"
+      ]
+    },
+    {
+      "code": "IND",
+      "name": "印度",
+      "dataStatus": "ready",
+      "indicators": [
+        {
+          "indicator": "IT.NET.USER.ZS",
+          "value": 60.25230026,
+          "year": 2023,
+          "region": "IND",
+          "unit": "% of population",
+          "sourceID": "wdi-internet-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23"
+        },
+        {
+          "indicator": "EG.ELC.ACCS.ZS",
+          "value": 99.5,
+          "year": 2023,
+          "region": "IND",
+          "unit": "% of population",
+          "sourceID": "wdi-electricity-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23"
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "code": "BRA",
+      "name": "巴西",
+      "dataStatus": "ready",
+      "indicators": [
+        {
+          "indicator": "IT.NET.USER.ZS",
+          "value": 84.15060238,
+          "year": 2023,
+          "region": "BRA",
+          "unit": "% of population",
+          "sourceID": "wdi-internet-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23"
+        },
+        {
+          "indicator": "EG.ELC.ACCS.ZS",
+          "value": 99.8,
+          "year": 2023,
+          "region": "BRA",
+          "unit": "% of population",
+          "sourceID": "wdi-electricity-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23"
+        }
+      ],
+      "gaps": [
+        "LC-01兩項宏觀指標已驗證；LC-02在地故事用語與制度情境尚未考證，不在首批四國名單。"
+      ]
+    },
+    {
+      "code": "VNM",
+      "name": "越南",
+      "dataStatus": "ready",
+      "indicators": [
+        {
+          "indicator": "IT.NET.USER.ZS",
+          "value": 78.08,
+          "year": 2023,
+          "region": "VNM",
+          "unit": "% of population",
+          "sourceID": "wdi-internet-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23"
+        },
+        {
+          "indicator": "EG.ELC.ACCS.ZS",
+          "value": 99.8,
+          "year": 2023,
+          "region": "VNM",
+          "unit": "% of population",
+          "sourceID": "wdi-electricity-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23"
+        }
+      ],
+      "gaps": [
+        "LC-01兩項宏觀指標已驗證；LC-02在地故事用語與制度情境尚未考證，不在首批四國名單。"
+      ]
+    },
+    {
+      "code": "KEN",
+      "name": "肯亞",
+      "dataStatus": "ready",
+      "indicators": [
+        {
+          "indicator": "IT.NET.USER.ZS",
+          "value": 32.07040024,
+          "year": 2023,
+          "region": "KEN",
+          "unit": "% of population",
+          "sourceID": "wdi-internet-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23"
+        },
+        {
+          "indicator": "EG.ELC.ACCS.ZS",
+          "value": 76.2,
+          "year": 2023,
+          "region": "KEN",
+          "unit": "% of population",
+          "sourceID": "wdi-electricity-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23"
+        }
+      ],
+      "gaps": []
+    }
+  ],
+  "households": [
+    {
+      "id": "twn-1",
+      "countryCode": "TWN",
+      "label": "台灣・虛構家庭1：共用設備、近處互助、家人輪班",
+      "deviceAccess": "shared",
+      "travelCost": 0,
+      "careLoad": 1,
+      "mentorSupport": 2,
+      "materialBudget": 2,
+      "initialResources": {
+        "health": 65,
+        "financial": 35,
+        "relationships": 65,
+        "skills": 20
+      },
+      "assumptionIDs": [
+        "household-scenarios"
+      ]
+    },
+    {
+      "id": "twn-2",
+      "countryCode": "TWN",
+      "label": "台灣・虛構家庭2：獨用設備、較遠通勤、收入較穩",
+      "deviceAccess": "own",
+      "travelCost": 1,
+      "careLoad": 0,
+      "mentorSupport": 1,
+      "materialBudget": 4,
+      "initialResources": {
+        "health": 65,
+        "financial": 60,
+        "relationships": 50,
+        "skills": 20
+      },
+      "assumptionIDs": [
+        "household-scenarios"
+      ]
+    },
+    {
+      "id": "jpn-1",
+      "countryCode": "JPN",
+      "label": "日本・虛構家庭1：共用設備、近處互助、家人輪班",
+      "deviceAccess": "shared",
+      "travelCost": 0,
+      "careLoad": 1,
+      "mentorSupport": 2,
+      "materialBudget": 2,
+      "initialResources": {
+        "health": 66,
+        "financial": 35,
+        "relationships": 65,
+        "skills": 20
+      },
+      "assumptionIDs": [
+        "household-scenarios"
+      ]
+    },
+    {
+      "id": "jpn-2",
+      "countryCode": "JPN",
+      "label": "日本・虛構家庭2：獨用設備、較遠通勤、收入較穩",
+      "deviceAccess": "own",
+      "travelCost": 1,
+      "careLoad": 0,
+      "mentorSupport": 1,
+      "materialBudget": 4,
+      "initialResources": {
+        "health": 66,
+        "financial": 60,
+        "relationships": 50,
+        "skills": 20
+      },
+      "assumptionIDs": [
+        "household-scenarios"
+      ]
+    },
+    {
+      "id": "usa-1",
+      "countryCode": "USA",
+      "label": "美國・虛構家庭1：共用設備、近處互助、家人輪班",
+      "deviceAccess": "shared",
+      "travelCost": 0,
+      "careLoad": 1,
+      "mentorSupport": 2,
+      "materialBudget": 2,
+      "initialResources": {
+        "health": 67,
+        "financial": 35,
+        "relationships": 65,
+        "skills": 20
+      },
+      "assumptionIDs": [
+        "household-scenarios"
+      ]
+    },
+    {
+      "id": "usa-2",
+      "countryCode": "USA",
+      "label": "美國・虛構家庭2：獨用設備、較遠通勤、收入較穩",
+      "deviceAccess": "own",
+      "travelCost": 1,
+      "careLoad": 0,
+      "mentorSupport": 1,
+      "materialBudget": 4,
+      "initialResources": {
+        "health": 67,
+        "financial": 60,
+        "relationships": 50,
+        "skills": 20
+      },
+      "assumptionIDs": [
+        "household-scenarios"
+      ]
+    },
+    {
+      "id": "deu-1",
+      "countryCode": "DEU",
+      "label": "德國・虛構家庭1：共用設備、近處互助、家人輪班",
+      "deviceAccess": "shared",
+      "travelCost": 0,
+      "careLoad": 1,
+      "mentorSupport": 2,
+      "materialBudget": 2,
+      "initialResources": {
+        "health": 65,
+        "financial": 35,
+        "relationships": 65,
+        "skills": 20
+      },
+      "assumptionIDs": [
+        "household-scenarios"
+      ]
+    },
+    {
+      "id": "deu-2",
+      "countryCode": "DEU",
+      "label": "德國・虛構家庭2：獨用設備、較遠通勤、收入較穩",
+      "deviceAccess": "own",
+      "travelCost": 1,
+      "careLoad": 0,
+      "mentorSupport": 1,
+      "materialBudget": 4,
+      "initialResources": {
+        "health": 65,
+        "financial": 60,
+        "relationships": 50,
+        "skills": 20
+      },
+      "assumptionIDs": [
+        "household-scenarios"
+      ]
+    },
+    {
+      "id": "ind-1",
+      "countryCode": "IND",
+      "label": "印度・虛構家庭1：共用設備、近處互助、家人輪班",
+      "deviceAccess": "shared",
+      "travelCost": 0,
+      "careLoad": 1,
+      "mentorSupport": 2,
+      "materialBudget": 2,
+      "initialResources": {
+        "health": 66,
+        "financial": 35,
+        "relationships": 65,
+        "skills": 20
+      },
+      "assumptionIDs": [
+        "household-scenarios"
+      ]
+    },
+    {
+      "id": "ind-2",
+      "countryCode": "IND",
+      "label": "印度・虛構家庭2：獨用設備、較遠通勤、收入較穩",
+      "deviceAccess": "own",
+      "travelCost": 1,
+      "careLoad": 0,
+      "mentorSupport": 1,
+      "materialBudget": 4,
+      "initialResources": {
+        "health": 66,
+        "financial": 60,
+        "relationships": 50,
+        "skills": 20
+      },
+      "assumptionIDs": [
+        "household-scenarios"
+      ]
+    },
+    {
+      "id": "bra-1",
+      "countryCode": "BRA",
+      "label": "巴西・虛構家庭1：共用設備、近處互助、家人輪班",
+      "deviceAccess": "shared",
+      "travelCost": 0,
+      "careLoad": 1,
+      "mentorSupport": 2,
+      "materialBudget": 2,
+      "initialResources": {
+        "health": 67,
+        "financial": 35,
+        "relationships": 65,
+        "skills": 20
+      },
+      "assumptionIDs": [
+        "household-scenarios"
+      ]
+    },
+    {
+      "id": "bra-2",
+      "countryCode": "BRA",
+      "label": "巴西・虛構家庭2：獨用設備、較遠通勤、收入較穩",
+      "deviceAccess": "own",
+      "travelCost": 1,
+      "careLoad": 0,
+      "mentorSupport": 1,
+      "materialBudget": 4,
+      "initialResources": {
+        "health": 67,
+        "financial": 60,
+        "relationships": 50,
+        "skills": 20
+      },
+      "assumptionIDs": [
+        "household-scenarios"
+      ]
+    },
+    {
+      "id": "vnm-1",
+      "countryCode": "VNM",
+      "label": "越南・虛構家庭1：共用設備、近處互助、家人輪班",
+      "deviceAccess": "shared",
+      "travelCost": 0,
+      "careLoad": 1,
+      "mentorSupport": 2,
+      "materialBudget": 2,
+      "initialResources": {
+        "health": 65,
+        "financial": 35,
+        "relationships": 65,
+        "skills": 20
+      },
+      "assumptionIDs": [
+        "household-scenarios"
+      ]
+    },
+    {
+      "id": "vnm-2",
+      "countryCode": "VNM",
+      "label": "越南・虛構家庭2：獨用設備、較遠通勤、收入較穩",
+      "deviceAccess": "own",
+      "travelCost": 1,
+      "careLoad": 0,
+      "mentorSupport": 1,
+      "materialBudget": 4,
+      "initialResources": {
+        "health": 65,
+        "financial": 60,
+        "relationships": 50,
+        "skills": 20
+      },
+      "assumptionIDs": [
+        "household-scenarios"
+      ]
+    },
+    {
+      "id": "ken-1",
+      "countryCode": "KEN",
+      "label": "肯亞・虛構家庭1：共用設備、近處互助、家人輪班",
+      "deviceAccess": "shared",
+      "travelCost": 0,
+      "careLoad": 1,
+      "mentorSupport": 2,
+      "materialBudget": 2,
+      "initialResources": {
+        "health": 66,
+        "financial": 35,
+        "relationships": 65,
+        "skills": 20
+      },
+      "assumptionIDs": [
+        "household-scenarios"
+      ]
+    },
+    {
+      "id": "ken-2",
+      "countryCode": "KEN",
+      "label": "肯亞・虛構家庭2：獨用設備、較遠通勤、收入較穩",
+      "deviceAccess": "own",
+      "travelCost": 1,
+      "careLoad": 0,
+      "mentorSupport": 1,
+      "materialBudget": 4,
+      "initialResources": {
+        "health": 66,
+        "financial": 60,
+        "relationships": 50,
+        "skills": 20
+      },
+      "assumptionIDs": [
+        "household-scenarios"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "id": "child-interest",
+      "age": 8,
+      "title": "想試試新的興趣",
+      "recurringPerson": "照顧你的大人",
+      "storyQuestion": "我可以說出自己想做的事嗎？",
+      "choices": [
+        {
+          "id": "invest",
+          "title": "投入時間一起學習",
+          "kind": "learn",
+          "control": "sharedWithAdult",
+          "minimumAge": 0,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 1,
+          "effect": {
+            "health": 0,
+            "financial": -1,
+            "relationships": 0,
+            "skills": 4
+          },
+          "requiresDigitalAccess": true,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "agency"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先說出需要，和別人一起找方法",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "保留時間休息和陪伴",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "child-friend",
+      "age": 10,
+      "title": "和朋友約好一起完成",
+      "recurringPerson": "童年朋友",
+      "storyQuestion": "練習和陪伴要怎麼分配？",
+      "choices": [
+        {
+          "id": "invest",
+          "title": "投入時間一起學習",
+          "kind": "learn",
+          "control": "sharedWithAdult",
+          "minimumAge": 0,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 1,
+          "effect": {
+            "health": 0,
+            "financial": -1,
+            "relationships": 0,
+            "skills": 4
+          },
+          "requiresDigitalAccess": true,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "agency"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先說出需要，和別人一起找方法",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "保留時間休息和陪伴",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "child-transition",
+      "age": 12,
+      "title": "準備進入新的學校",
+      "recurringPerson": "陪你準備的老師",
+      "storyQuestion": "我需要什麼幫忙？",
+      "choices": [
+        {
+          "id": "invest",
+          "title": "投入時間一起學習",
+          "kind": "learn",
+          "control": "sharedWithAdult",
+          "minimumAge": 0,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 1,
+          "effect": {
+            "health": 0,
+            "financial": -1,
+            "relationships": 0,
+            "skills": 4
+          },
+          "requiresDigitalAccess": true,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "agency"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先說出需要，和別人一起找方法",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "保留時間休息和陪伴",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "teen-project",
+      "age": 13,
+      "title": "想參加共同創作",
+      "recurringPerson": "一起找材料的同伴",
+      "storyQuestion": "同樣投入，為什麼準備成本不同？",
+      "choices": [
+        {
+          "id": "invest",
+          "title": "投入時間一起學習",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 1,
+          "effect": {
+            "health": 0,
+            "financial": -1,
+            "relationships": 0,
+            "skills": 4
+          },
+          "requiresDigitalAccess": true,
+          "delayedHook": "reconnect",
+          "assumptionIDs": [
+            "choice-effects",
+            "agency"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先說出需要，和別人一起找方法",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "保留時間休息和陪伴",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "teen-direction",
+      "age": 17,
+      "title": "選擇想繼續學的方向",
+      "recurringPerson": "社區指導者",
+      "storyQuestion": "學習會留下什麼可能？",
+      "choices": [
+        {
+          "id": "invest",
+          "title": "投入時間一起學習",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 1,
+          "effect": {
+            "health": 0,
+            "financial": -1,
+            "relationships": 0,
+            "skills": 4
+          },
+          "requiresDigitalAccess": true,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "agency"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先說出需要，和別人一起找方法",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "保留時間休息和陪伴",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "teen-launch",
+      "age": 21,
+      "title": "離開熟悉的地方之前",
+      "recurringPerson": "一起長大的朋友",
+      "storyQuestion": "可以帶著哪些支持出發？",
+      "choices": [
+        {
+          "id": "invest",
+          "title": "投入時間一起學習",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 1,
+          "effect": {
+            "health": 0,
+            "financial": -1,
+            "relationships": 0,
+            "skills": 4
+          },
+          "requiresDigitalAccess": true,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "agency"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先說出需要，和別人一起找方法",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "保留時間休息和陪伴",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adult-learning",
+      "age": 25,
+      "title": "工作之外再學一點",
+      "recurringPerson": "工作夥伴",
+      "storyQuestion": "收入、時間與學習怎麼取捨？",
+      "choices": [
+        {
+          "id": "invest",
+          "title": "投入時間一起學習",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 1,
+          "effect": {
+            "health": 0,
+            "financial": -1,
+            "relationships": 0,
+            "skills": 4
+          },
+          "requiresDigitalAccess": true,
+          "delayedHook": "reconnect",
+          "assumptionIDs": [
+            "choice-effects",
+            "agency"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先說出需要，和別人一起找方法",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "保留時間休息和陪伴",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adult-balance",
+      "age": 32,
+      "title": "工作安排出現變化",
+      "recurringPerson": "曾經的同事",
+      "storyQuestion": "我想留下多少生活空間？",
+      "choices": [
+        {
+          "id": "invest",
+          "title": "增加一段工作時間",
+          "kind": "work",
+          "control": "adultResponsibility",
+          "minimumAge": 23,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 0,
+          "effect": {
+            "health": -1,
+            "financial": 4,
+            "relationships": 0,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "agency"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先說出需要，和別人一起找方法",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "保留時間休息和陪伴",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adult-care",
+      "age": 39,
+      "title": "一起分擔照顧安排",
+      "recurringPerson": "重要的家人",
+      "storyQuestion": "責任可以和誰一起承擔？",
+      "choices": [
+        {
+          "id": "invest",
+          "title": "和別人共同安排照顧",
+          "kind": "care",
+          "control": "adultResponsibility",
+          "minimumAge": 23,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 0,
+          "effect": {
+            "health": -1,
+            "financial": 0,
+            "relationships": 4,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "agency"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先說出需要，和別人一起找方法",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "保留時間休息和陪伴",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "middle-turn",
+      "age": 45,
+      "title": "想嘗試新的工作方向",
+      "recurringPerson": "多年來的夥伴",
+      "storyQuestion": "已有經驗能帶我去哪裡？",
+      "choices": [
+        {
+          "id": "invest",
+          "title": "投入時間一起學習",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 1,
+          "effect": {
+            "health": 0,
+            "financial": -1,
+            "relationships": 0,
+            "skills": 4
+          },
+          "requiresDigitalAccess": true,
+          "delayedHook": "reconnect",
+          "assumptionIDs": [
+            "choice-effects",
+            "agency"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先說出需要，和別人一起找方法",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "保留時間休息和陪伴",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "middle-support",
+      "age": 52,
+      "title": "朋友需要有人一起想辦法",
+      "recurringPerson": "曾經支持你的朋友",
+      "storyQuestion": "我能提供什麼支持？",
+      "choices": [
+        {
+          "id": "invest",
+          "title": "和別人共同安排照顧",
+          "kind": "care",
+          "control": "adultResponsibility",
+          "minimumAge": 23,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 0,
+          "effect": {
+            "health": -1,
+            "financial": 0,
+            "relationships": 4,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "agency"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先說出需要，和別人一起找方法",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "保留時間休息和陪伴",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "middle-rhythm",
+      "age": 59,
+      "title": "為下一階段調整節奏",
+      "recurringPerson": "一起散步的鄰居",
+      "storyQuestion": "什麼是我想保留的日常？",
+      "choices": [
+        {
+          "id": "invest",
+          "title": "和重要的人分享經驗",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 3,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "agency"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先說出需要，和別人一起找方法",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "保留時間休息和陪伴",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "later-pass-on",
+      "age": 65,
+      "title": "有人想聽你的經驗",
+      "recurringPerson": "年輕的學習夥伴",
+      "storyQuestion": "哪些經驗值得分享？",
+      "choices": [
+        {
+          "id": "invest",
+          "title": "和重要的人分享經驗",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 3,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "agency"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先說出需要，和別人一起找方法",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "保留時間休息和陪伴",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "later-reconnect",
+      "age": 72,
+      "title": "和老朋友重新聯絡",
+      "recurringPerson": "童年朋友",
+      "storyQuestion": "我還想和誰一起創造回憶？",
+      "choices": [
+        {
+          "id": "invest",
+          "title": "和重要的人分享經驗",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 3,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "agency"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先說出需要，和別人一起找方法",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "保留時間休息和陪伴",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "later-review",
+      "age": 80,
+      "title": "回望走過的岔路",
+      "recurringPerson": "一路相伴的人",
+      "storyQuestion": "選擇、環境與他人的幫助留下了什麼？",
+      "choices": [
+        {
+          "id": "invest",
+          "title": "和重要的人分享經驗",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 3,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "agency"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先說出需要，和別人一起找方法",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "保留時間休息和陪伴",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects"
+          ]
+        }
+      ]
+    }
+  ]
+}

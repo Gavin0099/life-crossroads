@@ -1,0 +1,23 @@
+Building for production...
+[Pre-planning 1 / 182]
+[Planning deferred tasks]
+[31 / 52]
+[32 / 53] LifeDomain
+[43 / 88]
+[45 / 88]
+[50 / 88]
+[52 / 88]
+[56 / 88]
+[58 / 88]
+[61 / 88]
+[64 / 88]
+[66 / 88]
+[67 / 88]
+[68 / 88] LifeDomain
+[76 / 89] LifeData
+[80 / 93]
+[81 / 93] LifeData
+[89 / 94] life-demo-product
+[91 / 95] life-demo-product
+[93 / 95] life-demo-product
+Build complete! (8.59秒)

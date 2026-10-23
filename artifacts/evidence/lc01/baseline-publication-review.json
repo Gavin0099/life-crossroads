@@ -1,0 +1,17 @@
+{
+  "reviewedCommits": [
+    "a468cbc0bef527ea44851ee0632a619ca1a797ff",
+    "7f34f784d2ed5ca946b6302bae3bea0dc51683e4"
+  ],
+  "uniqueBlobs": 95,
+  "credentialPatternCandidates": 0,
+  "review": "Reviewed committed tooling, memory, evidence logs and Git metadata. No credentials, personal records or private service payloads observed. Machine alias, local path and auto Git identity are incidental development metadata, retained for history traceability.",
+  "limits": "Pattern scan and source review are not proof that all possible secrets are absent. No upstream framework history/content imported beyond its public pinned submodule.",
+  "baselinePush": "main@7f34f784d2ed5ca946b6302bae3bea0dc51683e4",
+  "baselineCI": {
+    "url": "https://github.com/Gavin0099/life-crossroads/actions/runs/39907343443",
+    "basic-checks": "success",
+    "governance-audit": "success",
+    "gameCorrectnessClaim": false
+  }
+}
