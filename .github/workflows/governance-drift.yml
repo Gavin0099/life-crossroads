@@ -23,6 +23,12 @@ jobs:
             tail -100 artifacts/ios/build-and-test.log
             exit 1
           fi
+          python3 - <<'PY'
+          from pathlib import Path
+          for line in Path("artifacts/ios/build-and-test.log").read_text().splitlines():
+              if ("Test Case " in line and ("passed (" in line or "failed (" in line)) or "Executed " in line or "Deleted test Simulator:" in line:
+                  print(line)
+          PY
       - name: Preserve Simulator test result and screenshots
         if: always()
         uses: actions/upload-artifact@v4

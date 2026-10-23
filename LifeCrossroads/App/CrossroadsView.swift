@@ -245,6 +245,7 @@ struct CrossroadsView: View {
                         }
                         .fixedSize(horizontal: false, vertical: true)
                         .frame(maxWidth: .infinity, minHeight: 64, alignment: .leading).card()
+                        .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
                     .foregroundStyle(preview.applied ? Color.primary : Color.secondary)

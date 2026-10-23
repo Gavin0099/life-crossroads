@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "bash scripts/governance-check.sh --profile basic",
+  "exit_code": 0,
+  "started_at": "2026-10-23T16:03:04Z",
+  "finished_at": "2026-10-23T16:03:04Z",
+  "runner": "governance_tools.test_evidence_receipt_writer",
+  "linked_commit": "0524b8cde57fd034362bb2edfb2ff28bf1db41b2",
+  "output_artifacts": [
+    "artifacts/evidence/test-results/lc04-basic-ci-summary.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}

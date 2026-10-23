@@ -195,6 +195,17 @@ final class LifeCrossroadsUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["eventTitle"].exists)
     }
 
+    func testDecisionCardWhitespaceIsTappable() {
+        let app = launch(seed: "0")
+        start(app)
+        let choice = app.buttons["choice.invest"]
+        reveal(choice, in: app)
+        // A visible choice card is one tap target, including the space beside its text.
+        choice.coordinate(withNormalizedOffset: CGVector(dx: 0.8, dy: 0.5)).tap()
+        XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["chosenAction"].value as? String, "invest")
+    }
+
     func testForkPreservesOriginalResumesAfterRelaunchAndComparesFullRemainder() throws {
         let app = launch(seed: "0")
         start(app)

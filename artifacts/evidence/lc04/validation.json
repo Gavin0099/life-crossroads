@@ -8,11 +8,14 @@
   },
   "python_passed": 15,
   "ui": {
-    "unique_cases_passed": 6,
+    "unique_cases_passed": 7,
     "first_run_passed": 5,
     "first_run_failed": 1,
     "fixed_test_retest_passed": 1,
-    "initial_failure": "Duplicate accessibility nodes for confirmRestart; fixed test locator, no game behavior change."
+    "initial_failure": "Duplicate accessibility nodes for confirmRestart; fixed test locator, no game behavior change.",
+    "post_hit_region_fix_focused_passed": 2,
+    "before_hit_region_fix_whitespace_case_passed": 1,
+    "remote_initial_failure": "iOS18.5 first8-year tap remained choosing; retained ci-initial-failure.json; local iOS27 did not reproduce."
   },
   "simulators": [
     {
@@ -24,13 +27,23 @@
       "uuid": "B635D138-E78F-46DD-A2EC-51ACC13FD434",
       "deleted": true,
       "inventory_absent": true
+    },
+    {
+      "uuid": "0E4698C1-9979-4631-A2EF-57F09EFB3B90",
+      "deleted": true,
+      "inventory_absent": true
+    },
+    {
+      "uuid": "8AA8738B-B41A-4370-A8F2-F770E4EDE4EF",
+      "deleted": true,
+      "inventory_absent": true
     }
   ],
   "shared_runtimes_deleted": false,
   "source_sha256": {
     "LifeCrossroads.xcodeproj/project.pbxproj": "d6aa6e21daa2d0a669f1e1e275e3e18661f527e98bf941553c2e47101ed00fc3",
     "LifeCrossroads/App/BranchViews.swift": "93b73e73afcaf610fd2d6e6535d8cfc3f39348b69aac401ba397dd9a44e63388",
-    "LifeCrossroads/App/CrossroadsView.swift": "5df44c3bf877e7998d2e5cba69f83f1e2e049c51595c89ee1024d9694feb7c91",
+    "LifeCrossroads/App/CrossroadsView.swift": "37162e3918d279db83b97a9718d9613927d1add61752b14a52e5e2ad188e2f52",
     "LifeCrossroads/App/GameStore.swift": "b138ad7e912e6e4bce85856b0a89a721bc20076df1f95a30f555a76a0ca5f5d5",
     "LifeCrossroads/CLI/BranchSamples.swift": "db16ccccd0cf8e75fcb0563ad043371c68849668c0de3b135190c739c9e10057",
     "LifeCrossroads/CLI/CLIArguments.swift": "0d04bd372aa7b3e9e9e865f725e7949355b8a918ac626938130e81c6511bbda3",
@@ -43,7 +56,9 @@
     "Tests/LifeDomainTests/BranchExperimentTests.swift": "66233b7986c51a89c5a02bde316e40620e03dddb9ed25ccafab2d92d6dd346f2",
     "Tests/LifePersistenceTests/SaveRepositoryTests.swift": "9d432ad9955a195b99ebf667575ff422cdaef2eebf6473e6867e5ff245a736ea",
     "Tests/test_batch_report.py": "b8369d462168f67dd520c5f56f59453d82f305732bc9b9dbea863ad626efd9b3",
-    "UITests/LifeCrossroadsUITests.swift": "6af31ea9ede8cbb97ca285280272125c8260df9e9293e24e6c6a537ce6bf7a92"
+    "UITests/LifeCrossroadsUITests.swift": "f812aeddf5b4568437b9011143d58ae659900105d39fb8cf8f3d8687de7aeb29",
+    ".github/workflows/governance-drift.yml": "d4b07d1ec58b49da83843d874c538a95eb590eda6ef8be5ecf70672b3ba3580f",
+    "artifacts/evidence/lc04/tap-target-ios.sh": "6e4240c3f4ff645c0d59baa500236c1dd0b75dd2f6d6b83526ac488f89b51c01"
   },
   "receipts": [
     "artifacts/evidence/test-results/lc04-swift.json",
@@ -52,7 +67,11 @@
     "artifacts/evidence/test-results/lc04-ios.json",
     "artifacts/evidence/test-results/lc04-ios-retest.json",
     "artifacts/evidence/test-results/lc04-basic-final.json",
-    "artifacts/evidence/test-results/lc04-sample.json"
+    "artifacts/evidence/test-results/lc04-sample.json",
+    "artifacts/evidence/test-results/lc04-tap-before.json",
+    "artifacts/evidence/test-results/lc04-tap-and-branch.json",
+    "artifacts/evidence/test-results/lc04-basic-ci-summary.json",
+    "artifacts/evidence/test-results/lc04-basic-pre-push.json"
   ],
   "not_claimed": [
     "Physical iPhone",
@@ -61,5 +80,7 @@
     "P1 complete",
     "merged",
     "released"
-  ]
+  ],
+  "remote_initial_evidence": "artifacts/evidence/lc04/ci-initial-failure.json",
+  "captured_log_formatting": "Trailing whitespace removed for Git diff; command/results unchanged; raw logs retained under artifacts/governance and remote artifact12513243116."
 }
