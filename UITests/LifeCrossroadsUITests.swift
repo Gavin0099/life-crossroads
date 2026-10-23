@@ -112,7 +112,7 @@ final class LifeCrossroadsUITests: XCTestCase {
     private func reveal(_ element: XCUIElement, in app: XCUIApplication) {
         for _ in 0..<15 {
             let bottomClearance: CGFloat = app.buttons["continueLife"].exists && !app.buttons["closeTrace"].exists ? 110 : 24
-            if element.isHittable && element.frame.midY > 100 && element.frame.midY < app.frame.maxY - bottomClearance { return }
+            if element.exists && element.isHittable && element.frame.midY > 100 && element.frame.midY < app.frame.maxY - bottomClearance { return }
             if element.exists && element.frame.midY < 100 { app.swipeDown() }
             else { app.swipeUp() }
         }

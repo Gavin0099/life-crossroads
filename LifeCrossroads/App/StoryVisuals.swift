@@ -114,7 +114,7 @@ struct CountryContextCard: View {
             }
             Text("這些人口比例不能推定沐沐家有沒有設備或電力；同一國家的家庭也可能不同。")
                 .font(.footnote).foregroundStyle(.secondary)
-            Label("河畔是大家共用的想像舞台，不是\(country.name)的實景。", systemImage: "book")
+            Text("河畔是大家共用的想像舞台，不是\(country.name)的實景。")
                 .font(.footnote)
                 .accessibilityIdentifier("countryStageBoundary")
             DisclosureGroup("查看數字與來源") {
