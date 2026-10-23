@@ -1,5 +1,7 @@
 # LC-02：四國完整人生實作進度
 
+> 2026-10-23 獨立審查後狀態：**HOLD，修正中，不合併**。以下保留初次交付紀錄；最新修正及證據以 [審查修正](pr-review-remediation.md) 為準。首次流程與 CI 通過不代表模型、遊戲性或兒少驗收通過。
+
 LC-01 [PR #1](https://github.com/Gavin0099/life-crossroads/pull/1) 的
 [遠端 CI](https://github.com/Gavin0099/life-crossroads/actions/runs/39908800771) 通過後，
 依使用者「直接展開」的授權接續實作。此片獨立分支，建立在 LC-01 上，未自動合併 PR。

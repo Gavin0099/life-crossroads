@@ -1,0 +1,35 @@
+Building for debugging...
+[Pre-planning 1 / 211]
+[Planning deferred tasks]
+[1 / 5] LifeDomain-product
+[8 / 19] LifeDomainTests-product
+[10 / 21] LifeDomainTests-product
+[15 / 21] LifeDomainTests-product
+[17 / 21] LifeDomainTests-product
+Build complete! (1.86秒)
+Test Suite 'Selected tests' started at 2026-10-23 15:23:10.133.
+Test Suite 'LifeDomainTests.xctest' started at 2026-10-23 15:23:10.134.
+Test Suite 'StoryBranchTests' started at 2026-10-23 15:23:10.134.
+Test Case '-[LifeDomainTests.StoryBranchTests testChildhoodFriendshipChangesWhoAppearsAtSeventyTwo]' started.
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/StoryBranchTests.swift:24: error: -[LifeDomainTests.StoryBranchTests testChildhoodFriendshipChangesWhoAppearsAtSeventyTwo] : XCTAssertEqual failed: ("童年朋友") is not equal to ("阿禾")
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/StoryBranchTests.swift:25: error: -[LifeDomainTests.StoryBranchTests testChildhoodFriendshipChangesWhoAppearsAtSeventyTwo] : XCTAssertEqual failed: ("童年朋友") is not equal to ("小澄")
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/StoryBranchTests.swift:26: error: -[LifeDomainTests.StoryBranchTests testChildhoodFriendshipChangesWhoAppearsAtSeventyTwo] : XCTAssertNotEqual failed: ("和老朋友重新聯絡") is equal to ("和老朋友重新聯絡")
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/StoryBranchTests.swift:27: error: -[LifeDomainTests.StoryBranchTests testChildhoodFriendshipChangesWhoAppearsAtSeventyTwo] : XCTAssertNotEqual failed: ("["和重要的人分享經驗", "先說出需要，和別人一起找方法", "保留時間休息和陪伴"]") is equal to ("["和重要的人分享經驗", "先說出需要，和別人一起找方法", "保留時間休息和陪伴"]")
+Test Case '-[LifeDomainTests.StoryBranchTests testChildhoodFriendshipChangesWhoAppearsAtSeventyTwo]' failed (0.137 seconds).
+Test Case '-[LifeDomainTests.StoryBranchTests testLearningRouteChangesMentorSceneAndWorkshopOpportunity]' started.
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/StoryBranchTests.swift:39: error: -[LifeDomainTests.StoryBranchTests testLearningRouteChangesMentorSceneAndWorkshopOpportunity] : XCTAssertNotEqual failed: ("選擇想繼續學的方向") is equal to ("選擇想繼續學的方向")
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/StoryBranchTests.swift:40: error: -[LifeDomainTests.StoryBranchTests testLearningRouteChangesMentorSceneAndWorkshopOpportunity] : XCTAssertTrue failed
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/StoryBranchTests.swift:42: error: -[LifeDomainTests.StoryBranchTests testLearningRouteChangesMentorSceneAndWorkshopOpportunity] : XCTAssertNotEqual failed: ("社區指導者") is equal to ("社區指導者")
+Test Case '-[LifeDomainTests.StoryBranchTests testLearningRouteChangesMentorSceneAndWorkshopOpportunity]' failed (0.010 seconds).
+Test Case '-[LifeDomainTests.StoryBranchTests testSharedCareArrangementUnlocksReciprocalSupport]' started.
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/StoryBranchTests.swift:50: error: -[LifeDomainTests.StoryBranchTests testSharedCareArrangementUnlocksReciprocalSupport] : XCTAssertTrue failed
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/StoryBranchTests.swift:52: error: -[LifeDomainTests.StoryBranchTests testSharedCareArrangementUnlocksReciprocalSupport] : XCTAssertNotEqual failed: ("朋友需要有人一起想辦法") is equal to ("朋友需要有人一起想辦法")
+Test Case '-[LifeDomainTests.StoryBranchTests testSharedCareArrangementUnlocksReciprocalSupport]' failed (0.012 seconds).
+Test Suite 'StoryBranchTests' failed at 2026-10-23 15:23:10.292.
+	 Executed 3 tests, with 9 failures (0 unexpected) in 0.158 (0.159) seconds
+Test Suite 'LifeDomainTests.xctest' failed at 2026-10-23 15:23:10.292.
+	 Executed 3 tests, with 9 failures (0 unexpected) in 0.158 (0.159) seconds
+Test Suite 'Selected tests' failed at 2026-10-23 15:23:10.292.
+	 Executed 3 tests, with 9 failures (0 unexpected) in 0.158 (0.159) seconds
+Note: Some test targets reported failures:
+  - LifeDomainTests (XCTest)

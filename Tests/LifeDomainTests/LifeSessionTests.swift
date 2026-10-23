@@ -5,9 +5,9 @@ import LifeDomain
 final class LifeSessionTests: XCTestCase {
     func testEveryDecisionHasOriginalStoryText() throws {
         let c = try StatisticsRepository.bundled()
-        XCTAssertEqual(Set(EventNarratives.texts.keys), Set(c.decisions.map(\.id)))
+        XCTAssertTrue(Set(c.decisions.map(\.id)).isSubset(of: Set(EventNarratives.texts.keys)))
         XCTAssertTrue(EventNarratives.texts.values.allSatisfy { $0.count >= 60 })
-        XCTAssertEqual(c.contentVersion, "lc02-story-2")
+        XCTAssertEqual(c.contentVersion, "lc02-story-3")
     }
     func testFourCountryEightFamilyPlaythroughsReachReviewAndCannotRepeat() throws {
         let c = try StatisticsRepository.bundled()

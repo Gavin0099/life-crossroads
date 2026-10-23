@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "dataVersion": "lc01-data-2",
-  "contentVersion": "lc02-story-2",
+  "contentVersion": "lc02-story-3",
   "referenceYear": 2023,
   "sources": [
     {
@@ -105,6 +105,12 @@
       "version": "1",
       "statement": "帶有後續標記的可行決策在4歲後由同一位虛構人物呼應，人際+2、技能+1；只觸發一次。",
       "limitation": "為LC-02保留人物牽掛的最小故事契約，並非證實現實長期因果；完整事件內容及試玩仍待後續切片。"
+    },
+    {
+      "id": "story-branches",
+      "version": "1",
+      "statement": "三條虛構故事條件：10歲與阿禾創作或調整碰面才在72歲重逢，否則和社區夥伴小澄開風車桌認識新鄰居；13歲線上/紙本/未製作決定17歲學習場景，作品經驗加技能至少28才可帶領工作坊；39歲共組照顧輪班才在52歲沿用互助約定，健康至少55才可自願接一小段。每次記錄實際歷史、資源門檻、場景及選項。",
+      "limitation": "人物、約定、門檻與後續路線皆為遊戲敘事假設，不是心理、醫學或社會因果；沒有連結不等於個人失敗，所有路線保留求助及免費休息。國家名稱不參與故事條件。"
     }
   ],
   "countries": [
@@ -639,7 +645,7 @@
       "choices": [
         {
           "id": "invest",
-          "title": "投入時間一起學習",
+          "title": "和大人把紙箱做成會動的玩具",
           "kind": "learn",
           "control": "sharedWithAdult",
           "minimumAge": 0,
@@ -662,7 +668,7 @@
         },
         {
           "id": "ask",
-          "title": "先說出需要，和別人一起找方法",
+          "title": "請大人幫忙借安全工具和紙本圖解",
           "kind": "askSupport",
           "control": "personal",
           "minimumAge": 0,
@@ -684,7 +690,7 @@
         },
         {
           "id": "rest",
-          "title": "保留時間休息和陪伴",
+          "title": "先收好紙箱，留時間打球與休息",
           "kind": "rest",
           "control": "personal",
           "minimumAge": 0,
@@ -708,13 +714,13 @@
     {
       "id": "child-friend",
       "age": 10,
-      "title": "和朋友約好一起完成",
-      "recurringPerson": "童年朋友",
+      "title": "和阿禾一起完成雙人風車",
+      "recurringPerson": "阿禾",
       "storyQuestion": "練習和陪伴要怎麼分配？",
       "choices": [
         {
           "id": "invest",
-          "title": "投入時間一起學習",
+          "title": "和阿禾完成雙人風車，約好保持聯絡",
           "kind": "learn",
           "control": "sharedWithAdult",
           "minimumAge": 0,
@@ -737,7 +743,7 @@
         },
         {
           "id": "ask",
-          "title": "先說出需要，和別人一起找方法",
+          "title": "請阿禾和大人一起調整碰面方式",
           "kind": "askSupport",
           "control": "personal",
           "minimumAge": 0,
@@ -759,7 +765,7 @@
         },
         {
           "id": "rest",
-          "title": "保留時間休息和陪伴",
+          "title": "今天自己休息，暫時不約下次",
           "kind": "rest",
           "control": "personal",
           "minimumAge": 0,
@@ -784,12 +790,12 @@
       "id": "child-transition",
       "age": 12,
       "title": "準備進入新的學校",
-      "recurringPerson": "陪你準備的老師",
+      "recurringPerson": "樹老師",
       "storyQuestion": "我需要什麼幫忙？",
       "choices": [
         {
           "id": "invest",
-          "title": "投入時間一起學習",
+          "title": "和樹老師一起畫新學校的探路圖",
           "kind": "learn",
           "control": "sharedWithAdult",
           "minimumAge": 0,
@@ -812,7 +818,7 @@
         },
         {
           "id": "ask",
-          "title": "先說出需要，和別人一起找方法",
+          "title": "請樹老師陪你列出開學前的問題",
           "kind": "askSupport",
           "control": "personal",
           "minimumAge": 0,
@@ -834,7 +840,7 @@
         },
         {
           "id": "rest",
-          "title": "保留時間休息和陪伴",
+          "title": "先照顧心情，今晚早一點休息",
           "kind": "rest",
           "control": "personal",
           "minimumAge": 0,
@@ -859,7 +865,7 @@
       "id": "teen-project",
       "age": 13,
       "title": "想參加共同創作",
-      "recurringPerson": "一起找材料的同伴",
+      "recurringPerson": "樹老師",
       "storyQuestion": "同樣投入，為什麼準備成本不同？",
       "choices": [
         {
@@ -910,7 +916,7 @@
         },
         {
           "id": "ask",
-          "title": "先說出需要，和別人一起找方法",
+          "title": "請樹老師陪你找適合的創作起點",
           "kind": "askSupport",
           "control": "personal",
           "minimumAge": 0,
@@ -932,7 +938,7 @@
         },
         {
           "id": "rest",
-          "title": "保留時間休息和陪伴",
+          "title": "先放下作品，保留自己的課後時間",
           "kind": "rest",
           "control": "personal",
           "minimumAge": 0,
@@ -957,9 +963,31 @@
       "id": "teen-direction",
       "age": 17,
       "title": "選擇想繼續學的方向",
-      "recurringPerson": "社區指導者",
+      "recurringPerson": "樹老師",
       "storyQuestion": "學習會留下什麼可能？",
       "choices": [
+        {
+          "id": "leadWorkshop",
+          "title": "和樹老師一起帶領紙本小工作坊",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 13,
+          "timeCost": 2,
+          "energyCost": 2,
+          "materialCost": 1,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 3,
+            "skills": 2
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches"
+          ]
+        },
         {
           "id": "invest",
           "title": "參加需要連網的遠距課程",
@@ -1008,7 +1036,7 @@
         },
         {
           "id": "ask",
-          "title": "先說出需要，和別人一起找方法",
+          "title": "和指導者討論課程及現在的負擔",
           "kind": "askSupport",
           "control": "personal",
           "minimumAge": 0,
@@ -1030,7 +1058,7 @@
         },
         {
           "id": "rest",
-          "title": "保留時間休息和陪伴",
+          "title": "課程先緩一緩，留下喘息的空間",
           "kind": "rest",
           "control": "personal",
           "minimumAge": 0,
@@ -1055,12 +1083,12 @@
       "id": "teen-launch",
       "age": 21,
       "title": "離開熟悉的地方之前",
-      "recurringPerson": "一起長大的朋友",
+      "recurringPerson": "小澄",
       "storyQuestion": "可以帶著哪些支持出發？",
       "choices": [
         {
           "id": "invest",
-          "title": "投入時間一起學習",
+          "title": "和小澄練習獨立生活的記帳方法",
           "kind": "learn",
           "control": "personal",
           "minimumAge": 0,
@@ -1083,7 +1111,7 @@
         },
         {
           "id": "ask",
-          "title": "先說出需要，和別人一起找方法",
+          "title": "請小澄一起列出搬出後能求助的人",
           "kind": "askSupport",
           "control": "personal",
           "minimumAge": 0,
@@ -1105,7 +1133,7 @@
         },
         {
           "id": "rest",
-          "title": "保留時間休息和陪伴",
+          "title": "暫緩練習，先和重要的人道別",
           "kind": "rest",
           "control": "personal",
           "minimumAge": 0,
@@ -1181,7 +1209,7 @@
         },
         {
           "id": "ask",
-          "title": "先說出需要，和別人一起找方法",
+          "title": "和工作夥伴討論調班與進修負擔",
           "kind": "askSupport",
           "control": "personal",
           "minimumAge": 0,
@@ -1203,7 +1231,7 @@
         },
         {
           "id": "rest",
-          "title": "保留時間休息和陪伴",
+          "title": "這回先不加課，把下班時間留給休息",
           "kind": "rest",
           "control": "personal",
           "minimumAge": 0,
@@ -1233,7 +1261,7 @@
       "choices": [
         {
           "id": "invest",
-          "title": "增加一段工作時間",
+          "title": "接下一段加班，增加眼前的收入",
           "kind": "work",
           "control": "adultResponsibility",
           "minimumAge": 23,
@@ -1256,7 +1284,7 @@
         },
         {
           "id": "ask",
-          "title": "先說出需要，和別人一起找方法",
+          "title": "和同事討論調整排班的可能",
           "kind": "askSupport",
           "control": "personal",
           "minimumAge": 0,
@@ -1278,7 +1306,7 @@
         },
         {
           "id": "rest",
-          "title": "保留時間休息和陪伴",
+          "title": "不接這段加班，留下吃飯和休息時間",
           "kind": "rest",
           "control": "personal",
           "minimumAge": 0,
@@ -1303,12 +1331,12 @@
       "id": "adult-care",
       "age": 39,
       "title": "一起分擔照顧安排",
-      "recurringPerson": "重要的家人",
+      "recurringPerson": "小澄",
       "storyQuestion": "責任可以和誰一起承擔？",
       "choices": [
         {
           "id": "invest",
-          "title": "和別人共同安排照顧",
+          "title": "和小澄共組照顧輪班，訂下聯絡約定",
           "kind": "care",
           "control": "adultResponsibility",
           "minimumAge": 23,
@@ -1331,7 +1359,7 @@
         },
         {
           "id": "ask",
-          "title": "先說出需要，和別人一起找方法",
+          "title": "請小澄陪你查詢照顧支持資訊",
           "kind": "askSupport",
           "control": "personal",
           "minimumAge": 0,
@@ -1353,7 +1381,7 @@
         },
         {
           "id": "rest",
-          "title": "保留時間休息和陪伴",
+          "title": "先說明精力有限，暫緩承擔新安排",
           "kind": "rest",
           "control": "personal",
           "minimumAge": 0,
@@ -1378,7 +1406,7 @@
       "id": "middle-turn",
       "age": 45,
       "title": "想嘗試新的工作方向",
-      "recurringPerson": "多年來的夥伴",
+      "recurringPerson": "小澄",
       "storyQuestion": "已有經驗能帶我去哪裡？",
       "choices": [
         {
@@ -1429,7 +1457,7 @@
         },
         {
           "id": "ask",
-          "title": "先說出需要，和別人一起找方法",
+          "title": "請小澄陪你評估轉換方向的負擔",
           "kind": "askSupport",
           "control": "personal",
           "minimumAge": 0,
@@ -1451,7 +1479,7 @@
         },
         {
           "id": "rest",
-          "title": "保留時間休息和陪伴",
+          "title": "暫緩轉換，先維持現在的步調",
           "kind": "rest",
           "control": "personal",
           "minimumAge": 0,
@@ -1476,12 +1504,35 @@
       "id": "middle-support",
       "age": 52,
       "title": "朋友需要有人一起想辦法",
-      "recurringPerson": "曾經支持你的朋友",
+      "recurringPerson": "小澄",
       "storyQuestion": "我能提供什麼支持？",
       "choices": [
         {
+          "id": "shareShift",
+          "title": "自願接下一小段既有輪班，讓夥伴喘息",
+          "kind": "care",
+          "control": "adultResponsibility",
+          "minimumAge": 23,
+          "timeCost": 2,
+          "energyCost": 2,
+          "materialCost": 0,
+          "effect": {
+            "health": -1,
+            "financial": 0,
+            "relationships": 3,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
           "id": "invest",
-          "title": "和別人共同安排照顧",
+          "title": "和小澄一起整理照顧安排",
           "kind": "care",
           "control": "adultResponsibility",
           "minimumAge": 23,
@@ -1504,7 +1555,7 @@
         },
         {
           "id": "ask",
-          "title": "先說出需要，和別人一起找方法",
+          "title": "請小澄陪你找適合的支持",
           "kind": "askSupport",
           "control": "personal",
           "minimumAge": 0,
@@ -1526,7 +1577,7 @@
         },
         {
           "id": "rest",
-          "title": "保留時間休息和陪伴",
+          "title": "先休息，把自己能做到的界線說清楚",
           "kind": "rest",
           "control": "personal",
           "minimumAge": 0,
@@ -1551,12 +1602,12 @@
       "id": "middle-rhythm",
       "age": 59,
       "title": "為下一階段調整節奏",
-      "recurringPerson": "一起散步的鄰居",
+      "recurringPerson": "小澄",
       "storyQuestion": "什麼是我想保留的日常？",
       "choices": [
         {
           "id": "invest",
-          "title": "和重要的人分享經驗",
+          "title": "和小澄交換想保留的散步路線",
           "kind": "share",
           "control": "personal",
           "minimumAge": 0,
@@ -1579,7 +1630,7 @@
         },
         {
           "id": "ask",
-          "title": "先說出需要，和別人一起找方法",
+          "title": "請小澄陪你調整一週的日常安排",
           "kind": "askSupport",
           "control": "personal",
           "minimumAge": 0,
@@ -1601,7 +1652,7 @@
         },
         {
           "id": "rest",
-          "title": "保留時間休息和陪伴",
+          "title": "今天獨自慢慢走，留一段安靜時間",
           "kind": "rest",
           "control": "personal",
           "minimumAge": 0,
@@ -1631,7 +1682,7 @@
       "choices": [
         {
           "id": "invest",
-          "title": "和重要的人分享經驗",
+          "title": "和年輕夥伴做一本失敗也值得記下的手冊",
           "kind": "share",
           "control": "personal",
           "minimumAge": 0,
@@ -1654,7 +1705,7 @@
         },
         {
           "id": "ask",
-          "title": "先說出需要，和別人一起找方法",
+          "title": "請夥伴挑一件最想聽的小故事",
           "kind": "askSupport",
           "control": "personal",
           "minimumAge": 0,
@@ -1676,7 +1727,7 @@
         },
         {
           "id": "rest",
-          "title": "保留時間休息和陪伴",
+          "title": "今天先歇一歇，等有精神時再分享",
           "kind": "rest",
           "control": "personal",
           "minimumAge": 0,
@@ -1700,13 +1751,13 @@
     {
       "id": "later-reconnect",
       "age": 72,
-      "title": "和老朋友重新聯絡",
-      "recurringPerson": "童年朋友",
+      "title": "今天會和誰留下新回憶",
+      "recurringPerson": "小澄",
       "storyQuestion": "我還想和誰一起創造回憶？",
       "choices": [
         {
           "id": "invest",
-          "title": "和重要的人分享經驗",
+          "title": "和相遇的夥伴做一架風車",
           "kind": "share",
           "control": "personal",
           "minimumAge": 0,
@@ -1729,7 +1780,7 @@
         },
         {
           "id": "ask",
-          "title": "先說出需要，和別人一起找方法",
+          "title": "一起找適合現在體力的活動",
           "kind": "askSupport",
           "control": "personal",
           "minimumAge": 0,
@@ -1751,7 +1802,7 @@
         },
         {
           "id": "rest",
-          "title": "保留時間休息和陪伴",
+          "title": "留一天給自己的步調",
           "kind": "rest",
           "control": "personal",
           "minimumAge": 0,
@@ -1781,7 +1832,7 @@
       "choices": [
         {
           "id": "invest",
-          "title": "和重要的人分享經驗",
+          "title": "把重要選擇與幫助寫進人生小冊",
           "kind": "share",
           "control": "personal",
           "minimumAge": 0,
@@ -1804,7 +1855,7 @@
         },
         {
           "id": "ask",
-          "title": "先說出需要，和別人一起找方法",
+          "title": "請身邊的人一起補上珍惜的片段",
           "kind": "askSupport",
           "control": "personal",
           "minimumAge": 0,
@@ -1826,7 +1877,7 @@
         },
         {
           "id": "rest",
-          "title": "保留時間休息和陪伴",
+          "title": "合上小冊，安靜看看走過的日子",
           "kind": "rest",
           "control": "personal",
           "minimumAge": 0,

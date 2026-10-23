@@ -63,6 +63,6 @@ final class GameStore: ObservableObject {
     func name(_ country: String) -> String { catalog?.countries.first { $0.code == country }?.name ?? country }
     func title(_ event: String) -> String { catalog?.decisions.first { $0.id == event }?.title ?? event }
     func choiceTitle(_ trace: ConsequenceTrace) -> String {
-        catalog?.decisions.first { $0.id == trace.eventID }?.choices.first { $0.id == trace.choiceID }?.title ?? trace.choiceID
+        trace.choiceTitle
     }
 }

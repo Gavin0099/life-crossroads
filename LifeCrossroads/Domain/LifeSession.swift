@@ -20,7 +20,7 @@ public struct LifeSession: Codable, Equatable, Sendable {
         guard phase == .choosing, traces.count < catalog.decisions.count else {
             throw ModelError.invalid("not choosing")
         }
-        return catalog.decisions[traces.count]
+        return StoryBranchEngine.project(event: catalog.decisions[traces.count], state: state).event
     }
 
     public func preview(choiceID: String, catalog: ModelCatalog) throws -> ConsequenceTrace {

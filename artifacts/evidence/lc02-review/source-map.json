@@ -1,0 +1,90 @@
+{
+  "source": "artifacts/ios/LC02-20261023T073746Z.xcresult",
+  "receipt": "artifacts/evidence/test-results/pr2-review-ui-fixed.json",
+  "attachments": [
+    {
+      "file": "life-review.png",
+      "native_export": {
+        "configurationName": "Test Scheme Action",
+        "deviceId": "2C14F64F-AF2D-44C7-B9A2-48EC862CD763",
+        "deviceName": "LifeCrossroads Review Narrow",
+        "exportedFileName": "8C28B3B0-01AF-4F69-B4D9-A67F2B90EDC5.png",
+        "isAssociatedWithFailure": false,
+        "suggestedHumanReadableName": "life-review_0_87336545-B280-4B3D-A1E9-4F2EEDD4826D.png",
+        "timestamp": 1792741195.075
+      },
+      "testIdentifier": "LifeCrossroadsUITests/testCompleteLifeWithVisibleComparisonAndExecutedExplanation()",
+      "sha256": "04cbed44173c32265b4ea2e7fedffa555cc38c9e8f46e9eb068e084f520b18af"
+    },
+    {
+      "file": "reflection-scene.png",
+      "native_export": {
+        "configurationName": "Test Scheme Action",
+        "deviceId": "2C14F64F-AF2D-44C7-B9A2-48EC862CD763",
+        "deviceName": "LifeCrossroads Review Narrow",
+        "exportedFileName": "4323CA9B-82C7-49F4-BB6B-D4EA2D902476.png",
+        "isAssociatedWithFailure": false,
+        "suggestedHumanReadableName": "reflection-scene_0_A7510DED-02A1-450D-9416-AFAF688D2409.png",
+        "timestamp": 1792741108.192
+      },
+      "testIdentifier": "LifeCrossroadsUITests/testCompleteLifeWithVisibleComparisonAndExecutedExplanation()",
+      "sha256": "b83648c261350c3b8b53a8139950227c3bf01eac7f21b186efe61d4f652985c0"
+    },
+    {
+      "file": "model-comparison.png",
+      "native_export": {
+        "configurationName": "Test Scheme Action",
+        "deviceId": "2C14F64F-AF2D-44C7-B9A2-48EC862CD763",
+        "deviceName": "LifeCrossroads Review Narrow",
+        "exportedFileName": "E188AC85-8504-4C8C-8F4B-6F0B5A3E5BDE.png",
+        "isAssociatedWithFailure": false,
+        "suggestedHumanReadableName": "model-comparison_0_FE96A7FB-1EDD-4A0E-9B1F-36D2BE3C1DFA.png",
+        "timestamp": 1792741104.584
+      },
+      "testIdentifier": "LifeCrossroadsUITests/testCompleteLifeWithVisibleComparisonAndExecutedExplanation()",
+      "sha256": "a9716bca98969b9e66926cc3c0ee6e142f3bbf4c5c1eef01189193c198602d5f"
+    },
+    {
+      "file": "decision-scene.png",
+      "native_export": {
+        "configurationName": "Test Scheme Action",
+        "deviceId": "2C14F64F-AF2D-44C7-B9A2-48EC862CD763",
+        "deviceName": "LifeCrossroads Review Narrow",
+        "exportedFileName": "C612A648-A898-48F7-8064-FB0FF49D80CC.png",
+        "isAssociatedWithFailure": false,
+        "suggestedHumanReadableName": "decision-scene_0_7B2C0633-8CC4-45C2-B4C5-6D0759BC1B8C.png",
+        "timestamp": 1792741095.714
+      },
+      "testIdentifier": "LifeCrossroadsUITests/testCompleteLifeWithVisibleComparisonAndExecutedExplanation()",
+      "sha256": "a35bc87756016384dcf7f8aeaa3f695f0d6f4462ad96c122a581ce27c9d22402"
+    },
+    {
+      "file": "birth-scene.png",
+      "native_export": {
+        "configurationName": "Test Scheme Action",
+        "deviceId": "2C14F64F-AF2D-44C7-B9A2-48EC862CD763",
+        "deviceName": "LifeCrossroads Review Narrow",
+        "exportedFileName": "45256724-2B68-4D29-9FE2-37960A02AA38.png",
+        "isAssociatedWithFailure": false,
+        "suggestedHumanReadableName": "birth-scene_0_C5E69395-7B46-40AE-9612-A564C8DF2BBE.png",
+        "timestamp": 1792741092.41
+      },
+      "testIdentifier": "LifeCrossroadsUITests/testCompleteLifeWithVisibleComparisonAndExecutedExplanation()",
+      "sha256": "cd0385205df9fd2054932b28ca3b73942f94e4da220935e390de6f99d7ead750"
+    },
+    {
+      "file": "rest-actual-influences.png",
+      "native_export": {
+        "configurationName": "Test Scheme Action",
+        "deviceId": "2C14F64F-AF2D-44C7-B9A2-48EC862CD763",
+        "deviceName": "LifeCrossroads Review Narrow",
+        "exportedFileName": "C941C651-3033-42BB-849F-F047B5185C52.png",
+        "isAssociatedWithFailure": false,
+        "suggestedHumanReadableName": "rest-actual-influences_0_C839C185-CB8F-410C-AA53-70CF2920D411.png",
+        "timestamp": 1792741219.067
+      },
+      "testIdentifier": "LifeCrossroadsUITests/testRestComparisonAndExplanationUseTheActualChoice()",
+      "sha256": "e1ecd435d9538f86a86900745b57fb604f97244ac847e82c349995388b2c58f9"
+    }
+  ]
+}
