@@ -59,3 +59,11 @@ PR #1 修正實作為 `7cdce97d32e5724806258cdff95008aad1046a75`，證據提交�
 - 台灣缺少已核對的同口徑資料，保留 blocked，不能補零；本版四國可玩不代表八國 P1 通過。
 - 本輪保持 15 個決策節點；條件變體與新增替代選項不計成新增原創事件數。50～70 事件、存檔及完整回溯實驗維持後續 slices。
 - 兩 PR 維持 HOLD，由原審查者確認修正；不合併、不發布。
+
+### 本輪可覆核證據
+
+PR #2 實作提交 `4993c1aa0065d4a0343fb149fda0fe3d160394f0`。提交後再執行 46 項 Swift 與 3 項 Python 測試，皆 exit 0，收據 `pr2-review-committed.json` / `pr2-review-python.json` 直接綁定此提交。Release build、八段人生 CLI 及離線來源檢查亦成功。成功 UI 測試的 32 個來源檔案與該提交逐一相符，見 `pr2-ui-commit-binding.json`。
+
+兩項標準字級 UI 測試在 SE 第三代 / iOS 27.0 通過；同一部 Simulator 設為 `accessibility-extra-extra-extra-large` 後，另重跑「休息比較與實際原因」亦正常通過，見 `pr2-review-large-text.json`。這是最大字級的該條關鍵操作證據，不能延伸為完整無障礙、VoiceOver、兒少閱讀節奏或真實 iPhone 已驗收。原始輸出保留空白與警告；diff whitespace 檢查排除這些未改寫的 raw evidence，程式與資料的檢查通過。
+
+框架基本檢查 6 項通過，與遊戲的 46 項測試分開計算；完整 runtime 治理仍 advisory。遠端是否通過，應核對 PR 最新 head 對應 Actions，而不是引用先前 CI。

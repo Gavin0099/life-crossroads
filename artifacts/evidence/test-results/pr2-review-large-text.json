@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "xcodebuild -project LifeCrossroads.xcodeproj -scheme LifeCrossroads -destination \"platform=iOS Simulator,id=2C14F64F-AF2D-44C7-B9A2-48EC862CD763\" -derivedDataPath .build/ios-app -resultBundlePath artifacts/ios/PR2-LargeText-20261023T0743.xcresult -only-testing:LifeCrossroadsUITests/LifeCrossroadsUITests/testRestComparisonAndExplanationUseTheActualChoice CODE_SIGNING_ALLOWED=NO test",
+  "exit_code": 0,
+  "started_at": "2026-10-23T07:43:41Z",
+  "finished_at": "2026-10-23T07:44:41Z",
+  "runner": "governance_tools.test_evidence_receipt_writer",
+  "linked_commit": "4993c1aa0065d4a0343fb149fda0fe3d160394f0",
+  "output_artifacts": [
+    "artifacts/evidence/test-results/pr2-review-large-text.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}

@@ -80,3 +80,14 @@
 - Validation boundary: PASS: artifacts/evidence/test-results/pr1-review-committed.json -> exit_code=0, 29 Swift tests; PASS: artifacts/evidence/test-results/pr1-model-review-python.json -> exit_code=0, 3 Python tests. Pre-fix failures: artifacts/evidence/review/pr1-before-python.txt and pr1-before-swift.txt.
 - Next action: 推回PR #1並同步PR #2，修正實際因素摘要及指定選擇比較，再讓Visual與內容Agent並行。不得合併PR。
 - PLAN reconciliation: `updated`
+
+<!-- memory_record_projection:review-log:574ed514b9192d34be6870c62cdd49d82ef146601dd13731b73029e80b9a8f52 -->
+### Canonical memory checkpoint — PR2-review-2026-10-23
+
+- Writer: `governance_tools.memory_record`
+- Record identity: `574ed514b9192d34be6870c62cdd49d82ef146601dd13731b73029e80b9a8f52`
+- Commit binding: `4993c1aa0065d4a0343fb149fda0fe3d160394f0` (bound)
+- Record: 純Swift故事條件同時驅動UI與resolver；trace保存實際標題人物與資源門檻。修正SE小螢幕原因入口觸控，原始失敗及成功證據均保留。八國P1與15節點未縮減，不合併或發布。
+- Validation boundary: PASS: artifacts/evidence/test-results/pr2-review-committed.json ->exit_code=0 (46 Swift); PASS: pr2-review-python.json (3 Python); PASS: pr2-review-ui-fixed.json (2 SE UI, 32 sources match committed implementation); PASS: pr2-review-large-text.json (one AX XXXL repeat). Release/demo/offline/basic6 PASS. Prior UI receipt exit143 after failed assertions is not normal completion.
+- Next action: 推回原PR並核對最新head CI；兩PR保留HOLD；實機、VoiceOver及10至15歲兒少節奏/娛樂性仍待實測。
+- PLAN reconciliation: `updated`

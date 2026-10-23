@@ -1,0 +1,349 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project LifeCrossroads.xcodeproj -scheme LifeCrossroads -destination "platform=iOS Simulator,id=2C14F64F-AF2D-44C7-B9A2-48EC862CD763" -derivedDataPath .build/ios-app -resultBundlePath artifacts/ios/PR2-LargeText-20261023T0743.xcresult "-only-testing:LifeCrossroadsUITests/LifeCrossroadsUITests/testRestComparisonAndExplanationUseTheActualChoice" CODE_SIGNING_ALLOWED=NO test
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  LifeCrossroads: /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads @ local
+
+Writing result bundle at path:
+	/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/ios/PR2-LargeText-20261023T0743.xcresult
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (7 targets)
+    Target 'LifeCrossroadsUITests' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeCrossroads' in project 'LifeCrossroads'
+    Target 'LifeCrossroads' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeDomain-product' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeData-product' in project 'LifeCrossroads'
+    Target 'LifeData-product' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeData' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeCrossroads_LifeData' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeDomain' in project 'LifeCrossroads'
+    Target 'LifeData' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeCrossroads_LifeData' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeDomain' in project 'LifeCrossroads'
+    Target 'LifeCrossroads_LifeData' in project 'LifeCrossroads' (no dependencies)
+    Target 'LifeDomain-product' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeDomain' in project 'LifeCrossroads'
+    Target 'LifeDomain' in project 'LifeCrossroads' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/LifeCrossroads/App/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+Build description signature: dc536644e2526711a19e7d1f3e4c7b2e
+Build description path: /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Intermediates.noindex/XCBuildData/dc536644e2526711a19e7d1f3e4c7b2e.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-35d3147121984ba087c28d913653d626.sdkstatcache
+    cd /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/LifeCrossroads.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -o /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-35d3147121984ba087c28d913653d626.sdkstatcache
+
+ProcessInfoPlistFile /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads_LifeData.bundle/Info.plist /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads_LifeData-b.build/empty-LifeCrossroads_LifeData.plist (in target 'LifeCrossroads_LifeData' from project 'LifeCrossroads' at path '/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Package.swift')
+    cd /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads
+    builtin-infoPlistUtility /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads_LifeData-b.build/empty-LifeCrossroads_LifeData.plist -producttype com.apple.product-type.bundle -expandbuildsettings -format binary -platform iphonesimulator -o /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads_LifeData.bundle/Info.plist
+
+ProcessInfoPlistFile /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/Info.plist /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/empty-LifeCrossroads.plist (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads
+    builtin-infoPlistUtility /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/empty-LifeCrossroads.plist -producttype com.apple.product-type.application -genpkginfo /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/assetcatalog_generated_info.plist -scanforprivacyfile /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/LifeCrossroads_LifeData.bundle -o /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/Info.plist
+
+CopySwiftLibs /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads
+    builtin-swiftStdLibTool --copy --verbose --scan-executable /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/LifeCrossroads.debug.dylib --scan-folder /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/Frameworks --scan-folder /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/PlugIns --scan-folder /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/SystemExtensions --scan-folder /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/Extensions --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+Ignoring --strip-bitcode because --sign was not passed
+
+ProcessInfoPlistFile /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/Info.plist /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/empty-LifeCrossroadsUITests.plist (in target 'LifeCrossroadsUITests' from project 'LifeCrossroads' at path '/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads
+    builtin-infoPlistUtility /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/empty-LifeCrossroadsUITests.plist -producttype com.apple.product-type.bundle.ui-testing -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/ProductTypeInfoPlistAdditions.plist -o /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/Info.plist
+
+CopySwiftLibs /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest (in target 'LifeCrossroadsUITests' from project 'LifeCrossroads' at path '/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads
+    builtin-swiftStdLibTool --copy --verbose --scan-executable /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/LifeCrossroadsUITests --scan-folder /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/Frameworks --scan-folder /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/PlugIns --scan-folder /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/SystemExtensions --scan-folder /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/Extensions --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+Ignoring --strip-bitcode because --sign was not passed
+
+PruneExplicitPrecompiledModules /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/SDKExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-app/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+2026-10-23 15:43:46.561 xcodebuild[91877:1840320] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+Resolve Package Graph
+
+2026-10-23 15:43:48.760907+0800 LifeCrossroadsUITests-Runner[91899:1840819] [Default] Running tests...
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-10-23 15:43:52.858.
+Test Suite 'LifeCrossroadsUITests.xctest' started at 2026-10-23 15:43:52.858.
+Test Suite 'LifeCrossroadsUITests' started at 2026-10-23 15:43:52.858.
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testRestComparisonAndExplanationUseTheActualChoice]' started.
+    t =     0.01s Start Test at 2026-10-23 15:43:52.866
+    t =     0.07s Set Up
+    t =     0.07s Open com.gavin0099.LifeCrossroads
+    t =     0.07s     Launch com.gavin0099.LifeCrossroads
+2026-10-23 15:43:53.231 xcodebuild[91877:1840320] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-23 15:43:53.231 xcodebuild[91877:1840320] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-23 15:43:53.263 xcodebuild[91877:1840320] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+objc[91899]: Class UIAccessibilityLoaderWebShared is implemented in both /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.434.0.paE1ws/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x1067e4398) and /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.434.0.paE1ws/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x107660310). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+Resolve Package Graph
+
+    t =     0.92s         Setting up automation session
+    t =     3.01s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =     5.79s Waiting 10.0s for "startLife" Button to exist
+    t =     6.82s     Checking `Expect predicate `existsNoRetry == 1` for object "startLife" Button`
+    t =     6.82s         Checking existence of `"startLife" Button`
+    t =     6.99s Checking existence of `"continueLife" Button`
+    t =     7.00s Find the "startLife" Button
+    t =     7.05s Checking existence of `"startLife" Button`
+    t =     7.07s Find the "startLife" Button
+    t =     7.09s Swipe up Target Application 'com.gavin0099.LifeCrossroads'
+    t =     7.09s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     7.09s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     7.10s     Check for interrupting elements affecting "人生岔路" Application
+    t =     7.13s     Synthesize event
+    t =     7.59s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     9.69s Checking existence of `"continueLife" Button`
+    t =     9.73s Find the "startLife" Button
+    t =     9.76s Checking existence of `"startLife" Button`
+    t =     9.77s Find the "startLife" Button
+    t =     9.79s Swipe up Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.79s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     9.79s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.81s     Check for interrupting elements affecting "人生岔路" Application
+    t =     9.82s     Synthesize event
+    t =    10.25s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    12.36s Checking existence of `"continueLife" Button`
+    t =    12.40s Find the "startLife" Button
+    t =    12.43s Checking existence of `"startLife" Button`
+    t =    12.45s Find the "startLife" Button
+    t =    12.47s Swipe up Target Application 'com.gavin0099.LifeCrossroads'
+    t =    12.47s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    12.47s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    12.48s     Check for interrupting elements affecting "人生岔路" Application
+    t =    12.50s     Synthesize event
+    t =    12.92s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    15.02s Checking existence of `"continueLife" Button`
+    t =    15.06s Find the "startLife" Button
+    t =    15.09s Find the "startLife" Button
+    t =    15.11s Find the "startLife" Button
+    t =    15.13s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    15.15s Tap "startLife" Button
+    t =    15.15s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    15.15s     Find the "startLife" Button
+    t =    15.17s     Check for interrupting elements affecting "startLife" Button
+    t =    15.18s     Synthesize event
+    t =    15.48s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    15.67s Checking existence of `"continueLife" Button`
+    t =    15.70s Find the "compareChoice" Button
+    t =    15.74s Checking existence of `"compareChoice" Button`
+    t =    15.76s Find the "compareChoice" Button
+    t =    15.79s Swipe up Target Application 'com.gavin0099.LifeCrossroads'
+    t =    15.79s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    15.79s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    15.82s     Check for interrupting elements affecting "人生岔路" Application
+    t =    15.84s     Synthesize event
+    t =    16.26s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    18.37s Checking existence of `"continueLife" Button`
+    t =    18.42s Find the "compareChoice" Button
+    t =    18.46s Checking existence of `"compareChoice" Button`
+    t =    18.48s Find the "compareChoice" Button
+    t =    18.51s Swipe up Target Application 'com.gavin0099.LifeCrossroads'
+    t =    18.51s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    18.51s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    18.53s     Check for interrupting elements affecting "人生岔路" Application
+    t =    18.55s     Synthesize event
+    t =    18.97s     Wait for com.gavin0099.LifeCrossroads to idle
+Resolve Package Graph
+
+    t =    21.08s Checking existence of `"continueLife" Button`
+    t =    21.13s Find the "compareChoice" Button
+    t =    21.16s Checking existence of `"compareChoice" Button`
+    t =    21.18s Find the "compareChoice" Button
+    t =    21.21s Swipe up Target Application 'com.gavin0099.LifeCrossroads'
+    t =    21.21s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    21.21s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    21.23s     Check for interrupting elements affecting "人生岔路" Application
+    t =    21.25s     Synthesize event
+    t =    21.67s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    23.78s Checking existence of `"continueLife" Button`
+    t =    23.83s Find the "compareChoice" Button
+    t =    23.86s Checking existence of `"compareChoice" Button`
+    t =    23.88s Find the "compareChoice" Button
+    t =    23.91s Swipe up Target Application 'com.gavin0099.LifeCrossroads'
+    t =    23.91s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    23.91s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    23.93s     Check for interrupting elements affecting "人生岔路" Application
+    t =    23.96s     Synthesize event
+    t =    24.38s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    26.51s Checking existence of `"continueLife" Button`
+    t =    26.56s Find the "compareChoice" Button
+    t =    26.59s Checking existence of `"compareChoice" Button`
+    t =    26.61s Find the "compareChoice" Button
+    t =    26.64s Swipe up Target Application 'com.gavin0099.LifeCrossroads'
+    t =    26.64s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    26.64s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    26.66s     Check for interrupting elements affecting "人生岔路" Application
+    t =    26.68s     Synthesize event
+    t =    27.11s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    29.21s Checking existence of `"continueLife" Button`
+    t =    29.26s Find the "compareChoice" Button
+    t =    29.29s Checking existence of `"compareChoice" Button`
+    t =    29.32s Find the "compareChoice" Button
+    t =    29.35s Swipe up Target Application 'com.gavin0099.LifeCrossroads'
+    t =    29.35s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    29.35s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    29.37s     Check for interrupting elements affecting "人生岔路" Application
+    t =    29.39s     Synthesize event
+    t =    29.82s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    31.95s Checking existence of `"continueLife" Button`
+    t =    32.03s Find the "compareChoice" Button
+    t =    32.10s Checking existence of `"compareChoice" Button`
+    t =    32.14s Find the "compareChoice" Button
+    t =    32.18s Swipe up Target Application 'com.gavin0099.LifeCrossroads'
+    t =    32.18s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    32.18s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    32.20s     Check for interrupting elements affecting "人生岔路" Application
+    t =    32.23s     Synthesize event
+    t =    32.65s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    34.76s Checking existence of `"continueLife" Button`
+    t =    34.80s Find the "compareChoice" Button
+    t =    34.83s Find the "compareChoice" Button
+    t =    34.86s Find the "compareChoice" Button
+    t =    34.88s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    34.90s Tap "compareChoice" Button
+    t =    34.90s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    34.90s     Find the "compareChoice" Button
+    t =    34.93s     Check for interrupting elements affecting "compareChoice" Button
+    t =    34.95s     Synthesize event
+    t =    35.24s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    35.42s Tap "compare.rest" Button
+    t =    35.42s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    36.58s     Find the "compare.rest" Button
+    t =    36.65s     Check for interrupting elements affecting "compare.rest" Button
+    t =    36.68s     Synthesize event
+    t =    36.69s         Scroll element to visible
+    t =    36.71s         Find the "compare.rest" Button
+    t =    36.74s         Computed hit point {187, 462} after scrolling to visible
+    t =    37.03s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    38.51s Waiting 5.0s for "comparisonChoiceTitle" StaticText to exist
+    t =    39.54s     Checking `Expect predicate `existsNoRetry == 1` for object "comparisonChoiceTitle" StaticText`
+    t =    39.54s         Checking existence of `"comparisonChoiceTitle" StaticText`
+    t =    39.62s Find the "comparisonChoiceTitle" StaticText
+    t =    39.66s Find the "comparisonChoiceTitle" StaticText
+    t =    39.69s Tap "closeComparison" Button
+    t =    39.69s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    39.69s     Find the "closeComparison" Button
+    t =    39.73s     Check for interrupting elements affecting "closeComparison" Button
+    t =    39.77s     Synthesize event
+    t =    40.06s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    40.42s Checking existence of `"continueLife" Button`
+    t =    40.45s Find the "choice.rest" Button
+    t =    40.49s Find the "choice.rest" Button
+    t =    40.51s Find the "choice.rest" Button
+    t =    40.54s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    40.56s Tap "choice.rest" Button
+    t =    40.56s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    40.56s     Find the "choice.rest" Button
+    t =    40.59s     Check for interrupting elements affecting "choice.rest" Button
+    t =    40.61s     Synthesize event
+    t =    40.90s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    40.90s Checking existence of `"continueLife" Button`
+    t =    40.93s Checking existence of `"closeTrace" Button`
+    t =    40.95s Find the "whyResult" Button
+    t =    40.97s Checking existence of `"whyResult" Button`
+    t =    40.99s Find the "whyResult" Button
+    t =    41.01s Swipe up Target Application 'com.gavin0099.LifeCrossroads'
+    t =    41.01s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    41.01s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    41.03s     Check for interrupting elements affecting "人生岔路" Application
+    t =    41.05s     Synthesize event
+    t =    41.48s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    43.57s Checking existence of `"continueLife" Button`
+    t =    43.62s Checking existence of `"closeTrace" Button`
+    t =    43.64s Find the "whyResult" Button
+    t =    43.67s Find the "whyResult" Button
+    t =    43.69s Find the "whyResult" Button
+    t =    43.71s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    43.73s Tap "whyResult" Button
+    t =    43.73s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    43.73s     Find the "whyResult" Button
+    t =    43.75s     Check for interrupting elements affecting "whyResult" Button
+    t =    43.77s     Synthesize event
+    t =    44.06s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    44.50s Waiting 5.0s for "actualInfluences" StaticText to exist
+    t =    45.51s     Checking `Expect predicate `existsNoRetry == 1` for object "actualInfluences" StaticText`
+    t =    45.52s         Checking existence of `"actualInfluences" StaticText`
+    t =    45.57s Find the "actualInfluences" StaticText
+    t =    45.60s Find the "actualInfluences" StaticText
+    t =    45.63s Find the "actualInfluences" StaticText
+    t =    45.66s Find the "actualInfluences" StaticText
+    t =    45.68s Find the "actualInfluences" StaticText
+    t =    45.71s Checking existence of `"continueLife" Button`
+    t =    45.73s Checking existence of `"closeTrace" Button`
+    t =    45.76s Find the "dataUsage" StaticText
+    t =    45.79s Checking existence of `"dataUsage" StaticText`
+    t =    45.81s Find the "dataUsage" StaticText
+    t =    45.84s Swipe up Target Application 'com.gavin0099.LifeCrossroads'
+    t =    45.84s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    45.84s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    45.86s     Check for interrupting elements affecting "人生岔路" Application
+    t =    45.89s     Synthesize event
+    t =    46.31s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    47.27s Checking existence of `"continueLife" Button`
+    t =    47.30s Checking existence of `"closeTrace" Button`
+    t =    47.32s Find the "dataUsage" StaticText
+    t =    47.36s Find the "dataUsage" StaticText
+    t =    47.38s Find the "dataUsage" StaticText
+    t =    47.41s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    47.43s Find the "dataUsage" StaticText
+    t =    47.46s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    47.55s Added attachment named 'rest-actual-influences'
+    t =    47.55s Tear Down
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testRestComparisonAndExplanationUseTheActualChoice]' passed (47.842 seconds).
+Test Suite 'LifeCrossroadsUITests' passed at 2026-10-23 15:44:40.708.
+	 Executed 1 test, with 0 failures (0 unexpected) in 47.842 (47.850) seconds
+Test Suite 'LifeCrossroadsUITests.xctest' passed at 2026-10-23 15:44:40.709.
+	 Executed 1 test, with 0 failures (0 unexpected) in 47.842 (47.851) seconds
+Test Suite 'Selected tests' passed at 2026-10-23 15:44:40.710.
+	 Executed 1 test, with 0 failures (0 unexpected) in 47.842 (47.852) seconds
+2026-10-23 15:44:40.756 xcodebuild[91877:1840320] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-23 15:44:40.757 xcodebuild[91877:1840320] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-23 15:44:40.757 xcodebuild[91877:1840320] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-23 15:44:40.769 xcodebuild[91877:1840320] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-23 15:44:40.769 xcodebuild[91877:1840320] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-23 15:44:40.770 xcodebuild[91877:1840320] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+Resolve Package Graph
+2026-10-23 15:44:41.038 xcodebuild[91877:1840320] [MT] IDETestOperationsObserverDebug: 54.550 elapsed -- Testing started completed.
+2026-10-23 15:44:41.038 xcodebuild[91877:1840320] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-23 15:44:41.038 xcodebuild[91877:1840320] [MT] IDETestOperationsObserverDebug: 54.550 sec, +54.550 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/ios/PR2-LargeText-20261023T0743.xcresult
+
+** TEST SUCCEEDED **
+
+
+Testing started

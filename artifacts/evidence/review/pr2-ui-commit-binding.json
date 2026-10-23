@@ -1,0 +1,7 @@
+{
+  "implementation_commit": "4993c1aa0065d4a0343fb149fda0fe3d160394f0",
+  "tested_source_manifest": "artifacts/evidence/review/pr2-ui-fixed-sources.json",
+  "matched_source_count": 32,
+  "mismatches": [],
+  "purpose": "Bind the successful pre-commit local UI run to identical committed sources, assets, catalog and tests."
+}
