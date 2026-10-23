@@ -157,6 +157,8 @@ public struct DecisionSkeleton: Codable, Equatable, Sendable {
     public var storyQuestion: String
     public var choices: [ChoiceDefinition]
     public var storyVariantID: String? = nil
+    public var isFallback: Bool = true
+    public var eligibility: [EventCondition] = []
 }
 
 public struct ModelCatalog: Codable, Equatable, Sendable {
@@ -171,7 +173,7 @@ public struct ModelCatalog: Codable, Equatable, Sendable {
     public var decisions: [DecisionSkeleton]
 
     public func validate() throws {
-        guard schemaVersion == 2, !dataVersion.isEmpty, !contentVersion.isEmpty,
+        guard schemaVersion == 3, !dataVersion.isEmpty, !contentVersion.isEmpty,
               (1960...2100).contains(referenceYear) else { throw ModelError.invalid("catalog version") }
         func unique(_ ids: [String]) throws {
             guard ids.allSatisfy({ !$0.isEmpty }), Set(ids).count == ids.count else {
@@ -183,7 +185,7 @@ public struct ModelCatalog: Codable, Equatable, Sendable {
         let sourceMap = Dictionary(uniqueKeysWithValues: sources.map { ($0.id, $0) })
         let assumptionSet = Set(assumptions.map(\.id))
         let ruleAssumptions: Set<String> = ["macro-friction", "household-scenarios", "life-stages", "agency",
-            "support-network", "choice-effects", "cost-fatigue", "luck-encouragement", "resource-bounds", "story-callback", "learning-channels", "story-branches"]
+            "support-network", "choice-effects", "cost-fatigue", "luck-encouragement", "resource-bounds", "story-callback", "learning-channels", "story-branches", "event-selection"]
         guard ruleAssumptions.isSubset(of: assumptionSet) else { throw ModelError.missing("rule assumption") }
         func checkAssumptions(_ ids: [String]) throws {
             guard !ids.isEmpty, ids.allSatisfy(assumptionSet.contains) else {
@@ -236,12 +238,35 @@ public struct ModelCatalog: Codable, Equatable, Sendable {
             templates[h.templateID] = h
         }
         for c in countries { try unique(households.filter { $0.countryCode == c.code }.map(\.templateID)) }
-        var previousAge = -1
         for d in decisions {
             _ = try LifeStage.at(age: d.age)
-            guard d.age > previousAge, !d.choices.isEmpty, !d.recurringPerson.isEmpty,
+            guard EventSchedule.decisionAges.contains(d.age), !d.choices.isEmpty, !d.recurringPerson.isEmpty,
                   !d.storyQuestion.isEmpty else { throw ModelError.invalid("decision sequence") }
-            previousAge = d.age
+            try unique(d.eligibility.map(\.id))
+            guard d.isFallback ? d.eligibility.isEmpty : !d.eligibility.isEmpty else {
+                throw ModelError.invalid("event fallback conditions")
+            }
+            for condition in d.eligibility {
+                switch condition.kind {
+                case .resourceAtLeast, .resourceAtMost:
+                    guard ["health", "financial", "relationships", "skills"].contains(condition.key),
+                          let threshold = condition.threshold, (0...100).contains(threshold), condition.choiceIDs.isEmpty else {
+                        throw ModelError.invalid("event resource condition")
+                    }
+                case .householdAtLeast:
+                    guard ["mentorSupport", "careLoad", "travelCost", "materialBudget"].contains(condition.key),
+                          let threshold = condition.threshold, (0...4).contains(threshold), condition.choiceIDs.isEmpty else {
+                        throw ModelError.invalid("event household condition")
+                    }
+                case .priorChoice:
+                    guard condition.threshold == nil, !condition.choiceIDs.isEmpty,
+                          Set(condition.choiceIDs).count == condition.choiceIDs.count,
+                          let previous = decisions.first(where: { $0.id == condition.key }), previous.age < d.age,
+                          condition.choiceIDs.allSatisfy({ id in previous.choices.contains { $0.id == id } }) else {
+                        throw ModelError.invalid("event history condition")
+                    }
+                }
+            }
             try unique(d.choices.map(\.id))
             for choice in d.choices {
                 guard (0...100).contains(choice.minimumAge), (0...8).contains(choice.timeCost),
@@ -256,6 +281,11 @@ public struct ModelCatalog: Codable, Equatable, Sendable {
                     && !$0.requiresDigitalAccess && $0.control == .personal && $0.minimumAge <= d.age
             }) else {
                 throw ModelError.missing("cost-free recovery choice")
+            }
+        }
+        for age in EventSchedule.decisionAges {
+            guard decisions.filter({ $0.age == age && $0.isFallback }).count == 1 else {
+                throw ModelError.missing("one unconditional fallback per age")
             }
         }
     }

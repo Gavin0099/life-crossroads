@@ -385,10 +385,11 @@ final class LC01Tests: XCTestCase {
 
     func testFifteenSkeletonDecisionsCoverEveryStageAndThreeCallbacks() throws {
         let c = try catalog()
-        XCTAssertEqual(c.decisions.count, 15)
+        XCTAssertEqual(c.decisions.filter(\.isFallback).count, 15)
+        XCTAssertEqual(c.decisions.count, 23)
         XCTAssertEqual(Set(try c.decisions.map { try LifeStage.at(age: $0.age) }), Set(LifeStage.allCases))
         XCTAssertEqual(c.decisions.filter { $0.choices.contains { $0.delayedHook != nil } }.count, 3)
-        XCTAssertEqual(c.decisions.map(\.age), [8, 10, 12, 13, 17, 21, 25, 32, 39, 45, 52, 59, 65, 72, 80])
+        XCTAssertEqual(c.decisions.filter(\.isFallback).map(\.age), [8, 10, 12, 13, 17, 21, 25, 32, 39, 45, 52, 59, 65, 72, 80])
     }
 
     func testManySeededSkeletonLivesStayValidAndCanAlwaysAdvance() throws {
@@ -397,8 +398,10 @@ final class LC01Tests: XCTestCase {
             for household in c.households where household.countryCode == country.code {
                 for seed: UInt64 in 0..<40 {
                     var current = try LifeState.born(catalog: c, countryCode: country.code, householdID: household.id, seed: seed)
-                    for event in c.decisions {
-                        (current, _) = try SimulationEngine.advance(current, to: event.age, catalog: c)
+                    for age in LifeSession.decisionAges {
+                        (current, _) = try SimulationEngine.advance(current, to: age, catalog: c)
+                        let selectedEventID = try EventSelector.select(state: current, catalog: c).selectedEventID
+                        let event = try XCTUnwrap(c.decisions.first { $0.id == selectedEventID })
                         let selected = event.choices[Int(seed % UInt64(event.choices.count))].id
                         var result = try resolve(current, c, event: event.id, choice: selected)
                         if !result.trace.applied { result = try resolve(current, c, event: event.id, choice: "rest") }
