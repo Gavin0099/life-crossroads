@@ -126,6 +126,8 @@ def build(refresh=False):
                "為LC-02保留人物牽掛的最小故事契約，並非證實現實長期因果；完整事件內容及試玩仍待後續切片。")
     assumption("story-branches", "三條虛構故事條件：10歲與阿禾創作或調整碰面才在72歲重逢，否則和社區夥伴小澄開風車桌認識新鄰居；13歲線上/紙本/未製作決定17歲學習場景，作品經驗加技能至少28才可帶領工作坊；39歲共組照顧輪班才在52歲沿用互助約定，健康至少55才可自願接一小段。每次記錄實際歷史、資源門檻、場景及選項。",
                "人物、約定、門檻與後續路線皆為遊戲敘事假設，不是心理、醫學或社會因果；沒有連結不等於個人失敗，所有路線保留求助及免費休息。國家名稱不參與故事條件。")
+    assumption("event-selection", "每局固定15個年齡槽。每槽先檢查明列的已執行決策、四項資源或家庭安排條件；符合者按event ID排序，再以Seed及年齡槽的鍵控亂數均等挑一個。每槽保留一個無條件預備情境。12、21、32、59、65歲共增加8個條件情境，其餘保留既有錨點。",
+               "情境、門檻及均等機率都是原創遊戲設計，不是事件真實發生率、國家分布或現實因果。國名不參與候選條件或亂數鍵；不同Seed也可能遇到相同情境。版本改變不保證延續舊存檔。")
 
     countries, households = [], []
     for code, name in COUNTRIES:
@@ -199,8 +201,60 @@ def build(refresh=False):
                                    control="adultResponsibility", minimumAge=23, timeCost=2, energyCost=2, materialCost=0,
                                    effect=resources(health=-1, relationships=3), requiresDigitalAccess=False,
                                    delayedHook=None, assumptionIDs=["choice-effects", "story-branches", "agency"]))
-        decisions.append(dict(id=id_, age=age, title=title, recurringPerson=person, storyQuestion=question, choices=choices))
-    return dict(schemaVersion=2, dataVersion=DATA_VERSION, contentVersion="lc02-story-3", referenceYear=2023,
+        decisions.append(dict(id=id_, age=age, title=title, recurringPerson=person, storyQuestion=question, choices=choices,
+                              isFallback=True, eligibility=[]))
+
+    def condition(id_, kind, key, threshold=None, choices=None):
+        return dict(id=id_, kind=kind, key=key, threshold=threshold, choiceIDs=choices or [])
+
+    # A small authored pool, not 8 extra decisions in a single life. Earlier anchors remain unconditionally available.
+    pool = [
+        (12, "child-library-map", "圖書角出現一張空白地圖", "樹老師", "怎麼讓新同學也找到能問問題的地方？", "learn",
+         [condition("nearby-guide", "householdAtLeast", "mentorSupport", 1)],
+         ("和樹老師畫借書與問路的小地圖", "請老師先帶你走一次圖書角", "把地圖留到明天，今天先安心休息"), resources(skills=3, relationships=2)),
+        (12, "child-wind-team", "阿禾想替風車找新夥伴", "阿禾", "兩個人的約定，能不能多留一個位置？", "share",
+         [condition("windmill-promise", "priorChoice", "child-friend", choices=["invest", "ask"])],
+         ("和阿禾替新同學留一份風車材料", "請阿禾一起問新同學想玩什麼", "先告訴阿禾今天需要自己的時間"), resources(relationships=4, skills=1)),
+        (21, "teen-repair-table", "樹老師的修理桌缺一雙手", "樹老師", "學過的經驗，能幫忙修好什麼？", "learn",
+         [condition("made-a-project", "priorChoice", "teen-project", choices=["invest", "offline"]),
+          condition("repair-practice", "resourceAtLeast", "skills", 25)],
+         ("和樹老師修理社區的舊玩具", "請樹老師示範一個安全的小步驟", "先當安靜的旁觀者，保留休息時間"), resources(skills=3, relationships=2)),
+        (21, "teen-shared-kitchen", "小澄提議排一張共煮表", "小澄", "生活安排能怎麼互相分擔？", "share",
+         [condition("family-rotations", "householdAtLeast", "careLoad", 1),
+          condition("kitchen-energy", "resourceAtLeast", "health", 50)],
+         ("和小澄試排一週共煮與採買分工", "請小澄陪你說出現在忙不過來的事", "今天先吃簡單一點，照顧自己的步調"), resources(financial=1, relationships=3)),
+        (32, "adult-neighbor-market", "週末市集想借你的巧思", "小澄", "多一點收入，也會少掉哪些空閒？", "work",
+         [condition("current-financial-room", "resourceAtMost", "financial", 65),
+          condition("market-helper", "householdAtLeast", "mentorSupport", 1)],
+         ("和小澄試擺一個小攤，記下成本", "請小澄一起估算時間與材料負擔", "這次不擺攤，保留週末和身邊的人相處"), resources(financial=2, relationships=2)),
+        (59, "middle-garden-table", "社區花圃邀你留一張椅子", "小澄", "一起照顧花草，也要留多少時間給自己？", "share",
+         [condition("garden-energy", "resourceAtLeast", "health", 45)],
+         ("和小澄認養一小格花圃，排好輪值", "請小澄幫忙挑適合體力的小工作", "坐在椅子上看看花，今天不接輪值"), resources(health=1, relationships=3)),
+        (59, "middle-open-desk", "小澄想讓互助桌多開一小時", "小澄", "以前的約定，如何讓現在的人用得上？", "share",
+         [condition("shared-care-contacts", "priorChoice", "adult-care", choices=["invest"])],
+         ("把輪班經驗寫成一張互助桌小卡", "請小澄和其他夥伴一起分配開桌時間", "先把自己的界線寫好，暫不加開時段"), resources(relationships=4, skills=1)),
+        (65, "later-voice-booth", "樹老師借來一台回憶錄音機", "樹老師", "想讓後來的人聽見哪一段不完美的故事？", "share",
+         [condition("sharing-connection", "resourceAtLeast", "relationships", 60),
+          condition("recording-companion", "householdAtLeast", "mentorSupport", 1)],
+         ("和樹老師錄下一次失敗後再試的故事", "請樹老師先問你一個容易說的小問題", "今天先聽別人分享，保留自己的安靜"), resources(relationships=3, skills=2)),
+    ]
+    for age, id_, title, person, question, kind, eligibility, titles, effect in pool:
+        control = "sharedWithAdult" if age <= 12 else ("adultResponsibility" if kind == "work" else "personal")
+        choices = [dict(id="invest", title=titles[0], kind=kind, control=control,
+                        minimumAge=23 if kind == "work" else 0, timeCost=2, energyCost=2,
+                        materialCost=1 if kind == "learn" else 0, effect=effect,
+                        requiresDigitalAccess=False, delayedHook=None,
+                        assumptionIDs=["choice-effects", "event-selection", "agency"]),
+                   dict(id="ask", title=titles[1], kind="askSupport", control="personal", minimumAge=0,
+                        timeCost=1, energyCost=1, materialCost=0, effect=resources(relationships=2, skills=1),
+                        requiresDigitalAccess=False, delayedHook=None,
+                        assumptionIDs=["choice-effects", "support-network"]),
+                   dict(id="rest", title=titles[2], kind="rest", control="personal", minimumAge=0,
+                        timeCost=0, energyCost=0, materialCost=0, effect=resources(health=2, relationships=1),
+                        requiresDigitalAccess=False, delayedHook=None, assumptionIDs=["choice-effects"])]
+        decisions.append(dict(id=id_, age=age, title=title, recurringPerson=person, storyQuestion=question,
+                              choices=choices, isFallback=False, eligibility=eligibility))
+    return dict(schemaVersion=3, dataVersion=DATA_VERSION, contentVersion="lc02-story-4", referenceYear=2023,
                 sources=sources, assumptions=assumptions, countries=countries, households=households, decisions=decisions)
 
 
@@ -216,7 +270,7 @@ if __name__ == "__main__":
     if args.check:
         if target.read_text() != content:
             raise SystemExit("Catalog differs from pinned source evidence / design contract")
-        print("Offline evidence and deterministic catalog: PASS (14 observations, 8 countries, 16 households, 15 decision skeletons)")
+        print("Offline evidence and deterministic catalog: PASS (14 observations, 8 countries, 16 households, 15 age slots / 23 event candidates)")
     else:
         target.write_text(content)
         print(f"Wrote {target.relative_to(ROOT)}")

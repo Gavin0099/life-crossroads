@@ -16,18 +16,26 @@ struct CrossroadsView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 22) {
+                VStack(alignment: .leading, spacing: 18) {
                     if let session = store.session {
-                        if session.phase == .ended { ending(session) }
-                        else {
+                        switch session.phase {
+                        case .ended: ending(session)
+                        case .choosing:
                             progress(session)
-                            if session.phase == .choosing, let event = store.currentEvent {
+                            if let event = store.currentEvent {
                                 decision(event, session)
-                            } else if let trace = session.traces.last { feedback(trace) }
+                            } else {
+                                Text("目前無法取得下一件事，請回首頁重新開始。")
+                                    .accessibilityIdentifier("missingEvent")
+                            }
+                        case .reflecting:
+                            progress(session)
+                            if let trace = session.traces.last { feedback(trace) }
+                            else { Text("目前沒有已執行的選擇紀錄。").accessibilityIdentifier("missingOutcome") }
                         }
                     } else { home }
                 }
-                .padding(20)
+                .padding(18)
                 .frame(maxWidth: 620)
                 .frame(maxWidth: .infinity)
             }
@@ -45,10 +53,21 @@ struct CrossroadsView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("說明與資料", systemImage: "info.circle") { showSources = true }
                 }
+                ToolbarItem(placement: .topBarTrailing) {
+                    if store.session != nil {
+                        Menu {
+                            Button("同背景、同種子重新開始") { store.start(replay: true) }
+                                .accessibilityIdentifier("restartSame")
+                            Button("同背景、換個運氣重新開始") { store.replayWithNewSeed() }
+                                .accessibilityIdentifier("restartNewSeed")
+                        } label: { Label("重新開始這段人生", systemImage: "arrow.counterclockwise") }
+                            .accessibilityIdentifier("restartMenu")
+                    }
+                }
             }
             .safeAreaInset(edge: .bottom) {
                 if store.session?.phase == .reflecting {
-                    Button(store.session?.traces.count == 15 ? "翻開人生回憶冊" : "走向下一段") { store.next() }
+                    Button(store.session.map { $0.traces.count == $0.plannedDecisionCount } == true ? "翻開人生回憶冊" : "走向下一段") { store.next() }
                         .buttonStyle(JourneyButtonStyle())
                         .accessibilityIdentifier("continueLife")
                         .padding().background(.bar)
@@ -66,9 +85,15 @@ struct CrossroadsView: View {
     private var home: some View {
         VStack(alignment: .leading, spacing: 22) {
             StoryEyebrow(title: "一本由你參與的人生故事", icon: "book.closed")
-            Text("如果人生，\n走向另一條路？")
-                .font(.system(.largeTitle, design: .rounded).bold())
-            StoryScene(age: 8, person: "", chapter: "旅途還沒開始", sceneID: "birthScene")
+            HStack(spacing: 12) {
+                Text("如果人生，\n走向另一條路？")
+                    .font(.system(.title, design: .rounded).bold())
+                Spacer(minLength: 0)
+                if !dynamicTypeSize.isAccessibilitySize {
+                    CompactStoryScene(age: 8, person: "", sceneID: "birthScene")
+                        .frame(width: 100, height: 84)
+                }
+            }
             VStack(alignment: .leading, spacing: 9) {
                 Text("嗨，我是沐沐。")
                     .font(.title2.weight(.bold))
@@ -86,13 +111,17 @@ struct CrossroadsView: View {
                         .font(.footnote).foregroundStyle(.secondary)
                 }
             }.card()
-            if let catalog = store.catalog,
-               let country = store.countries.first(where: { $0.code == store.countryCode }) {
-                CountryContextCard(country: country, catalog: catalog)
-            }
             Button("陪沐沐開始一段人生", systemImage: "pawprint") { store.start() }
                 .buttonStyle(JourneyButtonStyle()).disabled(store.catalog == nil)
                 .accessibilityIdentifier("startLife")
+            if let catalog = store.catalog,
+               let country = store.countries.first(where: { $0.code == store.countryCode }) {
+                DisclosureGroup {
+                    CountryContextCard(country: country, catalog: catalog).padding(.top, 12)
+                } label: {
+                    Text("認識\(country.name)的資料背景").accessibilityIdentifier("countryContextToggle")
+                }
+            }
             Toggle("使用較短的故事文字", isOn: $shortText).font(.subheadline)
             Text("15段選擇，沒有唯一的好人生。環境影響機會，選擇留下故事，也有些事不由自己控制。")
                 .font(.subheadline).foregroundStyle(.secondary)
@@ -128,79 +157,58 @@ struct CrossroadsView: View {
     }
 
     private func progress(_ session: LifeSession) -> some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: 7) {
             HStack(alignment: .firstTextBaseline) {
-                Text("沐沐，\(session.state.age)歲").font(.system(.title, design: .rounded).bold())
-                Spacer()
-                Text(store.name(session.state.countryCode)).font(.subheadline.weight(.semibold))
-            }
-            HStack(alignment: .firstTextBaseline) {
-                Text(stageName(session.state.age)).font(.subheadline.weight(.semibold))
-                Spacer()
-                Text("\(min(15, session.traces.count + (session.phase == .choosing ? 1 : 0))) / 15")
+                Text("沐沐 · \(session.state.age)歲").font(.system(.title3, design: .rounded).bold())
+                Spacer(minLength: 8)
+                Text("\(min(session.plannedDecisionCount, session.traces.count + (session.phase == .choosing ? 1 : 0))) / \(session.plannedDecisionCount)")
                     .font(.caption.monospacedDigit()).foregroundStyle(.secondary)
             }
-            ProgressView(value: Double(session.traces.count), total: 15)
-                .accessibilityLabel("已完成\(session.traces.count)段，共十五段")
+            Text("\(store.name(session.state.countryCode)) · \(stageName(session.state.age))")
+                .font(.caption).foregroundStyle(.secondary)
+            ProgressView(value: Double(session.traces.count), total: Double(session.plannedDecisionCount))
+                .accessibilityLabel("已完成\(session.traces.count)段，共\(session.plannedDecisionCount)段")
         }
     }
 
     private func decision(_ event: DecisionSkeleton, _ session: LifeSession) -> some View {
-        VStack(alignment: .leading, spacing: 20) {
-            StoryScene(age: session.state.age, person: event.recurringPerson,
-                       chapter: "故事進行中", sceneID: "decisionScene")
-            if !event.recurringPerson.isEmpty {
-                Label("這一頁的人物：\(event.recurringPerson)", systemImage: "person.crop.circle")
-                    .font(.subheadline.weight(.semibold))
-            }
-            if let jump = session.jumps.last, !jump.triggeredHooks.isEmpty {
-                VStack(alignment: .leading, spacing: 10) {
-                    StoryEyebrow(title: "之前的選擇，傳來了回聲", icon: "leaf")
-                    ForEach(jump.triggeredHooks, id: \.id) { Text($0.text) }
-                }.card()
-            }
-            VStack(alignment: .leading, spacing: 14) {
-                Text(event.title).font(.title2.bold()).accessibilityIdentifier("eventTitle")
-                Text(storyText(event)).lineSpacing(5).fixedSize(horizontal: false, vertical: true)
-                Divider()
-                Text(event.storyQuestion).font(.headline)
-                if event.id == "teen-project" {
-                    Text("想接著探索環境嗎？用下方的「同一個行動，換個環境呢？」分別試算線上與紙本選項。比較只幫你看代價，不會替你選擇。")
-                        .font(.subheadline).foregroundStyle(.secondary)
-                        .accessibilityIdentifier("digitalLearningGuide")
+        VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: 11) {
+                HStack(alignment: .center, spacing: 12) {
+                    Text(event.title).font(.title2.bold()).accessibilityIdentifier("eventTitle")
+                        .accessibilityValue(event.id).accessibilityAddTraits(.isHeader)
+                    if !dynamicTypeSize.isAccessibilitySize {
+                        Spacer(minLength: 0)
+                        CompactStoryScene(age: session.state.age, person: event.recurringPerson, sceneID: "decisionScene")
+                            .frame(width: 88, height: 68)
+                    }
                 }
-            }.card()
-            DisclosureGroup {
-                ResourcePanel(resources: session.state.resources).padding(.top, 14)
-            } label: { Label("看看我的近況", systemImage: "leaf.circle").font(.subheadline.weight(.semibold)) }
-            VStack(alignment: .leading, spacing: 12) {
-                StoryEyebrow(title: "這段日子，可以怎麼安排？", icon: "signpost.right.and.left")
-                ViewThatFits(in: .horizontal) {
-                    budget(session, vertical: false)
-                    budget(session, vertical: true)
-                }
+                Text(shortStory(event)).lineSpacing(3).fixedSize(horizontal: false, vertical: true)
+                Text(event.storyQuestion).font(.subheadline.weight(.semibold))
             }
-            ForEach(Array(event.choices.enumerated()), id: \.element.id) { index, choice in
+            Text("你會怎麼安排？").font(.headline).accessibilityAddTraits(.isHeader)
+            ViewThatFits(in: .horizontal) {
+                budget(session, vertical: false)
+                budget(session, vertical: true)
+            }
+            ForEach(event.choices, id: \.id) { choice in
                 if let preview = store.preview(choice.id) {
                     Button { store.choose(choice.id) } label: {
-                        HStack(alignment: .top, spacing: 13) {
-                            Text("\(index + 1)")
-                                .font(.subheadline.weight(.heavy))
-                                .frame(width: 30, height: 30)
-                                .background(accent.opacity(0.1), in: Circle())
-                                .accessibilityHidden(true)
-                            VStack(alignment: .leading, spacing: 9) {
+                        VStack(alignment: .leading, spacing: 7) {
+                            HStack(alignment: .firstTextBaseline, spacing: 8) {
                                 Text(choice.title).font(.headline)
-                                Text("需要：時間\(preview.finalCost.time) · 精力\(preview.finalCost.energy) · 材料\(preview.finalCost.materials)")
-                                    .font(.subheadline)
-                                Text("基本影響：\(deltaText(choice.effect))").font(.footnote).foregroundStyle(.secondary)
-                                if !preview.applied {
-                                    Label(preview.unavailableReasons.joined(separator: "\n"), systemImage: "lock")
-                                        .font(.footnote)
-                                }
-                            }.fixedSize(horizontal: false, vertical: true)
-                            Spacer(minLength: 0)
-                        }.frame(maxWidth: .infinity, alignment: .leading).card()
+                                Spacer(minLength: 0)
+                                Image(systemName: preview.applied ? "arrow.up.right" : "lock").accessibilityHidden(true)
+                            }
+                            Text("時間\(preview.finalCost.time) · 精力\(preview.finalCost.energy) · 材料\(preview.finalCost.materials)")
+                                .font(.subheadline.weight(.semibold))
+                            Text("基本影響：\(deltaText(choice.effect))").font(.caption).foregroundStyle(.secondary)
+                            if !preview.applied {
+                                Text(preview.unavailableReasons.joined(separator: "\n")).font(.footnote)
+                            }
+                        }
+                        .fixedSize(horizontal: false, vertical: true)
+                        .frame(maxWidth: .infinity, minHeight: 64, alignment: .leading).card()
                     }
                     .buttonStyle(.plain)
                     .foregroundStyle(preview.applied ? Color.primary : Color.secondary)
@@ -209,18 +217,90 @@ struct CrossroadsView: View {
             }
             Menu {
                 ForEach(event.choices, id: \.id) { choice in
-                    Button(choice.title) {
-                        let traces = store.compare(choiceID: choice.id)
-                        if !traces.isEmpty { comparisonPresentation = .init(traces: traces) }
-                    }.accessibilityIdentifier("compare.\(choice.id)")
+                    Button(choice.title) { presentComparison(choice.id) }
+                        .accessibilityIdentifier("compare.\(choice.id)")
                 }
             } label: {
-                Label("同一個行動，換個環境呢？", systemImage: "arrow.triangle.branch")
-                    .font(.subheadline.weight(.semibold))
+                Label("同一行動，換個環境？", systemImage: "arrow.triangle.branch")
+                    .font(.subheadline.weight(.semibold)).frame(minHeight: 44)
             }.accessibilityIdentifier("compareChoice")
-            Text("代價是這次的模型試算；基本影響之外，實際支持或機會事件會在選擇後說明。")
+            if event.id == "teen-project" {
+                Text("試算線上與紙本選項：只有需要網路的行動，才會使用數位環境規則。比較不會替你選擇。")
+                    .font(.footnote).foregroundStyle(.secondary).accessibilityIdentifier("digitalLearningGuide")
+            }
+            if !shortText {
+                DisclosureGroup("多讀一點故事") { Text(storyText(event)).lineSpacing(4).padding(.top, 10) }
+            }
+            if let selection = session.currentSelection { selectionDetails(selection) }
+            if let jump = session.jumps.last, !jump.triggeredHooks.isEmpty {
+                VStack(alignment: .leading, spacing: 10) {
+                    StoryEyebrow(title: "上個岔路留下的回聲", icon: "leaf")
+                    ForEach(jump.triggeredHooks, id: \.id) { Text($0.text) }
+                }.card()
+            }
+            DisclosureGroup {
+                Text("這一頁的人物：\(event.recurringPerson)").font(.subheadline).padding(.top, 10)
+                ResourcePanel(resources: session.state.resources).padding(.top, 14)
+            } label: { Label("人物與近況", systemImage: "person.crop.rectangle").font(.subheadline.weight(.semibold)) }
+            Text("額度每回合重新安排；健康、人際、技能與財務及選擇紀錄會延續。基本影響之外，實際支持或機會事件會在選後說明。")
                 .font(.caption).foregroundStyle(.secondary)
+            Text("人生種子：\(String(session.state.seed))").font(.caption2.monospaced()).foregroundStyle(.secondary)
+                .accessibilityIdentifier("lifeSeed").accessibilityValue(String(session.state.seed))
         }
+    }
+
+    private func selectionDetails(_ selection: EventSelectionTrace) -> some View {
+        DisclosureGroup {
+            VStack(alignment: .leading, spacing: 10) {
+                Text(selection.summary).font(.subheadline).accessibilityIdentifier("eventSelectionSummary")
+                if let selected = selection.candidates.first(where: { $0.eventID == selection.selectedEventID }) {
+                    if selected.isFallback || selected.conditions.isEmpty {
+                        Text("這個情境沒有額外的家庭、資源或先前選擇門檻。")
+                            .font(.subheadline)
+                    } else {
+                        ForEach(selected.conditions, id: \.condition.id) { evaluation in
+                            Text(selectionConditionText(evaluation)).font(.subheadline)
+                                .accessibilityIdentifier("selectedCondition.\(evaluation.condition.id)")
+                        }
+                    }
+                } else {
+                    Text("目前沒有這個事件的入選條件紀錄，不補上推測。").font(.subheadline)
+                }
+                Text("這份紀錄說明事件如何入選；它不表示本次行動的成本或資源一定受運氣影響。")
+                    .font(.footnote).foregroundStyle(.secondary)
+                Text("種子：\(String(selection.seed)) · 候選\(selection.candidates.count)件 · 符合條件\(selection.eligibleEventIDs.count)件")
+                    .font(.caption).foregroundStyle(.secondary)
+            }.padding(.top, 10)
+        } label: {
+            Text("怎麼遇到這件事？").accessibilityIdentifier("eventSelectionDetails")
+        }
+    }
+
+    private func selectionConditionText(_ evaluation: EventConditionEvaluation) -> String {
+        let condition = evaluation.condition
+        switch condition.kind {
+        case .resourceAtLeast, .resourceAtMost, .householdAtLeast:
+            guard let actual = evaluation.actualValue, let threshold = condition.threshold else {
+                return "這項入選條件沒有完整的數值紀錄。"
+            }
+            let names = ["health": "健康", "financial": "財務安全", "relationships": "人際關係", "skills": "技能",
+                         "mentorSupport": "家庭情境中的指導支持", "careLoad": "家庭照顧安排",
+                         "travelCost": "交通時間安排", "materialBudget": "材料額度"]
+            let relation = condition.kind == .resourceAtMost ? "不超過" : "至少"
+            return "\(names[condition.key] ?? condition.key)：入選前實際為\(actual)，這個情境需\(relation)\(threshold)；\(evaluation.matched ? "本次符合" : "本次未符合")。"
+        case .priorChoice:
+            guard let actualChoice = evaluation.actualChoiceID else { return "這項條件沒有記錄到先前的選擇。" }
+            let actual = store.session?.traces.first { $0.eventID == condition.key }
+            let eventName = actual?.eventTitle ?? store.title(condition.key)
+            let choiceName = actual?.choiceTitle ?? store.catalog?.decisions.first { $0.id == condition.key }?
+                .choices.first { $0.id == actualChoice }?.title ?? actualChoice
+            return "先前在「\(eventName)」選了「\(choiceName)」；\(evaluation.matched ? "符合這個情境的先前選擇條件" : "未符合這個情境的先前選擇條件")。"
+        }
+    }
+
+    private func presentComparison(_ choiceID: String) {
+        let traces = store.compare(choiceID: choiceID)
+        if !traces.isEmpty { comparisonPresentation = .init(traces: traces) }
     }
 
     @ViewBuilder
@@ -240,40 +320,49 @@ struct CrossroadsView: View {
     }
 
     private func feedback(_ trace: ConsequenceTrace) -> some View {
-        VStack(alignment: .leading, spacing: 20) {
-            StoryScene(age: trace.age, person: trace.recurringPerson,
-                       chapter: "這一頁，留下了…", sceneID: "reflectionScene")
-            Button("為什麼會這樣？", systemImage: "questionmark.circle") { showTrace = true }
-                .buttonStyle(.bordered).controlSize(.large)
-                .accessibilityIdentifier("whyResult")
-            VStack(alignment: .leading, spacing: 16) {
-                StoryEyebrow(title: "我做的決定", icon: "bookmark")
-                Text(trace.choiceTitle).font(.title2.bold())
-                Text("這一段日子，沐沐用了\(trace.finalCost.time)格時間，有\(trace.budgetAfter.time)格沒有用在這個行動上。")
-                    .lineSpacing(4)
-                    .accessibilityIdentifier("roundTimeFeedback")
-                Text("時間、精力和材料額度只用於這一回合；下一回合會重新安排，剩下的格數不會累積。")
-                    .font(.footnote).foregroundStyle(.secondary)
-                    .accessibilityIdentifier("roundBudgetExplanation")
-                StoryEyebrow(title: "會帶往後來的變化", icon: "leaf")
+        VStack(alignment: .leading, spacing: 16) {
+            StoryEyebrow(title: "這次選擇之後", icon: "bookmark")
+            HStack(spacing: 12) {
+                Text(trace.choiceTitle).font(.title2.bold()).accessibilityIdentifier("chosenAction")
+                    .accessibilityValue(trace.choiceID)
+                if !dynamicTypeSize.isAccessibilitySize {
+                    Spacer(minLength: 0)
+                    CompactStoryScene(age: trace.age, person: trace.recurringPerson, sceneID: "reflectionScene")
+                        .frame(width: 88, height: 68)
+                }
+            }
+            Text(trace.eventTitle).font(.subheadline).foregroundStyle(.secondary)
+            VStack(alignment: .leading, spacing: 13) {
+                Label("已發生的變化", systemImage: "checkmark.circle").font(.headline)
                 Text(deltaText(trace.resourcesAfter - trace.resourcesBefore)).font(.headline)
-                Text("健康、財務安全、人際與技能會延續；這次的選擇也會留下紀錄，可能影響後來的故事。")
-                    .font(.footnote).foregroundStyle(.secondary)
+                Text("這一段日子，沐沐用了\(trace.finalCost.time)格時間，有\(trace.budgetAfter.time)格沒有用在這個行動上。")
+                    .lineSpacing(3).accessibilityIdentifier("roundTimeFeedback")
                 if trace.randomTrial?.occurred == true {
                     Label("這次，也意外收到別人的鼓勵。", systemImage: "sparkle")
                 }
-                if !trace.scheduledHooks.isEmpty {
-                    Text("有人記得一起做過的事。這段故事，還有下一頁。")
-                }
-                if let branch = trace.storyBranch {
-                    Divider()
+            }.card()
+            Button("為什麼會這樣？", systemImage: "questionmark.circle") { showTrace = true }
+                .buttonStyle(.bordered).controlSize(.large).accessibilityIdentifier("whyResult")
+            Button("比較剛才的行動", systemImage: "arrow.triangle.branch") { presentComparison(trace.choiceID) }
+                .buttonStyle(.bordered).controlSize(.large).accessibilityIdentifier("compareChosen")
+            if let branch = trace.storyBranch {
+                VStack(alignment: .leading, spacing: 10) {
                     StoryEyebrow(title: "過去的選擇，如何走到這一頁", icon: "arrow.triangle.branch")
                     Text(branch.explanation).font(.subheadline).lineSpacing(4)
                         .accessibilityIdentifier("storyBranchExplanation")
-                }
-            }.card()
-            Text("這只是一段經歷，沒有唯一正確的答案。下一段仍可以調整，也可以找人幫忙。")
-                .font(.subheadline).foregroundStyle(.secondary)
+                }.card()
+            }
+            if !trace.scheduledHooks.isEmpty {
+                VStack(alignment: .leading, spacing: 9) {
+                    Label("已留下的線索 · 還沒發生", systemImage: "clock").font(.headline)
+                    Text("這次的行動已記入延後故事；到了後面的年齡，才會知道這段線索如何接續。")
+                }.card()
+            }
+            selectionDetails(trace.eventSelection)
+            Text("時間、精力和材料額度只用於這一回合；下一回合會重新安排，剩下的格數不會累積。")
+                .font(.footnote).foregroundStyle(.secondary).accessibilityIdentifier("roundBudgetExplanation")
+            Text("健康、財務安全、人際與技能會延續；選擇也會留下紀錄。沒有唯一正確的答案，下一段仍能調整或求助。")
+                .font(.footnote).foregroundStyle(.secondary)
         }
     }
 
@@ -283,8 +372,18 @@ struct CrossroadsView: View {
             Text("那些岔路，\n成了我的故事。")
                 .font(.system(.largeTitle, design: .rounded).bold())
                 .accessibilityIdentifier("journeyComplete")
-            StoryScene(age: session.state.age, person: session.traces.last?.recurringPerson ?? "",
-                       chapter: "把這一段人生，留在心裡", sceneID: "endingScene")
+            if !dynamicTypeSize.isAccessibilitySize {
+                CompactStoryScene(age: session.state.age, person: session.traces.last?.recurringPerson ?? "", sceneID: "endingScene")
+                    .frame(width: 160, height: 100)
+            }
+            Text("人生種子：\(String(session.state.seed))").font(.caption.monospaced()).foregroundStyle(.secondary)
+                .accessibilityIdentifier("endingSeed").accessibilityValue(String(session.state.seed))
+            Button("同背景、同種子，再走一次", systemImage: "arrow.counterclockwise") { store.start(replay: true) }
+                .buttonStyle(JourneyButtonStyle()).accessibilityIdentifier("replaySame")
+            Text("同樣的背景與運氣；做相同選擇才會重現，也可以嘗試改選。").font(.footnote).foregroundStyle(.secondary)
+            Button("同背景，換個運氣", systemImage: "shuffle") { store.replayWithNewSeed() }
+                .buttonStyle(.bordered).controlSize(.large).accessibilityIdentifier("replayNewSeed")
+            Text("保留國家與家庭，改用新的種子；有些事件仍可能一樣。").font(.footnote).foregroundStyle(.secondary)
             Text("有選擇，有限制，也有一路相伴的人。這些數字描述故事裡的變化，不評定人生的價值。")
                 .foregroundStyle(.secondary)
             VStack(alignment: .leading, spacing: 14) {
@@ -321,8 +420,6 @@ struct CrossroadsView: View {
                     }
                 }.frame(maxWidth: .infinity, alignment: .leading).card()
             }
-            Button("同背景，再走一次", systemImage: "arrow.counterclockwise") { store.start(replay: true) }
-                .buttonStyle(JourneyButtonStyle()).accessibilityIdentifier("replaySame")
             Button("換個環境，開始新人生") { store.session = nil }.frame(maxWidth: .infinity)
             Text("人生種子：\(String(session.state.seed))").font(.caption.monospaced()).foregroundStyle(.secondary)
             Text("晚年回顧是本版故事收束，不表示角色在這個年齡死亡。")
@@ -334,13 +431,19 @@ struct CrossroadsView: View {
         Group {
             if let trace = store.session?.traces.last {
                 DetailSheet(title: "為什麼會這樣？", closeID: "closeTrace") {
+                    Text("我的選擇造成什麼變化？").font(.title3.bold())
                     Text(trace.influenceSummary).font(.headline).accessibilityIdentifier("actualInfluences")
                     if trace.randomTrial?.occurred == false {
                         Text("這次有檢查機會事件，但未觸發額外後果。").font(.footnote)
                     }
-                    ForEach(Array(trace.explanation.enumerated()), id: \.offset) { _, line in
+                    ForEach(Array((trace.costSteps.map(\.explanation) + trace.effectSteps.map(\.explanation)).enumerated()), id: \.offset) { _, line in
                         Text(line).padding(.vertical, 5)
                     }
+                    if let branch = trace.storyBranch {
+                        Text("故事如何接續？").font(.headline)
+                        Text(branch.explanation).font(.subheadline)
+                    }
+                    selectionDetails(trace.eventSelection)
                     let usedObservations = trace.observations.filter { observation in
                         trace.costSteps.contains { $0.sourceIDs.contains(observation.sourceID) }
                     }
@@ -377,8 +480,13 @@ struct CrossroadsView: View {
                     .font(.subheadline)
                     .accessibilityIdentifier("digitalComparisonInvitation")
             }
-            Text("固定：選項、年齡、家庭模板、過去狀態與種子。改變：環境指標，以及由它產生的模型成本。")
+            Text("固定：這個實際事件、選項、年齡、家庭模板、選擇前的資源與種子。改變：環境指標，以及由它產生的模型成本。")
                 .font(.footnote)
+            if let selected = presentation.traces.first {
+                Text("選前資源：健康\(selected.resourcesBefore.health) · 財務\(selected.resourcesBefore.financial) · 人際\(selected.resourcesBefore.relationships) · 技能\(selected.resourcesBefore.skills)")
+                    .font(.caption).foregroundStyle(.secondary).accessibilityIdentifier("comparisonPreState")
+                    .accessibilityValue("health=\(selected.resourcesBefore.health);financial=\(selected.resourcesBefore.financial);relationships=\(selected.resourcesBefore.relationships);skills=\(selected.resourcesBefore.skills)")
+            }
             ForEach(presentation.traces, id: \.countryCode) { trace in
                 VStack(alignment: .leading, spacing: 8) {
                     Text(store.name(trace.countryCode)).font(.title3.bold())
@@ -440,8 +548,12 @@ struct CrossroadsView: View {
     }
 
     private func storyText(_ event: DecisionSkeleton) -> String {
-        let text = EventNarratives.texts[event.storyVariantID ?? event.id] ?? event.storyQuestion
-        return shortText ? String(text.split(separator: "\n").first ?? Substring(text)) : text
+        EventNarratives.texts[event.storyVariantID ?? event.id] ?? event.storyQuestion
+    }
+
+    private func shortStory(_ event: DecisionSkeleton) -> String {
+        let text = storyText(event)
+        return String(text.split(separator: "\n").first ?? Substring(text))
     }
 }
 

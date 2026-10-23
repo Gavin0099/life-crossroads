@@ -87,6 +87,33 @@ struct StoryScene: View {
     }
 }
 
+/// A small story vignette leaves the event and actions in the foreground.
+struct CompactStoryScene: View {
+    let age: Int
+    let person: String
+    let sceneID: String
+
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack(alignment: .bottom) {
+                Image("RiverCrossroads").resizable().scaledToFill()
+                    .frame(width: geometry.size.width, height: geometry.size.height).clipped()
+                HStack(alignment: .bottom, spacing: 0) {
+                    StoryPortrait(character: .protagonist(age: age))
+                        .frame(width: geometry.size.width * 0.5)
+                    if let companion = StoryCharacter.companion(named: person) {
+                        StoryPortrait(character: companion).frame(width: geometry.size.width * 0.44)
+                    }
+                }.padding(.bottom, 2)
+            }
+        }
+        .clipShape(RoundedRectangle(cornerRadius: 12))
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(age)歲的沐沐\(StoryCharacter.companion(named: person) == nil ? "" : "與\(person)")，在共用的河畔寓言場景")
+        .accessibilityIdentifier(sceneID)
+    }
+}
+
 struct StoryEyebrow: View {
     let title: String
     let icon: String

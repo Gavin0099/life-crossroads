@@ -1,7 +1,7 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "dataVersion": "lc01-data-2",
-  "contentVersion": "lc02-story-3",
+  "contentVersion": "lc02-story-4",
   "referenceYear": 2023,
   "sources": [
     {
@@ -111,6 +111,12 @@
       "version": "1",
       "statement": "三條虛構故事條件：10歲與阿禾創作或調整碰面才在72歲重逢，否則和社區夥伴小澄開風車桌認識新鄰居；13歲線上/紙本/未製作決定17歲學習場景，作品經驗加技能至少28才可帶領工作坊；39歲共組照顧輪班才在52歲沿用互助約定，健康至少55才可自願接一小段。每次記錄實際歷史、資源門檻、場景及選項。",
       "limitation": "人物、約定、門檻與後續路線皆為遊戲敘事假設，不是心理、醫學或社會因果；沒有連結不等於個人失敗，所有路線保留求助及免費休息。國家名稱不參與故事條件。"
+    },
+    {
+      "id": "event-selection",
+      "version": "1",
+      "statement": "每局固定15個年齡槽。每槽先檢查明列的已執行決策、四項資源或家庭安排條件；符合者按event ID排序，再以Seed及年齡槽的鍵控亂數均等挑一個。每槽保留一個無條件預備情境。12、21、32、59、65歲共增加8個條件情境，其餘保留既有錨點。",
+      "limitation": "情境、門檻及均等機率都是原創遊戲設計，不是事件真實發生率、國家分布或現實因果。國名不參與候選條件或亂數鍵；不同Seed也可能遇到相同情境。版本改變不保證延續舊存檔。"
     }
   ],
   "countries": [
@@ -709,7 +715,9 @@
             "choice-effects"
           ]
         }
-      ]
+      ],
+      "isFallback": true,
+      "eligibility": []
     },
     {
       "id": "child-friend",
@@ -784,7 +792,9 @@
             "choice-effects"
           ]
         }
-      ]
+      ],
+      "isFallback": true,
+      "eligibility": []
     },
     {
       "id": "child-transition",
@@ -859,7 +869,9 @@
             "choice-effects"
           ]
         }
-      ]
+      ],
+      "isFallback": true,
+      "eligibility": []
     },
     {
       "id": "teen-project",
@@ -957,7 +969,9 @@
             "choice-effects"
           ]
         }
-      ]
+      ],
+      "isFallback": true,
+      "eligibility": []
     },
     {
       "id": "teen-direction",
@@ -1077,7 +1091,9 @@
             "choice-effects"
           ]
         }
-      ]
+      ],
+      "isFallback": true,
+      "eligibility": []
     },
     {
       "id": "teen-launch",
@@ -1152,7 +1168,9 @@
             "choice-effects"
           ]
         }
-      ]
+      ],
+      "isFallback": true,
+      "eligibility": []
     },
     {
       "id": "adult-learning",
@@ -1250,7 +1268,9 @@
             "choice-effects"
           ]
         }
-      ]
+      ],
+      "isFallback": true,
+      "eligibility": []
     },
     {
       "id": "adult-balance",
@@ -1325,7 +1345,9 @@
             "choice-effects"
           ]
         }
-      ]
+      ],
+      "isFallback": true,
+      "eligibility": []
     },
     {
       "id": "adult-care",
@@ -1400,7 +1422,9 @@
             "choice-effects"
           ]
         }
-      ]
+      ],
+      "isFallback": true,
+      "eligibility": []
     },
     {
       "id": "middle-turn",
@@ -1498,7 +1522,9 @@
             "choice-effects"
           ]
         }
-      ]
+      ],
+      "isFallback": true,
+      "eligibility": []
     },
     {
       "id": "middle-support",
@@ -1596,7 +1622,9 @@
             "choice-effects"
           ]
         }
-      ]
+      ],
+      "isFallback": true,
+      "eligibility": []
     },
     {
       "id": "middle-rhythm",
@@ -1671,7 +1699,9 @@
             "choice-effects"
           ]
         }
-      ]
+      ],
+      "isFallback": true,
+      "eligibility": []
     },
     {
       "id": "later-pass-on",
@@ -1746,7 +1776,9 @@
             "choice-effects"
           ]
         }
-      ]
+      ],
+      "isFallback": true,
+      "eligibility": []
     },
     {
       "id": "later-reconnect",
@@ -1821,7 +1853,9 @@
             "choice-effects"
           ]
         }
-      ]
+      ],
+      "isFallback": true,
+      "eligibility": []
     },
     {
       "id": "later-review",
@@ -1895,6 +1929,724 @@
           "assumptionIDs": [
             "choice-effects"
           ]
+        }
+      ],
+      "isFallback": true,
+      "eligibility": []
+    },
+    {
+      "id": "child-library-map",
+      "age": 12,
+      "title": "圖書角出現一張空白地圖",
+      "recurringPerson": "樹老師",
+      "storyQuestion": "怎麼讓新同學也找到能問問題的地方？",
+      "choices": [
+        {
+          "id": "invest",
+          "title": "和樹老師畫借書與問路的小地圖",
+          "kind": "learn",
+          "control": "sharedWithAdult",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 2,
+          "materialCost": 1,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 3
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "event-selection",
+            "agency"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "請老師先帶你走一次圖書角",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "把地圖留到明天，今天先安心休息",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [
+        {
+          "id": "nearby-guide",
+          "kind": "householdAtLeast",
+          "key": "mentorSupport",
+          "threshold": 1,
+          "choiceIDs": []
+        }
+      ]
+    },
+    {
+      "id": "child-wind-team",
+      "age": 12,
+      "title": "阿禾想替風車找新夥伴",
+      "recurringPerson": "阿禾",
+      "storyQuestion": "兩個人的約定，能不能多留一個位置？",
+      "choices": [
+        {
+          "id": "invest",
+          "title": "和阿禾替新同學留一份風車材料",
+          "kind": "share",
+          "control": "sharedWithAdult",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 2,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 4,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "event-selection",
+            "agency"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "請阿禾一起問新同學想玩什麼",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "先告訴阿禾今天需要自己的時間",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [
+        {
+          "id": "windmill-promise",
+          "kind": "priorChoice",
+          "key": "child-friend",
+          "threshold": null,
+          "choiceIDs": [
+            "invest",
+            "ask"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "teen-repair-table",
+      "age": 21,
+      "title": "樹老師的修理桌缺一雙手",
+      "recurringPerson": "樹老師",
+      "storyQuestion": "學過的經驗，能幫忙修好什麼？",
+      "choices": [
+        {
+          "id": "invest",
+          "title": "和樹老師修理社區的舊玩具",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 2,
+          "materialCost": 1,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 3
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "event-selection",
+            "agency"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "請樹老師示範一個安全的小步驟",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "先當安靜的旁觀者，保留休息時間",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [
+        {
+          "id": "made-a-project",
+          "kind": "priorChoice",
+          "key": "teen-project",
+          "threshold": null,
+          "choiceIDs": [
+            "invest",
+            "offline"
+          ]
+        },
+        {
+          "id": "repair-practice",
+          "kind": "resourceAtLeast",
+          "key": "skills",
+          "threshold": 25,
+          "choiceIDs": []
+        }
+      ]
+    },
+    {
+      "id": "teen-shared-kitchen",
+      "age": 21,
+      "title": "小澄提議排一張共煮表",
+      "recurringPerson": "小澄",
+      "storyQuestion": "生活安排能怎麼互相分擔？",
+      "choices": [
+        {
+          "id": "invest",
+          "title": "和小澄試排一週共煮與採買分工",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 2,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 1,
+            "relationships": 3,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "event-selection",
+            "agency"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "請小澄陪你說出現在忙不過來的事",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天先吃簡單一點，照顧自己的步調",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [
+        {
+          "id": "family-rotations",
+          "kind": "householdAtLeast",
+          "key": "careLoad",
+          "threshold": 1,
+          "choiceIDs": []
+        },
+        {
+          "id": "kitchen-energy",
+          "kind": "resourceAtLeast",
+          "key": "health",
+          "threshold": 50,
+          "choiceIDs": []
+        }
+      ]
+    },
+    {
+      "id": "adult-neighbor-market",
+      "age": 32,
+      "title": "週末市集想借你的巧思",
+      "recurringPerson": "小澄",
+      "storyQuestion": "多一點收入，也會少掉哪些空閒？",
+      "choices": [
+        {
+          "id": "invest",
+          "title": "和小澄試擺一個小攤，記下成本",
+          "kind": "work",
+          "control": "adultResponsibility",
+          "minimumAge": 23,
+          "timeCost": 2,
+          "energyCost": 2,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 2,
+            "relationships": 2,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "event-selection",
+            "agency"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "請小澄一起估算時間與材料負擔",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "這次不擺攤，保留週末和身邊的人相處",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [
+        {
+          "id": "current-financial-room",
+          "kind": "resourceAtMost",
+          "key": "financial",
+          "threshold": 65,
+          "choiceIDs": []
+        },
+        {
+          "id": "market-helper",
+          "kind": "householdAtLeast",
+          "key": "mentorSupport",
+          "threshold": 1,
+          "choiceIDs": []
+        }
+      ]
+    },
+    {
+      "id": "middle-garden-table",
+      "age": 59,
+      "title": "社區花圃邀你留一張椅子",
+      "recurringPerson": "小澄",
+      "storyQuestion": "一起照顧花草，也要留多少時間給自己？",
+      "choices": [
+        {
+          "id": "invest",
+          "title": "和小澄認養一小格花圃，排好輪值",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 2,
+          "materialCost": 0,
+          "effect": {
+            "health": 1,
+            "financial": 0,
+            "relationships": 3,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "event-selection",
+            "agency"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "請小澄幫忙挑適合體力的小工作",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "坐在椅子上看看花，今天不接輪值",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [
+        {
+          "id": "garden-energy",
+          "kind": "resourceAtLeast",
+          "key": "health",
+          "threshold": 45,
+          "choiceIDs": []
+        }
+      ]
+    },
+    {
+      "id": "middle-open-desk",
+      "age": 59,
+      "title": "小澄想讓互助桌多開一小時",
+      "recurringPerson": "小澄",
+      "storyQuestion": "以前的約定，如何讓現在的人用得上？",
+      "choices": [
+        {
+          "id": "invest",
+          "title": "把輪班經驗寫成一張互助桌小卡",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 2,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 4,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "event-selection",
+            "agency"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "請小澄和其他夥伴一起分配開桌時間",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "先把自己的界線寫好，暫不加開時段",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [
+        {
+          "id": "shared-care-contacts",
+          "kind": "priorChoice",
+          "key": "adult-care",
+          "threshold": null,
+          "choiceIDs": [
+            "invest"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "later-voice-booth",
+      "age": 65,
+      "title": "樹老師借來一台回憶錄音機",
+      "recurringPerson": "樹老師",
+      "storyQuestion": "想讓後來的人聽見哪一段不完美的故事？",
+      "choices": [
+        {
+          "id": "invest",
+          "title": "和樹老師錄下一次失敗後再試的故事",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 2,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 3,
+            "skills": 2
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "event-selection",
+            "agency"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "請樹老師先問你一個容易說的小問題",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天先聽別人分享，保留自己的安靜",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [
+        {
+          "id": "sharing-connection",
+          "kind": "resourceAtLeast",
+          "key": "relationships",
+          "threshold": 60,
+          "choiceIDs": []
+        },
+        {
+          "id": "recording-companion",
+          "kind": "householdAtLeast",
+          "key": "mentorSupport",
+          "threshold": 1,
+          "choiceIDs": []
         }
       ]
     }

@@ -34,6 +34,7 @@ enum EnvironmentRules {
 public enum DecisionResolver {
     public static func resolve(state: LifeState, eventID: String, choiceID: String, catalog: ModelCatalog) throws -> DecisionResult {
         try catalog.validate(); try state.validate(catalog: catalog)
+        let selection = try EventSelector.select(state: state, catalog: catalog)
         guard let original = catalog.decisions.first(where: { $0.id == eventID }),
               let originalChoice = original.choices.first(where: { $0.id == choiceID }) else { throw ModelError.missing("decision/choice") }
         let projection = StoryBranchEngine.project(event: original, state: state)
@@ -91,6 +92,9 @@ public enum DecisionResolver {
                    "協助可以減少成本，但不會憑空增加回合時間。")
         }
         var reasons: [String] = []
+        if selection.selectedEventID != event.id {
+            reasons.append("這次遇見的是另一個情境；不能直接跳到未入選的事件。")
+        }
         if availableChoice == nil {
             reasons.append("這個故事條件尚未具備；可以選擇畫面上提供的參與、求助或免費休息。")
         }
@@ -148,6 +152,7 @@ public enum DecisionResolver {
             engineVersion: state.engineVersion, dataVersion: state.dataVersion, contentVersion: state.contentVersion, seed: state.seed,
             eventID: event.id, choiceID: choice.id, eventTitle: event.title, choiceTitle: choice.title,
             recurringPerson: event.recurringPerson, storyVariantID: event.storyVariantID, storyBranch: projection.evaluation,
+            eventSelection: selection,
             age: state.age, countryCode: state.countryCode,
             householdID: state.householdID, control: choice.control, applied: reasons.isEmpty, unavailableReasons: reasons,
             observations: context.observations, baseCost: baseCost, costSteps: costSteps, finalCost: cost,

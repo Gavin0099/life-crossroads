@@ -1,0 +1,2550 @@
+{
+  "comparison" : [
+    {
+      "country" : "日本",
+      "household" : "jpn-1",
+      "trace" : {
+        "age" : 13,
+        "applied" : true,
+        "baseCost" : {
+          "energy" : 2,
+          "materials" : 1,
+          "time" : 3
+        },
+        "budgetAfter" : {
+          "energy" : 4,
+          "materials" : 1,
+          "time" : 3
+        },
+        "budgetBefore" : {
+          "energy" : 6,
+          "materials" : 2,
+          "time" : 6
+        },
+        "choiceID" : "invest",
+        "choiceTitle" : "用線上圖解製作互動作品",
+        "contentVersion" : "lc02-story-4",
+        "control" : "personal",
+        "costSteps" : [
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 1
+            },
+            "assumptionIDs" : [
+              "macro-friction"
+            ],
+            "explanation" : "模型把環境資料轉為準備成本：多用 1 格時間、0 格材料。這是遊戲假設。",
+            "influence" : "socialEnvironment",
+            "inputs" : {
+              "electricityPct" : 100,
+              "internetPct" : 85.00990295
+            },
+            "ruleID" : "context.digital",
+            "sourceIDs" : [
+              "wdi-internet-2023",
+              "wdi-electricity-2023"
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 1
+            },
+            "assumptionIDs" : [
+              "household-scenarios"
+            ],
+            "explanation" : "這個虛構家庭的設備安排，多需要 1 格時間。",
+            "influence" : "family",
+            "inputs" : {
+              "deviceScheduling" : 1
+            },
+            "ruleID" : "family.device",
+            "sourceIDs" : [
+
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 0
+            },
+            "assumptionIDs" : [
+              "household-scenarios",
+              "agency"
+            ],
+            "explanation" : "交通安排多用 0 格時間；這回合由角色承擔的成人照顧安排為 0 格。",
+            "influence" : "family",
+            "inputs" : {
+              "adultCareCost" : 0,
+              "travelCost" : 0
+            },
+            "ruleID" : "family.schedule",
+            "sourceIDs" : [
+
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : -2
+            },
+            "assumptionIDs" : [
+              "support-network"
+            ],
+            "explanation" : "有人一起準備，幫你節省 2 格時間。",
+            "influence" : "otherPeople",
+            "inputs" : {
+              "support" : 2
+            },
+            "ruleID" : "support.shared-preparation",
+            "sourceIDs" : [
+
+            ]
+          }
+        ],
+        "countryCode" : "JPN",
+        "dataVersion" : "lc01-data-2",
+        "effectSteps" : [
+          {
+            "assumptionIDs" : [
+              "choice-effects",
+              "agency",
+              "learning-channels"
+            ],
+            "delta" : {
+              "financial" : -1,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 4
+            },
+            "explanation" : "你選了「用線上圖解製作互動作品」，付出 3 格時間和 2 格精力。",
+            "influence" : "playerChoice",
+            "ruleID" : "choice.learn"
+          },
+          {
+            "assumptionIDs" : [
+              "support-network"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 2,
+              "skills" : 1
+            },
+            "explanation" : "一起準備的人陪你練習，也成為這段故事裡的重要夥伴。",
+            "influence" : "otherPeople",
+            "ruleID" : "support.encouragement"
+          },
+          {
+            "assumptionIDs" : [
+              "luck-encouragement"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 0
+            },
+            "explanation" : "這次沒有額外的機會事件；好的選擇也不保證好運。",
+            "influence" : "randomness",
+            "ruleID" : "luck.encouragement"
+          },
+          {
+            "assumptionIDs" : [
+              "resource-bounds"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 0
+            },
+            "explanation" : "四項資源維持在 0～100，沒有合成人生總分。",
+            "influence" : "modelRule",
+            "ruleID" : "resource.clamp"
+          }
+        ],
+        "engineVersion" : "lc02-4",
+        "eventID" : "teen-project",
+        "eventSelection" : {
+          "age" : 13,
+          "algorithm" : "fnv1a-splitmix64-v1+conditional-slots-v1",
+          "assumptionID" : "event-selection",
+          "candidates" : [
+            {
+              "conditions" : [
+
+              ],
+              "eligible" : true,
+              "eventID" : "teen-project",
+              "isFallback" : true
+            }
+          ],
+          "draw" : 0.06008007855721109,
+          "eligibleEventIDs" : [
+            "teen-project"
+          ],
+          "key" : "9:life-slot|13|0|20:conditional-slots-v1",
+          "seed" : 42,
+          "selectedEventID" : "teen-project"
+        },
+        "eventTitle" : "想參加共同創作",
+        "finalCost" : {
+          "energy" : 2,
+          "materials" : 1,
+          "time" : 3
+        },
+        "householdID" : "jpn-1",
+        "observations" : [
+          {
+            "dataVersion" : "wdi-2023-snapshot-2026-10-23",
+            "indicator" : "IT.NET.USER.ZS",
+            "region" : "JPN",
+            "sourceID" : "wdi-internet-2023",
+            "unit" : "% of population",
+            "value" : 85.00990295,
+            "year" : 2023
+          },
+          {
+            "dataVersion" : "wdi-2023-snapshot-2026-10-23",
+            "indicator" : "EG.ELC.ACCS.ZS",
+            "region" : "JPN",
+            "sourceID" : "wdi-electricity-2023",
+            "unit" : "% of population",
+            "value" : 100,
+            "year" : 2023
+          }
+        ],
+        "randomTrial" : {
+          "algorithm" : "fnv1a-splitmix64-v1",
+          "assumptionID" : "luck-encouragement",
+          "draw" : 0.7120665062311973,
+          "key" : "12:teen-project|13|0|24:unexpected-encouragement",
+          "occurred" : false,
+          "threshold" : 0.25
+        },
+        "recurringPerson" : "樹老師",
+        "resourcesAfter" : {
+          "financial" : 34,
+          "health" : 66,
+          "relationships" : 67,
+          "skills" : 25
+        },
+        "resourcesBefore" : {
+          "financial" : 35,
+          "health" : 66,
+          "relationships" : 65,
+          "skills" : 20
+        },
+        "scheduledHooks" : [
+          {
+            "assumptionID" : "story-callback",
+            "dueAge" : 17,
+            "effect" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 2,
+              "skills" : 1
+            },
+            "id" : "teen-project:reconnect",
+            "originChoiceID" : "invest",
+            "originEventID" : "teen-project",
+            "person" : "樹老師",
+            "text" : "樹老師記得你當年的選擇，這次邀你一起分享經驗。"
+          }
+        ],
+        "seed" : 42,
+        "unavailableReasons" : [
+
+        ]
+      }
+    },
+    {
+      "country" : "日本",
+      "household" : "jpn-2",
+      "trace" : {
+        "age" : 13,
+        "applied" : true,
+        "baseCost" : {
+          "energy" : 2,
+          "materials" : 1,
+          "time" : 3
+        },
+        "budgetAfter" : {
+          "energy" : 4,
+          "materials" : 3,
+          "time" : 2
+        },
+        "budgetBefore" : {
+          "energy" : 6,
+          "materials" : 4,
+          "time" : 6
+        },
+        "choiceID" : "invest",
+        "choiceTitle" : "用線上圖解製作互動作品",
+        "contentVersion" : "lc02-story-4",
+        "control" : "personal",
+        "costSteps" : [
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 1
+            },
+            "assumptionIDs" : [
+              "macro-friction"
+            ],
+            "explanation" : "模型把環境資料轉為準備成本：多用 1 格時間、0 格材料。這是遊戲假設。",
+            "influence" : "socialEnvironment",
+            "inputs" : {
+              "electricityPct" : 100,
+              "internetPct" : 85.00990295
+            },
+            "ruleID" : "context.digital",
+            "sourceIDs" : [
+              "wdi-internet-2023",
+              "wdi-electricity-2023"
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 0
+            },
+            "assumptionIDs" : [
+              "household-scenarios"
+            ],
+            "explanation" : "這個虛構家庭的設備安排，多需要 0 格時間。",
+            "influence" : "family",
+            "inputs" : {
+              "deviceScheduling" : 0
+            },
+            "ruleID" : "family.device",
+            "sourceIDs" : [
+
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 1
+            },
+            "assumptionIDs" : [
+              "household-scenarios",
+              "agency"
+            ],
+            "explanation" : "交通安排多用 1 格時間；這回合由角色承擔的成人照顧安排為 0 格。",
+            "influence" : "family",
+            "inputs" : {
+              "adultCareCost" : 0,
+              "travelCost" : 1
+            },
+            "ruleID" : "family.schedule",
+            "sourceIDs" : [
+
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : -1
+            },
+            "assumptionIDs" : [
+              "support-network"
+            ],
+            "explanation" : "有人一起準備，幫你節省 1 格時間。",
+            "influence" : "otherPeople",
+            "inputs" : {
+              "support" : 1
+            },
+            "ruleID" : "support.shared-preparation",
+            "sourceIDs" : [
+
+            ]
+          }
+        ],
+        "countryCode" : "JPN",
+        "dataVersion" : "lc01-data-2",
+        "effectSteps" : [
+          {
+            "assumptionIDs" : [
+              "choice-effects",
+              "agency",
+              "learning-channels"
+            ],
+            "delta" : {
+              "financial" : -1,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 4
+            },
+            "explanation" : "你選了「用線上圖解製作互動作品」，付出 4 格時間和 2 格精力。",
+            "influence" : "playerChoice",
+            "ruleID" : "choice.learn"
+          },
+          {
+            "assumptionIDs" : [
+              "support-network"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 2,
+              "skills" : 1
+            },
+            "explanation" : "一起準備的人陪你練習，也成為這段故事裡的重要夥伴。",
+            "influence" : "otherPeople",
+            "ruleID" : "support.encouragement"
+          },
+          {
+            "assumptionIDs" : [
+              "luck-encouragement"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 0
+            },
+            "explanation" : "這次沒有額外的機會事件；好的選擇也不保證好運。",
+            "influence" : "randomness",
+            "ruleID" : "luck.encouragement"
+          },
+          {
+            "assumptionIDs" : [
+              "resource-bounds"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 0
+            },
+            "explanation" : "四項資源維持在 0～100，沒有合成人生總分。",
+            "influence" : "modelRule",
+            "ruleID" : "resource.clamp"
+          }
+        ],
+        "engineVersion" : "lc02-4",
+        "eventID" : "teen-project",
+        "eventSelection" : {
+          "age" : 13,
+          "algorithm" : "fnv1a-splitmix64-v1+conditional-slots-v1",
+          "assumptionID" : "event-selection",
+          "candidates" : [
+            {
+              "conditions" : [
+
+              ],
+              "eligible" : true,
+              "eventID" : "teen-project",
+              "isFallback" : true
+            }
+          ],
+          "draw" : 0.06008007855721109,
+          "eligibleEventIDs" : [
+            "teen-project"
+          ],
+          "key" : "9:life-slot|13|0|20:conditional-slots-v1",
+          "seed" : 42,
+          "selectedEventID" : "teen-project"
+        },
+        "eventTitle" : "想參加共同創作",
+        "finalCost" : {
+          "energy" : 2,
+          "materials" : 1,
+          "time" : 4
+        },
+        "householdID" : "jpn-2",
+        "observations" : [
+          {
+            "dataVersion" : "wdi-2023-snapshot-2026-10-23",
+            "indicator" : "IT.NET.USER.ZS",
+            "region" : "JPN",
+            "sourceID" : "wdi-internet-2023",
+            "unit" : "% of population",
+            "value" : 85.00990295,
+            "year" : 2023
+          },
+          {
+            "dataVersion" : "wdi-2023-snapshot-2026-10-23",
+            "indicator" : "EG.ELC.ACCS.ZS",
+            "region" : "JPN",
+            "sourceID" : "wdi-electricity-2023",
+            "unit" : "% of population",
+            "value" : 100,
+            "year" : 2023
+          }
+        ],
+        "randomTrial" : {
+          "algorithm" : "fnv1a-splitmix64-v1",
+          "assumptionID" : "luck-encouragement",
+          "draw" : 0.7120665062311973,
+          "key" : "12:teen-project|13|0|24:unexpected-encouragement",
+          "occurred" : false,
+          "threshold" : 0.25
+        },
+        "recurringPerson" : "樹老師",
+        "resourcesAfter" : {
+          "financial" : 59,
+          "health" : 64,
+          "relationships" : 52,
+          "skills" : 25
+        },
+        "resourcesBefore" : {
+          "financial" : 60,
+          "health" : 64,
+          "relationships" : 50,
+          "skills" : 20
+        },
+        "scheduledHooks" : [
+          {
+            "assumptionID" : "story-callback",
+            "dueAge" : 17,
+            "effect" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 2,
+              "skills" : 1
+            },
+            "id" : "teen-project:reconnect",
+            "originChoiceID" : "invest",
+            "originEventID" : "teen-project",
+            "person" : "樹老師",
+            "text" : "樹老師記得你當年的選擇，這次邀你一起分享經驗。"
+          }
+        ],
+        "seed" : 42,
+        "unavailableReasons" : [
+
+        ]
+      }
+    },
+    {
+      "country" : "美國",
+      "household" : "usa-1",
+      "trace" : {
+        "age" : 13,
+        "applied" : true,
+        "baseCost" : {
+          "energy" : 2,
+          "materials" : 1,
+          "time" : 3
+        },
+        "budgetAfter" : {
+          "energy" : 4,
+          "materials" : 1,
+          "time" : 4
+        },
+        "budgetBefore" : {
+          "energy" : 6,
+          "materials" : 2,
+          "time" : 6
+        },
+        "choiceID" : "invest",
+        "choiceTitle" : "用線上圖解製作互動作品",
+        "contentVersion" : "lc02-story-4",
+        "control" : "personal",
+        "costSteps" : [
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 0
+            },
+            "assumptionIDs" : [
+              "macro-friction"
+            ],
+            "explanation" : "模型把環境資料轉為準備成本：多用 0 格時間、0 格材料。這是遊戲假設。",
+            "influence" : "socialEnvironment",
+            "inputs" : {
+              "electricityPct" : 100,
+              "internetPct" : 93.52559662
+            },
+            "ruleID" : "context.digital",
+            "sourceIDs" : [
+              "wdi-internet-2023",
+              "wdi-electricity-2023"
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 1
+            },
+            "assumptionIDs" : [
+              "household-scenarios"
+            ],
+            "explanation" : "這個虛構家庭的設備安排，多需要 1 格時間。",
+            "influence" : "family",
+            "inputs" : {
+              "deviceScheduling" : 1
+            },
+            "ruleID" : "family.device",
+            "sourceIDs" : [
+
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 0
+            },
+            "assumptionIDs" : [
+              "household-scenarios",
+              "agency"
+            ],
+            "explanation" : "交通安排多用 0 格時間；這回合由角色承擔的成人照顧安排為 0 格。",
+            "influence" : "family",
+            "inputs" : {
+              "adultCareCost" : 0,
+              "travelCost" : 0
+            },
+            "ruleID" : "family.schedule",
+            "sourceIDs" : [
+
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : -2
+            },
+            "assumptionIDs" : [
+              "support-network"
+            ],
+            "explanation" : "有人一起準備，幫你節省 2 格時間。",
+            "influence" : "otherPeople",
+            "inputs" : {
+              "support" : 2
+            },
+            "ruleID" : "support.shared-preparation",
+            "sourceIDs" : [
+
+            ]
+          }
+        ],
+        "countryCode" : "USA",
+        "dataVersion" : "lc01-data-2",
+        "effectSteps" : [
+          {
+            "assumptionIDs" : [
+              "choice-effects",
+              "agency",
+              "learning-channels"
+            ],
+            "delta" : {
+              "financial" : -1,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 4
+            },
+            "explanation" : "你選了「用線上圖解製作互動作品」，付出 2 格時間和 2 格精力。",
+            "influence" : "playerChoice",
+            "ruleID" : "choice.learn"
+          },
+          {
+            "assumptionIDs" : [
+              "support-network"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 2,
+              "skills" : 1
+            },
+            "explanation" : "一起準備的人陪你練習，也成為這段故事裡的重要夥伴。",
+            "influence" : "otherPeople",
+            "ruleID" : "support.encouragement"
+          },
+          {
+            "assumptionIDs" : [
+              "luck-encouragement"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 0
+            },
+            "explanation" : "這次沒有額外的機會事件；好的選擇也不保證好運。",
+            "influence" : "randomness",
+            "ruleID" : "luck.encouragement"
+          },
+          {
+            "assumptionIDs" : [
+              "resource-bounds"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 0
+            },
+            "explanation" : "四項資源維持在 0～100，沒有合成人生總分。",
+            "influence" : "modelRule",
+            "ruleID" : "resource.clamp"
+          }
+        ],
+        "engineVersion" : "lc02-4",
+        "eventID" : "teen-project",
+        "eventSelection" : {
+          "age" : 13,
+          "algorithm" : "fnv1a-splitmix64-v1+conditional-slots-v1",
+          "assumptionID" : "event-selection",
+          "candidates" : [
+            {
+              "conditions" : [
+
+              ],
+              "eligible" : true,
+              "eventID" : "teen-project",
+              "isFallback" : true
+            }
+          ],
+          "draw" : 0.06008007855721109,
+          "eligibleEventIDs" : [
+            "teen-project"
+          ],
+          "key" : "9:life-slot|13|0|20:conditional-slots-v1",
+          "seed" : 42,
+          "selectedEventID" : "teen-project"
+        },
+        "eventTitle" : "想參加共同創作",
+        "finalCost" : {
+          "energy" : 2,
+          "materials" : 1,
+          "time" : 2
+        },
+        "householdID" : "usa-1",
+        "observations" : [
+          {
+            "dataVersion" : "wdi-2023-snapshot-2026-10-23",
+            "indicator" : "IT.NET.USER.ZS",
+            "region" : "USA",
+            "sourceID" : "wdi-internet-2023",
+            "unit" : "% of population",
+            "value" : 93.52559662,
+            "year" : 2023
+          },
+          {
+            "dataVersion" : "wdi-2023-snapshot-2026-10-23",
+            "indicator" : "EG.ELC.ACCS.ZS",
+            "region" : "USA",
+            "sourceID" : "wdi-electricity-2023",
+            "unit" : "% of population",
+            "value" : 100,
+            "year" : 2023
+          }
+        ],
+        "randomTrial" : {
+          "algorithm" : "fnv1a-splitmix64-v1",
+          "assumptionID" : "luck-encouragement",
+          "draw" : 0.7120665062311973,
+          "key" : "12:teen-project|13|0|24:unexpected-encouragement",
+          "occurred" : false,
+          "threshold" : 0.25
+        },
+        "recurringPerson" : "樹老師",
+        "resourcesAfter" : {
+          "financial" : 34,
+          "health" : 66,
+          "relationships" : 67,
+          "skills" : 25
+        },
+        "resourcesBefore" : {
+          "financial" : 35,
+          "health" : 66,
+          "relationships" : 65,
+          "skills" : 20
+        },
+        "scheduledHooks" : [
+          {
+            "assumptionID" : "story-callback",
+            "dueAge" : 17,
+            "effect" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 2,
+              "skills" : 1
+            },
+            "id" : "teen-project:reconnect",
+            "originChoiceID" : "invest",
+            "originEventID" : "teen-project",
+            "person" : "樹老師",
+            "text" : "樹老師記得你當年的選擇，這次邀你一起分享經驗。"
+          }
+        ],
+        "seed" : 42,
+        "unavailableReasons" : [
+
+        ]
+      }
+    },
+    {
+      "country" : "美國",
+      "household" : "usa-2",
+      "trace" : {
+        "age" : 13,
+        "applied" : true,
+        "baseCost" : {
+          "energy" : 2,
+          "materials" : 1,
+          "time" : 3
+        },
+        "budgetAfter" : {
+          "energy" : 4,
+          "materials" : 3,
+          "time" : 3
+        },
+        "budgetBefore" : {
+          "energy" : 6,
+          "materials" : 4,
+          "time" : 6
+        },
+        "choiceID" : "invest",
+        "choiceTitle" : "用線上圖解製作互動作品",
+        "contentVersion" : "lc02-story-4",
+        "control" : "personal",
+        "costSteps" : [
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 0
+            },
+            "assumptionIDs" : [
+              "macro-friction"
+            ],
+            "explanation" : "模型把環境資料轉為準備成本：多用 0 格時間、0 格材料。這是遊戲假設。",
+            "influence" : "socialEnvironment",
+            "inputs" : {
+              "electricityPct" : 100,
+              "internetPct" : 93.52559662
+            },
+            "ruleID" : "context.digital",
+            "sourceIDs" : [
+              "wdi-internet-2023",
+              "wdi-electricity-2023"
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 0
+            },
+            "assumptionIDs" : [
+              "household-scenarios"
+            ],
+            "explanation" : "這個虛構家庭的設備安排，多需要 0 格時間。",
+            "influence" : "family",
+            "inputs" : {
+              "deviceScheduling" : 0
+            },
+            "ruleID" : "family.device",
+            "sourceIDs" : [
+
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 1
+            },
+            "assumptionIDs" : [
+              "household-scenarios",
+              "agency"
+            ],
+            "explanation" : "交通安排多用 1 格時間；這回合由角色承擔的成人照顧安排為 0 格。",
+            "influence" : "family",
+            "inputs" : {
+              "adultCareCost" : 0,
+              "travelCost" : 1
+            },
+            "ruleID" : "family.schedule",
+            "sourceIDs" : [
+
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : -1
+            },
+            "assumptionIDs" : [
+              "support-network"
+            ],
+            "explanation" : "有人一起準備，幫你節省 1 格時間。",
+            "influence" : "otherPeople",
+            "inputs" : {
+              "support" : 1
+            },
+            "ruleID" : "support.shared-preparation",
+            "sourceIDs" : [
+
+            ]
+          }
+        ],
+        "countryCode" : "USA",
+        "dataVersion" : "lc01-data-2",
+        "effectSteps" : [
+          {
+            "assumptionIDs" : [
+              "choice-effects",
+              "agency",
+              "learning-channels"
+            ],
+            "delta" : {
+              "financial" : -1,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 4
+            },
+            "explanation" : "你選了「用線上圖解製作互動作品」，付出 3 格時間和 2 格精力。",
+            "influence" : "playerChoice",
+            "ruleID" : "choice.learn"
+          },
+          {
+            "assumptionIDs" : [
+              "support-network"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 2,
+              "skills" : 1
+            },
+            "explanation" : "一起準備的人陪你練習，也成為這段故事裡的重要夥伴。",
+            "influence" : "otherPeople",
+            "ruleID" : "support.encouragement"
+          },
+          {
+            "assumptionIDs" : [
+              "luck-encouragement"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 0
+            },
+            "explanation" : "這次沒有額外的機會事件；好的選擇也不保證好運。",
+            "influence" : "randomness",
+            "ruleID" : "luck.encouragement"
+          },
+          {
+            "assumptionIDs" : [
+              "resource-bounds"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 0
+            },
+            "explanation" : "四項資源維持在 0～100，沒有合成人生總分。",
+            "influence" : "modelRule",
+            "ruleID" : "resource.clamp"
+          }
+        ],
+        "engineVersion" : "lc02-4",
+        "eventID" : "teen-project",
+        "eventSelection" : {
+          "age" : 13,
+          "algorithm" : "fnv1a-splitmix64-v1+conditional-slots-v1",
+          "assumptionID" : "event-selection",
+          "candidates" : [
+            {
+              "conditions" : [
+
+              ],
+              "eligible" : true,
+              "eventID" : "teen-project",
+              "isFallback" : true
+            }
+          ],
+          "draw" : 0.06008007855721109,
+          "eligibleEventIDs" : [
+            "teen-project"
+          ],
+          "key" : "9:life-slot|13|0|20:conditional-slots-v1",
+          "seed" : 42,
+          "selectedEventID" : "teen-project"
+        },
+        "eventTitle" : "想參加共同創作",
+        "finalCost" : {
+          "energy" : 2,
+          "materials" : 1,
+          "time" : 3
+        },
+        "householdID" : "usa-2",
+        "observations" : [
+          {
+            "dataVersion" : "wdi-2023-snapshot-2026-10-23",
+            "indicator" : "IT.NET.USER.ZS",
+            "region" : "USA",
+            "sourceID" : "wdi-internet-2023",
+            "unit" : "% of population",
+            "value" : 93.52559662,
+            "year" : 2023
+          },
+          {
+            "dataVersion" : "wdi-2023-snapshot-2026-10-23",
+            "indicator" : "EG.ELC.ACCS.ZS",
+            "region" : "USA",
+            "sourceID" : "wdi-electricity-2023",
+            "unit" : "% of population",
+            "value" : 100,
+            "year" : 2023
+          }
+        ],
+        "randomTrial" : {
+          "algorithm" : "fnv1a-splitmix64-v1",
+          "assumptionID" : "luck-encouragement",
+          "draw" : 0.7120665062311973,
+          "key" : "12:teen-project|13|0|24:unexpected-encouragement",
+          "occurred" : false,
+          "threshold" : 0.25
+        },
+        "recurringPerson" : "樹老師",
+        "resourcesAfter" : {
+          "financial" : 59,
+          "health" : 64,
+          "relationships" : 52,
+          "skills" : 25
+        },
+        "resourcesBefore" : {
+          "financial" : 60,
+          "health" : 64,
+          "relationships" : 50,
+          "skills" : 20
+        },
+        "scheduledHooks" : [
+          {
+            "assumptionID" : "story-callback",
+            "dueAge" : 17,
+            "effect" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 2,
+              "skills" : 1
+            },
+            "id" : "teen-project:reconnect",
+            "originChoiceID" : "invest",
+            "originEventID" : "teen-project",
+            "person" : "樹老師",
+            "text" : "樹老師記得你當年的選擇，這次邀你一起分享經驗。"
+          }
+        ],
+        "seed" : 42,
+        "unavailableReasons" : [
+
+        ]
+      }
+    },
+    {
+      "country" : "印度",
+      "household" : "ind-1",
+      "trace" : {
+        "age" : 13,
+        "applied" : true,
+        "baseCost" : {
+          "energy" : 2,
+          "materials" : 1,
+          "time" : 3
+        },
+        "budgetAfter" : {
+          "energy" : 4,
+          "materials" : 1,
+          "time" : 3
+        },
+        "budgetBefore" : {
+          "energy" : 6,
+          "materials" : 2,
+          "time" : 6
+        },
+        "choiceID" : "invest",
+        "choiceTitle" : "用線上圖解製作互動作品",
+        "contentVersion" : "lc02-story-4",
+        "control" : "personal",
+        "costSteps" : [
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 1
+            },
+            "assumptionIDs" : [
+              "macro-friction"
+            ],
+            "explanation" : "模型把環境資料轉為準備成本：多用 1 格時間、0 格材料。這是遊戲假設。",
+            "influence" : "socialEnvironment",
+            "inputs" : {
+              "electricityPct" : 99.5,
+              "internetPct" : 60.25230026
+            },
+            "ruleID" : "context.digital",
+            "sourceIDs" : [
+              "wdi-internet-2023",
+              "wdi-electricity-2023"
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 1
+            },
+            "assumptionIDs" : [
+              "household-scenarios"
+            ],
+            "explanation" : "這個虛構家庭的設備安排，多需要 1 格時間。",
+            "influence" : "family",
+            "inputs" : {
+              "deviceScheduling" : 1
+            },
+            "ruleID" : "family.device",
+            "sourceIDs" : [
+
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 0
+            },
+            "assumptionIDs" : [
+              "household-scenarios",
+              "agency"
+            ],
+            "explanation" : "交通安排多用 0 格時間；這回合由角色承擔的成人照顧安排為 0 格。",
+            "influence" : "family",
+            "inputs" : {
+              "adultCareCost" : 0,
+              "travelCost" : 0
+            },
+            "ruleID" : "family.schedule",
+            "sourceIDs" : [
+
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : -2
+            },
+            "assumptionIDs" : [
+              "support-network"
+            ],
+            "explanation" : "有人一起準備，幫你節省 2 格時間。",
+            "influence" : "otherPeople",
+            "inputs" : {
+              "support" : 2
+            },
+            "ruleID" : "support.shared-preparation",
+            "sourceIDs" : [
+
+            ]
+          }
+        ],
+        "countryCode" : "IND",
+        "dataVersion" : "lc01-data-2",
+        "effectSteps" : [
+          {
+            "assumptionIDs" : [
+              "choice-effects",
+              "agency",
+              "learning-channels"
+            ],
+            "delta" : {
+              "financial" : -1,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 4
+            },
+            "explanation" : "你選了「用線上圖解製作互動作品」，付出 3 格時間和 2 格精力。",
+            "influence" : "playerChoice",
+            "ruleID" : "choice.learn"
+          },
+          {
+            "assumptionIDs" : [
+              "support-network"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 2,
+              "skills" : 1
+            },
+            "explanation" : "一起準備的人陪你練習，也成為這段故事裡的重要夥伴。",
+            "influence" : "otherPeople",
+            "ruleID" : "support.encouragement"
+          },
+          {
+            "assumptionIDs" : [
+              "luck-encouragement"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 0
+            },
+            "explanation" : "這次沒有額外的機會事件；好的選擇也不保證好運。",
+            "influence" : "randomness",
+            "ruleID" : "luck.encouragement"
+          },
+          {
+            "assumptionIDs" : [
+              "resource-bounds"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 0
+            },
+            "explanation" : "四項資源維持在 0～100，沒有合成人生總分。",
+            "influence" : "modelRule",
+            "ruleID" : "resource.clamp"
+          }
+        ],
+        "engineVersion" : "lc02-4",
+        "eventID" : "teen-project",
+        "eventSelection" : {
+          "age" : 13,
+          "algorithm" : "fnv1a-splitmix64-v1+conditional-slots-v1",
+          "assumptionID" : "event-selection",
+          "candidates" : [
+            {
+              "conditions" : [
+
+              ],
+              "eligible" : true,
+              "eventID" : "teen-project",
+              "isFallback" : true
+            }
+          ],
+          "draw" : 0.06008007855721109,
+          "eligibleEventIDs" : [
+            "teen-project"
+          ],
+          "key" : "9:life-slot|13|0|20:conditional-slots-v1",
+          "seed" : 42,
+          "selectedEventID" : "teen-project"
+        },
+        "eventTitle" : "想參加共同創作",
+        "finalCost" : {
+          "energy" : 2,
+          "materials" : 1,
+          "time" : 3
+        },
+        "householdID" : "ind-1",
+        "observations" : [
+          {
+            "dataVersion" : "wdi-2023-snapshot-2026-10-23",
+            "indicator" : "IT.NET.USER.ZS",
+            "region" : "IND",
+            "sourceID" : "wdi-internet-2023",
+            "unit" : "% of population",
+            "value" : 60.25230026,
+            "year" : 2023
+          },
+          {
+            "dataVersion" : "wdi-2023-snapshot-2026-10-23",
+            "indicator" : "EG.ELC.ACCS.ZS",
+            "region" : "IND",
+            "sourceID" : "wdi-electricity-2023",
+            "unit" : "% of population",
+            "value" : 99.5,
+            "year" : 2023
+          }
+        ],
+        "randomTrial" : {
+          "algorithm" : "fnv1a-splitmix64-v1",
+          "assumptionID" : "luck-encouragement",
+          "draw" : 0.7120665062311973,
+          "key" : "12:teen-project|13|0|24:unexpected-encouragement",
+          "occurred" : false,
+          "threshold" : 0.25
+        },
+        "recurringPerson" : "樹老師",
+        "resourcesAfter" : {
+          "financial" : 34,
+          "health" : 66,
+          "relationships" : 67,
+          "skills" : 25
+        },
+        "resourcesBefore" : {
+          "financial" : 35,
+          "health" : 66,
+          "relationships" : 65,
+          "skills" : 20
+        },
+        "scheduledHooks" : [
+          {
+            "assumptionID" : "story-callback",
+            "dueAge" : 17,
+            "effect" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 2,
+              "skills" : 1
+            },
+            "id" : "teen-project:reconnect",
+            "originChoiceID" : "invest",
+            "originEventID" : "teen-project",
+            "person" : "樹老師",
+            "text" : "樹老師記得你當年的選擇，這次邀你一起分享經驗。"
+          }
+        ],
+        "seed" : 42,
+        "unavailableReasons" : [
+
+        ]
+      }
+    },
+    {
+      "country" : "印度",
+      "household" : "ind-2",
+      "trace" : {
+        "age" : 13,
+        "applied" : true,
+        "baseCost" : {
+          "energy" : 2,
+          "materials" : 1,
+          "time" : 3
+        },
+        "budgetAfter" : {
+          "energy" : 4,
+          "materials" : 3,
+          "time" : 2
+        },
+        "budgetBefore" : {
+          "energy" : 6,
+          "materials" : 4,
+          "time" : 6
+        },
+        "choiceID" : "invest",
+        "choiceTitle" : "用線上圖解製作互動作品",
+        "contentVersion" : "lc02-story-4",
+        "control" : "personal",
+        "costSteps" : [
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 1
+            },
+            "assumptionIDs" : [
+              "macro-friction"
+            ],
+            "explanation" : "模型把環境資料轉為準備成本：多用 1 格時間、0 格材料。這是遊戲假設。",
+            "influence" : "socialEnvironment",
+            "inputs" : {
+              "electricityPct" : 99.5,
+              "internetPct" : 60.25230026
+            },
+            "ruleID" : "context.digital",
+            "sourceIDs" : [
+              "wdi-internet-2023",
+              "wdi-electricity-2023"
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 0
+            },
+            "assumptionIDs" : [
+              "household-scenarios"
+            ],
+            "explanation" : "這個虛構家庭的設備安排，多需要 0 格時間。",
+            "influence" : "family",
+            "inputs" : {
+              "deviceScheduling" : 0
+            },
+            "ruleID" : "family.device",
+            "sourceIDs" : [
+
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 1
+            },
+            "assumptionIDs" : [
+              "household-scenarios",
+              "agency"
+            ],
+            "explanation" : "交通安排多用 1 格時間；這回合由角色承擔的成人照顧安排為 0 格。",
+            "influence" : "family",
+            "inputs" : {
+              "adultCareCost" : 0,
+              "travelCost" : 1
+            },
+            "ruleID" : "family.schedule",
+            "sourceIDs" : [
+
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : -1
+            },
+            "assumptionIDs" : [
+              "support-network"
+            ],
+            "explanation" : "有人一起準備，幫你節省 1 格時間。",
+            "influence" : "otherPeople",
+            "inputs" : {
+              "support" : 1
+            },
+            "ruleID" : "support.shared-preparation",
+            "sourceIDs" : [
+
+            ]
+          }
+        ],
+        "countryCode" : "IND",
+        "dataVersion" : "lc01-data-2",
+        "effectSteps" : [
+          {
+            "assumptionIDs" : [
+              "choice-effects",
+              "agency",
+              "learning-channels"
+            ],
+            "delta" : {
+              "financial" : -1,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 4
+            },
+            "explanation" : "你選了「用線上圖解製作互動作品」，付出 4 格時間和 2 格精力。",
+            "influence" : "playerChoice",
+            "ruleID" : "choice.learn"
+          },
+          {
+            "assumptionIDs" : [
+              "support-network"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 2,
+              "skills" : 1
+            },
+            "explanation" : "一起準備的人陪你練習，也成為這段故事裡的重要夥伴。",
+            "influence" : "otherPeople",
+            "ruleID" : "support.encouragement"
+          },
+          {
+            "assumptionIDs" : [
+              "luck-encouragement"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 0
+            },
+            "explanation" : "這次沒有額外的機會事件；好的選擇也不保證好運。",
+            "influence" : "randomness",
+            "ruleID" : "luck.encouragement"
+          },
+          {
+            "assumptionIDs" : [
+              "resource-bounds"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 0
+            },
+            "explanation" : "四項資源維持在 0～100，沒有合成人生總分。",
+            "influence" : "modelRule",
+            "ruleID" : "resource.clamp"
+          }
+        ],
+        "engineVersion" : "lc02-4",
+        "eventID" : "teen-project",
+        "eventSelection" : {
+          "age" : 13,
+          "algorithm" : "fnv1a-splitmix64-v1+conditional-slots-v1",
+          "assumptionID" : "event-selection",
+          "candidates" : [
+            {
+              "conditions" : [
+
+              ],
+              "eligible" : true,
+              "eventID" : "teen-project",
+              "isFallback" : true
+            }
+          ],
+          "draw" : 0.06008007855721109,
+          "eligibleEventIDs" : [
+            "teen-project"
+          ],
+          "key" : "9:life-slot|13|0|20:conditional-slots-v1",
+          "seed" : 42,
+          "selectedEventID" : "teen-project"
+        },
+        "eventTitle" : "想參加共同創作",
+        "finalCost" : {
+          "energy" : 2,
+          "materials" : 1,
+          "time" : 4
+        },
+        "householdID" : "ind-2",
+        "observations" : [
+          {
+            "dataVersion" : "wdi-2023-snapshot-2026-10-23",
+            "indicator" : "IT.NET.USER.ZS",
+            "region" : "IND",
+            "sourceID" : "wdi-internet-2023",
+            "unit" : "% of population",
+            "value" : 60.25230026,
+            "year" : 2023
+          },
+          {
+            "dataVersion" : "wdi-2023-snapshot-2026-10-23",
+            "indicator" : "EG.ELC.ACCS.ZS",
+            "region" : "IND",
+            "sourceID" : "wdi-electricity-2023",
+            "unit" : "% of population",
+            "value" : 99.5,
+            "year" : 2023
+          }
+        ],
+        "randomTrial" : {
+          "algorithm" : "fnv1a-splitmix64-v1",
+          "assumptionID" : "luck-encouragement",
+          "draw" : 0.7120665062311973,
+          "key" : "12:teen-project|13|0|24:unexpected-encouragement",
+          "occurred" : false,
+          "threshold" : 0.25
+        },
+        "recurringPerson" : "樹老師",
+        "resourcesAfter" : {
+          "financial" : 59,
+          "health" : 64,
+          "relationships" : 52,
+          "skills" : 25
+        },
+        "resourcesBefore" : {
+          "financial" : 60,
+          "health" : 64,
+          "relationships" : 50,
+          "skills" : 20
+        },
+        "scheduledHooks" : [
+          {
+            "assumptionID" : "story-callback",
+            "dueAge" : 17,
+            "effect" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 2,
+              "skills" : 1
+            },
+            "id" : "teen-project:reconnect",
+            "originChoiceID" : "invest",
+            "originEventID" : "teen-project",
+            "person" : "樹老師",
+            "text" : "樹老師記得你當年的選擇，這次邀你一起分享經驗。"
+          }
+        ],
+        "seed" : 42,
+        "unavailableReasons" : [
+
+        ]
+      }
+    },
+    {
+      "country" : "肯亞",
+      "household" : "ken-1",
+      "trace" : {
+        "age" : 13,
+        "applied" : true,
+        "baseCost" : {
+          "energy" : 2,
+          "materials" : 1,
+          "time" : 3
+        },
+        "budgetAfter" : {
+          "energy" : 4,
+          "materials" : 0,
+          "time" : 2
+        },
+        "budgetBefore" : {
+          "energy" : 6,
+          "materials" : 2,
+          "time" : 6
+        },
+        "choiceID" : "invest",
+        "choiceTitle" : "用線上圖解製作互動作品",
+        "contentVersion" : "lc02-story-4",
+        "control" : "personal",
+        "costSteps" : [
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 1,
+              "time" : 2
+            },
+            "assumptionIDs" : [
+              "macro-friction"
+            ],
+            "explanation" : "模型把環境資料轉為準備成本：多用 2 格時間、1 格材料。這是遊戲假設。",
+            "influence" : "socialEnvironment",
+            "inputs" : {
+              "electricityPct" : 76.2,
+              "internetPct" : 32.07040024
+            },
+            "ruleID" : "context.digital",
+            "sourceIDs" : [
+              "wdi-internet-2023",
+              "wdi-electricity-2023"
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 1
+            },
+            "assumptionIDs" : [
+              "household-scenarios"
+            ],
+            "explanation" : "這個虛構家庭的設備安排，多需要 1 格時間。",
+            "influence" : "family",
+            "inputs" : {
+              "deviceScheduling" : 1
+            },
+            "ruleID" : "family.device",
+            "sourceIDs" : [
+
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 0
+            },
+            "assumptionIDs" : [
+              "household-scenarios",
+              "agency"
+            ],
+            "explanation" : "交通安排多用 0 格時間；這回合由角色承擔的成人照顧安排為 0 格。",
+            "influence" : "family",
+            "inputs" : {
+              "adultCareCost" : 0,
+              "travelCost" : 0
+            },
+            "ruleID" : "family.schedule",
+            "sourceIDs" : [
+
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : -2
+            },
+            "assumptionIDs" : [
+              "support-network"
+            ],
+            "explanation" : "有人一起準備，幫你節省 2 格時間。",
+            "influence" : "otherPeople",
+            "inputs" : {
+              "support" : 2
+            },
+            "ruleID" : "support.shared-preparation",
+            "sourceIDs" : [
+
+            ]
+          }
+        ],
+        "countryCode" : "KEN",
+        "dataVersion" : "lc01-data-2",
+        "effectSteps" : [
+          {
+            "assumptionIDs" : [
+              "choice-effects",
+              "agency",
+              "learning-channels"
+            ],
+            "delta" : {
+              "financial" : -1,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 4
+            },
+            "explanation" : "你選了「用線上圖解製作互動作品」，付出 4 格時間和 2 格精力。",
+            "influence" : "playerChoice",
+            "ruleID" : "choice.learn"
+          },
+          {
+            "assumptionIDs" : [
+              "support-network"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 2,
+              "skills" : 1
+            },
+            "explanation" : "一起準備的人陪你練習，也成為這段故事裡的重要夥伴。",
+            "influence" : "otherPeople",
+            "ruleID" : "support.encouragement"
+          },
+          {
+            "assumptionIDs" : [
+              "luck-encouragement"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 0
+            },
+            "explanation" : "這次沒有額外的機會事件；好的選擇也不保證好運。",
+            "influence" : "randomness",
+            "ruleID" : "luck.encouragement"
+          },
+          {
+            "assumptionIDs" : [
+              "resource-bounds"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 0
+            },
+            "explanation" : "四項資源維持在 0～100，沒有合成人生總分。",
+            "influence" : "modelRule",
+            "ruleID" : "resource.clamp"
+          }
+        ],
+        "engineVersion" : "lc02-4",
+        "eventID" : "teen-project",
+        "eventSelection" : {
+          "age" : 13,
+          "algorithm" : "fnv1a-splitmix64-v1+conditional-slots-v1",
+          "assumptionID" : "event-selection",
+          "candidates" : [
+            {
+              "conditions" : [
+
+              ],
+              "eligible" : true,
+              "eventID" : "teen-project",
+              "isFallback" : true
+            }
+          ],
+          "draw" : 0.06008007855721109,
+          "eligibleEventIDs" : [
+            "teen-project"
+          ],
+          "key" : "9:life-slot|13|0|20:conditional-slots-v1",
+          "seed" : 42,
+          "selectedEventID" : "teen-project"
+        },
+        "eventTitle" : "想參加共同創作",
+        "finalCost" : {
+          "energy" : 2,
+          "materials" : 2,
+          "time" : 4
+        },
+        "householdID" : "ken-1",
+        "observations" : [
+          {
+            "dataVersion" : "wdi-2023-snapshot-2026-10-23",
+            "indicator" : "IT.NET.USER.ZS",
+            "region" : "KEN",
+            "sourceID" : "wdi-internet-2023",
+            "unit" : "% of population",
+            "value" : 32.07040024,
+            "year" : 2023
+          },
+          {
+            "dataVersion" : "wdi-2023-snapshot-2026-10-23",
+            "indicator" : "EG.ELC.ACCS.ZS",
+            "region" : "KEN",
+            "sourceID" : "wdi-electricity-2023",
+            "unit" : "% of population",
+            "value" : 76.2,
+            "year" : 2023
+          }
+        ],
+        "randomTrial" : {
+          "algorithm" : "fnv1a-splitmix64-v1",
+          "assumptionID" : "luck-encouragement",
+          "draw" : 0.7120665062311973,
+          "key" : "12:teen-project|13|0|24:unexpected-encouragement",
+          "occurred" : false,
+          "threshold" : 0.25
+        },
+        "recurringPerson" : "樹老師",
+        "resourcesAfter" : {
+          "financial" : 34,
+          "health" : 66,
+          "relationships" : 67,
+          "skills" : 25
+        },
+        "resourcesBefore" : {
+          "financial" : 35,
+          "health" : 66,
+          "relationships" : 65,
+          "skills" : 20
+        },
+        "scheduledHooks" : [
+          {
+            "assumptionID" : "story-callback",
+            "dueAge" : 17,
+            "effect" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 2,
+              "skills" : 1
+            },
+            "id" : "teen-project:reconnect",
+            "originChoiceID" : "invest",
+            "originEventID" : "teen-project",
+            "person" : "樹老師",
+            "text" : "樹老師記得你當年的選擇，這次邀你一起分享經驗。"
+          }
+        ],
+        "seed" : 42,
+        "unavailableReasons" : [
+
+        ]
+      }
+    },
+    {
+      "country" : "肯亞",
+      "household" : "ken-2",
+      "trace" : {
+        "age" : 13,
+        "applied" : true,
+        "baseCost" : {
+          "energy" : 2,
+          "materials" : 1,
+          "time" : 3
+        },
+        "budgetAfter" : {
+          "energy" : 4,
+          "materials" : 2,
+          "time" : 1
+        },
+        "budgetBefore" : {
+          "energy" : 6,
+          "materials" : 4,
+          "time" : 6
+        },
+        "choiceID" : "invest",
+        "choiceTitle" : "用線上圖解製作互動作品",
+        "contentVersion" : "lc02-story-4",
+        "control" : "personal",
+        "costSteps" : [
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 1,
+              "time" : 2
+            },
+            "assumptionIDs" : [
+              "macro-friction"
+            ],
+            "explanation" : "模型把環境資料轉為準備成本：多用 2 格時間、1 格材料。這是遊戲假設。",
+            "influence" : "socialEnvironment",
+            "inputs" : {
+              "electricityPct" : 76.2,
+              "internetPct" : 32.07040024
+            },
+            "ruleID" : "context.digital",
+            "sourceIDs" : [
+              "wdi-internet-2023",
+              "wdi-electricity-2023"
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 0
+            },
+            "assumptionIDs" : [
+              "household-scenarios"
+            ],
+            "explanation" : "這個虛構家庭的設備安排，多需要 0 格時間。",
+            "influence" : "family",
+            "inputs" : {
+              "deviceScheduling" : 0
+            },
+            "ruleID" : "family.device",
+            "sourceIDs" : [
+
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 1
+            },
+            "assumptionIDs" : [
+              "household-scenarios",
+              "agency"
+            ],
+            "explanation" : "交通安排多用 1 格時間；這回合由角色承擔的成人照顧安排為 0 格。",
+            "influence" : "family",
+            "inputs" : {
+              "adultCareCost" : 0,
+              "travelCost" : 1
+            },
+            "ruleID" : "family.schedule",
+            "sourceIDs" : [
+
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : -1
+            },
+            "assumptionIDs" : [
+              "support-network"
+            ],
+            "explanation" : "有人一起準備，幫你節省 1 格時間。",
+            "influence" : "otherPeople",
+            "inputs" : {
+              "support" : 1
+            },
+            "ruleID" : "support.shared-preparation",
+            "sourceIDs" : [
+
+            ]
+          }
+        ],
+        "countryCode" : "KEN",
+        "dataVersion" : "lc01-data-2",
+        "effectSteps" : [
+          {
+            "assumptionIDs" : [
+              "choice-effects",
+              "agency",
+              "learning-channels"
+            ],
+            "delta" : {
+              "financial" : -1,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 4
+            },
+            "explanation" : "你選了「用線上圖解製作互動作品」，付出 5 格時間和 2 格精力。",
+            "influence" : "playerChoice",
+            "ruleID" : "choice.learn"
+          },
+          {
+            "assumptionIDs" : [
+              "support-network"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 2,
+              "skills" : 1
+            },
+            "explanation" : "一起準備的人陪你練習，也成為這段故事裡的重要夥伴。",
+            "influence" : "otherPeople",
+            "ruleID" : "support.encouragement"
+          },
+          {
+            "assumptionIDs" : [
+              "cost-fatigue"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : -2,
+              "relationships" : 0,
+              "skills" : 0
+            },
+            "explanation" : "這次準備佔去較多時間，你需要休息；限制來自情境和安排，不是努力不夠。",
+            "influence" : "modelRule",
+            "ruleID" : "cost.fatigue"
+          },
+          {
+            "assumptionIDs" : [
+              "luck-encouragement"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 0
+            },
+            "explanation" : "這次沒有額外的機會事件；好的選擇也不保證好運。",
+            "influence" : "randomness",
+            "ruleID" : "luck.encouragement"
+          },
+          {
+            "assumptionIDs" : [
+              "resource-bounds"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 0
+            },
+            "explanation" : "四項資源維持在 0～100，沒有合成人生總分。",
+            "influence" : "modelRule",
+            "ruleID" : "resource.clamp"
+          }
+        ],
+        "engineVersion" : "lc02-4",
+        "eventID" : "teen-project",
+        "eventSelection" : {
+          "age" : 13,
+          "algorithm" : "fnv1a-splitmix64-v1+conditional-slots-v1",
+          "assumptionID" : "event-selection",
+          "candidates" : [
+            {
+              "conditions" : [
+
+              ],
+              "eligible" : true,
+              "eventID" : "teen-project",
+              "isFallback" : true
+            }
+          ],
+          "draw" : 0.06008007855721109,
+          "eligibleEventIDs" : [
+            "teen-project"
+          ],
+          "key" : "9:life-slot|13|0|20:conditional-slots-v1",
+          "seed" : 42,
+          "selectedEventID" : "teen-project"
+        },
+        "eventTitle" : "想參加共同創作",
+        "finalCost" : {
+          "energy" : 2,
+          "materials" : 2,
+          "time" : 5
+        },
+        "householdID" : "ken-2",
+        "observations" : [
+          {
+            "dataVersion" : "wdi-2023-snapshot-2026-10-23",
+            "indicator" : "IT.NET.USER.ZS",
+            "region" : "KEN",
+            "sourceID" : "wdi-internet-2023",
+            "unit" : "% of population",
+            "value" : 32.07040024,
+            "year" : 2023
+          },
+          {
+            "dataVersion" : "wdi-2023-snapshot-2026-10-23",
+            "indicator" : "EG.ELC.ACCS.ZS",
+            "region" : "KEN",
+            "sourceID" : "wdi-electricity-2023",
+            "unit" : "% of population",
+            "value" : 76.2,
+            "year" : 2023
+          }
+        ],
+        "randomTrial" : {
+          "algorithm" : "fnv1a-splitmix64-v1",
+          "assumptionID" : "luck-encouragement",
+          "draw" : 0.7120665062311973,
+          "key" : "12:teen-project|13|0|24:unexpected-encouragement",
+          "occurred" : false,
+          "threshold" : 0.25
+        },
+        "recurringPerson" : "樹老師",
+        "resourcesAfter" : {
+          "financial" : 59,
+          "health" : 62,
+          "relationships" : 52,
+          "skills" : 25
+        },
+        "resourcesBefore" : {
+          "financial" : 60,
+          "health" : 64,
+          "relationships" : 50,
+          "skills" : 20
+        },
+        "scheduledHooks" : [
+          {
+            "assumptionID" : "story-callback",
+            "dueAge" : 17,
+            "effect" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 2,
+              "skills" : 1
+            },
+            "id" : "teen-project:reconnect",
+            "originChoiceID" : "invest",
+            "originEventID" : "teen-project",
+            "person" : "樹老師",
+            "text" : "樹老師記得你當年的選擇，這次邀你一起分享經驗。"
+          }
+        ],
+        "seed" : 42,
+        "unavailableReasons" : [
+
+        ]
+      }
+    }
+  ],
+  "dataVersion" : "lc01-data-2",
+  "purpose" : "純 Swift 執行證據：四國完整人生與背景比較；不是實機或死亡模擬。",
+  "skeletonRuns" : [
+    {
+      "country" : "日本",
+      "decisionAges" : [
+        8,
+        10,
+        12,
+        13,
+        17,
+        21,
+        25,
+        32,
+        39,
+        45,
+        52,
+        59,
+        65,
+        72,
+        80
+      ],
+      "decisionCount" : 15,
+      "decisionIDs" : [
+        "child-interest",
+        "child-friend",
+        "child-wind-team",
+        "teen-project",
+        "teen-direction",
+        "teen-shared-kitchen",
+        "adult-learning",
+        "adult-balance",
+        "adult-care",
+        "middle-turn",
+        "middle-support",
+        "middle-open-desk",
+        "later-pass-on",
+        "later-reconnect",
+        "later-review"
+      ],
+      "finalAge" : 80,
+      "finalResources" : {
+        "financial" : 34,
+        "health" : 63,
+        "relationships" : 100,
+        "skills" : 58
+      },
+      "household" : "jpn-1",
+      "storyCallbacks" : 3,
+      "storyOrigins" : [
+        "teen-project",
+        "adult-learning",
+        "middle-turn"
+      ]
+    },
+    {
+      "country" : "日本",
+      "decisionAges" : [
+        8,
+        10,
+        12,
+        13,
+        17,
+        21,
+        25,
+        32,
+        39,
+        45,
+        52,
+        59,
+        65,
+        72,
+        80
+      ],
+      "decisionCount" : 15,
+      "decisionIDs" : [
+        "child-interest",
+        "child-friend",
+        "child-wind-team",
+        "teen-project",
+        "teen-direction",
+        "teen-repair-table",
+        "adult-learning",
+        "adult-balance",
+        "adult-care",
+        "middle-turn",
+        "middle-support",
+        "middle-open-desk",
+        "later-pass-on",
+        "later-reconnect",
+        "later-review"
+      ],
+      "finalAge" : 80,
+      "finalResources" : {
+        "financial" : 58,
+        "health" : 61,
+        "relationships" : 98,
+        "skills" : 62
+      },
+      "household" : "jpn-2",
+      "storyCallbacks" : 3,
+      "storyOrigins" : [
+        "teen-project",
+        "adult-learning",
+        "middle-turn"
+      ]
+    },
+    {
+      "country" : "美國",
+      "decisionAges" : [
+        8,
+        10,
+        12,
+        13,
+        17,
+        21,
+        25,
+        32,
+        39,
+        45,
+        52,
+        59,
+        65,
+        72,
+        80
+      ],
+      "decisionCount" : 15,
+      "decisionIDs" : [
+        "child-interest",
+        "child-friend",
+        "child-wind-team",
+        "teen-project",
+        "teen-direction",
+        "teen-shared-kitchen",
+        "adult-learning",
+        "adult-balance",
+        "adult-care",
+        "middle-turn",
+        "middle-support",
+        "middle-open-desk",
+        "later-pass-on",
+        "later-reconnect",
+        "later-review"
+      ],
+      "finalAge" : 80,
+      "finalResources" : {
+        "financial" : 34,
+        "health" : 63,
+        "relationships" : 100,
+        "skills" : 58
+      },
+      "household" : "usa-1",
+      "storyCallbacks" : 3,
+      "storyOrigins" : [
+        "teen-project",
+        "adult-learning",
+        "middle-turn"
+      ]
+    },
+    {
+      "country" : "美國",
+      "decisionAges" : [
+        8,
+        10,
+        12,
+        13,
+        17,
+        21,
+        25,
+        32,
+        39,
+        45,
+        52,
+        59,
+        65,
+        72,
+        80
+      ],
+      "decisionCount" : 15,
+      "decisionIDs" : [
+        "child-interest",
+        "child-friend",
+        "child-wind-team",
+        "teen-project",
+        "teen-direction",
+        "teen-repair-table",
+        "adult-learning",
+        "adult-balance",
+        "adult-care",
+        "middle-turn",
+        "middle-support",
+        "middle-open-desk",
+        "later-pass-on",
+        "later-reconnect",
+        "later-review"
+      ],
+      "finalAge" : 80,
+      "finalResources" : {
+        "financial" : 58,
+        "health" : 61,
+        "relationships" : 98,
+        "skills" : 62
+      },
+      "household" : "usa-2",
+      "storyCallbacks" : 3,
+      "storyOrigins" : [
+        "teen-project",
+        "adult-learning",
+        "middle-turn"
+      ]
+    },
+    {
+      "country" : "印度",
+      "decisionAges" : [
+        8,
+        10,
+        12,
+        13,
+        17,
+        21,
+        25,
+        32,
+        39,
+        45,
+        52,
+        59,
+        65,
+        72,
+        80
+      ],
+      "decisionCount" : 15,
+      "decisionIDs" : [
+        "child-interest",
+        "child-friend",
+        "child-wind-team",
+        "teen-project",
+        "teen-direction",
+        "teen-shared-kitchen",
+        "adult-learning",
+        "adult-balance",
+        "adult-care",
+        "middle-turn",
+        "middle-support",
+        "middle-open-desk",
+        "later-pass-on",
+        "later-reconnect",
+        "later-review"
+      ],
+      "finalAge" : 80,
+      "finalResources" : {
+        "financial" : 34,
+        "health" : 63,
+        "relationships" : 100,
+        "skills" : 58
+      },
+      "household" : "ind-1",
+      "storyCallbacks" : 3,
+      "storyOrigins" : [
+        "teen-project",
+        "adult-learning",
+        "middle-turn"
+      ]
+    },
+    {
+      "country" : "印度",
+      "decisionAges" : [
+        8,
+        10,
+        12,
+        13,
+        17,
+        21,
+        25,
+        32,
+        39,
+        45,
+        52,
+        59,
+        65,
+        72,
+        80
+      ],
+      "decisionCount" : 15,
+      "decisionIDs" : [
+        "child-interest",
+        "child-friend",
+        "child-wind-team",
+        "teen-project",
+        "teen-direction",
+        "teen-repair-table",
+        "adult-learning",
+        "adult-balance",
+        "adult-care",
+        "middle-turn",
+        "middle-support",
+        "middle-open-desk",
+        "later-pass-on",
+        "later-reconnect",
+        "later-review"
+      ],
+      "finalAge" : 80,
+      "finalResources" : {
+        "financial" : 58,
+        "health" : 61,
+        "relationships" : 98,
+        "skills" : 62
+      },
+      "household" : "ind-2",
+      "storyCallbacks" : 3,
+      "storyOrigins" : [
+        "teen-project",
+        "adult-learning",
+        "middle-turn"
+      ]
+    },
+    {
+      "country" : "肯亞",
+      "decisionAges" : [
+        8,
+        10,
+        12,
+        13,
+        17,
+        21,
+        25,
+        32,
+        39,
+        45,
+        52,
+        59,
+        65,
+        72,
+        80
+      ],
+      "decisionCount" : 15,
+      "decisionIDs" : [
+        "child-interest",
+        "child-friend",
+        "child-wind-team",
+        "teen-project",
+        "teen-direction",
+        "teen-shared-kitchen",
+        "adult-learning",
+        "adult-balance",
+        "adult-care",
+        "middle-turn",
+        "middle-support",
+        "middle-open-desk",
+        "later-pass-on",
+        "later-reconnect",
+        "later-review"
+      ],
+      "finalAge" : 80,
+      "finalResources" : {
+        "financial" : 34,
+        "health" : 59,
+        "relationships" : 100,
+        "skills" : 58
+      },
+      "household" : "ken-1",
+      "storyCallbacks" : 3,
+      "storyOrigins" : [
+        "teen-project",
+        "adult-learning",
+        "middle-turn"
+      ]
+    },
+    {
+      "country" : "肯亞",
+      "decisionAges" : [
+        8,
+        10,
+        12,
+        13,
+        17,
+        21,
+        25,
+        32,
+        39,
+        45,
+        52,
+        59,
+        65,
+        72,
+        80
+      ],
+      "decisionCount" : 15,
+      "decisionIDs" : [
+        "child-interest",
+        "child-friend",
+        "child-wind-team",
+        "teen-project",
+        "teen-direction",
+        "teen-repair-table",
+        "adult-learning",
+        "adult-balance",
+        "adult-care",
+        "middle-turn",
+        "middle-support",
+        "middle-open-desk",
+        "later-pass-on",
+        "later-reconnect",
+        "later-review"
+      ],
+      "finalAge" : 80,
+      "finalResources" : {
+        "financial" : 58,
+        "health" : 53,
+        "relationships" : 98,
+        "skills" : 62
+      },
+      "household" : "ken-2",
+      "storyCallbacks" : 3,
+      "storyOrigins" : [
+        "teen-project",
+        "adult-learning",
+        "middle-turn"
+      ]
+    }
+  ]
+}

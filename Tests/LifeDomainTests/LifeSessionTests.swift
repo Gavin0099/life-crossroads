@@ -27,7 +27,7 @@ final class LifeSessionTests: XCTestCase {
         let c = try StatisticsRepository.bundled()
         XCTAssertTrue(Set(c.decisions.map(\.id)).isSubset(of: Set(EventNarratives.texts.keys)))
         XCTAssertTrue(EventNarratives.texts.values.allSatisfy { $0.count >= 60 })
-        XCTAssertEqual(c.contentVersion, "lc02-story-3")
+        XCTAssertEqual(c.contentVersion, "lc02-story-4")
     }
     func testFourCountryEightFamilyPlaythroughsReachReviewAndCannotRepeat() throws {
         let c = try StatisticsRepository.bundled()

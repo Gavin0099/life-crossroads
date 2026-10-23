@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "python3 -m unittest discover -s Tests -p test_*.py",
+  "exit_code": 0,
+  "started_at": "2026-10-23T09:40:15Z",
+  "finished_at": "2026-10-23T09:40:17Z",
+  "runner": "governance_tools.test_evidence_receipt_writer",
+  "linked_commit": "ef77d894cb6c6a41b79759520df2a2f474ffe934",
+  "output_artifacts": [
+    "artifacts/evidence/test-results/conditional-data-cleanup.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}

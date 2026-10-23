@@ -50,6 +50,8 @@ jobs:
         run: |
           mkdir -p artifacts/lc01
           swift run -c release life-demo --json > artifacts/lc01/demo.json
+      - name: Verify three distinct stories and deterministic replay
+        run: swift run -c release life-demo --story-samples > artifacts/lc01/story-samples.json
       - name: Preserve engine evidence
         if: always()
         uses: actions/upload-artifact@v4

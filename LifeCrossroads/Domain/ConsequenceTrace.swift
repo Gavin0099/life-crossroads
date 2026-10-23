@@ -66,6 +66,7 @@ public struct ConsequenceTrace: Codable, Equatable, Sendable {
     public let recurringPerson: String
     public let storyVariantID: String?
     public let storyBranch: StoryBranchEvaluation?
+    public let eventSelection: EventSelectionTrace
     public let age: Int
     public let countryCode: String
     public let householdID: String

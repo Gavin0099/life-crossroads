@@ -25,3 +25,5 @@
 - PR #1 模型修正已推送且CI成功；PR #2 已修正實際因素、指定選項比較、三條故事分岔與原創動物場景，待推送後核對新CI及原審查者覆核，維持HOLD。 <!-- memory_record_projection:active-task-summary:574ed514b9192d34be6870c62cdd49d82ef146601dd13731b73029e80b9a8f52 -->
 
 - PR2第二輪體驗修正已測試；測完即刪除模擬器的使用者偏好已納入AGENTS與腳本，5台已清理。下一片優先條件隨機故事＋Event-first接完整引擎；兩PR維持HOLD，實機/兒少驗收未完成。 <!-- memory_record_projection:active-task-summary:71c82dc7994ec9be8b8b9958582ffeb0d32eaa5dc1cb8692180e3a8cbf2810c4 -->
+
+- 條件事件＋Event-first獨立切片本機完成：23候選/15槽、固定0/1/2三局及完整重播；58 Swift、7 Python、5 UI通過，Simulator已刪。待獨立PR推送/HEAD CI確認，維持HOLD；真人重玩性未驗收。 <!-- memory_record_projection:active-task-summary:87d37bb11f7ab35357f40441e0bcadc426633db05bd6ae4b5385e2c9a67c0c3c -->
