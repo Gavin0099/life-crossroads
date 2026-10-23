@@ -1,0 +1,12 @@
+{
+  "started_at": "2026-10-23T10:30:56Z",
+  "deadline": "2026-10-23T14:30:56Z",
+  "hours": 4,
+  "max_builder_iterations": 6,
+  "base_commit": "9bd75d23e6fed6057700fa23a71de31bf3e201d8",
+  "branch": "codex/ui-visual-loop-4h",
+  "kit_sha256": "81d9de82b8a70ed7870d79dda52d90ee994b07a8e5992dff80e7dfd2b12ecf2e",
+  "phase": "VA-01",
+  "execution": "preflight",
+  "rounds": []
+}

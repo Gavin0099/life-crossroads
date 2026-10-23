@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "slice": "GS-01–03",
+  "slice": "GS-01–03 / VA-01–03",
   "production_approval": false,
   "assets": [
     {
@@ -216,6 +216,200 @@
         "major_connected_components_alpha_at_least_1": 5,
         "method": "Read-only AppKit NSBitmapImageRep pixel inspection and 4-neighbour alpha component scan; no pixel editing."
       }
+    },
+    {
+      "path": "assets/gameplay/va-friend-worktable-v1.png",
+      "width": 1536,
+      "height": 1024,
+      "colour_type": 6,
+      "has_alpha_channel": true,
+      "output_sha256": "f811397fb578d476cfd703bcc5c2dc2ec5157827f406772e4d9c8df90b1a9ac1",
+      "file_bytes": 2341971,
+      "asset_id": "va-friend-worktable-v1",
+      "source_type": "ai_generated",
+      "generator": "builtin:image_gen.imagegen",
+      "model_name": null,
+      "model_version": null,
+      "seed": null,
+      "generated_on": "2026-10-23",
+      "workflow_version": "va-visual-loop-v1",
+      "prompt_path": "assets/prompts/va-friend-worktable-v1.txt",
+      "prompt_sha256": "39b1a2a7873c198ec0d6ab79d0478f2fe56b92f9fce2fbb35fa3cd94b249b763",
+      "reference_paths": [
+        "assets/gameplay/characters-atlas-v2.png"
+      ],
+      "input_hashes": {
+        "assets/gameplay/characters-atlas-v2.png": "fe66e16cd837cd849306f8562348c62aa974927d340329112b43cb526bbc8dde"
+      },
+      "status": "superseded_identity_marks",
+      "transparent_cutout_verified": true,
+      "review_visual_quality": "agent_screened_human_pending",
+      "review_child_safety": "agent_screened_human_pending",
+      "review_licensing": "pending_account_and_owner_review",
+      "license_evidence": null,
+      "approved_for_app": false,
+      "intended_use": "standalone prototype only",
+      "alpha_validation": {
+        "has_alpha": true,
+        "height": 1024,
+        "opaque": 0,
+        "partial": 889910,
+        "path": "assets/gameplay/va-friend-worktable-v1.png",
+        "transparent": 682954,
+        "width": 1536,
+        "method": "Read-only NSBitmapImageRep getPixel; no raster editing"
+      },
+      "notes": [
+        "Shared worktable ties hands and eye-lines to the route object.",
+        "Extra identity marks or missing ear notch; superseded by v2.",
+        "All foreground alpha remains below 255 in generated source; preserved unchanged."
+      ]
+    },
+    {
+      "path": "assets/gameplay/va-friend-worktable-v2.png",
+      "width": 1536,
+      "height": 1024,
+      "colour_type": 6,
+      "has_alpha_channel": true,
+      "output_sha256": "54fdef91ee578adc65320dee31e07a6c9d321cb3800fc561f39fcfc5943cd453",
+      "file_bytes": 2222035,
+      "asset_id": "va-friend-worktable-v2",
+      "source_type": "ai_generated",
+      "generator": "builtin:image_gen.imagegen",
+      "model_name": null,
+      "model_version": null,
+      "seed": null,
+      "generated_on": "2026-10-23",
+      "workflow_version": "va-visual-loop-v1",
+      "prompt_path": "assets/prompts/va-friend-worktable-v2.txt",
+      "prompt_sha256": "e322793e560b94f1a148727048da2c89204a3214acc2345e45144ad172dd4e99",
+      "reference_paths": [
+        "assets/gameplay/va-friend-worktable-v1.png"
+      ],
+      "input_hashes": {
+        "assets/gameplay/va-friend-worktable-v1.png": "f811397fb578d476cfd703bcc5c2dc2ec5157827f406772e4d9c8df90b1a9ac1"
+      },
+      "status": "prototype_candidate",
+      "transparent_cutout_verified": true,
+      "review_visual_quality": "agent_screened_human_pending",
+      "review_child_safety": "agent_screened_human_pending",
+      "review_licensing": "pending_account_and_owner_review",
+      "license_evidence": null,
+      "approved_for_app": false,
+      "intended_use": "standalone prototype only",
+      "alpha_validation": {
+        "has_alpha": true,
+        "height": 1024,
+        "opaque": 0,
+        "partial": 886888,
+        "path": "assets/gameplay/va-friend-worktable-v2.png",
+        "transparent": 685976,
+        "width": 1536,
+        "method": "Read-only NSBitmapImageRep getPixel; no raster editing"
+      },
+      "notes": [
+        "Shared worktable ties hands and eye-lines to the route object.",
+        "v2 repairs otter anatomical-right single white eyebrow and hare anatomical-left ear notch. Human age/style review remains pending.",
+        "All foreground alpha remains below 255 in generated source; preserved unchanged."
+      ]
+    },
+    {
+      "path": "assets/gameplay/va-teacher-worktable-v1.png",
+      "width": 1536,
+      "height": 1024,
+      "colour_type": 6,
+      "has_alpha_channel": true,
+      "output_sha256": "57b209aad6a767450153bb8a07456b7713f7a252343073c7c9a4387403ba1be5",
+      "file_bytes": 2418612,
+      "asset_id": "va-teacher-worktable-v1",
+      "source_type": "ai_generated",
+      "generator": "builtin:image_gen.imagegen",
+      "model_name": null,
+      "model_version": null,
+      "seed": null,
+      "generated_on": "2026-10-23",
+      "workflow_version": "va-visual-loop-v1",
+      "prompt_path": "assets/prompts/va-teacher-worktable-v1.txt",
+      "prompt_sha256": "276def53c203cf7b8e7cc3551799c7a869b8ca53152d20b22bcdda2cae8004fb",
+      "reference_paths": [
+        "assets/gameplay/va-friend-worktable-v1.png",
+        "assets/gameplay/characters-atlas-v2.png"
+      ],
+      "input_hashes": {
+        "assets/gameplay/va-friend-worktable-v1.png": "f811397fb578d476cfd703bcc5c2dc2ec5157827f406772e4d9c8df90b1a9ac1",
+        "assets/gameplay/characters-atlas-v2.png": "fe66e16cd837cd849306f8562348c62aa974927d340329112b43cb526bbc8dde"
+      },
+      "status": "superseded_identity_marks",
+      "transparent_cutout_verified": true,
+      "review_visual_quality": "agent_screened_human_pending",
+      "review_child_safety": "agent_screened_human_pending",
+      "review_licensing": "pending_account_and_owner_review",
+      "license_evidence": null,
+      "approved_for_app": false,
+      "intended_use": "standalone prototype only",
+      "alpha_validation": {
+        "has_alpha": true,
+        "height": 1024,
+        "opaque": 0,
+        "partial": 961274,
+        "path": "assets/gameplay/va-teacher-worktable-v1.png",
+        "transparent": 611590,
+        "width": 1536,
+        "method": "Read-only NSBitmapImageRep getPixel; no raster editing"
+      },
+      "notes": [
+        "Shared worktable ties hands and eye-lines to the route object.",
+        "Extra identity marks or missing ear notch; superseded by v2.",
+        "All foreground alpha remains below 255 in generated source; preserved unchanged."
+      ]
+    },
+    {
+      "path": "assets/gameplay/va-teacher-worktable-v2.png",
+      "width": 1536,
+      "height": 1024,
+      "colour_type": 6,
+      "has_alpha_channel": true,
+      "output_sha256": "7601280500210fc7c1c7eff1c850e2ee83a004234f65ef31993405c1986692fa",
+      "file_bytes": 2323046,
+      "asset_id": "va-teacher-worktable-v2",
+      "source_type": "ai_generated",
+      "generator": "builtin:image_gen.imagegen",
+      "model_name": null,
+      "model_version": null,
+      "seed": null,
+      "generated_on": "2026-10-23",
+      "workflow_version": "va-visual-loop-v1",
+      "prompt_path": "assets/prompts/va-teacher-worktable-v2.txt",
+      "prompt_sha256": "92f193febfc2375c30f7186fcac36e8a2f9e1604c8f3c643d39890ee3ecdf614",
+      "reference_paths": [
+        "assets/gameplay/va-teacher-worktable-v1.png"
+      ],
+      "input_hashes": {
+        "assets/gameplay/va-teacher-worktable-v1.png": "57b209aad6a767450153bb8a07456b7713f7a252343073c7c9a4387403ba1be5"
+      },
+      "status": "prototype_candidate",
+      "transparent_cutout_verified": true,
+      "review_visual_quality": "agent_screened_human_pending",
+      "review_child_safety": "agent_screened_human_pending",
+      "review_licensing": "pending_account_and_owner_review",
+      "license_evidence": null,
+      "approved_for_app": false,
+      "intended_use": "standalone prototype only",
+      "alpha_validation": {
+        "has_alpha": true,
+        "height": 1024,
+        "opaque": 0,
+        "partial": 960752,
+        "path": "assets/gameplay/va-teacher-worktable-v2.png",
+        "transparent": 612112,
+        "width": 1536,
+        "method": "Read-only NSBitmapImageRep getPixel; no raster editing"
+      },
+      "notes": [
+        "Shared worktable ties hands and eye-lines to the route object.",
+        "v2 repairs otter anatomical-right single white eyebrow and hare anatomical-left ear notch. Human age/style review remains pending.",
+        "All foreground alpha remains below 255 in generated source; preserved unchanged."
+      ]
     }
   ]
 }

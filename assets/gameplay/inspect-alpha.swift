@@ -69,3 +69,20 @@ let result: [String: Any] = [
 print(String(data: try JSONSerialization.data(withJSONObject: result,
     options: [.prettyPrinted, .sortedKeys]), encoding: .utf8)!)
 if !pass { exit(1) }
+
+// VA action composites are not atlas cells. Verify preserved, meaningful alpha.
+for candidate in (manifest["assets"] as! [[String: Any]]) where (candidate["asset_id"] as? String)?.hasPrefix("va-") == true {
+    let candidatePath = candidate["path"] as! String
+    let image = NSBitmapImageRep(data: try Data(contentsOf: URL(fileURLWithPath: candidatePath)))!
+    var transparent = 0, visible = 0
+    for y in 0..<image.pixelsHigh { for x in 0..<image.pixelsWide {
+        var channels = [UInt](repeating: 0, count: 4)
+        image.getPixel(&channels, atX: x, y: y)
+        if channels[3] == 0 { transparent += 1 }
+        if channels[3] >= 240 { visible += 1 }
+    }}
+    let count = image.pixelsWide * image.pixelsHigh
+    let valid = image.hasAlpha && transparent > count / 20 && visible > count / 4
+    print("VA alpha \(valid ? "PASS" : "FAIL"): \(candidatePath), transparent=\(transparent), visible=\(visible), total=\(count)")
+    if !valid { exit(1) }
+}

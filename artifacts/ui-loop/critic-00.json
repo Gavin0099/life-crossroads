@@ -1,0 +1,24 @@
+{
+  "reviewer": "/root/rng_validation",
+  "round": 0,
+  "source_commit": "9bd75d23e6fed6057700fa23a71de31bf3e201d8",
+  "gate": "FAIL",
+  "p0": 0,
+  "p1": 2,
+  "p2": 1,
+  "reviewed_image_sha256": {
+    "artifacts/gameplay/screenshots/standard/01-world-home.png": "4689b02c79878127f9b293237a57ba6f66e98eef4d7bc395a3a19e49d4b0d5eb",
+    "artifacts/gameplay/screenshots/standard/02-team-reaction.png": "d51d872ff890719c41be24db68623d00b96f776d54c45f3937454f978dfb1782",
+    "artifacts/gameplay/screenshots/standard/04-help-reaction-cat-teacher.png": "ffd99f9ec57028c24926b9e6a530f960ad49c99e68a16b7828bbf85e1ffc56e4",
+    "artifacts/gameplay/screenshots/standard/accessibility-home.png": "2c500fa7e3591140ac490fcc1f1f847ab81a21c66c6063c23aec16c0496fe3fd",
+    "artifacts/gameplay/screenshots/standard/accessibility-reaction.png": "8ddf31652dc6400addb8b75ce97039a94fb346e9aa3664e1327268ed162aa487",
+    "artifacts/gameplay/screenshots/narrow/01-world-home.png": "c2b07d5a2cc34fd8951125effe88a3e44092b2ce7f28e3de102772b827befab2",
+    "artifacts/gameplay/screenshots/narrow/02-team-reaction.png": "b2c5f75b1788aeb928953edb9b70a58dd64f0f9dbc63c4217774297fc5feb756",
+    "artifacts/gameplay/screenshots/narrow/04-help-reaction-cat-teacher.png": "c6957087ac1d5a5dca43ca8711d7843c17fcab79e7e69253950d23d11aca455a",
+    "artifacts/gameplay/screenshots/narrow/accessibility-home.png": "2920c3b396c8e7679bbc61abc872d5573e3ad462fe58470a6415157b6aeee417",
+    "artifacts/gameplay/screenshots/narrow/accessibility-reaction.png": "a1744980cb31625052d5f65406f29893867c1368cd9272406d8cffc5ad932ac8",
+    "artifacts/ui/screenshots/standard/01-home-event-first.png": "65b65af0d37e2f782d1dbc71b7cc8667b8e43f9767267ad3bebef5aab9e9f00d",
+    "assets/gameplay/characters-atlas-v2.png": "fe66e16cd837cd849306f8562348c62aa974927d340329112b43cb526bbc8dde"
+  },
+  "report": "artifacts/ui-loop/critic-00.md"
+}

@@ -27,6 +27,8 @@
 
 ## Current Phase
 
+本輪最新範圍：P1 / VA-01～05 有界 Visual Agent Loop。基底GS checkpoint `9bd75d2`，獨立 `codex/ui-visual-loop-4h`；最多4小時／6輪，2026-10-23 14:30:56 UTC截止。先改善13歲紙橋事件與兩種後果，按獨立Critic／版本綁定測試Gate決定是否推送。新loop未通過前不宣稱美術完成。
+
 本獨立視覺工作線採使用者最新方向：P1 / GS-01～03「生活世界主畫面＋事件決策浮層」。從 `0883247` 分支 `codex/gs-visual-gameplay`；Event-First 保留為互動核心，角色、生活場景與選擇痕跡成為主畫面。驗證與圖庫見 `docs/gameplay/review.md`。
 
 P1 / LC-01：使用者 GO，正式實作資料模型與可追溯人生規則。基線兩筆提交已公開推送，遠端基本 CI 通過。
@@ -148,3 +150,11 @@ LC-02 的四國可玩交付不等於 P1 全部完成。
 - 每次 Simulator 執行只建立一台有明確ID的臨時裝置，成功或失敗後即刪除；證據匯出在裝置之外，不刪除其他工作線的裝置。
 - GS-04 的分齡真人遊戲感、實機及手動 VoiceOver 驗收待執行；現有四物種五齡20張概念仍保留，不把這次13→22演出說成全齡動畫完成。
 - 交付圖庫 `docs/gameplay/review.md`；下一步先 review 兩條路線是否看得出不同，再依 DTO 接正式事件／trace，不讓 UI 計算人生結果。
+
+### Bounded Visual Agent Loop — 2026-10-23
+
+使用者新交接包與直接要求已採納：最多四小時、六輪Builder，獨立Critic至少兩輪；先做一個13歲紙橋事件，不擴成四動物五齡或八國美術。原kit保留在`docs/ui-loop/source-kit`供追溯，採納契約為`docs/ui-loop/LOOP_PLAN.md`。
+
+原包執行器先修正舊基底、舊審查／舊測試可冒用、逾時子程序與Simulator清理、clean-tree/push狀態等問題；不降低sandbox或啟用付費API。已有GS基線的工程通過不等於這輪美術Gate通過。
+
+基線獨立Critic指出：普通／大字第一屏決策層級、角色與道具工作平面、名牌遮擋及身份錨。依序改進，每輪保留問題／假設／改動／實際截圖／測試／下步。最終圖庫、狀態與保留限制見`docs/ui-loop/FINAL_REVIEW.md`與`artifacts/ui-loop/verification.json`（產生後才代表已交付）。

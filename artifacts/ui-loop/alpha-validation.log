@@ -1,0 +1,83 @@
+{
+  "claim_boundary" : "Pixel transparency and visible crop containment only; no human art, age or licensing approval.",
+  "crop_checks" : [
+    {
+      "contained_components" : [
+        {
+          "height" : 449,
+          "pixels" : 62823,
+          "width" : 309,
+          "x" : 114,
+          "y" : 80
+        }
+      ],
+      "one_complete_visible_component" : true,
+      "sprite" : "teen"
+    },
+    {
+      "contained_components" : [
+        {
+          "height" : 510,
+          "pixels" : 76051,
+          "width" : 284,
+          "x" : 601,
+          "y" : 34
+        }
+      ],
+      "one_complete_visible_component" : true,
+      "sprite" : "adult"
+    },
+    {
+      "contained_components" : [
+        {
+          "height" : 501,
+          "pixels" : 58199,
+          "width" : 224,
+          "x" : 198,
+          "y" : 543
+        }
+      ],
+      "one_complete_visible_component" : true,
+      "sprite" : "friend"
+    },
+    {
+      "contained_components" : [
+        {
+          "height" : 484,
+          "pixels" : 78921,
+          "width" : 340,
+          "x" : 594,
+          "y" : 572
+        }
+      ],
+      "one_complete_visible_component" : true,
+      "sprite" : "caregiver"
+    },
+    {
+      "contained_components" : [
+        {
+          "height" : 467,
+          "pixels" : 65731,
+          "width" : 275,
+          "x" : 170,
+          "y" : 1047
+        }
+      ],
+      "one_complete_visible_component" : true,
+      "sprite" : "teacher"
+    }
+  ],
+  "fully_transparent_pixels" : 1184073,
+  "has_alpha" : true,
+  "height" : 1536,
+  "major_components" : 5,
+  "path" : "assets\/gameplay\/characters-atlas-v2.png",
+  "result" : "PASS",
+  "total_pixels" : 1572864,
+  "visible_alpha_threshold" : 16,
+  "width" : 1024
+}
+VA alpha PASS: assets/gameplay/va-friend-worktable-v1.png, transparent=682954, visible=841296, total=1572864
+VA alpha PASS: assets/gameplay/va-friend-worktable-v2.png, transparent=685976, visible=844667, total=1572864
+VA alpha PASS: assets/gameplay/va-teacher-worktable-v1.png, transparent=611590, visible=928359, total=1572864
+VA alpha PASS: assets/gameplay/va-teacher-worktable-v2.png, transparent=612112, visible=933438, total=1572864
