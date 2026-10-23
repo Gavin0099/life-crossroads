@@ -1,0 +1,30 @@
+{
+  "production_file": "LifeCrossroads/Domain/EventDirector.swift",
+  "sha256": "7981fa9a142cf0e95ed2b43e48f33d5c3e5b7e9645ab9ecc5228461902aae1a0",
+  "isolated_copy": true,
+  "shared_worktree_modified": false,
+  "mutations": [
+    {
+      "mutation": "unsorted-selection",
+      "test": "testWeightedSelectionIsOrderInvariantAndRespectsGrossOneToThreeRatio",
+      "exit_code": 1,
+      "detected_by_test_assertion": true,
+      "log": "artifacts/rng/mutations/unsorted-selection.log"
+    },
+    {
+      "mutation": "cooldown-off-by-one",
+      "test": "testOnceOnlyCooldownBoundaryAndMutualExclusionAreSeparateRules",
+      "exit_code": 1,
+      "detected_by_test_assertion": true,
+      "log": "artifacts/rng/mutations/cooldown-off-by-one.log"
+    },
+    {
+      "mutation": "relationship-ignored",
+      "test": "testEarlierChoiceUnlocksLaterActionWithRealProvenanceAndSameSeed",
+      "exit_code": 1,
+      "detected_by_test_assertion": true,
+      "log": "artifacts/rng/mutations/relationship-ignored.log"
+    }
+  ],
+  "temporary_copy_deleted_on_exit": true
+}

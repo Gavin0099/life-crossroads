@@ -83,6 +83,10 @@ public struct ConsequenceTrace: Codable, Equatable, Sendable {
     public let resourcesBefore: ResourceValues
     public let resourcesAfter: ResourceValues
     public let scheduledHooks: [StoryHook]
+    public var occurrenceID: String? = nil
+    public var eventEligibility: EligibilityEvaluation? = nil
+    public var choiceEligibility: [EligibilityCheck]? = nil
+    public var relationshipChanges: [RelationshipFact]? = nil
 
     /// Only executed, non-zero contributions count; recorded observations and unsuccessful random trials are not causes.
     public var contributingInfluences: [Influence] {

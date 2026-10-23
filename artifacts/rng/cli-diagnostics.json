@@ -1,0 +1,39 @@
+{
+  "command": "release CLI after stderr-only diagnostic change",
+  "valid_audit_lives": 16,
+  "failure_checks": [
+    {
+      "arguments": [
+        "--director-audit",
+        "--seeds-per-context",
+        "0"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Event Director audit failed: invalid(\"--seeds-per-context must be 1...4096\")\n",
+      "passed": true
+    },
+    {
+      "arguments": [
+        "--director-audit",
+        "--seeds-per-context"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Event Director audit failed: invalid(\"--seeds-per-context must be 1...4096\")\n",
+      "passed": true
+    },
+    {
+      "arguments": [
+        "--director-audit",
+        "--seeds-per-context",
+        "nonsense"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Event Director audit failed: invalid(\"--seeds-per-context must be 1...4096\")\n",
+      "passed": true
+    }
+  ],
+  "legacy_json_exit_code": 0
+}

@@ -26,6 +26,10 @@ struct DemoEvidence: Codable {
 }
 
 do {
+    if CommandLine.arguments.contains("--director-audit") {
+        try runDirectorAudit()
+        exit(0)
+    }
     let catalog = try StatisticsRepository.bundled()
     let firstCountries = ["JPN", "USA", "IND", "KEN"]
     var comparison: [Comparison] = []
@@ -70,6 +74,7 @@ do {
     }
 } catch {
     // CLI failures remain non-zero, so CI cannot mistake missing evidence for success.
-    print("LC-01 demo failed: \(error)")
+    let operation = CommandLine.arguments.contains("--director-audit") ? "Event Director audit" : "LC-01 demo"
+    FileHandle.standardError.write(Data("\(operation) failed: \(error)\n".utf8))
     exit(1)
 }

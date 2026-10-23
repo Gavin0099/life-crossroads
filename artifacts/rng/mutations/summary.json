@@ -1,0 +1,30 @@
+{
+  "production_file": "LifeCrossroads/Domain/EventDirector.swift",
+  "sha256": "c431ba4f095109d7fd7395106dd21e28acc4ababffdd324e07498fdc488ae5e8",
+  "isolated_copy": true,
+  "shared_worktree_modified": false,
+  "mutations": [
+    {
+      "mutation": "unsorted-selection",
+      "test": "testWeightedSelectionIsOrderInvariantAndRespectsGrossOneToThreeRatio",
+      "exit_code": 1,
+      "detected_by_test_assertion": true,
+      "log": "/Users/macminim4/.codex/worktrees/rng-event-director/life-crossroads/artifacts/rng/mutations/unsorted-selection.log"
+    },
+    {
+      "mutation": "cooldown-off-by-one",
+      "test": "testOnceOnlyCooldownBoundaryAndMutualExclusionAreSeparateRules",
+      "exit_code": 1,
+      "detected_by_test_assertion": true,
+      "log": "/Users/macminim4/.codex/worktrees/rng-event-director/life-crossroads/artifacts/rng/mutations/cooldown-off-by-one.log"
+    },
+    {
+      "mutation": "relationship-ignored",
+      "test": "testEarlierChoiceUnlocksLaterActionWithRealProvenanceAndSameSeed",
+      "exit_code": 1,
+      "detected_by_test_assertion": true,
+      "log": "/Users/macminim4/.codex/worktrees/rng-event-director/life-crossroads/artifacts/rng/mutations/relationship-ignored.log"
+    }
+  ],
+  "temporary_copy_deleted_on_exit": true
+}

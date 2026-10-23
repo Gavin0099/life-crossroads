@@ -1,0 +1,42 @@
+{
+  "command": "xcodebuild -project LifeCrossroads.xcodeproj -scheme LifeCrossroads -configuration Debug -destination 'generic/platform=iOS Simulator' -derivedDataPath /tmp/lc-rng-ios-build CODE_SIGNING_ALLOWED=NO build",
+  "result": "BUILD SUCCEEDED",
+  "xcode": "27.1 (27A9275)",
+  "architectures": [
+    "arm64",
+    "x86_64"
+  ],
+  "simulator_devices_created": 0,
+  "simulator_devices_booted": 0,
+  "project_wiring": "XCLocalSwiftPackageReference to .; LifeDomain and LifeData products; directory-based SwiftPM source discovery",
+  "app_behavior": "GameStore continues to own LifeSession; EventDirector is compiled but not selected by App UI",
+  "log": "artifacts/rng/logs/ios-package-build.log",
+  "log_sha256": "8adceee2011557a5082a1e69684d2713dba2db7f1a5488cbebcfb9b628f419c7",
+  "input_sha256": {
+    "LifeCrossroads.xcodeproj/project.pbxproj": "319c5ae83306cfdf73f3a5bfd99419529d0cc83a848f8e390ff5f1110aa97303",
+    "Package.swift": "d9f01d907fb3a87257a45778b40131100b3bb60365a4d9dc6ea632b0ea10afc2",
+    "LifeCrossroads/App/GameStore.swift": "7f0a7d2bca4f92e683e239691d9cf9095c47f91fd4edc85a1e757ae720748e9c",
+    "LifeCrossroads/Domain/ConsequenceTrace.swift": "97038f8c2baee72e41f323b3a56bcbb616b0f00171b55beccfabeba79a645620",
+    "LifeCrossroads/Domain/DecisionResolver.swift": "724a63677c717bddddc43503e8a101fa24eaaedbacbbfe48df2f98a4e0f8a918",
+    "LifeCrossroads/Domain/DirectedLifeSession.swift": "a38a0c265a7df3deefee1d1f61fc0ade4077461758dcc3eb06c9c04ade30c572",
+    "LifeCrossroads/Domain/EventDirector.swift": "c431ba4f095109d7fd7395106dd21e28acc4ababffdd324e07498fdc488ae5e8",
+    "LifeCrossroads/Domain/EventDirectorModels.swift": "7fd89cc7d6637375a53ef00b2b3f5ec0570763e704d14d56edc538a26c02dc3e",
+    "LifeCrossroads/Domain/LifeSession.swift": "1c449a078a1f16551cae58ecab2f1009542665b14c51f85afdf41e4952dc2d60",
+    "LifeCrossroads/Domain/LifeState.swift": "94a9db2c50a91b7522b70ad068036f506662493d43a861ecb5d9d63d05fb9f11",
+    "LifeCrossroads/Domain/Models.swift": "c3edb0368489dbf54bc682256cdb6d146584b6051586baffe57e16394b04a4e4",
+    "LifeCrossroads/Domain/RandomSource.swift": "746e01eff6f8ef03af1902354c8c62c09c3dc74e33e6b2a4c096a6e4a210bb03",
+    "LifeCrossroads/Domain/StoryBranchEngine.swift": "0d7646720d29c91e108166ef0d41538300dbe6ef4a07447c0d4070fa0a2f23af",
+    "LifeCrossroads/Data/DirectedDemo.swift": "e765797be005c9b7d858d5d8679894fe7b640359570df975197929e340c88989"
+  },
+  "warnings": [
+    "AppIntents metadata extraction skipped because no AppIntents.framework dependency exists"
+  ],
+  "not_claimed": [
+    "runtime Simulator test",
+    "real iPhone",
+    "UI interaction",
+    "formal EventDirector App integration",
+    "release"
+  ],
+  "temporary_derived_data_deleted": true
+}

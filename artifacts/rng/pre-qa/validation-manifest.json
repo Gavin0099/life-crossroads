@@ -1,0 +1,35 @@
+{
+  "batch_command": "swift run -c release life-demo --director-audit",
+  "batch_exit_code": 0,
+  "unit_command": "swift test",
+  "unit_exit_code": 0,
+  "unit_tests": 66,
+  "unit_failures": 0,
+  "batch_seed_range_inclusive": [
+    0,
+    127
+  ],
+  "batch_contexts": 8,
+  "primary_lives": 1024,
+  "comparison_replays": 3072,
+  "simulator_runs": 0,
+  "source_sha256": {
+    "LifeCrossroads/Domain/EventDirector.swift": "7981fa9a142cf0e95ed2b43e48f33d5c3e5b7e9645ab9ecc5228461902aae1a0",
+    "LifeCrossroads/Domain/EventDirectorModels.swift": "7fd89cc7d6637375a53ef00b2b3f5ec0570763e704d14d56edc538a26c02dc3e",
+    "LifeCrossroads/Domain/DirectedLifeSession.swift": "a38a0c265a7df3deefee1d1f61fc0ade4077461758dcc3eb06c9c04ade30c572",
+    "LifeCrossroads/Domain/LifeState.swift": "5a8923b8d150b919cc2c5900b83cba1b00dbdd1f2c778a769b6d9959343ea014",
+    "LifeCrossroads/Domain/DecisionResolver.swift": "e2e3318ff80e5e552cb58bacd1ed0b12984b886f6301186b20512ab83cf41a26",
+    "LifeCrossroads/Domain/ConsequenceTrace.swift": "97038f8c2baee72e41f323b3a56bcbb616b0f00171b55beccfabeba79a645620",
+    "LifeCrossroads/Data/DirectedDemo.swift": "e765797be005c9b7d858d5d8679894fe7b640359570df975197929e340c88989",
+    "LifeCrossroads/CLI/DirectorAudit.swift": "a410db8f941ddd232c38b2008e31f477d23442bcab6f53498902554d9a357f58",
+    "LifeCrossroads/CLI/main.swift": "1e2d33a33bda0cfb33e508ce5fcbc9829775fa0d723381b020dbe99da4a5112c",
+    "Tests/LifeDomainTests/EventDirectorTests.swift": "47cb18b25f244c23c56627921160c420e306264c6b3c4b18f5b51c8fe13091c7",
+    "docs/rng/batch-contract.md": "5e56594e087b7305c442cb2880bad6b0c517de0f7be816cada912e66e43cf056"
+  },
+  "evidence_sha256": {
+    "artifacts/rng/batch.json": "a0fae39807332575a597d019526841ed8c0e575b29ad6a3a9534b300aa9ce337",
+    "artifacts/rng/logs/swift-tests.log": "6526654217505a164c243018242238f63e9ca0931a47fb05f4c7235ba8a7308c",
+    "artifacts/rng/logs/batch.log": "5ebab7375702f9dac0689f465db0e914c3e99d4d151e2d53cd01315828f355cf",
+    "artifacts/rng/mutations/summary.json": "0a3de726af1095f457a34bae2b2c115c310e7aa6d6fc05b7ff6782dbf0dfed5a"
+  }
+}

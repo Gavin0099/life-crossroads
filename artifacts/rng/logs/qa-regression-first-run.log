@@ -1,0 +1,18 @@
+Another instance of SwiftPM (PID: 30802) is already running using '/Users/macminim4/.codex/worktrees/rng-event-director/life-crossroads/.build', waiting until that process has finished execution...Building for debugging...
+[Computing dependencies]
+Build complete! (0.92秒)
+Test Suite 'Selected tests' started at 2026-10-23 17:45:21.775.
+Test Suite 'LifeDomainTests.xctest' started at 2026-10-23 17:45:21.777.
+Test Suite 'EventDirectorTests' started at 2026-10-23 17:45:21.777.
+Test Case '-[LifeDomainTests.EventDirectorTests testCatalogRejectsMissingOrUnaffordableOrAgeUnsafeSupport]' started.
+Test Case '-[LifeDomainTests.EventDirectorTests testCatalogRejectsMissingOrUnaffordableOrAgeUnsafeSupport]' passed (0.012 seconds).
+Test Case '-[LifeDomainTests.EventDirectorTests testDelayedCallbackKeepsProjectedPersonAndSurvivesRestore]' started.
+Test Case '-[LifeDomainTests.EventDirectorTests testDelayedCallbackKeepsProjectedPersonAndSurvivesRestore]' passed (0.312 seconds).
+Test Case '-[LifeDomainTests.EventDirectorTests testTerminalAgeCannotSchedulePastFutureButNinetyNineCanReachOneHundred]' started.
+Test Case '-[LifeDomainTests.EventDirectorTests testTerminalAgeCannotSchedulePastFutureButNinetyNineCanReachOneHundred]' passed (0.216 seconds).
+Test Suite 'EventDirectorTests' passed at 2026-10-23 17:45:22.317.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.540 (0.540) seconds
+Test Suite 'LifeDomainTests.xctest' passed at 2026-10-23 17:45:22.317.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.540 (0.540) seconds
+Test Suite 'Selected tests' passed at 2026-10-23 17:45:22.317.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.540 (0.542) seconds

@@ -1,0 +1,22 @@
+Building for debugging...
+[1 / 5]
+[2 / 6] LifeDomain
+[3 / 7] LifeDomain
+[7 / 12] LifeDomain
+[12 / 13] LifeDomainTests-product
+[17 / 18] life-demo-product
+Build complete! (1.28秒)
+Test Suite 'Selected tests' started at 2026-10-23 17:28:49.428.
+Test Suite 'LifeDomainTests.xctest' started at 2026-10-23 17:28:49.429.
+Test Suite 'EventDirectorTests' started at 2026-10-23 17:28:49.429.
+Test Case '-[LifeDomainTests.EventDirectorTests testOnceOnlyCooldownBoundaryAndMutualExclusionAreSeparateRules]' started.
+/private/var/folders/gw/3g0118050sb7lwtm8k1jzzw40000gn/T/lc-rng-mutation-3drf92ts/Tests/LifeDomainTests/EventDirectorTests.swift:129: error: -[LifeDomainTests.EventDirectorTests testOnceOnlyCooldownBoundaryAndMutualExclusionAreSeparateRules] : XCTAssertTrue failed
+Test Case '-[LifeDomainTests.EventDirectorTests testOnceOnlyCooldownBoundaryAndMutualExclusionAreSeparateRules]' failed (0.053 seconds).
+Test Suite 'EventDirectorTests' failed at 2026-10-23 17:28:49.482.
+	 Executed 1 test, with 1 failure (0 unexpected) in 0.053 (0.053) seconds
+Test Suite 'LifeDomainTests.xctest' failed at 2026-10-23 17:28:49.482.
+	 Executed 1 test, with 1 failure (0 unexpected) in 0.053 (0.053) seconds
+Test Suite 'Selected tests' failed at 2026-10-23 17:28:49.482.
+	 Executed 1 test, with 1 failure (0 unexpected) in 0.053 (0.054) seconds
+Note: Some test targets reported failures:
+  - LifeDomainTests (XCTest)

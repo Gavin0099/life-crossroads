@@ -26,6 +26,13 @@ public struct StoryProjection: Equatable, Sendable {
 
 /// Pure projections of actual decision history and current resources. Country names never select a route.
 public enum StoryBranchEngine {
+    /// These choices are removed by the existing story prerequisites. A catalog must not count
+    /// them as its guaranteed recovery route, even if a caller changes the choice kind.
+    static func isConditionallyHidden(eventID: String, choiceID: String) -> Bool {
+        (eventID == "teen-direction" && choiceID == "leadWorkshop")
+            || (eventID == "middle-support" && choiceID == "shareShift")
+    }
+
     public static func project(event original: DecisionSkeleton, state: LifeState) -> StoryProjection {
         var event = original
         var sourceEventID: String
@@ -65,7 +72,7 @@ public enum StoryBranchEngine {
                 explanation = "13歲沒有選擇製作作品，這次沒有舊作品的邀請；小澄陪你找一個新的學習起點。"
                 rename("offline", "和小澄借入門圖解，試做第一個模型")
             }
-            if !hasProject || !experienced { event.choices.removeAll { $0.id == "leadWorkshop" } }
+            if !hasProject || !experienced { event.choices.removeAll { isConditionallyHidden(eventID: original.id, choiceID: $0.id) } }
             explanation += "帶領小工作坊需有13歲的作品經驗及技能至少28；本次技能為\(state.resources.skills)，因此" +
                 (hasProject && experienced ? "故事開放帶領選項，仍需安排本回合成本。" : "先保留參與、求助與休息的路線。")
         case "middle-support":
@@ -90,7 +97,7 @@ public enum StoryBranchEngine {
                 rename("ask", "請小澄陪你詢問社區的協助方式")
                 explanation = "39歲沒有建立共同輪班約定，這次從整理需要、認識支持夥伴開始；不會假定已有人能接班。"
             }
-            if !sharedPlan || !enoughEnergy { event.choices.removeAll { $0.id == "shareShift" } }
+            if !sharedPlan || !enoughEnergy { event.choices.removeAll { isConditionallyHidden(eventID: original.id, choiceID: $0.id) } }
             explanation += "接下一小段既有輪班需原來的約定及健康至少55；本次健康為\(state.resources.health)，因此" +
                 (sharedPlan && enoughEnergy ? "故事開放自願接一小段的選項，仍需安排本回合成本。" : "保留求助與免費休息，不要求勉強承擔。")
         case "later-reconnect":

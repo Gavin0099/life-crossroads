@@ -32,17 +32,41 @@ enum EnvironmentRules {
 }
 
 public enum DecisionResolver {
-    public static func resolve(state: LifeState, eventID: String, choiceID: String, catalog: ModelCatalog) throws -> DecisionResult {
-        try catalog.validate(); try state.validate(catalog: catalog)
-        guard let original = catalog.decisions.first(where: { $0.id == eventID }),
-              let originalChoice = original.choices.first(where: { $0.id == choiceID }) else { throw ModelError.missing("decision/choice") }
+    public static func resolve(state: LifeState, eventID: String, choiceID: String, catalog: ModelCatalog,
+                               directedCatalog: EventCatalog? = nil, occurrence: EventOccurrence? = nil) throws -> DecisionResult {
+        try catalog.validate(); try state.validate(catalog: catalog, directedCatalog: directedCatalog)
+        let original: DecisionSkeleton
+        var eligibility: EligibilityEvaluation?
+        var choiceChecks: [EligibilityCheck]?
+        var directedDefinition: DirectedEvent?
+        if let directedCatalog {
+            try directedCatalog.validate()
+            guard let occurrence, occurrence.eventID == eventID, occurrence.age == state.age,
+                  directedCatalog.slots.contains(where: { $0.id == occurrence.slotID && $0.age == state.age }),
+                  state.directorHistory?.occurrences.contains(where: { $0.slotID == occurrence.slotID }) == false else {
+                throw ModelError.invalid("directed resolution occurrence")
+            }
+            let definition = try directedCatalog.event(eventID)
+            let ordinal = (state.directorHistory?.occurrences.filter { $0.eventID == eventID }.count ?? 0) + 1
+            guard occurrence == EventOccurrence(eventID: eventID, slotID: occurrence.slotID, age: state.age, ordinal: ordinal) else {
+                throw ModelError.invalid("directed occurrence identity")
+            }
+            directedDefinition = definition
+            original = LifeState.directedDecision(definition.decision, at: state.age)
+            eligibility = try EventEligibility.evaluate(event: definition, state: state, catalog: directedCatalog)
+            choiceChecks = try EventEligibility.choiceChecks(choiceID: choiceID, event: definition, state: state, catalog: directedCatalog)
+        } else {
+            guard occurrence == nil, let definition = catalog.decisions.first(where: { $0.id == eventID }),
+                  state.age == definition.age, !state.decisions.contains(where: { $0.eventID == eventID }) else {
+                throw ModelError.invalid("event age or repeated decision")
+            }
+            original = definition
+        }
+        guard let originalChoice = original.choices.first(where: { $0.id == choiceID }) else { throw ModelError.missing("decision/choice") }
         let projection = StoryBranchEngine.project(event: original, state: state)
         let event = projection.event
         let availableChoice = event.choices.first(where: { $0.id == choiceID })
         let choice = availableChoice ?? originalChoice
-        guard state.age == event.age, !state.decisions.contains(where: { $0.eventID == eventID }) else {
-            throw ModelError.invalid("event age or repeated decision")
-        }
         let context = try EnvironmentRules.context(catalog: catalog, countryCode: state.countryCode, householdID: state.householdID)
         let h = context.household
         var costSteps: [CostStep] = []
@@ -90,7 +114,8 @@ public enum DecisionResolver {
                          materials: boundedCost.materials - cost.materials), [:], [], ["resource-bounds"],
                    "協助可以減少成本，但不會憑空增加回合時間。")
         }
-        var reasons: [String] = []
+        var reasons: [String] = eligibility?.rejectionReasons ?? []
+        reasons += (choiceChecks ?? []).filter { !$0.met }.map { "選項條件未符合：\($0.ruleID)，實際\($0.observed)，需要\($0.expected)。" }
         if availableChoice == nil {
             reasons.append("這個故事條件尚未具備；可以選擇畫面上提供的參與、求助或免費休息。")
         }
@@ -107,6 +132,7 @@ public enum DecisionResolver {
         var effects: [EffectStep] = []
         var randomTrial: RandomTrial?
         var hooks: [StoryHook] = []
+        var relationshipChanges: [RelationshipFact] = []
         func effect(_ rule: String, _ influence: Influence, _ delta: ResourceValues, _ assumptions: [String], _ text: String) {
             next.resources = next.resources + delta
             effects.append(.init(ruleID: rule, influence: influence, delta: delta, assumptionIDs: assumptions, explanation: text))
@@ -135,15 +161,24 @@ public enum DecisionResolver {
                 effect("luck.encouragement", .randomness, occurred ? .init(relationships: 1) : .zero,
                        ["luck-encouragement"], occurred ? "這次意外收到別人的鼓勵。這是遊戲中的機會事件。" : "這次沒有額外的機會事件；好的選擇也不保證好運。")
             }
-            if let hook = StoryRules.callback(event: event, choice: choice) {
+            if let hook = StoryRules.callback(event: event, choice: choice, occurrence: occurrence,
+                                               resourcesBefore: occurrence == nil ? nil : state.resources) {
                 hooks = [hook]
                 next.pendingHooks.append(contentsOf: hooks)
             }
             let clamp = next.resources.clamped - next.resources
             effect("resource.clamp", .modelRule, clamp, ["resource-bounds"], "四項資源維持在 0～100，沒有合成人生總分。")
-            next.decisions.append(.init(eventID: event.id, choiceID: choice.id, age: state.age))
+            next.decisions.append(.init(eventID: event.id, choiceID: choice.id, age: state.age, occurrenceID: occurrence?.id))
+            if let occurrence, let definition = directedDefinition {
+                next.directorHistory?.occurrences.append(occurrence)
+                for effect in definition.relationshipEffects where effect.choiceID == choiceID {
+                    relationshipChanges.append(.init(personID: effect.personID, factID: effect.factID, present: effect.present,
+                                                      originOccurrenceID: occurrence.id, originChoiceID: choiceID, assumptionID: definition.assumptionID))
+                }
+                next.directorHistory?.relationships.append(contentsOf: relationshipChanges)
+            }
         }
-        try next.validate(catalog: catalog)
+        try next.validate(catalog: catalog, directedCatalog: directedCatalog)
         return .init(state: next, trace: .init(
             engineVersion: state.engineVersion, dataVersion: state.dataVersion, contentVersion: state.contentVersion, seed: state.seed,
             eventID: event.id, choiceID: choice.id, eventTitle: event.title, choiceTitle: choice.title,
@@ -154,6 +189,8 @@ public enum DecisionResolver {
             budgetBefore: .init(time: state.remainingTime, energy: state.remainingEnergy, materials: state.remainingMaterials),
             budgetAfter: .init(time: next.remainingTime, energy: next.remainingEnergy, materials: next.remainingMaterials),
             effectSteps: effects, randomTrial: randomTrial, resourcesBefore: state.resources,
-            resourcesAfter: next.resources, scheduledHooks: hooks))
+            resourcesAfter: next.resources, scheduledHooks: hooks, occurrenceID: occurrence?.id,
+            eventEligibility: eligibility, choiceEligibility: choiceChecks,
+            relationshipChanges: directedCatalog == nil ? nil : relationshipChanges))
     }
 }
