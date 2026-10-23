@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "/tmp/lc-world-flow-check",
+  "exit_code": 0,
+  "started_at": "2026-10-23T10:43:51Z",
+  "finished_at": "2026-10-23T10:43:51Z",
+  "runner": "codex-root",
+  "linked_commit": "d19d7e0f3845d0bb9dcd97704d6847c6cd07e052",
+  "output_artifacts": [
+    "artifacts/gameplay/test-evidence-receipt.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}

@@ -2,7 +2,7 @@
   "date": "2026-10-23",
   "branch": "codex/gs-visual-gameplay",
   "base_commit": "0883247f9854169f2a4434fdc3967870902a9be7",
-  "implementation_commit": null,
+  "implementation_commit": "d19d7e0f3845d0bb9dcd97704d6847c6cd07e052",
   "source_sha256": {
     "UIPrototype/WorldGameplay/WorldModels.swift": "1e326773635d71fb2751444efbc665d267c4a0af197378edc4be858bc9bb028b",
     "UIPrototype/WorldGameplay/WorldGameplayView.swift": "9dbac417d0fd3d073897d8f36e57f6455d660fd7e1f8ae71a5edc09a6466ceb5",
@@ -78,7 +78,7 @@
   "legacy_swift_tests": 25,
   "basic": "PASS",
   "simulator_cleanup": "artifacts/gameplay/simulator-cleanup.json",
-  "memory_validation": null,
+  "memory_validation": "artifacts/gameplay/memory-workflow.json",
   "response_envelope": {
     "mode": "VALIDATION",
     "mode_source": "validation_command",

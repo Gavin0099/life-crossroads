@@ -1,0 +1,18 @@
+PASS: waiting for choice blocks manual and automatic progression
+PASS: team choice changes visible world with authored snapshot
+PASS: help route differs in object, reaction, actors and comparison
+PASS: pause and normal playback preserve authored beat boundaries
+PASS: continuous year axis never invents skipped-year states or records
+PASS: team adult return keeps its own memory and record sequence
+PASS: ending retains world and prevents duplicate choice or records
+PASS: repeat protection and restart give both paths the same starting conditions
+PASS: unknown option reports an error without changing world
+PASS: missing and mismatched event-option pairs fail closed
+PASS: missing or unrelated explanations cannot masquerade as choice evidence
+PASS: missing reaction and next-day beats preserve the last valid world
+PASS: missing adult return blocks before the time transition
+PASS: complete four-resource snapshots are required, including initial state
+PASS: non-monotonic and duplicate authored beats are rejected
+WorldFlow: 15 scenarios, 68 assertions passed.
+[test_evidence_receipt] receipt=artifacts/gameplay/test-evidence-receipt.json exit_code=0
+  test_evidence: PASS: artifacts/gameplay/test-evidence-receipt.json -> exit_code=0
