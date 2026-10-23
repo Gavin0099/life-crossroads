@@ -1,0 +1,30 @@
+FEF
+======================================================================
+ERROR: test_named_household_templates_are_shared_without_country_health (test_data_generation.DataGenerationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/test_data_generation.py", line 34, in test_named_household_templates_are_shared_without_country_health
+    self.assertEqual(household["initialResources"]["health"], expected_health[household["templateID"]])
+KeyError: 'templateID'
+
+======================================================================
+FAIL: test_country_order_does_not_change_household_initial_resources (test_data_generation.DataGenerationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/test_data_generation.py", line 17, in test_country_order_does_not_change_household_initial_resources
+    self.assertEqual(original, reordered)
+AssertionError: {'twn-1': {'health': 65, 'financial': 35, '[1184 chars] 20}} != {'ken-1': {'health': 65, 'financial': 35, '[1184 chars] 20}}
+Diff is 3296 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_only_explicit_digital_choices_use_macro_rules (test_data_generation.DataGenerationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/test_data_generation.py", line 26, in test_only_explicit_digital_choices_use_macro_rules
+    self.assertEqual(primary["requiresDigitalAccess"], event["id"] in digital_events)
+AssertionError: True != False
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.023s
+
+FAILED (failures=2, errors=1)

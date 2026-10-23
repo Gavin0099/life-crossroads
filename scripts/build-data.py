@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 RESOURCES = ROOT / "LifeCrossroads/Data/Resources"
 VERSION = "wdi-2023-snapshot-2026-10-23"
-DATA_VERSION = "lc01-data-1"
+DATA_VERSION = "lc01-data-2"
 TERMS = "https://www.worldbank.org/ext/en/legal/terms-conditions/datasets"
 COUNTRIES = [("TWN", "台灣"), ("JPN", "日本"), ("USA", "美國"), ("DEU", "德國"),
              ("IND", "印度"), ("BRA", "巴西"), ("VNM", "越南"), ("KEN", "肯亞")]
@@ -17,6 +17,21 @@ INDICATORS = [
     ("IT.NET.USER.ZS", "internet", "International Telecommunication Union (ITU)"),
     ("EG.ELC.ACCS.ZS", "electricity", "World Bank / ESMAP, SDG 7.1.1 Electrification Dataset"),
 ]
+# Authored fictional scenarios, shared by every country. No country position, label or statistic enters these values.
+FAMILY_SCENARIOS = [
+    dict(templateID="shared-equipment-near-support", health=66, financial=35, relationships=65,
+         deviceAccess="shared", travelCost=0, careLoad=1, mentorSupport=2, materialBudget=2,
+         description="共用設備、近處互助、家人輪班"),
+    dict(templateID="own-equipment-long-commute", health=64, financial=60, relationships=50,
+         deviceAccess="own", travelCost=1, careLoad=0, mentorSupport=1, materialBudget=4,
+         description="獨用設備、較遠通勤、收入較穩"),
+]
+DIGITAL_TITLES = {
+    "teen-project": "用線上圖解製作互動作品",
+    "teen-direction": "參加需要連網的遠距課程",
+    "adult-learning": "投入線上進修課程",
+    "middle-turn": "用遠距課程學新技能",
+}
 
 
 def dump(value):
@@ -66,13 +81,15 @@ def build(refresh=False):
             ))
     assumptions = []
 
-    def assumption(id_, statement, limitation):
-        assumptions.append(dict(id=id_, version="1", statement=statement, limitation=limitation))
+    def assumption(id_, statement, limitation, version="1"):
+        assumptions.append(dict(id=id_, version=version, statement=statement, limitation=limitation))
 
     assumption("macro-friction", "需要數位資料的行動：網路使用率 >=90 時多用0格時間，60～<90多用1格，<60多用2格；電力取得率 <95 多用1格材料，否則0格。",
                "這些門檻及成本是教學用情境指數。全國人口比例不是個人/家庭連線機率，也不能代表設備品質、教育、供電穩定度或個人因果。")
-    assumption("household-scenarios", "每國兩個刻意對比的虛構家庭：設備、交通、成人照顧安排、材料及初始資源皆為手工情境；不抽樣國家平均值。",
-               "不是家庭聯合分布、不代表典型家庭、沒有真實發生頻率；兩種情境可存在於任何國家，不能用於國家排名。")
+    assumption("household-scenarios", "兩個具穩定templateID的虛構家庭：互助共用模板初始健康66、財務35、人際65、技能20；獨用通勤模板初始健康64、財務60、人際50、技能20。所有國家沿用完全相同的模板數值，國名及排序不參與初始資源。",
+               "這些初始狀態是具名設計案例，不是家庭聯合分布、典型家庭或醫學因果；沒有真實發生頻率，不能用於國家排名。", version="2")
+    assumption("learning-channels", "數位依賴逐選項明列。線上圖解、遠距課程使用數位情境規則；紙本創作、面對面練習與社區老師路線不讀取網路/電力比例，仍依交通、材料與協助計成本。",
+               "相同技能目標有不同途徑；數位人口比例不能限制本來不需要上網的活動。離線途徑的成本/效果也是設計假設。")
     assumption("life-stages", "0～12、13～22、23～40、41～60、61～100為五階段。每個關鍵事件重置時間/精力；跳躍時觸發到期故事。80歲回顧只為骨架收束。",
                "年齡段、回合預算與收束年齡是遊戲節奏，不是人口或死亡模型；沒有將平均壽命當作死亡年齡。")
     assumption("agency", "童年學習由孩子表達意願並和可信任的大人共同安排；成人工作/照顧責任限23歲以上。家庭照顧安排只在23歲以上增加成本。",
@@ -91,7 +108,7 @@ def build(refresh=False):
                "為LC-02保留人物牽掛的最小故事契約，並非證實現實長期因果；完整事件內容及試玩仍待後續切片。")
 
     countries, households = [], []
-    for index, (code, name) in enumerate(COUNTRIES):
+    for code, name in COUNTRIES:
         gaps = []
         if code == "TWN":
             gaps = ["尚未接入台灣官方同口徑2023網路與電力人口比例；不得以其他國家、不同分母或0填補。",
@@ -100,18 +117,15 @@ def build(refresh=False):
             gaps = ["LC-01兩項宏觀指標已驗證；LC-02在地故事用語與制度情境尚未考證，不在首批四國名單。"]
         countries.append(dict(code=code, name=name, dataStatus="blocked" if code == "TWN" else "ready",
                               indicators=observations.get(code, []), gaps=gaps))
-        for number in (1, 2):
+        for number, family in enumerate(FAMILY_SCENARIOS, start=1):
             # Explicit fictional scenarios, not national frequencies. Families are not moral rankings.
             households.append(dict(
-                id=f"{code.lower()}-{number}", countryCode=code,
-                label=f"{name}・虛構家庭{number}：" + ("共用設備、近處互助、家人輪班" if number == 1 else "獨用設備、較遠通勤、收入較穩"),
-                deviceAccess="shared" if number == 1 else "own",
-                travelCost=0 if number == 1 else 1,
-                careLoad=1 if number == 1 else 0,
-                mentorSupport=2 if number == 1 else 1,
-                materialBudget=2 if number == 1 else 4,
-                initialResources=resources(health=65 + index % 3, financial=35 if number == 1 else 60,
-                                           relationships=65 if number == 1 else 50, skills=20),
+                id=f"{code.lower()}-{number}", countryCode=code, templateID=family["templateID"],
+                label=f"{name}・虛構家庭{number}：" + family["description"],
+                deviceAccess=family["deviceAccess"], travelCost=family["travelCost"], careLoad=family["careLoad"],
+                mentorSupport=family["mentorSupport"], materialBudget=family["materialBudget"],
+                initialResources=resources(health=family["health"], financial=family["financial"],
+                                           relationships=family["relationships"], skills=20),
                 assumptionIDs=["household-scenarios"],
             ))
 
@@ -136,13 +150,14 @@ def build(refresh=False):
     for age, id_, title, person, question, kind in skeletons:
         control = "sharedWithAdult" if age <= 12 else ("adultResponsibility" if kind in {"work", "care"} else "personal")
         primary_title = {"learn": "投入時間一起學習", "work": "增加一段工作時間", "care": "和別人共同安排照顧", "share": "和重要的人分享經驗"}[kind]
+        primary_title = DIGITAL_TITLES.get(id_, primary_title)
         primary_effect = {"learn": resources(skills=4, financial=-1), "work": resources(financial=4, health=-1),
                           "care": resources(relationships=4, health=-1), "share": resources(relationships=3, skills=1)}[kind]
         choices = [dict(id="invest", title=primary_title, kind=kind, control=control,
                         minimumAge=23 if kind in {"work", "care"} else 0, timeCost=3, energyCost=2,
                         materialCost=1 if kind == "learn" else 0, effect=primary_effect,
-                        requiresDigitalAccess=kind == "learn", delayedHook="reconnect" if age in {13, 25, 45} else None,
-                        assumptionIDs=["choice-effects", "agency"]),
+                        requiresDigitalAccess=id_ in DIGITAL_TITLES, delayedHook="reconnect" if age in {13, 25, 45} else None,
+                        assumptionIDs=["choice-effects", "agency", "learning-channels"]),
                    dict(id="ask", title="先說出需要，和別人一起找方法", kind="askSupport", control="personal",
                         minimumAge=0, timeCost=1, energyCost=1, materialCost=0,
                         effect=resources(relationships=2, skills=1), requiresDigitalAccess=False, delayedHook=None,
@@ -150,8 +165,13 @@ def build(refresh=False):
                    dict(id="rest", title="保留時間休息和陪伴", kind="rest", control="personal", minimumAge=0,
                         timeCost=0, energyCost=0, materialCost=0, effect=resources(health=2, relationships=1),
                         requiresDigitalAccess=False, delayedHook=None, assumptionIDs=["choice-effects"])]
+        if id_ in DIGITAL_TITLES:
+            choices.insert(1, dict(id="offline", title="向社區老師借紙本圖解，一起練習", kind="learn",
+                                  control=control, minimumAge=0, timeCost=3, energyCost=2, materialCost=1,
+                                  effect=resources(skills=3, relationships=1), requiresDigitalAccess=False,
+                                  delayedHook=None, assumptionIDs=["choice-effects", "learning-channels", "support-network"]))
         decisions.append(dict(id=id_, age=age, title=title, recurringPerson=person, storyQuestion=question, choices=choices))
-    return dict(schemaVersion=1, dataVersion=DATA_VERSION, contentVersion="lc02-skeleton-1", referenceYear=2023,
+    return dict(schemaVersion=2, dataVersion=DATA_VERSION, contentVersion="lc02-skeleton-2", referenceYear=2023,
                 sources=sources, assumptions=assumptions, countries=countries, households=households, decisions=decisions)
 
 

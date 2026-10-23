@@ -64,6 +64,9 @@ public enum DecisionResolver {
             adjust("family.device", .family, .init(time: h.deviceAccess.schedulingCost),
                    ["deviceScheduling": Double(h.deviceAccess.schedulingCost)], [], h.assumptionIDs,
                    "這個虛構家庭的設備安排，多需要 \(h.deviceAccess.schedulingCost) 格時間。")
+        } else if choice.kind == .learn {
+            adjust("learning.offline", .modelRule, .init(), [:], [], ["learning-channels"],
+                   "這次使用紙本或面對面學習；成本只依本次材料、交通與協助安排計算。")
         }
         if choice.kind == .learn || choice.kind == .work || choice.kind == .care {
             let careCost = state.age >= 23 ? h.careLoad : 0

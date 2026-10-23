@@ -32,6 +32,56 @@ final class LC01Tests: XCTestCase {
         XCTAssertThrowsError(try LifeState.born(catalog: c, countryCode: "TWN", householdID: "twn-1", seed: 42))
     }
 
+    func testOfflineChildActivityNeverUsesNationalDigitalRates() throws {
+        let c = try catalog()
+        for code in ["JPN", "USA", "IND", "KEN"] {
+            let result = try resolve(state(c, country: code, age: 8), c, event: "child-interest")
+            XCTAssertTrue(result.trace.applied)
+            XCTAssertEqual(result.trace.finalCost, Cost(time: 3, energy: 2, materials: 1))
+            XCTAssertFalse(result.trace.costSteps.contains { $0.ruleID == "context.digital" || $0.ruleID == "family.device" })
+            XCTAssertTrue(result.trace.costSteps.filter { $0.influence == .socialEnvironment }.isEmpty)
+        }
+    }
+
+    func testOfflineLearningIgnoresDigitalThresholdsAndHasSupport() throws {
+        var c = try catalog()
+        let index = try XCTUnwrap(c.countries.firstIndex { $0.code == "KEN" })
+        for i in c.countries[index].indicators.indices { c.countries[index].indicators[i].value = 0 }
+        let original = try resolve(state(c, country: "KEN", family: 1, age: 8), c, event: "child-interest")
+        for i in c.countries[index].indicators.indices { c.countries[index].indicators[i].value = 100 }
+        let changed = try resolve(state(c, country: "KEN", family: 1, age: 8), c, event: "child-interest")
+        XCTAssertEqual(original.trace.finalCost, changed.trace.finalCost)
+        XCTAssertEqual(original.state.resources, changed.state.resources)
+        XCTAssertTrue(original.trace.costSteps.contains { $0.ruleID == "support.shared-preparation" })
+    }
+
+    func testDigitalLearningOffersAnIndependentOfflineRoute() throws {
+        let c = try catalog(), before = try state(c, country: "KEN")
+        let online = try resolve(before, c)
+        let offline = try resolve(before, c, choice: "offline")
+        XCTAssertTrue(offline.trace.applied)
+        XCTAssertTrue(online.trace.costSteps.contains { $0.ruleID == "context.digital" })
+        XCTAssertFalse(offline.trace.costSteps.contains { $0.ruleID == "context.digital" })
+        XCTAssertLessThan(offline.trace.finalCost.time, online.trace.finalCost.time)
+        XCTAssertEqual(offline.trace.finalCost.materials, 1)
+    }
+
+    func testHouseholdTemplatesStayComparableWhenArraysMove() throws {
+        let c = try catalog()
+        var reordered = c; reordered.households.reverse()
+        XCTAssertNoThrow(try reordered.validate())
+        let usa = try XCTUnwrap(c.households.first { $0.id == "usa-2" })
+        let kenya = try XCTUnwrap(c.households.first { $0.id == "ken-2" })
+        XCTAssertEqual(usa.templateID, "own-equipment-long-commute")
+        XCTAssertTrue(usa.hasSameConditions(as: kenya))
+        var corrupt = c
+        let index = try XCTUnwrap(corrupt.households.firstIndex { $0.id == "ken-2" })
+        corrupt.households[index].initialResources.health += 1
+        XCTAssertThrowsError(try corrupt.validate())
+        corrupt = c; corrupt.households[index].templateID = ""
+        XCTAssertThrowsError(try corrupt.validate())
+    }
+
     func testPinnedRealStatisticsHaveIndependentExpectedValues() throws {
         let c = try catalog()
         let kenya = try XCTUnwrap(c.countries.first { $0.code == "KEN" })
@@ -80,7 +130,7 @@ final class LC01Tests: XCTestCase {
     func testCorruptJSONAndUnknownSchemaFailExplicitly() throws {
         XCTAssertThrowsError(try StatisticsRepository.decode(Data("{not json}".utf8)))
         XCTAssertThrowsError(try StatisticsRepository.decode(Data("{}".utf8)))
-        var c = try catalog(); c.schemaVersion = 2
+        var c = try catalog(); c.schemaVersion = 999
         XCTAssertThrowsError(try c.validate())
     }
 

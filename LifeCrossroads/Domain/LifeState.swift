@@ -18,7 +18,7 @@ public struct DecisionRecord: Codable, Equatable, Sendable {
 }
 
 public struct LifeState: Codable, Equatable, Sendable {
-    public static let engineVersion = "lc01-1"
+    public static let engineVersion = "lc01-2"
     public var engineVersion: String
     public var dataVersion: String
     public var contentVersion: String
