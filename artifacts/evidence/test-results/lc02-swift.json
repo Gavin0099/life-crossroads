@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "swift test",
+  "exit_code": 0,
+  "started_at": "2026-10-23T06:10:04Z",
+  "finished_at": "2026-10-23T06:10:12Z",
+  "runner": "governance_tools.test_evidence_receipt_writer",
+  "linked_commit": "6a5137b6aea835395021704b370367b43bbd7c67",
+  "output_artifacts": [
+    "artifacts/evidence/test-results/lc02-swift.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}

@@ -11,16 +11,16 @@
 # ── PROVENANCE ────────────────────────────────────────────────────────────────
 schema_version: "1"
 baseline_version: 1.0.0
-source_commit: 7f34f784d2ed5ca946b6302bae3bea0dc51683e4
+source_commit: 6a5137b6aea835395021704b370367b43bbd7c67
 framework_root: /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/additional/ai-governance-framework
-initialized_at: 2026-10-23T05:58:05Z
+initialized_at: 2026-10-23T06:14:40Z
 initialized_by: governance_tools/adopt_governance.py
 
 # ── INTEGRITY ─────────────────────────────────────────────────────────────────
 # sha256.<file>: canonical-LF hash recorded at init/refresh time; "protected" files are hash-verified
 # overridable.<file>: protected = must not change | overridable = repo may extend freely
 sha256.AGENTS.base.md: 20f247a26575cc0e2e9f09be68ea057ac9a8f5d81ab56717e21a94e43ee3043b
-sha256.PLAN.md: b683232d546ba8f8c5a3c9b48da87bb58cd7d84b7a1224fad4d0b74de88d4d03
+sha256.PLAN.md: c9aead19595c8161e8a34e71358846fc97ef1a8cee900be2a8673b27f5966ff6
 sha256.contract.yaml: 1a88fcb1631c6f622f06a3eebb5b6267f5b29b53100549d4f51ee5236a0a1f5e
 sha256.AGENTS.md: 1c3db87be7a7b213953fe650568dc292d875badca80841a4e2d0703c5838f3b5
 overridable.AGENTS.base.md: protected

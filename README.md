@@ -7,7 +7,7 @@ P1 目標為 **8 國、16 種家庭情境、50～70 個事件**，每局 10～15
 首個可玩交付為四國、童年到晚年回顧的完整人生，之後擴至八國。
 候選為台灣、日本、美國、德國、印度、巴西、越南、肯亞；資料與內容尚待逐國驗證。
 
-LC-01 已有可編譯的純 Swift 引擎、真實來源資料與命令列示範；尚未交付 SwiftUI 可玩 app。
+LC-01 的純 Swift 引擎與資料已通過遠端 CI；LC-02 已開始四國完整人生 SwiftUI 原型。
 產品計畫與待決定事項見 [PLAN.md](PLAN.md)。
 
 ## 執行引擎
@@ -24,6 +24,11 @@ python3 scripts/build-data.py --check
 `life-demo` 比較四國相同決策，並執行五階段、15 個決策的完整人生骨架。
 這是 LC-01 工程證據，不代表 10～15 分鐘遊玩、實機或教育效果已驗收。
 資料、假設、缺口及 LC-02 開工判斷見 [LC-01 交付](docs/lc01-delivery.md)。
+
+在 Xcode 開啟 `LifeCrossroads.xcodeproj`，選 `LifeCrossroads` scheme 與 iPhone Simulator 執行。
+本機 UI 流程測試：`bash scripts/ios-check.sh`；可用 `LIFE_SIMULATOR_ID` 指定 Simulator。
+實機執行需在 Xcode 設定自己的開發團隊並連接 iPhone；Simulator 通過不等於實機 Gate 通過。
+LC-02 原型目前關閉 app 後不保留進度；SwiftData 完整存檔屬 LC-06。
 
 ## 開始工作
 

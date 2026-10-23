@@ -151,7 +151,7 @@ def build(refresh=False):
                         timeCost=0, energyCost=0, materialCost=0, effect=resources(health=2, relationships=1),
                         requiresDigitalAccess=False, delayedHook=None, assumptionIDs=["choice-effects"])]
         decisions.append(dict(id=id_, age=age, title=title, recurringPerson=person, storyQuestion=question, choices=choices))
-    return dict(schemaVersion=1, dataVersion=DATA_VERSION, contentVersion="lc02-skeleton-1", referenceYear=2023,
+    return dict(schemaVersion=1, dataVersion=DATA_VERSION, contentVersion="lc02-story-1", referenceYear=2023,
                 sources=sources, assumptions=assumptions, countries=countries, households=households, decisions=decisions)
 
 

@@ -4,13 +4,33 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
+  ios-app:
+    needs: swift-engine
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and exercise a complete iPhone Simulator life
+        run: |
+          mkdir -p artifacts/ios
+          if ! bash scripts/ios-check.sh > artifacts/ios/build-and-test.log 2>&1; then
+            tail -100 artifacts/ios/build-and-test.log
+            exit 1
+          fi
+      - name: Preserve Simulator test result and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lc02-ios-evidence
+          path: artifacts/ios/
+          if-no-files-found: warn
+
   swift-engine:
     runs-on: macos-15
     timeout-minutes: 15

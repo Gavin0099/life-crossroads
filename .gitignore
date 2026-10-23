@@ -14,6 +14,7 @@ xcuserdata/
 *.bak.*
 # Regenerated evidence stays available locally; CI uploads it per run.
 artifacts/governance/
+artifacts/ios/
 
 # >>> ai-governance hygiene (managed by adopt_governance.py; do not edit inside markers) >>>
 # Runtime governance artifacts and Python bytecode are regenerated every
