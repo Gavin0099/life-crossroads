@@ -2,7 +2,15 @@
 
 日期：2026-10-23（Asia/Taipei）。最新範圍：八國完整人生規格、首次本機提交與基本 CI。
 
-## 最新狀態：P0-002
+## 產品開發後的狀態
+
+框架固定版本維持不變。既有基線已推送，LC-01 的
+[遠端 CI](https://github.com/Gavin0099/life-crossroads/actions/runs/39908800771) 通過，
+LC-02 原型已接續實作，見 [產品進度](lc02-progress.md)。
+遊戲引擎及 UI 證據與框架檢查分開；runtime 稽核持續為 advisory，沒有因此宣稱完整 runtime 強制已驗證。
+以下 P0-002 與首次導入段落保留為當時的追溯紀錄，其中的授權與未驗證敘述不取代目前使用者指示。
+
+## P0-002 導入基線（歷史）
 
 - 首次本機 commit：`a468cbc0bef527ea44851ee0632a619ca1a797ff`。正常 Git pre-commit hook 已觸發，沒有使用 --no-verify。
 - 由框架工具刷新 baseline，source_commit 記錄上述真實 commit；首次提交前的 unknown 警告已消除。

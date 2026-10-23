@@ -59,6 +59,17 @@
 - Next action: 推送本片兩筆提交並建立LC-01 PR，確認Swift與基本CI；通過後直接開始四國完整人生SwiftUI，不新增文件Gate。
 - PLAN reconciliation: `updated`
 
+<!-- memory_record_projection:review-log:dc98b17defb363b81b9e378be5114071879f4b3901cb8f301db1e5a63a241b81 -->
+### Canonical memory checkpoint — LC02-2026-10-23
+
+- Writer: `governance_tools.memory_record`
+- Record identity: `dc98b17defb363b81b9e378be5114071879f4b3901cb8f301db1e5a63a241b81`
+- Commit binding: `7a404d087b4beb0a0a7c10ecfccde93200d7984f` (bound)
+- Record: LC-01 GO後依使用者授權接續LC-02；新增LifeSession、四國八家庭原生流程、15故事、原因說明、比較、三次人物回聲、回顧圖表與同背景重玩。畫面檢查抓到比較sheet空白，先以四國列斷言重現，再以帶資料sheet item修正。未擴充八國故事、50～70事件或持久存檔；沒有實機或玩家驗收宣稱。
+- Validation boundary: PASS: artifacts/evidence/test-results/lc02-committed-swift.json -> exit_code=0, 31 XCTest; PASS: artifacts/evidence/test-results/lc02-ui-fixed.json -> exit_code=0, 1 full Simulator UI test including four comparison rows and 15 decisions. Expected regression failure preserved: artifacts/evidence/test-results/lc02-ui-regression-before.json -> exit_code=143 after test assertion failed and Xcode was terminated during repeated graph resolution. Screenshots: artifacts/evidence/lc02/.
+- Next action: 推送獨立LC-02草稿PR並驗證CI；接實體iPhone後做操作、閱讀節奏與兒少試玩，LC-02維持驗收中。
+- PLAN reconciliation: `updated`
+
 <!-- memory_record_projection:review-log:f9113d82b84b124644391c23cae314a047cc5e92dc7e78184b9482ec5d9f8121 -->
 ### Canonical memory checkpoint — PR1-review-2026-10-23
 
@@ -68,4 +79,15 @@
 - Record: 回應Review 5624913571，移除國家index健康；加入templateID與一致性驗證，逐選項數位依賴，8歲四國家庭二時間均3。schema2/data2/engine2，原統計bytes不變。新回歸測試先證實舊缺陷後通過。
 - Validation boundary: PASS: artifacts/evidence/test-results/pr1-review-committed.json -> exit_code=0, 29 Swift tests; PASS: artifacts/evidence/test-results/pr1-model-review-python.json -> exit_code=0, 3 Python tests. Pre-fix failures: artifacts/evidence/review/pr1-before-python.txt and pr1-before-swift.txt.
 - Next action: 推回PR #1並同步PR #2，修正實際因素摘要及指定選擇比較，再讓Visual與內容Agent並行。不得合併PR。
+- PLAN reconciliation: `updated`
+
+<!-- memory_record_projection:review-log:574ed514b9192d34be6870c62cdd49d82ef146601dd13731b73029e80b9a8f52 -->
+### Canonical memory checkpoint — PR2-review-2026-10-23
+
+- Writer: `governance_tools.memory_record`
+- Record identity: `574ed514b9192d34be6870c62cdd49d82ef146601dd13731b73029e80b9a8f52`
+- Commit binding: `4993c1aa0065d4a0343fb149fda0fe3d160394f0` (bound)
+- Record: 純Swift故事條件同時驅動UI與resolver；trace保存實際標題人物與資源門檻。修正SE小螢幕原因入口觸控，原始失敗及成功證據均保留。八國P1與15節點未縮減，不合併或發布。
+- Validation boundary: PASS: artifacts/evidence/test-results/pr2-review-committed.json ->exit_code=0 (46 Swift); PASS: pr2-review-python.json (3 Python); PASS: pr2-review-ui-fixed.json (2 SE UI, 32 sources match committed implementation); PASS: pr2-review-large-text.json (one AX XXXL repeat). Release/demo/offline/basic6 PASS. Prior UI receipt exit143 after failed assertions is not normal completion.
+- Next action: 推回原PR並核對最新head CI；兩PR保留HOLD；實機、VoiceOver及10至15歲兒少節奏/娛樂性仍待實測。
 - PLAN reconciliation: `updated`

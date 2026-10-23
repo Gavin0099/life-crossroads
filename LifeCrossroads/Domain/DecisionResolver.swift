@@ -34,8 +34,12 @@ enum EnvironmentRules {
 public enum DecisionResolver {
     public static func resolve(state: LifeState, eventID: String, choiceID: String, catalog: ModelCatalog) throws -> DecisionResult {
         try catalog.validate(); try state.validate(catalog: catalog)
-        guard let event = catalog.decisions.first(where: { $0.id == eventID }),
-              let choice = event.choices.first(where: { $0.id == choiceID }) else { throw ModelError.missing("decision/choice") }
+        guard let original = catalog.decisions.first(where: { $0.id == eventID }),
+              let originalChoice = original.choices.first(where: { $0.id == choiceID }) else { throw ModelError.missing("decision/choice") }
+        let projection = StoryBranchEngine.project(event: original, state: state)
+        let event = projection.event
+        let availableChoice = event.choices.first(where: { $0.id == choiceID })
+        let choice = availableChoice ?? originalChoice
         guard state.age == event.age, !state.decisions.contains(where: { $0.eventID == eventID }) else {
             throw ModelError.invalid("event age or repeated decision")
         }
@@ -87,6 +91,9 @@ public enum DecisionResolver {
                    "協助可以減少成本，但不會憑空增加回合時間。")
         }
         var reasons: [String] = []
+        if availableChoice == nil {
+            reasons.append("這個故事條件尚未具備；可以選擇畫面上提供的參與、求助或免費休息。")
+        }
         if state.age < choice.minimumAge || (choice.control == .adultResponsibility && state.age < 23) {
             reasons.append("這項成人責任不由目前年齡的角色承擔；可以選擇表達需要或尋求協助。")
         }
@@ -116,7 +123,7 @@ public enum DecisionResolver {
                        ["support-network"], "一起準備的人陪你練習，也成為這段故事裡的重要夥伴。")
             }
             if choice.kind == .learn && cost.time >= 5 {
-                effect("cost.fatigue", .socialEnvironment, .init(health: -2), ["cost-fatigue"],
+                effect("cost.fatigue", .modelRule, .init(health: -2), ["cost-fatigue"],
                        "這次準備佔去較多時間，你需要休息；限制來自情境和安排，不是努力不夠。")
             }
             if choice.kind == .learn {
@@ -139,7 +146,9 @@ public enum DecisionResolver {
         try next.validate(catalog: catalog)
         return .init(state: next, trace: .init(
             engineVersion: state.engineVersion, dataVersion: state.dataVersion, contentVersion: state.contentVersion, seed: state.seed,
-            eventID: event.id, choiceID: choice.id, age: state.age, countryCode: state.countryCode,
+            eventID: event.id, choiceID: choice.id, eventTitle: event.title, choiceTitle: choice.title,
+            recurringPerson: event.recurringPerson, storyVariantID: event.storyVariantID, storyBranch: projection.evaluation,
+            age: state.age, countryCode: state.countryCode,
             householdID: state.householdID, control: choice.control, applied: reasons.isEmpty, unavailableReasons: reasons,
             observations: context.observations, baseCost: baseCost, costSteps: costSteps, finalCost: cost,
             budgetBefore: .init(time: state.remainingTime, energy: state.remainingEnergy, materials: state.remainingMaterials),

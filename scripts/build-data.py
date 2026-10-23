@@ -32,6 +32,24 @@ DIGITAL_TITLES = {
     "adult-learning": "投入線上進修課程",
     "middle-turn": "用遠距課程學新技能",
 }
+# Authored action labels. Stable IDs are for replay; the child sees the concrete action and its tradeoff.
+EVENT_CHOICES = {
+    "child-interest": ("和大人把紙箱做成會動的玩具", "請大人幫忙借安全工具和紙本圖解", "先收好紙箱，留時間打球與休息"),
+    "child-friend": ("和阿禾完成雙人風車，約好保持聯絡", "請阿禾和大人一起調整碰面方式", "今天自己休息，暫時不約下次"),
+    "child-transition": ("和樹老師一起畫新學校的探路圖", "請樹老師陪你列出開學前的問題", "先照顧心情，今晚早一點休息"),
+    "teen-project": (DIGITAL_TITLES["teen-project"], "請樹老師陪你找適合的創作起點", "先放下作品，保留自己的課後時間"),
+    "teen-direction": (DIGITAL_TITLES["teen-direction"], "和指導者討論課程及現在的負擔", "課程先緩一緩，留下喘息的空間"),
+    "teen-launch": ("和小澄練習獨立生活的記帳方法", "請小澄一起列出搬出後能求助的人", "暫緩練習，先和重要的人道別"),
+    "adult-learning": (DIGITAL_TITLES["adult-learning"], "和工作夥伴討論調班與進修負擔", "這回先不加課，把下班時間留給休息"),
+    "adult-balance": ("接下一段加班，增加眼前的收入", "和同事討論調整排班的可能", "不接這段加班，留下吃飯和休息時間"),
+    "adult-care": ("和小澄共組照顧輪班，訂下聯絡約定", "請小澄陪你查詢照顧支持資訊", "先說明精力有限，暫緩承擔新安排"),
+    "middle-turn": (DIGITAL_TITLES["middle-turn"], "請小澄陪你評估轉換方向的負擔", "暫緩轉換，先維持現在的步調"),
+    "middle-support": ("和小澄一起整理照顧安排", "請小澄陪你找適合的支持", "先休息，把自己能做到的界線說清楚"),
+    "middle-rhythm": ("和小澄交換想保留的散步路線", "請小澄陪你調整一週的日常安排", "今天獨自慢慢走，留一段安靜時間"),
+    "later-pass-on": ("和年輕夥伴做一本失敗也值得記下的手冊", "請夥伴挑一件最想聽的小故事", "今天先歇一歇，等有精神時再分享"),
+    "later-reconnect": ("和相遇的夥伴做一架風車", "一起找適合現在體力的活動", "留一天給自己的步調"),
+    "later-review": ("把重要選擇與幫助寫進人生小冊", "請身邊的人一起補上珍惜的片段", "合上小冊，安靜看看走過的日子"),
+}
 
 
 def dump(value):
@@ -106,6 +124,8 @@ def build(refresh=False):
                "設計邊界，不是真實人生評價；人物價值不能由數值推導。")
     assumption("story-callback", "帶有後續標記的可行決策在4歲後由同一位虛構人物呼應，人際+2、技能+1；只觸發一次。",
                "為LC-02保留人物牽掛的最小故事契約，並非證實現實長期因果；完整事件內容及試玩仍待後續切片。")
+    assumption("story-branches", "三條虛構故事條件：10歲與阿禾創作或調整碰面才在72歲重逢，否則和社區夥伴小澄開風車桌認識新鄰居；13歲線上/紙本/未製作決定17歲學習場景，作品經驗加技能至少28才可帶領工作坊；39歲共組照顧輪班才在52歲沿用互助約定，健康至少55才可自願接一小段。每次記錄實際歷史、資源門檻、場景及選項。",
+               "人物、約定、門檻與後續路線皆為遊戲敘事假設，不是心理、醫學或社會因果；沒有連結不等於個人失敗，所有路線保留求助及免費休息。國家名稱不參與故事條件。")
 
     countries, households = [], []
     for code, name in COUNTRIES:
@@ -132,25 +152,24 @@ def build(refresh=False):
     decisions = []
     skeletons = [
         (8, "child-interest", "想試試新的興趣", "照顧你的大人", "我可以說出自己想做的事嗎？", "learn"),
-        (10, "child-friend", "和朋友約好一起完成", "童年朋友", "練習和陪伴要怎麼分配？", "learn"),
-        (12, "child-transition", "準備進入新的學校", "陪你準備的老師", "我需要什麼幫忙？", "learn"),
-        (13, "teen-project", "想參加共同創作", "一起找材料的同伴", "同樣投入，為什麼準備成本不同？", "learn"),
-        (17, "teen-direction", "選擇想繼續學的方向", "社區指導者", "學習會留下什麼可能？", "learn"),
-        (21, "teen-launch", "離開熟悉的地方之前", "一起長大的朋友", "可以帶著哪些支持出發？", "learn"),
+        (10, "child-friend", "和阿禾一起完成雙人風車", "阿禾", "練習和陪伴要怎麼分配？", "learn"),
+        (12, "child-transition", "準備進入新的學校", "樹老師", "我需要什麼幫忙？", "learn"),
+        (13, "teen-project", "想參加共同創作", "樹老師", "同樣投入，為什麼準備成本不同？", "learn"),
+        (17, "teen-direction", "選擇想繼續學的方向", "樹老師", "學習會留下什麼可能？", "learn"),
+        (21, "teen-launch", "離開熟悉的地方之前", "小澄", "可以帶著哪些支持出發？", "learn"),
         (25, "adult-learning", "工作之外再學一點", "工作夥伴", "收入、時間與學習怎麼取捨？", "learn"),
         (32, "adult-balance", "工作安排出現變化", "曾經的同事", "我想留下多少生活空間？", "work"),
-        (39, "adult-care", "一起分擔照顧安排", "重要的家人", "責任可以和誰一起承擔？", "care"),
-        (45, "middle-turn", "想嘗試新的工作方向", "多年來的夥伴", "已有經驗能帶我去哪裡？", "learn"),
-        (52, "middle-support", "朋友需要有人一起想辦法", "曾經支持你的朋友", "我能提供什麼支持？", "care"),
-        (59, "middle-rhythm", "為下一階段調整節奏", "一起散步的鄰居", "什麼是我想保留的日常？", "share"),
+        (39, "adult-care", "一起分擔照顧安排", "小澄", "責任可以和誰一起承擔？", "care"),
+        (45, "middle-turn", "想嘗試新的工作方向", "小澄", "已有經驗能帶我去哪裡？", "learn"),
+        (52, "middle-support", "朋友需要有人一起想辦法", "小澄", "我能提供什麼支持？", "care"),
+        (59, "middle-rhythm", "為下一階段調整節奏", "小澄", "什麼是我想保留的日常？", "share"),
         (65, "later-pass-on", "有人想聽你的經驗", "年輕的學習夥伴", "哪些經驗值得分享？", "share"),
-        (72, "later-reconnect", "和老朋友重新聯絡", "童年朋友", "我還想和誰一起創造回憶？", "share"),
+        (72, "later-reconnect", "今天會和誰留下新回憶", "小澄", "我還想和誰一起創造回憶？", "share"),
         (80, "later-review", "回望走過的岔路", "一路相伴的人", "選擇、環境與他人的幫助留下了什麼？", "share"),
     ]
     for age, id_, title, person, question, kind in skeletons:
         control = "sharedWithAdult" if age <= 12 else ("adultResponsibility" if kind in {"work", "care"} else "personal")
-        primary_title = {"learn": "投入時間一起學習", "work": "增加一段工作時間", "care": "和別人共同安排照顧", "share": "和重要的人分享經驗"}[kind]
-        primary_title = DIGITAL_TITLES.get(id_, primary_title)
+        primary_title, ask_title, rest_title = EVENT_CHOICES[id_]
         primary_effect = {"learn": resources(skills=4, financial=-1), "work": resources(financial=4, health=-1),
                           "care": resources(relationships=4, health=-1), "share": resources(relationships=3, skills=1)}[kind]
         choices = [dict(id="invest", title=primary_title, kind=kind, control=control,
@@ -158,11 +177,11 @@ def build(refresh=False):
                         materialCost=1 if kind == "learn" else 0, effect=primary_effect,
                         requiresDigitalAccess=id_ in DIGITAL_TITLES, delayedHook="reconnect" if age in {13, 25, 45} else None,
                         assumptionIDs=["choice-effects", "agency", "learning-channels"]),
-                   dict(id="ask", title="先說出需要，和別人一起找方法", kind="askSupport", control="personal",
+                   dict(id="ask", title=ask_title, kind="askSupport", control="personal",
                         minimumAge=0, timeCost=1, energyCost=1, materialCost=0,
                         effect=resources(relationships=2, skills=1), requiresDigitalAccess=False, delayedHook=None,
                         assumptionIDs=["choice-effects", "support-network"]),
-                   dict(id="rest", title="保留時間休息和陪伴", kind="rest", control="personal", minimumAge=0,
+                   dict(id="rest", title=rest_title, kind="rest", control="personal", minimumAge=0,
                         timeCost=0, energyCost=0, materialCost=0, effect=resources(health=2, relationships=1),
                         requiresDigitalAccess=False, delayedHook=None, assumptionIDs=["choice-effects"])]
         if id_ in DIGITAL_TITLES:
@@ -170,8 +189,18 @@ def build(refresh=False):
                                   control=control, minimumAge=0, timeCost=3, energyCost=2, materialCost=1,
                                   effect=resources(skills=3, relationships=1), requiresDigitalAccess=False,
                                   delayedHook=None, assumptionIDs=["choice-effects", "learning-channels", "support-network"]))
+        if id_ == "teen-direction":
+            choices.insert(0, dict(id="leadWorkshop", title="和樹老師一起帶領紙本小工作坊", kind="share",
+                                   control="personal", minimumAge=13, timeCost=2, energyCost=2, materialCost=1,
+                                   effect=resources(relationships=3, skills=2), requiresDigitalAccess=False,
+                                   delayedHook=None, assumptionIDs=["choice-effects", "story-branches"]))
+        if id_ == "middle-support":
+            choices.insert(0, dict(id="shareShift", title="自願接下一小段既有輪班，讓夥伴喘息", kind="care",
+                                   control="adultResponsibility", minimumAge=23, timeCost=2, energyCost=2, materialCost=0,
+                                   effect=resources(health=-1, relationships=3), requiresDigitalAccess=False,
+                                   delayedHook=None, assumptionIDs=["choice-effects", "story-branches", "agency"]))
         decisions.append(dict(id=id_, age=age, title=title, recurringPerson=person, storyQuestion=question, choices=choices))
-    return dict(schemaVersion=2, dataVersion=DATA_VERSION, contentVersion="lc02-skeleton-2", referenceYear=2023,
+    return dict(schemaVersion=2, dataVersion=DATA_VERSION, contentVersion="lc02-story-3", referenceYear=2023,
                 sources=sources, assumptions=assumptions, countries=countries, households=households, decisions=decisions)
 
 

@@ -156,6 +156,7 @@ public struct DecisionSkeleton: Codable, Equatable, Sendable {
     public var recurringPerson: String
     public var storyQuestion: String
     public var choices: [ChoiceDefinition]
+    public var storyVariantID: String? = nil
 }
 
 public struct ModelCatalog: Codable, Equatable, Sendable {
@@ -182,7 +183,7 @@ public struct ModelCatalog: Codable, Equatable, Sendable {
         let sourceMap = Dictionary(uniqueKeysWithValues: sources.map { ($0.id, $0) })
         let assumptionSet = Set(assumptions.map(\.id))
         let ruleAssumptions: Set<String> = ["macro-friction", "household-scenarios", "life-stages", "agency",
-            "support-network", "choice-effects", "cost-fatigue", "luck-encouragement", "resource-bounds", "story-callback", "learning-channels"]
+            "support-network", "choice-effects", "cost-fatigue", "luck-encouragement", "resource-bounds", "story-callback", "learning-channels", "story-branches"]
         guard ruleAssumptions.isSubset(of: assumptionSet) else { throw ModelError.missing("rule assumption") }
         func checkAssumptions(_ ids: [String]) throws {
             guard !ids.isEmpty, ids.allSatisfy(assumptionSet.contains) else {

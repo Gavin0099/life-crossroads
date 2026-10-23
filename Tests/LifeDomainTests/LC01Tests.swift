@@ -350,7 +350,7 @@ final class LC01Tests: XCTestCase {
         let (later, trace) = try SimulationEngine.advance(invest.state, to: 17, catalog: c)
         let (alternative, alternativeTrace) = try SimulationEngine.advance(rest.state, to: 17, catalog: c)
         XCTAssertEqual(trace.triggeredHooks.first?.originChoiceID, "invest")
-        XCTAssertEqual(trace.triggeredHooks.first?.person, "一起找材料的同伴")
+        XCTAssertEqual(trace.triggeredHooks.first?.person, "樹老師")
         XCTAssertEqual(later.resources.skills - invest.state.resources.skills, 1)
         XCTAssertEqual(later.resources.relationships - invest.state.resources.relationships, 2)
         XCTAssertTrue(alternativeTrace.triggeredHooks.isEmpty)

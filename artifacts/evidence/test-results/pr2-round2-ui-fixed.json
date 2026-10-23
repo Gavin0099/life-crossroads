@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "bash scripts/ios-check.sh",
+  "exit_code": 1,
+  "started_at": "2026-10-23T08:39:46Z",
+  "finished_at": "2026-10-23T08:39:46Z",
+  "runner": "governance_tools.test_evidence_receipt_writer",
+  "linked_commit": "6e4168c665f9f1a3ef8e16c1bd43639db357cf55",
+  "output_artifacts": [
+    "artifacts/evidence/test-results/pr2-round2-ui-fixed.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}

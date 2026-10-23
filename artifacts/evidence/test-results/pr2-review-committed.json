@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "swift test",
+  "exit_code": 0,
+  "started_at": "2026-10-23T07:43:28Z",
+  "finished_at": "2026-10-23T07:43:37Z",
+  "runner": "governance_tools.test_evidence_receipt_writer",
+  "linked_commit": "4993c1aa0065d4a0343fb149fda0fe3d160394f0",
+  "output_artifacts": [
+    "artifacts/evidence/test-results/pr2-review-committed.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}

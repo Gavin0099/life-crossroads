@@ -19,6 +19,7 @@ All rules in `AGENTS.base.md` are non-negotiable and apply to this repo uncondit
 - 記憶變更遵守 `governance/MEMORY_PROTOCOL.md`，新 session-derived 記錄使用 canonical writer。
 - 最終報告遵守 `governance/RESPONSE_ENVELOPE_CONTRACT.md`；更新框架走 F-7。
 - 每輪範圍由使用者指示決定；已授權的可逆必要工作直接完成，不重複詢問許可。
+- 使用者偏好（2026-10-23）：每次 Simulator 測試結束即刪除本次建立的模擬器及其資料，失敗或中止也須清理，避免佔空間。使用專用暫存裝置，保留必要測試證據後以 `simctl delete` 清理；不只 shutdown。不要刪除其他任務或使用者原有裝置、共用 runtime。`scripts/ios-check.sh` 必須維持自動清理；自行操作的模擬器亦遵守此規則。
 
 Fill in each section below, or write `N/A` if the section is not applicable to this repo.
 
