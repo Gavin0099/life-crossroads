@@ -1,0 +1,73 @@
+{
+  "mode": "VALIDATION",
+  "mode_source": "validation_command",
+  "task": "GOV-001 initial local adoption, integrity assessment and P1 slice proposal",
+  "task_authority": "user_request",
+  "scope": [
+    "additional/ai-governance-framework",
+    ".gitmodules",
+    "AGENTS.base.md",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "GEMINI.md",
+    "PLAN.md",
+    "contract.yaml",
+    ".governance/",
+    ".github/",
+    "governance/",
+    "memory/",
+    "scripts/",
+    "docs/",
+    "README.md",
+    "THIRD_PARTY_NOTICES.md",
+    "artifacts/evidence/test-results/"
+  ],
+  "done": [
+    "Pinned framework and local audit surfaces installed",
+    "Applicable surfaces assessed with boundaries and open findings",
+    "31 targeted framework tests passed with framework-produced receipt",
+    "Setup repeated with changed_files=0",
+    "Seven product slices proposed; no product code implemented"
+  ],
+  "formal_adoption_status": "partial",
+  "claim_ceiling": [
+    "Local configuration and observed validation only",
+    "All new files remain local; no parent commit, push, PR or CI run"
+  ],
+  "not_claimed": [
+    "Full governance adoption",
+    "Latest published framework release",
+    "Real desktop Codex lifecycle enforcement",
+    "Real positive commit/push execution",
+    "Remote CI enforcement",
+    "Game correctness",
+    "Child suitability or learning outcome",
+    "iPhone acceptance"
+  ],
+  "evidence_refs": [
+    "artifacts/governance/checks.json",
+    "artifacts/governance/adoption-status.json",
+    "artifacts/governance/setup-repeat.log",
+    "artifacts/evidence/test-results/governance-onboarding.json",
+    "docs/governance-adoption.md",
+    "docs/p1-slices.md"
+  ],
+  "risk": [
+    "Unborn parent repository: baseline source_commit unknown; strict check returns 1",
+    "Lock matches local checkout but is not committed",
+    "Domain/risk is an explicit provisional execution setting, not owner product-risk signoff",
+    "Memory remains unbound; historical advisory findings retained"
+  ],
+  "validation_counts": {
+    "PASS": 10,
+    "WARN": 1,
+    "FAIL": 0
+  },
+  "memory_warnings": [
+    "unbound_memory",
+    "test_evidence_provenance_not_found",
+    "test_evidence_artifact_metadata_missing"
+  ],
+  "workspace_state": "all task changes uncommitted; original repository was empty",
+  "next_action": "Owner reviews docs/p1-slices.md, especially LC-01; no product implementation starts in this task."
+}

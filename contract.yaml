@@ -1,0 +1,21 @@
+name: life-crossroads-contract
+plugin_version: "1.0.0"
+framework_interface_version: "1"
+framework_compatible: ">=1.0.0,<2.0.0"
+domain: ios-life-simulation
+risk_tier: medium
+risk_rationale: Reversible offline prototype tooling; core simulation, save integrity and child-facing content require higher review per AGENTS.md.
+documents:
+  - AGENTS.base.md
+  - PLAN.md
+  - governance/TESTING.md
+  - governance/ARCHITECTURE.md
+  - docs/project-guardrails.md
+ai_behavior_override:
+  - AGENTS.base.md
+rule_roots:
+  - governance/rules
+validators:
+  - additional/ai-governance-framework/governance_tools/architecture_drift_checker.py
+evidence_roots:
+  - artifacts

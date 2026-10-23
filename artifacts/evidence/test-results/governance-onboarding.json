@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "bash -c \"cd additional/ai-governance-framework && ../../.venv/bin/python -m pytest tests/test_runtime_smoke_test.py tests/test_architecture_drift_checker.py tests/test_pre_push_worktree_routing.py -q\"",
+  "exit_code": 0,
+  "started_at": "2026-10-23T05:16:50Z",
+  "finished_at": "2026-10-23T05:16:52Z",
+  "runner": "governance_tools.test_evidence_receipt_writer",
+  "linked_commit": "no_git_worktree",
+  "output_artifacts": [
+    "artifacts/evidence/test-results/governance-onboarding.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}

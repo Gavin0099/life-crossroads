@@ -1,0 +1,11 @@
+# Deliberately adopted component layout versions from pinned framework 3bc4db5.
+# These describe installed schemas/entrypoints, not real-session enforcement.
+schema_version: "1.0"
+last_updated: "2026-10-23"
+governance_version: "0.4.0"
+default_self_smoke_contract_dependency: required
+contract_schema_version: "1.2.0"
+runtime_entrypoint_version: "1.1.0"
+hook_wiring_version: "1.0.0"
+artifact_layout_version: "1.0.0"
+memory_layout_version: "1.0.0"

@@ -1,0 +1,38 @@
+# Review Log
+
+## Entries
+
+- Append review summaries and validation history here.
+
+<!-- memory_record_projection:review-log:719f4f3988efbeb691bc2138565fcf8d2bf02dfd9b5e8372a01b4f21623d2578 -->
+### Canonical memory checkpoint — life-crossroads-GOV-001-2026-10-23
+
+- Writer: `governance_tools.memory_record`
+- Record identity: `719f4f3988efbeb691bc2138565fcf8d2bf02dfd9b5e8372a01b4f21623d2578`
+- Commit binding: `UNCOMMITTED` (unbound)
+- Record: 以 submodule 導入框架 3bc4db55c9132f81aed4fce328f3622caf15db3c；建立專案規則、版本 manifest、Git hooks、本機/CI 檢查及完整性盤點，依使用者核心玩法產出待審 slices。沒有開發遊戲或提交上傳。
+- Validation boundary: 31 targeted framework tests passed; hook installer valid=true; Codex session_start/pre_task/post_task smoke passed; strict check retains source_commit warning because parent repository has no initial commit. See artifacts/governance/ and docs/governance-adoption.md.
+- Next action: 由負責人檢視 docs/p1-slices.md；若接受可另行授權 LC-01，正式導入則需先建立本機提交並重跑來源追溯檢查。
+- PLAN reconciliation: `updated`
+
+<!-- memory_record_projection:review-log:00e723fa2f3b352c80f445bc85c626ca3df3c77bedf057de1e857386838d409a -->
+### Canonical memory checkpoint — life-crossroads-GOV-001-2026-10-23
+
+- Writer: `governance_tools.memory_record`
+- Record identity: `00e723fa2f3b352c80f445bc85c626ca3df3c77bedf057de1e857386838d409a`
+- Commit binding: `UNCOMMITTED` (unbound)
+- Record: 更正前一筆 GOV-001 未提交紀錄的證據引用：先前僅列 artifacts/governance/ 目錄，現在列具體現存檔案；未改寫歷史紀錄或升級任何驗收結論。產品切片仍未開始。
+- Validation boundary: 31 passed: artifacts/governance/framework-targeted-tests.xml; hook validation: artifacts/governance/hooks.log; adapter and strict-check results: artifacts/governance/checks.json. Strict check retains the unborn-parent source_commit warning.
+- Next action: 檢視 docs/p1-slices.md；正式導入仍需初次提交後重跑追溯及真實觸發/CI 驗收。
+- PLAN reconciliation: `updated`
+
+<!-- memory_record_projection:review-log:517d1f19931f2560a6f9fc7fb9f5f6336dd6093aa09ad2ecfe61a39d9c19751f -->
+### Canonical memory checkpoint — life-crossroads-GOV-001-2026-10-23
+
+- Writer: `governance_tools.memory_record`
+- Record identity: `517d1f19931f2560a6f9fc7fb9f5f6336dd6093aa09ad2ecfe61a39d9c19751f`
+- Commit binding: `UNCOMMITTED` (unbound)
+- Record: 為本次驗證補上框架 test_evidence_receipt_writer 的實際執行收據，保留先前記憶引用警告的歷史。setup 重跑 changed_files=0。完整性仍為 partial：初次提交、人工 domain/risk 接受及真實 session/CI 證據尚缺。
+- Validation boundary: PASS: artifacts/evidence/test-results/governance-onboarding.json -> exit_code=0 (31 targeted framework tests). This receipt does not establish full adoption or game correctness.
+- Next action: 由負責人檢視 docs/p1-slices.md；本輪只交付配置、盤點與計畫，不開始遊戲實作或提交上傳。
+- PLAN reconciliation: `updated`

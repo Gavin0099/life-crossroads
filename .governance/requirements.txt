@@ -1,0 +1,4 @@
+# Local governance checks only; these are not iOS application dependencies.
+PyYAML>=6.0,<7.0
+pytest>=9.0,<10.0
+jsonschema>=4.23,<5.0

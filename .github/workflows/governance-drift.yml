@@ -1,0 +1,60 @@
+name: Project CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  basic-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install local governance tooling
+        run: bash scripts/governance-setup.sh
+      - name: Run required repository checks
+        run: bash scripts/governance-check.sh --profile basic
+      - name: Preserve diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: basic-check-evidence
+          path: artifacts/governance/
+          if-no-files-found: warn
+
+  governance-audit:
+    needs: basic-checks
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install governance tooling
+        run: bash scripts/governance-setup.sh
+      - name: Run advisory runtime audit
+        run: bash scripts/governance-check.sh --profile full
+      - name: Preserve audit diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: governance-audit-evidence
+          path: artifacts/governance/
+          if-no-files-found: warn
