@@ -23,7 +23,8 @@ struct EventFirstView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 if let event = flow.event {
-                    StageHeader(event: event, progress: flow.progressLabel) { detail = .profile }
+                    StageHeader(event: event, progress: flow.progressLabel,
+                                state: studyDirection == nil ? flow.stateLabel : "不可操作線框") { detail = .profile }
                     if let studyDirection {
                         structureStudy(studyDirection, event: event)
                     } else {
@@ -71,12 +72,22 @@ struct EventFirstView: View {
             ForEach(event.options) { option in
                 ChoiceCard(option: option) { flow.select(option.id) }
             }
+            if let continuation = flow.continuation {
+                panel {
+                    Label("上個岔路留下的線索", systemImage: "point.topleft.down.to.point.bottomright.curvepath")
+                        .font(.caption).foregroundStyle(PlayPalette.accent)
+                    Text(continuation.title).font(.headline).accessibilityIdentifier("continuationTitle")
+                    Text(continuation.reminder).font(.subheadline)
+                    Text("已發生的經驗會留下來；下一個決定仍由你來做。")
+                        .font(.caption).foregroundStyle(PlayPalette.muted)
+                }
+            }
             if let message = flow.message {
                 Label(message, systemImage: "exclamationmark.bubble")
                     .font(.body).padding(16).background(PlayPalette.panel, in: RoundedRectangle(cornerRadius: 14))
                     .accessibilityIdentifier("missingOutcome")
             }
-            StatusStrip(statuses: event.statuses)
+            StatusStrip(statuses: flow.displayedStatuses, heading: flow.statusHeading)
             HStack {
                 auxiliaryButton("人物與家庭", id: "profile", symbol: "person.crop.rectangle") { detail = .profile }
                 Spacer()
@@ -89,10 +100,28 @@ struct EventFirstView: View {
         VStack(alignment: .leading, spacing: 18) {
             pageHeading("這次選擇之後", flow.outcome?.title ?? "等待後果紀錄")
             if let chosen = flow.chosen, let outcome = flow.outcome {
+                if let feedback = outcome.feedback {
+                    CharacterReactionCard(name: flow.event?.characterName ?? "", artworkID: flow.event?.artworkID,
+                                          feedback: feedback)
+                }
                 OutcomeCard(chosen: chosen.title, outcome: outcome)
+                if let feedback = outcome.feedback {
+                    panel {
+                        Label("這次留下的改變", systemImage: "arrow.triangle.branch").font(.headline)
+                        ForEach(feedback.changes) { change in
+                            VStack(alignment: .leading, spacing: 6) {
+                                Text(change.label).font(.caption).foregroundStyle(PlayPalette.accent)
+                                Text("原先：\(change.before)").font(.subheadline).foregroundStyle(PlayPalette.muted)
+                                Text("現在：\(change.after)").font(.headline)
+                            }.accessibilityElement(children: .combine)
+                        }
+                        Text("質性示範敘事；尚未接入真實狀態變化。")
+                            .font(.caption).foregroundStyle(PlayPalette.muted)
+                    }
+                }
                 if !outcome.pending.isEmpty {
                     panel {
-                        Label("尚未發生", systemImage: "clock").font(.headline)
+                        Label("故事的下一條線 · 還沒發生", systemImage: "clock").font(.headline)
                         ForEach(outcome.pending, id: \.self) { Text($0).foregroundStyle(PlayPalette.muted) }
                         Text("可能的後續不等於已經發生的後果。")
                             .font(.caption).foregroundStyle(PlayPalette.muted)
@@ -122,7 +151,7 @@ struct EventFirstView: View {
             pageHeading("同一選擇，不同條件", "環境改變了什麼？")
             if let comparison = flow.comparison {
                 panel {
-                    Text(comparison.selectedChoice).font(.headline)
+                    Text(flow.chosen?.title ?? "").font(.headline)
                     Label("固定：\(comparison.fixedConditions)", systemImage: "equal.circle")
                     Label("改變：\(comparison.changedConditions)", systemImage: "slider.horizontal.3")
                 }
@@ -137,6 +166,7 @@ struct EventFirstView: View {
                 }
                 Text("比較條件，沒有國家排名").font(.headline).foregroundStyle(PlayPalette.accent)
                 Text(comparison.limitation).font(.subheadline).foregroundStyle(PlayPalette.muted)
+                    .fixedSize(horizontal: false, vertical: true).accessibilityIdentifier("comparisonLastLine")
             } else {
                 EmptyPanel(title: "此事件尚無可比環境資料", detail: "不補上虛構差值。你可以繼續這段人生。", symbol: "rectangle.slash")
             }
@@ -159,7 +189,7 @@ struct EventFirstView: View {
             if flow.history.isEmpty {
                 EmptyPanel(title: "尚未留下選擇紀錄", detail: "完成一個事件後，這裡才會出現紀錄。", symbol: "book.closed")
             } else {
-                ForEach(flow.history) { entry in
+                ForEach(flow.map.nodes) { entry in
                     panel {
                         Text(entry.age).font(.caption).foregroundStyle(PlayPalette.accent)
                         Text(entry.eventTitle).font(.headline)
@@ -178,16 +208,16 @@ struct EventFirstView: View {
     private var primaryAction: PlayAction? {
         switch flow.screen {
         case .event: return nil
-        case .outcome: return .init(title: "查看原因", id: "showReason", action: flow.showReason)
-        case .reason: return .init(title: "比較環境", id: "showComparison", action: flow.showComparison)
-        case .comparison: return .init(title: "繼續這一生", id: "continueLife", action: flow.advance)
+        case .outcome, .reason, .comparison:
+            return .init(title: flow.nextActionLabel, id: "continueLife", action: flow.advance)
         case .review: return .init(title: "重新體驗原型", id: "restart", action: flow.restart)
         }
     }
 
     private var secondaryAction: PlayAction? {
         switch flow.screen {
-        case .outcome, .reason: return .init(title: "繼續這一生", id: "continueLife", action: flow.advance)
+        case .outcome: return .init(title: "查看原因", id: "showReason", action: flow.showReason)
+        case .reason: return .init(title: "比較環境", id: "showComparison", action: flow.showComparison)
         case .comparison: return .init(title: "回看後果", id: "backOutcome", action: flow.showOutcome)
         default: return nil
         }
@@ -208,9 +238,12 @@ struct EventFirstView: View {
                             Text("與家人同住，材料預算有限，朋友與老師可提供支持。")
                             Text("這是虛構家庭，不代表任何國家平均。")
                         }
-                        StatusStrip(statuses: flow.event?.statuses ?? [])
+                        StatusStrip(statuses: flow.displayedStatuses, heading: flow.statusHeading)
                     case .map:
                         pageHeading("五階段完整人生", "人生地圖")
+                        Text("你走過的岔路").font(.title2.bold()).accessibilityAddTraits(.isHeader)
+                        historyList
+                        Text("人生階段").font(.title2.bold())
                         ForEach(flow.map.stages, id: \.self) { stage in
                             HStack {
                                 Image(systemName: stage == flow.map.currentStage ? "location.circle.fill" : "circle")
@@ -236,6 +269,8 @@ struct EventFirstView: View {
 
     private func structureStudy(_ direction: String, event: EventViewDTO) -> some View {
         VStack(alignment: .leading, spacing: 18) {
+            Label("不可操作線框 · 僅供結構比較", systemImage: "square.dashed")
+                .font(.headline).foregroundStyle(PlayPalette.accent).accessibilityIdentifier("staticStudyNotice")
             Text("結構研究草圖・\(direction == "novel" ? "章節敘事型" : "人生時間軸型")")
                 .font(.caption).foregroundStyle(PlayPalette.accent)
             if direction == "novel" {
@@ -244,7 +279,13 @@ struct EventFirstView: View {
                 Text(event.title).font(.largeTitle.bold())
                 Text(event.narrative)
                 Text("阿澄：先從哪裡開始呢？").padding(20).background(PlayPalette.panel)
-                ForEach(event.options.prefix(2)) { option in ChoiceCard(option: option, action: {}) }
+                ForEach(event.options.prefix(2)) { option in
+                    panel {
+                        Text("選項位置示意 · 不可點擊").font(.caption).foregroundStyle(PlayPalette.muted)
+                        Text(option.title).font(.headline)
+                        Text(option.cost).font(.subheadline)
+                    }
+                }
             } else {
                 Text("沿著人生，找到下一個岔路。").font(.title.bold())
                 ForEach(["童年 · 與世界相遇", "青少年 · 紙橋挑戰", "青年 · 尚未抵達", "中年 · 尚未抵達", "晚年 · 回顧這一生"], id: \.self) { stage in
@@ -252,7 +293,7 @@ struct EventFirstView: View {
                         .frame(maxWidth: .infinity, alignment: .leading).background(PlayPalette.panel, in: RoundedRectangle(cornerRadius: 14))
                 }
                 EventHeroCard(event: event)
-                Text("進入目前岔路 →").font(.headline).foregroundStyle(PlayPalette.accent)
+                Text("岔路入口位置示意 · 不可點擊").font(.subheadline).foregroundStyle(PlayPalette.muted)
             }
             Text("比較焦點用的靜態結構研究；可點流程集中在事件主導首頁。")
                 .font(.caption).foregroundStyle(PlayPalette.muted)
@@ -281,6 +322,7 @@ struct EventFirstView: View {
 struct StageHeader: View {
     let event: EventViewDTO
     let progress: String
+    let state: String
     let showDetails: () -> Void
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -300,8 +342,34 @@ struct StageHeader: View {
     private var metadata: some View {
         Group {
             Text("\(event.year) / \(event.stage)")
-            Text("\(progress)・等待你的選擇").foregroundStyle(PlayPalette.accent)
+            Text("\(progress)・\(state)").foregroundStyle(PlayPalette.accent).accessibilityIdentifier("flowState")
         }.font(.caption)
+    }
+}
+
+struct CharacterReactionCard: View {
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.dynamicTypeSize) private var typeSize
+    @State private var appeared = false
+    let name: String
+    let artworkID: String?
+    let feedback: ChoiceFeedbackDTO
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            if let artworkID, !typeSize.isAccessibilitySize {
+                Image(artworkID).resizable().scaledToFit().frame(maxWidth: .infinity, maxHeight: 170)
+                    .accessibilityHidden(true)
+            }
+            Label("\(name)的心聲", systemImage: feedback.symbol).font(.caption.bold())
+                .foregroundStyle(PlayPalette.accent)
+            Text("「\(feedback.reaction)」").font(.title3.bold()).lineSpacing(4)
+                .fixedSize(horizontal: false, vertical: true).accessibilityIdentifier("characterReaction")
+        }.padding(18).frame(maxWidth: .infinity, alignment: .leading)
+            .background(PlayPalette.panel, in: RoundedRectangle(cornerRadius: 20))
+            .overlay(alignment: .leading) { RoundedRectangle(cornerRadius: 2).fill(PlayPalette.accent).frame(width: 3).padding(.vertical, 20) }
+            .opacity(appeared || reduceMotion ? 1 : 0)
+            .onAppear { withAnimation(reduceMotion ? nil : .easeOut(duration: 0.25)) { appeared = true } }
     }
 }
 
@@ -381,9 +449,10 @@ struct ReasonCard: View {
 
 struct StatusStrip: View {
     let statuses: [StatusViewDTO]
+    var heading = "目前的你"
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("目前的你").font(.caption).foregroundStyle(PlayPalette.muted)
+            Text(heading).font(.caption).foregroundStyle(PlayPalette.muted)
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 145), alignment: .leading)], alignment: .leading, spacing: 14) {
                 ForEach(statuses) { status in
                     VStack(alignment: .leading, spacing: 6) {

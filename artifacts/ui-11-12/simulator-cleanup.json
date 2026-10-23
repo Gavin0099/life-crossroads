@@ -1,0 +1,28 @@
+{
+  "requested_by": "user 2026-10-23",
+  "deleted": [
+    {
+      "id": "2084C491-F74F-42E1-853E-A20B4BDA508F",
+      "name": "LC Visual iPhone"
+    },
+    {
+      "id": "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+      "name": "LC Visual Narrow"
+    },
+    {
+      "id": "72669DC6-3892-4292-B1E3-B8DC61F5B0A9",
+      "name": "LC UI Event First"
+    }
+  ],
+  "verified_absent": [
+    "2084C491-F74F-42E1-853E-A20B4BDA508F",
+    "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+    "72669DC6-3892-4292-B1E3-B8DC61F5B0A9"
+  ],
+  "other_devices_not_targeted": true,
+  "evidence_outside_simulators": [
+    "/tmp/lc-ui-11-12-first.xcresult",
+    "/tmp/lc-ui-11-12-map-regression.xcresult",
+    "artifacts/ui-11-12/screenshots"
+  ]
+}

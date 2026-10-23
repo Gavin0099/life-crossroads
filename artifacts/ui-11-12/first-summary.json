@@ -1,0 +1,78 @@
+{
+  "devicesAndConfigurations" : [
+    {
+      "device" : {
+        "architecture" : "arm64",
+        "deviceId" : "72669DC6-3892-4292-B1E3-B8DC61F5B0A9",
+        "deviceName" : "LC UI Event First",
+        "modelName" : "iPhone 17",
+        "osBuildNumber" : "24A434",
+        "osVersion" : "27.0",
+        "platform" : "iOS Simulator"
+      },
+      "expectedFailures" : 0,
+      "failedTests" : 1,
+      "passedTests" : 9,
+      "skippedTests" : 0,
+      "testPlanConfiguration" : {
+        "configurationId" : "1",
+        "configurationName" : "Test Scheme Action"
+      }
+    },
+    {
+      "device" : {
+        "architecture" : "arm64",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "modelName" : "iPhone SE (3rd generation)",
+        "osBuildNumber" : "24A434",
+        "osVersion" : "27.0",
+        "platform" : "iOS Simulator"
+      },
+      "expectedFailures" : 0,
+      "failedTests" : 1,
+      "passedTests" : 9,
+      "skippedTests" : 0,
+      "testPlanConfiguration" : {
+        "configurationId" : "1",
+        "configurationName" : "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription" : "EventFirst · Built with macOS 27.0",
+  "expectedFailures" : 0,
+  "failedTests" : 1,
+  "finishTime" : 1792743692.713,
+  "passedTests" : 9,
+  "result" : "Failed",
+  "runtimeWarnings" : [
+
+  ],
+  "skippedTests" : 0,
+  "startTime" : 1792743687.504,
+  "statistics" : [
+    {
+      "subtitle" : "20 test runs",
+      "title" : "10 tests ran on 2 devices"
+    }
+  ],
+  "testFailures" : [
+    {
+      "failureText" : "Failed to tap \"人物與家庭\" Button: No matches found for Elements matching predicate '\"人物與家庭\" IN identifiers' from input {(\n    Button, identifier: 'restart', label: '重新體驗原型',\n    Button, identifier: 'details', label: '查看人物與人生資料',\n    Button, identifier: 'closeDetails', label: '回到遊戲',\n    Button, label: '人生資料、人物與家庭'\n)}",
+      "targetName" : "EventFirstTests",
+      "testIdentifier" : 2,
+      "testIdentifierString" : "EventFirstTests/testDetailsDoNotReplaceMainGameAndMapHasFiveStages()",
+      "testIdentifierURL" : "test://com.apple.xcode/EventFirst/EventFirstTests/EventFirstTests/testDetailsDoNotReplaceMainGameAndMapHasFiveStages",
+      "testName" : "testDetailsDoNotReplaceMainGameAndMapHasFiveStages()"
+    }
+  ],
+  "title" : "Test - EventFirst",
+  "topInsights" : [
+    {
+      "category" : "Common Failures",
+      "impact" : "100% of failures",
+      "text" : "2 runs of 1 test failed with Failed to tap \"人物與家庭\" Button: No matches found for Elements matching predicate '\"人物與家庭\" IN identifiers' from input {("
+    }
+  ],
+  "totalTestCount" : 10
+}

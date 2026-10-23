@@ -1,0 +1,160 @@
+{
+  "date": "2026-10-23",
+  "branch": "codex/ui-11-12-choice-feedback",
+  "base_commit": "1771c57671346694c623954ff0fc3b2dd5320311",
+  "task_authority": "user_request",
+  "implementation_commit": null,
+  "ui_validation": {
+    "unique_methods": 10,
+    "devices": [
+      {
+        "architecture": "arm64",
+        "deviceId": "72669DC6-3892-4292-B1E3-B8DC61F5B0A9",
+        "deviceName": "LC UI Event First",
+        "modelName": "iPhone 17",
+        "osBuildNumber": "24A434",
+        "osVersion": "27.0",
+        "platform": "iOS Simulator"
+      },
+      {
+        "architecture": "arm64",
+        "deviceId": "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName": "LC Visual Narrow",
+        "modelName": "iPhone SE (3rd generation)",
+        "osBuildNumber": "24A434",
+        "osVersion": "27.0",
+        "platform": "iOS Simulator"
+      }
+    ],
+    "first_attempt": {
+      "result": "FAIL",
+      "passed_executions": 18,
+      "failed_executions": 2,
+      "reason": "Test queried 人物與家庭 while native Picker label is 人生資料、人物與家庭",
+      "summary": "artifacts/ui-11-12/first-summary.json"
+    },
+    "focused_rerun": {
+      "result": "PASS",
+      "passed_executions": 2,
+      "failed_executions": 0,
+      "summary": "artifacts/ui-11-12/map-summary.json"
+    },
+    "covered_method_device_pairs_with_passing_evidence": 20,
+    "production_code_changed_between_runs": false,
+    "screenshots": 50
+  },
+  "flow_checks": {
+    "scenarios": 8,
+    "assertions": 31,
+    "detected_mutations": 3
+  },
+  "simulator_cleanup_tests": 2,
+  "existing_swift_tests": 25,
+  "basic": "PASS",
+  "response_envelope": {
+    "mode": "VALIDATION",
+    "mode_source": "validation_command",
+    "task": "UI-11 repairs, UI-12 fixture feedback, simulator lifecycle",
+    "task_authority": "user_request",
+    "scope": [
+      "UIPrototype/EventFirst",
+      "UIPrototype/EventFirstTests",
+      "docs/ui",
+      "tools/ui",
+      "artifacts/ui-11-12",
+      "AGENTS.md",
+      "PLAN.md",
+      "memory"
+    ],
+    "done": [
+      "UI-11 state labels, paired outcome/comparison, footer reachability, static studies and history nodes",
+      "UI-12 two authored reaction routes, qualitative changes, pending threads and continuation",
+      "10 UI methods passed on each device across initial and focused corrected-test runs; 50 screenshots",
+      "8 flow scenarios / 31 assertions and 3 detected mutations; 25 existing Swift tests; basic checks",
+      "2 real simulator cleanup integration tests; 3 earlier owned devices deleted"
+    ],
+    "claim_ceiling": [
+      "Validated fixture presentation and prototype navigation; independent UI-only increment from 1771c57"
+    ],
+    "not_claimed": [
+      "First test run entirely passed",
+      "Human comprehension or entertainment improvement",
+      "Physical iPhone or manual VoiceOver validation",
+      "Real Domain integration or computed resource deltas",
+      "New or approved production artwork",
+      "Merge, release or remote CI success",
+      "Simulator cleanup after uncatchable termination"
+    ],
+    "evidence_refs": [
+      {
+        "artifact": "artifacts/ui-11-12/first-summary.json",
+        "result": "FAIL"
+      },
+      {
+        "artifact": "artifacts/ui-11-12/map-summary.json",
+        "result": "PASS"
+      },
+      {
+        "artifact": "artifacts/ui-11-12/flow-checks.log",
+        "result": "PASS"
+      },
+      {
+        "artifact": "artifacts/ui-11-12/mutation-checks.json",
+        "result": "PASS"
+      },
+      {
+        "artifact": "artifacts/ui-11-12/swift-tests.log",
+        "result": "PASS"
+      },
+      {
+        "artifact": "artifacts/ui-11-12/governance-basic.log",
+        "result": "PASS"
+      },
+      {
+        "artifact": "artifacts/ui-11-12/simulator-lifecycle.log",
+        "result": "PASS"
+      },
+      {
+        "artifact": "artifacts/ui-11-12/simulator-cleanup.json",
+        "result": "PASS"
+      },
+      {
+        "artifact": "artifacts/ui-11-12/screenshot-provenance.json",
+        "result": "PASS"
+      }
+    ],
+    "risk": [
+      "UI-12 human acceptance remains pending; reused illustration is not a branch-specific expression asset"
+    ],
+    "next_action": "Review UI-11 fixes and the two UI-12 feedback routes; after this review, continue the separately bounded UI-13 Domain integration."
+  },
+  "commands": {
+    "ui_first": "xcodebuild -project UIPrototype/EventFirst.xcodeproj -scheme EventFirst -destination platform=iOS Simulator,id=72669DC6-3892-4292-B1E3-B8DC61F5B0A9 -destination platform=iOS Simulator,id=57CAF0DC-265F-44BF-B0FD-AF5DC0080773 -parallel-testing-enabled NO -maximum-concurrent-test-simulator-destinations 1 -collect-test-diagnostics never -test-timeouts-enabled YES -maximum-test-execution-time-allowance 120 -derivedDataPath UIPrototype/EventFirst/DerivedData -resultBundlePath /tmp/lc-ui-11-12-first.xcresult CODE_SIGNING_ALLOWED=NO test",
+    "map_regression": "same xcodebuild options, -only-testing:EventFirstTests/EventFirstTests/testDetailsDoNotReplaceMainGameAndMapHasFiveStages, result /tmp/lc-ui-11-12-map-regression.xcresult",
+    "flow": "swiftc -parse-as-library -swift-version 6 -target arm64-apple-macosx13.0 UIPrototype/EventFirst/EventFirstModels.swift tools/ui/EventFirstFlowChecks.swift -o /tmp/lc-ui-11-12-flow-checks && /tmp/lc-ui-11-12-flow-checks",
+    "existing": "swift test",
+    "basic": "bash scripts/governance-check.sh --profile basic",
+    "simulator_lifecycle": "python tools/ui/test_simulator_lifecycle.py"
+  },
+  "unchanged": [
+    "LifeCrossroads/Domain",
+    "LifeCrossroads/Data",
+    "Package.swift",
+    "UIPrototype/VisualPreview",
+    "assets"
+  ],
+  "artwork": {
+    "source": "assets/concepts/style-B/scene.png",
+    "new_generation": false,
+    "approved_for_app": false
+  },
+  "limitations": [
+    "First test run entirely passed",
+    "Human comprehension or entertainment improvement",
+    "Physical iPhone or manual VoiceOver validation",
+    "Real Domain integration or computed resource deltas",
+    "New or approved production artwork",
+    "Merge, release or remote CI success",
+    "Simulator cleanup after uncatchable termination"
+  ]
+}

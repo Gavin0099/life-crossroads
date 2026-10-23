@@ -1,0 +1,20 @@
+[
+  {
+    "mutation": "option_only_lookup",
+    "exit_code": 1,
+    "caught": true,
+    "stdout": "FAIL: same option ID in second event selects second outcome\n"
+  },
+  {
+    "mutation": "shared_comparison",
+    "exit_code": 1,
+    "caught": true,
+    "stdout": "PASS: repeated option IDs across events\nPASS: missing and mismatched outcome identity\nPASS: invalid state and duplicate submission\nFAIL: help comparison contains teacher support\n"
+  },
+  {
+    "mutation": "discard_continuation",
+    "exit_code": 1,
+    "caught": true,
+    "stdout": "PASS: repeated option IDs across events\nPASS: missing and mismatched outcome identity\nPASS: invalid state and duplicate submission\nPASS: paired, missing and mismatched comparisons\nFAIL: team continuation\n"
+  }
+]

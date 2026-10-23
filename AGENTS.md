@@ -407,6 +407,7 @@ Prompt yourself:
 - `Persistence/`：存續玩一致性、損壞與版本不相容。
 - `Resources/Statistics/`、`Data/`：來源與版本完整性；統計與設計假設分離。
 - `Features/`：適齡閱讀、小螢幕、VoiceOver、敏感內容略過；實機證據另列。
+- 使用者於 2026-10-23 要求：Agent 建立的測試 Simulator 每次跑完即刪除（含失敗），先將截圖／xcresult 證據保存在裝置外；不得只 shutdown 後長期留存。只清理由本工作線建立、已無執行中的裝置，不刪其他工作線正在使用的 Simulator。
 - `scripts/`、`.github/workflows/`、治理設定：`bash scripts/governance-check.sh --profile basic`；完整 runtime 稽核為 advisory。
 
 ## L1 → L2 Escalation Triggers

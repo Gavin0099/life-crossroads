@@ -1,0 +1,9 @@
+PASS: repeated option IDs across events
+PASS: missing and mismatched outcome identity
+PASS: invalid state and duplicate submission
+PASS: paired, missing and mismatched comparisons
+PASS: branch-specific feedback and continuation
+PASS: missing feedback and unrelated continuation
+PASS: final-event boundary and restart
+PASS: empty event boundary
+PASS: 8 flow scenarios, 31 assertions
