@@ -1,0 +1,50 @@
+[
+  {
+    "path": "artifacts/evidence/lc04/ui/lc04-comparison-last-age.png",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "83B135A5-3E32-42A1-9FA8-B35FB2751FE8",
+      "deviceName": "LifeCrossroads Test 20261023T150846Z",
+      "exportedFileName": "A35A1433-98D8-4724-9773-9F3950D48251.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "lc04-comparison-last-age_0_F9F51364-EE81-4E51-999D-C888F7A8196B.png",
+      "timestamp": 1792768617.533
+    },
+    "test": {
+      "testIdentifier": "LifeCrossroadsUITests/testForkPreservesOriginalResumesAfterRelaunchAndComparesFullRemainder()",
+      "testIdentifierURL": "test://com.apple.xcode/LifeCrossroads/LifeCrossroadsUITests/LifeCrossroadsUITests/testForkPreservesOriginalResumesAfterRelaunchAndComparesFullRemainder"
+    }
+  },
+  {
+    "path": "artifacts/evidence/lc04/ui/lc04-complete-comparison.png",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "83B135A5-3E32-42A1-9FA8-B35FB2751FE8",
+      "deviceName": "LifeCrossroads Test 20261023T150846Z",
+      "exportedFileName": "C9C6A2BA-51DC-44BA-B9E4-A9F06E7E440E.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "lc04-complete-comparison_0_7719911A-DE9E-4E0E-9E06-DC64BFB7E8C6.png",
+      "timestamp": 1792768544.662
+    },
+    "test": {
+      "testIdentifier": "LifeCrossroadsUITests/testForkPreservesOriginalResumesAfterRelaunchAndComparesFullRemainder()",
+      "testIdentifierURL": "test://com.apple.xcode/LifeCrossroads/LifeCrossroadsUITests/LifeCrossroadsUITests/testForkPreservesOriginalResumesAfterRelaunchAndComparesFullRemainder"
+    }
+  },
+  {
+    "path": "artifacts/evidence/lc04/ui/lc04-fork-options.png",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "83B135A5-3E32-42A1-9FA8-B35FB2751FE8",
+      "deviceName": "LifeCrossroads Test 20261023T150846Z",
+      "exportedFileName": "D3D1EAC4-311E-4AAC-BA13-1D0345EF4D44.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "lc04-fork-options_0_046B8F3B-6CBB-4B13-B597-AFE519B2635D.png",
+      "timestamp": 1792768403.597
+    },
+    "test": {
+      "testIdentifier": "LifeCrossroadsUITests/testForkPreservesOriginalResumesAfterRelaunchAndComparesFullRemainder()",
+      "testIdentifierURL": "test://com.apple.xcode/LifeCrossroads/LifeCrossroadsUITests/LifeCrossroadsUITests/testForkPreservesOriginalResumesAfterRelaunchAndComparesFullRemainder"
+    }
+  }
+]

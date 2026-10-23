@@ -1,0 +1,65 @@
+{
+  "base": "5701a36f55ca09f1c0481c2830014db4f2611fa4",
+  "swift": {
+    "unique_cases_passed": 87,
+    "full_run": 86,
+    "focused_branch_run": 11,
+    "new_cases_in_focused_run": 1
+  },
+  "python_passed": 15,
+  "ui": {
+    "unique_cases_passed": 6,
+    "first_run_passed": 5,
+    "first_run_failed": 1,
+    "fixed_test_retest_passed": 1,
+    "initial_failure": "Duplicate accessibility nodes for confirmRestart; fixed test locator, no game behavior change."
+  },
+  "simulators": [
+    {
+      "uuid": "83B135A5-3E32-42A1-9FA8-B35FB2751FE8",
+      "deleted": true,
+      "inventory_absent": true
+    },
+    {
+      "uuid": "B635D138-E78F-46DD-A2EC-51ACC13FD434",
+      "deleted": true,
+      "inventory_absent": true
+    }
+  ],
+  "shared_runtimes_deleted": false,
+  "source_sha256": {
+    "LifeCrossroads.xcodeproj/project.pbxproj": "d6aa6e21daa2d0a669f1e1e275e3e18661f527e98bf941553c2e47101ed00fc3",
+    "LifeCrossroads/App/BranchViews.swift": "93b73e73afcaf610fd2d6e6535d8cfc3f39348b69aac401ba397dd9a44e63388",
+    "LifeCrossroads/App/CrossroadsView.swift": "5df44c3bf877e7998d2e5cba69f83f1e2e049c51595c89ee1024d9694feb7c91",
+    "LifeCrossroads/App/GameStore.swift": "b138ad7e912e6e4bce85856b0a89a721bc20076df1f95a30f555a76a0ca5f5d5",
+    "LifeCrossroads/CLI/BranchSamples.swift": "db16ccccd0cf8e75fcb0563ad043371c68849668c0de3b135190c739c9e10057",
+    "LifeCrossroads/CLI/CLIArguments.swift": "0d04bd372aa7b3e9e9e865f725e7949355b8a918ac626938130e81c6511bbda3",
+    "LifeCrossroads/CLI/main.swift": "691782a03922a066edbcd4ba6d940ed583d7f11a55412bf6afc6ef7bce8a08d9",
+    "LifeCrossroads/Domain/BranchComparisonEngine.swift": "f4e2a14e26e6801d1b083e747b819833ea469e378b21d57145c12acbb4cf7c05",
+    "LifeCrossroads/Domain/BranchExperiment.swift": "f0440ee3fae8409161e6cb729bd25a7b8e537f8b1d5a3a0b8c96ebf4d37f166c",
+    "LifeCrossroads/Domain/LifeSession.swift": "ac83cb641705074b99d915b1dc27f3bc6cd56b047e79f37857b99b0225d2fc24",
+    "LifeCrossroads/Persistence/SaveRepository.swift": "331fb9764027d47f913f3fea4cee9bcf2952e2020352f5954e9ea79ddce0198f",
+    "Package.swift": "f0281763718a410d4397d4573845a5e5ee9e6cc42a8a08f7cb7deb88eb6ac0b1",
+    "Tests/LifeDomainTests/BranchExperimentTests.swift": "66233b7986c51a89c5a02bde316e40620e03dddb9ed25ccafab2d92d6dd346f2",
+    "Tests/LifePersistenceTests/SaveRepositoryTests.swift": "9d432ad9955a195b99ebf667575ff422cdaef2eebf6473e6867e5ff245a736ea",
+    "Tests/test_batch_report.py": "b8369d462168f67dd520c5f56f59453d82f305732bc9b9dbea863ad626efd9b3",
+    "UITests/LifeCrossroadsUITests.swift": "6af31ea9ede8cbb97ca285280272125c8260df9e9293e24e6c6a537ce6bf7a92"
+  },
+  "receipts": [
+    "artifacts/evidence/test-results/lc04-swift.json",
+    "artifacts/evidence/test-results/lc04-binding.json",
+    "artifacts/evidence/test-results/lc04-python-fixed.json",
+    "artifacts/evidence/test-results/lc04-ios.json",
+    "artifacts/evidence/test-results/lc04-ios-retest.json",
+    "artifacts/evidence/test-results/lc04-basic-final.json",
+    "artifacts/evidence/test-results/lc04-sample.json"
+  ],
+  "not_claimed": [
+    "Physical iPhone",
+    "manual VoiceOver",
+    "child playtest",
+    "P1 complete",
+    "merged",
+    "released"
+  ]
+}

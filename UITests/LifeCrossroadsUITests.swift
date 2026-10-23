@@ -78,11 +78,13 @@ final class LifeCrossroadsUITests: XCTestCase {
         XCTAssertTrue(newSeed.exists)
         attachScreenshot("event-first-life-review", app: app)
         reveal(newSeed, in: app); newSeed.tap()
+        app.buttons.matching(identifier: "confirmRestart").matching(NSPredicate(format: "label == %@", "取代紀錄並開始")).firstMatch.tap()
         XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 5))
         let changedSeed = try XCTUnwrap(app.staticTexts["lifeSeed"].value as? String)
         XCTAssertNotEqual(changedSeed, "0")
         app.buttons["restartMenu"].tap()
         app.buttons["restartSame"].tap()
+        app.buttons.matching(identifier: "confirmRestart").matching(NSPredicate(format: "label == %@", "取代紀錄並開始")).firstMatch.tap()
         XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 5))
         XCTAssertEqual(app.staticTexts["lifeSeed"].value as? String, changedSeed)
         XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, eventIDs.first)
@@ -193,9 +195,65 @@ final class LifeCrossroadsUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["eventTitle"].exists)
     }
 
+    func testForkPreservesOriginalResumesAfterRelaunchAndComparesFullRemainder() throws {
+        let app = launch(seed: "0")
+        start(app)
+        var originalEvents: [String] = []
+        for _ in 0..<15 {
+            XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 5))
+            originalEvents.append(try XCTUnwrap(app.staticTexts["eventTitle"].value as? String))
+            let choice = try policyChoice(in: app)
+            reveal(choice, in: app); choice.tap()
+            XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+            app.buttons["continueLife"].tap()
+        }
+        XCTAssertTrue(app.staticTexts["journeyComplete"].waitForExistence(timeout: 5))
+        let open = app.buttons["openForkPicker"]; reveal(open, in: app); open.tap()
+        let point = app.buttons["forkPoint.3"]; reveal(point, in: app); point.tap()
+        let offline = app.buttons["forkChoice.offline"]
+        XCTAssertTrue(offline.waitForExistence(timeout: 5))
+        XCTAssertFalse(app.buttons["forkChoice.invest"].isEnabled)
+        attachScreenshot("lc04-fork-options", app: app)
+        reveal(offline, in: app); offline.tap()
+        XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["chosenAction"].value as? String, "offline")
+        app.terminate()
+        app.launchArguments.removeAll { $0 == "-reset-save" }
+        app.launch()
+        XCTAssertTrue(app.buttons["resumeLife"].waitForExistence(timeout: 10))
+        app.buttons["resumeLife"].tap()
+        XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["chosenAction"].value as? String, "offline")
+        let original = app.buttons["viewOriginal"]; reveal(original, in: app); original.tap()
+        XCTAssertTrue(app.staticTexts["journeyComplete"].waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["endingSeed"].value as? String, "0")
+        let resume = app.buttons["resumeBranch"]; reveal(resume, in: app); resume.tap()
+        app.buttons["continueLife"].tap()
+        for _ in 4..<15 {
+            XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 5))
+            let choice = app.buttons["choice.rest"]; reveal(choice, in: app); choice.tap()
+            XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+            app.buttons["continueLife"].tap()
+        }
+        XCTAssertTrue(app.staticTexts["journeyComplete"].waitForExistence(timeout: 5))
+        app.terminate(); app.launch()
+        XCTAssertTrue(app.buttons["resumeLife"].waitForExistence(timeout: 10))
+        app.buttons["resumeLife"].tap()
+        let compare = app.buttons["compareBranches"]; reveal(compare, in: app); compare.tap()
+        XCTAssertTrue(app.staticTexts["branchComparisonTitle"].waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["branchComparisonCount"].value as? String, "12")
+        XCTAssertTrue(app.staticTexts["branchComparisonScope"].label.contains("沒有自動代選"))
+        attachScreenshot("lc04-complete-comparison", app: app)
+        let last = app.descendants(matching: .any).matching(identifier: "branchRow.14").firstMatch
+        reveal(last, in: app)
+        XCTAssertTrue(last.exists)
+        attachScreenshot("lc04-comparison-last-age", app: app)
+        XCTAssertEqual(originalEvents.count, 15)
+    }
+
     private func launch(seed: String, largestText: Bool = false) -> XCUIApplication {
         let app = XCUIApplication()
-        app.launchArguments += ["-ui-testing", "-life-seed", seed,
+        app.launchArguments += ["-ui-testing", "-reset-save", "-life-seed", seed,
                                 "-AppleLanguages", "(zh-Hant)", "-AppleLocale", "zh_TW"]
         if largestText {
             app.launchArguments += ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]

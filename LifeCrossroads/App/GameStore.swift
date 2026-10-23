@@ -2,21 +2,37 @@ import Foundation
 import SwiftUI
 import LifeDomain
 import LifeData
+import LifePersistence
 
 @MainActor
 final class GameStore: ObservableObject {
     static let firstCountries = ["JPN", "USA", "IND", "KEN"]
-    @Published var session: LifeSession?
+    @Published private(set) var journey: LifeJourney?
+    @Published var showingHome = true
+    @Published var viewingOriginal = false
+    @Published private(set) var restoreFailed = false
+    private let saves: SaveRepository
+    var session: LifeSession? {
+        guard !showingHome else { return nil }
+        return viewingOriginal ? journey?.experiment?.original : journey?.activeSession
+    }
+    var experiment: BranchExperiment? { journey?.experiment }
     @Published var countryCode = "JPN"
     @Published var familyNumber = 1
     @Published var errorMessage: String?
     let catalog: ModelCatalog?
-    private var comparisonSession: LifeSession?
     private let launchSeed: UInt64?
     private let invalidLaunchSeed: Bool
 
     init() {
         let arguments = ProcessInfo.processInfo.arguments
+        let directory = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
+            .appendingPathComponent("LifeCrossroads", isDirectory: true)
+        let filename = arguments.contains("-ui-testing") ? "ui-journey.json" : "journey.json"
+        saves = SaveRepository(fileURL: directory.appendingPathComponent(filename))
+        if arguments.contains("-ui-testing"), arguments.contains("-reset-save") {
+            try? FileManager.default.removeItem(at: saves.fileURL)
+        }
         if let index = arguments.firstIndex(of: "-life-seed") {
             launchSeed = index + 1 < arguments.count ? UInt64(arguments[index + 1]) : nil
             invalidLaunchSeed = launchSeed == nil
@@ -26,6 +42,10 @@ final class GameStore: ObservableObject {
         }
         do { catalog = try StatisticsRepository.bundled() }
         catch { catalog = nil; errorMessage = "離線資料無法載入：\(error)" }
+        if let catalog {
+            do { journey = try saves.load(catalog: catalog) }
+            catch { restoreFailed = true; errorMessage = "存檔無法讀取或版本不相容，原檔仍保留。請稍後重試，或明確選擇建立新人生取代紀錄。\(error)" }
+        }
     }
 
     var countries: [CountryProfile] {
@@ -39,6 +59,20 @@ final class GameStore: ObservableObject {
         return try? session.event(catalog: catalog)
     }
 
+    /// Publish only after persistence succeeds. A failed write leaves the displayed decision and original intact.
+    @discardableResult
+    private func commit(_ next: LifeJourney) -> Bool {
+        guard let catalog else { return false }
+        do {
+            try saves.save(next, catalog: catalog)
+            journey = next; restoreFailed = false
+            return true
+        } catch { errorMessage = "進度尚未寫入，這次操作沒有生效；原紀錄仍保留。\(error)"; return false }
+    }
+
+    func resume() { viewingOriginal = false; showingHome = false }
+    func home() { showingHome = true }
+
     func start(replay: Bool = false) {
         guard let catalog else { return }
         guard !invalidLaunchSeed else {
@@ -46,47 +80,47 @@ final class GameStore: ObservableObject {
             return
         }
         do {
-            if replay, let old = session {
-                session = try .start(catalog: catalog, countryCode: old.state.countryCode,
-                                     householdID: old.state.householdID, seed: old.state.seed)
+            let next: LifeSession
+            if replay, let old = journey?.activeSession {
+                next = try .start(catalog: catalog, countryCode: old.state.countryCode,
+                                  householdID: old.state.householdID, seed: old.state.seed)
             } else {
                 let seed: UInt64 = launchSeed ?? .random(in: .min ... .max)
-                session = try .start(catalog: catalog, countryCode: countryCode,
-                                     householdID: "\(countryCode.lowercased())-\(familyNumber)", seed: seed)
+                next = try .start(catalog: catalog, countryCode: countryCode,
+                                  householdID: "\(countryCode.lowercased())-\(familyNumber)", seed: seed)
             }
-            comparisonSession = nil
+            if commit(.single(next)) { viewingOriginal = false; showingHome = false }
         } catch { errorMessage = "暫時無法開始：\(error)" }
     }
 
     func replayWithNewSeed() {
-        guard let catalog, let previous = session else { return }
+        guard let catalog, let previous = journey?.activeSession else { return }
         let draw = UInt64.random(in: .min ... .max)
         let differentSeed = draw == previous.state.seed ? draw &+ 1 : draw
         do {
-            let restarted = try LifeSession.start(catalog: catalog, countryCode: previous.state.countryCode,
+            let next = try LifeSession.start(catalog: catalog, countryCode: previous.state.countryCode,
                 householdID: previous.state.householdID, seed: differentSeed)
-            comparisonSession = nil
-            session = restarted
+            if commit(.single(next)) { viewingOriginal = false; showingHome = false }
         } catch { errorMessage = "暫時無法重新開始：\(error)" }
     }
     func choose(_ choiceID: String) {
-        guard let catalog, var active = session else { return }
-        do {
-            let before = active
-            try active.choose(choiceID, catalog: catalog)
-            comparisonSession = before
-            session = active
-        }
+        guard let catalog, var active = journey, !viewingOriginal else { return }
+        do { try active.choose(choiceID, catalog: catalog); commit(active) }
         catch { errorMessage = "這次選擇尚無法進行：\(error)" }
     }
     func next() {
-        guard let catalog, var active = session else { return }
-        do {
-            try active.continueLife(catalog: catalog)
-            comparisonSession = nil
-            session = active
-        }
+        guard let catalog, var active = journey, !viewingOriginal else { return }
+        do { try active.continueLife(catalog: catalog); commit(active) }
         catch { errorMessage = "暫時無法推進：\(error)" }
+    }
+    @discardableResult
+    func startBranch(at index: Int, choiceID: String) -> Bool {
+        guard let catalog, let original = journey?.activeSession, experiment == nil else { return false }
+        do {
+            let next = try BranchExperiment.start(original: original, decisionIndex: index, choiceID: choiceID, catalog: catalog)
+            if commit(.branch(next)) { viewingOriginal = false; showingHome = false; return true }
+        } catch { errorMessage = "這個岔路尚無法改選：\(error)" }
+        return false
     }
     func preview(_ choiceID: String) -> ConsequenceTrace? {
         guard let catalog, let session else { return nil }
@@ -94,13 +128,14 @@ final class GameStore: ObservableObject {
     }
     func compare(choiceID: String) -> [ConsequenceTrace] {
         guard let catalog, let session else { return [] }
-        let before: LifeSession
-        if session.phase == .choosing { before = session }
-        else if session.phase == .reflecting, let saved = comparisonSession,
-                session.traces.last?.choiceID == choiceID { before = saved }
-        else { errorMessage = "這個選擇的選前狀態尚未保存，不能補算比較。"; return [] }
-        do { return try before.compare(choiceID: choiceID, countryCodes: Self.firstCountries, catalog: catalog) }
-        catch { errorMessage = "暫時無法比較：\(error)"; return [] }
+        do {
+            let before: LifeSession
+            if session.phase == .choosing { before = session }
+            else if session.phase == .reflecting, session.traces.last?.choiceID == choiceID {
+                before = try session.beforeDecision(at: session.traces.count - 1, catalog: catalog)
+            } else { throw ModelError.invalid("comparison requires the chosen action") }
+            return try before.compare(choiceID: choiceID, countryCodes: Self.firstCountries, catalog: catalog)
+        } catch { errorMessage = "暫時無法比較：\(error)"; return [] }
     }
     func name(_ country: String) -> String { catalog?.countries.first { $0.code == country }?.name ?? country }
     func title(_ event: String) -> String { catalog?.decisions.first { $0.id == event }?.title ?? event }

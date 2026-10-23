@@ -1,0 +1,21 @@
+E.............
+======================================================================
+ERROR: setUpClass (test_batch_report.CLIArgumentTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/test_batch_report.py", line 49, in setUpClass
+    raise AssertionError(result.stderr)
+AssertionError: /var/folders/gw/3g0118050sb7lwtm8k1jzzw40000gn/T/tmp5uu9uudy/ArgumentHarness.swift:6:13: error: switch must be exhaustive
+ 4 |     static func main() {
+ 5 |         do {
+ 6 |             switch try DemoCLIArguments.parse(Array(CommandLine.arguments.dropFirst())) {
+   |             |- error: switch must be exhaustive
+   |             `- note: add missing case: '.branchSample'
+ 7 |             case .demo: print("demo")
+ 8 |             case .json: print("json")
+
+
+----------------------------------------------------------------------
+Ran 13 tests in 7.630s
+
+FAILED (errors=1)
