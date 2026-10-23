@@ -36,3 +36,14 @@
 - Validation boundary: PASS: artifacts/evidence/test-results/governance-onboarding.json -> exit_code=0 (31 targeted framework tests). This receipt does not establish full adoption or game correctness.
 - Next action: 由負責人檢視 docs/p1-slices.md；本輪只交付配置、盤點與計畫，不開始遊戲實作或提交上傳。
 - PLAN reconciliation: `updated`
+
+<!-- memory_record_projection:review-log:9f6bdb9916c62b39eff13d0671510ef9e2b135840ad3046794a1f6809f621941 -->
+### Canonical memory checkpoint — life-crossroads-P0-002-2026-10-23
+
+- Writer: `governance_tools.memory_record`
+- Record identity: `9f6bdb9916c62b39eff13d0671510ef9e2b135840ad3046794a1f6809f621941`
+- Commit binding: `a468cbc0bef527ea44851ee0632a619ca1a797ff` (bound)
+- Record: 依使用者決策取消獨立科學展 Gate，P1 改為八國/16 情境/50～70 事件/五階段完整人生。LC-02 四國先交付。已建立本機初始 commit，刷新來源 baseline，CI 分為基本必過與 runtime advisory；沒有 push 或實作遊戲。
+- Validation boundary: PASS: artifacts/evidence/test-results/basic-ci.json -> exit_code=0 (6 basic checks); artifacts/evidence/test-results/ci-pin-rejection.json -> exit_code=0 (bad pin rejected, lock restored); artifacts/evidence/test-results/governance-after-initial-commit.json -> exit_code=0 (14 audit checks).
+- Next action: 依 docs/p1-slices.md 的 LC-01 實作八國資料/16 情境與共通人生規則；尚未驗證 runtime 不作產品前置 Gate。
+- PLAN reconciliation: `updated`

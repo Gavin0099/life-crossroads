@@ -1,0 +1,9 @@
+framework-pin: FAIL
+version-compatibility: PASS
+drift: PASS
+config-syntax: PASS
+shell-syntax: PASS
+python-syntax: PASS
+Evidence: /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/governance/basic/checks.json
+
+PASS: mismatched pin rejected; all other basic checks passed; original lock restored byte-for-byte

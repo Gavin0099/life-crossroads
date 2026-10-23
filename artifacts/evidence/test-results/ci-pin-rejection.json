@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.venv/bin/python -c \"from pathlib import Path\nimport json, subprocess\nlock=Path('governance/framework.lock.json')\noriginal=lock.read_bytes()\ntry:\n    data=json.loads(original)\n    data['adopted_commit']='0'*40\n    lock.write_text(json.dumps(data))\n    result=subprocess.run(['bash','scripts/governance-check.sh','--profile','basic'],capture_output=True,text=True)\n    print(result.stdout)\n    report=json.loads(Path('artifacts/governance/basic/checks.json').read_text())\n    by_name={item['name']:item for item in report['checks']}\n    if result.returncode==0 or by_name['framework-pin']['status']!='FAIL':\n        raise SystemExit('ERROR: mismatched pin was not rejected')\n    if any(item['status']!='PASS' for item in report['checks'] if item['name']!='framework-pin'):\n        raise SystemExit('ERROR: rejection was confounded by another failing check')\nfinally:\n    lock.write_bytes(original)\nif lock.read_bytes()!=original:\n    raise SystemExit('ERROR: lock was not restored')\nprint('PASS: mismatched pin rejected; all other basic checks passed; original lock restored byte-for-byte')\n\"",
+  "exit_code": 0,
+  "started_at": "2026-10-23T05:32:49Z",
+  "finished_at": "2026-10-23T05:32:49Z",
+  "runner": "governance_tools.test_evidence_receipt_writer",
+  "linked_commit": "a468cbc0bef527ea44851ee0632a619ca1a797ff",
+  "output_artifacts": [
+    "artifacts/evidence/test-results/ci-pin-rejection.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}

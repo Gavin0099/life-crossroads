@@ -27,7 +27,7 @@
 
 ## Current Phase
 
-P0：固定新版 P1 產品方向與初始化 repository。尚未建立可執行的 iOS app。
+P0：新版 P1 方向、首次本機提交及基本 CI 已建立。下一產品切片為 LC-01，尚未開始產品實作。
 原有治理設定可用；完整 runtime 治理的未驗證項目不構成開始產品開發的前置 Gate。
 
 ## Current Sprint
@@ -44,12 +44,12 @@ DONE：產品文件一致反映新版規模及首個可玩交付；基本 CI 與
 
 ## Acceptance Criteria
 
-- [ ] 新版 P1 規模、五個人生階段及七片定義一致，舊短篇產品 Gate 已取消。
-- [ ] 首次本機 commit 存在，實際 pre-commit hook 正常觸發。
-- [ ] baseline 由工具生成且 source_commit 為真實 commit；不手改受保護 baseline。
-- [ ] CI 的基本檢查會攔下來源/版本/格式錯誤；runtime 稽核採 advisory，不阻擋產品切片。
+- [x] 新版 P1 規模、五個人生階段及七片定義一致，舊短篇產品 Gate 已取消。
+- [x] 首次本機 commit 存在，實際 pre-commit hook 正常觸發。
+- [x] baseline 由工具生成且 source_commit 為真實 commit；不手改受保護 baseline。
+- [x] CI 的基本檢查會攔下來源/版本/格式錯誤；runtime 稽核採 advisory，不阻擋產品切片。
 - [ ] 同一基本檢查入口可在本機與 CI 執行；包含錯誤 framework pin 的拒絕驗證。
-- [ ] 遊戲程式、實機、兒少試玩、遠端 CI 及完整 runtime 整合不冒充已完成。
+- [x] 遊戲程式、實機、兒少試玩、遠端 CI 及完整 runtime 整合不冒充已完成。
 
 ## Architecture Boundaries
 

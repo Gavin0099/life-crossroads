@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "bash scripts/governance-check.sh --profile full",
+  "exit_code": 0,
+  "started_at": "2026-10-23T05:32:57Z",
+  "finished_at": "2026-10-23T05:32:59Z",
+  "runner": "governance_tools.test_evidence_receipt_writer",
+  "linked_commit": "a468cbc0bef527ea44851ee0632a619ca1a797ff",
+  "output_artifacts": [
+    "artifacts/evidence/test-results/governance-after-initial-commit.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}
