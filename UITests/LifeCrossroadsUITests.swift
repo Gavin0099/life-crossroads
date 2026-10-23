@@ -110,12 +110,16 @@ final class LifeCrossroadsUITests: XCTestCase {
     }
 
     private func reveal(_ element: XCUIElement, in app: XCUIApplication) {
-        for _ in 0..<15 {
+        for _ in 0..<24 {
             let bottomClearance: CGFloat = app.buttons["continueLife"].exists && !app.buttons["closeTrace"].exists ? 110 : 24
             if element.exists && element.isHittable && element.frame.midY > 100 && element.frame.midY < app.frame.maxY - bottomClearance { return }
-            if element.exists && element.frame.midY < 100 { app.swipeDown() }
-            else { app.swipeUp() }
+            // A full-screen swipe can jump over a tall card's tap target and oscillate forever.
+            let upper = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.38))
+            let lower = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.65))
+            if element.exists && element.frame.midY < 100 { upper.press(forDuration: 0.05, thenDragTo: lower) }
+            else { lower.press(forDuration: 0.05, thenDragTo: upper) }
         }
-        XCTFail("Could not reveal an unobscured tap target: \(element.identifier)")
+        attachScreenshot("unrevealed-\(element.identifier)", app: app)
+        XCTFail("Could not reveal an unobscured tap target: \(element.identifier); exists=\(element.exists)")
     }
 }
