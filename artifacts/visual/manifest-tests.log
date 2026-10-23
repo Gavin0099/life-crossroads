@@ -1,0 +1,13 @@
+test_candidate_does_not_need_fake_approval (test_manifest.CandidateManifestTests.test_candidate_does_not_need_fake_approval) ... ok
+test_changed_file_is_rejected (test_manifest.CandidateManifestTests.test_changed_file_is_rejected) ... ok
+test_dimensions_and_alpha_are_checked (test_manifest.CandidateManifestTests.test_dimensions_and_alpha_are_checked) ... ok
+test_duplicate_id_is_rejected (test_manifest.CandidateManifestTests.test_duplicate_id_is_rejected) ... ok
+test_invalid_and_empty_manifest_are_rejected (test_manifest.CandidateManifestTests.test_invalid_and_empty_manifest_are_rejected) ... ok
+test_missing_prompt_is_rejected (test_manifest.CandidateManifestTests.test_missing_prompt_is_rejected) ... ok
+test_path_outside_repo_is_rejected (test_manifest.CandidateManifestTests.test_path_outside_repo_is_rejected) ... ok
+test_unreviewed_approval_is_rejected (test_manifest.CandidateManifestTests.test_unreviewed_approval_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.005s
+
+OK

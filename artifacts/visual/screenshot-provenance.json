@@ -1,0 +1,218 @@
+[
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "2084C491-F74F-42E1-853E-A20B4BDA508F",
+        "deviceName" : "LC Visual iPhone",
+        "exportedFileName" : "112E99DA-BE47-4E26-B1A0-8B28895CF09C.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "B-compare_0_C8EEC8CF-891E-4669-8D5B-8B9F86EBDDA4.png",
+        "timestamp" : 1792736787.556
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "2084C491-F74F-42E1-853E-A20B4BDA508F",
+        "deviceName" : "LC Visual iPhone",
+        "exportedFileName" : "A0E15409-DC2E-418E-8828-17D97C8EE08B.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "B-why_0_563349F9-4018-417B-96F2-AF300F09E495.png",
+        "timestamp" : 1792736787.128
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "2084C491-F74F-42E1-853E-A20B4BDA508F",
+        "deviceName" : "LC Visual iPhone",
+        "exportedFileName" : "FFD2C6F4-1954-425F-8783-1D29B78F18FB.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "B-feedback_0_4FEFB023-CCAD-4910-B751-BC743BF4FB7E.png",
+        "timestamp" : 1792736785.717
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "2084C491-F74F-42E1-853E-A20B4BDA508F",
+        "deviceName" : "LC Visual iPhone",
+        "exportedFileName" : "9B464AE5-CE50-4B14-B97A-26E82B603417.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "B-event_0_52164B03-5A58-4740-9E9D-29FD39F41695.png",
+        "timestamp" : 1792736784.184
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "2084C491-F74F-42E1-853E-A20B4BDA508F",
+        "deviceName" : "LC Visual iPhone",
+        "exportedFileName" : "03B6A243-69F9-4FE0-89A1-4798E917F6F8.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "A-compare_0_73EA715A-37A1-44BB-A402-38A322073928.png",
+        "timestamp" : 1792736778.053
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "2084C491-F74F-42E1-853E-A20B4BDA508F",
+        "deviceName" : "LC Visual iPhone",
+        "exportedFileName" : "00DA5A4B-BDBF-4904-B75C-2523A4F2380E.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "A-why_0_6A790109-16F1-4711-AB5B-EB78D0486368.png",
+        "timestamp" : 1792736777.627
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "2084C491-F74F-42E1-853E-A20B4BDA508F",
+        "deviceName" : "LC Visual iPhone",
+        "exportedFileName" : "1D047BE4-5709-4D53-8A37-6B95D15A19D7.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "A-feedback_0_28A69A26-9D2A-4790-A2A4-2B5473220D62.png",
+        "timestamp" : 1792736776.244
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "2084C491-F74F-42E1-853E-A20B4BDA508F",
+        "deviceName" : "LC Visual iPhone",
+        "exportedFileName" : "860ED93A-3BB0-42E0-A4C0-D57254F33B56.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "A-event_0_14CF395F-C7F0-4735-B824-CCF23DD992A6.png",
+        "timestamp" : 1792736774.686
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "FD1D8603-EE0E-4554-B7A5-4B7C16D47012.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "B-compare_0_3665A31C-54D0-42F3-AE02-5F84240C2062.png",
+        "timestamp" : 1792736787.503
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "955C7B08-5724-4646-BFC9-387FEC530AD9.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "B-why_0_45CCBCC1-CE83-40FE-BAC4-A4FEBE729CF3.png",
+        "timestamp" : 1792736787.102
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "CC932996-46B9-4120-B5B1-4EB7D5869F8E.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "B-feedback_0_FFC6BE55-4572-47C1-90C9-AD719A7D09B3.png",
+        "timestamp" : 1792736785.66
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "36233B77-F21E-407C-AFFE-26E0DCAD662A.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "B-event_0_5924CEC1-92F1-4FF5-B218-E166AEC1F3BD.png",
+        "timestamp" : 1792736784.164
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "5C2784A4-0AAD-4590-9A52-6E7056D1E396.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "A-compare_0_883998F1-7F31-4956-AEEE-974F35E1382F.png",
+        "timestamp" : 1792736778.017
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "1C87AD15-3D5F-4AAD-AE32-C91AF55F58B6.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "A-why_0_8A62B87F-45BE-471F-B808-B4651D821448.png",
+        "timestamp" : 1792736777.639
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "FA114A3D-DD6F-458A-BB39-2B8C4F10F2EE.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "A-feedback_0_03E868C7-52CB-4083-B0CA-51EA8BDAB7FA.png",
+        "timestamp" : 1792736776.199
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "337419FA-107B-4956-ABC9-BA3210C86F80.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "A-event_0_1F24505B-3BD4-4BDD-ABCA-9386188B8207.png",
+        "timestamp" : 1792736774.641
+      }
+    ],
+    "testIdentifier" : "VisualPreviewTests/testBothDirectionsChoiceFeedbackAndComparison()",
+    "testIdentifierURL" : "test://com.apple.xcode/VisualPreview/VisualPreviewTests/VisualPreviewTests/testBothDirectionsChoiceFeedbackAndComparison"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "2084C491-F74F-42E1-853E-A20B4BDA508F",
+        "deviceName" : "LC Visual iPhone",
+        "exportedFileName" : "C00148A0-8F6D-4DF8-BBF7-0B673ED1BBF2.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "accessibility-XXXL-choice_0_F54BF965-D236-4CEB-8121-911DDF5FC130.png",
+        "timestamp" : 1792736803.031
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "2084C491-F74F-42E1-853E-A20B4BDA508F",
+        "deviceName" : "LC Visual iPhone",
+        "exportedFileName" : "AF3C04A3-ABC0-45EE-84A6-ECFB7822D23C.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "accessibility-XXXL-top_0_EC9802BA-1673-4178-A778-0677294B9F55.png",
+        "timestamp" : 1792736797.701
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "D35DCB8C-6342-4B0A-9063-B1B30D3F0215.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "accessibility-XXXL-choice_0_B6C7985F-8AF2-4CE9-8D0B-662F1C49D7AA.png",
+        "timestamp" : 1792736804.02
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "ED74848F-AC85-41D5-A02F-C93CDAB1E412.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "accessibility-XXXL-top_0_C56DECE4-1F8F-4CD6-9266-BE335D707777.png",
+        "timestamp" : 1792736798.713
+      }
+    ],
+    "testIdentifier" : "VisualPreviewTests/testLargestTypeKeepsChoicesReachable()",
+    "testIdentifierURL" : "test://com.apple.xcode/VisualPreview/VisualPreviewTests/VisualPreviewTests/testLargestTypeKeepsChoicesReachable"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "2084C491-F74F-42E1-853E-A20B4BDA508F",
+        "deviceName" : "LC Visual iPhone",
+        "exportedFileName" : "A499C039-FBB8-4C84-9937-EE4926EFDAE6.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "missing-trace_0_3DC82F16-11EC-4D27-8D5C-51B1025EFFF0.png",
+        "timestamp" : 1792736809.84
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "E2A6335B-CCA1-4ED5-A670-935D0A2755EC.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "missing-trace_0_3B91CFB1-8317-4C23-853D-CFD01D41AB6D.png",
+        "timestamp" : 1792736811.006
+      }
+    ],
+    "testIdentifier" : "VisualPreviewTests/testMissingTraceNeverInventsReasons()",
+    "testIdentifierURL" : "test://com.apple.xcode/VisualPreview/VisualPreviewTests/VisualPreviewTests/testMissingTraceNeverInventsReasons"
+  }
+]

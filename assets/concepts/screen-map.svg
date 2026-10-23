@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1540" viewBox="0 0 1200 1540"><rect width="1200" height="1540" fill="#eee7db"/><g font-family="PingFang TC, sans-serif" fill="#243A39"><text x="40" y="44" font-size="26">人生岔路 · 九狀態線框 / 候選規格</text>
+<rect x="40" y="70" width="350" height="450" rx="30" fill="#fffcf5" stroke="#526460"/><text x="62" y="113" font-size="22">01 開始一生</text>
+<rect x="60" y="140" width="310" height="65" rx="12" fill="#eee7db"/><text x="75" y="178" font-size="19">人生岔路</text>
+<rect x="60" y="225" width="310" height="65" rx="12" fill="#eee7db"/><text x="75" y="263" font-size="19">角色主視覺</text>
+<rect x="60" y="310" width="310" height="65" rx="12" fill="#eee7db"/><text x="75" y="348" font-size="19">開始 / 續玩</text>
+<rect x="60" y="395" width="310" height="65" rx="12" fill="#d3e3dc"/><text x="75" y="433" font-size="19">離線 · 無帳號</text>
+<text x="62" y="503" font-size="13">線框 · 待 LV-05</text>
+<rect x="430" y="70" width="350" height="450" rx="30" fill="#fffcf5" stroke="#526460"/><text x="452" y="113" font-size="22">02 選擇化身</text>
+<rect x="450" y="140" width="310" height="65" rx="12" fill="#eee7db"/><text x="465" y="178" font-size="19">水獺 / 野兔</text>
+<rect x="450" y="225" width="310" height="65" rx="12" fill="#eee7db"/><text x="465" y="263" font-size="19">犬 / 貓</text>
+<rect x="450" y="310" width="310" height="65" rx="12" fill="#eee7db"/><text x="465" y="348" font-size="19">外觀不改能力</text>
+<rect x="450" y="395" width="310" height="65" rx="12" fill="#d3e3dc"/><text x="465" y="433" font-size="19">確認化身</text>
+<text x="452" y="503" font-size="13">線框 · 待 LV-05</text>
+<rect x="820" y="70" width="350" height="450" rx="30" fill="#fffcf5" stroke="#526460"/><text x="842" y="113" font-size="22">03 我的起點</text>
+<rect x="840" y="140" width="310" height="65" rx="12" fill="#eee7db"/><text x="855" y="178" font-size="19">國家與家庭</text>
+<rect x="840" y="225" width="310" height="65" rx="12" fill="#eee7db"/><text x="855" y="263" font-size="19">資源與限制</text>
+<rect x="840" y="310" width="310" height="65" rx="12" fill="#eee7db"/><text x="855" y="348" font-size="19">支持 · 來源/假設</text>
+<rect x="840" y="395" width="310" height="65" rx="12" fill="#d3e3dc"/><text x="855" y="433" font-size="19">開始童年</text>
+<text x="842" y="503" font-size="13">線框 · 待 LV-05</text>
+<rect x="40" y="550" width="350" height="450" rx="30" fill="#fffcf5" stroke="#526460"/><text x="62" y="593" font-size="22">04 人生地圖</text>
+<rect x="60" y="620" width="310" height="65" rx="12" fill="#eee7db"/><text x="75" y="658" font-size="19">童年 → 青少年</text>
+<rect x="60" y="705" width="310" height="65" rx="12" fill="#eee7db"/><text x="75" y="743" font-size="19">青年 → 中年 → 晚年</text>
+<rect x="60" y="790" width="310" height="65" rx="12" fill="#eee7db"/><text x="75" y="828" font-size="19">已發生的人物節點</text>
+<rect x="60" y="875" width="310" height="65" rx="12" fill="#d3e3dc"/><text x="75" y="913" font-size="19">回到目前岔路</text>
+<text x="62" y="983" font-size="13">線框 · 待 LV-05</text>
+<rect x="430" y="550" width="350" height="450" rx="30" fill="#fffcf5" stroke="#526460"/><text x="452" y="593" font-size="22">05 事件決策</text>
+<rect x="450" y="620" width="310" height="65" rx="12" fill="#eee7db"/><text x="465" y="658" font-size="19">13 歲 · 紙橋挑戰</text>
+<rect x="450" y="705" width="310" height="65" rx="12" fill="#eee7db"/><text x="465" y="743" font-size="19">場景插畫</text>
+<rect x="450" y="790" width="310" height="65" rx="12" fill="#eee7db"/><text x="465" y="828" font-size="19">有限精力與支持</text>
+<rect x="450" y="875" width="310" height="65" rx="12" fill="#d3e3dc"/><text x="465" y="913" font-size="19">選項 A / 選項 B</text>
+<text x="452" y="983" font-size="13">SwiftUI 互動已實作</text>
+<rect x="820" y="550" width="350" height="450" rx="30" fill="#fffcf5" stroke="#526460"/><text x="842" y="593" font-size="22">06 當下後果</text>
+<rect x="840" y="620" width="310" height="65" rx="12" fill="#eee7db"/><text x="855" y="658" font-size="19">已選擇的路</text>
+<rect x="840" y="705" width="310" height="65" rx="12" fill="#eee7db"/><text x="855" y="743" font-size="19">立即變化</text>
+<rect x="840" y="790" width="310" height="65" rx="12" fill="#eee7db"/><text x="855" y="828" font-size="19">未來可能的呼應</text>
+<rect x="840" y="875" width="310" height="65" rx="12" fill="#d3e3dc"/><text x="855" y="913" font-size="19">看看為什麼</text>
+<text x="842" y="983" font-size="13">SwiftUI 互動已實作</text>
+<rect x="40" y="1030" width="350" height="450" rx="30" fill="#fffcf5" stroke="#526460"/><text x="62" y="1073" font-size="22">07 為什麼</text>
+<rect x="60" y="1100" width="310" height="65" rx="12" fill="#eee7db"/><text x="75" y="1138" font-size="19">實際參與的因素</text>
+<rect x="60" y="1185" width="310" height="65" rx="12" fill="#eee7db"/><text x="75" y="1223" font-size="19">選擇 / 環境 / 支持</text>
+<rect x="60" y="1270" width="310" height="65" rx="12" fill="#eee7db"/><text x="75" y="1308" font-size="19">Trace 與來源</text>
+<rect x="60" y="1355" width="310" height="65" rx="12" fill="#d3e3dc"/><text x="75" y="1393" font-size="19">無紀錄不推測</text>
+<text x="62" y="1463" font-size="13">SwiftUI 互動已實作</text>
+<rect x="430" y="1030" width="350" height="450" rx="30" fill="#fffcf5" stroke="#526460"/><text x="452" y="1073" font-size="22">08 環境比較</text>
+<rect x="450" y="1100" width="310" height="65" rx="12" fill="#eee7db"/><text x="465" y="1138" font-size="19">固定 / 變動條件</text>
+<rect x="450" y="1185" width="310" height="65" rx="12" fill="#eee7db"/><text x="465" y="1223" font-size="19">家庭 A 成本/支持</text>
+<rect x="450" y="1270" width="310" height="65" rx="12" fill="#eee7db"/><text x="465" y="1308" font-size="19">家庭 B 成本/支持</text>
+<rect x="450" y="1355" width="310" height="65" rx="12" fill="#d3e3dc"/><text x="465" y="1393" font-size="19">資料限制 · 不排行</text>
+<text x="452" y="1463" font-size="13">SwiftUI 互動已實作</text>
+<rect x="820" y="1030" width="350" height="450" rx="30" fill="#fffcf5" stroke="#526460"/><text x="842" y="1073" font-size="22">09 分岔與回顧</text>
+<rect x="840" y="1100" width="310" height="65" rx="12" fill="#eee7db"/><text x="855" y="1138" font-size="19">分岔前共同歷史</text>
+<rect x="840" y="1185" width="310" height="65" rx="12" fill="#eee7db"/><text x="855" y="1223" font-size="19">原路 / 改選</text>
+<rect x="840" y="1270" width="310" height="65" rx="12" fill="#eee7db"/><text x="855" y="1308" font-size="19">人物呼應與回顧</text>
+<rect x="840" y="1355" width="310" height="65" rx="12" fill="#d3e3dc"/><text x="855" y="1393" font-size="19">保留原局</text>
+<text x="842" y="1463" font-size="13">線框 · 待 LV-05</text>
+</g></svg>

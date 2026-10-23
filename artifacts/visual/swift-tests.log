@@ -1,0 +1,128 @@
+Building for debugging...
+[Computing dependencies]
+[Constructing description]
+[Pre-planning 1 / 211]
+[Planning deferred tasks]
+[30 / 95] LifeData-product
+[51 / 95] LifeCrossroads_LifeData
+[53 / 95] LifeCrossroads_LifeData
+[54 / 95]
+[55 / 96] LifeDomain
+[64 / 136]
+[65 / 136]
+[67 / 136]
+[70 / 136]
+[72 / 136]
+[73 / 136]
+[74 / 136]
+[77 / 136]
+[78 / 136]
+[80 / 136]
+[81 / 136]
+[83 / 136]
+[86 / 136]
+[87 / 136]
+[88 / 136]
+[89 / 136]
+[95 / 136] LifeDomain
+[101 / 136]
+[102 / 137] LifeDomain
+[102 / 137] LifeData
+[104 / 143]
+[105 / 143]
+[108 / 143] LifeData
+[119 / 144] life-demo-product
+[121 / 146] life-demo-product
+[122 / 146] LifeData
+[122 / 146] LifeDomain
+[124 / 146] life-demo-product
+[124 / 146] LifeDomain
+[128 / 146]
+[134 / 147] life-demo-product
+[136 / 147] LifeDomainTests-product
+[147 / 183]
+[150 / 183]
+[152 / 183]
+[155 / 183]
+[156 / 183]
+[158 / 183]
+[160 / 183]
+[162 / 183]
+[163 / 183]
+[164 / 183]
+[165 / 183]
+[166 / 183]
+[167 / 183]
+[168 / 183]
+[169 / 183]
+[172 / 183] LifeDomainTests-product
+[173 / 183] LifeDomainTests-product
+[177 / 183] LifeDomainTests-product
+[179 / 183] LifeDomainTests-product
+[180 / 183] LifeDomainTests-product
+[181 / 183] LifeDomainTests-product
+[183 / 183] LifeDomainTests-product
+Build complete! (58.31秒)
+Test Suite 'All tests' started at 2026-10-23 14:20:19.134.
+Test Suite 'LifeDomainTests.xctest' started at 2026-10-23 14:20:19.151.
+Test Suite 'LC01Tests' started at 2026-10-23 14:20:19.151.
+Test Case '-[LifeDomainTests.LC01Tests testAgeCostsAndResourceInputsFailBeforeArithmetic]' started.
+Test Case '-[LifeDomainTests.LC01Tests testAgeCostsAndResourceInputsFailBeforeArithmetic]' passed (0.093 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testBadIndicatorRangesAndSourceReferencesAreRejected]' started.
+Test Case '-[LifeDomainTests.LC01Tests testBadIndicatorRangesAndSourceReferencesAreRejected]' passed (0.187 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testCatalogAndStateAndTraceCodableRoundTrip]' started.
+Test Case '-[LifeDomainTests.LC01Tests testCatalogAndStateAndTraceCodableRoundTrip]' passed (0.056 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testChildAgencyDoesNotTransferAdultCareResponsibility]' started.
+Test Case '-[LifeDomainTests.LC01Tests testChildAgencyDoesNotTransferAdultCareResponsibility]' passed (0.002 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testChoiceChangeCreatesActualDelayedStoryDifference]' started.
+Test Case '-[LifeDomainTests.LC01Tests testChoiceChangeCreatesActualDelayedStoryDifference]' passed (0.016 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testCorruptJSONAndUnknownSchemaFailExplicitly]' started.
+Test Case '-[LifeDomainTests.LC01Tests testCorruptJSONAndUnknownSchemaFailExplicitly]' passed (0.015 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testCountryNamesAndCodesCannotSetSuccessMultipliers]' started.
+Test Case '-[LifeDomainTests.LC01Tests testCountryNamesAndCodesCannotSetSuccessMultipliers]' passed (0.011 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testDigitalThresholdBoundaries]' started.
+Test Case '-[LifeDomainTests.LC01Tests testDigitalThresholdBoundaries]' passed (0.029 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testEightCountriesSixteenFamiliesAndHonestReadiness]' started.
+Test Case '-[LifeDomainTests.LC01Tests testEightCountriesSixteenFamiliesAndHonestReadiness]' passed (0.019 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testEnvironmentCanChangeFeasibilityWithoutConsumingUnavailableChoice]' started.
+Test Case '-[LifeDomainTests.LC01Tests testEnvironmentCanChangeFeasibilityWithoutConsumingUnavailableChoice]' passed (0.014 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testFifteenSkeletonDecisionsCoverEveryStageAndThreeCallbacks]' started.
+Test Case '-[LifeDomainTests.LC01Tests testFifteenSkeletonDecisionsCoverEveryStageAndThreeCallbacks]' passed (0.004 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testFiveStageBoundaries]' started.
+Test Case '-[LifeDomainTests.LC01Tests testFiveStageBoundaries]' passed (0.000 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testForgedOrDuplicateStoryHooksCannotGrantResources]' started.
+Test Case '-[LifeDomainTests.LC01Tests testForgedOrDuplicateStoryHooksCannotGrantResources]' passed (0.014 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testInvalidTimeDuplicateDecisionAndVersionAreRejected]' started.
+Test Case '-[LifeDomainTests.LC01Tests testInvalidTimeDuplicateDecisionAndVersionAreRejected]' passed (0.023 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testKeyedRandomHasStableGoldenVectorAndNoSharedStream]' started.
+Test Case '-[LifeDomainTests.LC01Tests testKeyedRandomHasStableGoldenVectorAndNoSharedStream]' passed (0.006 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testManySeededSkeletonLivesStayValidAndCanAlwaysAdvance]' started.
+Test Case '-[LifeDomainTests.LC01Tests testManySeededSkeletonLivesStayValidAndCanAlwaysAdvance]' passed (10.380 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testMissingValueCannotBecomeVerifiedZero]' started.
+Test Case '-[LifeDomainTests.LC01Tests testMissingValueCannotBecomeVerifiedZero]' passed (0.007 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testPinnedRealStatisticsHaveIndependentExpectedValues]' started.
+Test Case '-[LifeDomainTests.LC01Tests testPinnedRealStatisticsHaveIndependentExpectedValues]' passed (0.002 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testRepositoryRejectsAbsentAndTamperedEvidence]' started.
+Test Case '-[LifeDomainTests.LC01Tests testRepositoryRejectsAbsentAndTamperedEvidence]' passed (0.016 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testRepositoryRejectsAlteredObservationEvenWithIntactSourceHash]' started.
+Test Case '-[LifeDomainTests.LC01Tests testRepositoryRejectsAlteredObservationEvenWithIntactSourceHash]' passed (0.012 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testResourceClampingIsVisibleAndCostsCannotGoNegative]' started.
+Test Case '-[LifeDomainTests.LC01Tests testResourceClampingIsVisibleAndCostsCannotGoNegative]' passed (0.002 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testSameChoiceAcrossCountriesHasExplainableCosts]' started.
+Test Case '-[LifeDomainTests.LC01Tests testSameChoiceAcrossCountriesHasExplainableCosts]' passed (0.003 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testSameCountryFamiliesHaveDifferentTradeoffsAndSupport]' started.
+Test Case '-[LifeDomainTests.LC01Tests testSameCountryFamiliesHaveDifferentTradeoffsAndSupport]' passed (0.004 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testSameSeedAndSerializedResumeProduceIdenticalTrace]' started.
+Test Case '-[LifeDomainTests.LC01Tests testSameSeedAndSerializedResumeProduceIdenticalTrace]' passed (0.010 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testTraceExactlyReconcilesCostEffectsAndProvenance]' started.
+Test Case '-[LifeDomainTests.LC01Tests testTraceExactlyReconcilesCostEffectsAndProvenance]' passed (0.005 seconds).
+Test Suite 'LC01Tests' passed at 2026-10-23 14:20:30.087.
+	 Executed 25 tests, with 0 failures (0 unexpected) in 10.931 (10.936) seconds
+Test Suite 'LifeDomainTests.xctest' passed at 2026-10-23 14:20:30.087.
+	 Executed 25 tests, with 0 failures (0 unexpected) in 10.931 (10.936) seconds
+Test Suite 'All tests' passed at 2026-10-23 14:20:30.087.
+	 Executed 25 tests, with 0 failures (0 unexpected) in 10.931 (10.954) seconds
+◇ Test run started.
+↳ Testing Library Version: 2084
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

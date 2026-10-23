@@ -1,0 +1,44 @@
+[
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "2084C491-F74F-42E1-853E-A20B4BDA508F",
+        "deviceName" : "LC Visual iPhone",
+        "exportedFileName" : "6AC0911C-3776-4916-8DE9-F973D3EAFE8F.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "accessibility-XXXL-choice_0_D439D906-8748-4215-AD6C-ACD6942E0D31.png",
+        "timestamp" : 1792736867.381
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "2084C491-F74F-42E1-853E-A20B4BDA508F",
+        "deviceName" : "LC Visual iPhone",
+        "exportedFileName" : "A70D64AC-8714-47A1-BFF8-1FE0F237AE98.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "accessibility-XXXL-top_0_998A0EF3-C0D3-4198-B47E-8C904AC8EC48.png",
+        "timestamp" : 1792736861.892
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "A6FCCFE6-3B49-4944-AFAB-5BBFC4533CF5.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "accessibility-XXXL-choice_0_1D7F96A0-C49B-473D-95F3-BD4B9069968F.png",
+        "timestamp" : 1792736867.317
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "F0AF0AED-43B1-48D5-A556-8AA6EEE1101A.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "accessibility-XXXL-top_0_432D23AE-4591-4E06-8E7B-1D6777C4E3DC.png",
+        "timestamp" : 1792736861.858
+      }
+    ],
+    "testIdentifier" : "VisualPreviewTests/testLargestTypeKeepsChoicesReachable()",
+    "testIdentifierURL" : "test://com.apple.xcode/VisualPreview/VisualPreviewTests/VisualPreviewTests/testLargestTypeKeepsChoicesReachable"
+  }
+]

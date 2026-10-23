@@ -1,0 +1,4 @@
+Use case: style-transfer. Asset type: alternative game scene rendering, exactly matched A/B comparison.
+Use the attached scene as the EDIT TARGET. Preserve precisely the same two original otter and hare characters, costumes, apparent age 13, facial identity, exact poses, hand placement, bridge, table, object positions and camera composition. Do not change the story or add characters.
+Change ONLY artistic rendering to STYLE B: crisp modern 2D narrative adventure art, tapered navy ink contour, broad geometric planes, flat cel shadows, very restrained texture. Muted teal, amber and rust accents with cool deep indigo environmental shadows and gentle warm window light. Mood remains friendly, reflective and inventive, not ominous. Same community workshop, same paper bridge construction.
+Keep all readable anatomy. No text, symbols, signage, speech bubbles, UI, numbers, labels, buttons, logos or watermark. No specific artist or existing game imitation.

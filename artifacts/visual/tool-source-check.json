@@ -1,0 +1,110 @@
+[
+  {
+    "repo": "openai/skills",
+    "url": "https://github.com/openai/skills",
+    "default_branch": "main",
+    "head": "49f948faa9258a0c61caceaf225e179651397431",
+    "license_api": null,
+    "checked_on": "2026-10-23",
+    "installed_or_executed": false
+  },
+  {
+    "repo": "kart-io/picture-skills",
+    "url": "https://github.com/kart-io/picture-skills",
+    "default_branch": "master",
+    "head": "1021174cabac1e4df890f57573ceda21b2c797de",
+    "license_api": null,
+    "checked_on": "2026-10-23",
+    "installed_or_executed": false
+  },
+  {
+    "repo": "HVision-NKU/StoryDiffusion",
+    "url": "https://github.com/HVision-NKU/StoryDiffusion",
+    "default_branch": "main",
+    "head": "8de45e424887766fdd84dc917436ff8605f00149",
+    "license_api": {
+      "key": "apache-2.0",
+      "name": "Apache License 2.0",
+      "spdx_id": "Apache-2.0",
+      "url": "https://api.github.com/licenses/apache-2.0",
+      "node_id": "MDc6TGljZW5zZTI="
+    },
+    "checked_on": "2026-10-23",
+    "installed_or_executed": false
+  },
+  {
+    "repo": "Acly/krita-ai-diffusion",
+    "url": "https://github.com/Acly/krita-ai-diffusion",
+    "default_branch": "main",
+    "head": "828b70c33c5c97f326e03170cd693beef798231e",
+    "license_api": {
+      "key": "gpl-3.0",
+      "name": "GNU General Public License v3.0",
+      "spdx_id": "GPL-3.0",
+      "url": "https://api.github.com/licenses/gpl-3.0",
+      "node_id": "MDc6TGljZW5zZTk="
+    },
+    "checked_on": "2026-10-23",
+    "installed_or_executed": false
+  },
+  {
+    "repo": "Comfy-Org/ComfyUI",
+    "url": "https://github.com/Comfy-Org/ComfyUI",
+    "default_branch": "master",
+    "head": "d07dff4565ea9804277fff8cdfa0c817e08c3d44",
+    "license_api": {
+      "key": "gpl-3.0",
+      "name": "GNU General Public License v3.0",
+      "spdx_id": "GPL-3.0",
+      "url": "https://api.github.com/licenses/gpl-3.0",
+      "node_id": "MDc6TGljZW5zZTk="
+    },
+    "checked_on": "2026-10-23",
+    "installed_or_executed": false
+  },
+  {
+    "repo": "danielgatis/rembg",
+    "url": "https://github.com/danielgatis/rembg",
+    "default_branch": "main",
+    "head": "c5b48b0417a0254df7d461efa14573597f369a83",
+    "license_api": {
+      "key": "mit",
+      "name": "MIT License",
+      "spdx_id": "MIT",
+      "url": "https://api.github.com/licenses/mit",
+      "node_id": "MDc6TGljZW5zZTEz"
+    },
+    "checked_on": "2026-10-23",
+    "installed_or_executed": false
+  },
+  {
+    "repo": "invoke-ai/InvokeAI",
+    "url": "https://github.com/invoke-ai/InvokeAI",
+    "default_branch": "main",
+    "head": "cbc5ab0595d17e81289108b77229cd3886af7669",
+    "license_api": {
+      "key": "apache-2.0",
+      "name": "Apache License 2.0",
+      "spdx_id": "Apache-2.0",
+      "url": "https://api.github.com/licenses/apache-2.0",
+      "node_id": "MDc6TGljZW5zZTI="
+    },
+    "checked_on": "2026-10-23",
+    "installed_or_executed": false
+  },
+  {
+    "repo": "black-forest-labs/flux",
+    "url": "https://github.com/black-forest-labs/flux",
+    "default_branch": "main",
+    "head": "802fb4713906133fcbd0d8dc5351620ca4773036",
+    "license_api": {
+      "key": "apache-2.0",
+      "name": "Apache License 2.0",
+      "spdx_id": "Apache-2.0",
+      "url": "https://api.github.com/licenses/apache-2.0",
+      "node_id": "MDc6TGljZW5zZTI="
+    },
+    "checked_on": "2026-10-23",
+    "installed_or_executed": false
+  }
+]

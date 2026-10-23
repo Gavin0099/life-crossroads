@@ -1,0 +1,88 @@
+{
+  "task": "LV-00 / LV-01 + four character age sheets",
+  "date": "2026-10-23",
+  "branch": "codex/lc-visual-design",
+  "base_commit": "6a5137b",
+  "zip_sha256": "11201b90fb8731549072567b26d01e5e69a45a9198278364e1da698698ceb8a5",
+  "generation": {
+    "tool": "builtin:image_gen.imagegen",
+    "calls": 9,
+    "source_images": 9,
+    "selected_age_sheets": 4,
+    "life_stages_per_sheet": 5,
+    "approved_for_app": 0,
+    "model_name": null,
+    "model_version": null,
+    "seed": null
+  },
+  "checks": {
+    "native_build": {
+      "result": "PASS",
+      "log": "artifacts/visual/build.log"
+    },
+    "ui": {
+      "result": "PASS",
+      "unique_tests": 4,
+      "devices": [
+        "iPhone 17 iOS 27.0 Simulator",
+        "iPhone SE (3rd generation) iOS 27.0 Simulator"
+      ],
+      "summary": "artifacts/visual/ui-regression-summary.json"
+    },
+    "domain_regression": {
+      "result": "PASS",
+      "tests": 25,
+      "log": "artifacts/visual/swift-tests.log"
+    },
+    "asset_manifest": {
+      "result": "PASS",
+      "log": "artifacts/visual/manifest-check.json"
+    },
+    "manifest_fixtures": {
+      "result": "PASS",
+      "tests": 8,
+      "log": "artifacts/visual/manifest-tests.log"
+    },
+    "governance_basic": {
+      "result": "PASS",
+      "log": "artifacts/visual/governance-basic.log"
+    },
+    "before_fix": {
+      "result": "FAIL",
+      "reason": "narrow maximum type: fixed header leaves insufficient scroll area",
+      "evidence": [
+        "artifacts/visual/ui-narrow-before.json",
+        "artifacts/visual/regression-before/narrow-max-type-choice.png"
+      ]
+    },
+    "accessibility_final": {
+      "result": "PASS",
+      "summary": "artifacts/visual/ui-accessibility-summary.json",
+      "scope": "Hide oversized decorative choice icons at accessibility size; re-run largest-type regression on both devices"
+    }
+  },
+  "unchanged_paths": [
+    "LifeCrossroads/Domain",
+    "LifeCrossroads/Data",
+    "Package.swift"
+  ],
+  "not_claimed": [
+    "expert art approval",
+    "child testing",
+    "physical iPhone",
+    "commercial release clearance",
+    "domain integration",
+    "Xcode Canvas execution",
+    "full LV-02/04/05/06 completion",
+    "real runtime governance execution",
+    "push/PR/release"
+  ],
+  "next_action": "人工檢視兩風格與四張年齡表，鎖定角色特徵後進 LV-02 三視圖/表情及 LV-04 正式透明素材。",
+  "prepush_repair": {
+    "reason": "pre-push guard rejected plain text in memory-before.json",
+    "fix": "wrapped original output in valid JSON; replayed the two unpublished commits and rebound canonical memory",
+    "backup_branch": "codex/lc-visual-design-prepush-backup",
+    "bypass_used": false,
+    "product_code_or_images_changed": false
+  }
+}

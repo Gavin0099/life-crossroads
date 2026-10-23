@@ -1,0 +1,321 @@
+{
+  "version": "0.1",
+  "generated_on": "2026-10-23",
+  "assets": [
+    {
+      "asset_id": "style-A-lineup",
+      "path": "assets/concepts/style-A/lineup.png",
+      "role": "lineup",
+      "life_stages": [],
+      "width": 1536,
+      "height": 1024,
+      "has_alpha_channel": false,
+      "transparent_cutout_verified": false,
+      "source_type": "ai_generated",
+      "generator": "builtin:image_gen.imagegen",
+      "model_name": null,
+      "model_version": null,
+      "seed": null,
+      "workflow_version": "lv01-v0.1",
+      "prompt_path": "assets/prompts/style-A-lineup.txt",
+      "reference_asset_ids": [],
+      "input_hashes": {},
+      "output_sha256": "a9ab407c2713f128ad464e5c9e2222096617c5615c80a4e7919c40a00ef662cf",
+      "status": "candidate",
+      "review_child_safety": "ai_screened_only",
+      "review_visual_consistency": "issues_noted",
+      "review_cultural_context": "no_country_specific_art",
+      "review_licensing": "pending_account_and_owner_review",
+      "license_evidence": null,
+      "approved_for_app": false
+    },
+    {
+      "asset_id": "style-A-scene",
+      "path": "assets/concepts/style-A/scene.png",
+      "role": "scene",
+      "life_stages": [],
+      "width": 1536,
+      "height": 1024,
+      "has_alpha_channel": false,
+      "transparent_cutout_verified": false,
+      "source_type": "ai_generated",
+      "generator": "builtin:image_gen.imagegen",
+      "model_name": null,
+      "model_version": null,
+      "seed": null,
+      "workflow_version": "lv01-v0.1",
+      "prompt_path": "assets/prompts/scene-A.txt",
+      "reference_asset_ids": [
+        "style-A-lineup",
+        "style-B-lineup"
+      ],
+      "input_hashes": {
+        "style-A-lineup": "a9ab407c2713f128ad464e5c9e2222096617c5615c80a4e7919c40a00ef662cf",
+        "style-B-lineup": "4ecdabedd47b50ff11bf3f9867b1d2dd61e17a6c6b8d11066994c307edb32c89"
+      },
+      "output_sha256": "fc42f4dff06311a560418f129c0ac24f21cec35ca8cfbfa993c8f83c8881cc57",
+      "status": "candidate",
+      "review_child_safety": "ai_screened_only",
+      "review_visual_consistency": "issues_noted",
+      "review_cultural_context": "no_country_specific_art",
+      "review_licensing": "pending_account_and_owner_review",
+      "license_evidence": null,
+      "approved_for_app": false
+    },
+    {
+      "asset_id": "style-B-lineup",
+      "path": "assets/concepts/style-B/lineup.png",
+      "role": "lineup",
+      "life_stages": [],
+      "width": 1536,
+      "height": 1024,
+      "has_alpha_channel": false,
+      "transparent_cutout_verified": false,
+      "source_type": "ai_generated",
+      "generator": "builtin:image_gen.imagegen",
+      "model_name": null,
+      "model_version": null,
+      "seed": null,
+      "workflow_version": "lv01-v0.1",
+      "prompt_path": "assets/prompts/style-B-lineup.txt",
+      "reference_asset_ids": [
+        "style-A-lineup"
+      ],
+      "input_hashes": {
+        "style-A-lineup": "a9ab407c2713f128ad464e5c9e2222096617c5615c80a4e7919c40a00ef662cf"
+      },
+      "output_sha256": "4ecdabedd47b50ff11bf3f9867b1d2dd61e17a6c6b8d11066994c307edb32c89",
+      "status": "candidate",
+      "review_child_safety": "ai_screened_only",
+      "review_visual_consistency": "issues_noted",
+      "review_cultural_context": "no_country_specific_art",
+      "review_licensing": "pending_account_and_owner_review",
+      "license_evidence": null,
+      "approved_for_app": false
+    },
+    {
+      "asset_id": "style-B-scene",
+      "path": "assets/concepts/style-B/scene.png",
+      "role": "scene",
+      "life_stages": [],
+      "width": 1536,
+      "height": 1024,
+      "has_alpha_channel": false,
+      "transparent_cutout_verified": false,
+      "source_type": "ai_generated",
+      "generator": "builtin:image_gen.imagegen",
+      "model_name": null,
+      "model_version": null,
+      "seed": null,
+      "workflow_version": "lv01-v0.1",
+      "prompt_path": "assets/prompts/scene-B.txt",
+      "reference_asset_ids": [
+        "style-A-scene"
+      ],
+      "input_hashes": {
+        "style-A-scene": "fc42f4dff06311a560418f129c0ac24f21cec35ca8cfbfa993c8f83c8881cc57"
+      },
+      "output_sha256": "415c1c81382b323ced4b0eda45d4909c57c422b7e47a17faf1b5c5f23cd78f41",
+      "status": "candidate",
+      "review_child_safety": "ai_screened_only",
+      "review_visual_consistency": "issues_noted",
+      "review_cultural_context": "no_country_specific_art",
+      "review_licensing": "pending_account_and_owner_review",
+      "license_evidence": null,
+      "approved_for_app": false
+    },
+    {
+      "asset_id": "otter-ages-v1",
+      "path": "assets/characters/concepts/otter-five-stages.png",
+      "role": "age_sheet",
+      "life_stages": [
+        "childhood",
+        "adolescence",
+        "young_adult",
+        "middle_adult",
+        "elder"
+      ],
+      "width": 1774,
+      "height": 887,
+      "has_alpha_channel": false,
+      "transparent_cutout_verified": false,
+      "source_type": "ai_generated",
+      "generator": "builtin:image_gen.imagegen",
+      "model_name": null,
+      "model_version": null,
+      "seed": null,
+      "workflow_version": "lv01-v0.1",
+      "prompt_path": "assets/prompts/ages-otter.txt",
+      "reference_asset_ids": [
+        "style-A-lineup",
+        "style-B-lineup"
+      ],
+      "input_hashes": {
+        "style-A-lineup": "a9ab407c2713f128ad464e5c9e2222096617c5615c80a4e7919c40a00ef662cf",
+        "style-B-lineup": "4ecdabedd47b50ff11bf3f9867b1d2dd61e17a6c6b8d11066994c307edb32c89"
+      },
+      "output_sha256": "3a2012359d1c3e0942c6c6fff3942aa426145f603561598a94de22c1078f44ed",
+      "status": "candidate",
+      "review_child_safety": "ai_screened_only",
+      "review_visual_consistency": "issues_noted",
+      "review_cultural_context": "no_country_specific_art",
+      "review_licensing": "pending_account_and_owner_review",
+      "license_evidence": null,
+      "approved_for_app": false
+    },
+    {
+      "asset_id": "hare-ages-v1",
+      "path": "assets/characters/concepts/hare-five-stages.png",
+      "role": "age_sheet",
+      "life_stages": [
+        "childhood",
+        "adolescence",
+        "young_adult",
+        "middle_adult",
+        "elder"
+      ],
+      "width": 1774,
+      "height": 887,
+      "has_alpha_channel": false,
+      "transparent_cutout_verified": false,
+      "source_type": "ai_generated",
+      "generator": "builtin:image_gen.imagegen",
+      "model_name": null,
+      "model_version": null,
+      "seed": null,
+      "workflow_version": "lv01-v0.1",
+      "prompt_path": "assets/prompts/ages-hare.txt",
+      "reference_asset_ids": [
+        "style-A-lineup",
+        "style-B-lineup"
+      ],
+      "input_hashes": {
+        "style-A-lineup": "a9ab407c2713f128ad464e5c9e2222096617c5615c80a4e7919c40a00ef662cf",
+        "style-B-lineup": "4ecdabedd47b50ff11bf3f9867b1d2dd61e17a6c6b8d11066994c307edb32c89"
+      },
+      "output_sha256": "59d9cc4d5871026814c7eb36843ab9e0ef0dbd654f761c10c8a4f4e04ba1576d",
+      "status": "candidate",
+      "review_child_safety": "ai_screened_only",
+      "review_visual_consistency": "issues_noted",
+      "review_cultural_context": "no_country_specific_art",
+      "review_licensing": "pending_account_and_owner_review",
+      "license_evidence": null,
+      "approved_for_app": false
+    },
+    {
+      "asset_id": "dog-ages-v1",
+      "path": "assets/characters/concepts/dog-five-stages.png",
+      "role": "age_sheet",
+      "life_stages": [
+        "childhood",
+        "adolescence",
+        "young_adult",
+        "middle_adult",
+        "elder"
+      ],
+      "width": 1774,
+      "height": 887,
+      "has_alpha_channel": false,
+      "transparent_cutout_verified": false,
+      "source_type": "ai_generated",
+      "generator": "builtin:image_gen.imagegen",
+      "model_name": null,
+      "model_version": null,
+      "seed": null,
+      "workflow_version": "lv01-v0.1",
+      "prompt_path": "assets/prompts/ages-dog.txt",
+      "reference_asset_ids": [
+        "style-A-lineup",
+        "style-B-lineup"
+      ],
+      "input_hashes": {
+        "style-A-lineup": "a9ab407c2713f128ad464e5c9e2222096617c5615c80a4e7919c40a00ef662cf",
+        "style-B-lineup": "4ecdabedd47b50ff11bf3f9867b1d2dd61e17a6c6b8d11066994c307edb32c89"
+      },
+      "output_sha256": "d789898c8970fa00e3557299795d227205362543bc264c2e0dd4b6492da9e768",
+      "status": "candidate",
+      "review_child_safety": "ai_screened_only",
+      "review_visual_consistency": "issues_noted",
+      "review_cultural_context": "no_country_specific_art",
+      "review_licensing": "pending_account_and_owner_review",
+      "license_evidence": null,
+      "approved_for_app": false
+    },
+    {
+      "asset_id": "cat-ages-v1",
+      "path": "assets/characters/concepts/cat-five-stages-v1.png",
+      "role": "age_sheet",
+      "life_stages": [
+        "childhood",
+        "adolescence",
+        "young_adult",
+        "middle_adult",
+        "elder"
+      ],
+      "width": 1774,
+      "height": 887,
+      "has_alpha_channel": false,
+      "transparent_cutout_verified": false,
+      "source_type": "ai_generated",
+      "generator": "builtin:image_gen.imagegen",
+      "model_name": null,
+      "model_version": null,
+      "seed": null,
+      "workflow_version": "lv01-v0.1",
+      "prompt_path": "assets/prompts/ages-cat.txt",
+      "reference_asset_ids": [
+        "style-A-lineup",
+        "style-B-lineup"
+      ],
+      "input_hashes": {
+        "style-A-lineup": "a9ab407c2713f128ad464e5c9e2222096617c5615c80a4e7919c40a00ef662cf",
+        "style-B-lineup": "4ecdabedd47b50ff11bf3f9867b1d2dd61e17a6c6b8d11066994c307edb32c89"
+      },
+      "output_sha256": "d1460e3a9a4273b204bf6003a4d2d9d0a1bbe9bfdaa76328e84b4af65823cbde",
+      "status": "rejected_tail_shape",
+      "review_child_safety": "ai_screened_only",
+      "review_visual_consistency": "issues_noted",
+      "review_cultural_context": "no_country_specific_art",
+      "review_licensing": "pending_account_and_owner_review",
+      "license_evidence": null,
+      "approved_for_app": false
+    },
+    {
+      "asset_id": "cat-ages-v2",
+      "path": "assets/characters/concepts/cat-five-stages.png",
+      "role": "age_sheet",
+      "life_stages": [
+        "childhood",
+        "adolescence",
+        "young_adult",
+        "middle_adult",
+        "elder"
+      ],
+      "width": 1774,
+      "height": 887,
+      "has_alpha_channel": false,
+      "transparent_cutout_verified": false,
+      "source_type": "ai_generated",
+      "generator": "builtin:image_gen.imagegen",
+      "model_name": null,
+      "model_version": null,
+      "seed": null,
+      "workflow_version": "lv01-v0.1",
+      "prompt_path": "assets/prompts/cat-tail-fix.txt",
+      "reference_asset_ids": [
+        "cat-ages-v1"
+      ],
+      "input_hashes": {
+        "cat-ages-v1": "d1460e3a9a4273b204bf6003a4d2d9d0a1bbe9bfdaa76328e84b4af65823cbde"
+      },
+      "output_sha256": "0cb976e7689b9c429c9574e5c65a16abe4d0b1ee190b5344e676f8887befada2",
+      "status": "candidate",
+      "review_child_safety": "ai_screened_only",
+      "review_visual_consistency": "issues_noted",
+      "review_cultural_context": "no_country_specific_art",
+      "review_licensing": "pending_account_and_owner_review",
+      "license_evidence": null,
+      "approved_for_app": false
+    }
+  ]
+}
