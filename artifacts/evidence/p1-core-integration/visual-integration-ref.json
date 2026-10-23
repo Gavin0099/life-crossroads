@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/codex/visual-integration-p1-core",
+  "node_id": "REF_kwDOVUUEq9oAK3JlZnMvaGVhZHMvY29kZXgvdmlzdWFsLWludGVncmF0aW9uLXAxLWNvcmU",
+  "url": "https://api.github.com/repos/Gavin0099/life-crossroads/git/refs/heads/codex/visual-integration-p1-core",
+  "object": {
+    "sha": "430fbf8555712d21fba4d2925399221bcbbf44b0",
+    "type": "commit",
+    "url": "https://api.github.com/repos/Gavin0099/life-crossroads/git/commits/430fbf8555712d21fba4d2925399221bcbbf44b0"
+  }
+}

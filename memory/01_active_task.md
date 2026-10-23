@@ -29,3 +29,7 @@
 - 條件事件＋Event-first獨立切片本機完成：23候選/15槽、固定0/1/2三局及完整重播；58 Swift、7 Python、5 UI通過，Simulator已刪。待獨立PR推送/HEAD CI確認，維持HOLD；真人重玩性未驗收。 <!-- memory_record_projection:active-task-summary:87d37bb11f7ab35357f40441e0bcadc426633db05bd6ae4b5385e2c9a67c0c3c -->
 
 - RNG-V2本機完成：40事件/5里程碑/七故事線，2x1024重跑一致；差異中位9/15，投入人際滿格148→4/256。71 Swift、15 Python、5 UI通過且Simulator已刪；待獨立Draft PR與HEAD CI，兩鏈普遍性及兒少驗收未通過。 <!-- memory_record_projection:active-task-summary:c1e8f0572dc669b6a6d35ea3e38f76d63feaa8549ee7f8a600c66ce8c4f2ffa4 -->
+
+- PR4 c05ee51：Review 5628794428確認工程通過、Draft/HOLD；同HEAD CI成功。後續候選優先故事延續及成長/支持/恢復/關係分項，休息0鏈不等於沒有後果。此輪僅本機審查紀錄，未實作或提交。 <!-- memory_record_projection:active-task-summary:bfc0aa08a2ee952cbca9dc4b2b9247bcbc315d61402c1fd493c9c133be880990 -->
+
+- PR1～4已依序merge至main核心430fbf8；71 Swift/15 Python/5 UI通過且Simulator已刪。Visual WIP3438fc6已推送，新main基底整合分支已交接；待文件/記憶push與最終main CI。後續LC04→LC03；P1及發布未通過。 <!-- memory_record_projection:active-task-summary:ca0b3d6b54b9aa0615b6ff702bc58764a2a60aafdb5567409654905f96739586 -->

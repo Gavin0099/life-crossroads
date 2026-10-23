@@ -91,3 +91,25 @@
 - Validation boundary: PASS: artifacts/evidence/test-results/pr2-review-committed.json ->exit_code=0 (46 Swift); PASS: pr2-review-python.json (3 Python); PASS: pr2-review-ui-fixed.json (2 SE UI, 32 sources match committed implementation); PASS: pr2-review-large-text.json (one AX XXXL repeat). Release/demo/offline/basic6 PASS. Prior UI receipt exit143 after failed assertions is not normal completion.
 - Next action: 推回原PR並核對最新head CI；兩PR保留HOLD；實機、VoiceOver及10至15歲兒少節奏/娛樂性仍待實測。
 - PLAN reconciliation: `updated`
+
+<!-- memory_record_projection:review-log:bfc0aa08a2ee952cbca9dc4b2b9247bcbc315d61402c1fd493c9c133be880990 -->
+### Canonical memory checkpoint — PR4-review-5628794428-2026-10-23
+
+- Writer: `governance_tools.memory_record`
+- Record identity: `bfc0aa08a2ee952cbca9dc4b2b9247bcbc315d61402c1fd493c9c133be880990`
+- Commit binding: `c05ee5143f8f6b56ff0d71507e2c3f0580c84166` (bound)
+- Record: 接收使用者PR4獨立Review 5628794428並核對GitHub：c05ee51仍Draft/open/未合併，Actions 39956496533相同HEAD成功。同步PLAN與docs/rng-v2：有界工程目標通過，產品HOLD；後續候選先分開主動成長、支持、恢復、人物關係及未呼應量測。原linked-chain偏重可行lead，休息0/256不代表沒有故事後果。本輪僅本機紀錄，沒有新程式、提交或推送；commit綁定審查對象，不代表文件已提交。
+- Validation boundary: PASS: artifacts/evidence/rng-v2/review-5628794428.json保存遠端核對；bash scripts/governance-check.sh --profile basic為6項PASS，artifacts/governance/basic/checks.json；git diff --check通過。NOT RUN: 本輪為文件與審查紀錄，未重跑Swift/Python/UI測試、未建立Simulator；不新增遊戲性證據。
+- Next action: 候選後續切片先以同1,024局測試格建立四類前因與後續量測，再依證據改善故事延續；保留Draft/HOLD及LC-03、LC-04、實機、VoiceOver、兒少驗收缺口。本次紀錄不啟動該產品切片。
+- PLAN reconciliation: `updated`
+
+<!-- memory_record_projection:review-log:ca0b3d6b54b9aa0615b6ff702bc58764a2a60aafdb5567409654905f96739586 -->
+### Canonical memory checkpoint — P1-core-integration-2026-10-23
+
+- Writer: `governance_tools.memory_record`
+- Record identity: `ca0b3d6b54b9aa0615b6ff702bc58764a2a60aafdb5567409654905f96739586`
+- Commit binding: `4042309` (bound)
+- Record: 依本輪使用者明確授權，完成整合驗證與獨立exact-head覆核，PR1至4依序merge到main，核心430fbf8保留全部祖先且tree等於c05ee51；五條舊threads依修復證據結案。圖片35檔WIP原樣保存為3438fc6並push獨立visual分支，沒有選稿或整條合併。從430fbf8建立遠端codex/visual-integration-p1-core並通知原Visual工作線；後續Gameplay先LC04再LC03。4042309只同步審查、文件與證據，本次companion包含PLAN及.governance/baseline.yaml同步，不改產品碼。
+- Validation boundary: PASS: artifacts/evidence/test-results/p1-core-metadata.json -> exit_code=0 (6 basic checks at documentation commit). Product integration evidence: artifacts/evidence/p1-core-integration/integration-validation.json (71 Swift, 15 Python, 5 UI; product bytes c05ee51; Simulator deleted). Merge evidence: artifacts/evidence/p1-core-integration/merged-core.json . Visual handoff: artifacts/evidence/p1-core-integration/handoff.json . NOT CLAIMED: physical device, manual VoiceOver, child playtests, release, final post-push CI.
+- Next action: 推送文件與本記憶companion後核對最終main ref與CI；交付驗證完成後產品優先LC04完整改選，再LC03環境差異，Visual在獨立main基底分支選擇性接入已選稿素材。
+- PLAN reconciliation: `updated`

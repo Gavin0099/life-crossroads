@@ -1,0 +1,10 @@
+{
+  "thread_id": "01a16763-cf44-76e0-9c23-31e763c68892",
+  "title": "規劃 Visual Agent 工作線",
+  "core_sha": "430fbf8555712d21fba4d2925399221bcbbf44b0",
+  "integration_branch": "codex/visual-integration-p1-core",
+  "message_delivered": true,
+  "working_tree_rebased": false,
+  "selected_assets_imported": false,
+  "instruction": "Preserve original WIP; use fresh main-based branch and selected assets/UI only; fetch latest origin/main before integration"
+}
