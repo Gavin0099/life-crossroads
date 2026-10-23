@@ -1,0 +1,2 @@
+# Keep native logs unmodified.
+*.log whitespace=-blank-at-eol,-blank-at-eof

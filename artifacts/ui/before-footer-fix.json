@@ -1,0 +1,52 @@
+{
+  "devicesAndConfigurations" : [
+    {
+      "device" : {
+        "architecture" : "arm64",
+        "deviceId" : "72669DC6-3892-4292-B1E3-B8DC61F5B0A9",
+        "deviceName" : "LC UI Event First",
+        "modelName" : "iPhone 17",
+        "osBuildNumber" : "24A434",
+        "osVersion" : "27.0",
+        "platform" : "iOS Simulator"
+      },
+      "expectedFailures" : 0,
+      "failedTests" : 1,
+      "passedTests" : 0,
+      "skippedTests" : 0,
+      "testPlanConfiguration" : {
+        "configurationId" : "1",
+        "configurationName" : "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription" : "EventFirst · Built with macOS 27.0",
+  "expectedFailures" : 0,
+  "failedTests" : 1,
+  "finishTime" : 1792740525.132,
+  "passedTests" : 0,
+  "result" : "Failed",
+  "runtimeWarnings" : [
+
+  ],
+  "skippedTests" : 0,
+  "startTime" : 1792740468.802,
+  "statistics" : [
+
+  ],
+  "testFailures" : [
+    {
+      "failureText" : "Failed to tap \"showReason\" Button: No matches found for Elements matching predicate '\"showReason\" IN identifiers' from input {(\n    Button, identifier: 'footerActions', label: '查看原因',\n    Button, identifier: 'footerActions', label: '繼續這一生',\n    Button, identifier: 'details', label: '查看人物與人生資料'\n)}",
+      "targetName" : "EventFirstTests",
+      "testIdentifier" : 1,
+      "testIdentifierString" : "EventFirstTests/testChoiceToOutcomeReasonCompareAndNextEvent()",
+      "testIdentifierURL" : "test://com.apple.xcode/EventFirst/EventFirstTests/EventFirstTests/testChoiceToOutcomeReasonCompareAndNextEvent",
+      "testName" : "testChoiceToOutcomeReasonCompareAndNextEvent()"
+    }
+  ],
+  "title" : "Test - EventFirst",
+  "topInsights" : [
+
+  ],
+  "totalTestCount" : 1
+}

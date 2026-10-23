@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844">
+<rect width="390" height="844" rx="32" fill="#0C141B"/>
+<g font-family="PingFang TC, sans-serif" fill="#EAF1F1">
+<text x="20" y="34" font-size="15">timeline-map / 同一事件結構研究</text>
+<rect x="20" y="52" width="350" height="60" rx="14" fill="#1A2731"/>
+<text x="34" y="88.0" font-size="16" fill="#DAE4E7">阿澄・13 歲 / 2027 / 青少年</text>
+<rect x="20" y="124" width="350" height="70" rx="14" fill="#1A2731"/>
+<text x="34" y="165.0" font-size="16" fill="#DAE4E7">童年 · 已走過的節點</text>
+<rect x="20" y="206" width="350" height="100" rx="14" fill="#F4F6F2"/>
+<text x="34" y="262.0" font-size="16" fill="#102028">青少年 · 目前紙橋挑戰</text>
+<rect x="20" y="318" width="350" height="70" rx="14" fill="#1A2731"/>
+<text x="34" y="359.0" font-size="16" fill="#DAE4E7">青年 · 尚未抵達</text>
+<rect x="20" y="400" width="350" height="70" rx="14" fill="#1A2731"/>
+<text x="34" y="441.0" font-size="16" fill="#DAE4E7">中年 · 尚未抵達</text>
+<rect x="20" y="482" width="350" height="70" rx="14" fill="#1A2731"/>
+<text x="34" y="523.0" font-size="16" fill="#DAE4E7">晚年 · 尚未抵達</text>
+<rect x="20" y="564" width="350" height="85" rx="14" fill="#1A2731"/>
+<text x="34" y="612.5" font-size="16" fill="#DAE4E7">目前事件 / 兩選項與成本</text>
+<rect x="20" y="661" width="350" height="55" rx="14" fill="#F4F6F2"/>
+<text x="34" y="694.5" font-size="16" fill="#102028">進入目前岔路 →</text>
+<text x="20" y="825" font-size="12" fill="#B8C9D1">靜態線框・非正式美術・內容相同</text></g></svg>

@@ -1,0 +1,314 @@
+[
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "72669DC6-3892-4292-B1E3-B8DC61F5B0A9",
+        "deviceName" : "LC UI Event First",
+        "exportedFileName" : "B615C520-2407-4BA0-BB94-A80ED8763917.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "06-review_0_EA6564FF-D78C-46EC-A587-CD8369DB5876.png",
+        "timestamp" : 1792740687.624
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "72669DC6-3892-4292-B1E3-B8DC61F5B0A9",
+        "deviceName" : "LC UI Event First",
+        "exportedFileName" : "FEF5CC6C-FC0E-4FE7-ADF5-D147EC19ADF1.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "05-next-event_0_D535859C-44BB-4847-A0B9-3D7AE7CC8097.png",
+        "timestamp" : 1792740686.741
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "72669DC6-3892-4292-B1E3-B8DC61F5B0A9",
+        "deviceName" : "LC UI Event First",
+        "exportedFileName" : "08B7CA85-E9B9-43F4-8444-8AE105428E6A.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "04-comparison_0_F6B4E945-FF5B-48BD-8C89-9F85A5ED480D.png",
+        "timestamp" : 1792740686.188
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "72669DC6-3892-4292-B1E3-B8DC61F5B0A9",
+        "deviceName" : "LC UI Event First",
+        "exportedFileName" : "49617A09-A0E1-4EE5-8959-B407CBBA079F.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "03-reason_0_8830AF57-100B-43A0-B64A-9E553DD642E8.png",
+        "timestamp" : 1792740685.578
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "72669DC6-3892-4292-B1E3-B8DC61F5B0A9",
+        "deviceName" : "LC UI Event First",
+        "exportedFileName" : "7C061FCF-FDB0-460F-A65C-A95AE55E27EE.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "02-outcome_0_BE8B36E0-1845-4E77-8D15-5A70D4874AE3.png",
+        "timestamp" : 1792740684.999
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "72669DC6-3892-4292-B1E3-B8DC61F5B0A9",
+        "deviceName" : "LC UI Event First",
+        "exportedFileName" : "592EEE03-812D-474A-BCDB-8A45BFD71F1E.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "01-home-event-first_0_5B6B2A1E-620E-494D-A381-0E8E9AEAECA5.png",
+        "timestamp" : 1792740684.263
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "26AC0C93-AB69-453D-B195-BA51A0C41EDC.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "06-review_0_09CE69C3-979F-4DD4-90C6-3A3C1ED850E3.png",
+        "timestamp" : 1792740795.163
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "33BB4F28-E1CF-4C71-8E9A-7ECBABF69FB3.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "05-next-event_0_FF3FBDDB-8E8D-4F05-B769-49BA3D19278D.png",
+        "timestamp" : 1792740794.387
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "9ABF6012-F2DE-4AEE-89EB-2EAB98EB61A7.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "04-comparison_0_91DBDBB8-1745-47EB-BBEA-A9E7A2976256.png",
+        "timestamp" : 1792740793.917
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "A445C6F9-C306-4F60-A601-A28036E202DC.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "03-reason_0_3A3362F5-B5B4-4B01-8E80-3CFE7BDEC478.png",
+        "timestamp" : 1792740793.524
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "9C604C02-9E64-4DC7-85C8-8C65FAFE5241.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "02-outcome_0_6FD1EB0D-780E-4A9C-9866-E1ADA9483500.png",
+        "timestamp" : 1792740793.139
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "EC079345-4EE8-42CF-AC15-764A9DA74B08.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "01-home-event-first_0_5808AAD4-7A25-4F91-B867-077D026CC9D4.png",
+        "timestamp" : 1792740792.702
+      }
+    ],
+    "testIdentifier" : "EventFirstTests/testChoiceToOutcomeReasonCompareAndNextEvent()",
+    "testIdentifierURL" : "test://com.apple.xcode/EventFirst/EventFirstTests/EventFirstTests/testChoiceToOutcomeReasonCompareAndNextEvent"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "72669DC6-3892-4292-B1E3-B8DC61F5B0A9",
+        "deviceName" : "LC UI Event First",
+        "exportedFileName" : "7EB87620-BECE-4001-96FE-9E59EE99F2A4.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "life-map-secondary-page_0_5D43D8F4-FB35-47C1-973D-A9EA49C86B35.png",
+        "timestamp" : 1792740703.386
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "72669DC6-3892-4292-B1E3-B8DC61F5B0A9",
+        "deviceName" : "LC UI Event First",
+        "exportedFileName" : "46BD644C-3FBF-41D2-B640-A7A0227CBF00.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "profile-secondary-page_0_3300B090-43E1-434A-A241-317B0EF331E8.png",
+        "timestamp" : 1792740699.906
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "C1D2317C-298B-4C36-A756-BC66DC3DF314.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "life-map-secondary-page_0_0C6E7699-9E85-47D0-9D6F-081FB8EAFE2C.png",
+        "timestamp" : 1792740805.382
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "120FB188-7426-472C-B98A-86772500EE3D.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "profile-secondary-page_0_7BC6C214-5ABA-49F5-A844-F3D4DB5731DA.png",
+        "timestamp" : 1792740802.044
+      }
+    ],
+    "testIdentifier" : "EventFirstTests/testDetailsDoNotReplaceMainGameAndMapHasFiveStages()",
+    "testIdentifierURL" : "test://com.apple.xcode/EventFirst/EventFirstTests/EventFirstTests/testDetailsDoNotReplaceMainGameAndMapHasFiveStages"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "72669DC6-3892-4292-B1E3-B8DC61F5B0A9",
+        "deviceName" : "LC UI Event First",
+        "exportedFileName" : "A4FCEACF-DD61-4B6E-B8F9-DCA78ACBFD6A.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "empty-events_0_8F9A4B21-BC3E-4D72-9C79-E90EAC9B0126.png",
+        "timestamp" : 1792740713.551
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "87BBC9D9-ADAA-46F2-97EC-0EE53BB8DE77.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "empty-events_0_B7AB8105-667B-4959-AC1D-8242F3858D06.png",
+        "timestamp" : 1792740811.826
+      }
+    ],
+    "testIdentifier" : "EventFirstTests/testEmptyEventAndOptionListsHaveHonestEmptyStates()",
+    "testIdentifierURL" : "test://com.apple.xcode/EventFirst/EventFirstTests/EventFirstTests/testEmptyEventAndOptionListsHaveHonestEmptyStates"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "72669DC6-3892-4292-B1E3-B8DC61F5B0A9",
+        "deviceName" : "LC UI Event First",
+        "exportedFileName" : "813D8E8F-F19E-4892-8FD6-C50F5BA07E4C.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "maximum-type-second-choice_0_AECB3594-9DB1-4DA0-ACC4-793D9393EFFA.png",
+        "timestamp" : 1792740733.651
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "72669DC6-3892-4292-B1E3-B8DC61F5B0A9",
+        "deviceName" : "LC UI Event First",
+        "exportedFileName" : "46A4E71E-00D7-4C55-ADC9-EFCCDA478C1C.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "maximum-type-home_0_5FDC60F5-D443-4CA4-B77C-2AE8399971EC.png",
+        "timestamp" : 1792740730.646
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "D2527754-5778-4632-A4D6-879F1A48D06B.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "maximum-type-second-choice_0_91466AE0-B182-4AFC-82AD-5E2A900FB750.png",
+        "timestamp" : 1792740827.339
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "F9B99374-B002-4EC8-97C7-4B921ED9B350.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "maximum-type-home_0_96C90FDF-47F7-48CA-9E22-CE5D00B44CD3.png",
+        "timestamp" : 1792740821.936
+      }
+    ],
+    "testIdentifier" : "EventFirstTests/testMaximumTypeCanReadCostAndSelectSecondOption()",
+    "testIdentifierURL" : "test://com.apple.xcode/EventFirst/EventFirstTests/EventFirstTests/testMaximumTypeCanReadCostAndSelectSecondOption"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "72669DC6-3892-4292-B1E3-B8DC61F5B0A9",
+        "deviceName" : "LC UI Event First",
+        "exportedFileName" : "FA699205-82D7-48A1-A02B-F01B249F2AFD.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "missing-trace_0_2C4D2F70-07A4-44C9-B84C-B1E31564E453.png",
+        "timestamp" : 1792740748.416
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "A6310EC1-DAB4-4FDE-A55D-2C5428D04544.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "missing-trace_0_0029F1FC-8B6E-42BE-AB7D-C3167CC49C97.png",
+        "timestamp" : 1792740838.91
+      }
+    ],
+    "testIdentifier" : "EventFirstTests/testMissingTraceDoesNotInventFactors()",
+    "testIdentifierURL" : "test://com.apple.xcode/EventFirst/EventFirstTests/EventFirstTests/testMissingTraceDoesNotInventFactors"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "72669DC6-3892-4292-B1E3-B8DC61F5B0A9",
+        "deviceName" : "LC UI Event First",
+        "exportedFileName" : "8B0DCB14-6FB4-48EB-8F31-B91E7B4055F4.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "structure-map_0_E4DAA367-38A7-4497-A9BD-CB24496216C5.png",
+        "timestamp" : 1792740759.571
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "72669DC6-3892-4292-B1E3-B8DC61F5B0A9",
+        "deviceName" : "LC UI Event First",
+        "exportedFileName" : "89D8E1ED-9284-4359-8880-DBC6F62432CE.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "structure-novel_0_759FA316-6E91-453C-9874-4D3171578BBE.png",
+        "timestamp" : 1792740754.312
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "E4F7D551-A678-4CAB-94DA-4A5AAC64D8EF.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "structure-map_0_4EB9FAB2-BC1C-4AFE-839B-3A37815E228B.png",
+        "timestamp" : 1792740850.442
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "4694BF28-C237-4A0E-84AD-4229381C7971.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "structure-novel_0_620CDB4D-70CB-43FA-9B22-C0308C5639FA.png",
+        "timestamp" : 1792740845.532
+      }
+    ],
+    "testIdentifier" : "EventFirstTests/testOtherTwoStructureStudiesAreReviewable()",
+    "testIdentifierURL" : "test://com.apple.xcode/EventFirst/EventFirstTests/EventFirstTests/testOtherTwoStructureStudiesAreReviewable"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "72669DC6-3892-4292-B1E3-B8DC61F5B0A9",
+        "deviceName" : "LC UI Event First",
+        "exportedFileName" : "8D36A176-6581-49C6-AE1D-D7CB40DFD4AF.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "second-choice-visible_0_0E12ABD3-F96D-4092-A76C-37E17B7366B3.png",
+        "timestamp" : 1792740764.975
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "57CAF0DC-265F-44BF-B0FD-AF5DC0080773",
+        "deviceName" : "LC Visual Narrow",
+        "exportedFileName" : "12537493-2462-4637-9B47-47367848D783.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "second-choice-visible_0_C7761EF9-44A3-4533-87C9-7BE6DA40DAAF.png",
+        "timestamp" : 1792740855.971
+      }
+    ],
+    "testIdentifier" : "EventFirstTests/testUnavailableChoiceCannotAdvanceAndSecondChoiceIsUncovered()",
+    "testIdentifierURL" : "test://com.apple.xcode/EventFirst/EventFirstTests/EventFirstTests/testUnavailableChoiceCannotAdvanceAndSecondChoiceIsUncovered"
+  }
+]
