@@ -35,3 +35,5 @@
 - PR1～4已依序merge至main核心430fbf8；71 Swift/15 Python/5 UI通過且Simulator已刪。Visual WIP3438fc6已推送，新main基底整合分支已交接；待文件/記憶push與最終main CI。後續LC04→LC03；P1及發布未通過。 <!-- memory_record_projection:active-task-summary:ca0b3d6b54b9aa0615b6ff702bc58764a2a60aafdb5567409654905f96739586 -->
 
 - LC04本機完成：原局保留、15岔路選前重播、完整後半生比較與原子存讀；87不同Swift/15Python/6UI案例通過，UI含1項定位修正重跑，兩台Simulator已刪。待獨立Draft PR及HEAD CI，不合併；圖片線獨立。 <!-- memory_record_projection:active-task-summary:c8d50a3f381d250dac2fe6bec9204724e2b77aa21530e95d527e7162198e8c39 -->
+
+- LC04 PR5維持Draft/HOLD；初次遠端87Swift/15Python成功、UI5過1失敗。整卡點擊範圍修正及2項定向UI已過，共7個UI案例有通過證據，四台本機Simulator已刪；待推送修正與最新HEAD CI，不合併。 <!-- memory_record_projection:active-task-summary:a40cb36ae6836d02eda14afadc63112f3651a0d8ba19ccab3cbeb1bd1b28da9d -->
