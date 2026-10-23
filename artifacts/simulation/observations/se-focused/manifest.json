@@ -1,0 +1,14 @@
+[
+  {
+    "test": "WorkshopGameplayTests/testHelpOpensBorrowingAndIsPlayableWithImagesOff()",
+    "file": "help-graphics-off-observations.json",
+    "sha256": "d328845a58b8b9941dcaeaaecf3f754928335b29fc4472594bcf416237628a96",
+    "source_bundle": "artifacts/ios/SIM-se-focused-20261023T174712Z.xcresult"
+  },
+  {
+    "test": "WorkshopGameplayTests/testTeamOpensPlayableLeadingAtFifteenAndRetainsHistory()",
+    "file": "team-life-observations.json",
+    "sha256": "dcd808afbd64c357bc691581733f81d2b8a33c050045ff1169d682b32992a0b1",
+    "source_bundle": "artifacts/ios/SIM-se-focused-20261023T174712Z.xcresult"
+  }
+]

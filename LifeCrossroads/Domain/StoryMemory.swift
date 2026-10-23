@@ -31,6 +31,7 @@ public struct StoryMemory: Codable, Equatable, Sendable {
     public var events: [EventMemory] = []
     public func fact(_ key: String) -> StoryFact? { flags.first { $0.key == key } }
     public static let values: [String: Set<String>] = [
+        "workshop": ["prototype", "plan", "paused"],
         "friendship": ["connected", "paused"], "learning": ["online", "paper", "none"],
         "care": ["shared", "seeking", "paused"], "repair": ["practiced", "seeking"],
         "kitchen": ["shared", "seeking"], "garden": ["tending", "seeking"],
@@ -50,7 +51,8 @@ public struct StoryMemory: Codable, Equatable, Sendable {
                 let fact = StoryFact(key: change.key, value: change.value, eventID: event.id, choiceID: choice.id, age: record.age)
                 // Asking for help does not erase previously acquired experience or an existing agreement.
                 let activeValues: Set<String> = ["practiced", "shared", "tending", "observing"]
-                if change.value != "seeking" || !activeValues.contains(memory.fact(change.key)?.value ?? "") {
+                if !(change.key == "workshop" && change.value == "paused" && memory.fact(change.key) != nil)
+                    && (change.value != "seeking" || !activeValues.contains(memory.fact(change.key)?.value ?? "")) {
                     memory.flags.removeAll { $0.key == change.key }; memory.flags.append(fact)
                 }
                 if !change.personID.isEmpty {

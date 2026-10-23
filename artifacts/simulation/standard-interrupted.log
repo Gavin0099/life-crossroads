@@ -1,0 +1,1263 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project LifeCrossroads.xcodeproj -scheme LifeCrossroads -destination "platform=iOS Simulator,id=E97FFCE8-80E8-477E-A9D6-2FF116B014EE" -parallel-testing-enabled NO -collect-test-diagnostics never -derivedDataPath .build/ios-app -resultBundlePath /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/artifacts/ios/SIM-standard-final-20261023T175037Z.xcresult CODE_SIGNING_ALLOWED=NO test
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  LifeCrossroads: /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads @ local
+
+Writing result bundle at path:
+	/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/artifacts/ios/SIM-standard-final-20261023T175037Z.xcresult
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (7 targets)
+    Target 'LifeCrossroadsUITests' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeCrossroads' in project 'LifeCrossroads'
+    Target 'LifeCrossroads' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeDomain-product' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeData-product' in project 'LifeCrossroads'
+    Target 'LifeData-product' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeData' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeCrossroads_LifeData' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeDomain' in project 'LifeCrossroads'
+    Target 'LifeData' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeCrossroads_LifeData' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeDomain' in project 'LifeCrossroads'
+    Target 'LifeCrossroads_LifeData' in project 'LifeCrossroads' (no dependencies)
+    Target 'LifeDomain-product' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeDomain' in project 'LifeCrossroads'
+    Target 'LifeDomain' in project 'LifeCrossroads' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads/App/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+Build description signature: af56be8421d355c2acbf265c6bbf28c2
+Build description path: /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/XCBuildData/af56be8421d355c2acbf265c6bbf28c2.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-35d3147121984ba087c28d913653d626.sdkstatcache
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -o /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-35d3147121984ba087c28d913653d626.sdkstatcache
+
+ProcessInfoPlistFile /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads_LifeData.bundle/Info.plist /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads_LifeData-b.build/empty-LifeCrossroads_LifeData.plist (in target 'LifeCrossroads_LifeData' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/Package.swift')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-infoPlistUtility /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads_LifeData-b.build/empty-LifeCrossroads_LifeData.plist -producttype com.apple.product-type.bundle -expandbuildsettings -format binary -platform iphonesimulator -o /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads_LifeData.bundle/Info.plist
+
+CompileAssetCatalogVariant thinned /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads/App/Assets.xcassets (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads/App/Assets.xcassets --compile /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/assetcatalog_output/thinned --output-format human-readable-text --notices --warnings --export-dependency-info /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/assetcatalog_dependencies_thinned --output-partial-info-plist /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/assetcatalog_generated_info.plist_thinned --compress-pngs --enable-on-demand-resources YES --filter-for-thinning-device-configuration iPhone18,3 --filter-for-device-os-version 27.0 --development-region zh-Hant --target-device iphone --minimum-deployment-target 17.0 --platform iphonesimulator
+/* com.apple.actool.compilation-results */
+/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/assetcatalog_generated_info.plist_thinned
+/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/assetcatalog_output/thinned/Assets.car
+
+
+LinkAssetCatalog /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads/App/Assets.xcassets (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-linkAssetCatalog --thinned /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/assetcatalog_output/thinned --thinned-dependencies /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/assetcatalog_dependencies_thinned --thinned-info-plist-content /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/assetcatalog_generated_info.plist_thinned --unthinned /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/assetcatalog_output/unthinned --unthinned-dependencies /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/assetcatalog_dependencies_unthinned --unthinned-info-plist-content /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/assetcatalog_generated_info.plist_unthinned --output /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app --plist-output /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/assetcatalog_generated_info.plist
+note: Emplaced /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/Assets.car (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+
+ProcessInfoPlistFile /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/Info.plist /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/empty-LifeCrossroads.plist (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-infoPlistUtility /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/empty-LifeCrossroads.plist -producttype com.apple.product-type.application -genpkginfo /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/assetcatalog_generated_info.plist -scanforprivacyfile /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/LifeCrossroads_LifeData.bundle -o /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/Info.plist
+
+CopySwiftLibs /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-swiftStdLibTool --copy --verbose --scan-executable /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/LifeCrossroads.debug.dylib --scan-folder /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/Frameworks --scan-folder /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/PlugIns --scan-folder /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/SystemExtensions --scan-folder /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/Extensions --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+Ignoring --strip-bitcode because --sign was not passed
+
+ProcessInfoPlistFile /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/Info.plist /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/empty-LifeCrossroadsUITests.plist (in target 'LifeCrossroadsUITests' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-infoPlistUtility /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/empty-LifeCrossroadsUITests.plist -producttype com.apple.product-type.bundle.ui-testing -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/ProductTypeInfoPlistAdditions.plist -o /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/Info.plist
+
+CopySwiftLibs /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest (in target 'LifeCrossroadsUITests' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-swiftStdLibTool --copy --verbose --scan-executable /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/LifeCrossroadsUITests --scan-folder /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/Frameworks --scan-folder /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/PlugIns --scan-folder /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/SystemExtensions --scan-folder /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/Extensions --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+Ignoring --strip-bitcode because --sign was not passed
+
+PruneExplicitPrecompiledModules /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/SDKExplicitPrecompiledModules
+
+Resolve Package Graph
+
+2026-10-24 01:50:46.895 xcodebuild[85081:1026065] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+Resolve Package Graph
+
+2026-10-24 01:51:19.596652+0800 LifeCrossroadsUITests-Runner[85364:1030160] [Default] Running tests...
+    t =      nans Interface orientation changed to Portrait
+objc[85364]: Class UIAccessibilityLoaderWebShared is implemented in both /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.434.0.mOGmbD/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x106830398) and /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.434.0.mOGmbD/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x109f0c310). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+Test Suite 'All tests' started at 2026-10-24 01:51:30.204.
+Test Suite 'LifeCrossroadsUITests.xctest' started at 2026-10-24 01:51:30.206.
+Test Suite 'LifeCrossroadsUITests' started at 2026-10-24 01:51:30.206.
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testCompleteLifeWithVisibleComparisonAndExecutedExplanation]' started.
+    t =     0.01s Start Test at 2026-10-24 01:51:30.216
+    t =     0.19s Set Up
+    t =     0.22s Open com.gavin0099.LifeCrossroads
+    t =     0.22s     Launch com.gavin0099.LifeCrossroads
+2026-10-24 01:51:30.836 xcodebuild[85081:1026065] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 01:51:30.837 xcodebuild[85081:1026065] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 01:51:30.925 xcodebuild[85081:1026065] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+Resolve Package Graph
+
+    t =     3.37s         Setting up automation session
+    t =     5.85s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =     8.09s Waiting 10.0s for "startLife" Button to exist
+    t =     9.19s     Checking `Expect predicate `existsNoRetry == 1` for object "startLife" Button`
+    t =     9.19s         Checking existence of `"startLife" Button`
+    t =     9.34s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.53s Added attachment named 'event-first-birth'
+    t =     9.53s Checking existence of `"continueLife" Button`
+    t =     9.56s Checking existence of `"countryContextToggle" Any`
+    t =     9.64s Find the "countryContextToggle" Any
+    t =     9.86s Find the "countryContextToggle" Button
+    t =     9.92s Find the "countryContextToggle" Button
+    t =     9.96s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.98s Checking existence of `"countryContextToggle" Button`
+    t =    10.01s Find the "countryContextToggle" Button
+    t =    10.05s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.65] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.38] with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =    10.05s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    10.06s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    10.08s     Check for interrupting elements affecting "人生岔路" Application
+    t =    10.12s     Synthesize event
+    t =    10.12s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    10.14s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    10.16s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    10.18s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    10.21s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    11.14s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    11.61s Checking existence of `"continueLife" Button`
+    t =    11.64s Checking existence of `"countryContextToggle" Button`
+    t =    11.67s Find the "countryContextToggle" Button
+    t =    11.75s Find the "countryContextToggle" Button
+    t =    11.80s Find the "countryContextToggle" Button
+    t =    11.87s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    11.90s Tap "countryContextToggle" Button
+    t =    11.90s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    11.92s     Find the "countryContextToggle" Button
+    t =    11.99s     Check for interrupting elements affecting "countryContextToggle" Button
+    t =    12.19s     Synthesize event
+    t =    12.50s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    12.52s Checking existence of `"continueLife" Button`
+    t =    12.56s Checking existence of `"countryStageBoundary" StaticText`
+    t =    12.61s Find the "countryStageBoundary" StaticText
+    t =    12.76s Checking existence of `"countryStageBoundary" StaticText`
+    t =    12.81s Find the "countryStageBoundary" StaticText
+    t =    12.85s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.65] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.38] with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =    12.85s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    12.86s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    12.89s     Check for interrupting elements affecting "人生岔路" Application
+    t =    12.92s     Synthesize event
+    t =    12.92s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    12.95s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    12.97s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    12.99s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    13.03s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    13.85s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    15.00s Checking existence of `"continueLife" Button`
+    t =    15.06s Checking existence of `"countryStageBoundary" StaticText`
+    t =    15.10s Find the "countryStageBoundary" StaticText
+    t =    15.21s Find the "countryStageBoundary" StaticText
+    t =    15.38s Find the "countryStageBoundary" StaticText
+    t =    15.41s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    15.44s Find the "countryStageBoundary" StaticText
+    t =    15.47s Checking existence of `"countryIndicator.IT.NET.USER.ZS" Any`
+    t =    15.51s Checking existence of `"countryIndicator.EG.ELC.ACCS.ZS" Any`
+    t =    15.63s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    15.81s Added attachment named 'country-context'
+    t =    15.81s Checking existence of `"continueLife" Button`
+    t =    15.86s Checking existence of `"countryContextToggle" Button`
+    t =    15.94s Find the "countryContextToggle" Button
+    t =    16.05s Find the "countryContextToggle" Button
+    t =    16.11s Find the "countryContextToggle" Button
+    t =    16.17s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    16.19s Tap "countryContextToggle" Button
+    t =    16.19s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    16.27s     Find the "countryContextToggle" Button
+    t =    16.31s     Check for interrupting elements affecting "countryContextToggle" Button
+    t =    16.38s     Synthesize event
+    t =    16.69s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    16.72s Checking existence of `"continueLife" Button`
+    t =    16.76s Checking existence of `"startLife" Button`
+    t =    16.78s Find the "startLife" Button
+    t =    16.84s Find the "startLife" Button
+    t =    16.88s Find the "startLife" Button
+    t =    17.02s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    17.05s Tap "startLife" Button
+    t =    17.05s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    17.07s     Find the "startLife" Button
+    t =    17.10s     Check for interrupting elements affecting "startLife" Button
+    t =    17.15s     Synthesize event
+    t =    17.46s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    17.72s Waiting 5.0s for "eventTitle" StaticText to exist
+    t =    18.80s     Checking `Expect predicate `existsNoRetry == 1` for object "eventTitle" StaticText`
+    t =    18.80s         Checking existence of `"eventTitle" StaticText`
+    t =    18.88s Checking existence of `"choice.invest" Button`
+    t =    18.91s Find the "choice.invest" Button
+    t =    18.97s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    19.02s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    19.21s Added attachment named 'event-first-decision'
+    t =    19.22s Checking existence of `"continueLife" Button`
+    t =    19.27s Checking existence of `"compareChoice" Button`
+    t =    19.31s Find the "compareChoice" Button
+    t =    19.36s Find the "compareChoice" Button
+    t =    19.40s Find the "compareChoice" Button
+    t =    19.47s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    19.50s Checking existence of `"compareChoice" Button`
+    t =    19.54s Find the "compareChoice" Button
+    t =    19.58s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.65] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.38] with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =    19.58s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    19.59s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    19.62s     Check for interrupting elements affecting "人生岔路" Application
+    t =    19.66s     Synthesize event
+    t =    19.68s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    19.71s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    19.75s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    19.78s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    19.83s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    20.68s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    21.15s Checking existence of `"continueLife" Button`
+    t =    21.22s Checking existence of `"compareChoice" Button`
+    t =    21.28s Find the "compareChoice" Button
+    t =    21.35s Find the "compareChoice" Button
+    t =    21.41s Find the "compareChoice" Button
+    t =    21.46s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    21.51s Tap "compareChoice" Button
+    t =    21.51s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    21.52s     Find the "compareChoice" Button
+    t =    21.59s     Check for interrupting elements affecting "compareChoice" Button
+    t =    21.65s     Synthesize event
+    t =    21.95s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    23.23s Tap "compare.invest" Button
+    t =    23.23s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    23.24s     Find the "compare.invest" Button
+    t =    23.33s     Check for interrupting elements affecting "compare.invest" Button
+    t =    23.39s     Synthesize event
+    t =    23.73s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    25.19s Waiting 5.0s for "comparisonChoiceTitle" StaticText to exist
+    t =    26.29s     Checking `Expect predicate `existsNoRetry == 1` for object "comparisonChoiceTitle" StaticText`
+    t =    26.29s         Checking existence of `"comparisonChoiceTitle" StaticText`
+    t =    26.38s Find the "comparisonChoiceTitle" StaticText
+    t =    26.44s Find the "comparisonCostExplanation" StaticText
+    t =    26.51s Checking existence of `"digitalComparisonInvitation" StaticText`
+    t =    26.57s Checking existence of `"日本" StaticText`
+    t =    26.63s Checking existence of `"美國" StaticText`
+    t =    26.69s Checking existence of `"印度" StaticText`
+    t =    26.75s Checking existence of `"肯亞" StaticText`
+    t =    26.81s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    26.96s Added attachment named 'model-comparison'
+    t =    26.97s Tap "closeComparison" Button
+    t =    26.97s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    26.97s     Find the "closeComparison" Button
+    t =    27.03s     Check for interrupting elements affecting "closeComparison" Button
+    t =    27.08s     Synthesize event
+    t =    27.38s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    27.75s Waiting 5.0s for "eventTitle" StaticText to exist
+    t =    28.82s     Checking `Expect predicate `existsNoRetry == 1` for object "eventTitle" StaticText`
+    t =    28.82s         Checking existence of `"eventTitle" StaticText`
+    t =    28.86s Find the "eventTitle" StaticText
+    t =    28.90s Checking existence of `"choice.invest" Button`
+    t =    28.94s Find the "choice.invest" Button
+    t =    28.98s Find the "choice.invest" Button
+    t =    29.02s Checking existence of `"continueLife" Button`
+    t =    29.06s Checking existence of `"choice.invest" Button`
+    t =    29.10s Find the "choice.invest" Button
+    t =    29.16s Find the "choice.invest" Button
+    t =    29.20s Find the "choice.invest" Button
+    t =    29.25s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    29.28s Tap "choice.invest" Button
+    t =    29.28s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    29.29s     Find the "choice.invest" Button
+    t =    29.33s     Check for interrupting elements affecting "choice.invest" Button
+    t =    29.37s     Synthesize event
+    t =    29.68s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    29.69s Waiting 5.0s for "continueLife" Button to exist
+    t =    30.75s     Checking `Expect predicate `existsNoRetry == 1` for object "continueLife" Button`
+    t =    30.75s         Checking existence of `"continueLife" Button`
+    t =    30.80s Find the "chosenAction" StaticText
+    t =    30.83s Checking existence of `"continueLife" Button`
+    t =    30.86s Checking existence of `"closeTrace" Button`
+    t =    30.89s Checking existence of `"closeComparison" Button`
+    t =    30.92s Checking existence of `"roundBudgetExplanation" StaticText`
+    t =    30.95s Find the "roundBudgetExplanation" StaticText
+    t =    31.02s Find the "roundBudgetExplanation" StaticText
+    t =    31.05s Find the "roundBudgetExplanation" StaticText
+    t =    31.09s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    31.12s Find the "roundBudgetExplanation" StaticText
+    t =    31.15s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    31.26s Added attachment named 'event-first-outcome'
+    t =    31.26s Checking existence of `"continueLife" Button`
+    t =    31.30s Checking existence of `"closeTrace" Button`
+    t =    31.34s Checking existence of `"closeComparison" Button`
+    t =    31.37s Checking existence of `"whyResult" Button`
+    t =    31.40s Find the "whyResult" Button
+    t =    31.45s Find the "whyResult" Button
+    t =    31.50s Find the "whyResult" Button
+    t =    31.54s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    31.57s Tap "whyResult" Button
+    t =    31.57s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    31.57s     Find the "whyResult" Button
+    t =    31.61s     Check for interrupting elements affecting "whyResult" Button
+    t =    31.64s     Synthesize event
+    t =    31.94s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    32.42s Waiting 5.0s for "actualInfluences" StaticText to exist
+    t =    33.42s     Checking `Expect predicate `existsNoRetry == 1` for object "actualInfluences" StaticText`
+    t =    33.42s         Checking existence of `"actualInfluences" StaticText`
+    t =    33.47s Find the "actualInfluences" StaticText
+    t =    33.51s Tap "closeTrace" Button
+    t =    33.51s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    33.52s     Find the "closeTrace" Button
+    t =    33.56s     Check for interrupting elements affecting "closeTrace" Button
+    t =    33.61s     Synthesize event
+    t =    33.90s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    34.27s Tap "continueLife" Button
+    t =    34.27s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    34.27s     Find the "continueLife" Button
+    t =    34.30s     Check for interrupting elements affecting "continueLife" Button
+    t =    34.34s     Synthesize event
+    t =    34.64s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    34.64s Waiting 5.0s for "eventTitle" StaticText to exist
+    t =    35.69s     Checking `Expect predicate `existsNoRetry == 1` for object "eventTitle" StaticText`
+    t =    35.69s         Checking existence of `"eventTitle" StaticText`
+    t =    35.74s Find the "eventTitle" StaticText
+    t =    35.78s Checking existence of `"choice.invest" Button`
+    t =    35.82s Find the "choice.invest" Button
+    t =    35.86s Find the "choice.invest" Button
+    t =    35.90s Checking existence of `"continueLife" Button`
+    t =    35.94s Checking existence of `"choice.invest" Button`
+    t =    35.98s Find the "choice.invest" Button
+    t =    36.03s Find the "choice.invest" Button
+    t =    36.08s Find the "choice.invest" Button
+    t =    36.12s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    36.15s Tap "choice.invest" Button
+    t =    36.15s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    36.15s     Find the "choice.invest" Button
+    t =    36.19s     Check for interrupting elements affecting "choice.invest" Button
+    t =    36.23s     Synthesize event
+    t =    36.53s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    36.53s Waiting 5.0s for "continueLife" Button to exist
+    t =    37.54s     Checking `Expect predicate `existsNoRetry == 1` for object "continueLife" Button`
+    t =    37.54s         Checking existence of `"continueLife" Button`
+    t =    37.59s Find the "chosenAction" StaticText
+    t =    37.63s Checking existence of `"continueLife" Button`
+    t =    37.66s Checking existence of `"closeTrace" Button`
+    t =    37.70s Checking existence of `"closeComparison" Button`
+    t =    37.73s Checking existence of `"recordedStoryMemory" StaticText`
+    t =    37.77s Find the "recordedStoryMemory" StaticText
+    t =    37.81s Find the "recordedStoryMemory" StaticText
+    t =    37.85s Find the "recordedStoryMemory" StaticText
+    t =    37.88s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    37.91s Checking existence of `"recordedStoryMemory" StaticText`
+    t =    37.94s Tap "continueLife" Button
+    t =    37.94s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    37.94s     Find the "continueLife" Button
+    t =    37.98s     Check for interrupting elements affecting "continueLife" Button
+    t =    38.02s     Synthesize event
+    t =    38.31s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    38.32s Waiting 5.0s for "eventTitle" StaticText to exist
+    t =    39.39s     Checking `Expect predicate `existsNoRetry == 1` for object "eventTitle" StaticText`
+    t =    39.39s         Checking existence of `"eventTitle" StaticText`
+    t =    39.44s Find the "eventTitle" StaticText
+    t =    39.49s Checking existence of `"choice.invest" Button`
+    t =    39.53s Find the "choice.invest" Button
+    t =    39.57s Find the "choice.invest" Button
+    t =    39.61s Checking existence of `"continueLife" Button`
+    t =    39.65s Checking existence of `"choice.invest" Button`
+    t =    39.70s Find the "choice.invest" Button
+    t =    39.78s Find the "choice.invest" Button
+    t =    39.84s Find the "choice.invest" Button
+    t =    39.89s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    39.92s Tap "choice.invest" Button
+    t =    39.92s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    39.93s     Find the "choice.invest" Button
+    t =    39.97s     Check for interrupting elements affecting "choice.invest" Button
+    t =    40.01s     Synthesize event
+    t =    40.30s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    40.31s Waiting 5.0s for "continueLife" Button to exist
+    t =    41.32s     Checking `Expect predicate `existsNoRetry == 1` for object "continueLife" Button`
+    t =    41.32s         Checking existence of `"continueLife" Button`
+    t =    41.37s Find the "chosenAction" StaticText
+    t =    41.42s Tap "continueLife" Button
+    t =    41.42s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    41.43s     Find the "continueLife" Button
+    t =    41.47s     Check for interrupting elements affecting "continueLife" Button
+    t =    41.55s     Synthesize event
+    t =    41.84s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    41.85s Waiting 5.0s for "eventTitle" StaticText to exist
+    t =    42.86s     Checking `Expect predicate `existsNoRetry == 1` for object "eventTitle" StaticText`
+    t =    42.86s         Checking existence of `"eventTitle" StaticText`
+    t =    42.91s Find the "eventTitle" StaticText
+    t =    42.95s Checking existence of `"digitalLearningGuide" StaticText`
+    t =    42.99s Checking existence of `"continueLife" Button`
+    t =    43.02s Checking existence of `"compareChoice" Button`
+    t =    43.06s Find the "compareChoice" Button
+    t =    43.12s Checking existence of `"compareChoice" Button`
+    t =    43.16s Find the "compareChoice" Button
+    t =    43.20s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.65] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.38] with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =    43.20s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    43.20s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    43.24s     Check for interrupting elements affecting "人生岔路" Application
+    t =    43.28s     Synthesize event
+    t =    43.28s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    43.31s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    43.36s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    43.39s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    43.43s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    44.24s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    45.78s Checking existence of `"continueLife" Button`
+    t =    45.83s Checking existence of `"compareChoice" Button`
+    t =    45.87s Find the "compareChoice" Button
+    t =    45.92s Find the "compareChoice" Button
+    t =    45.97s Find the "compareChoice" Button
+    t =    46.01s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    46.05s Tap "compareChoice" Button
+    t =    46.05s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    46.05s     Find the "compareChoice" Button
+    t =    46.10s     Check for interrupting elements affecting "compareChoice" Button
+    t =    46.15s     Synthesize event
+    t =    46.49s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    47.58s Tap "compare.invest" Button
+    t =    47.58s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    47.59s     Find the "compare.invest" Button
+    t =    47.64s     Check for interrupting elements affecting "compare.invest" Button
+    t =    47.69s     Synthesize event
+    t =    47.99s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    49.41s Waiting 5.0s for "comparisonChoiceTitle" StaticText to exist
+    t =    50.43s     Checking `Expect predicate `existsNoRetry == 1` for object "comparisonChoiceTitle" StaticText`
+    t =    50.43s         Checking existence of `"comparisonChoiceTitle" StaticText`
+    t =    50.49s Find the "comparisonChoiceTitle" StaticText
+    t =    50.55s Find the "comparisonCostExplanation" StaticText
+    t =    50.60s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    50.72s Added attachment named 'teen-comparison-invest'
+    t =    50.72s Tap "closeComparison" Button
+    t =    50.72s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    50.73s     Find the "closeComparison" Button
+    t =    50.78s     Check for interrupting elements affecting "closeComparison" Button
+    t =    50.82s     Synthesize event
+    t =    51.12s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    51.46s Checking existence of `"continueLife" Button`
+    t =    51.50s Checking existence of `"compareChoice" Button`
+    t =    51.54s Find the "compareChoice" Button
+    t =    51.59s Find the "compareChoice" Button
+    t =    51.64s Find the "compareChoice" Button
+    t =    51.68s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    51.71s Tap "compareChoice" Button
+    t =    51.71s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    51.71s     Find the "compareChoice" Button
+    t =    51.75s     Check for interrupting elements affecting "compareChoice" Button
+    t =    51.79s     Synthesize event
+    t =    52.09s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    53.18s Tap "compare.offline" Button
+    t =    53.18s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    53.18s     Find the "compare.offline" Button
+    t =    53.23s     Check for interrupting elements affecting "compare.offline" Button
+    t =    53.27s     Synthesize event
+    t =    53.57s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    54.98s Waiting 5.0s for "comparisonChoiceTitle" StaticText to exist
+    t =    56.05s     Checking `Expect predicate `existsNoRetry == 1` for object "comparisonChoiceTitle" StaticText`
+    t =    56.05s         Checking existence of `"comparisonChoiceTitle" StaticText`
+    t =    56.10s Find the "comparisonChoiceTitle" StaticText
+    t =    56.15s Find the "comparisonCostExplanation" StaticText
+    t =    56.21s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    56.32s Added attachment named 'teen-comparison-offline'
+    t =    56.32s Tap "closeComparison" Button
+    t =    56.32s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    56.32s     Find the "closeComparison" Button
+    t =    56.38s     Check for interrupting elements affecting "closeComparison" Button
+    t =    56.42s     Synthesize event
+Resolve Package Graph
+    t =    56.71s     Wait for com.gavin0099.LifeCrossroads to idle
+
+    t =    57.06s Checking existence of `"choice.invest" Button`
+    t =    57.10s Find the "choice.invest" Button
+    t =    57.15s Find the "choice.invest" Button
+    t =    57.19s Checking existence of `"continueLife" Button`
+    t =    57.23s Checking existence of `"choice.invest" Button`
+    t =    57.27s Find the "choice.invest" Button
+    t =    57.32s Find the "choice.invest" Button
+    t =    57.36s Find the "choice.invest" Button
+    t =    57.40s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    57.43s Tap "choice.invest" Button
+    t =    57.43s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    57.44s     Find the "choice.invest" Button
+    t =    57.48s     Check for interrupting elements affecting "choice.invest" Button
+    t =    57.53s     Synthesize event
+    t =    57.82s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    57.82s Waiting 5.0s for "continueLife" Button to exist
+    t =    58.88s     Checking `Expect predicate `existsNoRetry == 1` for object "continueLife" Button`
+    t =    58.88s         Checking existence of `"continueLife" Button`
+    t =    58.92s Find the "chosenAction" StaticText
+    t =    58.95s Checking existence of `"continueLife" Button`
+    t =    58.98s Checking existence of `"closeTrace" Button`
+    t =    59.01s Checking existence of `"closeComparison" Button`
+    t =    59.04s Checking existence of `"recordedStoryMemory" StaticText`
+    t =    59.08s Find the "recordedStoryMemory" StaticText
+    t =    59.13s Find the "recordedStoryMemory" StaticText
+    t =    59.16s Find the "recordedStoryMemory" StaticText
+    t =    59.20s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    59.23s Checking existence of `"recordedStoryMemory" StaticText`
+    t =    59.26s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    59.36s Added attachment named 'life-stage-3'
+    t =    59.36s Tap "continueLife" Button
+    t =    59.36s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    59.36s     Find the "continueLife" Button
+    t =    59.40s     Check for interrupting elements affecting "continueLife" Button
+    t =    59.43s     Synthesize event
+    t =    59.73s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    59.73s Waiting 5.0s for "eventTitle" StaticText to exist
+    t =    60.68s     Checking `Expect predicate `existsNoRetry == 1` for object "eventTitle" StaticText`
+    t =    60.68s         Checking existence of `"eventTitle" StaticText`
+    t =    60.74s Find the "eventTitle" StaticText
+    t =    60.78s Checking existence of `"choice.invest" Button`
+    t =    60.81s Find the "choice.invest" Button
+    t =    60.85s Find the "choice.invest" Button
+    t =    60.88s Checking existence of `"continueLife" Button`
+    t =    60.92s Checking existence of `"choice.invest" Button`
+    t =    60.95s Find the "choice.invest" Button
+    t =    61.00s Find the "choice.invest" Button
+    t =    61.04s Find the "choice.invest" Button
+    t =    61.08s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    61.11s Tap "choice.invest" Button
+    t =    61.11s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    61.11s     Find the "choice.invest" Button
+    t =    61.15s     Check for interrupting elements affecting "choice.invest" Button
+    t =    61.18s     Synthesize event
+    t =    61.47s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    61.48s Waiting 5.0s for "continueLife" Button to exist
+    t =    62.49s     Checking `Expect predicate `existsNoRetry == 1` for object "continueLife" Button`
+    t =    62.49s         Checking existence of `"continueLife" Button`
+    t =    62.53s Find the "chosenAction" StaticText
+    t =    62.56s Tap "continueLife" Button
+    t =    62.56s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    62.56s     Find the "continueLife" Button
+    t =    62.59s     Check for interrupting elements affecting "continueLife" Button
+    t =    62.62s     Synthesize event
+    t =    62.91s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    62.91s Waiting 5.0s for "eventTitle" StaticText to exist
+    t =    63.93s     Checking `Expect predicate `existsNoRetry == 1` for object "eventTitle" StaticText`
+    t =    63.93s         Checking existence of `"eventTitle" StaticText`
+    t =    63.97s Find the "eventTitle" StaticText
+    t =    64.00s Checking existence of `"choice.invest" Button`
+    t =    64.03s Get all elements bound by index for: Elements matching predicate 'identifier BEGINSWITH "choice."'
+    t =    64.06s Checking existence of `Button (Element at index 0)`
+    t =    64.09s Find the Button (Element at index 0)
+    t =    64.12s Find the "choice.agreement" Button
+    t =    64.15s Find the "choice.agreement" Button
+    t =    64.18s Checking existence of `"continueLife" Button`
+    t =    64.22s Checking existence of `"choice.agreement" Button`
+    t =    64.25s Find the "choice.agreement" Button
+    t =    64.29s Find the "choice.agreement" Button
+    t =    64.32s Find the "choice.agreement" Button
+    t =    64.35s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    64.38s Tap "choice.agreement" Button
+    t =    64.38s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    64.38s     Find the "choice.agreement" Button
+    t =    64.41s     Check for interrupting elements affecting "choice.agreement" Button
+    t =    64.45s     Synthesize event
+    t =    64.73s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    64.73s Waiting 5.0s for "continueLife" Button to exist
+    t =    65.79s     Checking `Expect predicate `existsNoRetry == 1` for object "continueLife" Button`
+    t =    65.79s         Checking existence of `"continueLife" Button`
+    t =    65.83s Find the "chosenAction" StaticText
+    t =    65.86s Tap "continueLife" Button
+    t =    65.86s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    65.86s     Find the "continueLife" Button
+    t =    65.89s     Check for interrupting elements affecting "continueLife" Button
+    t =    65.92s     Synthesize event
+    t =    66.21s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    66.21s Waiting 5.0s for "eventTitle" StaticText to exist
+    t =    67.23s     Checking `Expect predicate `existsNoRetry == 1` for object "eventTitle" StaticText`
+    t =    67.23s         Checking existence of `"eventTitle" StaticText`
+    t =    67.27s Find the "eventTitle" StaticText
+    t =    67.31s Checking existence of `"choice.invest" Button`
+    t =    67.34s Get all elements bound by index for: Elements matching predicate 'identifier BEGINSWITH "choice."'
+    t =    67.38s Checking existence of `Button (Element at index 0)`
+    t =    67.41s Find the Button (Element at index 0)
+    t =    67.44s Find the "choice.record" Button
+    t =    67.47s Find the "choice.record" Button
+    t =    67.50s Checking existence of `"continueLife" Button`
+    t =    67.53s Checking existence of `"choice.record" Button`
+    t =    67.56s Find the "choice.record" Button
+    t =    67.60s Find the "choice.record" Button
+    t =    67.63s Find the "choice.record" Button
+    t =    67.66s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    67.69s Tap "choice.record" Button
+    t =    67.69s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    67.69s     Find the "choice.record" Button
+    t =    67.72s     Check for interrupting elements affecting "choice.record" Button
+    t =    67.75s     Synthesize event
+    t =    68.05s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    68.05s Waiting 5.0s for "continueLife" Button to exist
+    t =    69.09s     Checking `Expect predicate `existsNoRetry == 1` for object "continueLife" Button`
+    t =    69.09s         Checking existence of `"continueLife" Button`
+    t =    69.12s Find the "chosenAction" StaticText
+    t =    69.15s Tap "continueLife" Button
+    t =    69.15s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    69.15s     Find the "continueLife" Button
+    t =    69.18s     Check for interrupting elements affecting "continueLife" Button
+    t =    69.21s     Synthesize event
+    t =    69.49s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    69.50s Waiting 5.0s for "eventTitle" StaticText to exist
+    t =    70.50s     Checking `Expect predicate `existsNoRetry == 1` for object "eventTitle" StaticText`
+    t =    70.50s         Checking existence of `"eventTitle" StaticText`
+    t =    70.54s Find the "eventTitle" StaticText
+    t =    70.58s Checking existence of `"choice.invest" Button`
+    t =    70.62s Get all elements bound by index for: Elements matching predicate 'identifier BEGINSWITH "choice."'
+    t =    70.65s Checking existence of `Button (Element at index 0)`
+    t =    70.67s Find the Button (Element at index 0)
+    t =    70.71s Find the "choice.lead" Button
+    t =    70.74s Find the "choice.lead" Button
+    t =    70.77s Checking existence of `"continueLife" Button`
+    t =    70.80s Checking existence of `"choice.lead" Button`
+    t =    70.83s Find the "choice.lead" Button
+    t =    70.87s Find the "choice.lead" Button
+    t =    70.90s Find the "choice.lead" Button
+    t =    70.93s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    70.96s Tap "choice.lead" Button
+    t =    70.96s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    70.96s     Find the "choice.lead" Button
+    t =    71.00s     Check for interrupting elements affecting "choice.lead" Button
+    t =    71.03s     Synthesize event
+    t =    71.32s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    71.33s Waiting 5.0s for "continueLife" Button to exist
+    t =    72.33s     Checking `Expect predicate `existsNoRetry == 1` for object "continueLife" Button`
+    t =    72.33s         Checking existence of `"continueLife" Button`
+    t =    72.37s Find the "chosenAction" StaticText
+    t =    72.40s Tap "continueLife" Button
+    t =    72.40s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    72.40s     Find the "continueLife" Button
+    t =    72.43s     Check for interrupting elements affecting "continueLife" Button
+    t =    72.46s     Synthesize event
+    t =    72.75s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    72.76s Waiting 5.0s for "eventTitle" StaticText to exist
+    t =    73.77s     Checking `Expect predicate `existsNoRetry == 1` for object "eventTitle" StaticText`
+    t =    73.77s         Checking existence of `"eventTitle" StaticText`
+    t =    73.82s Find the "eventTitle" StaticText
+    t =    73.86s Checking existence of `"choice.invest" Button`
+    t =    73.90s Find the "choice.invest" Button
+    t =    73.93s Find the "choice.invest" Button
+    t =    73.97s Checking existence of `"continueLife" Button`
+    t =    74.00s Checking existence of `"choice.invest" Button`
+    t =    74.04s Find the "choice.invest" Button
+    t =    74.08s Find the "choice.invest" Button
+    t =    74.12s Find the "choice.invest" Button
+    t =    74.16s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    74.18s Tap "choice.invest" Button
+    t =    74.18s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    74.19s     Find the "choice.invest" Button
+    t =    74.22s     Check for interrupting elements affecting "choice.invest" Button
+    t =    74.25s     Synthesize event
+    t =    74.54s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    74.54s Waiting 5.0s for "continueLife" Button to exist
+    t =    75.57s     Checking `Expect predicate `existsNoRetry == 1` for object "continueLife" Button`
+    t =    75.57s         Checking existence of `"continueLife" Button`
+    t =    75.60s Find the "chosenAction" StaticText
+    t =    75.63s Tap "continueLife" Button
+    t =    75.63s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    75.63s     Find the "continueLife" Button
+    t =    75.66s     Check for interrupting elements affecting "continueLife" Button
+    t =    75.69s     Synthesize event
+    t =    75.98s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    75.98s Waiting 5.0s for "eventTitle" StaticText to exist
+    t =    76.99s     Checking `Expect predicate `existsNoRetry == 1` for object "eventTitle" StaticText`
+    t =    76.99s         Checking existence of `"eventTitle" StaticText`
+    t =    77.07s Find the "eventTitle" StaticText
+    t =    77.13s Checking existence of `"choice.invest" Button`
+    t =    77.18s Get all elements bound by index for: Elements matching predicate 'identifier BEGINSWITH "choice."'
+    t =    77.22s Checking existence of `Button (Element at index 0)`
+    t =    77.25s Find the Button (Element at index 0)
+    t =    77.28s Find the "choice.boundaries" Button
+    t =    77.31s Find the "choice.boundaries" Button
+    t =    77.34s Checking existence of `"continueLife" Button`
+    t =    77.38s Checking existence of `"choice.boundaries" Button`
+    t =    77.40s Find the "choice.boundaries" Button
+    t =    77.44s Find the "choice.boundaries" Button
+    t =    77.47s Find the "choice.boundaries" Button
+    t =    77.50s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    77.53s Tap "choice.boundaries" Button
+    t =    77.53s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    77.53s     Find the "choice.boundaries" Button
+    t =    77.56s     Check for interrupting elements affecting "choice.boundaries" Button
+    t =    77.60s     Synthesize event
+    t =    77.89s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    77.89s Waiting 5.0s for "continueLife" Button to exist
+    t =    78.92s     Checking `Expect predicate `existsNoRetry == 1` for object "continueLife" Button`
+    t =    78.92s         Checking existence of `"continueLife" Button`
+    t =    78.98s Find the "chosenAction" StaticText
+    t =    79.01s Tap "continueLife" Button
+    t =    79.01s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    79.02s     Find the "continueLife" Button
+    t =    79.05s     Check for interrupting elements affecting "continueLife" Button
+    t =    79.08s     Synthesize event
+    t =    79.37s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    79.37s Waiting 5.0s for "eventTitle" StaticText to exist
+    t =    80.40s     Checking `Expect predicate `existsNoRetry == 1` for object "eventTitle" StaticText`
+    t =    80.40s         Checking existence of `"eventTitle" StaticText`
+    t =    80.47s Find the "eventTitle" StaticText
+    t =    80.50s Checking existence of `"choice.invest" Button`
+    t =    80.54s Find the "choice.invest" Button
+    t =    80.57s Find the "choice.invest" Button
+    t =    80.60s Checking existence of `"continueLife" Button`
+    t =    80.64s Checking existence of `"choice.invest" Button`
+    t =    80.67s Find the "choice.invest" Button
+    t =    80.71s Find the "choice.invest" Button
+    t =    80.74s Find the "choice.invest" Button
+    t =    80.78s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    80.81s Tap "choice.invest" Button
+    t =    80.81s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    80.81s     Find the "choice.invest" Button
+    t =    80.84s     Check for interrupting elements affecting "choice.invest" Button
+    t =    80.88s     Synthesize event
+    t =    81.17s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    81.17s Waiting 5.0s for "continueLife" Button to exist
+    t =    82.17s     Checking `Expect predicate `existsNoRetry == 1` for object "continueLife" Button`
+    t =    82.17s         Checking existence of `"continueLife" Button`
+    t =    82.24s Find the "chosenAction" StaticText
+    t =    82.27s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    82.37s Added attachment named 'life-stage-10'
+    t =    82.37s Tap "continueLife" Button
+    t =    82.37s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    82.37s     Find the "continueLife" Button
+    t =    82.40s     Check for interrupting elements affecting "continueLife" Button
+    t =    82.43s     Synthesize event
+    t =    82.73s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    82.73s Waiting 5.0s for "eventTitle" StaticText to exist
+    t =    83.76s     Checking `Expect predicate `existsNoRetry == 1` for object "eventTitle" StaticText`
+    t =    83.76s         Checking existence of `"eventTitle" StaticText`
+    t =    83.80s Find the "eventTitle" StaticText
+    t =    83.84s Checking existence of `"choice.invest" Button`
+    t =    83.87s Get all elements bound by index for: Elements matching predicate 'identifier BEGINSWITH "choice."'
+    t =    83.90s Checking existence of `Button (Element at index 0)`
+    t =    83.93s Find the Button (Element at index 0)
+    t =    83.96s Find the "choice.write" Button
+    t =    83.99s Find the "choice.write" Button
+    t =    84.02s Checking existence of `"continueLife" Button`
+    t =    84.05s Checking existence of `"choice.write" Button`
+    t =    84.08s Find the "choice.write" Button
+    t =    84.11s Find the "choice.write" Button
+    t =    84.15s Find the "choice.write" Button
+    t =    84.18s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    84.20s Tap "choice.write" Button
+    t =    84.20s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    84.20s     Find the "choice.write" Button
+    t =    84.23s     Check for interrupting elements affecting "choice.write" Button
+    t =    84.27s     Synthesize event
+    t =    84.56s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    84.57s Waiting 5.0s for "continueLife" Button to exist
+    t =    85.60s     Checking `Expect predicate `existsNoRetry == 1` for object "continueLife" Button`
+    t =    85.60s         Checking existence of `"continueLife" Button`
+    t =    85.66s Find the "chosenAction" StaticText
+    t =    85.69s Tap "continueLife" Button
+    t =    85.69s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    85.69s     Find the "continueLife" Button
+    t =    85.72s     Check for interrupting elements affecting "continueLife" Button
+    t =    85.75s     Synthesize event
+    t =    86.04s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    86.05s Waiting 5.0s for "eventTitle" StaticText to exist
+    t =    87.06s     Checking `Expect predicate `existsNoRetry == 1` for object "eventTitle" StaticText`
+    t =    87.06s         Checking existence of `"eventTitle" StaticText`
+    t =    87.12s Find the "eventTitle" StaticText
+    t =    87.16s Checking existence of `"choice.invest" Button`
+    t =    87.19s Get all elements bound by index for: Elements matching predicate 'identifier BEGINSWITH "choice."'
+    t =    87.22s Checking existence of `Button (Element at index 0)`
+    t =    87.25s Find the Button (Element at index 0)
+    t =    87.28s Find the "choice.lead" Button
+    t =    87.31s Find the "choice.lead" Button
+    t =    87.34s Checking existence of `"continueLife" Button`
+    t =    87.38s Checking existence of `"choice.lead" Button`
+    t =    87.41s Find the "choice.lead" Button
+    t =    87.45s Find the "choice.lead" Button
+    t =    87.48s Find the "choice.lead" Button
+    t =    87.51s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    87.54s Tap "choice.lead" Button
+    t =    87.54s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    87.54s     Find the "choice.lead" Button
+    t =    87.57s     Check for interrupting elements affecting "choice.lead" Button
+    t =    87.60s     Synthesize event
+    t =    87.90s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    87.90s Waiting 5.0s for "continueLife" Button to exist
+    t =    88.93s     Checking `Expect predicate `existsNoRetry == 1` for object "continueLife" Button`
+    t =    88.93s         Checking existence of `"continueLife" Button`
+    t =    89.00s Find the "chosenAction" StaticText
+    t =    89.03s Tap "continueLife" Button
+    t =    89.03s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    89.03s     Find the "continueLife" Button
+    t =    89.06s     Check for interrupting elements affecting "continueLife" Button
+    t =    89.09s     Synthesize event
+    t =    89.37s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    89.38s Waiting 5.0s for "eventTitle" StaticText to exist
+    t =    90.41s     Checking `Expect predicate `existsNoRetry == 1` for object "eventTitle" StaticText`
+    t =    90.42s         Checking existence of `"eventTitle" StaticText`
+    t =    90.48s Find the "eventTitle" StaticText
+    t =    90.52s Checking existence of `"choice.invest" Button`
+    t =    90.55s Find the "choice.invest" Button
+    t =    90.58s Find the "choice.invest" Button
+    t =    90.62s Checking existence of `"continueLife" Button`
+    t =    90.65s Checking existence of `"choice.invest" Button`
+    t =    90.68s Find the "choice.invest" Button
+    t =    90.72s Find the "choice.invest" Button
+    t =    90.76s Find the "choice.invest" Button
+    t =    90.79s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    90.82s Tap "choice.invest" Button
+    t =    90.82s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    90.82s     Find the "choice.invest" Button
+    t =    90.86s     Check for interrupting elements affecting "choice.invest" Button
+    t =    90.89s     Synthesize event
+    t =    91.18s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    91.18s Waiting 5.0s for "continueLife" Button to exist
+    t =    92.21s     Checking `Expect predicate `existsNoRetry == 1` for object "continueLife" Button`
+    t =    92.21s         Checking existence of `"continueLife" Button`
+    t =    92.25s Find the "chosenAction" StaticText
+    t =    92.27s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    92.37s Added attachment named 'life-stage-13'
+    t =    92.37s Tap "continueLife" Button
+    t =    92.37s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    92.37s     Find the "continueLife" Button
+    t =    92.40s     Check for interrupting elements affecting "continueLife" Button
+    t =    92.43s     Synthesize event
+    t =    92.72s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    92.73s Waiting 5.0s for "eventTitle" StaticText to exist
+    t =    93.76s     Checking `Expect predicate `existsNoRetry == 1` for object "eventTitle" StaticText`
+    t =    93.76s         Checking existence of `"eventTitle" StaticText`
+    t =    93.83s Find the "eventTitle" StaticText
+    t =    93.87s Checking existence of `"choice.invest" Button`
+    t =    93.90s Find the "choice.invest" Button
+    t =    93.93s Find the "choice.invest" Button
+    t =    93.96s Checking existence of `"continueLife" Button`
+    t =    94.00s Checking existence of `"choice.invest" Button`
+    t =    94.03s Find the "choice.invest" Button
+    t =    94.07s Find the "choice.invest" Button
+    t =    94.11s Find the "choice.invest" Button
+    t =    94.14s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    94.17s Tap "choice.invest" Button
+    t =    94.17s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    94.17s     Find the "choice.invest" Button
+    t =    94.20s     Check for interrupting elements affecting "choice.invest" Button
+    t =    94.24s     Synthesize event
+    t =    94.52s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    94.53s Waiting 5.0s for "continueLife" Button to exist
+    t =    95.56s     Checking `Expect predicate `existsNoRetry == 1` for object "continueLife" Button`
+    t =    95.56s         Checking existence of `"continueLife" Button`
+    t =    95.62s Find the "chosenAction" StaticText
+    t =    95.65s Tap "continueLife" Button
+    t =    95.65s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    95.65s     Find the "continueLife" Button
+    t =    95.68s     Check for interrupting elements affecting "continueLife" Button
+    t =    95.71s     Synthesize event
+    t =    96.00s     Wait for com.gavin0099.LifeCrossroads to idle
+UI_EVENT_SEQUENCE_SEED_0=child-interest,child-friend,child-transition,teen-project,teen-repair-table,teen-shared-room,adult-local-trail,teen-river-survey,adult-care,middle-rest-circle,middle-open-desk,middle-friend-letter,later-path-map,middle-rhythm,later-review
+    t =    96.00s Waiting 5.0s for "journeyComplete" StaticText to exist
+    t =    97.01s     Checking `Expect predicate `existsNoRetry == 1` for object "journeyComplete" StaticText`
+    t =    97.01s         Checking existence of `"journeyComplete" StaticText`
+    t =    97.12s Find the "endingSeed" StaticText
+    t =    97.18s Checking existence of `"replaySame" Button`
+    t =    97.23s Checking existence of `"replayNewSeed" Button`
+    t =    97.28s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    97.40s Added attachment named 'event-first-life-review'
+    t =    97.40s Checking existence of `"continueLife" Button`
+    t =    97.45s Checking existence of `"replayNewSeed" Button`
+    t =    97.50s Find the "replayNewSeed" Button
+    t =    97.57s Find the "replayNewSeed" Button
+    t =    97.63s Find the "replayNewSeed" Button
+    t =    97.68s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    97.73s Tap "replayNewSeed" Button
+    t =    97.73s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    97.73s     Find the "replayNewSeed" Button
+    t =    97.79s     Check for interrupting elements affecting "replayNewSeed" Button
+    t =    97.84s     Synthesize event
+    t =    98.14s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    98.14s Waiting 5.0s for "eventTitle" StaticText to exist
+    t =    99.16s     Checking `Expect predicate `existsNoRetry == 1` for object "eventTitle" StaticText`
+    t =    99.17s         Checking existence of `"eventTitle" StaticText`
+    t =    99.23s Find the "lifeSeed" StaticText
+    t =    99.27s Tap "restartMenu" Button
+    t =    99.27s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    99.27s     Find the "restartMenu" Button
+    t =    99.30s     Check for interrupting elements affecting "restartMenu" Button
+    t =    99.33s     Synthesize event
+    t =    99.64s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =   100.42s Tap "restartSame" Button
+    t =   100.42s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =   100.43s     Find the "restartSame" Button
+    t =   100.46s     Check for interrupting elements affecting "restartSame" Button
+    t =   100.49s     Synthesize event
+    t =   100.78s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =   101.82s Waiting 5.0s for "eventTitle" StaticText to exist
+    t =   102.83s     Checking `Expect predicate `existsNoRetry == 1` for object "eventTitle" StaticText`
+    t =   102.83s         Checking existence of `"eventTitle" StaticText`
+    t =   102.88s Find the "lifeSeed" StaticText
+    t =   102.92s Find the "eventTitle" StaticText
+    t =   102.96s Tear Down
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testCompleteLifeWithVisibleComparisonAndExecutedExplanation]' passed (103.372 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testInvalidDevelopmentSeedDoesNotStartALife]' started.
+    t =     0.00s Start Test at 2026-10-24 01:53:13.589
+    t =     0.03s Set Up
+    t =     0.03s Open com.gavin0099.LifeCrossroads
+    t =     0.03s     Launch com.gavin0099.LifeCrossroads
+    t =     0.03s         Terminate com.gavin0099.LifeCrossroads:85531
+2026-10-24 01:53:13.691 xcodebuild[85081:1026065] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 01:53:13.692 xcodebuild[85081:1026065] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 01:53:13.693 xcodebuild[85081:1026065] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+Resolve Package Graph
+2026-10-24 01:53:14.650 xcodebuild[85081:1026065] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 01:53:14.650 xcodebuild[85081:1026065] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 01:53:14.660 xcodebuild[85081:1026065] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+
+    t =     1.27s         Setting up automation session
+    t =     3.30s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =     5.12s Waiting 10.0s for "startLife" Button to exist
+    t =     6.15s     Checking `Expect predicate `existsNoRetry == 1` for object "startLife" Button`
+    t =     6.16s         Checking existence of `"startLife" Button`
+    t =     6.28s Checking existence of `"continueLife" Button`
+    t =     6.30s Checking existence of `"startLife" Button`
+    t =     6.32s Find the "startLife" Button
+    t =     6.36s Find the "startLife" Button
+    t =     6.38s Find the "startLife" Button
+    t =     6.40s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     6.42s Tap "startLife" Button
+    t =     6.42s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     6.42s     Find the "startLife" Button
+    t =     6.44s     Check for interrupting elements affecting "startLife" Button
+    t =     6.46s     Synthesize event
+    t =     6.75s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     7.15s Waiting 5.0s for "需要留意" Alert to exist
+    t =     8.16s     Checking `Expect predicate `existsNoRetry == 1` for object "需要留意" Alert`
+    t =     8.16s         Checking existence of `"需要留意" Alert`
+    t =     8.20s Checking existence of `StaticText (First Match)`
+    t =     8.22s Checking existence of `"eventTitle" StaticText`
+    t =     8.25s Tear Down
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testInvalidDevelopmentSeedDoesNotStartALife]' passed (8.470 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testMaximumTextCanReachActionsReasonComparisonAndContinue]' started.
+    t =     0.00s Start Test at 2026-10-24 01:53:22.060
+    t =     0.02s Set Up
+    t =     0.03s Open com.gavin0099.LifeCrossroads
+    t =     0.03s     Launch com.gavin0099.LifeCrossroads
+    t =     0.03s         Terminate com.gavin0099.LifeCrossroads:85815
+2026-10-24 01:53:22.104 xcodebuild[85081:1026065] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 01:53:22.104 xcodebuild[85081:1026065] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 01:53:22.104 xcodebuild[85081:1026065] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+Resolve Package Graph
+
+2026-10-24 01:53:23.182 xcodebuild[85081:1026065] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 01:53:23.182 xcodebuild[85081:1026065] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 01:53:23.190 xcodebuild[85081:1026065] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     1.33s         Setting up automation session
+    t =     3.25s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =     4.82s Waiting 10.0s for "startLife" Button to exist
+    t =     5.84s     Checking `Expect predicate `existsNoRetry == 1` for object "startLife" Button`
+    t =     5.85s         Checking existence of `"startLife" Button`
+    t =     5.94s Checking existence of `"countryPicker" SegmentedControl`
+    t =     5.96s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     6.04s Added attachment named 'maximum-text-birth'
+    t =     6.04s Checking existence of `"continueLife" Button`
+    t =     6.06s Checking existence of `"startLife" Button`
+    t =     6.07s Find the "startLife" Button
+    t =     6.13s Checking existence of `"startLife" Button`
+    t =     6.14s Find the "startLife" Button
+    t =     6.16s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.65] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.38] with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =     6.16s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     6.16s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     6.18s     Check for interrupting elements affecting "人生岔路" Application
+    t =     6.19s     Synthesize event
+    t =     6.20s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     6.21s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     6.22s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     6.23s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     6.25s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     7.03s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     8.58s Checking existence of `"continueLife" Button`
+    t =     8.62s Checking existence of `"startLife" Button`
+    t =     8.64s Find the "startLife" Button
+    t =     8.67s Checking existence of `"startLife" Button`
+    t =     8.68s Find the "startLife" Button
+    t =     8.70s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.65] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.38] with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =     8.70s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     8.70s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     8.72s     Check for interrupting elements affecting "人生岔路" Application
+    t =     8.74s     Synthesize event
+    t =     8.74s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     8.75s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     8.76s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     8.78s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     8.79s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.57s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    11.11s Checking existence of `"continueLife" Button`
+    t =    11.15s Checking existence of `"startLife" Button`
+    t =    11.17s Find the "startLife" Button
+    t =    11.20s Checking existence of `"startLife" Button`
+    t =    11.21s Find the "startLife" Button
+    t =    11.23s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.65] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.38] with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =    11.23s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    11.24s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    11.25s     Check for interrupting elements affecting "人生岔路" Application
+    t =    11.27s     Synthesize event
+    t =    11.27s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    11.28s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    11.30s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    11.31s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    11.32s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    12.11s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    13.66s Checking existence of `"continueLife" Button`
+    t =    13.70s Checking existence of `"startLife" Button`
+    t =    13.72s Find the "startLife" Button
+    t =    13.75s Checking existence of `"startLife" Button`
+    t =    13.77s Find the "startLife" Button
+    t =    13.78s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.65] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.38] with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =    13.79s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    13.79s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    13.80s     Check for interrupting elements affecting "人生岔路" Application
+    t =    13.82s     Synthesize event
+    t =    13.82s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    13.84s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    13.85s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    13.86s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    13.88s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    14.66s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    16.21s Checking existence of `"continueLife" Button`
+    t =    16.25s Checking existence of `"startLife" Button`
+    t =    16.27s Find the "startLife" Button
+    t =    16.30s Find the "startLife" Button
+    t =    16.32s Find the "startLife" Button
+    t =    16.34s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    16.35s Tap "startLife" Button
+    t =    16.35s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    16.36s     Find the "startLife" Button
+    t =    16.37s     Check for interrupting elements affecting "startLife" Button
+    t =    16.39s     Synthesize event
+    t =    16.68s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    16.77s Waiting 5.0s for "eventTitle" StaticText to exist
+    t =    17.81s     Checking `Expect predicate `existsNoRetry == 1` for object "eventTitle" StaticText`
+    t =    17.81s         Checking existence of `"eventTitle" StaticText`
+    t =    17.88s Waiting 5.0s for "eventTitle" StaticText to exist
+    t =    18.91s     Checking `Expect predicate `existsNoRetry == 1` for object "eventTitle" StaticText`
+    t =    18.91s         Checking existence of `"eventTitle" StaticText`
+    t =    18.97s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    19.06s Added attachment named 'maximum-text-event-first'
+    t =    19.06s Checking existence of `"continueLife" Button`
+    t =    19.09s Checking existence of `"choice.rest" Button`
+    t =    19.12s Find the "choice.rest" Button
+    t =    19.16s Checking existence of `"choice.rest" Button`
+    t =    19.19s Find the "choice.rest" Button
+    t =    19.22s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.65] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.38] with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =    19.22s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    19.22s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    19.25s     Check for interrupting elements affecting "人生岔路" Application
+    t =    19.28s     Synthesize event
+    t =    19.28s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    19.30s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    19.33s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    19.35s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    19.37s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    20.17s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    21.72s Checking existence of `"continueLife" Button`
+    t =    21.77s Checking existence of `"choice.rest" Button`
+    t =    21.81s Find the "choice.rest" Button
+    t =    21.85s Checking existence of `"choice.rest" Button`
+    t =    21.88s Find the "choice.rest" Button
+    t =    21.91s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.65] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.38] with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =    21.91s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    21.91s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    21.94s     Check for interrupting elements affecting "人生岔路" Application
+    t =    21.96s     Synthesize event
+    t =    21.97s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    21.99s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    22.01s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    22.04s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    22.06s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    22.85s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    24.38s Checking existence of `"continueLife" Button`
+    t =    24.44s Checking existence of `"choice.rest" Button`
+    t =    24.47s Find the "choice.rest" Button
+    t =    24.51s Checking existence of `"choice.rest" Button`
+    t =    24.54s Find the "choice.rest" Button
+    t =    24.58s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.65] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.38] with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =    24.58s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    24.58s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    24.60s     Check for interrupting elements affecting "人生岔路" Application
+    t =    24.63s     Synthesize event
+    t =    24.63s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    24.66s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    24.68s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    24.71s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    24.73s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    25.52s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    27.08s Checking existence of `"continueLife" Button`
+    t =    27.11s Checking existence of `"choice.rest" Button`
+    t =    27.14s Find the "choice.rest" Button
+    t =    27.18s Checking existence of `"choice.rest" Button`
+    t =    27.21s Find the "choice.rest" Button
+    t =    27.25s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.65] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.38] with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =    27.25s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    27.25s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    27.27s     Check for interrupting elements affecting "人生岔路" Application
+    t =    27.30s     Synthesize event
+    t =    27.30s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    27.33s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    27.35s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    27.37s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    27.40s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    28.19s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    29.75s Checking existence of `"continueLife" Button`
+    t =    29.81s Checking existence of `"choice.rest" Button`
+    t =    29.84s Find the "choice.rest" Button
+    t =    29.88s Checking existence of `"choice.rest" Button`
+    t =    29.91s Find the "choice.rest" Button
+    t =    29.95s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.65] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.38] with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =    29.95s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    29.95s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    29.97s     Check for interrupting elements affecting "人生岔路" Application
+    t =    30.00s     Synthesize event
+    t =    30.00s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    30.03s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    30.05s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    30.08s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    30.10s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    30.89s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    32.45s Checking existence of `"continueLife" Button`
+    t =    32.52s Checking existence of `"choice.rest" Button`
+    t =    32.56s Find the "choice.rest" Button
+    t =    32.60s Find the "choice.rest" Button
+    t =    32.63s Find the "choice.rest" Button
+    t =    32.66s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    32.69s Tap "choice.rest" Button
+    t =    32.69s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    32.69s     Find the "choice.rest" Button
+    t =    32.72s     Check for interrupting elements affecting "choice.rest" Button
+    t =    32.75s     Synthesize event
+    t =    33.04s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    33.05s Waiting 5.0s for "continueLife" Button to exist
+    t =    34.08s     Checking `Expect predicate `existsNoRetry == 1` for object "continueLife" Button`
+    t =    34.08s         Checking existence of `"continueLife" Button`
+    t =    34.14s Checking existence of `"continueLife" Button`
+    t =    34.17s Checking existence of `"closeTrace" Button`
+    t =    34.19s Checking existence of `"closeComparison" Button`
+    t =    34.21s Checking existence of `"whyResult" Button`
+    t =    34.24s Find the "whyResult" Button
+    t =    34.27s Checking existence of `"whyResult" Button`
+    t =    34.29s Find the "whyResult" Button
+    t =    34.32s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.65] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.38] with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =    34.32s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    34.32s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    34.34s     Check for interrupting elements affecting "人生岔路" Application
+    t =    34.36s     Synthesize event
+    t =    34.37s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    34.39s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    34.41s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    34.43s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    34.45s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    35.24s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    36.78s Checking existence of `"continueLife" Button`
+    t =    36.80s Checking existence of `"closeTrace" Button`
+    t =    36.83s Checking existence of `"closeComparison" Button`
+    t =    36.85s Checking existence of `"whyResult" Button`
+    t =    36.88s Find the "whyResult" Button
+    t =    36.91s Checking existence of `"whyResult" Button`
+    t =    36.93s Find the "whyResult" Button
+    t =    36.96s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.65] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.38] with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =    36.96s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    36.96s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    36.98s     Check for interrupting elements affecting "人生岔路" Application
+    t =    37.01s     Synthesize event
+    t =    37.01s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    37.03s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    37.05s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    37.07s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    37.09s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    37.88s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    37.89s Checking existence of `"continueLife" Button`
+    t =    37.94s Checking existence of `"closeTrace" Button`
+    t =    37.97s Checking existence of `"closeComparison" Button`
+    t =    38.00s Checking existence of `"whyResult" Button`
+    t =    38.02s Find the "whyResult" Button
+    t =    38.06s Checking existence of `"whyResult" Button`
+    t =    38.09s Find the "whyResult" Button
+    t =    38.12s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.65] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.38] with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =    38.12s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    38.12s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    38.14s     Check for interrupting elements affecting "人生岔路" Application
+    t =    38.16s     Synthesize event
+    t =    38.17s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    38.19s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    38.21s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    38.23s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    38.25s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    39.05s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    39.05s Checking existence of `"continueLife" Button`
+    t =    39.10s Checking existence of `"closeTrace" Button`
+    t =    39.13s Checking existence of `"closeComparison" Button`
+    t =    39.15s Checking existence of `"whyResult" Button`
+    t =    39.17s Find the "whyResult" Button
+    t =    39.21s Find the "whyResult" Button
+    t =    39.23s Find the "whyResult" Button
+    t =    39.26s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    39.28s Tap "whyResult" Button
+    t =    39.28s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    39.28s     Find the "whyResult" Button
+    t =    39.31s     Check for interrupting elements affecting "whyResult" Button
+    t =    39.33s     Synthesize event
+    t =    39.61s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    40.04s Waiting 5.0s for "actualInfluences" StaticText to exist
+    t =    41.07s     Checking `Expect predicate `existsNoRetry == 1` for object "actualInfluences" StaticText`
+    t =    41.08s         Checking existence of `"actualInfluences" StaticText`
+    t =    41.14s Find the "actualInfluences" StaticText
+    t =    41.18s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    41.28s Added attachment named 'maximum-text-reason'
+    t =    41.28s Tap "closeTrace" Button
+    t =    41.28s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    41.28s     Find the "closeTrace" Button
+    t =    41.32s     Check for interrupting elements affecting "closeTrace" Button
+    t =    41.35s     Synthesize event
+    t =    41.64s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    42.00s Checking existence of `"continueLife" Button`
+    t =    42.04s Checking existence of `"closeTrace" Button`
+    t =    42.06s Checking existence of `"closeComparison" Button`
+    t =    42.08s Checking existence of `"compareChosen" Button`
+    t =    42.11s Find the "compareChosen" Button
+    t =    42.14s Find the "compareChosen" Button
+    t =    42.17s Find the "compareChosen" Button
+    t =    42.19s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    42.22s Checking existence of `"compareChosen" Button`
+    t =    42.24s Find the "compareChosen" Button
+    t =    42.26s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.65] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.38] with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =    42.26s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    42.27s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    42.29s     Check for interrupting elements affecting "人生岔路" Application
+    t =    42.31s     Synthesize event
+    t =    42.31s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    42.33s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    42.36s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    42.38s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    42.40s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    43.18s     Wait for com.gavin0099.LifeCrossroads to idle
+2026-10-24 01:54:06.114 xcodebuild[85081:1026065] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 01:54:06.114 xcodebuild[85081:1026065] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 01:54:06.116 xcodebuild[85081:1026065] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 01:54:06.129 xcodebuild[85081:1026065] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 01:54:06.130 xcodebuild[85081:1026065] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 01:54:06.131 xcodebuild[85081:1026065] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+** BUILD INTERRUPTED **

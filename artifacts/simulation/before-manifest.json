@@ -1,0 +1,7 @@
+{
+  "file": "artifacts/simulation/before-visual-loop.png",
+  "source_commit": "78cd44b2edfe9de36fb05b7d5c2e226d17a99b28",
+  "source_path": "artifacts/ui-loop/recovery/standard/01-world-home.png",
+  "sha256": "bd525fa4661f3ead0c8c9f6808d16b87afae825590d373b53382c088f2bb4123",
+  "boundary": "Historical Visual Loop screenshot, not current shared-engine slice and not the same device as narrow captures"
+}

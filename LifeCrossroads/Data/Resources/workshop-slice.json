@@ -1,0 +1,322 @@
+{
+  "timeline": {
+    "id": "workshop-13-15-v1",
+    "ages": [
+      13,
+      15
+    ],
+    "milestones": {
+      "13": "workshop-bridge",
+      "15": "workshop-return"
+    }
+  },
+  "decisions": [
+    {
+      "id": "workshop-bridge",
+      "age": 13,
+      "title": "紙橋又歪了一邊",
+      "recurringPerson": "阿禾與樹老師",
+      "storyQuestion": "材料不多，今天要如何準備？",
+      "choices": [
+        {
+          "id": "team",
+          "title": "和阿禾一起試做紙橋",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 1,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 3
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "learning-channels",
+            "support-network",
+            "workshop-continuity"
+          ],
+          "storyChanges": [
+            {
+              "key": "workshop",
+              "value": "prototype",
+              "personID": "ahe",
+              "relationshipDelta": 2
+            }
+          ]
+        },
+        {
+          "id": "help",
+          "title": "請樹老師一起整理借用清單",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network",
+            "workshop-continuity"
+          ],
+          "storyChanges": [
+            {
+              "key": "workshop",
+              "value": "plan",
+              "personID": "teacher",
+              "relationshipDelta": 2
+            }
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天先休息，留下課後時間",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "workshop-continuity"
+          ],
+          "storyChanges": [
+            {
+              "key": "workshop",
+              "value": "paused",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
+        }
+      ],
+      "isFallback": true,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 13,
+        "maximumAge": 13,
+        "category": "learning",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
+    },
+    {
+      "id": "workshop-return",
+      "age": 15,
+      "title": "兩年後，工坊又開門了",
+      "recurringPerson": "阿禾與樹老師",
+      "storyQuestion": "過去留下的經驗，今天能怎麼用？",
+      "choices": [
+        {
+          "id": "lead",
+          "title": "和阿禾帶新夥伴試做一段紙橋",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 13,
+          "timeCost": 2,
+          "energyCost": 2,
+          "materialCost": 1,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 3,
+            "skills": 2
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "workshop-continuity"
+          ],
+          "storyChanges": [
+            {
+              "key": "workshop",
+              "value": "prototype",
+              "personID": "ahe",
+              "relationshipDelta": 1
+            }
+          ]
+        },
+        {
+          "id": "borrow",
+          "title": "和樹老師核對清單，安排借用工具",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 1,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 3
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "learning-channels",
+            "support-network",
+            "workshop-continuity"
+          ],
+          "storyChanges": [
+            {
+              "key": "workshop",
+              "value": "plan",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ]
+        },
+        {
+          "id": "practice",
+          "title": "參加開放練習，從一張紙開始",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 1,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 3
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "learning-channels",
+            "support-network",
+            "workshop-continuity"
+          ],
+          "storyChanges": [
+            {
+              "key": "workshop",
+              "value": "prototype",
+              "personID": "ahe",
+              "relationshipDelta": 1
+            }
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "詢問今天能取得的支持",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "support-network",
+            "workshop-continuity"
+          ],
+          "storyChanges": [
+            {
+              "key": "workshop",
+              "value": "plan",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "先保留今天的休息時間",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "workshop-continuity"
+          ],
+          "storyChanges": [
+            {
+              "key": "workshop",
+              "value": "paused",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
+        }
+      ],
+      "isFallback": true,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 15,
+        "maximumAge": 15,
+        "category": "learning",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "workshop-continuity",
+      "version": "1",
+      "statement": "13歲試作留下prototype及阿禾熟悉度2；求助留下plan及老師熟悉度2。15歲prototype且技能至少24、阿禾熟悉度至少2時可陪同帶領；plan且老師熟悉度至少2時可核對借用。休息不抹除已取得的經驗。這些是純遊戲規則。",
+      "limitation": "不是現實教育成效、借用資格或統計機率；所有國家相同規則，後續仍保留開放練習、求助及免費休息。試作不代表完成作品，清單不代表取得工具。"
+    }
+  ]
+}

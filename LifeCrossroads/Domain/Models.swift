@@ -165,6 +165,7 @@ public struct DecisionSkeleton: Codable, Equatable, Sendable {
 }
 
 public struct ModelCatalog: Codable, Equatable, Sendable {
+    public var timeline: DecisionTimeline? = nil
     public var schemaVersion: Int
     public var dataVersion: String
     public var contentVersion: String
@@ -179,6 +180,15 @@ public struct ModelCatalog: Codable, Equatable, Sendable {
     public func validate() throws {
         guard schemaVersion == 4, !dataVersion.isEmpty, !contentVersion.isEmpty,
               (1960...2100).contains(referenceYear) else { throw ModelError.invalid("catalog version") }
+        if let timeline {
+            guard !timeline.id.isEmpty, contentVersion.hasSuffix("+" + timeline.id),
+                  (2...18).contains(timeline.ages.count),
+                  timeline.ages == timeline.ages.sorted(), Set(timeline.ages).count == timeline.ages.count,
+                  timeline.ages.allSatisfy({ (8...80).contains($0) }),
+                  timeline.milestones.keys.allSatisfy(timeline.ages.contains) else {
+                throw ModelError.invalid("content timeline")
+            }
+        }
         func unique(_ ids: [String]) throws {
             guard ids.allSatisfy({ !$0.isEmpty }), Set(ids).count == ids.count else {
                 throw ModelError.invalid("duplicate or empty ID")
@@ -244,7 +254,7 @@ public struct ModelCatalog: Codable, Equatable, Sendable {
         for c in countries { try unique(households.filter { $0.countryCode == c.code }.map(\.templateID)) }
         for d in decisions {
             _ = try LifeStage.at(age: d.age)
-            guard EventSchedule.decisionAges.contains(d.age), !d.choices.isEmpty, !d.recurringPerson.isEmpty,
+            guard decisionAges.contains(d.age), !d.choices.isEmpty, !d.recurringPerson.isEmpty,
                   !d.storyQuestion.isEmpty else { throw ModelError.invalid("decision sequence") }
             try unique(d.eligibility.map(\.id))
             guard !d.isFallback || d.eligibility.isEmpty else {

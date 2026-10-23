@@ -42,6 +42,28 @@ public enum StoryBranchEngine {
             if let index = event.choices.firstIndex(where: { $0.id == id }) { event.choices[index].title = title }
         }
         switch original.id {
+        case "workshop-return":
+            sourceFact = fact("workshop")
+            sourceEventID = sourceFact?.eventID ?? "workshop-bridge"; sourceChoice = sourceFact?.choiceID
+            ruleID = "story.workshop-continuity"
+            let friend = state.story.relationships.first { $0.personID == "ahe" }?.familiarity ?? 0
+            let teacher = state.story.relationships.first { $0.personID == "teacher" }?.familiarity ?? 0
+            let practiced = sourceFact?.value == "prototype"
+            let planned = sourceFact?.value == "plan"
+            let canLead = practiced && state.resources.skills >= 24 && friend >= 2
+            let canBorrow = planned && teacher >= 2
+            checks = [.init(resource: "skills", value: state.resources.skills, minimum: 24, met: state.resources.skills >= 24),
+                      .init(resource: "relationship:ahe", value: friend, minimum: 2, met: friend >= 2),
+                      .init(resource: "relationship:teacher", value: teacher, minimum: 2, met: teacher >= 2)]
+            if !canLead { event.choices.removeAll { $0.id == "lead" } }
+            if !canBorrow { event.choices.removeAll { $0.id == "borrow" } }
+            event.storyVariantID = "workshop-return-" + (sourceFact?.value ?? "first-visit")
+            event.title = practiced ? "阿禾帶回了那次試作的紀錄" : planned ? "樹老師和你重新打開借用清單" : "今天也能重新走進工坊"
+            event.recurringPerson = planned ? "樹老師" : "阿禾"
+            explanation = "13歲的實際紀錄為「\(sourceFact?.value ?? "尚未參與")」。"
+            explanation += canLead ? "試作經驗、技能至少24及與阿禾熟悉度至少2，開放陪同帶領。" : "陪同帶領需要試作經驗、技能至少24及與阿禾熟悉度至少2。"
+            explanation += canBorrow ? "先前清單及與老師熟悉度至少2，開放核對借用。" : "核對既有清單需要先前準備紀錄及與老師熟悉度至少2。"
+            explanation += "開放練習、詢問與休息仍可選；不表示作品已完成或工具已借到。"
         case "teen-direction":
             sourceFact = fact("learning")
             sourceEventID = sourceFact?.eventID ?? "teen-project"; sourceChoice = sourceFact?.choiceID
@@ -145,6 +167,7 @@ public enum StoryBranchEngine {
         guard let variantID = event.storyVariantID else { return .init(event: event, evaluation: nil) }
         return .init(event: event, evaluation: .init(ruleID: ruleID, sourceEventID: sourceEventID,
             sourceChoiceID: sourceChoice, sourceAge: sourceFact?.age, flagKey: sourceFact?.key, resourceChecks: checks, variantID: variantID,
-            offeredChoiceIDs: event.choices.map(\.id), explanation: explanation, assumptionID: "story-branches"))
+            offeredChoiceIDs: event.choices.map(\.id), explanation: explanation,
+            assumptionID: original.id == "workshop-return" ? "workshop-continuity":"story-branches"))
     }
 }

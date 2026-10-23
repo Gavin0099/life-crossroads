@@ -1,0 +1,46 @@
+{
+  "all_owned_devices_absent": true,
+  "owned_device_absent": {
+    "CB3EC297-9482-424C-B9F7-BBF3338ACD07": true,
+    "4AE056AF-EB36-4300-BE6D-49A06DD89BE0": true,
+    "4F86BA97-394D-44C9-8297-8B4678AB23DF": true,
+    "1B6A5572-46DB-48E6-80A7-0E60EF19F526": true,
+    "B683C1C1-E2D8-42CF-BD1C-356C31E82328": true,
+    "4CF9DFC6-A9AA-4E6A-A759-AF222B543564": true,
+    "E97FFCE8-80E8-477E-A9D6-2FF116B014EE": true
+  },
+  "run_receipts": [
+    {
+      "receipt": "artifacts/simulation/narrow-final-run.json",
+      "device_uuid": "4F86BA97-394D-44C9-8297-8B4678AB23DF",
+      "cleanup": "PASS",
+      "exit_code": 0
+    },
+    {
+      "receipt": "artifacts/simulation/se-accessibility-run.json",
+      "device_uuid": "1B6A5572-46DB-48E6-80A7-0E60EF19F526",
+      "cleanup": "PASS",
+      "exit_code": 0
+    },
+    {
+      "receipt": "artifacts/simulation/se-focused-run.json",
+      "device_uuid": "B683C1C1-E2D8-42CF-BD1C-356C31E82328",
+      "cleanup": "PASS",
+      "exit_code": 0
+    },
+    {
+      "receipt": "artifacts/simulation/standard-final-run.json",
+      "device_uuid": "4CF9DFC6-A9AA-4E6A-A759-AF222B543564",
+      "cleanup": "PASS",
+      "exit_code": 0
+    },
+    {
+      "receipt": "artifacts/simulation/standard-interrupted-run.json",
+      "device_uuid": "E97FFCE8-80E8-477E-A9D6-2FF116B014EE",
+      "cleanup": "PASS",
+      "exit_code": 130
+    }
+  ],
+  "others_untouched": true,
+  "shared_runtimes_deleted": false
+}

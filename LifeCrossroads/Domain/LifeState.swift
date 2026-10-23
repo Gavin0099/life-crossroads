@@ -57,11 +57,11 @@ public struct LifeState: Codable, Equatable, Sendable {
         try resources.validate(in: 0...100)
         guard (0...stage.timeBudget).contains(remainingTime), (0...stage.energyBudget).contains(remainingEnergy),
               (0...context.household.materialBudget).contains(remainingMaterials),
-              decisions.count <= EventSchedule.decisionAges.count else { throw ModelError.invalid("state budget/history") }
+              decisions.count <= catalog.decisionAges.count else { throw ModelError.invalid("state budget/history") }
         var previousAge = -1
         for record in decisions {
             guard record.age > previousAge, record.age <= age,
-                  let event = catalog.decisions.first(where: { $0.id == record.eventID }), event.selection.includes(record.age), EventSchedule.decisionAges.contains(record.age),
+                  let event = catalog.decisions.first(where: { $0.id == record.eventID }), event.selection.includes(record.age), catalog.decisionAges.contains(record.age),
                   event.choices.contains(where: { $0.id == record.choiceID }) else {
                 throw ModelError.invalid("decision history")
             }

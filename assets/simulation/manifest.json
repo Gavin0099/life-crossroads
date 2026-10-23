@@ -1,0 +1,63 @@
+{
+  "production_approval": false,
+  "assets": [
+    {
+      "asset": "community-workshop",
+      "path": "assets/simulation/workshop-background.png",
+      "sha256": "603de898e434b289c083f8c41730e94213657e18d8173040cddd680af25a7748",
+      "source_commit": "78cd44b2edfe9de36fb05b7d5c2e226d17a99b28",
+      "source_path": "UIPrototype/WorldGameplay/Assets.xcassets/community-workshop.imageset/workshop-background.png",
+      "approved_for_app": false
+    },
+    {
+      "asset": "va-friend-worktable-v2",
+      "path": "assets/simulation/va-friend-worktable-v2.png",
+      "sha256": "54fdef91ee578adc65320dee31e07a6c9d321cb3800fc561f39fcfc5943cd453",
+      "source_commit": "78cd44b2edfe9de36fb05b7d5c2e226d17a99b28",
+      "source_path": "UIPrototype/WorldGameplay/Assets.xcassets/va-friend-worktable-v2.imageset/va-friend-worktable-v2.png",
+      "approved_for_app": false
+    },
+    {
+      "asset": "va-teacher-worktable-v2",
+      "path": "assets/simulation/va-teacher-worktable-v2.png",
+      "sha256": "7601280500210fc7c1c7eff1c850e2ee83a004234f65ef31993405c1986692fa",
+      "source_commit": "78cd44b2edfe9de36fb05b7d5c2e226d17a99b28",
+      "source_path": "UIPrototype/WorldGameplay/Assets.xcassets/va-teacher-worktable-v2.imageset/va-teacher-worktable-v2.png",
+      "approved_for_app": false
+    },
+    {
+      "asset": "va-otter-emotions-v1",
+      "path": "assets/simulation/va-otter-emotions-v1.png",
+      "sha256": "5d0d8b681ce1ecd9b81ab39d85cb9149a7c896e1f03695cc08215549fdf934a3",
+      "source_commit": "78cd44b2edfe9de36fb05b7d5c2e226d17a99b28",
+      "source_path": "UIPrototype/WorldGameplay/Assets.xcassets/va-otter-emotions-v1.imageset/va-otter-emotions-v1.png",
+      "approved_for_app": false
+    },
+    {
+      "asset": "gs05-idle-focus-v2",
+      "path": "assets/simulation/gs05-idle-focus-v2.png",
+      "sha256": "2169a748b825cdf5281db912eac78b036367ea52b321aa27f8c5a7493c3731d6",
+      "tool": "built-in image_gen.imagegen",
+      "mode": "edit",
+      "source_image": "/Users/macminim4/.codex/generated_images/01a16763-cf44-76e0-9c23-31e763c68892/exec-f96930f3-a91f-455d-a93f-6e97388f8eb5.png",
+      "input_assets": [
+        "characters-atlas-v2.png",
+        "va-materials-table-v1.png"
+      ],
+      "purpose": "GS-05 only: shared downward gaze and natural hands at table; no new expression or pose catalog",
+      "approved_for_app": false,
+      "inputs": [
+        {
+          "source_commit": "78cd44b2edfe9de36fb05b7d5c2e226d17a99b28",
+          "path": "assets/gameplay/characters-atlas-v2.png",
+          "sha256": "fe66e16cd837cd849306f8562348c62aa974927d340329112b43cb526bbc8dde"
+        },
+        {
+          "source_commit": "78cd44b2edfe9de36fb05b7d5c2e226d17a99b28",
+          "path": "assets/gameplay/va-materials-table-v1.png",
+          "sha256": "4e27f860c4bd0ed95b01d89e902be4aa9c5824ca11e4c003a146b23ae543ad71"
+        }
+      ]
+    }
+  ]
+}

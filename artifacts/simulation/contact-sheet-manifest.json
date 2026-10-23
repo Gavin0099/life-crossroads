@@ -1,0 +1,39 @@
+{
+  "purpose": "Resized evidence thumbnails only; no generated art or changes to original screenshots",
+  "source_snapshot": "native-source-final.json",
+  "sources": [
+    {
+      "file": "artifacts/simulation/screenshots/narrow-final/sim-01-initial.png",
+      "sha256": "75ea95b2a5cdeb93dde7df1064761799d033f1c4be39e0abe5a6db8c277fd60b"
+    },
+    {
+      "file": "artifacts/simulation/screenshots/narrow-final/sim-03-team-world.png",
+      "sha256": "a4e5720c052d1b5c6bad666725bc74521f8cf44381ae6e8b35fb57a9f5abfc95"
+    },
+    {
+      "file": "artifacts/simulation/screenshots/narrow-final/sim-05-help-world.png",
+      "sha256": "e2a2c1737cba26d61876d8c38c01756068c3c1905ac1300fdd2f2cbe056368b1"
+    },
+    {
+      "file": "artifacts/simulation/screenshots/narrow-final/sim-06-graphics-off.png",
+      "sha256": "5af32d1085b97d8f7505468c05ad191ec11b29109783d8330b394765ecd13b7b"
+    },
+    {
+      "file": "artifacts/simulation/screenshots/narrow-final/sim-04-team-age15-opportunities.png",
+      "sha256": "6e73466932b0bef00b027c1dce6ea5fd34edc8c7d3552476aaf55ac07c395c8e"
+    },
+    {
+      "file": "artifacts/simulation/screenshots/narrow-final/sim-07-help-age15-opportunities.png",
+      "sha256": "8d0becfc2d92b2a98c2e294d94e1cb8b0fb185bc8fc431585b72cbaa57c0ac2e"
+    },
+    {
+      "file": "artifacts/simulation/screenshots/narrow-final/sim-09-largest-entry.png",
+      "sha256": "9b269a3c118aa9b6a3998e789710122117c143c01c60426722ebcbe6a14c3f77"
+    },
+    {
+      "file": "artifacts/simulation/screenshots/narrow-final/sim-12-largest-last-action.png",
+      "sha256": "c9984296a6d81c26d9a5bd8d494bd8c82e9eb954657b1a27f986722b0eacdfda"
+    }
+  ],
+  "output_sha256": "5106d6b981f6cd9ef46abf54e435aaa395d2cb2b6e17f46a5d48777c3e8c44fc"
+}

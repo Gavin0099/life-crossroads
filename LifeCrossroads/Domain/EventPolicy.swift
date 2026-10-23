@@ -70,11 +70,11 @@ extension ModelCatalog {
             }
         }
         // Each slot retains an unused, unconditional recovery-bearing candidate. These are candidates, not forced outcomes.
-        for age in EventSchedule.decisionAges {
+        for age in decisionAges {
             guard decisions.filter({ $0.age == age && $0.selection.minimumAge == age && $0.isFallback && $0.eligibility.isEmpty
                 && $0.selection.exclusiveGroup == nil }).count == 1 else { throw ModelError.missing("one unconditional fallback per age") }
         }
-        for (age, id) in EventSchedule.milestones {
+        for (age, id) in milestoneEvents {
             guard let event = decisions.first(where: { $0.id == id }), event.age == age,
                   event.selection.minimumAge == age, event.selection.maximumAge == age, event.isFallback else { throw ModelError.invalid("milestone") }
         }

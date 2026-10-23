@@ -8,6 +8,7 @@ private let accent = StoryPalette.forest
 struct CrossroadsView: View {
     @StateObject private var store = GameStore()
     @AppStorage("shortStoryText") private var shortText = false
+    @State private var showWorkshop = false
     @State private var showSources = false
     @State private var showTrace = false
     @State private var comparisonPresentation: ComparisonPresentation?
@@ -73,6 +74,7 @@ struct CrossroadsView: View {
                         .padding().background(.bar)
                 }
             }
+            .fullScreenCover(isPresented: $showWorkshop) { WorkshopWorldView() }
             .sheet(isPresented: $showSources) { sources }
             .sheet(isPresented: $showTrace) { traceSheet }
             .sheet(item: $comparisonPresentation) { presentation in comparisonSheet(presentation) }
@@ -84,6 +86,8 @@ struct CrossroadsView: View {
 
     private var home: some View {
         VStack(alignment: .leading, spacing: 22) {
+            Button("走進紙橋工坊 · 13→15歲生活試玩", systemImage:"hammer") { showWorkshop = true }
+                .buttonStyle(JourneyButtonStyle()).accessibilityIdentifier("openWorkshop")
             StoryEyebrow(title: "一本由你參與的人生故事", icon: "book.closed")
             HStack(spacing: 12) {
                 Text("如果人生，\n走向另一條路？")
@@ -125,7 +129,7 @@ struct CrossroadsView: View {
             Toggle("使用較短的故事文字", isOn: $shortText).font(.subheadline)
             Text("15段選擇，沒有唯一的好人生。環境影響機會，選擇留下故事，也有些事不由自己控制。")
                 .font(.subheadline).foregroundStyle(.secondary)
-            Text("動物角色演出虛構故事；所有國家共用這座想像的河畔舞台，不是各國生活的實景。包含工作變動與照顧情境，可休息或回首頁。原型關閉後不保存進度。")
+            Text("動物角色演出虛構故事；所有國家共用這座想像的河畔舞台，不是各國生活的實景。包含工作變動與照顧情境，可休息或回首頁。完整人生原型目前不保存進度；紙橋工坊試玩會保存自己的經驗。")
                 .font(.footnote).foregroundStyle(.secondary)
         }
     }

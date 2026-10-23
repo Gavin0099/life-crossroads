@@ -5,6 +5,21 @@ public enum EventSchedule {
     public static let decisionAges = [8, 10, 12, 13, 17, 21, 25, 32, 39, 45, 52, 59, 65, 72, 80]
 }
 
+/// An explicitly versioned content timeline; nil in a catalog retains the original complete-life schedule.
+public struct DecisionTimeline: Codable, Equatable, Sendable {
+    public var id: String
+    public var ages: [Int]
+    public var milestones: [Int: String]
+    public init(id: String, ages: [Int], milestones: [Int: String]) {
+        self.id = id; self.ages = ages; self.milestones = milestones
+    }
+}
+
+extension ModelCatalog {
+    public var decisionAges: [Int] { timeline?.ages ?? EventSchedule.decisionAges }
+    public var milestoneEvents: [Int: String] { timeline?.milestones ?? EventSchedule.milestones }
+}
+
 public enum EventConditionKind: String, Codable, Sendable {
     case resourceAtLeast, resourceAtMost, householdAtLeast, priorChoice, storyFlag, relationshipAtLeast
 }
@@ -78,7 +93,7 @@ public enum EventSelector {
     }
     public static func select(state: LifeState, catalog: ModelCatalog) throws -> EventSelectionTrace {
         try catalog.validate(); try state.validate(catalog: catalog)
-        guard EventSchedule.decisionAges.contains(state.age),
+        guard catalog.decisionAges.contains(state.age),
               let household = catalog.households.first(where: { $0.id == state.householdID }) else {
             throw ModelError.invalid("event selection context")
         }
@@ -120,7 +135,7 @@ public enum EventSelector {
             }
             var exclusions: [String] = []
             if !policy.includes(state.age) { exclusions.append("age-window") }
-            if let milestone = EventSchedule.milestones[state.age], event.id != milestone { exclusions.append("milestone-slot") }
+            if let milestone = catalog.milestoneEvents[state.age], event.id != milestone { exclusions.append("milestone-slot") }
             if let last = state.story.events.lastIndex(where: { $0.eventID == event.id }) {
                 if !policy.repeatable { exclusions.append("one-shot") }
                 if state.story.events.count - last - 1 < policy.cooldownDecisions { exclusions.append("cooldown") }

@@ -5,7 +5,8 @@ public enum SessionPhase: String, Codable, Sendable { case choosing, reflecting,
 /// A value-type playthrough controller. UI owns presentation; this type owns legal progression.
 public struct LifeSession: Codable, Equatable, Sendable {
     public static let decisionAges = EventSchedule.decisionAges
-    public var plannedDecisionCount: Int { Self.decisionAges.count }
+    public private(set) var scheduledAges: [Int]
+    public var plannedDecisionCount: Int { scheduledAges.count }
     public private(set) var state: LifeState
     public private(set) var phase: SessionPhase
     public private(set) var traces: [ConsequenceTrace]
@@ -13,10 +14,11 @@ public struct LifeSession: Codable, Equatable, Sendable {
     public private(set) var selectionTraces: [EventSelectionTrace]
     public var currentSelection: EventSelectionTrace? { phase == .ended ? nil : selectionTraces.last }
     private var needsReplayValidation: Bool
-    private enum CodingKeys: String, CodingKey { case state, phase, traces, jumps, selectionTraces }
+    private enum CodingKeys: String, CodingKey { case state, phase, traces, jumps, selectionTraces, scheduledAges }
 
     private init(state: LifeState, phase: SessionPhase, traces: [ConsequenceTrace], jumps: [TimeJumpTrace],
-                 selectionTraces: [EventSelectionTrace]) {
+                 selectionTraces: [EventSelectionTrace], scheduledAges: [Int]) {
+        self.scheduledAges = scheduledAges
         self.state = state; self.phase = phase; self.traces = traces; self.jumps = jumps
         self.selectionTraces = selectionTraces; self.needsReplayValidation = false
     }
@@ -29,20 +31,21 @@ public struct LifeSession: Codable, Equatable, Sendable {
         traces = try box.decode([ConsequenceTrace].self, forKey: .traces)
         jumps = try box.decode([TimeJumpTrace].self, forKey: .jumps)
         selectionTraces = try box.decode([EventSelectionTrace].self, forKey: .selectionTraces)
+        scheduledAges = try box.decodeIfPresent([Int].self, forKey: .scheduledAges) ?? EventSchedule.decisionAges
         needsReplayValidation = true
     }
 
     public static func == (lhs: Self, rhs: Self) -> Bool {
-        lhs.state == rhs.state && lhs.phase == rhs.phase && lhs.traces == rhs.traces
+        lhs.scheduledAges == rhs.scheduledAges && lhs.state == rhs.state && lhs.phase == rhs.phase && lhs.traces == rhs.traces
             && lhs.jumps == rhs.jumps && lhs.selectionTraces == rhs.selectionTraces
     }
 
     public static func start(catalog: ModelCatalog, countryCode: String, householdID: String, seed: UInt64) throws -> Self {
-        guard let firstAge = decisionAges.first else { throw ModelError.missing("first decision age") }
+        guard let firstAge = catalog.decisionAges.first else { throw ModelError.missing("first decision age") }
         let born = try LifeState.born(catalog: catalog, countryCode: countryCode, householdID: householdID, seed: seed)
         let (state, jump) = try SimulationEngine.advance(born, to: firstAge, catalog: catalog)
         let selection = try EventSelector.select(state: state, catalog: catalog)
-        return .init(state: state, phase: .choosing, traces: [], jumps: [jump], selectionTraces: [selection])
+        return .init(state: state, phase: .choosing, traces: [], jumps: [jump], selectionTraces: [selection], scheduledAges: catalog.decisionAges)
     }
 
     public static func restore(from data: Data, catalog: ModelCatalog) throws -> Self {
@@ -56,7 +59,7 @@ public struct LifeSession: Codable, Equatable, Sendable {
     /// Run at the restore boundary; trusted in-memory operations only check the current slot.
     public func validate(catalog: ModelCatalog) throws {
         try catalog.validate(); try state.validate(catalog: catalog)
-        guard traces.count <= plannedDecisionCount, selectionTraces.count <= plannedDecisionCount,
+        guard scheduledAges == catalog.decisionAges, traces.count <= plannedDecisionCount, selectionTraces.count <= plannedDecisionCount,
               traces.count == state.decisions.count else { throw ModelError.invalid("session history length") }
         var replay = try Self.start(catalog: catalog, countryCode: state.countryCode, householdID: state.householdID, seed: state.seed)
         for (index, trace) in traces.enumerated() {
@@ -71,7 +74,7 @@ public struct LifeSession: Codable, Equatable, Sendable {
         if needsReplayValidation { try validate(catalog: catalog) }
         guard phase == .choosing, traces.count < plannedDecisionCount,
               traces.count == state.decisions.count, selectionTraces.count == traces.count + 1,
-              state.age == Self.decisionAges[traces.count],
+              state.age == scheduledAges[traces.count],
               let selection = selectionTraces.last,
               selection == (try EventSelector.select(state: state, catalog: catalog)),
               let selected = catalog.decisions.first(where: { $0.id == selection.selectedEventID && $0.selection.includes(state.age) }) else {
@@ -99,7 +102,7 @@ public struct LifeSession: Codable, Equatable, Sendable {
         try state.validate(catalog: catalog)
         guard phase == .reflecting, !traces.isEmpty, traces.count <= plannedDecisionCount,
               traces.count == state.decisions.count, selectionTraces.count == traces.count,
-              state.age == Self.decisionAges[traces.count - 1],
+              state.age == scheduledAges[traces.count - 1],
               traces.last?.eventSelection == selectionTraces.last,
               traces.last?.eventID == state.decisions.last?.eventID else {
             throw ModelError.invalid("no valid decision to continue")
@@ -107,7 +110,7 @@ public struct LifeSession: Codable, Equatable, Sendable {
         if traces.count == plannedDecisionCount {
             phase = .ended
         } else {
-            let (next, jump) = try SimulationEngine.advance(state, to: Self.decisionAges[traces.count], catalog: catalog)
+            let (next, jump) = try SimulationEngine.advance(state, to: scheduledAges[traces.count], catalog: catalog)
             let selection = try EventSelector.select(state: next, catalog: catalog)
             state = next; jumps.append(jump); selectionTraces.append(selection); phase = .choosing
         }

@@ -1,0 +1,31 @@
+{
+  "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+  "result_bundle": "artifacts/ios/SIM-se-accessibility-20261023T175601Z.xcresult",
+  "started_utc": "20261023T175601Z",
+  "cleanup": "PASS",
+  "device_uuid": "1B6A5572-46DB-48E6-80A7-0E60EF19F526",
+  "command": [
+    "xcodebuild",
+    "-project",
+    "LifeCrossroads.xcodeproj",
+    "-scheme",
+    "LifeCrossroads",
+    "-destination",
+    "platform=iOS Simulator,id=1B6A5572-46DB-48E6-80A7-0E60EF19F526",
+    "-parallel-testing-enabled",
+    "NO",
+    "-collect-test-diagnostics",
+    "never",
+    "-derivedDataPath",
+    ".build/ios-app",
+    "-resultBundlePath",
+    "/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/artifacts/ios/SIM-se-accessibility-20261023T175601Z.xcresult",
+    "CODE_SIGNING_ALLOWED=NO",
+    "-only-testing:LifeCrossroadsUITests/WorkshopGameplayTests",
+    "test"
+  ],
+  "exit_code": 0,
+  "cleanup_stderr": "",
+  "owned_device_absent": true,
+  "ended_utc": "2026-10-23T17:58:48.556136+00:00"
+}

@@ -1,0 +1,86 @@
+{
+  "source_snapshot": "native-source-final.json",
+  "same_seed": 42,
+  "country": "JPN",
+  "household": "jpn-1",
+  "routes": [
+    {
+      "first_choice": "team",
+      "executed_future_choice": "lead",
+      "both_device_observations_equal": true,
+      "raw_files": [
+        {
+          "path": "artifacts/simulation/screenshots/narrow-final/team-life-observations.json",
+          "sha256": "5799b9cf62f6f45679cea9d13f4282c261a051f296edc3585a9cbc198cb8d446"
+        },
+        {
+          "path": "artifacts/simulation/screenshots/standard-final/team-life-observations.json",
+          "sha256": "5799b9cf62f6f45679cea9d13f4282c261a051f296edc3585a9cbc198cb8d446"
+        }
+      ],
+      "age13_resources_after": {
+        "financial": 35,
+        "health": 66,
+        "relationships": 68,
+        "skills": 24
+      },
+      "age15_offered_choices": [
+        "lead",
+        "practice",
+        "ask",
+        "rest"
+      ],
+      "source": {
+        "event": "workshop-bridge",
+        "choice": "team",
+        "age": 13,
+        "assumption": "workshop-continuity"
+      },
+      "final_resources": {
+        "financial": 35,
+        "health": 66,
+        "relationships": 71,
+        "skills": 26
+      }
+    },
+    {
+      "first_choice": "help",
+      "executed_future_choice": "borrow",
+      "both_device_observations_equal": true,
+      "raw_files": [
+        {
+          "path": "artifacts/simulation/screenshots/narrow-final/help-graphics-off-observations.json",
+          "sha256": "e5a95d789c6a6accf74047f0f4c98f332a49b5241c9765f698e2f79bd6a9170d"
+        },
+        {
+          "path": "artifacts/simulation/screenshots/standard-final/help-graphics-off-observations.json",
+          "sha256": "e5a95d789c6a6accf74047f0f4c98f332a49b5241c9765f698e2f79bd6a9170d"
+        }
+      ],
+      "age13_resources_after": {
+        "financial": 35,
+        "health": 66,
+        "relationships": 67,
+        "skills": 21
+      },
+      "age15_offered_choices": [
+        "borrow",
+        "practice",
+        "ask",
+        "rest"
+      ],
+      "source": {
+        "event": "workshop-bridge",
+        "choice": "help",
+        "age": 13,
+        "assumption": "workshop-continuity"
+      },
+      "final_resources": {
+        "financial": 35,
+        "health": 66,
+        "relationships": 69,
+        "skills": 25
+      }
+    }
+  ]
+}
