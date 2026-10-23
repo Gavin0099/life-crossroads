@@ -7,7 +7,7 @@ P1 目標為 **8 國、16 種家庭情境、50～70 個事件**，每局 10～15
 首個可玩交付為四國、童年到晚年回顧的完整人生，之後擴至八國。
 候選為台灣、日本、美國、德國、印度、巴西、越南、肯亞；資料與內容尚待逐國驗證。
 
-目前分支整合四國完整人生、條件事件池與 Event-first SwiftUI；23 個候選事件每局選出 15 個，保留三條長期故事分岔。
+目前分支整合四國完整人生、條件事件池與 Event-first SwiftUI；40 個候選事件每局選出 15 個，保留三條長期故事分岔。
 條件事件切片已交付 PR #3，工程覆審通過、產品維持 Draft／HOLD。下一片以其 `4f268b8` 為基底推進 [RNG-V2 人生多樣性與故事線系統](docs/rng-v2.md)，先建立量測基準，再以相同測試格比較新舊結果；維持不合併。
 產品計畫與待決定事項見 [PLAN.md](PLAN.md)。
 
@@ -70,3 +70,5 @@ clone 後需重新安裝 hooks；請在啟用 `.venv` 的 terminal 執行 Git �
 產品參考：[born-somewhere](https://github.com/rollroyces/born-somewhere)、
 [1in8b.life 教學入口](https://1in8b.life/zh/?edu=1)。本專案自行設計內容，不沿用其內容庫。
 治理框架來源與授權見 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+
+RNG-V2：40 個事件、5 個固定里程碑＋10 個動態時點，七條具來源故事線。完整 1,024 局新舊比較與限制見 [比較報告](artifacts/evidence/rng-v2/comparison.md)；`python3 scripts/run-rng-v2-evidence.py` 可重跑兩次完整樣本。維持 Draft／HOLD，未合併。

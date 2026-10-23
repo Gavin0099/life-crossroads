@@ -47,6 +47,7 @@ public struct CandidateOpportunity: Codable, Equatable, Sendable {
     public let eventID: String
     public let eligible: Bool
     public let conditions: [EventConditionEvaluation]
+    public var selection: EventCandidateEvaluation? = nil
 }
 
 public struct BatchStep: Codable, Equatable, Sendable {
@@ -63,6 +64,7 @@ public struct BatchStep: Codable, Equatable, Sendable {
     public let requestedDeltaBeforeClamp: ResourceValues
     public let clampAdjustment: ResourceValues
     public let candidates: [CandidateOpportunity]
+    public var eventCategory: String? = nil
 }
 
 public struct HookOrigin: Codable, Equatable, Sendable {
@@ -93,6 +95,7 @@ public struct BatchRun: Codable, Equatable, Sendable {
     public let steps: [BatchStep]
     /// Each actual session jump appears once, including birth-to-first-decision.
     public let timeJumps: [BatchJump]
+    public var linkedStoryChains: [String]? = nil
 }
 
 public struct EventCoverage: Codable, Equatable, Sendable {
@@ -105,6 +108,8 @@ public struct EventCoverage: Codable, Equatable, Sendable {
     public let selectedWhenEligible: CountRate
     public let eligibleButNotSelected: CountRate
     public let conditionFailures: [ConditionFailureFrequency]
+    public var ageWindow: [Int]? = nil
+    public var exclusionCounts: [String: Int]? = nil
 }
 
 public struct ConditionFailureFrequency: Codable, Equatable, Sendable {
@@ -246,6 +251,9 @@ public struct CohortReport: Codable, Equatable, Sendable {
     public let resourceSummaries: [ResourceSummary]
     public let decisionClamps: ClampSummary
     public let timeJumpClamps: ClampSummary
+    public var adjacentSameEventCategory: CountRate? = nil
+    public var linkedChainCounts: [ValueBin]? = nil
+    public var atLeastTwoLinkedChains: CountRate? = nil
 }
 
 public struct PolicyPairComparison: Codable, Equatable, Sendable {

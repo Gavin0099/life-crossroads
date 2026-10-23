@@ -43,7 +43,7 @@ jobs:
           python3 scripts/build-data.py --check
           python3 -m unittest discover -s Tests -p 'test_*.py'
       - name: Test pure Swift rules and source integrity
-        run: swift test
+        run: swift test -c release
       - name: Build release executable
         run: swift build -c release
       - name: Execute four-country comparison and life skeletons

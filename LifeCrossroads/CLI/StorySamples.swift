@@ -82,7 +82,7 @@ struct StorySampleEvidence: Codable {
 }
 
 enum StorySampleRunner {
-    static let policy = ["invest", "ask", "rest", "first available in offered order"]
+    static let policy = ["invest", "first available learn/work/share/care in offered order", "askSupport", "rest"]
     private static let seeds: [UInt64] = [0, 1, 2]
     private static let countryCode = "JPN"
     private static let householdID = "jpn-1"
@@ -90,7 +90,9 @@ enum StorySampleRunner {
 
     /// This fixed action policy is applied independently to every offered set.
     static func choose(from available: [ChoiceDefinition]) throws -> String {
-        for id in policy.prefix(3) where available.contains(where: { $0.id == id }) { return id }
+        if available.contains(where: { $0.id == "invest" }) { return "invest" }
+        if let active = available.first(where: { [.learn, .work, .share, .care].contains($0.kind) }) { return active.id }
+        if let support = available.first(where: { $0.kind == .askSupport }) { return support.id }
         guard let first = available.first else { throw ModelError.invalid("story sample has no available choice") }
         return first.id
     }

@@ -352,7 +352,7 @@ final class LC01Tests: XCTestCase {
         XCTAssertEqual(trace.triggeredHooks.first?.originChoiceID, "invest")
         XCTAssertEqual(trace.triggeredHooks.first?.person, "樹老師")
         XCTAssertEqual(later.resources.skills - invest.state.resources.skills, 1)
-        XCTAssertEqual(later.resources.relationships - invest.state.resources.relationships, 2)
+        XCTAssertEqual(later.resources.relationships - invest.state.resources.relationships, 0)
         XCTAssertTrue(alternativeTrace.triggeredHooks.isEmpty)
         XCTAssertEqual(alternative.resources, rest.state.resources)
         let (_, secondJump) = try SimulationEngine.advance(later, to: 21, catalog: c)
@@ -377,7 +377,7 @@ final class LC01Tests: XCTestCase {
         let real = try XCTUnwrap(current.pendingHooks.first)
         current.pendingHooks.append(real)
         XCTAssertThrowsError(try current.validate(catalog: c))
-        current.pendingHooks = [.init(id: real.id, originEventID: real.originEventID, originChoiceID: real.originChoiceID,
+        current.pendingHooks = [.init(id: real.id, originEventID: real.originEventID, originChoiceID: real.originChoiceID, originAge: real.originAge,
                                       dueAge: real.dueAge, person: real.person, text: real.text,
                                       effect: .init(skills: 20), assumptionID: real.assumptionID)]
         XCTAssertThrowsError(try SimulationEngine.advance(current, to: 17, catalog: c))
@@ -386,7 +386,7 @@ final class LC01Tests: XCTestCase {
     func testFifteenSkeletonDecisionsCoverEveryStageAndThreeCallbacks() throws {
         let c = try catalog()
         XCTAssertEqual(c.decisions.filter(\.isFallback).count, 15)
-        XCTAssertEqual(c.decisions.count, 23)
+        XCTAssertEqual(c.decisions.count, 40)
         XCTAssertEqual(Set(try c.decisions.map { try LifeStage.at(age: $0.age) }), Set(LifeStage.allCases))
         XCTAssertEqual(c.decisions.filter { $0.choices.contains { $0.delayedHook != nil } }.count, 3)
         XCTAssertEqual(c.decisions.filter(\.isFallback).map(\.age), [8, 10, 12, 13, 17, 21, 25, 32, 39, 45, 52, 59, 65, 72, 80])

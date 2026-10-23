@@ -22,8 +22,9 @@
 先以手算例子測試分母、零差異、上限／下限、淨零效果及多個延遲呼應，再用正式引擎跑完整樣本。機讀報告需包含分析與遊戲版本、Seed、背景、策略和精簡逐步紀錄；可讀表格由同一 JSON 產生。正式樣本重跑的 JSON 必須一致。
 
 ```sh
-swift run -c release life-demo --batch-report --seed-count 32 > artifacts/evidence/lc05-baseline/batch-report.json
-python3 scripts/render-batch-report.py artifacts/evidence/lc05-baseline/batch-report.json artifacts/evidence/lc05-baseline/report.md
+# 舊規則基準已保存在 checkpoint 59b986c；不要用新引擎覆寫 baseline。
+python3 scripts/run-rng-v2-evidence.py
+python3 scripts/render-batch-report.py artifacts/evidence/rng-v2/baseline.json.gz /tmp/life-baseline.md
 ```
 
 命令參數與輸出以實作及測試為準。CI 使用較小的預定 Seed 0～3（128 局）檢查批次管線，完整 1,024 局以本片保存的證據為準；不得把縮小的 CI 樣本當作完整基線。Swift／Python 測試負責量測正確性，App 與 Domain 沒有產品規則改動時不額外建立本機 Simulator。
@@ -33,3 +34,5 @@ python3 scripts/render-batch-report.py artifacts/evidence/lc05-baseline/batch-re
 事件是否新增，要根據低變化的年齡槽、未達條件的原因及可探索的人物／行動來提出假設。資源是否調整，要先分清楚選擇本身、支持與延遲呼應何時消耗完上限空間。不要先壓低或提高數值，只為讓分布看起來平均。
 
 批次報告可以證明哪些內容在這個樣本中出現、如何重複、哪些增益被截斷；不能證明孩子覺得新鮮、想玩第二局或理解環境和選擇。實機、人工 VoiceOver、10～15 分鐘節奏與分齡兒少試玩仍另待驗收。完整 50～70 事件及八國 P1 目標保持不變。
+
+RNG-V2 schema 2 將事件機會改為年齡窗口內的時點數，並列出冷卻、一次性、互斥、里程碑排除。事件距離等跨版本比較保留同一15位置和同一策略。至少兩條故事鏈的比較另以實際先前選擇與可行行動核對，不把所有回顧文案都算作故事延續。

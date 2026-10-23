@@ -101,5 +101,55 @@ class RendererPrimitiveTests(unittest.TestCase):
                     renderer.read_json(path)
 
 
+class RendererReportTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.report = renderer.read_json(ROOT / "artifacts/evidence/rng-v2/baseline.json.gz")
+
+    def test_real_baseline_runs_the_validator_and_renders_all_cohorts(self):
+        text = renderer.render(self.report)
+        self.assertIn("1,024".replace(",", ""), text)
+        self.assertIn("jpn-1", text)
+        self.assertIn("ken-2", text)
+        self.assertEqual(len(self.report["cohorts"]), 32)
+
+    def test_missing_required_field_and_inconsistent_denominators_fail(self):
+        broken = dict(self.report); del broken["runs"]
+        with self.assertRaises(renderer.ReportError): renderer.validate_report(broken)
+        broken = dict(self.report); broken["runCount"] = 1023
+        with self.assertRaises(renderer.ReportError): renderer.validate_report(broken)
+        original = self.report["cohorts"][0]["eventCoverage"][0]["eligible"]["denominator"]
+        try:
+            self.report["cohorts"][0]["eventCoverage"][0]["eligible"]["denominator"] = 0
+            with self.assertRaises(renderer.ReportError): renderer.validate_report(self.report)
+        finally:
+            self.report["cohorts"][0]["eventCoverage"][0]["eligible"]["denominator"] = original
+
+
+class ComparisonSignalTests(unittest.TestCase):
+    def test_title_only_continuation_and_missing_origin_do_not_count_as_links(self):
+        specification = importlib.util.spec_from_file_location("compare_batch", ROOT / "scripts/compare-batch-reports.py")
+        comparison = importlib.util.module_from_spec(specification); specification.loader.exec_module(comparison)
+        resources = dict(health=50, financial=50, relationships=50, skills=50)
+        prior = dict(age=17, eventID="tool-practice", choiceID="practice")
+        branch = dict(ruleID="story.repair", sourceEventID="tool-practice", sourceChoiceID="practice", sourceAge=17, variantID="repair-coop-continuation")
+        later = dict(age=32, eventID="repair-coop", choiceID="rest", storyBranch=branch, availableChoiceIDs=["rest"])
+        runs = [dict(policy="investFirst", steps=[prior, later], finalResources=resources)]
+        report = dict(cohorts=[], runs=runs)
+        self.assertEqual(comparison.summarize(report,"investFirst")["linkedChainCounts"], {0: 1})
+        later["availableChoiceIDs"].append("lead")
+        self.assertEqual(comparison.summarize(report,"investFirst")["linkedChainCounts"], {1: 1})
+        prior["choiceID"] = "rest"
+        self.assertEqual(comparison.summarize(report,"investFirst")["linkedChainCounts"], {0: 1})
+
+    def test_comparison_rejects_changed_seed_grid(self):
+        specification = importlib.util.spec_from_file_location("compare_batch", ROOT / "scripts/compare-batch-reports.py")
+        comparison = importlib.util.module_from_spec(specification); specification.loader.exec_module(comparison)
+        before = renderer.read_json(ROOT / "artifacts/evidence/rng-v2/baseline.json.gz")
+        after = dict(before); after["policyVersion"] = "different-policy"
+        with self.assertRaisesRegex(comparison.renderer.ReportError, "experiment grid changed"):
+            comparison.compare(before, after)
+
+
 if __name__ == "__main__":
     unittest.main()

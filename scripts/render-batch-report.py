@@ -2,6 +2,7 @@
 """Render engine-produced LC-05 batch statistics; never select events or run a simulation."""
 import argparse
 import html
+import gzip
 import json
 import math
 import os
@@ -89,7 +90,8 @@ def reject_duplicate_keys(pairs):
 def read_json(path):
     def invalid_number(value):
         raise ReportError(f"non-finite JSON number: {value}")
-    return json.loads(path.read_text(encoding="utf-8"), object_pairs_hook=reject_duplicate_keys,
+    content = gzip.decompress(path.read_bytes()).decode("utf-8") if path.suffix == ".gz" else path.read_text(encoding="utf-8")
+    return json.loads(content, object_pairs_hook=reject_duplicate_keys,
                       parse_constant=invalid_number)
 
 POLICIES = {
@@ -233,7 +235,7 @@ def hook_origin(value, path):
 
 def validate_report(report):
     require_object(report, "report")
-    check(integer(required(report, "schemaVersion", "report"), "schemaVersion") == 1, "unsupported report schemaVersion")
+    check(integer(required(report, "schemaVersion", "report"), "schemaVersion") in (1, 2), "unsupported report schemaVersion")
     for key in ("analysisVersion", "engineVersion", "dataVersion", "contentVersion", "claimBoundary"):
         string(required(report, key, "report"), key)
     seeds = array(required(report, "seeds", "report"), "seeds")
@@ -284,7 +286,12 @@ def validate_report(report):
             age = integer(required(item, "age", loc), f"{loc}.age")
             check(age in ages, f"{loc}: event age is outside the declared schedule")
             opportunities = integer(required(item, "ageOpportunities", loc), f"{loc}.ageOpportunities")
-            check(opportunities == n, f"{loc}: event opportunity denominator does not match reached age")
+            if report["schemaVersion"] == 1:
+                check(opportunities == n, f"{loc}: event opportunity denominator does not match reached age")
+            else:
+                window = required(item, "ageWindow", loc)
+                check(len(window) == 2 and all(type(x) is int for x in window) and window[0] <= window[1], f"{loc}: invalid age window")
+                check(opportunities == n * sum(window[0] <= a <= window[1] for a in ages), f"{loc}: window denominator mismatch")
             eligible = rate(required(item, "eligible", loc), f"{loc}.{event_id}.eligible", opportunities)
             selected = rate(required(item, "selected", loc), f"{loc}.{event_id}.selected", opportunities)
             check(selected <= eligible, f"{loc}: selected count exceeds eligibility")
@@ -294,8 +301,11 @@ def validate_report(report):
             encounters[event_id] = selected
             event_age[event_id] = age
         check(set(event_age.values()) == set(ages), f"{loc}: missing age coverage")
-        for age in ages:
-            check(sum(encounters[k] for k, a in event_age.items() if a == age) == n, f"{loc}: age selections do not sum to run count")
+        if report["schemaVersion"] == 1:
+            for age in ages:
+                check(sum(encounters[k] for k, a in event_age.items() if a == age) == n, f"{loc}: age selections do not sum to run count")
+        else:
+            check(sum(encounters.values()) == n * len(ages), f"{loc}: total selections mismatch")
         event_sets.append(set(encounters))
         choices = objects(required(cohort, "choiceHistogram", loc), f"{loc}.choiceHistogram")
         choice_keys = []
@@ -359,6 +369,10 @@ def validate_report(report):
                 stage_total += rate(item_rate, f"{detail}.byStage")
                 stage_denominator += item_rate["denominator"]
             check(stage_total == age_total and stage_denominator == n * len(ages), f"{detail}: stage/age saturation totals disagree")
+        if report["schemaVersion"] == 2:
+            rate(required(cohort, "adjacentSameEventCategory", loc), loc + ".eventRepetition", n * (len(ages) - 1))
+            histogram(required(cohort, "linkedChainCounts", loc), loc + ".linkedChains", "value", n, allowed=set(range(8)))
+            rate(required(cohort, "atLeastTwoLinkedChains", loc), loc + ".atLeastTwo", n)
         clamp_summary(required(cohort, "decisionClamps", loc), f"{loc}.decisionClamps", n * len(ages), jumps=False)
         clamp_summary(required(cohort, "timeJumpClamps", loc), f"{loc}.timeJumpClamps", n * len(ages), jumps=True)
     unique(cohort_keys, "cohorts")
@@ -464,12 +478,16 @@ def render(report):
                      median_bins(bins), ratio(bins[0]["frequency"]),
                      *(ratio(resources[key]["finalAt100"]) for key in RESOURCES)])
     lines += ["## 分群總覽", "", table(["家庭", "策略", "事件路線數", "事件差異中位數", "完全相同率", *[x+"最終100" for x in RESOURCES.values()]], rows), ""]
+    if report["schemaVersion"] == 2:
+        lines += ["## 有實際前因的故事延續", "", "只計有較早來源選擇、且出現延續變體的不同故事線；入門、恢復或只有標題差異不計。每局兩鏈是探索目標，休息不會被強迫安排舊約定。", "",
+                  table(["家庭", "策略", "至少兩鏈／局", "相鄰同事件類型"],
+                        [[c["background"]["householdID"], POLICIES[c["policy"]], ratio(c["atLeastTwoLinkedChains"]), ratio(c["adjacentSameEventCategory"])] for c in report["cohorts"]]), ""]
     for c in report["cohorts"]:
         lines += [f"## {c['background']['householdID']}／{POLICIES[c['policy']]}", "",
                   "### 事件出現與資格", "",
                   table(["事件", "年齡", "符合／機會", "入選／機會", "入選／符合", "未符合原因（可重疊）"],
-                        [[e["eventID"], e["age"], ratio(e["eligible"]), ratio(e["selected"]), ratio(e["selectedWhenEligible"]),
-                          "; ".join(f"{f['condition']['id']}: {ratio(f['failed'])}" for f in e["conditionFailures"])] for e in c["eventCoverage"]]), "",
+                        [[e["eventID"], "–".join(map(str, e["ageWindow"])) if "ageWindow" in e else e["age"], ratio(e["eligible"]), ratio(e["selected"]), ratio(e["selectedWhenEligible"]),
+                          "; ".join(f"{f['condition']['id']}: {ratio(f['failed'])}" for f in e["conditionFailures"]) + ("; 規則排除：" + str(e["exclusionCounts"]) if "exclusionCounts" in e else "")] for e in c["eventCoverage"]]), "",
                   "### 實際選項", "",
                   table(["事件", "選項", "提供", "可行", "提交／遇到事件"],
                         [[x["eventID"], x["choiceID"], x["offeredOpportunities"], x["availableOpportunities"], ratio(x["chosen"])] for x in c["choiceHistogram"]]), "",

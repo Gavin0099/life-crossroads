@@ -2,7 +2,7 @@ import Foundation
 import LifeDomain
 
 public enum BatchAnalyzer {
-    public static let analysisVersion = "lc05-analysis-1"
+    public static let analysisVersion = "rng-v2-analysis-2"
     public static let policyVersion = "lc05-policies-1"
     public static let countryCodes = ["JPN", "USA", "IND", "KEN"]
     public static let varietyChannel = "analysis-policy-seeded-variety-v1"
@@ -49,7 +49,7 @@ public enum BatchAnalyzer {
                 }
             }
         }
-        return .init(schemaVersion: 1, analysisVersion: analysisVersion, policyVersion: policyVersion,
+        return .init(schemaVersion: 2, analysisVersion: analysisVersion, policyVersion: policyVersion,
                      engineVersion: LifeState.engineVersion, dataVersion: catalog.dataVersion, contentVersion: catalog.contentVersion,
                      seeds: orderedSeeds, policies: policies, policyDefinitions: policies.map(definition), countryCodes: countryCodes,
                      decisionAges: LifeSession.decisionAges, runCount: runs.count, cohorts: cohorts,
@@ -116,7 +116,7 @@ public enum BatchAnalyzer {
                                offeredChoiceIDs: ordered.map(\.id), availableChoiceIDs: available.map(\.id),
                                resourcesBefore: trace.resourcesBefore, resourcesAfter: trace.resourcesAfter,
                                requestedDeltaBeforeClamp: requested, clampAdjustment: clamp,
-                               candidates: trace.eventSelection.candidates.map { .init(eventID: $0.eventID, eligible: $0.eligible, conditions: $0.conditions) }))
+                               candidates: trace.eventSelection.candidates.map { .init(eventID: $0.eventID, eligible: $0.eligible, conditions: $0.conditions, selection: $0) }, eventCategory: event.selection.category))
             try session.continueLife(catalog: catalog)
         }
         guard steps.count == session.plannedDecisionCount, session.state.decisions.count == steps.count else {
@@ -133,9 +133,15 @@ public enum BatchAnalyzer {
                                 dueAge: $0.dueAge, requestedEffect: $0.effect)
                       })
         }
+        let linked = Set(steps.compactMap { step -> String? in
+            guard let branch = step.storyBranch, let age = branch.sourceAge,
+                  steps.contains(where: { $0.age == age && $0.age < step.age && $0.eventID == branch.sourceEventID && $0.choiceID == branch.sourceChoiceID }),
+                  ["teen-direction-paper", "teen-direction-online", "middle-support-reciprocal", "later-reconnect-old-friend"].contains(branch.variantID) || (branch.variantID.hasSuffix("-continuation") && step.availableChoiceIDs.contains("lead")) else { return nil }
+            return branch.ruleID
+        }).sorted()
         let run = BatchRun(runID: "\(background.countryCode)/\(background.householdID)/\(policy.rawValue)/\(seed)",
                            background: background, policy: policy, seed: seed, initialResources: initial,
-                           finalResources: session.state.resources, steps: steps, timeJumps: jumps)
+                           finalResources: session.state.resources, steps: steps, timeJumps: jumps, linkedStoryChains: linked)
         try validateObservations(run)
         return run
     }

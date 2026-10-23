@@ -32,7 +32,7 @@ do {
     if case .batchReport(let seedCount) = mode {
         let report = try BatchAnalyzer.run(catalog: catalog, seeds: (0..<seedCount).map(UInt64.init))
         let encoder = JSONEncoder()
-        encoder.outputFormatting = [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]
+        encoder.outputFormatting = [.sortedKeys, .withoutEscapingSlashes]
         print(String(decoding: try encoder.encode(report), as: UTF8.self))
         exit(0)
     }

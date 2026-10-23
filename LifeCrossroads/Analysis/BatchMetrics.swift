@@ -72,7 +72,7 @@ extension BatchAnalyzer {
         for run in ordered { try validateObservations(run) }
         let allSteps = ordered.flatMap(\.steps)
         let coverage = try catalog.decisions.sorted { $0.age == $1.age ? $0.id < $1.id : $0.age < $1.age }.map { event in
-            let ageSteps = allSteps.filter { $0.age == event.age }
+            let ageSteps = allSteps.filter { event.selection.includes($0.age) }
             let candidates = ageSteps.compactMap { $0.candidates.first { $0.eventID == event.id } }
             guard candidates.count == ageSteps.count else { throw ModelError.missing("analysis missing candidate opportunity") }
             let eligible = candidates.filter(\.eligible).count
@@ -83,10 +83,12 @@ extension BatchAnalyzer {
                 guard observations.count == candidates.count else { throw ModelError.missing("analysis condition evaluation") }
                 return ConditionFailureFrequency(condition: condition, failed: .init(observations.filter { !$0.matched }.count, of: observations.count))
             }
+            var exclusions: [String: Int] = [:]
+            for candidate in candidates { for reason in candidate.selection?.exclusions ?? [] { exclusions[reason, default: 0] += 1 } }
             return EventCoverage(eventID: event.id, age: event.age, ageOpportunities: ageSteps.count,
                                  eligible: .init(eligible, of: ageSteps.count), selected: .init(selected, of: ageSteps.count),
                                  selectedWhenEligible: .init(selected, of: eligible),
-                                 eligibleButNotSelected: .init(eligible - selected, of: eligible), conditionFailures: failures)
+                                 eligibleButNotSelected: .init(eligible - selected, of: eligible), conditionFailures: failures, ageWindow: [event.selection.minimumAge, event.selection.maximumAge], exclusionCounts: exclusions)
         }
         let choices = catalog.decisions.sorted { $0.id < $1.id }.flatMap { event in
             let eventSteps = allSteps.filter { $0.eventID == event.id }
@@ -115,30 +117,38 @@ extension BatchAnalyzer {
                 if left.chosenKind == right.chosenKind { repeated += 1 }
             }
         }
-        let chainDefinitions = [("story.childhood-connection", "child-friend", "later-reconnect"),
-                                ("story.learning-route", "teen-project", "teen-direction"),
-                                ("story.care-network", "adult-care", "middle-support")]
-        let chains = chainDefinitions.map { rule, origin, outcome in
-            let origins = ordered.filter { $0.steps.contains { $0.eventID == origin } }.count
-            let traced = allSteps.filter { $0.eventID == outcome && $0.storyBranch?.ruleID == rule }
-            let matches = ordered.filter { run in
-                guard let later = run.steps.first(where: { $0.eventID == outcome })?.storyBranch,
-                      let earlier = run.steps.first(where: { $0.eventID == origin }) else { return false }
-                return later.ruleID == rule && later.sourceEventID == origin && later.sourceChoiceID == earlier.choiceID
-            }.count
+        let chainDefinitions = [("story.childhood-connection", "friendship"), ("story.learning-route", "learning"),
+                                ("story.care-network", "care"), ("story.repair", "repair"), ("story.kitchen", "kitchen"),
+                                ("story.garden", "garden"), ("story.nature", "nature")]
+        let chains = chainDefinitions.map { rule, flag in
+            let origins = ordered.filter { run in run.steps.contains { step in
+                catalog.decisions.first { $0.id == step.eventID }?.choices.first { $0.id == step.choiceID }?.storyChanges.contains { $0.key == flag } == true
+            } }.count
+            let traced = allSteps.filter { $0.storyBranch?.ruleID == rule }
+            let withTrace = ordered.filter { $0.steps.contains { $0.storyBranch?.ruleID == rule } }.count
+            let matches = ordered.filter { run in run.steps.contains { step in
+                guard let branch = step.storyBranch, branch.ruleID == rule, let age = branch.sourceAge else { return false }
+                return run.steps.contains { $0.age == age && $0.age < step.age && $0.eventID == branch.sourceEventID && $0.choiceID == branch.sourceChoiceID }
+            } }.count
             var variants: [String: Int] = [:]
             for step in traced { if let id = step.storyVariantID { variants[id, default: 0] += 1 } }
-            return StoryChainCoverage(ruleID: rule, originEventID: origin, outcomeEventID: outcome,
-                                      originObserved: .init(origins, of: ordered.count), outcomeWithTrace: .init(traced.count, of: ordered.count),
+            return StoryChainCoverage(ruleID: rule, originEventID: "flag:" + flag, outcomeEventID: "rule:" + rule,
+                                      originObserved: .init(origins, of: ordered.count), outcomeWithTrace: .init(withTrace, of: ordered.count),
                                       traceMatchesPriorChoice: .init(matches, of: ordered.count),
                                       variants: variants.keys.sorted().map { .init(variantID: $0, frequency: .init(variants[$0, default: 0], of: traced.count)) })
+        }
+        let chainCounts = (0...7).map { value in ValueBin(value: value, frequency: .init(ordered.filter { $0.linkedStoryChains?.count == value }.count, of: ordered.count)) }
+        let repeatedCategories = ordered.reduce(0) { sum, run in
+            sum + zip(run.steps, run.steps.dropFirst()).filter { $0.eventCategory == $1.eventCategory }.count
         }
         return .init(background: background, policy: policy, runCount: ordered.count, eventCoverage: coverage, choiceHistogram: choices,
                      choiceKinds: kindHistogram, adjacentSameChoiceKind: .init(repeated, of: adjacent), storyChains: chains,
                      eventRoutes: eventSignatures.keys.sorted().map { .init(signature: $0, frequency: .init(eventSignatures[$0, default: 0], of: ordered.count)) },
                      storyRoutes: storySignatures.keys.sorted().map { .init(signature: $0, frequency: .init(storySignatures[$0, default: 0], of: ordered.count)) },
                      seedPairDifferences: try pairDifferences(pairs), resourceSummaries: try resources(ordered),
-                     decisionClamps: try clampSummary(runs: ordered, isJump: false), timeJumpClamps: try clampSummary(runs: ordered, isJump: true))
+                     decisionClamps: try clampSummary(runs: ordered, isJump: false), timeJumpClamps: try clampSummary(runs: ordered, isJump: true),
+                     adjacentSameEventCategory: .init(repeatedCategories, of: adjacent), linkedChainCounts: chainCounts,
+                     atLeastTwoLinkedChains: .init(ordered.filter { ($0.linkedStoryChains?.count ?? 0) >= 2 }.count, of: ordered.count))
     }
 
     static func resources(_ runs: [BatchRun]) throws -> [ResourceSummary] {

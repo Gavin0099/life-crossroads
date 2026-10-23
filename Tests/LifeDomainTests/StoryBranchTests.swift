@@ -5,7 +5,7 @@ import LifeDomain
 /// Reviewed contracts: one changed early choice must change later story content or available actions.
 final class StoryBranchTests: XCTestCase {
     private func session(at age: Int, choices: [String: String], seed: UInt64 = 42) throws -> LifeSession {
-        let catalog = try StatisticsRepository.bundled()
+        let catalog = try legacyStoryFixture()
         var play = try LifeSession.start(catalog: catalog, countryCode: "USA", householdID: "usa-2", seed: seed)
         while play.state.age < age {
             let event = try play.event(catalog: catalog)
@@ -16,7 +16,7 @@ final class StoryBranchTests: XCTestCase {
     }
 
     func testChildhoodFriendshipChangesWhoAppearsAtSeventyTwo() throws {
-        let catalog = try StatisticsRepository.bundled()
+        let catalog = try legacyStoryFixture()
         let keptPromise = try session(at: 72, choices: ["child-friend": "invest"])
         let anotherRoute = try session(at: 72, choices: ["child-friend": "rest"])
         let reunion = try keptPromise.event(catalog: catalog)
@@ -29,7 +29,7 @@ final class StoryBranchTests: XCTestCase {
     }
 
     func testLearningRouteChangesMentorSceneAndWorkshopOpportunity() throws {
-        let catalog = try StatisticsRepository.bundled()
+        let catalog = try legacyStoryFixture()
         let prepared = ["child-interest": "invest", "child-transition": "invest", "teen-project": "offline"]
         let paper = try session(at: 17, choices: prepared)
         var onlineChoices = prepared; onlineChoices["teen-project"] = "invest"
@@ -43,7 +43,7 @@ final class StoryBranchTests: XCTestCase {
     }
 
     func testSharedCareArrangementUnlocksReciprocalSupport() throws {
-        let catalog = try StatisticsRepository.bundled()
+        let catalog = try legacyStoryFixture()
         let shared = try session(at: 52, choices: ["adult-care": "invest"])
         let firstRequest = try session(at: 52, choices: ["adult-care": "rest"])
         let reciprocal = try shared.event(catalog: catalog)
@@ -53,7 +53,7 @@ final class StoryBranchTests: XCTestCase {
     }
 
     func testLearningBranchTraceRecordsActualHistoryAndBothSidesOfResourceThreshold() throws {
-        let catalog = try StatisticsRepository.bundled()
+        let catalog = try legacyStoryFixture()
         let play = try session(at: 17, choices: ["teen-project": "offline"])
         var below = play.state
         below.resources.skills = 27
@@ -85,7 +85,7 @@ final class StoryBranchTests: XCTestCase {
     }
 
     func testCareBranchRequiresHistoryAndHealthAndCannotBeBypassedThroughResolver() throws {
-        let catalog = try StatisticsRepository.bundled()
+        let catalog = try legacyStoryFixture()
         let priorArrangement = try session(at: 52, choices: ["adult-care": "invest"])
         var tired = priorArrangement.state; tired.resources.health = 54
         let denied = try DecisionResolver.resolve(state: tired, eventID: "middle-support", choiceID: "shareShift", catalog: catalog)
@@ -107,7 +107,7 @@ final class StoryBranchTests: XCTestCase {
     }
 
     func testPreviewExecutionAndCodableReplayKeepActualVariantAndChoiceSnapshots() throws {
-        let catalog = try StatisticsRepository.bundled()
+        let catalog = try legacyStoryFixture()
         var play = try session(at: 72, choices: ["child-friend": "ask"])
         let actualEvent = try play.event(catalog: catalog)
         let preview = try play.preview(choiceID: "invest", catalog: catalog)
@@ -117,7 +117,7 @@ final class StoryBranchTests: XCTestCase {
         XCTAssertEqual(play, restored)
         XCTAssertEqual(play.traces.last, preview)
         XCTAssertEqual(preview.eventTitle, actualEvent.title)
-        XCTAssertEqual(preview.choiceTitle, "和阿禾修補風車，再做一張合照")
+        XCTAssertEqual(preview.choiceTitle, "和阿禾一起做風車，再做一張合照")
         XCTAssertEqual(preview.recurringPerson, "阿禾")
         XCTAssertEqual(preview.storyVariantID, "later-reconnect-old-friend")
         XCTAssertEqual(preview.storyBranch?.sourceChoiceID, "ask")
@@ -126,7 +126,7 @@ final class StoryBranchTests: XCTestCase {
     }
 
     func testAllCountryFamiliesCanFinishWithDiverseChoicesAndBranchNarratives() throws {
-        let catalog = try StatisticsRepository.bundled()
+        let catalog = try legacyStoryFixture()
         var seenVariants: Set<String> = []
         for household in catalog.households where household.countryCode != "TWN" {
             for seed: UInt64 in 0..<12 {
@@ -155,7 +155,7 @@ final class StoryBranchTests: XCTestCase {
     }
 
     func testZeroNationalCostIsObservationAndOnlyOccurredLuckContributes() throws {
-        let catalog = try StatisticsRepository.bundled()
+        let catalog = try legacyStoryFixture()
         var sawChance = false, sawNoChance = false
         for seed: UInt64 in 0..<20 {
             let play = try session(at: 13, choices: [:], seed: seed)
