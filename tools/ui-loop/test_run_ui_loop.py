@@ -18,15 +18,15 @@ sim = importlib.util.module_from_spec(spec); spec.loader.exec_module(sim)
 
 
 def summary(model='iPhone 17'):
-    return {'title': 'Test - WorldGameplay', 'result': 'Passed', 'failedTests': 0, 'passedTests': 6,
+    return {'title': 'Test - WorldGameplay', 'result': 'Passed', 'failedTests': 0, 'passedTests': 10,
             'devicesAndConfigurations': [{'device': {'modelName': model, 'platform': 'iOS Simulator', 'deviceId': 'test-device'},
-                                           'failedTests': 0, 'passedTests': 6}]}
+                                           'failedTests': 0, 'passedTests': 10}]}
 
 
 class Gates(unittest.TestCase):
     def test_critic_requires_exact_head_and_zero_both_counts(self):
-        self.assertEqual(loop.parse_critic('GATE=PASS\nP0_COUNT=0\nP1_COUNT=0\nEvidence'), {'gate': 'PASS', 'p0': 0, 'p1': 0})
-        for text in ('prefix GATE=PASS\nP0_COUNT=0\nP1_COUNT=0', 'GATE=FAIL\nP0_COUNT=0\nP1_COUNT=0\nGATE=PASS',
+        self.assertEqual(loop.parse_critic('GATE=PASS\nP0_COUNT=0\nP1_COUNT=0\nACTING_GATE=PASS\nREDUCE_MOTION_GATE=PASS\nEvidence'), {'gate': 'PASS', 'p0': 0, 'p1': 0, 'acting_gate': 'PASS', 'reduce_motion_gate': 'PASS'})
+        for text in ('prefix GATE=PASS\nP0_COUNT=0\nP1_COUNT=0', 'GATE=FAIL\nP0_COUNT=0\nP1_COUNT=0\nACTING_GATE=FAIL\nREDUCE_MOTION_GATE=PASS\nGATE=PASS',
                      'GATE=PASS\nP0_COUNT=0\nP1_COUNT=1', 'GATE=PASS\nP0_COUNT=0\nP1_COUNT=01'):
             if text.startswith('GATE=FAIL'):
                 self.assertEqual(loop.parse_critic(text)['gate'], 'FAIL')
@@ -59,8 +59,8 @@ class Gates(unittest.TestCase):
     def receipt_fixture(self, root):
         final = root / 'artifacts/ui-loop/final'; final.mkdir(parents=True)
         docs = root / 'docs/ui-loop'; docs.mkdir(parents=True)
-        for name in ('STYLE_GUIDE.md', 'PROGRESS.md', 'FINAL_REVIEW.md'): (docs / name).write_text('fixture')
-        for name in loop.PNG_NAMES: (final / name).write_bytes(b'\x89PNG\r\n\x1a\n' + b'\x00\x00\x00\rIHDR' + b'x' * 5000)
+        for name in ('STYLE_GUIDE.md', 'PROGRESS.md', 'FINAL_REVIEW.md', 'ACTING_IMPLEMENTATION.md', 'CHARACTER_ACTING_SPEC.md'): (docs / name).write_text('fixture')
+        for i, name in enumerate(loop.PNG_NAMES): (final / name).write_bytes(b'\x89PNG\r\n\x1a\n' + b'\x00\x00\x00\rIHDR' + bytes([i]) * 5000)
         hashes = {name: loop.sha(final / name) for name in loop.PNG_NAMES}
         summaries = []
         for i, model in enumerate(loop.MODEL_NAMES):
@@ -72,9 +72,41 @@ class Gates(unittest.TestCase):
                 'testNodes': [{'name': 'WorldGameplayTests', 'nodeType': 'Test Suite', 'children': [
                     {'name': name + '()', 'nodeType': 'Test Case', 'result': 'Passed'} for name in loop.REQUIRED_TESTS]}]}))
             summaries.append({'path': p.name, 'sha256': loop.sha(p), 'tests_path': tree.name, 'tests_sha256': loop.sha(tree)})
+        asset_folder = root / 'UIPrototype/WorldGameplay/Assets.xcassets/fixture-actor.imageset'
+        asset_folder.mkdir(parents=True)
+        asset = asset_folder / 'actor.png'; asset.write_bytes((final / loop.PNG_NAMES[0]).read_bytes())
+        (asset_folder / 'Contents.json').write_text(json.dumps({'images': [{'filename': 'actor.png'}]}))
+        observations = {'schema_version': '1.1', 'event_id': 'bridge', 'source_event_id': 'workshop-2027', 'character_id': 'otter-acheng',
+            'expression_catalog': ['neutral', 'thinking', 'hopeful', 'tired'],
+            'pose_catalog': ['idle', 'collaborating', 'asking'], 'states': {}}
+        for state_id, option, expression, pose, prop in (
+            ('bridge-initial', None, 'thinking', 'idle', 'materials'),
+            ('bridge-team', 'team', 'hopeful', 'collaborating', 'prototype'),
+            ('bridge-help', 'help', 'neutral', 'asking', 'tools-list')):
+            observations['states'][state_id] = {'event_id': 'bridge', 'option_id': option,
+                'expression_id': expression, 'pose_id': pose, 'prop_id': prop, 'asset_ids': ['fixture-actor']}
+        observation_records = []
+        for i in range(2):
+            raw = root / f'observations-{i}.json'; raw.write_text(json.dumps(observations))
+            manifest = root / f'attachments-{i}.json'
+            manifest.write_text(json.dumps([{'testIdentifier': 'WorldGameplayTests/testActingBranchesAreVisuallyDistinct()',
+                'attachments': [{'suggestedHumanReadableName': 'acting-state-observations.json', 'exportedFileName': raw.name}]}]))
+            observation_records.append({'path': raw.name, 'sha256': loop.sha(raw),
+                'manifest_path': manifest.name, 'manifest_sha256': loop.sha(manifest), 'exported_filename': raw.name,
+                'device_id': f'11111111-2222-4333-8444-55555555555{i}',
+                'test_id': 'WorldGameplayTests/testActingBranchesAreVisuallyDistinct()'})
+        proof = json.loads(json.dumps(observations))
+        proof.update(contact_sheet='artifacts/ui-loop/final/06-acting-contact-sheet.png',
+            contact_sheet_sha256=hashes['06-acting-contact-sheet.png'],
+            reduced_motion_test='testReducedMotionPreservesOutcome',
+            asset_sha256={str(asset.relative_to(root)): loop.sha(asset)})
+        for state_id, png in (('bridge-initial', '01-home.png'), ('bridge-team', '02-friend-outcome.png'), ('bridge-help', '03-teacher-outcome.png')):
+            proof['states'][state_id].update(screenshot='artifacts/ui-loop/final/' + png, screenshot_sha256=hashes[png])
+        proof_path = root / 'acting-state-proof.json'; proof_path.write_text(json.dumps(proof))
+        acting = {'path': proof_path.name, 'sha256': loop.sha(proof_path), 'observations': observation_records}
         critics = []
         for i in range(2):
-            report = root / f'critic-{i}.md'; report.write_text('GATE=PASS\nP0_COUNT=0\nP1_COUNT=0\nfixture')
+            report = root / f'critic-{i}.md'; report.write_text('GATE=PASS\nP0_COUNT=0\nP1_COUNT=0\nACTING_GATE=PASS\nREDUCE_MOTION_GATE=PASS\nfixture')
             log = root / f'critic-{i}.jsonl'; log.write_text(json.dumps({'type': 'thread.started', 'thread_id': f'fixture-{i}'}) + '\n')
             inputs = {name: {'path': str(final / name), 'sha256': hashes[name]} for name in loop.PNG_NAMES}
             argv = ['codex', 'exec']
@@ -90,7 +122,7 @@ class Gates(unittest.TestCase):
             checks.append({'kind': kind, 'exit_code': 0, 'stdout': log.name, 'stderr': log.name, 'stdout_sha256': loop.sha(log), 'stderr_sha256': loop.sha(log)})
         cleanup = root / 'cleanup.json'
         cleanup.write_text(json.dumps({'version': 1, 'devices': [{'uuid': f'11111111-2222-4333-8444-55555555555{i}', 'status': 'deleted'} for i in range(2)], 'creates': []}))
-        return {'version': 1, 'result': 'PASS', 'simulator_cleanup': {'path': cleanup.name, 'sha256': loop.sha(cleanup)}, 'checks': checks, 'source_sha256': loop.source_hashes(root), 'image_sha256': hashes,
+        return {'version': 1, 'result': 'PASS', 'acting_state': acting, 'simulator_cleanup': {'path': cleanup.name, 'sha256': loop.sha(cleanup)}, 'checks': checks, 'source_sha256': loop.source_hashes(root), 'image_sha256': hashes,
                 'summaries': summaries, 'critics': critics}
 
     def test_receipt_binds_current_source_images_two_threads_and_both_models(self):
@@ -115,6 +147,39 @@ class Gates(unittest.TestCase):
             data = json.loads(p.read_text()); data['argv'] = ['codex', 'exec']
             p.write_text(json.dumps(data)); item['input_receipt_sha256'] = loop.sha(p)
             with self.assertRaises(loop.Stop): loop.gate(root, receipt)
+
+    def test_acting_catalog_or_rendered_asset_cannot_be_claimed_by_name_only(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d); receipt = self.receipt_fixture(root)
+            proof = json.loads((root / receipt['acting_state']['path']).read_text())
+            proof['expression_catalog'].remove('tired')
+            with self.assertRaisesRegex(loop.Stop, 'four-expression'): loop.validate_acting_observations(root, proof)
+            proof['expression_catalog'].append('tired')
+            proof['states']['bridge-help']['asset_ids'] = ['nonexistent-actor']
+            with self.assertRaises(loop.Stop): loop.validate_acting_observations(root, proof)
+
+    def test_proof_must_equal_observed_actual_ui_state(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d); receipt = self.receipt_fixture(root)
+            item = receipt['acting_state']; path = root / item['path']
+            proof = json.loads(path.read_text()); proof['states']['bridge-help']['prop_id'] = 'invented-help-prop'
+            path.write_text(json.dumps(proof)); item['sha256'] = loop.sha(path)
+            with self.assertRaisesRegex(loop.Stop, 'differs from observed'): loop.gate(root, receipt)
+
+    def test_nine_tests_or_missing_acting_critic_assessment_is_rejected(self):
+        data = summary(); data['passedTests'] = 9
+        with self.assertRaises(loop.Stop): loop.check_summary(data, 'iPhone 17')
+        with self.assertRaises(loop.Stop): loop.parse_critic('GATE=PASS\nP0_COUNT=0\nP1_COUNT=0')
+        with self.assertRaises(loop.Stop): loop.parse_critic('GATE=PASS\nP0_COUNT=0\nP1_COUNT=0\nACTING_GATE=NOT_VERIFIED\nREDUCE_MOTION_GATE=PASS')
+
+    def test_observation_attachment_must_come_from_executed_branch_test(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d); raw = root / 'observation.json'; raw.write_text('{}')
+            attachment = {'suggestedHumanReadableName': 'acting-state-observations_0_123.json', 'exportedFileName': raw.name}
+            (root / 'manifest.json').write_text(json.dumps([{'testIdentifier': 'Unrelated/testFake()', 'attachments': [attachment]}]))
+            with self.assertRaises(loop.Stop): loop.read_acting_attachment(root)
+            (root / 'manifest.json').write_text(json.dumps([{'testIdentifier': 'WorldGameplayTests/testActingBranchesAreVisuallyDistinct()', 'attachments': [attachment]}]))
+            self.assertEqual(loop.read_acting_attachment(root), raw.resolve())
 
     def test_six_unrelated_passing_tests_do_not_replace_required_methods(self):
         with tempfile.TemporaryDirectory() as d:

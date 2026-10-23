@@ -19,18 +19,27 @@ import uuid
 VERSION = 1
 RESERVE = 600
 MAX_BUILDERS = 6
-PNG_NAMES = ('01-home.png', '02-friend-outcome.png', '03-teacher-outcome.png', '04-narrow.png', '05-large-type.png')
+PNG_NAMES = ('01-home.png', '02-friend-outcome.png', '03-teacher-outcome.png', '04-narrow.png', '05-large-type.png', '06-acting-contact-sheet.png')
+EXTRA_IMAGE = '07-large-type-reaction.png'
 WRITABLE = ('UIPrototype/WorldGameplay', 'UIPrototype/WorldGameplayTests', 'UIPrototype/WorldGameplay.xcodeproj',
             'assets/gameplay', 'assets/prompts', 'docs/ui-loop')
 SOURCE_ROOTS = ('UIPrototype/WorldGameplay', 'UIPrototype/WorldGameplayTests', 'UIPrototype/WorldGameplay.xcodeproj',
-                'LifeCrossroads', 'Tests', 'tools', 'assets/gameplay', 'assets/prompts', 'Package.swift', 'docs/ui-loop/STYLE_GUIDE.md')
+                'LifeCrossroads', 'Tests', 'tools', 'assets/gameplay', 'assets/prompts', 'Package.swift',
+                'docs/ui-loop/STYLE_GUIDE.md', 'docs/ui-loop/CHARACTER_ACTING_SPEC.md')
 MODEL_NAMES = ('iPhone 17', 'iPhone SE (3rd generation)')
 REQUIRED_TESTS = frozenset(('testTeamSceneGrowsIntoAdultMemory',
     'testHelpHasDifferentActorsObjectComparisonAndMemory',
     'testFoldGatePauseAndBackgroundFreezeTime',
     'testLargestTextAndReducedMotionKeepChoiceAndDetailReachable',
     'testMissingRouteDoesNotProduceLifeAndCanRestart',
-    'testMissingNextRetainsLastSceneWithoutInventingYears'))
+    'testMissingNextRetainsLastSceneWithoutInventingYears',
+    'testActingBranchesAreVisuallyDistinct', 'testReducedMotionPreservesOutcome',
+    'testActingContactSheetShowsCatalog', 'testMissingRouteKeepsInitialActing'))
+EXPRESSIONS = frozenset(('neutral', 'thinking', 'hopeful', 'tired'))
+POSES = frozenset(('idle', 'collaborating', 'asking'))
+ACTING_STATES = {'bridge-initial': (None, 'thinking', 'idle', PNG_NAMES[0]),
+                 'bridge-team': ('team', 'hopeful', 'collaborating', PNG_NAMES[1]),
+                 'bridge-help': ('help', None, 'asking', PNG_NAMES[2])}
 
 class Stop(RuntimeError):
     pass
@@ -113,7 +122,7 @@ def validate_provenance(root):
 
 def parse_critic(text):
     lines = text.strip().splitlines()
-    if len(lines) < 3 or not re.fullmatch(r'GATE=(PASS|FAIL|NOT_VERIFIED)', lines[0]):
+    if len(lines) < 5 or not re.fullmatch(r'GATE=(PASS|FAIL|NOT_VERIFIED)', lines[0]):
         raise Stop('Malformed critic gate header')
     counts = []
     for prefix, line in zip(('P0_COUNT', 'P1_COUNT'), lines[1:3]):
@@ -123,7 +132,13 @@ def parse_critic(text):
     passed = lines[0] == 'GATE=PASS'
     if passed and counts != [0, 0]:
         raise Stop('Critic PASS contradicts P0/P1 count')
-    return {'gate': lines[0][5:], 'p0': counts[0], 'p1': counts[1]}
+    for prefix, line in zip(('ACTING_GATE', 'REDUCE_MOTION_GATE'), lines[3:5]):
+        if not re.fullmatch(prefix + r'=(PASS|FAIL|NOT_VERIFIED)', line):
+            raise Stop('Missing critic acting/motion assessment')
+    acting, motion = (line.split('=')[1] for line in lines[3:5])
+    if passed and (acting != 'PASS' or motion != 'PASS'):
+        raise Stop('Overall PASS requires acting and reduced-motion PASS')
+    return {'gate': lines[0][5:], 'p0': counts[0], 'p1': counts[1], 'acting_gate': acting, 'reduce_motion_gate': motion}
 
 
 def check_summary(data, model):
@@ -131,7 +146,7 @@ def check_summary(data, model):
         raise Stop('Wrong xcresult scheme')
     if data.get('result') != 'Passed' or type(data.get('failedTests')) is not int or data['failedTests'] != 0:
         raise Stop('xcresult did not pass')
-    if type(data.get('passedTests')) is not int or data['passedTests'] < 6:
+    if type(data.get('passedTests')) is not int or data['passedTests'] < 10:
         raise Stop('xcresult has no executed passing tests')
     devices = data.get('devicesAndConfigurations')
     if not isinstance(devices, list) or len(devices) != 1:
@@ -141,7 +156,7 @@ def check_summary(data, model):
         raise Stop('Malformed xcresult device')
     if d['device'].get('modelName') != model or d['device'].get('platform') != 'iOS Simulator':
         raise Stop('Wrong Simulator model/platform')
-    if type(d.get('failedTests')) is not int or d['failedTests'] != 0 or type(d.get('passedTests')) is not int or d['passedTests'] < 6:
+    if type(d.get('failedTests')) is not int or d['failedTests'] != 0 or type(d.get('passedTests')) is not int or d['passedTests'] < 10:
         raise Stop('Simulator tests not passing')
     return d['device']['deviceId']
 
@@ -177,6 +192,81 @@ def check_tests(data, device_id):
     visit(data['testNodes'])
     if found != REQUIRED_TESTS:
         raise Stop('Missing mandatory WorldGameplay tests: ' + ', '.join(sorted(REQUIRED_TESTS - found)))
+
+
+def validate_acting_observations(root, data):
+    """Validate observations exported by the real branch test, not a builder-authored proof."""
+    if not isinstance(data, dict) or data.get('schema_version') != '1.1' or data.get('event_id') != 'bridge' or data.get('source_event_id') != 'workshop-2027' or data.get('character_id') != 'otter-acheng':
+        raise Stop('Acting observations need schema 1.1, bridge presentation alias and workshop-2027 source event')
+    if not isinstance(data.get('expression_catalog'), list) or set(data['expression_catalog']) != EXPRESSIONS or len(data['expression_catalog']) != 4:
+        raise Stop('Acting observation lacks four-expression catalog')
+    if not isinstance(data.get('pose_catalog'), list) or set(data['pose_catalog']) != POSES or len(data['pose_catalog']) != 3:
+        raise Stop('Acting observation lacks three-pose catalog')
+    states = data.get('states')
+    if not isinstance(states, dict) or set(states) != set(ACTING_STATES):
+        raise Stop('Acting observation requires three actual route states')
+    asset_hashes = {}
+    for state_id, (option, expression, pose, _) in ACTING_STATES.items():
+        state = states[state_id]
+        if not isinstance(state, dict) or state.get('event_id') != 'bridge' or state.get('option_id') != option:
+            raise Stop('Acting event/option mismatch: ' + state_id)
+        if state.get('pose_id') != pose or state.get('expression_id') not in ({expression} if expression else {'neutral', 'hopeful'}):
+            raise Stop('Acting expression/pose mismatch: ' + state_id)
+        if not isinstance(state.get('prop_id'), str) or not state['prop_id']:
+            raise Stop('Acting observation lacks prop ID')
+        ids = state.get('asset_ids')
+        if not isinstance(ids, list) or not ids:
+            raise Stop('Acting state lacks actually rendered asset IDs')
+        for asset in ids:
+            if not isinstance(asset, str) or not re.fullmatch(r'[A-Za-z0-9_-]+', asset):
+                raise Stop('Invalid acting asset ID')
+            folder = root / 'UIPrototype/WorldGameplay/Assets.xcassets' / (asset + '.imageset')
+            content = json.loads(bounded_path(root, str((folder / 'Contents.json').relative_to(root))).read_text())
+            images = [item['filename'] for item in content.get('images', []) if item.get('filename')]
+            if not images:
+                raise Stop('Acting asset has no image content: ' + asset)
+            for filename in images:
+                image = bounded_path(root, str((folder / filename).relative_to(root)))
+                if not valid_png(image):
+                    raise Stop('Acting asset is not a real PNG: ' + asset)
+                asset_hashes[str(image.relative_to(root.resolve()))] = sha(image)
+    if states['bridge-team']['prop_id'] == states['bridge-help']['prop_id']:
+        raise Stop('Acting branch props must differ')
+    return asset_hashes
+
+
+def acting_attachment_name(manifest):
+    matches = []
+    for test in manifest:
+        if 'WorldGameplayTests/testActingBranchesAreVisuallyDistinct' not in test.get('testIdentifier', ''):
+            continue
+        for item in test.get('attachments', []):
+            if item.get('suggestedHumanReadableName', '').startswith('acting-state-observations'):
+                matches.append(item.get('exportedFileName'))
+    if len(matches) != 1:
+        raise Stop('Exactly one branch-test acting observation attachment is required')
+    return matches[0]
+
+
+def read_acting_attachment(export):
+    return bounded_path(export, acting_attachment_name(json.loads((export / 'manifest.json').read_text())))
+
+
+def validate_acting_proof(root, proof, image_hashes):
+    assets = validate_acting_observations(root, proof)
+    if proof.get('asset_sha256') != assets:
+        raise Stop('Acting proof asset binding differs from current UI images')
+    if proof.get('contact_sheet') != 'artifacts/ui-loop/final/' + PNG_NAMES[5] or proof.get('contact_sheet_sha256') != image_hashes[PNG_NAMES[5]]:
+        raise Stop('Acting contact sheet binding mismatch')
+    if proof.get('reduced_motion_test') != 'testReducedMotionPreservesOutcome':
+        raise Stop('Reduced-motion proof names the wrong executed test')
+    for state_id, (_, _, _, png) in ACTING_STATES.items():
+        state = proof['states'][state_id]
+        if state.get('screenshot') != 'artifacts/ui-loop/final/' + png or state.get('screenshot_sha256') != image_hashes[png]:
+            raise Stop('Acting state screenshot binding mismatch')
+    if len({image_hashes[PNG_NAMES[i]] for i in (0, 1, 2)}) != 3:
+        raise Stop('Acting route screenshots are byte-identical')
+    return True
 
 
 def image_calls(path):
@@ -340,7 +430,7 @@ class Runner:
         checks.append({'kind': 'provenance', 'command': ['supervisor:validate_provenance'], 'exit_code': 0,
                        'stdout': str(provenance_log), 'stdout_sha256': sha(provenance_log),
                        'stderr': str(provenance_error), 'stderr_sha256': sha(provenance_error)})
-        summaries = []; exports = []
+        summaries = []; exports = []; observations = []
         for label, model, suffix in (('standard', MODEL_NAMES[0], 'iPhone-17'), ('narrow', MODEL_NAMES[1], 'iPhone-SE-3rd-generation')):
             bundle = folder / (label + '.xcresult')
             self.run([sys.executable, self.sim_script, '--scheme', 'WorldGameplay', '--device-type', suffix,
@@ -361,13 +451,28 @@ class Runner:
             self.run([sys.executable, 'tools/ui/export-world-evidence.py', bundle, export],
                      f'round-{number:02d}-{label}-export', cap=90)
             exports.append(export)
+            raw_export = folder / (label + '-attachments')
+            self.run(['xcrun', 'xcresulttool', 'export', 'attachments', '--path', bundle, '--output-path', raw_export],
+                     f'round-{number:02d}-{label}-acting-export', cap=90)
+            attachment = read_acting_attachment(raw_export)
+            observed = json.loads(attachment.read_text()); validate_acting_observations(self.root, observed)
+            observations.append({'path': str(attachment), 'sha256': sha(attachment), 'device_id': device_id,
+                                 'manifest_path': str(raw_export / 'manifest.json'), 'manifest_sha256': sha(raw_export / 'manifest.json'),
+                                 'exported_filename': attachment.name,
+                                 'test_id': 'WorldGameplayTests/testActingBranchesAreVisuallyDistinct()'})
         if before != source_hashes(self.root):
             raise Stop('Source changed during supervisor validation')
         mapping = {PNG_NAMES[0]: exports[0] / '01-world-home.png',
                    PNG_NAMES[1]: exports[0] / '02-team-reaction.png',
                    PNG_NAMES[2]: exports[0] / '04-help-reaction-cat-teacher.png',
                    PNG_NAMES[3]: exports[1] / '01-world-home.png',
-                   PNG_NAMES[4]: exports[1] / 'accessibility-home.png'}
+                   PNG_NAMES[4]: exports[1] / 'accessibility-home.png',
+                   PNG_NAMES[5]: exports[0] / 'acting-contact-sheet.png'}
+        sheet_records = [record for record in json.loads((exports[0] / 'manifest.json').read_text())
+                         if record.get('file') == 'acting-contact-sheet.png'
+                         and 'WorldGameplayTests/testActingContactSheetShowsCatalog' in record.get('testIdentifier', '')]
+        if len(sheet_records) != 1:
+            raise Stop('Acting contact sheet must come from its actual catalog UI test')
         images = folder / 'final'; images.mkdir(exist_ok=True)
         for name, src in mapping.items():
             if not src.is_file() or not valid_png(src):
@@ -376,23 +481,37 @@ class Runner:
         extras = {}
         large_reaction = exports[1] / 'accessibility-reaction.png'
         if large_reaction.is_file() and valid_png(large_reaction):
-            shutil.copyfile(large_reaction, images / '06-large-type-reaction.png')
-            extras['06-large-type-reaction.png'] = str(images / '06-large-type-reaction.png')
+            shutil.copyfile(large_reaction, images / EXTRA_IMAGE)
+            extras[EXTRA_IMAGE] = str(images / EXTRA_IMAGE)
+        observed = [json.loads(Path(record['path']).read_text()) for record in observations]
+        if observed[0] != observed[1]:
+            raise Stop('Acting observations differ across Simulator models')
+        proof = observed[0]
+        proof.update(contact_sheet='artifacts/ui-loop/final/' + PNG_NAMES[5], contact_sheet_sha256=sha(images / PNG_NAMES[5]),
+                     reduced_motion_test='testReducedMotionPreservesOutcome', asset_sha256=validate_acting_observations(self.root, proof))
+        for state_id, (_, _, _, png) in ACTING_STATES.items():
+            proof['states'][state_id].update(screenshot='artifacts/ui-loop/final/' + png, screenshot_sha256=sha(images / png))
+        proof_path = folder / 'acting-state-proof.json'; write_json(proof_path, proof)
+        validate_acting_proof(self.root, proof, {n: sha(images / n) for n in PNG_NAMES})
         return {'source_sha256': before, 'checks': checks, 'summaries': summaries, 'extra_images': extras,
+                'acting_observations': observations, 'acting_proof': str(proof_path), 'acting_proof_sha256': sha(proof_path),
                 'extra_image_sha256': {n: sha(p) for n, p in extras.items()}, 'images': {n: str(images / n) for n in PNG_NAMES},
                 'image_sha256': {n: sha(images / n) for n in PNG_NAMES}, 'validated_at': now()}
 
     def critic(self, number, evidence):
         images = dict(evidence['images'], **evidence.get('extra_images', {}))
         prompt = f'''You are a strictly read-only independent visual UX critic. Repository: {self.root}.
-Read docs/ui-loop/STYLE_GUIDE.md and PROGRESS.md. The five required PNGs and available maximum-text outcome are attached using CLI --image. Inspect all five images, not filenames or source code.
+Read docs/ui-loop/STYLE_GUIDE.md, CHARACTER_ACTING_SPEC.md, ACTING_IMPLEMENTATION.md and PROGRESS.md. The six required PNGs including acting contact sheet and available maximum-text outcome are attached using CLI --image. Inspect every image, not filenames or source code alone.
 Compare against baseline artifacts/gameplay/screenshots/standard/01-world-home.png and prior critic reports.
 Review character scale, first-screen decisions, teen suitability, two visibly different consequences, narrow and maximum text layout, CTA reachability.
-Only inspect, do not modify any file, commit, run tests or generate assets. First three lines of final output MUST be exactly:
+Only inspect, do not modify any file, commit, run tests or generate assets. First five lines of final output MUST be exactly:
 GATE=PASS or GATE=FAIL or GATE=NOT_VERIFIED
 P0_COUNT=<nonnegative integer>
 P1_COUNT=<nonnegative integer>
-PASS requires all five images opened, no P0/P1, all choices/CTA reachable and visibly distinct route consequences.
+ACTING_GATE=PASS or ACTING_GATE=FAIL or ACTING_GATE=NOT_VERIFIED
+REDUCE_MOTION_GATE=PASS or REDUCE_MOTION_GATE=FAIL or REDUCE_MOTION_GATE=NOT_VERIFIED
+PASS requires all six images inspected, no P0/P1, all choices/CTA reachable, four distinct expressions and three actual poses visible in the contact sheet, consistent identity anchors and visibly different hand/body/prop interactions across both played branches. Text labels, emoji, image hash differences or unchanged smiling portraits are not proof of acting.
+Inspect actual SwiftUI presentation and reduced-motion test plus supervisor observations at {evidence['acting_proof']}. Ten required tests passed separately on each Simulator. Reduced-motion gate is an engineering observation, not a claim of a video or real-device check; verify final acting state is preserved without animation delay. Report boundaries clearly.
 If any attached image cannot be seen, use NOT_VERIFIED. Then list precise evidence and at most three fixes; distinguish subjective judgment from test facts.
 For each P0 finding include a stable line P0_ID=short-lowercase-hyphenated-id. Reuse that ID if the same defect persists.
 Round {number}; images: {json.dumps(images, ensure_ascii=False)}
@@ -428,7 +547,7 @@ def _gate(root, receipt):
         raise Stop('Current source differs from validated source')
     images = receipt.get('image_sha256')
     if not isinstance(images, dict) or set(images) != set(PNG_NAMES):
-        raise Stop('Expected five final PNG hashes')
+        raise Stop('Expected six final PNG hashes')
     for name, digest in images.items():
         path = root / 'artifacts/ui-loop/final' / name
         if not path.is_file() or not valid_png(path) or sha(path) != digest:
@@ -451,6 +570,31 @@ def _gate(root, receipt):
         devices.append(device_id)
     if len(set(devices)) != 2:
         raise Stop('Two independent devices required')
+    acting = receipt.get('acting_state')
+    if not isinstance(acting, dict):
+        raise Stop('Missing supervisor acting proof')
+    proof_path = bounded_path(root, acting.get('path'))
+    if sha(proof_path) != acting.get('sha256'):
+        raise Stop('Acting proof hash mismatch')
+    proof = json.loads(proof_path.read_text()); validate_acting_proof(root, proof, images)
+    observations = acting.get('observations')
+    if not isinstance(observations, list) or len(observations) != 2:
+        raise Stop('Two real Simulator acting observations are required')
+    observed_data = []
+    for record, device_id in zip(observations, devices):
+        raw = bounded_path(root, record.get('path'))
+        if sha(raw) != record.get('sha256') or record.get('device_id') != device_id or record.get('test_id') != 'WorldGameplayTests/testActingBranchesAreVisuallyDistinct()':
+            raise Stop('Acting observation hash/device/test mismatch')
+        manifest = bounded_path(root, record.get('manifest_path'))
+        if sha(manifest) != record.get('manifest_sha256') or acting_attachment_name(json.loads(manifest.read_text())) != record.get('exported_filename'):
+            raise Stop('Acting attachment origin manifest mismatch')
+        data = json.loads(raw.read_text()); validate_acting_observations(root, data); observed_data.append(data)
+        for state_id in ACTING_STATES:
+            for key in ('event_id', 'option_id', 'expression_id', 'pose_id', 'prop_id', 'asset_ids'):
+                if proof['states'][state_id].get(key) != data['states'][state_id].get(key):
+                    raise Stop('Acting proof differs from observed UI state')
+    if observed_data[0] != observed_data[1]:
+        raise Stop('Acting observations differ between devices')
     cleanup = receipt.get('simulator_cleanup')
     if not isinstance(cleanup, dict):
         raise Stop('Missing owned Simulator cleanup receipt')
@@ -491,8 +635,8 @@ def _gate(root, receipt):
         if not isinstance(inputs, dict) or inputs.get('exit_code') != 0 or inputs.get('transcript_sha256') != sha(transcript):
             raise Stop('Incomplete real critic execution receipt')
         image_inputs = inputs.get('image_inputs')
-        if not isinstance(image_inputs, dict) or not set(PNG_NAMES).issubset(image_inputs) or set(image_inputs) - set(PNG_NAMES) - {'06-large-type-reaction.png'}:
-            raise Stop('Five actual image inputs required')
+        if not isinstance(image_inputs, dict) or not set(PNG_NAMES).issubset(image_inputs) or set(image_inputs) - set(PNG_NAMES) - {EXTRA_IMAGE}:
+            raise Stop('Six actual image inputs required')
         if {name: item.get('sha256') for name, item in image_inputs.items()} != dict(critic.get('image_sha256', {}), **critic.get('extra_image_sha256', {})):
             raise Stop('Critic image inputs differ from reviewed images')
         argv = inputs.get('argv', [])
@@ -506,7 +650,7 @@ def _gate(root, receipt):
         raise Stop('Critic executions are not independent')
     latest = critics[-1]
     parsed = parse_critic(bounded_path(root, latest['report']).read_text())
-    if parsed != {'gate': 'PASS', 'p0': 0, 'p1': 0} or latest.get('gate') != 'PASS':
+    if parsed != {'gate': 'PASS', 'p0': 0, 'p1': 0, 'acting_gate': 'PASS', 'reduce_motion_gate': 'PASS'} or latest.get('gate') != 'PASS':
         raise Stop('Latest critic is not PASS with P0/P1 zero')
     if latest.get('source_sha256') != receipt['source_sha256'] or latest.get('image_sha256') != images:
         raise Stop('Critic did not review current final source/images')
@@ -514,9 +658,9 @@ def _gate(root, receipt):
     if not isinstance(extras, dict) or latest.get('extra_image_sha256', {}) != extras:
         raise Stop('Extra reviewed image mismatch')
     for name, digest in extras.items():
-        if name != '06-large-type-reaction.png' or sha(root / 'artifacts/ui-loop/final' / name) != digest:
+        if name != EXTRA_IMAGE or sha(root / 'artifacts/ui-loop/final' / name) != digest:
             raise Stop('Extra final image hash mismatch')
-    for name in ('STYLE_GUIDE.md', 'PROGRESS.md', 'FINAL_REVIEW.md'):
+    for name in ('STYLE_GUIDE.md', 'PROGRESS.md', 'FINAL_REVIEW.md', 'ACTING_IMPLEMENTATION.md', 'CHARACTER_ACTING_SPEC.md'):
         if not (root / 'docs/ui-loop' / name).is_file():
             raise Stop('Missing required document ' + name)
     return True
@@ -524,9 +668,16 @@ def _gate(root, receipt):
 
 def publish_snapshot(runner, state):
     root = runner.root; destination = root / 'artifacts/ui-loop'; destination.mkdir(parents=True, exist_ok=True)
-    if not state.get('validated'):
+    if not state.get('validated') or not state['validated'].get('acting_proof'):
         write_json(destination / 'runner-status.json', state); return False
     evidence = state['validated']; (destination / 'final').mkdir(exist_ok=True)
+    proof_target = destination / 'acting-state-proof.json'; shutil.copyfile(evidence['acting_proof'], proof_target)
+    observation_records = []
+    for i, record in enumerate(evidence['acting_observations']):
+        target = destination / f'acting-observations-{i + 1}.json'; shutil.copyfile(record['path'], target)
+        manifest_target = destination / f'acting-attachments-{i + 1}.json'; shutil.copyfile(record['manifest_path'], manifest_target)
+        observation_records.append(dict(record, path=str(target.relative_to(root)), manifest_path=str(manifest_target.relative_to(root))))
+    acting = {'path': str(proof_target.relative_to(root)), 'sha256': sha(proof_target), 'observations': observation_records}
     for name, path in dict(evidence['images'], **evidence.get('extra_images', {})).items():
         shutil.copyfile(path, destination / 'final' / name)
     summaries = []
@@ -554,7 +705,7 @@ def publish_snapshot(runner, state):
         ledger_target = destination / 'simulator-cleanup.json'
         shutil.copyfile(runner.ledger, ledger_target)
         cleanup = {'path': str(ledger_target.relative_to(root)), 'sha256': sha(ledger_target)}
-    receipt = dict(version=VERSION, simulator_cleanup=cleanup, result='PASS' if state.get('execution') == 'finished' and not state.get('cleanup_error') and not state.get('validation_error') else 'PARTIAL', source_sha256=evidence['source_sha256'],
+    receipt = dict(version=VERSION, acting_state=acting, simulator_cleanup=cleanup, result='PASS' if state.get('execution') == 'finished' and not state.get('cleanup_error') and not state.get('validation_error') else 'PARTIAL', source_sha256=evidence['source_sha256'],
                    image_sha256=evidence['image_sha256'], extra_image_sha256=evidence.get('extra_image_sha256', {}), summaries=summaries, critics=critics, checks=checks,
                    deadline=state['deadline'], started_at=state['started_at'], worktree=str(root), branch=state['branch'], base_commit=state['base_commit'], builder_count=len(state['rounds']),
                    not_claimed=['real iPhone', 'child playtest', 'commercial asset approval', 'release'])
@@ -599,7 +750,7 @@ def main():
             if not isinstance(receipt, dict) or receipt.get('worktree') != str(root) or receipt.get('branch') != branch or receipt.get('base_commit') != args.base_commit or receipt.get('deadline') != args.deadline:
                 raise Stop('Receipt worktree/branch/base/deadline mismatch')
             gate(root, receipt)
-            r.git('diff', '--check'); print('VERIFIED current source and five final images; no push performed'); return 0
+            r.git('diff', '--check'); print('VERIFIED current source, acting observations and six final images; no push performed'); return 0
         state_path = control / 'state.json'
         if state_path.exists():
             state = json.loads(state_path.read_text())
@@ -615,6 +766,7 @@ def main():
         if not 0 < deadline - utc(state['started_at']) <= 4 * 3600 or len(state['rounds']) > MAX_BUILDERS or any(not isinstance(v, dict) or v.get('number') != i + 1 for i, v in enumerate(state['rounds'])):
             raise Stop('Persistent budget exceeds four hours/six builders')
         state['worktree'] = str(root); state.setdefault('critics', []); state['version'] = VERSION
+        state['execution'] = 'running'; state.pop('finished_at', None)
         write_json(state_path, state)
         try:
             r.cleanup()
@@ -625,9 +777,9 @@ def main():
                 write_json(state_path, state)
                 instructions = f'''You are the UI builder for Life Crossroads. Repository to READ: {root}.
 Your cwd is an isolated writable sandbox; actual writable repo paths ONLY: {json.dumps(WRITABLE)}.
-Read repo AGENTS.md, PLAN.md, docs/ui-loop/AGENT_PROMPT.md (adopted instructions; source-kit is reference only), docs/ui-loop/STYLE_GUIDE.md and docs/ui-loop/PROGRESS.md plus latest critic reports below.
+Read repo AGENTS.md, PLAN.md, docs/ui-loop/AGENT_PROMPT.md (adopted instructions; source-kit is reference only), docs/ui-loop/CHARACTER_ACTING_SPEC.md, docs/ui-loop/STYLE_GUIDE.md and docs/ui-loop/PROGRESS.md plus latest critic reports below.
 This bounded task is explicitly authorized. Do not update PLAN/memory, Domain/Data, Package, formal App, test runner or any other path. No commit, branch changes, network, package installation, paid API or permission escalation.
-Implement one focused visual improvement. Round {n} of at most {args.iterations}. Round 1 priority: decisions on first screen and maximum text accessibility; then character action/props. Keep story fixture meaning, established choice IDs and mandatory screenshot names. Use existing art and SwiftUI layers; no invented image generation. Preserve root-provided assets/gameplay/va-* and matching prompts/manifest; do not redraw or delete them.
+Implement one focused improvement toward the adopted acting v1.1 gate. Round {n} of at most {args.iterations}. Keep story fixture meaning, real WorldFlow event workshop-2027/options team/help (bridge is only the art/proof presentation alias), mandatory ten test method names and screenshot names including acting-contact-sheet. Use root-provided candidate art and SwiftUI layers; no invented image generation. Preserve assets/gameplay/va-* and matching prompts/manifest; do not redraw or delete them. Four expressions, three poses, actual initial/team/help presentation and Reduce Motion equivalence are required. Read tools/ui-loop/README.md for the exact acting-state-observations.json XCTest attachment contract; report actual actor accessibilityValue after each real UI choice, not manually authored expected state masquerading as observation.
 Supervisor runs all Swift/UI tests and screenshots; do NOT run Simulator/xcodebuild or claim tests ran. Read existing baseline actual screenshots with view_image. Update only docs/ui-loop/PROGRESS.md and FINAL_REVIEW.md honestly with changes and unresolved issues. FINAL_REVIEW may remain partial.
 Absolute deadline {args.deadline}; your maximum command time 30 minutes. Finish a reviewable change early.
 Latest validation issue: {state.get('validation_error', 'none')}.

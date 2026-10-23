@@ -27,7 +27,7 @@
 
 ## Current Phase
 
-本輪最新範圍：P1 / VA-01～05 有界 Visual Agent Loop。基底GS checkpoint `9bd75d2`，獨立 `codex/ui-visual-loop-4h`；最多4小時／6輪，2026-10-23 14:30:56 UTC截止。先改善13歲紙橋事件與兩種後果，按獨立Critic／版本綁定測試Gate決定是否推送。新loop未通過前不宣稱美術完成。
+本輪最新範圍：P1 / VA-01～05 有界 Visual Agent Loop。基底GS checkpoint `9bd75d2`，獨立 `codex/ui-visual-loop-4h`；最多4小時／6輪，2026-10-23 14:30:56 UTC截止。追加Acting v1.1四表情／三姿勢、原生contact sheet及兩機型各10項UI測試。先改善13歲紙橋事件與兩種後果，按獨立Critic／版本綁定測試Gate決定是否推送。新loop未通過前不宣稱美術完成。
 
 本獨立視覺工作線採使用者最新方向：P1 / GS-01～03「生活世界主畫面＋事件決策浮層」。從 `0883247` 分支 `codex/gs-visual-gameplay`；Event-First 保留為互動核心，角色、生活場景與選擇痕跡成為主畫面。驗證與圖庫見 `docs/gameplay/review.md`。
 

@@ -86,3 +86,23 @@ for candidate in (manifest["assets"] as! [[String: Any]]) where (candidate["asse
     print("VA alpha \(valid ? "PASS" : "FAIL"): \(candidatePath), transparent=\(transparent), visible=\(visible), total=\(count)")
     if !valid { exit(1) }
 }
+
+// The emotion atlas is consumed as four equal cells; check visible pixels do
+// not cross the center seams. This reads original pixels and changes nothing.
+if let portrait = (manifest["assets"] as! [[String: Any]]).first(where: { $0["asset_id"] as? String == "va-otter-emotions-v1" }) {
+    let portraitPath = portrait["path"] as! String
+    let image = NSBitmapImageRep(data: try Data(contentsOf: URL(fileURLWithPath: portraitPath)))!
+    var seamPixels = 0
+    var visibleCells = [Int](repeating: 0, count: 4)
+    for y in 0..<image.pixelsHigh { for x in 0..<image.pixelsWide {
+        var channels = [UInt](repeating: 0, count: 4)
+        image.getPixel(&channels, atX: x, y: y)
+        if channels[3] >= 16 {
+            visibleCells[(y >= image.pixelsHigh / 2 ? 2 : 0) + (x >= image.pixelsWide / 2 ? 1 : 0)] += 1
+            if abs(x - image.pixelsWide / 2) <= 1 || abs(y - image.pixelsHigh / 2) <= 1 { seamPixels += 1 }
+        }
+    }}
+    let valid = seamPixels == 0 && visibleCells.allSatisfy { $0 > 10000 }
+    print("Emotion crop \(valid ? "PASS" : "FAIL"): seamPixels=\(seamPixels), visibleCells=\(visibleCells)")
+    if !valid { exit(1) }
+}

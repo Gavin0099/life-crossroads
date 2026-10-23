@@ -17,9 +17,9 @@ Do not start until the owner finishes the input checkpoint (adopted brief, style
 
 - At most six builders, each capped at 30 minutes. Each critic is capped at 12 minutes. Every normal child command is also bounded by the absolute deadline, with time reserved for cleanup. Builders preserve a ten-minute convergence reserve.
 - Builder uses `workspace-write` from an external sandbox directory, with explicit writable roots only for `UIPrototype/WorldGameplay`, `WorldGameplayTests`, `WorldGameplay.xcodeproj`, `assets/gameplay`, `assets/prompts`, and `docs/ui-loop`. The entire repo is not its writable cwd. Network is disabled. Post-run file hashes, branch, base ancestry and HEAD checks fail closed on a scope or commit violation.
-- The supervisor runs `swift test`, the real WorldFlow fixture harness, alpha inspection, candidate provenance checks, then all WorldGameplay UI tests separately on iPhone 17 and iPhone SE 3. It exports the original `xcresulttool` summary and test tree for each bundle. A passing summary must match the scheme, exact device model, zero failures and at least six executed tests; the raw tree must show all six mandatory WorldGameplay methods passing on the same device. Summaries and trees are never hand-merged.
-- The five required final PNGs come from named XCTest attachments. The narrow maximum-text reaction is also attached to critics when present. Critic invocation directly attaches these PNGs with CLI `--image`; input receipts preserve argv, image hashes, successful exit and the genuine CLI thread-start transcript. CLI 0.163 does not expose `view_image` events in its JSONL, so this is **image-input evidence**, not a claim about unseen tool logs.
-- The first three critic lines must exactly contain `GATE=...`, `P0_COUNT=...`, `P1_COUNT=...`; PASS requires both counts zero. Each P0 also needs a stable `P0_ID=...` line. At least two distinct CLI critic threads are required. The latest passing critic must match current source and final image hashes. Repeated P0 or no verified change across consecutive reviews ends iteration.
+- The supervisor runs `swift test`, the real WorldFlow fixture harness, alpha inspection, candidate provenance checks, then all WorldGameplay UI tests separately on iPhone 17 and iPhone SE 3. It exports the original `xcresulttool` summary and test tree for each bundle. A passing summary must match the scheme, exact device model, zero failures and at least ten executed tests; the raw tree must show all ten mandatory WorldGameplay methods passing on the same device. Summaries and trees are never hand-merged.
+- The six required final PNGs come from named XCTest attachments. The sixth required PNG is the actual acting contact sheet. The seventh, narrow maximum-text reaction is also attached to critics when present. Critic invocation directly attaches these PNGs with CLI `--image`; input receipts preserve argv, image hashes, successful exit and the genuine CLI thread-start transcript. CLI 0.163 does not expose `view_image` events in its JSONL, so this is **image-input evidence**, not a claim about unseen tool logs.
+- The first five critic lines must exactly contain `GATE=...`, `P0_COUNT=...`, `P1_COUNT=...`, `ACTING_GATE=...`, `REDUCE_MOTION_GATE=...`; PASS requires both counts zero. Each P0 also needs a stable `P0_ID=...` line. At least two distinct CLI critic threads are required. The latest passing critic must match current source and final image hashes. Repeated P0 or no verified change across consecutive reviews ends iteration.
 - Source/test failure can be repaired by a later bounded builder. Missing, malformed or stale evidence yields PARTIAL/exit 2; screenshots or textual PASS alone cannot pass the package gate. Candidate provenance PASS means hashes and references are traceable for the prototype; `approved_for_app=false` is required and is **not** a commercial approval claim.
 
 ## Process and Simulator cleanup
@@ -58,3 +58,31 @@ python -m pytest tools/ui-loop/test_run_ui_loop.py -q
 ```
 
 These use independent fixtures for strict headers, malformed receipts, path escapes, two device summaries, current-source/image binding, actual attachment arguments, subprocess timeout/descendants, and owned-device cleanup. Mocked Simulator fixtures test deletion scope and persistence; they are not actual Simulator runs. Existing opt-in actual device lifecycle tests remain in `tools/ui/test_simulator_lifecycle.py`.
+
+## Acting v1.1 integration contract
+
+All previous six UI methods remain mandatory. Add exactly named methods `testActingBranchesAreVisuallyDistinct`, `testReducedMotionPreservesOutcome`, `testActingContactSheetShowsCatalog`, and `testMissingRouteKeepsInitialActing`. The supervisor requires all ten names and at least ten passing tests on each model; method declarations alone never pass.
+
+`testActingContactSheetShowsCatalog` must capture the actual on-screen catalog with XCTest screenshot attachment name **`acting-contact-sheet`**. It becomes `06-acting-contact-sheet.png`; maximum-text reaction is `07-large-type-reaction.png`.
+
+`testActingBranchesAreVisuallyDistinct` must attach a UTF-8 JSON XCTest attachment named **`acting-state-observations.json`** after real UI interaction. Set its lifetime to `.keepAlways`. Read the actual rendered actor accessibility value (JSON is convenient) in the initial state and after tapping each route; do not fill observations from a hardcoded expected dictionary. The attachment shape is:
+
+```json
+{
+  "schema_version": "1.1",
+  "event_id": "bridge",
+  "source_event_id": "workshop-2027",
+  "character_id": "otter-acheng",
+  "expression_catalog": ["neutral", "thinking", "hopeful", "tired"],
+  "pose_catalog": ["idle", "collaborating", "asking"],
+  "states": {
+    "bridge-initial": {"event_id":"bridge","option_id":null,"expression_id":"thinking","pose_id":"idle","prop_id":"paper-bridge-materials","asset_ids":["actual-actor-imageset-name"]},
+    "bridge-team": {"event_id":"bridge","option_id":"team","expression_id":"hopeful","pose_id":"collaborating","prop_id":"paper-bridge-prototype","asset_ids":["actual-team-imageset-name"]},
+    "bridge-help": {"event_id":"bridge","option_id":"help","expression_id":"neutral","pose_id":"asking","prop_id":"borrow-tools-list","asset_ids":["actual-help-imageset-name"]}
+  }
+}
+```
+
+The three state values must come from actual UI observations. Catalog IDs must come from the same presentation catalogs used by the actual rendered preview. `asset_ids` lists actual SwiftUI Asset Catalog names, without `.imageset`; each must resolve to a real PNG and existing candidate provenance. Help may use neutral or hopeful. `event_id=bridge` is only the art/proof presentation alias; the real WorldFlow event remains `workshop-2027`, recorded in mandatory `source_event_id`. Preserve option IDs `team`/`help`; do not rename the real event or fixture options to match the display-state IDs.
+
+Supervisor exports raw attachments from each xcresult, checks the originating branch test, validates IDs and assets, and requires equal observations across both models. It alone adds canonical screenshot paths/hashes and writes `artifacts/ui-loop/acting-state-proof.json`. The final gate binds the original observations, device/test identity, proof, assets and six screenshot hashes. `ACTING_IMPLEMENTATION.md` and `CHARACTER_ACTING_SPEC.md` are required. The independent critic receives all six actual screenshots and must explicitly assess acting and Reduce Motion; byte differences alone do not establish visible acting quality.

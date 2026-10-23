@@ -1,0 +1,96 @@
+{
+  "started_at": "2026-10-23T10:30:56Z",
+  "deadline": "2026-10-23T14:30:56Z",
+  "hours": 4,
+  "max_builder_iterations": 6,
+  "base_commit": "9bd75d23e6fed6057700fa23a71de31bf3e201d8",
+  "branch": "codex/ui-visual-loop-4h",
+  "kit_sha256": "81d9de82b8a70ed7870d79dda52d90ee994b07a8e5992dff80e7dfd2b12ecf2e",
+  "phase": "VA-01",
+  "execution": "stopped",
+  "rounds": [
+    {
+      "number": 1,
+      "started": "2026-10-23T12:15:08.193263+00:00",
+      "status": "validation_failed",
+      "changed": [
+        "UIPrototype/WorldGameplay/WorldGameplayView.swift",
+        "UIPrototype/WorldGameplayTests/WorldGameplayTests.swift",
+        "docs/ui-loop/FINAL_REVIEW.md",
+        "docs/ui-loop/PROGRESS.md"
+      ],
+      "finished": "2026-10-23T12:25:36.253004+00:00"
+    },
+    {
+      "number": 2,
+      "started": "2026-10-23T12:25:56.619087+00:00",
+      "status": "validation_failed",
+      "changed": [
+        "UIPrototype/WorldGameplay/WorldGameplayView.swift",
+        "docs/ui-loop/FINAL_REVIEW.md",
+        "docs/ui-loop/PROGRESS.md"
+      ],
+      "finished": "2026-10-23T12:33:16.479939+00:00"
+    },
+    {
+      "number": 3,
+      "started": "2026-10-23T12:39:24.288454+00:00",
+      "status": "interrupted_for_user_scope_change",
+      "finished": "2026-10-23T12:41:51.216195+00:00"
+    },
+    {
+      "number": 4,
+      "started": "2026-10-23T12:49:40.633603+00:00",
+      "status": "interrupted_transport_after_source_edits",
+      "changed": [
+        "UIPrototype/WorldGameplay/Assets.xcassets/va-friend-worktable-v2.imageset/Contents.json",
+        "UIPrototype/WorldGameplay/Assets.xcassets/va-friend-worktable-v2.imageset/va-friend-worktable-v2.png",
+        "UIPrototype/WorldGameplay/Assets.xcassets/va-otter-emotions-v1.imageset/Contents.json",
+        "UIPrototype/WorldGameplay/Assets.xcassets/va-otter-emotions-v1.imageset/va-otter-emotions-v1.png",
+        "UIPrototype/WorldGameplay/Assets.xcassets/va-teacher-worktable-v2.imageset/Contents.json",
+        "UIPrototype/WorldGameplay/Assets.xcassets/va-teacher-worktable-v2.imageset/va-teacher-worktable-v2.png",
+        "UIPrototype/WorldGameplay/WorldGameplayApp.swift",
+        "UIPrototype/WorldGameplay/WorldGameplayView.swift",
+        "UIPrototype/WorldGameplay/WorldModels.swift",
+        "UIPrototype/WorldGameplayTests/WorldGameplayTests.swift",
+        "docs/ui-loop/ACTING_IMPLEMENTATION.md",
+        "docs/ui-loop/AGENT_PROMPT.md",
+        "docs/ui-loop/FINAL_REVIEW.md",
+        "docs/ui-loop/PROGRESS.md"
+      ],
+      "finished": "2026-10-23T13:11:21.533334+00:00",
+      "note": "Root stopped after over20min and repeated CLI WebSocket failures; partial source retained, no successful builder receipt claimed."
+    },
+    {
+      "number": 5,
+      "started": "2026-10-23T13:11:21.533410+00:00",
+      "status": "validation_failed",
+      "executor": "codex-root-native",
+      "change": "VoiceOver JSON isolation; preserves CLI4 acting implementation",
+      "finished": "2026-10-23T13:11:21.533411+00:00"
+    }
+  ],
+  "resume_note": "Original /tmp preflight state unavailable after interruption; restored exact original start/deadline from tracked start artifact before any builder execution.",
+  "worktree": "/Users/macminim4/.codex/worktrees/ui-visual-loop/life-crossroads",
+  "critics": [],
+  "version": 1,
+  "validation_error": "round-05-standard-ui failed exit=1; see /Users/macminim4/.codex/visual-loop-control/01a16763/round-05-standard-ui.stderr.log",
+  "scope_updates": [
+    {
+      "version": "acting-v1.1",
+      "zip_sha256": "46c83fd0e67e01820ac787390a637e441228cc7017cd7029c252ba88f520d3ed",
+      "adopted_at": "2026-10-23T12:49:00Z",
+      "original_deadline_preserved": true,
+      "original_attempts_preserved": true
+    }
+  ],
+  "resume_history": [
+    {
+      "reason": "Supervisor interrupted by signal 15",
+      "finished_at": "2026-10-23T13:10:43.810009+00:00",
+      "mode": "native-root-builder-takeover"
+    }
+  ],
+  "reason": "round-05-standard-ui failed exit=1; see /Users/macminim4/.codex/visual-loop-control/01a16763/round-05-standard-ui.stderr.log",
+  "finished_at": "2026-10-23T13:17:30.484316+00:00"
+}

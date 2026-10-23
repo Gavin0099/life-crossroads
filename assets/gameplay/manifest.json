@@ -410,6 +410,119 @@
         "v2 repairs otter anatomical-right single white eyebrow and hare anatomical-left ear notch. Human age/style review remains pending.",
         "All foreground alpha remains below 255 in generated source; preserved unchanged."
       ]
+    },
+    {
+      "asset_id": "va-otter-emotions-v1",
+      "path": "assets/gameplay/va-otter-emotions-v1.png",
+      "width": 1254,
+      "height": 1254,
+      "colour_type": 6,
+      "has_alpha_channel": true,
+      "file_bytes": 1939010,
+      "output_sha256": "5d0d8b681ce1ecd9b81ab39d85cb9149a7c896e1f03695cc08215549fdf934a3",
+      "source_type": "ai_generated",
+      "generator": "builtin:image_gen.imagegen",
+      "model_name": null,
+      "model_version": null,
+      "seed": null,
+      "generated_on": "2026-10-23",
+      "workflow_version": "visual-acting-v1.1",
+      "prompt_path": "assets/prompts/va-otter-emotions-v1.txt",
+      "prompt_sha256": "9c596a3a8f1113cc713462c4bcb9c91fde4654613338decc512abb99cb839aaf",
+      "reference_paths": [
+        "assets/gameplay/va-friend-worktable-v2.png"
+      ],
+      "input_hashes": {
+        "assets/gameplay/va-friend-worktable-v2.png": "54fdef91ee578adc65320dee31e07a6c9d321cb3800fc561f39fcfc5943cd453"
+      },
+      "status": "prototype_candidate",
+      "transparent_cutout_verified": true,
+      "review_visual_quality": "agent_screened_human_pending",
+      "review_child_safety": "agent_screened_human_pending",
+      "review_licensing": "pending_account_and_owner_review",
+      "license_evidence": null,
+      "approved_for_app": false,
+      "intended_use": "standalone prototype only",
+      "layout": "2x2",
+      "sprites": [
+        {
+          "id": "neutral",
+          "crop_rect_px": {
+            "x": 0,
+            "y": 0,
+            "width": 627,
+            "height": 627
+          }
+        },
+        {
+          "id": "thinking",
+          "crop_rect_px": {
+            "x": 627,
+            "y": 0,
+            "width": 627,
+            "height": 627
+          }
+        },
+        {
+          "id": "hopeful",
+          "crop_rect_px": {
+            "x": 0,
+            "y": 627,
+            "width": 627,
+            "height": 627
+          }
+        },
+        {
+          "id": "tired",
+          "crop_rect_px": {
+            "x": 627,
+            "y": 627,
+            "width": 627,
+            "height": 627
+          }
+        }
+      ],
+      "notes": [
+        "Four portraits visually inspected; meaningful alpha and no visible pixels crossing center crop seams verified by inspect-alpha.swift.",
+        "Source pixels preserved. Portrait atlas is used in dialogue plus native catalog, not twelve full-body animation frames."
+      ]
+    },
+    {
+      "asset_id": "va-materials-table-v1",
+      "path": "assets/gameplay/va-materials-table-v1.png",
+      "width": 1536,
+      "height": 1024,
+      "colour_type": 6,
+      "has_alpha_channel": true,
+      "file_bytes": 1681916,
+      "output_sha256": "4e27f860c4bd0ed95b01d89e902be4aa9c5824ca11e4c003a146b23ae543ad71",
+      "source_type": "ai_generated",
+      "generator": "builtin:image_gen.imagegen",
+      "model_name": null,
+      "model_version": null,
+      "seed": null,
+      "generated_on": "2026-10-23",
+      "workflow_version": "visual-acting-v1.1",
+      "prompt_path": "assets/prompts/va-materials-table-v1.txt",
+      "prompt_sha256": "148afa619e554c2622a6ce445365671f6806f7c9cb52c35c59b87731784f7d5d",
+      "reference_paths": [
+        "assets/gameplay/va-friend-worktable-v2.png"
+      ],
+      "input_hashes": {
+        "assets/gameplay/va-friend-worktable-v2.png": "54fdef91ee578adc65320dee31e07a6c9d321cb3800fc561f39fcfc5943cd453"
+      },
+      "status": "prototype_candidate",
+      "transparent_cutout_verified": true,
+      "review_visual_quality": "agent_screened_human_pending",
+      "review_child_safety": "agent_screened_human_pending",
+      "review_licensing": "pending_account_and_owner_review",
+      "license_evidence": null,
+      "approved_for_app": false,
+      "intended_use": "standalone prototype only",
+      "notes": [
+        "Reference table reused in design; actors and complete bridge removed by built-in ImageGen. Only loose paper and bent strip remain.",
+        "Source pixels preserved; read-only alpha check verified 1004886 fully transparent pixels out of 1572864."
+      ]
     }
   ]
 }

@@ -12,11 +12,12 @@
 VA-01：已讀現有圖與實際UI，保存舊版和GS基線；鎖定STYLE_GUIDE及Critic-00三項缺口。
 VA-02／03：Builder依最大缺口改UI與必要候選素材，Simulator測試由supervisor在固定命令下執行，每run精確記錄新UDID並刪除。
 VA-04：保留兩機型原始xcresult summary、實際PNG及hash；獨立只讀Critic真的開圖，綁定當時source及PNG，不以舊PASS批准新版本。
-VA-05：最後五張PNG、Before/After、style/progress/review、驗證收據；root以canonical memory writer留記錄。僅Gate通過且範圍／版本／工作樹檢查通過時推送新分支；不合併或發布。
+VA-05：最後六張PNG（含原生acting contact sheet）、Before/After、style/progress/review、驗證收據；root以canonical memory writer留記錄。僅Gate通過且範圍／版本／工作樹檢查通過時推送新分支；不合併或發布。
 
 ## Gate
 
-- build／既有Swift與WorldGameplay UI測試真實通過；兩個不同機型，每份summary保留原文，含正確scheme及完整必要測試。未跑標NOT_RUN，失敗標FAIL。
+- build／既有Swift與WorldGameplay UI測試真實通過；iPhone17及SE3各至少10項，保留原六項加四個acting測試，每份summary保留原文，含正確scheme及完整必要測試。未跑標NOT_RUN，失敗標FAIL。
+- 四表情／三姿勢用真正素材及遊戲共用元件展示；初始、合作、求助有不同表情／動作／物件，Reduce Motion仍得到相同狀態。原生contact sheet、兩裝置真XCTest觀測、schema1.1 acting-state-proof及ACTING_IMPLEMENTATION必備。
 - 初始普通字級能看見兩個完整選項與質性代價；大字可見決策入口並能捲到所有文字，固定操作區不遮可點內容。
 - 兩條路線有清楚且與敘事一致的動作／物件差異，沒有漂浮道具、名牌遮擋、多手多尾或AI文字。
 - 最終獨立Critic的P0與P1均為0，至少兩輪真實看圖，最後一次source／PNG hash與交付一致；主觀偏好及人工門檻另列。
@@ -26,6 +27,8 @@ VA-05：最後五張PNG、Before/After、style/progress/review、驗證收據；
 
 ## 必交付
 
-STYLE_GUIDE.md、PROGRESS.md、FINAL_REVIEW.md；artifacts/ui-loop/final的01-home.png、02-friend-outcome.png、03-teacher-outcome.png、04-narrow.png、05-large-type.png；verification.json引用build、兩份UI原始summary、Swift log、最新獨立critic與asset-provenance。未通過不偽造空圖或PASS。
+STYLE_GUIDE.md、PROGRESS.md、FINAL_REVIEW.md、CHARACTER_ACTING_SPEC.md、ACTING_IMPLEMENTATION.md；artifacts/ui-loop/final的01-home.png、02-friend-outcome.png、03-teacher-outcome.png、04-narrow.png、05-large-type.png、06-acting-contact-sheet.png；verification.json引用build、兩份UI原始summary、Swift log、最新獨立critic、acting-state-proof與asset-provenance。未通過不偽造空圖或PASS。
+
+12:41 UTC使用者追加Acting v1.1，停止第三次Builder並保留未完成狀態與已耗輪次；同一截止時間與最多六次不重設。source-kit-acting-v1.1保留原包；採納上列新Gate，不採用原包過時的1771c57／EventFirst基底。
 
 四小時是上限；五秒理解、10～15歲真人遊戲感、實機及手動VoiceOver、人工美術方向與商用素材審核仍獨立待驗。

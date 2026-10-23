@@ -316,7 +316,7 @@ extension WorldFixture {
              WorldResource(id: "skills", title: "技能與能力", value: skills, symbol: "sparkles")]
         }
         let family = WorldRelationship(id: "caregiver", name: "家人", detail: "放學後陪你到工坊，願意一起想辦法。")
-        let friend = WorldRelationship(id: "friend", name: "小禾", detail: "坐在旁邊的朋友，也還在想紙橋怎麼站穩。")
+        let friend = WorldRelationship(id: "friend", name: "小禾", detail: "在旁邊的朋友，也還在想紙橋怎麼站穩。")
         let initial = WorldSnapshot(id: "workshop-start", age: 13, year: 2027, timeLabel: "放學後 · 社區工坊",
             title: "一個還沒決定的下午", narrative: event.narrative, character: .teen,
             reaction: "再試一次？還是先找人幫忙？", object: .none, actors: [.friend, .caregiver],
@@ -345,7 +345,7 @@ extension WorldFixture {
                             WorldRelationship(id: "caregiver", name: "家人・回憶", detail: "記得工坊裡的陪伴；成年近況尚未提供。")],
             pending: "這段重訪只呈現回憶，沒有設定你的職業、收入或人生高低。")
         let helpReaction = WorldSnapshot(id: "help-reaction", age: 13, year: 2027, timeLabel: "當日下午 · 開口求助",
-            title: "老師走到桌邊", narrative: "你把站不穩的紙橋指給老師看。老師坐到桌邊，一起列出可能借到的工具；小禾在旁邊記下需要詢問的事情。",
+            title: "老師走到桌邊", narrative: "你把站不穩的紙橋指給老師看。老師來到桌邊，一起列出可能借到的工具；小禾在旁邊記下需要詢問的事情。",
             character: .teen, reaction: "還沒開始做，但我知道可以找誰幫忙了。", object: .toolList,
             actors: [.friend, .caregiver, .teacher], resources: resources("還有精神整理工具", "找到可以求助的老師", "有了一張借用工具清單"),
             relationships: helpRelations, pending: "工具能否借到仍待確認，還沒有拿到新材料。")
