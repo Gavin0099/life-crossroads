@@ -7,8 +7,23 @@ P1 目標為 **8 國、16 種家庭情境、50～70 個事件**，每局 10～15
 首個可玩交付為四國、童年到晚年回顧的完整人生，之後擴至八國。
 候選為台灣、日本、美國、德國、印度、巴西、越南、肯亞；資料與內容尚待逐國驗證。
 
-目前為 P0：建立治理工具與專案邊界，尚未建立可執行的 iOS app。
+LC-01 已有可編譯的純 Swift 引擎、真實來源資料與命令列示範；尚未交付 SwiftUI 可玩 app。
 產品計畫與待決定事項見 [PLAN.md](PLAN.md)。
+
+## 執行引擎
+
+需要 Swift 6 / Xcode 16 以上；部署目標 iOS 17，日常測試在 macOS 執行。
+
+```bash
+swift test
+swift run life-demo
+swift run life-demo --json
+python3 scripts/build-data.py --check
+```
+
+`life-demo` 比較四國相同決策，並執行五階段、15 個決策的完整人生骨架。
+這是 LC-01 工程證據，不代表 10～15 分鐘遊玩、實機或教育效果已驗收。
+資料、假設、缺口及 LC-02 開工判斷見 [LC-01 交付](docs/lc01-delivery.md)。
 
 ## 開始工作
 

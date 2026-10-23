@@ -1,0 +1,10 @@
+Building for debugging...
+[Pre-planning 1 / 94]
+[Planning deferred tasks]
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-library/out/Products/Debug-iphonesimulator/LifeCrossroads_LifeData.bundle: bundle format unrecognized, invalid, or unsuitable
+error: CodeSign /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-library/out/Products/Debug-iphonesimulator/LifeCrossroads_LifeData.bundle failed with a nonzero exit code. Command line:     cd /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads
+    
+    Signing Identity:     "-"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build/ios-library/out/Products/Debug-iphonesimulator/LifeCrossroads_LifeData.bundle
+error: Build failed

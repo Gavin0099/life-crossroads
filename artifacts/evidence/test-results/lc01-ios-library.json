@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "swift build --target LifeData --scratch-path .build/ios-library --triple arm64-apple-ios17.0-simulator --sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk",
+  "exit_code": 1,
+  "started_at": "2026-10-23T05:55:34Z",
+  "finished_at": "2026-10-23T05:55:37Z",
+  "runner": "governance_tools.test_evidence_receipt_writer",
+  "linked_commit": "7f34f784d2ed5ca946b6302bae3bea0dc51683e4",
+  "output_artifacts": [
+    "artifacts/evidence/test-results/lc01-ios-library.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}

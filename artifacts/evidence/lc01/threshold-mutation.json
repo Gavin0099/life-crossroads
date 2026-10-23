@@ -1,0 +1,8 @@
+{
+  "mutation": "internet >= 90 changed to > 90",
+  "command": "swift test --filter testDigitalThresholdBoundaries",
+  "exitCode": 1,
+  "expected": "nonzero; exact 90 boundary fixture must reject mutant",
+  "killed": true,
+  "sourceRestored": true
+}

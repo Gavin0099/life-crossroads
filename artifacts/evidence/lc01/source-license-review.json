@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-23",
+  "indicators": [
+    {
+      "code": "IT.NET.USER.ZS",
+      "url": "https://data.worldbank.org/indicator/IT.NET.USER.ZS",
+      "licenseShown": "CC BY-4.0",
+      "provider": "International Telecommunication Union (ITU)"
+    },
+    {
+      "code": "EG.ELC.ACCS.ZS",
+      "url": "https://data.worldbank.org/indicator/EG.ELC.ACCS.ZS",
+      "licenseShown": "CC BY-4.0",
+      "provider": "World Bank / ESMAP"
+    }
+  ],
+  "termsURL": "https://www.worldbank.org/ext/en/legal/terms-conditions/datasets",
+  "reviewFindings": [
+    "Indicator-specific licenses checked, rather than assuming all third-party data has the default license.",
+    "World Bank additional dispute-resolution and attribution terms retained by link.",
+    "No logos or endorsement claims; raw numerical observations unchanged.",
+    "Country/year selection and all game mappings explicitly attributed as our transformations."
+  ],
+  "taiwan": {
+    "status": "not_imported",
+    "candidateURL": "https://data.gov.tw/dataset/5960",
+    "licenseShown": "政府資料開放授權條款-第1版",
+    "definitionGap": "Survey population: citizens aged 12+ in households; cannot substitute directly for the WDI all-population denominator.",
+    "electricityGap": "No reviewed 2023 all-population raw observation integrated."
+  }
+}

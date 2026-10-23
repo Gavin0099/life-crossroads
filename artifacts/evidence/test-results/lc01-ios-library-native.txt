@@ -1,0 +1,15 @@
+Building for debugging...
+[0/4] Write sources
+[2/4] Copying Resources
+[3/4] Write swift-version--58304C5D6DBC2206.txt
+[5/10] Compiling LifeDomain DecisionResolver.swift
+[6/10] Compiling LifeDomain Models.swift
+[7/10] Compiling LifeDomain RandomSource.swift
+[8/10] Emitting module LifeDomain
+[9/10] Compiling LifeDomain ConsequenceTrace.swift
+[10/10] Compiling LifeDomain LifeState.swift
+[11/13] Compiling LifeData StatisticsRepository.swift
+[12/13] Emitting module LifeData
+[13/13] Compiling LifeData resource_bundle_accessor.swift
+Build of target: 'LifeData' complete! (3.69s)
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.

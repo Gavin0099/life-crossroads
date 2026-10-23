@@ -39,7 +39,7 @@
 - UI 驗證含小螢幕、放大文字、VoiceOver、非僅靠顏色的提示及敏感內容略過。
 - Simulator、實機、兒少試玩、TestFlight、App Store 各自列證據，不能互相替代。
 - 一個開發階段對應獨立 Issue 或 PR；各片以新版 docs/p1-slices.md 為範圍。
-- 2026-10-23 使用者授權首次本機 commit 及基本 CI；含必要的追溯 checkpoint，不含 push/PR/發布。
+- 2026-10-23 使用者授權公開前檢查、push、LC-01 實作與必要提交/切片 PR；未授權 App Store 發布。
 - 基本 CI 與遊戲正確性測試維持必要驗證；未驗證 runtime 治理不是產品開發前置 Gate。
 - CI 的完整 runtime 稽核採 advisory，保留原始錯誤與未驗證狀態。
 

@@ -1,0 +1,53 @@
+Building for debugging...
+[Computing dependencies]
+[Using on-disk description]
+[1 / 1]
+[13 / 44] LifeCrossroads_LifeData
+[14 / 44] LifeDomain
+[20 / 50] LifeDomain
+[26 / 51] LifeDomain
+[29 / 54] LifeData
+[35 / 57] LifeDomain
+[38 / 57] life-demo-product
+[40 / 59] LifeDomain
+[42 / 59] LifeData
+[45 / 59] LifeDomainTests-product
+[46 / 59] life-demo-product
+[48 / 59] LifeDomainTests-product
+[51 / 62] LifeDomainTests-product
+[56 / 62] LifeDomainTests-product
+[58 / 62] LifeDomainTests-product
+[59 / 62] LifeDomainTests-product
+[62 / 62] life-demo-product
+Build complete! (13.17秒)
+Test Suite 'Selected tests' started at 2026-10-23 15:06:11.869.
+Test Suite 'LifeDomainTests.xctest' started at 2026-10-23 15:06:11.870.
+Test Suite 'LC01Tests' started at 2026-10-23 15:06:11.870.
+Test Case '-[LifeDomainTests.LC01Tests testDigitalLearningOffersAnIndependentOfflineRoute]' started.
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/LifeCrossroads/Domain/DecisionResolver.swift:38: error: -[LifeDomainTests.LC01Tests testDigitalLearningOffersAnIndependentOfflineRoute] : failed: caught error: "missing("decision/choice")"
+Test Case '-[LifeDomainTests.LC01Tests testDigitalLearningOffersAnIndependentOfflineRoute]' failed (0.772 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testOfflineChildActivityNeverUsesNationalDigitalRates]' started.
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/LC01Tests.swift:40: error: -[LifeDomainTests.LC01Tests testOfflineChildActivityNeverUsesNationalDigitalRates] : XCTAssertEqual failed: ("Cost(time: 4, energy: 2, materials: 1)") is not equal to ("Cost(time: 3, energy: 2, materials: 1)")
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/LC01Tests.swift:41: error: -[LifeDomainTests.LC01Tests testOfflineChildActivityNeverUsesNationalDigitalRates] : XCTAssertFalse failed
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/LC01Tests.swift:42: error: -[LifeDomainTests.LC01Tests testOfflineChildActivityNeverUsesNationalDigitalRates] : XCTAssertTrue failed
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/LC01Tests.swift:41: error: -[LifeDomainTests.LC01Tests testOfflineChildActivityNeverUsesNationalDigitalRates] : XCTAssertFalse failed
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/LC01Tests.swift:42: error: -[LifeDomainTests.LC01Tests testOfflineChildActivityNeverUsesNationalDigitalRates] : XCTAssertTrue failed
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/LC01Tests.swift:40: error: -[LifeDomainTests.LC01Tests testOfflineChildActivityNeverUsesNationalDigitalRates] : XCTAssertEqual failed: ("Cost(time: 4, energy: 2, materials: 1)") is not equal to ("Cost(time: 3, energy: 2, materials: 1)")
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/LC01Tests.swift:41: error: -[LifeDomainTests.LC01Tests testOfflineChildActivityNeverUsesNationalDigitalRates] : XCTAssertFalse failed
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/LC01Tests.swift:42: error: -[LifeDomainTests.LC01Tests testOfflineChildActivityNeverUsesNationalDigitalRates] : XCTAssertTrue failed
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/LC01Tests.swift:39: error: -[LifeDomainTests.LC01Tests testOfflineChildActivityNeverUsesNationalDigitalRates] : XCTAssertTrue failed
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/LC01Tests.swift:40: error: -[LifeDomainTests.LC01Tests testOfflineChildActivityNeverUsesNationalDigitalRates] : XCTAssertEqual failed: ("Cost(time: 5, energy: 2, materials: 2)") is not equal to ("Cost(time: 3, energy: 2, materials: 1)")
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/LC01Tests.swift:41: error: -[LifeDomainTests.LC01Tests testOfflineChildActivityNeverUsesNationalDigitalRates] : XCTAssertFalse failed
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/LC01Tests.swift:42: error: -[LifeDomainTests.LC01Tests testOfflineChildActivityNeverUsesNationalDigitalRates] : XCTAssertTrue failed
+Test Case '-[LifeDomainTests.LC01Tests testOfflineChildActivityNeverUsesNationalDigitalRates]' failed (0.011 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testOfflineLearningIgnoresDigitalThresholdsAndHasSupport]' started.
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifeDomainTests/LC01Tests.swift:53: error: -[LifeDomainTests.LC01Tests testOfflineLearningIgnoresDigitalThresholdsAndHasSupport] : XCTAssertEqual failed: ("Cost(time: 4, energy: 2, materials: 2)") is not equal to ("Cost(time: 2, energy: 2, materials: 1)")
+Test Case '-[LifeDomainTests.LC01Tests testOfflineLearningIgnoresDigitalThresholdsAndHasSupport]' failed (0.005 seconds).
+Test Suite 'LC01Tests' failed at 2026-10-23 15:06:12.658.
+	 Executed 3 tests, with 14 failures (1 unexpected) in 0.787 (0.788) seconds
+Test Suite 'LifeDomainTests.xctest' failed at 2026-10-23 15:06:12.658.
+	 Executed 3 tests, with 14 failures (1 unexpected) in 0.787 (0.788) seconds
+Test Suite 'Selected tests' failed at 2026-10-23 15:06:12.658.
+	 Executed 3 tests, with 14 failures (1 unexpected) in 0.787 (0.790) seconds
+Note: Some test targets reported failures:
+  - LifeDomainTests (XCTest)
