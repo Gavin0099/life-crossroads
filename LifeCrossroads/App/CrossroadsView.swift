@@ -254,7 +254,7 @@ struct CrossroadsView: View {
             VStack(alignment: .leading, spacing: 10) {
                 Text(selection.summary).font(.subheadline).accessibilityIdentifier("eventSelectionSummary")
                 if let selected = selection.candidates.first(where: { $0.eventID == selection.selectedEventID }) {
-                    if selected.isFallback || selected.conditions.isEmpty {
+                    if selected.conditions.isEmpty {
                         Text("這個情境沒有額外的家庭、資源或先前選擇門檻。")
                             .font(.subheadline)
                     } else {
@@ -265,6 +265,10 @@ struct CrossroadsView: View {
                     }
                 } else {
                     Text("目前沒有這個事件的入選條件紀錄，不補上推測。").font(.subheadline)
+                }
+                if let selected = selection.candidates.first(where: { $0.eventID == selection.selectedEventID }) {
+                    if selected.weightSteps.contains(where: { $0.ruleID == "story-continuity" }) { Text("先前留下的故事讓這類後續邀請更容易出現，仍不保證一定遇見。").font(.subheadline) }
+                    if selected.weightSteps.contains(where: { $0.ruleID == "recent-category" }) { Text("最近已遇過相近的事情，這次讓其他類型也多一些機會。").font(.subheadline) }
                 }
                 Text("這份紀錄說明事件如何入選；它不表示本次行動的成本或資源一定受運氣影響。")
                     .font(.footnote).foregroundStyle(.secondary)
@@ -288,6 +292,11 @@ struct CrossroadsView: View {
                          "travelCost": "交通時間安排", "materialBudget": "材料額度"]
             let relation = condition.kind == .resourceAtMost ? "不超過" : "至少"
             return "\(names[condition.key] ?? condition.key)：入選前實際為\(actual)，這個情境需\(relation)\(threshold)；\(evaluation.matched ? "本次符合" : "本次未符合")。"
+        case .storyFlag:
+            let names = ["friendship":"與朋友的約定", "learning":"作品經驗", "care":"共同照顧安排", "repair":"修理經驗", "kitchen":"共煮經驗", "garden":"花圃經驗", "nature":"自然觀察"]
+            return "\(names[condition.key] ?? "故事記錄")：\(evaluation.matched ? "已有符合這次邀請的經驗" : "還沒有這次邀請需要的經驗")。可在前面的選擇記錄找到來源。"
+        case .relationshipAtLeast:
+            return "先前互動留下的熟悉程度為\(evaluation.actualValue ?? 0)，這次邀請需要至少\(condition.threshold ?? 0)。這是故事條件，不是對人的評分。"
         case .priorChoice:
             guard let actualChoice = evaluation.actualChoiceID else { return "這項條件沒有記錄到先前的選擇。" }
             let actual = store.session?.traces.first { $0.eventID == condition.key }
@@ -351,6 +360,14 @@ struct CrossroadsView: View {
                     Text(branch.explanation).font(.subheadline).lineSpacing(4)
                         .accessibilityIdentifier("storyBranchExplanation")
                 }.card()
+            }
+            if !trace.recordedStoryFacts.isEmpty {
+                Label("這個選擇已留下故事記錄，可能影響未來的邀請與行動；仍不保證一定遇見。", systemImage: "book.closed")
+                    .font(.subheadline).accessibilityIdentifier("recordedStoryMemory")
+            }
+            if trace.effectSteps.contains(where: { $0.ruleID == "resource.clamp" && $0.delta.values.contains(where: { $0 < 0 }) }) {
+                Text("部分資源已到上限；上方只顯示實際增加的數量，故事記錄仍會保留。")
+                    .font(.footnote).accessibilityIdentifier("resourceCapExplanation")
             }
             if !trace.scheduledHooks.isEmpty {
                 VStack(alignment: .leading, spacing: 9) {

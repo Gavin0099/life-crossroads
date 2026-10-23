@@ -1,7 +1,14 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
+  "selectionRules": {
+    "version": "story-race-rules-1",
+    "continuityMultiplier": 2.0,
+    "relationshipMultiplier": 1.15,
+    "recentCategoryMultiplier": 0.55,
+    "recentCategoryWindow": 1
+  },
   "dataVersion": "lc01-data-2",
-  "contentVersion": "lc02-story-4",
+  "contentVersion": "rng-v2-story-1",
   "referenceYear": 2023,
   "sources": [
     {
@@ -72,9 +79,9 @@
     },
     {
       "id": "support-network",
-      "version": "1",
-      "statement": "情境支持0～2格：學習/求助/共同照顧可減少相同格數時間；學習有人陪伴增加人際2、技能1。",
-      "limitation": "虛構可用支持，不代表某國人民較友善或每次求助都成功；沒有支持也保留免費休息路線。"
+      "version": "2.0.0",
+      "statement": "支援依家庭模板降低準備時間；一起學習額外增加人際1、技能1，避免把同一支持重複獎勵。",
+      "limitation": "虛構家庭支持，不由國名推定；不是統計因果。"
     },
     {
       "id": "choice-effects",
@@ -102,21 +109,21 @@
     },
     {
       "id": "story-callback",
-      "version": "1",
-      "statement": "帶有後續標記的可行決策在4歲後由同一位虛構人物呼應，人際+2、技能+1；只觸發一次。",
-      "limitation": "為LC-02保留人物牽掛的最小故事契約，並非證實現實長期因果；完整事件內容及試玩仍待後續切片。"
+      "version": "2.0.0",
+      "statement": "延遲呼應保留人物記憶並增加技能1，不再自動疊加人際2；其來源、實際發生年齡和效果留在trace。",
+      "limitation": "故事記憶不等於人際總量；這是依舊版批次觸頂觀察調整的遊戲假設。"
     },
     {
       "id": "story-branches",
-      "version": "1",
-      "statement": "三條虛構故事條件：10歲與阿禾創作或調整碰面才在72歲重逢，否則和社區夥伴小澄開風車桌認識新鄰居；13歲線上/紙本/未製作決定17歲學習場景，作品經驗加技能至少28才可帶領工作坊；39歲共組照顧輪班才在52歲沿用互助約定，健康至少55才可自願接一小段。每次記錄實際歷史、資源門檻、場景及選項。",
-      "limitation": "人物、約定、門檻與後續路線皆為遊戲敘事假設，不是心理、醫學或社會因果；沒有連結不等於個人失敗，所有路線保留求助及免費休息。國家名稱不參與故事條件。"
+      "version": "2.0.0",
+      "statement": "友情、學習、照顧、修理、共煮、花圃與自然觀察七條故事記錄，由實際決策重建；參與或重新求助可接續後續人物與可用行動。",
+      "limitation": "有前期參與不保證抽到後續邀請；沒有舊經驗也保留恢復路線。"
     },
     {
       "id": "event-selection",
-      "version": "1",
-      "statement": "每局固定15個年齡槽。每槽先檢查明列的已執行決策、四項資源或家庭安排條件；符合者按event ID排序，再以Seed及年齡槽的鍵控亂數均等挑一個。每槽保留一個無條件預備情境。12、21、32、59、65歲共增加8個條件情境，其餘保留既有錨點。",
-      "limitation": "情境、門檻及均等機率都是原創遊戲設計，不是事件真實發生率、國家分布或現實因果。國名不參與候選條件或亂數鍵；不同Seed也可能遇到相同情境。版本改變不保證延續舊存檔。"
+      "version": "2.0.0",
+      "statement": "15個時點、5個里程碑；年齡範圍、故事事實、資源與家庭資格篩選。候選各有獨立亂數鍵，以加權指數競賽抽選；權重、一次性、冷卻與互斥皆記錄於trace。",
+      "limitation": "所有權重和門檻都是遊戲假設，不是現實機率；已遇見的同一情境用於跨國成本比較。"
     }
   ],
   "countries": [
@@ -670,7 +677,8 @@
             "choice-effects",
             "agency",
             "learning-channels"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "ask",
@@ -692,7 +700,8 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "rest",
@@ -713,11 +722,26 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects"
-          ]
+          ],
+          "storyChanges": []
         }
       ],
       "isFallback": true,
-      "eligibility": []
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 8,
+        "maximumAge": 8,
+        "category": "learning",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
     },
     {
       "id": "child-friend",
@@ -747,6 +771,14 @@
             "choice-effects",
             "agency",
             "learning-channels"
+          ],
+          "storyChanges": [
+            {
+              "key": "friendship",
+              "value": "connected",
+              "personID": "ahe",
+              "relationshipDelta": 2
+            }
           ]
         },
         {
@@ -769,6 +801,14 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network"
+          ],
+          "storyChanges": [
+            {
+              "key": "friendship",
+              "value": "connected",
+              "personID": "ahe",
+              "relationshipDelta": 1
+            }
           ]
         },
         {
@@ -790,11 +830,33 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects"
+          ],
+          "storyChanges": [
+            {
+              "key": "friendship",
+              "value": "paused",
+              "personID": "",
+              "relationshipDelta": 0
+            }
           ]
         }
       ],
       "isFallback": true,
-      "eligibility": []
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 10,
+        "maximumAge": 10,
+        "category": "friendship",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
     },
     {
       "id": "child-transition",
@@ -824,7 +886,8 @@
             "choice-effects",
             "agency",
             "learning-channels"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "ask",
@@ -846,7 +909,8 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "rest",
@@ -867,11 +931,26 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects"
-          ]
+          ],
+          "storyChanges": []
         }
       ],
       "isFallback": true,
-      "eligibility": []
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 12,
+        "maximumAge": 12,
+        "category": "learning",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
     },
     {
       "id": "teen-project",
@@ -901,6 +980,14 @@
             "choice-effects",
             "agency",
             "learning-channels"
+          ],
+          "storyChanges": [
+            {
+              "key": "learning",
+              "value": "online",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
           ]
         },
         {
@@ -924,6 +1011,14 @@
             "choice-effects",
             "learning-channels",
             "support-network"
+          ],
+          "storyChanges": [
+            {
+              "key": "learning",
+              "value": "paper",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
           ]
         },
         {
@@ -946,6 +1041,14 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network"
+          ],
+          "storyChanges": [
+            {
+              "key": "learning",
+              "value": "none",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
           ]
         },
         {
@@ -967,11 +1070,33 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects"
+          ],
+          "storyChanges": [
+            {
+              "key": "learning",
+              "value": "none",
+              "personID": "",
+              "relationshipDelta": 0
+            }
           ]
         }
       ],
       "isFallback": true,
-      "eligibility": []
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 13,
+        "maximumAge": 13,
+        "category": "learning",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
     },
     {
       "id": "teen-direction",
@@ -1000,7 +1125,8 @@
           "assumptionIDs": [
             "choice-effects",
             "story-branches"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "invest",
@@ -1023,6 +1149,14 @@
             "choice-effects",
             "agency",
             "learning-channels"
+          ],
+          "storyChanges": [
+            {
+              "key": "learning",
+              "value": "online",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
           ]
         },
         {
@@ -1046,6 +1180,14 @@
             "choice-effects",
             "learning-channels",
             "support-network"
+          ],
+          "storyChanges": [
+            {
+              "key": "learning",
+              "value": "paper",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
           ]
         },
         {
@@ -1068,7 +1210,8 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "rest",
@@ -1089,11 +1232,29 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects"
-          ]
+          ],
+          "storyChanges": []
         }
       ],
       "isFallback": true,
-      "eligibility": []
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 17,
+        "maximumAge": 25,
+        "category": "learning",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": "learning",
+        "continuityValues": [
+          "online",
+          "paper"
+        ],
+        "relationshipID": "teacher",
+        "resourceWeights": []
+      },
+      "continuation": null
     },
     {
       "id": "teen-launch",
@@ -1123,7 +1284,8 @@
             "choice-effects",
             "agency",
             "learning-channels"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "ask",
@@ -1145,7 +1307,8 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "rest",
@@ -1166,11 +1329,26 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects"
-          ]
+          ],
+          "storyChanges": []
         }
       ],
       "isFallback": true,
-      "eligibility": []
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 21,
+        "maximumAge": 25,
+        "category": "learning",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
     },
     {
       "id": "adult-learning",
@@ -1200,7 +1378,8 @@
             "choice-effects",
             "agency",
             "learning-channels"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "offline",
@@ -1223,7 +1402,8 @@
             "choice-effects",
             "learning-channels",
             "support-network"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "ask",
@@ -1245,7 +1425,8 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "rest",
@@ -1266,11 +1447,26 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects"
-          ]
+          ],
+          "storyChanges": []
         }
       ],
       "isFallback": true,
-      "eligibility": []
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 25,
+        "maximumAge": 45,
+        "category": "learning",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
     },
     {
       "id": "adult-balance",
@@ -1300,7 +1496,8 @@
             "choice-effects",
             "agency",
             "learning-channels"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "ask",
@@ -1322,7 +1519,8 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "rest",
@@ -1343,11 +1541,26 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects"
-          ]
+          ],
+          "storyChanges": []
         }
       ],
       "isFallback": true,
-      "eligibility": []
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 32,
+        "maximumAge": 52,
+        "category": "work",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
     },
     {
       "id": "adult-care",
@@ -1377,6 +1590,14 @@
             "choice-effects",
             "agency",
             "learning-channels"
+          ],
+          "storyChanges": [
+            {
+              "key": "care",
+              "value": "shared",
+              "personID": "cheng",
+              "relationshipDelta": 2
+            }
           ]
         },
         {
@@ -1399,6 +1620,14 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network"
+          ],
+          "storyChanges": [
+            {
+              "key": "care",
+              "value": "seeking",
+              "personID": "cheng",
+              "relationshipDelta": 1
+            }
           ]
         },
         {
@@ -1420,11 +1649,33 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects"
+          ],
+          "storyChanges": [
+            {
+              "key": "care",
+              "value": "paused",
+              "personID": "",
+              "relationshipDelta": 0
+            }
           ]
         }
       ],
       "isFallback": true,
-      "eligibility": []
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 39,
+        "maximumAge": 39,
+        "category": "care",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
     },
     {
       "id": "middle-turn",
@@ -1454,7 +1705,8 @@
             "choice-effects",
             "agency",
             "learning-channels"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "offline",
@@ -1477,7 +1729,8 @@
             "choice-effects",
             "learning-channels",
             "support-network"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "ask",
@@ -1499,7 +1752,8 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "rest",
@@ -1520,11 +1774,26 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects"
-          ]
+          ],
+          "storyChanges": []
         }
       ],
       "isFallback": true,
-      "eligibility": []
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 45,
+        "maximumAge": 59,
+        "category": "learning",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
     },
     {
       "id": "middle-support",
@@ -1554,6 +1823,14 @@
             "choice-effects",
             "story-branches",
             "agency"
+          ],
+          "storyChanges": [
+            {
+              "key": "care",
+              "value": "shared",
+              "personID": "cheng",
+              "relationshipDelta": 1
+            }
           ]
         },
         {
@@ -1577,6 +1854,14 @@
             "choice-effects",
             "agency",
             "learning-channels"
+          ],
+          "storyChanges": [
+            {
+              "key": "care",
+              "value": "shared",
+              "personID": "cheng",
+              "relationshipDelta": 1
+            }
           ]
         },
         {
@@ -1599,6 +1884,14 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network"
+          ],
+          "storyChanges": [
+            {
+              "key": "care",
+              "value": "seeking",
+              "personID": "cheng",
+              "relationshipDelta": 1
+            }
           ]
         },
         {
@@ -1620,11 +1913,28 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects"
-          ]
+          ],
+          "storyChanges": []
         }
       ],
       "isFallback": true,
-      "eligibility": []
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 52,
+        "maximumAge": 72,
+        "category": "care",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": "care",
+        "continuityValues": [
+          "shared"
+        ],
+        "relationshipID": "cheng",
+        "resourceWeights": []
+      },
+      "continuation": null
     },
     {
       "id": "middle-rhythm",
@@ -1654,7 +1964,8 @@
             "choice-effects",
             "agency",
             "learning-channels"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "ask",
@@ -1676,7 +1987,8 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "rest",
@@ -1697,11 +2009,26 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects"
-          ]
+          ],
+          "storyChanges": []
         }
       ],
       "isFallback": true,
-      "eligibility": []
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 59,
+        "maximumAge": 72,
+        "category": "community",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
     },
     {
       "id": "later-pass-on",
@@ -1731,7 +2058,8 @@
             "choice-effects",
             "agency",
             "learning-channels"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "ask",
@@ -1753,7 +2081,8 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "rest",
@@ -1774,11 +2103,26 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects"
-          ]
+          ],
+          "storyChanges": []
         }
       ],
       "isFallback": true,
-      "eligibility": []
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 65,
+        "maximumAge": 72,
+        "category": "community",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
     },
     {
       "id": "later-reconnect",
@@ -1808,7 +2152,8 @@
             "choice-effects",
             "agency",
             "learning-channels"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "ask",
@@ -1830,7 +2175,8 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "rest",
@@ -1851,11 +2197,28 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects"
-          ]
+          ],
+          "storyChanges": []
         }
       ],
       "isFallback": true,
-      "eligibility": []
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 72,
+        "maximumAge": 72,
+        "category": "friendship",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": "friendship",
+        "continuityValues": [
+          "connected"
+        ],
+        "relationshipID": "ahe",
+        "resourceWeights": []
+      },
+      "continuation": null
     },
     {
       "id": "later-review",
@@ -1885,7 +2248,8 @@
             "choice-effects",
             "agency",
             "learning-channels"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "ask",
@@ -1907,7 +2271,8 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "rest",
@@ -1928,11 +2293,26 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects"
-          ]
+          ],
+          "storyChanges": []
         }
       ],
       "isFallback": true,
-      "eligibility": []
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 80,
+        "maximumAge": 80,
+        "category": "reflection",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
     },
     {
       "id": "child-library-map",
@@ -1962,7 +2342,8 @@
             "choice-effects",
             "event-selection",
             "agency"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "ask",
@@ -1984,7 +2365,8 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "rest",
@@ -2005,7 +2387,8 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects"
-          ]
+          ],
+          "storyChanges": []
         }
       ],
       "isFallback": false,
@@ -2017,7 +2400,21 @@
           "threshold": 1,
           "choiceIDs": []
         }
-      ]
+      ],
+      "selection": {
+        "minimumAge": 12,
+        "maximumAge": 12,
+        "category": "learning",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
     },
     {
       "id": "child-wind-team",
@@ -2047,7 +2444,8 @@
             "choice-effects",
             "event-selection",
             "agency"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "ask",
@@ -2069,7 +2467,8 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "rest",
@@ -2090,22 +2489,38 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects"
-          ]
+          ],
+          "storyChanges": []
         }
       ],
       "isFallback": false,
       "eligibility": [
         {
           "id": "windmill-promise",
-          "kind": "priorChoice",
-          "key": "child-friend",
+          "kind": "storyFlag",
+          "key": "friendship",
           "threshold": null,
           "choiceIDs": [
-            "invest",
-            "ask"
+            "connected"
           ]
         }
-      ]
+      ],
+      "selection": {
+        "minimumAge": 12,
+        "maximumAge": 17,
+        "category": "friendship",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": "friendship",
+        "continuityValues": [
+          "connected"
+        ],
+        "relationshipID": "ahe",
+        "resourceWeights": []
+      },
+      "continuation": null
     },
     {
       "id": "teen-repair-table",
@@ -2135,6 +2550,14 @@
             "choice-effects",
             "event-selection",
             "agency"
+          ],
+          "storyChanges": [
+            {
+              "key": "repair",
+              "value": "practiced",
+              "personID": "teacher",
+              "relationshipDelta": 2
+            }
           ]
         },
         {
@@ -2157,6 +2580,14 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network"
+          ],
+          "storyChanges": [
+            {
+              "key": "repair",
+              "value": "seeking",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
           ]
         },
         {
@@ -2178,19 +2609,20 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects"
-          ]
+          ],
+          "storyChanges": []
         }
       ],
       "isFallback": false,
       "eligibility": [
         {
           "id": "made-a-project",
-          "kind": "priorChoice",
-          "key": "teen-project",
+          "kind": "storyFlag",
+          "key": "learning",
           "threshold": null,
           "choiceIDs": [
-            "invest",
-            "offline"
+            "online",
+            "paper"
           ]
         },
         {
@@ -2200,7 +2632,24 @@
           "threshold": 25,
           "choiceIDs": []
         }
-      ]
+      ],
+      "selection": {
+        "minimumAge": 17,
+        "maximumAge": 32,
+        "category": "learning",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": "learning",
+        "continuityValues": [
+          "online",
+          "paper"
+        ],
+        "relationshipID": "teacher",
+        "resourceWeights": []
+      },
+      "continuation": null
     },
     {
       "id": "teen-shared-kitchen",
@@ -2230,6 +2679,14 @@
             "choice-effects",
             "event-selection",
             "agency"
+          ],
+          "storyChanges": [
+            {
+              "key": "kitchen",
+              "value": "shared",
+              "personID": "cheng",
+              "relationshipDelta": 2
+            }
           ]
         },
         {
@@ -2252,6 +2709,14 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network"
+          ],
+          "storyChanges": [
+            {
+              "key": "kitchen",
+              "value": "seeking",
+              "personID": "cheng",
+              "relationshipDelta": 1
+            }
           ]
         },
         {
@@ -2273,7 +2738,8 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects"
-          ]
+          ],
+          "storyChanges": []
         }
       ],
       "isFallback": false,
@@ -2292,7 +2758,21 @@
           "threshold": 50,
           "choiceIDs": []
         }
-      ]
+      ],
+      "selection": {
+        "minimumAge": 17,
+        "maximumAge": 32,
+        "category": "community",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
     },
     {
       "id": "adult-neighbor-market",
@@ -2322,7 +2802,8 @@
             "choice-effects",
             "event-selection",
             "agency"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "ask",
@@ -2344,7 +2825,8 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "rest",
@@ -2365,7 +2847,8 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects"
-          ]
+          ],
+          "storyChanges": []
         }
       ],
       "isFallback": false,
@@ -2384,7 +2867,21 @@
           "threshold": 1,
           "choiceIDs": []
         }
-      ]
+      ],
+      "selection": {
+        "minimumAge": 25,
+        "maximumAge": 52,
+        "category": "work",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": "side-work-commitment",
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
     },
     {
       "id": "middle-garden-table",
@@ -2414,6 +2911,14 @@
             "choice-effects",
             "event-selection",
             "agency"
+          ],
+          "storyChanges": [
+            {
+              "key": "garden",
+              "value": "tending",
+              "personID": "cheng",
+              "relationshipDelta": 2
+            }
           ]
         },
         {
@@ -2436,6 +2941,14 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network"
+          ],
+          "storyChanges": [
+            {
+              "key": "garden",
+              "value": "seeking",
+              "personID": "cheng",
+              "relationshipDelta": 1
+            }
           ]
         },
         {
@@ -2457,7 +2970,8 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects"
-          ]
+          ],
+          "storyChanges": []
         }
       ],
       "isFallback": false,
@@ -2469,7 +2983,21 @@
           "threshold": 45,
           "choiceIDs": []
         }
-      ]
+      ],
+      "selection": {
+        "minimumAge": 32,
+        "maximumAge": 65,
+        "category": "community",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
     },
     {
       "id": "middle-open-desk",
@@ -2499,7 +3027,8 @@
             "choice-effects",
             "event-selection",
             "agency"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "ask",
@@ -2521,7 +3050,8 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "rest",
@@ -2542,21 +3072,38 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects"
-          ]
+          ],
+          "storyChanges": []
         }
       ],
       "isFallback": false,
       "eligibility": [
         {
           "id": "shared-care-contacts",
-          "kind": "priorChoice",
-          "key": "adult-care",
+          "kind": "storyFlag",
+          "key": "care",
           "threshold": null,
           "choiceIDs": [
-            "invest"
+            "shared"
           ]
         }
-      ]
+      ],
+      "selection": {
+        "minimumAge": 45,
+        "maximumAge": 72,
+        "category": "community",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": "care",
+        "continuityValues": [
+          "shared"
+        ],
+        "relationshipID": "cheng",
+        "resourceWeights": []
+      },
+      "continuation": null
     },
     {
       "id": "later-voice-booth",
@@ -2586,7 +3133,8 @@
             "choice-effects",
             "event-selection",
             "agency"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "ask",
@@ -2608,7 +3156,8 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network"
-          ]
+          ],
+          "storyChanges": []
         },
         {
           "id": "rest",
@@ -2629,7 +3178,8 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects"
-          ]
+          ],
+          "storyChanges": []
         }
       ],
       "isFallback": false,
@@ -2648,7 +3198,2195 @@
           "threshold": 1,
           "choiceIDs": []
         }
-      ]
+      ],
+      "selection": {
+        "minimumAge": 59,
+        "maximumAge": 72,
+        "category": "community",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
+    },
+    {
+      "id": "child-rain-notebook",
+      "age": 12,
+      "title": "雨後的小路留下了線索",
+      "recurringPerson": "阿禾",
+      "storyQuestion": "想觀察自然，也要怎樣照顧自己的安全？",
+      "choices": [
+        {
+          "id": "observe",
+          "title": "和大人沿安全步道畫下雨後的植物",
+          "kind": "learn",
+          "control": "sharedWithAdult",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": -1,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 3
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "nature",
+              "value": "observing",
+              "personID": "ahe",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "seekGuide",
+          "title": "請大人陪你從窗邊開始觀察",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "nature",
+              "value": "seeking",
+              "personID": "ahe",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "把觀察本收好，等天氣合適再出發",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 12,
+        "maximumAge": 17,
+        "category": "nature",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
+    },
+    {
+      "id": "child-quiet-stage",
+      "age": 12,
+      "title": "阿禾想在班上表演",
+      "recurringPerson": "阿禾",
+      "storyQuestion": "上台與在幕後幫忙，哪種方式適合你？",
+      "choices": [
+        {
+          "id": "perform",
+          "title": "和阿禾排練一段短劇",
+          "kind": "share",
+          "control": "sharedWithAdult",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": -1,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 2
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "friendship",
+              "value": "connected",
+              "personID": "ahe",
+              "relationshipDelta": 2
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "backstage",
+          "title": "和大人一起幫忙整理安全道具",
+          "kind": "learn",
+          "control": "sharedWithAdult",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 2
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "repair",
+              "value": "seeking",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "告訴阿禾這次想當觀眾",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 12,
+        "maximumAge": 17,
+        "category": "friendship",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
+    },
+    {
+      "id": "teen-tool-library",
+      "age": 17,
+      "title": "工具圖書角招募學習夥伴",
+      "recurringPerson": "樹老師",
+      "storyQuestion": "買新的，還是花時間學會借用與維修？",
+      "choices": [
+        {
+          "id": "practice",
+          "title": "先學安全檢查，再修一件舊玩具",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": -1,
+            "relationships": 0,
+            "skills": 3
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "repair",
+              "value": "practiced",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "seekGuide",
+          "title": "請樹老師陪你登記借用工具",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "repair",
+              "value": "seeking",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天不接新的安排，留時間好好休息",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 17,
+        "maximumAge": 32,
+        "category": "learning",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
+    },
+    {
+      "id": "teen-river-survey",
+      "age": 17,
+      "title": "步道觀察隊出發前",
+      "recurringPerson": "阿禾",
+      "storyQuestion": "已有的觀察經驗，可以怎樣和新夥伴分享？",
+      "choices": [
+        {
+          "id": "lead",
+          "title": "帶隊整理觀察位置，練習說明安全界線",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 3,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": -1,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 2
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "nature",
+              "value": "observing",
+              "personID": "ahe",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "join",
+          "title": "和隊員學記錄植物與天氣",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 3
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "nature",
+              "value": "observing",
+              "personID": "ahe",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "seekGuide",
+          "title": "請隊員安排一段短而安全的路線",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "nature",
+              "value": "seeking",
+              "personID": "ahe",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天不接新的安排，留時間好好休息",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 17,
+        "maximumAge": 32,
+        "category": "nature",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": "nature",
+        "continuityValues": [
+          "observing"
+        ],
+        "relationshipID": "ahe",
+        "resourceWeights": []
+      },
+      "continuation": {
+        "flag": "nature",
+        "activeValues": [
+          "observing"
+        ],
+        "unlockedChoices": [
+          "lead"
+        ],
+        "minimumSkills": 24,
+        "activeTitle": "阿禾帶來你以前的觀察本",
+        "recoveryTitle": "從第一張觀察卡認識步道"
+      }
+    },
+    {
+      "id": "teen-shared-room",
+      "age": 21,
+      "title": "合租的空間要怎樣使用",
+      "recurringPerson": "小澄",
+      "storyQuestion": "安靜、租金與彼此的界線怎麼談？",
+      "choices": [
+        {
+          "id": "agreement",
+          "title": "一起寫清楚安靜時段與共用物品規則",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 1,
+            "relationships": 2,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "kitchen",
+              "value": "seeking",
+              "personID": "cheng",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "privateRoom",
+          "title": "保留獨處的角落，承擔多一點租金",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": -3,
+            "relationships": 0,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "先不換住處，讓自己多想一天",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 21,
+        "maximumAge": 32,
+        "category": "community",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
+    },
+    {
+      "id": "adult-repair-coop",
+      "age": 25,
+      "title": "修理桌想多開一天",
+      "recurringPerson": "樹老師",
+      "storyQuestion": "接案收入與教新手，時間要如何安排？",
+      "choices": [
+        {
+          "id": "lead",
+          "title": "帶新手檢查玩具，分配修理桌工作",
+          "kind": "work",
+          "control": "adultResponsibility",
+          "minimumAge": 23,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": -1,
+            "financial": 3,
+            "relationships": 0,
+            "skills": 2
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "repair",
+              "value": "practiced",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "apprentice",
+          "title": "少接一份工作，跟樹老師慢慢練習",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": -2,
+            "relationships": 0,
+            "skills": 3
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "repair",
+              "value": "practiced",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "seekGuide",
+          "title": "請樹老師安排短時段合作",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "repair",
+              "value": "seeking",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天不接新的安排，留時間好好休息",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 25,
+        "maximumAge": 59,
+        "category": "work",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": "repair",
+        "continuityValues": [
+          "practiced"
+        ],
+        "relationshipID": "teacher",
+        "resourceWeights": []
+      },
+      "continuation": {
+        "flag": "repair",
+        "activeValues": [
+          "practiced"
+        ],
+        "unlockedChoices": [
+          "lead"
+        ],
+        "minimumSkills": 24,
+        "activeTitle": "樹老師邀你一起主持修理桌",
+        "recoveryTitle": "還沒有修理經驗，也可以從旁學習"
+      }
+    },
+    {
+      "id": "adult-meal-circle",
+      "age": 25,
+      "title": "共煮夥伴想試一週輪值",
+      "recurringPerson": "小澄",
+      "storyQuestion": "省下一點開銷，是否值得固定付出時間？",
+      "choices": [
+        {
+          "id": "lead",
+          "title": "接續共煮表，邀新夥伴分擔採買",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": -1,
+            "financial": 2,
+            "relationships": 2,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "kitchen",
+              "value": "shared",
+              "personID": "cheng",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "trial",
+          "title": "先試一天共煮，寫下自己的空閒",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 1,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "kitchen",
+              "value": "shared",
+              "personID": "cheng",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "seekGuide",
+          "title": "請小澄找較短的共煮時段",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "kitchen",
+              "value": "seeking",
+              "personID": "cheng",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天不接新的安排，留時間好好休息",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 25,
+        "maximumAge": 59,
+        "category": "care",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": "kitchen",
+        "continuityValues": [
+          "shared"
+        ],
+        "relationshipID": "cheng",
+        "resourceWeights": []
+      },
+      "continuation": {
+        "flag": "kitchen",
+        "activeValues": [
+          "shared"
+        ],
+        "unlockedChoices": [
+          "lead"
+        ],
+        "minimumSkills": 20,
+        "activeTitle": "一起延續那張共煮輪值表",
+        "recoveryTitle": "第一次加入共煮，先從一天開始"
+      }
+    },
+    {
+      "id": "adult-local-trail",
+      "age": 25,
+      "title": "社區想留住一條好走的步道",
+      "recurringPerson": "阿禾",
+      "storyQuestion": "觀察、分享與日常工作要怎麼安排？",
+      "choices": [
+        {
+          "id": "lead",
+          "title": "整理以前的觀察，帶大家標記安全路段",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 3,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": -1,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 2
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "nature",
+              "value": "observing",
+              "personID": "ahe",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "record",
+          "title": "和阿禾分段記錄沿路植物",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 3
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "nature",
+              "value": "observing",
+              "personID": "ahe",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "seekGuide",
+          "title": "請夥伴分配適合體力的短路段",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "nature",
+              "value": "seeking",
+              "personID": "ahe",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天不接新的安排，留時間好好休息",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 25,
+        "maximumAge": 59,
+        "category": "nature",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": "nature",
+        "continuityValues": [
+          "observing"
+        ],
+        "relationshipID": "ahe",
+        "resourceWeights": []
+      },
+      "continuation": {
+        "flag": "nature",
+        "activeValues": [
+          "observing"
+        ],
+        "unlockedChoices": [
+          "lead"
+        ],
+        "minimumSkills": 24,
+        "activeTitle": "從觀察本走到社區步道計畫",
+        "recoveryTitle": "沒有舊記錄，也能從今天開始"
+      }
+    },
+    {
+      "id": "adult-shift-offer",
+      "age": 25,
+      "title": "新排班有兩種安排",
+      "recurringPerson": "工作夥伴",
+      "storyQuestion": "多一點收入和準時回家，你現在需要什麼？",
+      "choices": [
+        {
+          "id": "extraShift",
+          "title": "短期多接一班，記下休息日期",
+          "kind": "work",
+          "control": "adultResponsibility",
+          "minimumAge": 23,
+          "timeCost": 3,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": -2,
+            "financial": 4,
+            "relationships": -1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "predictable",
+          "title": "保留穩定的下班時間，少接一些班",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": -2,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "暫不接額外班次，先看看現有負擔",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 25,
+        "maximumAge": 52,
+        "category": "work",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": "side-work-commitment",
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
+    },
+    {
+      "id": "adult-broken-bicycle",
+      "age": 32,
+      "title": "常用的腳踏車需要修理",
+      "recurringPerson": "樹老師",
+      "storyQuestion": "修理費、時間與通勤安排怎樣取捨？",
+      "choices": [
+        {
+          "id": "repairTogether",
+          "title": "跟樹老師檢查安全零件，學一次修理",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": -2,
+            "relationships": 0,
+            "skills": 3
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "repair",
+              "value": "practiced",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "borrow",
+          "title": "先借車，說好歸還日期",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": -1,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "repair",
+              "value": "seeking",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "改走安全的短路線，等有空再處理",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 25,
+        "maximumAge": 59,
+        "category": "recovery",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": [
+          {
+            "resource": "financial",
+            "atMost": 45,
+            "multiplier": 1.25
+          }
+        ]
+      },
+      "continuation": null
+    },
+    {
+      "id": "middle-seed-exchange",
+      "age": 45,
+      "title": "花圃的小種子交換會",
+      "recurringPerson": "小澄",
+      "storyQuestion": "照顧植物的經驗，要怎樣交給下一個人？",
+      "choices": [
+        {
+          "id": "lead",
+          "title": "用自己的輪值經驗帶大家照顧幼苗",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 2
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "garden",
+              "value": "tending",
+              "personID": "cheng",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "onePot",
+          "title": "只認養一盆，和夥伴約好輪流澆水",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 1,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "garden",
+              "value": "tending",
+              "personID": "cheng",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "seekGuide",
+          "title": "請小澄挑一盆適合新手的植物",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "garden",
+              "value": "seeking",
+              "personID": "cheng",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天不接新的安排，留時間好好休息",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 45,
+        "maximumAge": 72,
+        "category": "nature",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": "garden",
+        "continuityValues": [
+          "tending"
+        ],
+        "relationshipID": "cheng",
+        "resourceWeights": []
+      },
+      "continuation": {
+        "flag": "garden",
+        "activeValues": [
+          "tending"
+        ],
+        "unlockedChoices": [
+          "lead"
+        ],
+        "minimumSkills": 20,
+        "activeTitle": "帶著照顧過的花圃經驗交換種子",
+        "recoveryTitle": "從一盆植物開始的新約定"
+      }
+    },
+    {
+      "id": "middle-friend-letter",
+      "age": 45,
+      "title": "一封還沒寄出的問候",
+      "recurringPerson": "阿禾",
+      "storyQuestion": "忙碌之後，還能怎樣重新開始聯絡？",
+      "choices": [
+        {
+          "id": "write",
+          "title": "寫一張簡短的近況卡，重新約一次碰面",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "friendship",
+              "value": "connected",
+              "personID": "ahe",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "seekGuide",
+          "title": "請共同朋友問問方便聯絡的時間",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "friendship",
+              "value": "connected",
+              "personID": "ahe",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "先留好地址，今天不勉強自己回覆",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 32,
+        "maximumAge": 65,
+        "category": "friendship",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
+    },
+    {
+      "id": "middle-skill-exchange",
+      "age": 45,
+      "title": "工作夥伴想交換一項技能",
+      "recurringPerson": "工作夥伴",
+      "storyQuestion": "用熟悉的事換新知，也會少掉什麼時間？",
+      "choices": [
+        {
+          "id": "teach",
+          "title": "分享自己熟悉的做法，換一次學習機會",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": -1,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 2
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "study",
+          "title": "專心學一項新技能，暫緩額外工作",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": -2,
+            "relationships": 0,
+            "skills": 4
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "learning",
+              "value": "paper",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天不接新的安排，留時間好好休息",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 32,
+        "maximumAge": 65,
+        "category": "learning",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": []
+      },
+      "continuation": null
+    },
+    {
+      "id": "middle-rest-circle",
+      "age": 52,
+      "title": "夥伴發現大家都有些累",
+      "recurringPerson": "小澄",
+      "storyQuestion": "說出負擔後，可以調整哪一件事？",
+      "choices": [
+        {
+          "id": "boundaries",
+          "title": "和夥伴重新安排照顧界線",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "care",
+              "value": "shared",
+              "personID": "cheng",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "walk",
+          "title": "把今天的空檔留給一段慢走",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 3,
+            "financial": -1,
+            "relationships": 0,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天先睡飽，等精力回來再討論",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 45,
+        "maximumAge": 72,
+        "category": "recovery",
+        "baseWeight": 1,
+        "repeatable": true,
+        "cooldownDecisions": 2,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": [
+          {
+            "resource": "health",
+            "atMost": 60,
+            "multiplier": 1.5
+          }
+        ]
+      },
+      "continuation": null
+    },
+    {
+      "id": "later-tool-stories",
+      "age": 65,
+      "title": "舊工具和新的學習者",
+      "recurringPerson": "樹老師",
+      "storyQuestion": "修得好之外，還想傳下什麼？",
+      "choices": [
+        {
+          "id": "lead",
+          "title": "帶新手練安全檢查，分享修理失敗的經驗",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "learnAgain",
+          "title": "和新手一起學不熟悉的修理方法",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 2
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "repair",
+              "value": "practiced",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "seekGuide",
+          "title": "請夥伴先準備材料，自己只教一小段",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天不接新的安排，留時間好好休息",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 59,
+        "maximumAge": 72,
+        "category": "learning",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": "repair",
+        "continuityValues": [
+          "practiced"
+        ],
+        "relationshipID": "teacher",
+        "resourceWeights": []
+      },
+      "continuation": {
+        "flag": "repair",
+        "activeValues": [
+          "practiced"
+        ],
+        "unlockedChoices": [
+          "lead"
+        ],
+        "minimumSkills": 24,
+        "activeTitle": "那些修過的玩具帶來了新學生",
+        "recoveryTitle": "和新學生一起從安全檢查開始"
+      }
+    },
+    {
+      "id": "later-shared-recipes",
+      "age": 65,
+      "title": "共煮桌想留下一本食譜",
+      "recurringPerson": "小澄",
+      "storyQuestion": "留下食譜，還是把時間留給眼前的聚餐？",
+      "choices": [
+        {
+          "id": "lead",
+          "title": "整理輪值經驗和食譜，讓新夥伴能接手",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 2
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "cookOnce",
+          "title": "只一起煮一道簡單的菜，享受相聚",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 1,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "kitchen",
+              "value": "shared",
+              "personID": "cheng",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "seekGuide",
+          "title": "請夥伴記錄，自己慢慢口述",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天不接新的安排，留時間好好休息",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 59,
+        "maximumAge": 72,
+        "category": "community",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": "kitchen",
+        "continuityValues": [
+          "shared"
+        ],
+        "relationshipID": "cheng",
+        "resourceWeights": []
+      },
+      "continuation": {
+        "flag": "kitchen",
+        "activeValues": [
+          "shared"
+        ],
+        "unlockedChoices": [
+          "lead"
+        ],
+        "minimumSkills": 20,
+        "activeTitle": "把一起煮過的日子寫進食譜",
+        "recoveryTitle": "從一道簡單的菜認識新夥伴"
+      }
+    },
+    {
+      "id": "later-path-map",
+      "age": 72,
+      "title": "一張讓大家走得更安心的地圖",
+      "recurringPerson": "阿禾",
+      "storyQuestion": "經驗、體力與社區需要，能怎樣一起安排？",
+      "choices": [
+        {
+          "id": "lead",
+          "title": "用觀察記錄標出平緩路段和休息處",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 2
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "shortWalk",
+          "title": "與夥伴試走一小段，記下自己的感受",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 1,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "nature",
+              "value": "observing",
+              "personID": "ahe",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "seekGuide",
+          "title": "請夥伴陪走，讓不同需求都被聽見",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 1
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天不接新的安排，留時間好好休息",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "story-branches",
+            "agency"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 59,
+        "maximumAge": 72,
+        "category": "nature",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": "nature",
+        "continuityValues": [
+          "observing"
+        ],
+        "relationshipID": "ahe",
+        "resourceWeights": []
+      },
+      "continuation": {
+        "flag": "nature",
+        "activeValues": [
+          "observing"
+        ],
+        "unlockedChoices": [
+          "lead"
+        ],
+        "minimumSkills": 24,
+        "activeTitle": "觀察本成了社區步道圖的起點",
+        "recoveryTitle": "一張空白地圖也能慢慢畫起"
+      }
     }
   ]
 }

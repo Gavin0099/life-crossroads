@@ -41,7 +41,7 @@ public enum DecisionResolver {
         let event = projection.event
         let availableChoice = event.choices.first(where: { $0.id == choiceID })
         let choice = availableChoice ?? originalChoice
-        guard state.age == event.age, !state.decisions.contains(where: { $0.eventID == eventID }) else {
+        guard original.selection.includes(state.age), !state.decisions.contains(where: { $0.age == state.age }) else {
             throw ModelError.invalid("event age or repeated decision")
         }
         let context = try EnvironmentRules.context(catalog: catalog, countryCode: state.countryCode, householdID: state.householdID)
@@ -123,7 +123,7 @@ public enum DecisionResolver {
                 effect("agency.shared", .family, .zero, ["agency"], "你表達自己的想法，具體安排由可信任的大人共同負責。")
             }
             if choice.kind == .learn && h.mentorSupport > 0 {
-                effect("support.encouragement", .otherPeople, .init(relationships: 2, skills: 1),
+                effect("support.encouragement", .otherPeople, .init(relationships: 1, skills: 1),
                        ["support-network"], "一起準備的人陪你練習，也成為這段故事裡的重要夥伴。")
             }
             if choice.kind == .learn && cost.time >= 5 {
@@ -146,6 +146,7 @@ public enum DecisionResolver {
             let clamp = next.resources.clamped - next.resources
             effect("resource.clamp", .modelRule, clamp, ["resource-bounds"], "四項資源維持在 0～100，沒有合成人生總分。")
             next.decisions.append(.init(eventID: event.id, choiceID: choice.id, age: state.age))
+            next.story = try StoryMemory.rebuild(next.decisions, catalog: catalog)
         }
         try next.validate(catalog: catalog)
         return .init(state: next, trace: .init(
@@ -159,6 +160,8 @@ public enum DecisionResolver {
             budgetBefore: .init(time: state.remainingTime, energy: state.remainingEnergy, materials: state.remainingMaterials),
             budgetAfter: .init(time: next.remainingTime, energy: next.remainingEnergy, materials: next.remainingMaterials),
             effectSteps: effects, randomTrial: randomTrial, resourcesBefore: state.resources,
-            resourcesAfter: next.resources, scheduledHooks: hooks))
+            resourcesAfter: next.resources, scheduledHooks: hooks,
+            recordedStoryFacts: reasons.isEmpty ? next.story.flags.filter { $0.age == state.age && $0.eventID == event.id && $0.choiceID == choice.id } : [],
+            changedRelationships: reasons.isEmpty ? next.story.relationships.filter { nextPerson in state.story.relationships.first { $0.personID == nextPerson.personID } != nextPerson } : []))
     }
 }

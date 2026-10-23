@@ -145,6 +145,7 @@ public struct ChoiceDefinition: Codable, Equatable, Sendable {
     public var materialCost: Int
     public var effect: ResourceValues
     public var requiresDigitalAccess: Bool
+    public var storyChanges: [StoryChange]
     public var delayedHook: String?
     public var assumptionIDs: [String]
 }
@@ -156,6 +157,8 @@ public struct DecisionSkeleton: Codable, Equatable, Sendable {
     public var recurringPerson: String
     public var storyQuestion: String
     public var choices: [ChoiceDefinition]
+    public var selection: EventPolicy
+    public var continuation: StoryContinuation?
     public var storyVariantID: String? = nil
     public var isFallback: Bool = true
     public var eligibility: [EventCondition] = []
@@ -165,6 +168,7 @@ public struct ModelCatalog: Codable, Equatable, Sendable {
     public var schemaVersion: Int
     public var dataVersion: String
     public var contentVersion: String
+    public var selectionRules: SelectionRules
     public var referenceYear: Int
     public var sources: [SourceRecord]
     public var assumptions: [DesignAssumption]
@@ -173,7 +177,7 @@ public struct ModelCatalog: Codable, Equatable, Sendable {
     public var decisions: [DecisionSkeleton]
 
     public func validate() throws {
-        guard schemaVersion == 3, !dataVersion.isEmpty, !contentVersion.isEmpty,
+        guard schemaVersion == 4, !dataVersion.isEmpty, !contentVersion.isEmpty,
               (1960...2100).contains(referenceYear) else { throw ModelError.invalid("catalog version") }
         func unique(_ ids: [String]) throws {
             guard ids.allSatisfy({ !$0.isEmpty }), Set(ids).count == ids.count else {
@@ -243,7 +247,7 @@ public struct ModelCatalog: Codable, Equatable, Sendable {
             guard EventSchedule.decisionAges.contains(d.age), !d.choices.isEmpty, !d.recurringPerson.isEmpty,
                   !d.storyQuestion.isEmpty else { throw ModelError.invalid("decision sequence") }
             try unique(d.eligibility.map(\.id))
-            guard d.isFallback ? d.eligibility.isEmpty : !d.eligibility.isEmpty else {
+            guard !d.isFallback || d.eligibility.isEmpty else {
                 throw ModelError.invalid("event fallback conditions")
             }
             for condition in d.eligibility {
@@ -258,6 +262,14 @@ public struct ModelCatalog: Codable, Equatable, Sendable {
                           let threshold = condition.threshold, (0...4).contains(threshold), condition.choiceIDs.isEmpty else {
                         throw ModelError.invalid("event household condition")
                     }
+                case .storyFlag:
+                    guard condition.threshold == nil, let allowed = StoryMemory.values[condition.key],
+                          !condition.choiceIDs.isEmpty, Set(condition.choiceIDs).isSubset(of: allowed) else {
+                        throw ModelError.invalid("event story flag condition")
+                    }
+                case .relationshipAtLeast:
+                    guard StoryMemory.people.contains(condition.key), let threshold = condition.threshold,
+                          (1...10).contains(threshold), condition.choiceIDs.isEmpty else { throw ModelError.invalid("relationship condition") }
                 case .priorChoice:
                     guard condition.threshold == nil, !condition.choiceIDs.isEmpty,
                           Set(condition.choiceIDs).count == condition.choiceIDs.count,
@@ -283,10 +295,6 @@ public struct ModelCatalog: Codable, Equatable, Sendable {
                 throw ModelError.missing("cost-free recovery choice")
             }
         }
-        for age in EventSchedule.decisionAges {
-            guard decisions.filter({ $0.age == age && $0.isFallback }).count == 1 else {
-                throw ModelError.missing("one unconditional fallback per age")
-            }
-        }
+        try validateEventPolicies()
     }
 }

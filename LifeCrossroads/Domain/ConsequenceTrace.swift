@@ -84,6 +84,8 @@ public struct ConsequenceTrace: Codable, Equatable, Sendable {
     public let resourcesBefore: ResourceValues
     public let resourcesAfter: ResourceValues
     public let scheduledHooks: [StoryHook]
+    public var recordedStoryFacts: [StoryFact] = []
+    public var changedRelationships: [RelationshipState] = []
 
     /// Only executed, non-zero contributions count; recorded observations and unsuccessful random trials are not causes.
     public var contributingInfluences: [Influence] {

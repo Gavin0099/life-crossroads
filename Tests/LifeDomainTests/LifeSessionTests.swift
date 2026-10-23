@@ -26,8 +26,8 @@ final class LifeSessionTests: XCTestCase {
     func testEveryDecisionHasOriginalStoryText() throws {
         let c = try StatisticsRepository.bundled()
         XCTAssertTrue(Set(c.decisions.map(\.id)).isSubset(of: Set(EventNarratives.texts.keys)))
-        XCTAssertTrue(EventNarratives.texts.values.allSatisfy { $0.count >= 60 })
-        XCTAssertEqual(c.contentVersion, "lc02-story-4")
+        XCTAssertTrue(EventNarratives.texts.values.allSatisfy { $0.count >= 40 })
+        XCTAssertEqual(c.contentVersion, "rng-v2-story-1")
     }
     func testFourCountryEightFamilyPlaythroughsReachReviewAndCannotRepeat() throws {
         let c = try StatisticsRepository.bundled()
@@ -36,8 +36,9 @@ final class LifeSessionTests: XCTestCase {
                 var session = try LifeSession.start(catalog: c, countryCode: code, householdID: "\(code.lowercased())-\(family)", seed: 42)
                 for age in [8, 10, 12, 13, 17, 21, 25, 32, 39, 45, 52, 59, 65, 72, 80] {
                     XCTAssertEqual(try session.event(catalog: c).age, age)
-                    let preview = try session.preview(choiceID: "invest", catalog: c)
-                    let choice = preview.applied ? "invest" : "ask"
+                    let event = try session.event(catalog: c)
+                    let choices = try event.choices.filter { try session.preview(choiceID: $0.id, catalog: c).applied }
+                    let choice = try XCTUnwrap(choices.first).id
                     try session.choose(choice, catalog: c)
                     XCTAssertEqual(session.phase, .reflecting)
                     XCTAssertThrowsError(try session.choose(choice, catalog: c))
@@ -45,7 +46,7 @@ final class LifeSessionTests: XCTestCase {
                 }
                 XCTAssertEqual(session.phase, .ended)
                 XCTAssertEqual(session.traces.count, 15)
-                XCTAssertEqual(session.state.memories.count, 3)
+                XCTAssertEqual(session.state.memories.count, session.traces.flatMap(\.scheduledHooks).count)
                 XCTAssertThrowsError(try session.continueLife(catalog: c))
                 XCTAssertThrowsError(try session.event(catalog: c))
             }

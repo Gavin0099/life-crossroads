@@ -5,6 +5,8 @@ import hashlib
 import json
 import urllib.request
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 ROOT = Path(__file__).resolve().parents[1]
 RESOURCES = ROOT / "LifeCrossroads/Data/Resources"
@@ -254,7 +256,9 @@ def build(refresh=False):
                         requiresDigitalAccess=False, delayedHook=None, assumptionIDs=["choice-effects"])]
         decisions.append(dict(id=id_, age=age, title=title, recurringPerson=person, storyQuestion=question,
                               choices=choices, isFallback=False, eligibility=eligibility))
-    return dict(schemaVersion=3, dataVersion=DATA_VERSION, contentVersion="lc02-story-4", referenceYear=2023,
+    from rng_v2_content import extend
+    extend(decisions, assumptions)
+    return dict(schemaVersion=4, selectionRules=dict(version="story-race-rules-1", continuityMultiplier=2.0, relationshipMultiplier=1.15, recentCategoryMultiplier=0.55, recentCategoryWindow=1), dataVersion=DATA_VERSION, contentVersion="rng-v2-story-1", referenceYear=2023,
                 sources=sources, assumptions=assumptions, countries=countries, households=households, decisions=decisions)
 
 
@@ -270,7 +274,7 @@ if __name__ == "__main__":
     if args.check:
         if target.read_text() != content:
             raise SystemExit("Catalog differs from pinned source evidence / design contract")
-        print("Offline evidence and deterministic catalog: PASS (14 observations, 8 countries, 16 households, 15 age slots / 23 event candidates)")
+        print("Offline evidence and deterministic catalog: PASS (14 observations, 8 countries, 16 households, 15 age slots / 40 event candidates)")
     else:
         target.write_text(content)
         print(f"Wrote {target.relative_to(ROOT)}")

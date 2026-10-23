@@ -22,8 +22,8 @@ class DataGenerationTests(unittest.TestCase):
         data = module.build()
         digital_events = {"teen-project", "teen-direction", "adult-learning", "middle-turn"}
         for event in data["decisions"]:
-            primary = next(c for c in event["choices"] if c["id"] == "invest")
-            self.assertEqual(primary["requiresDigitalAccess"], event["id"] in digital_events)
+            for choice in event["choices"]:
+                self.assertEqual(choice["requiresDigitalAccess"], event["id"] in digital_events and choice["id"] == "invest")
             if event["id"] in digital_events:
                 self.assertTrue(any(c["kind"] == "learn" and not c["requiresDigitalAccess"] for c in event["choices"]))
 

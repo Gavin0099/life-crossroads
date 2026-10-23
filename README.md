@@ -7,8 +7,8 @@ P1 目標為 **8 國、16 種家庭情境、50～70 個事件**，每局 10～15
 首個可玩交付為四國、童年到晚年回顧的完整人生，之後擴至八國。
 候選為台灣、日本、美國、德國、印度、巴西、越南、肯亞；資料與內容尚待逐國驗證。
 
-目前分支整合四國完整人生、條件事件池與 Event-first SwiftUI；23 個候選事件每局選出 15 個，保留三條長期故事分岔。
-本片以 PR #2 為基底獨立審查，維持不合併。實作契約與驗證方式見 [條件事件切片](docs/conditional-event-first.md)。
+目前分支整合四國完整人生、條件事件池與 Event-first SwiftUI；40 個候選事件每局選出 15 個，保留三條長期故事分岔。
+條件事件切片已交付 PR #3，工程覆審通過、產品維持 Draft／HOLD。下一片以其 `4f268b8` 為基底推進 [RNG-V2 人生多樣性與故事線系統](docs/rng-v2.md)，先建立量測基準，再以相同測試格比較新舊結果；維持不合併。
 產品計畫與待決定事項見 [PLAN.md](PLAN.md)。
 
 ## 執行引擎
@@ -20,11 +20,14 @@ swift test
 swift run life-demo
 swift run life-demo --json
 swift run -c release life-demo --story-samples
+swift run -c release life-demo --batch-report --seed-count 32 > batch-report.json
+python3 scripts/render-batch-report.py batch-report.json batch-report.md
 python3 scripts/build-data.py --check
 ```
 
 `life-demo` 比較四國相同決策，並執行五階段、15 個決策的完整人生骨架。
 `--story-samples` 輸出同日本／家庭一、Seed 0／1／2 的完整故事與選取依據，並核驗相同 Seed／選擇重播及中途 JSON 存讀；任何核驗失敗都以非零狀態結束。
+`--batch-report` 量測四國兩家庭與四種明示策略，預設 Seed 0～31 共1,024局，輸出事件覆蓋、配對人生差異、故事與資源飽和。`--seed-count` 範圍2～128，只用於批次模式；報表分母及限制見 [量測契約](docs/lc05-measurement.md)。
 這些是工程與故事路線證據，不代表 10～15 分鐘遊玩、實機或教育效果已驗收。
 資料、假設、缺口及 LC-02 開工判斷見 [LC-01 交付](docs/lc01-delivery.md)。
 
@@ -67,3 +70,5 @@ clone 後需重新安裝 hooks；請在啟用 `.venv` 的 terminal 執行 Git �
 產品參考：[born-somewhere](https://github.com/rollroyces/born-somewhere)、
 [1in8b.life 教學入口](https://1in8b.life/zh/?edu=1)。本專案自行設計內容，不沿用其內容庫。
 治理框架來源與授權見 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+
+RNG-V2：40 個事件、5 個固定里程碑＋10 個動態時點，七條具來源故事線。完整 1,024 局新舊比較與限制見 [比較報告](artifacts/evidence/rng-v2/comparison.md)；`python3 scripts/run-rng-v2-evidence.py` 可重跑兩次完整樣本。維持 Draft／HOLD，未合併。

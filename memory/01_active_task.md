@@ -27,3 +27,5 @@
 - PR2第二輪體驗修正已測試；測完即刪除模擬器的使用者偏好已納入AGENTS與腳本，5台已清理。下一片優先條件隨機故事＋Event-first接完整引擎；兩PR維持HOLD，實機/兒少驗收未完成。 <!-- memory_record_projection:active-task-summary:71c82dc7994ec9be8b8b9958582ffeb0d32eaa5dc1cb8692180e3a8cbf2810c4 -->
 
 - 條件事件＋Event-first獨立切片本機完成：23候選/15槽、固定0/1/2三局及完整重播；58 Swift、7 Python、5 UI通過，Simulator已刪。待獨立PR推送/HEAD CI確認，維持HOLD；真人重玩性未驗收。 <!-- memory_record_projection:active-task-summary:87d37bb11f7ab35357f40441e0bcadc426633db05bd6ae4b5385e2c9a67c0c3c -->
+
+- RNG-V2本機完成：40事件/5里程碑/七故事線，2x1024重跑一致；差異中位9/15，投入人際滿格148→4/256。71 Swift、15 Python、5 UI通過且Simulator已刪；待獨立Draft PR與HEAD CI，兩鏈普遍性及兒少驗收未通過。 <!-- memory_record_projection:active-task-summary:c1e8f0572dc669b6a6d35ea3e38f76d63feaa8549ee7f8a600c66ce8c4f2ffa4 -->

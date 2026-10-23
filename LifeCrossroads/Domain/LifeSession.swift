@@ -74,7 +74,7 @@ public struct LifeSession: Codable, Equatable, Sendable {
               state.age == Self.decisionAges[traces.count],
               let selection = selectionTraces.last,
               selection == (try EventSelector.select(state: state, catalog: catalog)),
-              let selected = catalog.decisions.first(where: { $0.id == selection.selectedEventID && $0.age == state.age }) else {
+              let selected = catalog.decisions.first(where: { $0.id == selection.selectedEventID && $0.selection.includes(state.age) }) else {
             throw ModelError.invalid("not choosing a valid selected event")
         }
         return StoryBranchEngine.project(event: selected, state: state).event

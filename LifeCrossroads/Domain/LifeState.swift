@@ -4,6 +4,7 @@ public struct StoryHook: Codable, Equatable, Sendable {
     public let id: String
     public let originEventID: String
     public let originChoiceID: String
+    public let originAge: Int
     public let dueAge: Int
     public let person: String
     public let text: String
@@ -18,7 +19,7 @@ public struct DecisionRecord: Codable, Equatable, Sendable {
 }
 
 public struct LifeState: Codable, Equatable, Sendable {
-    public static let engineVersion = "lc02-4"
+    public static let engineVersion = "rng-v2-1"
     public var engineVersion: String
     public var dataVersion: String
     public var contentVersion: String
@@ -33,6 +34,7 @@ public struct LifeState: Codable, Equatable, Sendable {
     public var decisions: [DecisionRecord]
     public var pendingHooks: [StoryHook]
     public var memories: [StoryHook]
+    public var story: StoryMemory
 
     public static func born(catalog: ModelCatalog, countryCode: String, householdID: String, seed: UInt64) throws -> Self {
         try catalog.validate()
@@ -44,7 +46,7 @@ public struct LifeState: Codable, Equatable, Sendable {
                      remainingTime: LifeStage.childhood.timeBudget,
                      remainingEnergy: LifeStage.childhood.energyBudget,
                      remainingMaterials: context.household.materialBudget,
-                     decisions: [], pendingHooks: [], memories: [])
+                     decisions: [], pendingHooks: [], memories: [], story: StoryMemory())
     }
 
     public func validate(catalog: ModelCatalog) throws {
@@ -55,25 +57,28 @@ public struct LifeState: Codable, Equatable, Sendable {
         try resources.validate(in: 0...100)
         guard (0...stage.timeBudget).contains(remainingTime), (0...stage.energyBudget).contains(remainingEnergy),
               (0...context.household.materialBudget).contains(remainingMaterials),
-              Set(decisions.map(\.eventID)).count == decisions.count else { throw ModelError.invalid("state budget/history") }
+              decisions.count <= EventSchedule.decisionAges.count else { throw ModelError.invalid("state budget/history") }
         var previousAge = -1
         for record in decisions {
             guard record.age > previousAge, record.age <= age,
-                  let event = catalog.decisions.first(where: { $0.id == record.eventID }), event.age == record.age,
+                  let event = catalog.decisions.first(where: { $0.id == record.eventID }), event.selection.includes(record.age), EventSchedule.decisionAges.contains(record.age),
                   event.choices.contains(where: { $0.id == record.choiceID }) else {
                 throw ModelError.invalid("decision history")
             }
             previousAge = record.age
         }
+        guard story == (try StoryMemory.rebuild(decisions, catalog: catalog)) else { throw ModelError.invalid("forged story memory") }
+        for event in catalog.decisions where !event.selection.repeatable {
+            guard decisions.filter({ $0.eventID == event.id }).count <= 1 else { throw ModelError.invalid("one-shot history") }
+        }
         try uniqueHooks()
         for hook in pendingHooks + memories {
             try hook.effect.validate(in: -20...20)
-            guard decisions.contains(where: { $0.eventID == hook.originEventID && $0.choiceID == hook.originChoiceID }),
-                  let event = catalog.decisions.first(where: { $0.id == hook.originEventID }),
-                  let choice = event.choices.first(where: { $0.id == hook.originChoiceID }),
-                  hook == StoryRules.callback(event: event, choice: choice) else {
-                throw ModelError.invalid("story provenance")
-            }
+            guard let record = decisions.first(where: { $0.eventID == hook.originEventID && $0.choiceID == hook.originChoiceID && $0.age == hook.originAge }),
+                  var event = catalog.decisions.first(where: { $0.id == record.eventID }),
+                  let choice = event.choices.first(where: { $0.id == record.choiceID }) else { throw ModelError.invalid("story provenance") }
+            event.age = record.age
+            guard hook == StoryRules.callback(event: event, choice: choice) else { throw ModelError.invalid("story provenance") }
         }
         guard pendingHooks.allSatisfy({ $0.dueAge > age }), memories.allSatisfy({ $0.dueAge <= age }) else {
             throw ModelError.invalid("story timing")
@@ -89,10 +94,10 @@ public struct LifeState: Codable, Equatable, Sendable {
 enum StoryRules {
     static func callback(event: DecisionSkeleton, choice: ChoiceDefinition) -> StoryHook? {
         guard let hookID = choice.delayedHook else { return nil }
-        return .init(id: "\(event.id):\(hookID)", originEventID: event.id, originChoiceID: choice.id,
-                     dueAge: min(100, event.age + 4), person: event.recurringPerson,
+        return .init(id: "\(event.id):\(event.age):\(hookID)", originEventID: event.id, originChoiceID: choice.id,
+                     originAge: event.age, dueAge: min(100, event.age + 4), person: event.recurringPerson,
                      text: "\(event.recurringPerson)記得你當年的選擇，這次邀你一起分享經驗。",
-                     effect: .init(relationships: 2, skills: 1), assumptionID: "story-callback")
+                     effect: .init(skills: 1), assumptionID: "story-callback")
     }
 }
 

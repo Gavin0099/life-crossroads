@@ -1,0 +1,481 @@
+{
+  "afterEngine": "rng-v2-1",
+  "beforeEngine": "lc02-4",
+  "claimBoundary": "Same balanced experiment grid, not population or player frequencies. Different actions may be feasible after content changes. A linked chain requires an actual earlier source choice; new continuations require a feasible distinct lead action. Does not establish fun, real-world causality, or kid/device acceptance.",
+  "policies": [
+    {
+      "after": {
+        "atLeastTwoLinkedChains": 172,
+        "clippedDecisionPoints": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 0,
+          "skills": 0
+        },
+        "clippedHookPoints": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 0,
+          "skills": 0
+        },
+        "eventDistanceCounts": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 4,
+          "6": 60,
+          "7": 236,
+          "8": 800,
+          "9": 1408,
+          "10": 1460,
+          "11": 0,
+          "12": 0,
+          "13": 0,
+          "14": 0,
+          "15": 0
+        },
+        "finalAt100": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 4,
+          "skills": 0
+        },
+        "identicalEventPairs": 0,
+        "linkedChainCounts": {
+          "0": 16,
+          "1": 68,
+          "2": 92,
+          "3": 52,
+          "4": 28
+        },
+        "linkedChainCoverage": {
+          "story.care-network": 96,
+          "story.childhood-connection": 36,
+          "story.garden": 24,
+          "story.kitchen": 40,
+          "story.learning-route": 72,
+          "story.nature": 116,
+          "story.repair": 136
+        },
+        "lives": 256,
+        "medianEventDistance": 9.0,
+        "pairs": 3968,
+        "uniqueEvents": 40
+      },
+      "before": {
+        "atLeastTwoLinkedChains": 256,
+        "clippedDecisionPoints": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 1564,
+          "skills": 0
+        },
+        "clippedHookPoints": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 0,
+          "skills": 0
+        },
+        "eventDistanceCounts": {
+          "0": 44,
+          "1": 324,
+          "2": 888,
+          "3": 1560,
+          "4": 864,
+          "5": 288,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0,
+          "11": 0,
+          "12": 0,
+          "13": 0,
+          "14": 0,
+          "15": 0
+        },
+        "finalAt100": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 148,
+          "skills": 0
+        },
+        "identicalEventPairs": 44,
+        "linkedChainCounts": {
+          "3": 256
+        },
+        "linkedChainCoverage": {
+          "story.care-network": 256,
+          "story.childhood-connection": 256,
+          "story.learning-route": 256
+        },
+        "lives": 256,
+        "medianEventDistance": 3.0,
+        "pairs": 3968,
+        "uniqueEvents": 23
+      },
+      "policy": "investFirst"
+    },
+    {
+      "after": {
+        "atLeastTwoLinkedChains": 8,
+        "clippedDecisionPoints": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 0,
+          "skills": 0
+        },
+        "clippedHookPoints": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 0,
+          "skills": 0
+        },
+        "eventDistanceCounts": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 8,
+          "6": 68,
+          "7": 268,
+          "8": 852,
+          "9": 1480,
+          "10": 1292,
+          "11": 0,
+          "12": 0,
+          "13": 0,
+          "14": 0,
+          "15": 0
+        },
+        "finalAt100": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 0,
+          "skills": 0
+        },
+        "identicalEventPairs": 0,
+        "linkedChainCounts": {
+          "0": 176,
+          "1": 72,
+          "2": 8
+        },
+        "linkedChainCoverage": {
+          "story.care-network": 16,
+          "story.childhood-connection": 72
+        },
+        "lives": 256,
+        "medianEventDistance": 9.0,
+        "pairs": 3968,
+        "uniqueEvents": 39
+      },
+      "before": {
+        "atLeastTwoLinkedChains": 0,
+        "clippedDecisionPoints": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 0,
+          "skills": 0
+        },
+        "clippedHookPoints": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 0,
+          "skills": 0
+        },
+        "eventDistanceCounts": {
+          "0": 104,
+          "1": 660,
+          "2": 1348,
+          "3": 1192,
+          "4": 580,
+          "5": 84,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0,
+          "11": 0,
+          "12": 0,
+          "13": 0,
+          "14": 0,
+          "15": 0
+        },
+        "finalAt100": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 0,
+          "skills": 0
+        },
+        "identicalEventPairs": 104,
+        "linkedChainCounts": {
+          "1": 256
+        },
+        "linkedChainCoverage": {
+          "story.childhood-connection": 256
+        },
+        "lives": 256,
+        "medianEventDistance": 2.0,
+        "pairs": 3968,
+        "uniqueEvents": 21
+      },
+      "policy": "supportFirst"
+    },
+    {
+      "after": {
+        "atLeastTwoLinkedChains": 0,
+        "clippedDecisionPoints": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 0,
+          "skills": 0
+        },
+        "clippedHookPoints": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 0,
+          "skills": 0
+        },
+        "eventDistanceCounts": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 20,
+          "6": 96,
+          "7": 320,
+          "8": 908,
+          "9": 1496,
+          "10": 1128,
+          "11": 0,
+          "12": 0,
+          "13": 0,
+          "14": 0,
+          "15": 0
+        },
+        "finalAt100": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 0,
+          "skills": 0
+        },
+        "identicalEventPairs": 0,
+        "linkedChainCounts": {
+          "0": 256
+        },
+        "linkedChainCoverage": {},
+        "lives": 256,
+        "medianEventDistance": 9.0,
+        "pairs": 3968,
+        "uniqueEvents": 37
+      },
+      "before": {
+        "atLeastTwoLinkedChains": 0,
+        "clippedDecisionPoints": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 0,
+          "skills": 0
+        },
+        "clippedHookPoints": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 0,
+          "skills": 0
+        },
+        "eventDistanceCounts": {
+          "0": 212,
+          "1": 744,
+          "2": 1328,
+          "3": 1176,
+          "4": 452,
+          "5": 56,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0,
+          "11": 0,
+          "12": 0,
+          "13": 0,
+          "14": 0,
+          "15": 0
+        },
+        "finalAt100": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 0,
+          "skills": 0
+        },
+        "identicalEventPairs": 212,
+        "linkedChainCounts": {
+          "0": 256
+        },
+        "linkedChainCoverage": {},
+        "lives": 256,
+        "medianEventDistance": 2.0,
+        "pairs": 3968,
+        "uniqueEvents": 20
+      },
+      "policy": "restFirst"
+    },
+    {
+      "after": {
+        "atLeastTwoLinkedChains": 64,
+        "clippedDecisionPoints": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 0,
+          "skills": 0
+        },
+        "clippedHookPoints": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 0,
+          "skills": 0
+        },
+        "eventDistanceCounts": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 8,
+          "6": 52,
+          "7": 208,
+          "8": 812,
+          "9": 1476,
+          "10": 1412,
+          "11": 0,
+          "12": 0,
+          "13": 0,
+          "14": 0,
+          "15": 0
+        },
+        "finalAt100": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 0,
+          "skills": 0
+        },
+        "identicalEventPairs": 0,
+        "linkedChainCounts": {
+          "0": 112,
+          "1": 80,
+          "2": 48,
+          "3": 16
+        },
+        "linkedChainCoverage": {
+          "story.care-network": 40,
+          "story.childhood-connection": 60,
+          "story.garden": 16,
+          "story.kitchen": 16,
+          "story.learning-route": 32,
+          "story.nature": 28,
+          "story.repair": 32
+        },
+        "lives": 256,
+        "medianEventDistance": 9.0,
+        "pairs": 3968,
+        "uniqueEvents": 40
+      },
+      "before": {
+        "atLeastTwoLinkedChains": 112,
+        "clippedDecisionPoints": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 64,
+          "skills": 0
+        },
+        "clippedHookPoints": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 0,
+          "skills": 0
+        },
+        "eventDistanceCounts": {
+          "0": 76,
+          "1": 484,
+          "2": 1052,
+          "3": 1272,
+          "4": 876,
+          "5": 208,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0,
+          "11": 0,
+          "12": 0,
+          "13": 0,
+          "14": 0,
+          "15": 0
+        },
+        "finalAt100": {
+          "financial": 0,
+          "health": 0,
+          "relationships": 32,
+          "skills": 0
+        },
+        "identicalEventPairs": 76,
+        "linkedChainCounts": {
+          "0": 56,
+          "1": 88,
+          "2": 56,
+          "3": 56
+        },
+        "linkedChainCoverage": {
+          "story.care-network": 80,
+          "story.childhood-connection": 160,
+          "story.learning-route": 128
+        },
+        "lives": 256,
+        "medianEventDistance": 3.0,
+        "pairs": 3968,
+        "uniqueEvents": 23
+      },
+      "policy": "seededVariety"
+    }
+  ],
+  "policyVersion": "lc05-policies-1",
+  "runCountEach": 1024,
+  "schemaVersion": 1,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ]
+}
