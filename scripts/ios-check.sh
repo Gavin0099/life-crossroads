@@ -2,6 +2,14 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 mkdir -p artifacts/ios
+if [ -n "${LIFE_SIMULATOR_DEVICE_TYPE:-}${LIFE_SIMULATOR_RUNTIME:-}" ]; then
+  if [ -z "${LIFE_SIMULATOR_DEVICE_TYPE:-}" ] || [ -z "${LIFE_SIMULATOR_RUNTIME:-}" ] || [ -n "${LIFE_SIMULATOR_ID:-}" ]; then
+    echo 'Provide both device type and runtime, or an existing configuration ID, not both.' >&2
+    exit 2
+  fi
+  LIFE_DEVICE_TYPE="$LIFE_SIMULATOR_DEVICE_TYPE"
+  LIFE_DEVICE_RUNTIME="$LIFE_SIMULATOR_RUNTIME"
+else
 LIFE_DEVICE_CONFIG="$(python3 - <<'PY'
 import json, os, subprocess
 inventory = json.loads(subprocess.check_output(['xcrun', 'simctl', 'list', 'devices', 'available', '-j']))
@@ -19,6 +27,7 @@ PY
 # The supplied ID selects hardware/runtime only; never use or delete someone else's device.
 LIFE_DEVICE_TYPE="$(printf '%s\n' "$LIFE_DEVICE_CONFIG" | sed -n '1p')"
 LIFE_DEVICE_RUNTIME="$(printf '%s\n' "$LIFE_DEVICE_CONFIG" | sed -n '2p')"
+fi
 LIFE_TEST_DEVICE=""
 cleanup() {
   LIFE_EXIT_STATUS=$?

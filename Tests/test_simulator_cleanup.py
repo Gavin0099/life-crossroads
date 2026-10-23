@@ -9,7 +9,7 @@ import unittest
 
 
 class SimulatorCleanupTests(unittest.TestCase):
-    def run_wrapper(self, build_status=0, delete_status=0, requested="existing-phone"):
+    def run_wrapper(self, build_status=0, delete_status=0, requested="existing-phone", config=None):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             (root / "scripts").mkdir()
@@ -41,10 +41,24 @@ elif args[:2] == ['simctl', 'delete']:
             result = subprocess.run(["bash", "scripts/ios-check.sh"], cwd=root, text=True, capture_output=True,
                                     env={**os.environ, "PATH": f"{binary}:{os.environ['PATH']}",
                                          "LIFE_SIMULATOR_ID": requested, "LIFE_FAKE_LOG": str(log),
+                                         "LIFE_SIMULATOR_DEVICE_TYPE": "", "LIFE_SIMULATOR_RUNTIME": "",
                                          "LIFE_FAKE_BUILD_STATUS": str(build_status),
-                                         "LIFE_FAKE_DELETE_STATUS": str(delete_status)})
-            calls = [json.loads(line) for line in log.read_text().splitlines()]
+                                         "LIFE_FAKE_DELETE_STATUS": str(delete_status), **(config or {})})
+            calls = [json.loads(line) for line in log.read_text().splitlines()] if log.exists() else []
             return result, calls
+
+    def test_explicit_hardware_needs_no_saved_device_and_partial_config_is_rejected(self):
+        config = {"LIFE_SIMULATOR_DEVICE_TYPE": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+                  "LIFE_SIMULATOR_RUNTIME": "com.apple.CoreSimulator.SimRuntime.iOS-27-0"}
+        result, calls = self.run_wrapper(requested="", config=config)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(calls[0][1:3], ["simctl", "create"])
+        self.assertEqual(calls[0][-2:], list(config.values()))
+        self.assertEqual(calls[-1], ["xcrun", "simctl", "delete", "owned-test-phone"])
+        for invalid in [{"LIFE_SIMULATOR_DEVICE_TYPE": "incomplete"}, config]:
+            result, calls = self.run_wrapper(config=invalid)  # existing ID conflicts with explicit settings
+            self.assertEqual(result.returncode, 2)
+            self.assertEqual(calls, [])
 
     def test_success_and_failure_delete_only_the_created_device(self):
         for status in [0, 65]:
