@@ -1,0 +1,31 @@
+{
+  "status": "memory_workflow_required",
+  "guard_ran": true,
+  "guard_summary": {
+    "non_canonical_writer": 0,
+    "active_non_canonical_writer": 0,
+    "missing_canonical_memory": 0,
+    "unbound_memory": 3,
+    "test_evidence_provenance_not_found": 1,
+    "session_like_non_session_memory_type": 0,
+    "non_daily_session_shaped_memory_entry": 0,
+    "authority_override_rejected": 0,
+    "test_evidence_artifact_metadata_missing": 1,
+    "test_evidence_artifact_metadata_invalid": 0,
+    "test_evidence_exit_code_contradicts_claim": 0,
+    "test_evidence_linked_commit_mismatch": 2,
+    "test_evidence_artifact_not_durable": 0,
+    "authority_override_used_current_diff": 0,
+    "repo_state_b0_blocker_count": 0,
+    "current_diff_b0_blocker_count": 0
+  },
+  "completion_claim_allowed": true,
+  "warnings": [
+    "unbound_memory",
+    "test_evidence_provenance_not_found",
+    "test_evidence_artifact_metadata_missing",
+    "test_evidence_linked_commit_mismatch"
+  ],
+  "blockers": [],
+  "boundary": "Guard reports no current blockers; legacy warnings retained. This is memory validation, not full runtime governance adoption."
+}

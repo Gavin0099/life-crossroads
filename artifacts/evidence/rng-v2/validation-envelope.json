@@ -1,0 +1,67 @@
+{
+  "mode": "VALIDATION",
+  "mode_source": "validation_command",
+  "task": "RNG-V2-01 through RNG-V2-04",
+  "task_authority": "user_request",
+  "scope": [
+    "LifeCrossroads/Domain",
+    "LifeCrossroads/Data",
+    "LifeCrossroads/Analysis",
+    "LifeCrossroads/App",
+    "Tests",
+    "UITests",
+    "scripts",
+    "artifacts/evidence/rng-v2"
+  ],
+  "done": [
+    "Baseline checkpoint 59b986c saved before model changes",
+    "40 original events, 5 milestones, 10 dynamic slots, 7 story lines",
+    "Independent weighted candidate keys, conditions, cooldown, one-shot/repeat and exclusion traces",
+    "2 × 1,024 exact-repeat runs; 71 Swift, 15 Python and 5 UI tests passed",
+    "Owned Simulator 7127DA6D-CD64-4E9E-B204-0555F938A867 deleted"
+  ],
+  "claim_ceiling": [
+    "Executable prototype and finite-grid engineering evidence; Draft/HOLD"
+  ],
+  "not_claimed": [
+    "merge or release",
+    "universal two-chain success",
+    "real-device or VoiceOver acceptance",
+    "kid enjoyment or educational effectiveness",
+    "world population probabilities",
+    "governance runtime adoption completeness"
+  ],
+  "evidence_refs": [
+    {
+      "artifact": "artifacts/evidence/test-results/rng-v2-release-tests.json",
+      "result": "PASS"
+    },
+    {
+      "artifact": "artifacts/evidence/test-results/rng-v2-python-tests.json",
+      "result": "PASS"
+    },
+    {
+      "artifact": "artifacts/evidence/test-results/rng-v2-batch.json",
+      "result": "PASS"
+    },
+    {
+      "artifact": "artifacts/evidence/rng-v2/ui/test-summary.json",
+      "result": "PASS"
+    },
+    {
+      "artifact": "artifacts/evidence/rng-v2/ui/run-and-cleanup.json",
+      "result": "PASS"
+    },
+    {
+      "artifact": "artifacts/evidence/rng-v2/comparison.md",
+      "result": "PASS"
+    }
+  ],
+  "risk": [
+    "Dynamic sampling increases diversity but reduces guaranteed closure of old story lines; two linked chains are not universal",
+    "schema 4 / engine rng-v2-1 rejects old state rather than silently migrating"
+  ],
+  "next_action": "Push independent stacked Draft PR over PR3, verify latest HEAD CI, request human review without merging",
+  "product_commit": "49c3a4760281ede7644a8b606ee6d4aba6a0ae2e",
+  "toolchain": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0"
+}

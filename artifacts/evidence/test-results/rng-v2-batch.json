@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "python3 scripts/run-rng-v2-evidence.py",
+  "exit_code": 0,
+  "started_at": "2026-10-23T12:44:28Z",
+  "finished_at": "2026-10-23T12:46:08Z",
+  "runner": "governance_tools.test_evidence_receipt_writer",
+  "linked_commit": "49c3a4760281ede7644a8b606ee6d4aba6a0ae2e",
+  "output_artifacts": [
+    "artifacts/evidence/test-results/rng-v2-batch.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}

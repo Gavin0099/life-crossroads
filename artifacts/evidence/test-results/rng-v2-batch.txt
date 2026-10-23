@@ -1,0 +1,13 @@
+Building for production...
+[Planning deferred tasks]
+[3 / 13] LifeDomain
+[4 / 14] LifeDomain
+[16 / 24] LifeData
+[23 / 27] LifeAnalysis
+[30 / 31] life-demo-product
+[33 / 35] life-demo-product
+[35 / 35] life-demo-product
+Build complete! (11.64秒)
+Completed 1/2 fixed-grid runs
+Completed 2/2 fixed-grid runs
+PASS: 2 × 1,024 lives, exact repeat, comparison, and three full story/replay samples; temporary raw reports deleted.
