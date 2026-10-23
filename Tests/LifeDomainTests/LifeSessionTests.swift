@@ -3,6 +3,26 @@ import LifeData
 import LifeDomain
 
 final class LifeSessionTests: XCTestCase {
+    func testRoundAllowancesResetWhileResourcesAndChoicesContinue() throws {
+        let c = try StatisticsRepository.bundled()
+        for choice in ["invest", "rest"] {
+            var session = try LifeSession.start(catalog: c, countryCode: "USA", householdID: "usa-2", seed: 42)
+            try session.choose(choice, catalog: c)
+            let trace = try XCTUnwrap(session.traces.last)
+            XCTAssertEqual(trace.budgetAfter.time, choice == "invest" ? 1 : 4)
+            XCTAssertEqual(trace.budgetAfter.energy, choice == "invest" ? 3 : 5)
+            XCTAssertEqual(trace.budgetAfter.materials, choice == "invest" ? 3 : 4)
+            let carriedResources = session.state.resources
+            let carriedChoices = session.state.decisions
+            try session.continueLife(catalog: c)
+            XCTAssertEqual(session.state.remainingTime, 4)
+            XCTAssertEqual(session.state.remainingEnergy, 5)
+            XCTAssertEqual(session.state.remainingMaterials, 4)
+            XCTAssertEqual(session.state.resources, carriedResources)
+            XCTAssertEqual(session.state.decisions, carriedChoices)
+        }
+    }
+
     func testEveryDecisionHasOriginalStoryText() throws {
         let c = try StatisticsRepository.bundled()
         XCTAssertTrue(Set(c.decisions.map(\.id)).isSubset(of: Set(EventNarratives.texts.keys)))

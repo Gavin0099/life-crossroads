@@ -10,6 +10,10 @@ final class LifeCrossroadsUITests: XCTestCase {
         let start = app.buttons["startLife"]
         XCTAssertTrue(start.waitForExistence(timeout: 10))
         attachScreenshot("birth-scene", app: app)
+        let context = app.staticTexts["countryStageBoundary"]
+        reveal(context, in: app)
+        XCTAssertTrue(context.label.contains("不是"))
+        attachScreenshot("country-context", app: app)
         reveal(start, in: app); start.tap()
         XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 5))
         attachScreenshot("decision-scene", app: app)
@@ -19,6 +23,8 @@ final class LifeCrossroadsUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["換一個環境呢？"].waitForExistence(timeout: 5))
         XCTAssertTrue(app.staticTexts["comparisonChoiceTitle"].exists)
         XCTAssertEqual(app.staticTexts["comparisonChoiceTitle"].value as? String, "invest")
+        XCTAssertEqual(app.staticTexts["comparisonCostExplanation"].value as? String, "same")
+        XCTAssertTrue(app.staticTexts["digitalComparisonInvitation"].exists)
         for name in ["日本", "美國", "印度", "肯亞"] {
             XCTAssertTrue(app.staticTexts[name].exists, "Comparison must contain actual row: \(name)")
         }
@@ -27,11 +33,26 @@ final class LifeCrossroadsUITests: XCTestCase {
         app.buttons["closeComparison"].tap()
         for index in 0..<15 {
             XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 5))
+            if index == 3 {
+                XCTAssertTrue(app.staticTexts["digitalLearningGuide"].exists)
+                for (choiceID, expectation) in [("invest", "different"), ("offline", "same")] {
+                    reveal(compare, in: app); compare.tap()
+                    app.buttons["compare.\(choiceID)"].tap()
+                    let explanation = app.staticTexts["comparisonCostExplanation"]
+                    XCTAssertTrue(explanation.waitForExistence(timeout: 5))
+                    XCTAssertEqual(explanation.value as? String, expectation)
+                    attachScreenshot("teen-comparison-\(choiceID)", app: app)
+                    app.buttons["closeComparison"].tap()
+                }
+            }
             let choice = try XCTUnwrap(["leadWorkshop", "shareShift", "invest", "offline", "ask", "rest"].map { app.buttons["choice.\($0)"] }
                 .first { $0.exists && $0.isEnabled }, "Each actual story variant must offer a feasible choice")
             reveal(choice, in: app); choice.tap()
             XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
             if index == 0 {
+                let budget = app.staticTexts["roundBudgetExplanation"]
+                reveal(budget, in: app)
+                XCTAssertTrue(budget.label.contains("不會累積"))
                 attachScreenshot("reflection-scene", app: app)
                 let why = app.buttons["whyResult"]
                 reveal(why, in: app); why.tap()

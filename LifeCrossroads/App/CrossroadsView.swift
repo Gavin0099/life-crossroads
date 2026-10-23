@@ -86,6 +86,10 @@ struct CrossroadsView: View {
                         .font(.footnote).foregroundStyle(.secondary)
                 }
             }.card()
+            if let catalog = store.catalog,
+               let country = store.countries.first(where: { $0.code == store.countryCode }) {
+                CountryContextCard(country: country, catalog: catalog)
+            }
             Button("陪沐沐開始一段人生", systemImage: "pawprint") { store.start() }
                 .buttonStyle(JourneyButtonStyle()).disabled(store.catalog == nil)
                 .accessibilityIdentifier("startLife")
@@ -160,6 +164,11 @@ struct CrossroadsView: View {
                 Text(storyText(event)).lineSpacing(5).fixedSize(horizontal: false, vertical: true)
                 Divider()
                 Text(event.storyQuestion).font(.headline)
+                if event.id == "teen-project" {
+                    Text("想接著探索環境嗎？用下方的「同一個行動，換個環境呢？」分別試算線上與紙本選項。比較只幫你看代價，不會替你選擇。")
+                        .font(.subheadline).foregroundStyle(.secondary)
+                        .accessibilityIdentifier("digitalLearningGuide")
+                }
             }.card()
             DisclosureGroup {
                 ResourcePanel(resources: session.state.resources).padding(.top, 14)
@@ -240,9 +249,16 @@ struct CrossroadsView: View {
             VStack(alignment: .leading, spacing: 16) {
                 StoryEyebrow(title: "我做的決定", icon: "bookmark")
                 Text(trace.choiceTitle).font(.title2.bold())
-                Text("沐沐用了\(trace.finalCost.time)格時間，還保留\(trace.budgetAfter.time)格生活空間。")
+                Text("這一段日子，沐沐用了\(trace.finalCost.time)格時間，有\(trace.budgetAfter.time)格沒有用在這個行動上。")
                     .lineSpacing(4)
+                    .accessibilityIdentifier("roundTimeFeedback")
+                Text("時間、精力和材料額度只用於這一回合；下一回合會重新安排，剩下的格數不會累積。")
+                    .font(.footnote).foregroundStyle(.secondary)
+                    .accessibilityIdentifier("roundBudgetExplanation")
+                StoryEyebrow(title: "會帶往後來的變化", icon: "leaf")
                 Text(deltaText(trace.resourcesAfter - trace.resourcesBefore)).font(.headline)
+                Text("健康、財務安全、人際與技能會延續；這次的選擇也會留下紀錄，可能影響後來的故事。")
+                    .font(.footnote).foregroundStyle(.secondary)
                 if trace.randomTrial?.occurred == true {
                     Label("這次，也意外收到別人的鼓勵。", systemImage: "sparkle")
                 }
@@ -352,6 +368,15 @@ struct CrossroadsView: View {
                     .accessibilityIdentifier("comparisonChoiceTitle")
                     .accessibilityValue(selected.choiceID)
             }
+            Text(presentation.costExplanation)
+                .font(.headline)
+                .accessibilityIdentifier("comparisonCostExplanation")
+                .accessibilityValue(presentation.costsMatch ? "same" : "different")
+            if let selected = presentation.traces.first, selected.age < 13 {
+                Text("到了13歲，試著比較線上創作與紙本學習：需要網路的行動，才會使用數位環境規則。看看準備成本是否不同，再選自己想走的路。")
+                    .font(.subheadline)
+                    .accessibilityIdentifier("digitalComparisonInvitation")
+            }
             Text("固定：選項、年齡、家庭模板、過去狀態與種子。改變：環境指標，以及由它產生的模型成本。")
                 .font(.footnote)
             ForEach(presentation.traces, id: \.countryCode) { trace in
@@ -423,6 +448,16 @@ struct CrossroadsView: View {
 private struct ComparisonPresentation: Identifiable {
     let id = UUID()
     let traces: [ConsequenceTrace]
+
+    var costsMatch: Bool {
+        guard let first = traces.first else { return false }
+        return traces.dropFirst().allSatisfy { $0.finalCost == first.finalCost && $0.applied == first.applied }
+    }
+    var costExplanation: String {
+        costsMatch
+            ? "這次比較的成本與可行性相同。不是所有選擇都受國家環境影響；相同的結果，也值得看見。"
+            : "這次比較的成本或可行性不同。下方顯示同一個行動，在各個環境中的模型試算。"
+    }
 }
 
 private struct ResourcePanel: View {

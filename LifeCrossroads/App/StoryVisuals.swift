@@ -1,4 +1,5 @@
 import SwiftUI
+import LifeDomain
 
 enum StoryPalette {
     static let forest = Color(red: 0.15, green: 0.36, blue: 0.29)
@@ -93,6 +94,103 @@ struct StoryEyebrow: View {
         Label(title, systemImage: icon)
             .font(.caption.weight(.bold))
             .foregroundStyle(.secondary)
+    }
+}
+
+/// National observations are shown separately from the fictional family and stage.
+struct CountryContextCard: View {
+    let country: CountryProfile
+    let catalog: ModelCatalog
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            Label("\(country.name) · 真實資料背景", systemImage: "globe")
+                .font(.headline)
+                .accessibilityAddTraits(.isHeader)
+            Text("看看這個國家的整體人口情況。")
+                .font(.subheadline)
+            ForEach(CountryProfile.requiredIndicators, id: \.self) { indicator in
+                observationRow(indicator)
+            }
+            Text("這些人口比例不能推定沐沐家有沒有設備或電力；同一國家的家庭也可能不同。")
+                .font(.footnote).foregroundStyle(.secondary)
+            Label("河畔是大家共用的想像舞台，不是\(country.name)的實景。", systemImage: "book")
+                .font(.footnote)
+                .accessibilityIdentifier("countryStageBoundary")
+            DisclosureGroup("查看數字與來源") {
+                VStack(alignment: .leading, spacing: 16) {
+                    Text("畫面比例約至小數一位；以下保留資料包的原值。")
+                        .font(.caption).foregroundStyle(.secondary)
+                    ForEach(CountryProfile.requiredIndicators, id: \.self) { indicator in
+                        sourceDetails(indicator)
+                    }
+                    if !country.gaps.isEmpty {
+                        Text(country.gaps.joined(separator: "\n"))
+                            .font(.footnote)
+                    }
+                }.padding(.top, 10)
+            }
+            .font(.subheadline)
+            .accessibilityIdentifier("countryContextSources")
+        }
+        .fixedSize(horizontal: false, vertical: true)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(18)
+        .background(.background, in: RoundedRectangle(cornerRadius: 22))
+        .overlay(RoundedRectangle(cornerRadius: 22).stroke(StoryPalette.forest.opacity(0.15), lineWidth: 1))
+        .accessibilityIdentifier("countryContextCard")
+    }
+
+    private func observationRow(_ indicator: String) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(title(for: indicator)).font(.subheadline.weight(.semibold))
+            if let observation = observation(for: indicator), let value = observation.value {
+                Text("約 \(value.formatted(.number.precision(.fractionLength(0...1))))\(observation.unit == "% of population" ? "%" : " \(observation.unit)")")
+                    .font(.title3.weight(.bold)).monospacedDigit()
+                Text("\(String(observation.year))年 · \(observation.unit == "% of population" ? "單位：全國人口百分比" : "單位：\(observation.unit)")")
+                    .font(.caption).foregroundStyle(.secondary)
+            } else {
+                Text("尚無可用資料，待確認來源。")
+                    .font(.subheadline).foregroundStyle(.secondary)
+            }
+        }
+        .accessibilityElement(children: .combine)
+        .accessibilityIdentifier("countryIndicator.\(indicator)")
+    }
+
+    @ViewBuilder
+    private func sourceDetails(_ indicator: String) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text(title(for: indicator)).font(.subheadline.weight(.semibold))
+            if let observation = observation(for: indicator), let value = observation.value {
+                Text("原值：\(String(value)) · \(observation.unit) · \(String(observation.year))年")
+                    .font(.footnote)
+                if let source = catalog.sources.first(where: { $0.id == observation.sourceID }) {
+                    Text(source.attribution).font(.caption)
+                    Text(source.url).font(.caption).textSelection(.enabled)
+                    Text("資料版本：\(observation.dataVersion) · 授權：\(source.license)")
+                        .font(.caption).foregroundStyle(.secondary)
+                } else {
+                    Text("來源紀錄待確認；不能視為已驗證資料。")
+                        .font(.footnote)
+                }
+            } else {
+                Text("這個指標仍待補齊可核對的資料。")
+                    .font(.footnote)
+            }
+        }
+    }
+
+    private func observation(for indicator: String) -> IndicatorObservation? {
+        country.indicators.first { $0.indicator == indicator }
+    }
+
+    private func title(for indicator: String) -> String {
+        switch indicator {
+        case "IT.NET.USER.ZS": "使用網路的人口比例"
+        case "EG.ELC.ACCS.ZS": "可取得電力的人口比例"
+        default: indicator
+        }
     }
 }
 

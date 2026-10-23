@@ -41,7 +41,7 @@ jobs:
       - name: Verify pinned data offline
         run: |
           python3 scripts/build-data.py --check
-          python3 -m unittest discover -s Tests -p 'test_data_generation.py'
+          python3 -m unittest discover -s Tests -p 'test_*.py'
       - name: Test pure Swift rules and source integrity
         run: swift test
       - name: Build release executable
