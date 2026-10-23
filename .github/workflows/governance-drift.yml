@@ -52,6 +52,10 @@ jobs:
           swift run -c release life-demo --json > artifacts/lc01/demo.json
       - name: Verify three distinct stories and deterministic replay
         run: swift run -c release life-demo --story-samples > artifacts/lc01/story-samples.json
+      - name: Measure all backgrounds and policies with a bounded Seed sample
+        run: |
+          swift run -c release life-demo --batch-report --seed-count 4 > artifacts/lc01/batch-report.json
+          python3 scripts/render-batch-report.py artifacts/lc01/batch-report.json artifacts/lc01/batch-report.md
       - name: Preserve engine evidence
         if: always()
         uses: actions/upload-artifact@v4

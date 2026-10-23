@@ -1,6 +1,7 @@
 import Foundation
 import LifeData
 import LifeDomain
+import LifeAnalysis
 
 struct Comparison: Codable {
     let country: String
@@ -26,8 +27,16 @@ struct DemoEvidence: Codable {
 }
 
 do {
+    let mode = try DemoCLIArguments.parse(Array(CommandLine.arguments.dropFirst()))
     let catalog = try StatisticsRepository.bundled()
-    if CommandLine.arguments.contains("--story-samples") {
+    if case .batchReport(let seedCount) = mode {
+        let report = try BatchAnalyzer.run(catalog: catalog, seeds: (0..<seedCount).map(UInt64.init))
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]
+        print(String(decoding: try encoder.encode(report), as: UTF8.self))
+        exit(0)
+    }
+    if mode == .storySamples {
         let evidence = try StorySampleRunner.evidence(catalog: catalog)
         let encoder = JSONEncoder()
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]
@@ -64,7 +73,7 @@ do {
     }
     let evidence = DemoEvidence(purpose: "純 Swift 執行證據：四國完整人生與背景比較；不是實機或死亡模擬。",
                                 dataVersion: catalog.dataVersion, comparison: comparison, skeletonRuns: runs)
-    if CommandLine.arguments.contains("--json") {
+    if mode == .json {
         let encoder = JSONEncoder(); encoder.outputFormatting = [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]
         print(String(decoding: try encoder.encode(evidence), as: UTF8.self))
     } else {
