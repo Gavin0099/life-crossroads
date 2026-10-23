@@ -37,3 +37,9 @@
 - LC04本機完成：原局保留、15岔路選前重播、完整後半生比較與原子存讀；87不同Swift/15Python/6UI案例通過，UI含1項定位修正重跑，兩台Simulator已刪。待獨立Draft PR及HEAD CI，不合併；圖片線獨立。 <!-- memory_record_projection:active-task-summary:c8d50a3f381d250dac2fe6bec9204724e2b77aa21530e95d527e7162198e8c39 -->
 
 - LC04 PR5維持Draft/HOLD；初次遠端87Swift/15Python成功、UI5過1失敗。整卡點擊範圍修正及2項定向UI已過，共7個UI案例有通過證據，四台本機Simulator已刪；待推送修正與最新HEAD CI，不合併。 <!-- memory_record_projection:active-task-summary:a40cb36ae6836d02eda14afadc63112f3651a0d8ba19ccab3cbeb1bd1b28da9d -->
+
+- 2026-10-24 PR #5 @2f030d2 獨立工程審查：已證實 blocker 0；16項focused＋8項磁碟assertions通過。原局UI內容比對、App失敗恢復與實機/VoiceOver/兒少驗收仍缺；維持Draft、不合併。完整紀錄見04_review_log及artifacts/governance/lc04-independent-review/review.md。 <!-- memory_record_projection:active-task-summary:3b4759490cd18f96f2dca34390e1481ed1dd48901c356909fdc47a9fd71e4304 -->
+
+- LC04 W1/W2本機通過並提交1226fb2：原局/比較內容與失敗畫面/原檔/重試/重開均驗證，Simulator已刪。使用者授權補測+最新CI通過後合併PR5；待最終有界覆核/推送CI核對。保留提示關閉警告與產品驗收缺口，圖片線獨立。 <!-- memory_record_projection:active-task-summary:c0ae39e4d6734219121835b83ffdc186bedeb5c58f3a698c3ffd61849d675a00 -->
+
+- 1226fb2 W1/W2有界獨立覆核APPROVED、新增blocker0；原局UI及選擇/繼續失敗恢復已驗證，R1提示關閉警告保留。待companion候選bytes核對、推送最新CI，符合本輪使用者條件後合併PR5；未發布。 <!-- memory_record_projection:active-task-summary:724e1fe6d1a4d712c59bf28415a10a9f44cbf7fd0a0bb9334aed0716ad58ae4c -->

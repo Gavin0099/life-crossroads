@@ -1,0 +1,30 @@
+{
+  "head": "1226fb2fc2a1fc778b67fed8dd2b6556243a3138",
+  "files": {
+    "LifeCrossroads/App/BranchViews.swift": {
+      "sha256": "43211fd37a912202a6d69126ed9eac6ca979c17cb8c1f7d4b204e482dfc7613b",
+      "matches_initial_review": true,
+      "matches_worktree": true
+    },
+    "LifeCrossroads/App/CrossroadsView.swift": {
+      "sha256": "6f87cfb2eecbc1c0276890bb801af683e4621934cad0b123c6282fbc315d7755",
+      "matches_initial_review": true,
+      "matches_worktree": true
+    },
+    "LifeCrossroads/App/GameStore.swift": {
+      "sha256": "8e6418a5c2cb6e4af93d8b44ffb726930d10d63a09c9c1d8947ba1baf88c096b",
+      "matches_initial_review": true,
+      "matches_worktree": true
+    },
+    "UITests/LifeCrossroadsUITests.swift": {
+      "sha256": "d19b28b99610309dc32b09d981dd9858a9087ce76ee763e6dd027c7abccf2646",
+      "matches_initial_review": true,
+      "matches_worktree": true
+    },
+    "docs/lc04-w12-followup.md": {
+      "sha256": "751638ce684b7de61b386745c3f68f2a90fd37b2cd8b4f2c557fc1eddfdd0335",
+      "matches_initial_review": false,
+      "matches_worktree": true
+    }
+  }
+}
