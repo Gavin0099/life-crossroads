@@ -101,3 +101,18 @@ LC-02 的四國可玩交付不等於 P1 全部完成。
 - 完整治理稽核：`bash scripts/governance-check.sh --profile full`，保留警告與原始失敗，但為 CI advisory。
 - 未驗證 runtime 不阻止產品實作；來源/格式錯誤、核心規則錯誤及資料完整性失敗仍需修正。
 - LC-01 起加入純 Swift 測試；LC-02 起加入 app build 與完整人生驗收。未有 app 時不宣稱已完成這些檢查。
+
+## Parallel Visual Track — 2026-10-23
+
+使用者本輪明確授權獨立 UI/美術工作線，並追加貓與全部角色從童年到晚年的圖片。
+本線分支 `codex/lc-visual-design` 從 LC-01 `6a5137b` 分離，不覆蓋主工作目錄進行中的 LC-02。
+
+- LV-00：工具一手查核、版本證據、內建 ImageGen 實際出圖與保守素材權利邊界已備妥。
+- LV-01：兩風格同事件的原生決策/後果/原因/比較、九狀態線框、Art Bible、tokens 與來源紀錄已本機交付。
+- 追加：水獺、野兔、犬、貓各五階段共 20 候選造型，另保留貓尾修正前後。
+- 方向 Gate 待人工藝術專家與 10～12 / 13～15 歲檢視；圖片未核准為正式 App 素材。
+- 兩種 Simulator 的四項 UI 測試通過，含窄螢幕最大文字回歸；實機、VoiceOver 實際巡覽另待驗。
+- 核心 P1 八國/16情境/50～70事件與 LC-02 四國完整人生驗收不變；本輪不改國家資料、人生規則或 Trace。
+- 下一步建議：先人工檢視風格與年齡設定，再鎖定角色細節進三視圖/表情及正式透明素材；不自動擴張全量製作。
+- 交付與驗證索引：`docs/visual/review-gallery.md`、`docs/visual/acceptance.md`、`artifacts/visual/verification.json`。
+- 2026-10-23 追加授權推送視覺分支供 review；推送結果以遠端 ref 與交付回報為準，不包含合併或發布。
