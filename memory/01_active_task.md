@@ -23,3 +23,5 @@
 - PR #1 審查模型修正：初始資源改為穩定家庭模板，離線學習不套用數位比例，四個數位節點各有離線途徑；29 Swift及3 Python通過，維持HOLD待重新審查。 <!-- memory_record_projection:active-task-summary:f9113d82b84b124644391c23cae314a047cc5e92dc7e78184b9482ec5d9f8121 -->
 
 - PR #1 模型修正已推送且CI成功；PR #2 已修正實際因素、指定選項比較、三條故事分岔與原創動物場景，待推送後核對新CI及原審查者覆核，維持HOLD。 <!-- memory_record_projection:active-task-summary:574ed514b9192d34be6870c62cdd49d82ef146601dd13731b73029e80b9a8f52 -->
+
+- PR2第二輪體驗修正已測試；測完即刪除模擬器的使用者偏好已納入AGENTS與腳本，5台已清理。下一片優先條件隨機故事＋Event-first接完整引擎；兩PR維持HOLD，實機/兒少驗收未完成。 <!-- memory_record_projection:active-task-summary:71c82dc7994ec9be8b8b9958582ffeb0d32eaa5dc1cb8692180e3a8cbf2810c4 -->

@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-10-23T08:57:54.995973+00:00",
+  "scope": "previous task-owned device and four devices created during this review; shared runtime and unrelated devices preserved",
+  "devices": [
+    {
+      "udid": "2C14F64F-AF2D-44C7-B9A2-48EC862CD763",
+      "registered": false,
+      "data_directory_exists": false
+    },
+    {
+      "udid": "4FA30A26-7570-4E3C-98F9-A3F9DA69689B",
+      "registered": false,
+      "data_directory_exists": false
+    },
+    {
+      "udid": "456EF2DD-6940-4D84-A02C-ECB39D6DBEF0",
+      "registered": false,
+      "data_directory_exists": false
+    },
+    {
+      "udid": "5389CDB0-3829-4EF0-A659-5F69CC2AA069",
+      "registered": false,
+      "data_directory_exists": false
+    },
+    {
+      "udid": "1623F912-EDA0-413D-AE7B-20D50DD1FFBF",
+      "registered": false,
+      "data_directory_exists": false
+    }
+  ]
+}
