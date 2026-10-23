@@ -39,6 +39,12 @@ struct CrossroadsView: View {
                             else { Text("目前沒有已執行的選擇紀錄。").accessibilityIdentifier("missingOutcome") }
                         }
                     } else { home }
+#if targetEnvironment(simulator)
+                    if let checksum = store.uiTestArchiveChecksum {
+                        Text("自動化測試存檔校驗").font(.caption2)
+                            .accessibilityIdentifier("uiTestArchiveChecksum").accessibilityValue(checksum)
+                    }
+#endif
                 }
                 .padding(18)
                 .frame(maxWidth: 620)
@@ -378,9 +384,12 @@ struct CrossroadsView: View {
                 }
             }
             Text(trace.eventTitle).font(.subheadline).foregroundStyle(.secondary)
+                .accessibilityIdentifier("outcomeEvent").accessibilityValue(trace.eventID)
             VStack(alignment: .leading, spacing: 13) {
                 Label("已發生的變化", systemImage: "checkmark.circle").font(.headline)
                 Text(deltaText(trace.resourcesAfter - trace.resourcesBefore)).font(.headline)
+                    .accessibilityIdentifier("outcomeResources")
+                    .accessibilityValue(historyResources(trace))
                 Text("這一段日子，沐沐用了\(trace.finalCost.time)格時間，有\(trace.budgetAfter.time)格沒有用在這個行動上。")
                     .lineSpacing(3).accessibilityIdentifier("roundTimeFeedback")
                 if trace.randomTrial?.occurred == true {
@@ -463,12 +472,15 @@ struct CrossroadsView: View {
                     }.frame(width: 38)
                     VStack(alignment: .leading, spacing: 8) {
                         Text(trace.eventTitle).font(.headline)
+                            .accessibilityIdentifier("history.\(trace.age).event").accessibilityValue(trace.eventID)
                         Text(trace.choiceTitle).font(.subheadline)
+                            .accessibilityIdentifier("history.\(trace.age).choice").accessibilityValue(trace.choiceID)
                         if let branch = trace.storyBranch {
                             Text(branch.explanation).font(.footnote).foregroundStyle(.secondary)
                         }
                         Text(deltaText(trace.resourcesAfter - trace.resourcesBefore))
                             .font(.caption).foregroundStyle(.secondary)
+                            .accessibilityIdentifier("history.\(trace.age).resources").accessibilityValue(historyResources(trace))
                     }.fixedSize(horizontal: false, vertical: true)
                     if let companion = StoryCharacter.companion(named: trace.recurringPerson) {
                         StoryPortrait(character: companion).frame(width: 48, height: 48)
@@ -506,6 +518,13 @@ struct CrossroadsView: View {
                 .buttonStyle(JourneyButtonStyle()).accessibilityIdentifier("openForkPicker")
             Text("原人生會保留。回到選擇前改選，接下來每一步仍由你決定。").font(.footnote)
         }
+    }
+
+    private func historyResources(_ trace: ConsequenceTrace) -> String {
+        func describe(_ value: ResourceValues) -> String {
+            "健康\(value.health) · 財務\(value.financial) · 人際\(value.relationships) · 技能\(value.skills)"
+        }
+        return "選前：\(describe(trace.resourcesBefore))；選後：\(describe(trace.resourcesAfter))"
     }
 
     private var traceSheet: some View {

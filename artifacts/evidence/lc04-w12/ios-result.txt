@@ -1,0 +1,9 @@
+Created test Simulator: FDF71D90-D924-4B1A-B23D-02ECE0938A76
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testForkPreservesOriginalResumesAfterRelaunchAndComparesFullRemainder]' passed (436.604 seconds).
+W2_ARCHIVE_CHECKSUMS=b4f200464b98a682fcf739326f8795c3991447f5a9df6b82c73ffbaa84a6b6dd,1a3ddd0ec7ad3e1ccfdb75541f327084cd39fd3fb1ad6b166ba910b28845b37c,66e4d1d15590c351c3f6e89cfc0171382958149dfd51606283546227c7261a2e
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testSaveFailuresKeepScreenAndArchiveThenRetryAndRelaunch]' passed (41.811 seconds).
+	 Executed 2 tests, with 0 failures (0 unexpected) in 478.415 (478.456) seconds
+	 Executed 2 tests, with 0 failures (0 unexpected) in 478.415 (478.458) seconds
+	 Executed 2 tests, with 0 failures (0 unexpected) in 478.415 (478.461) seconds
+** TEST SUCCEEDED **
+Deleted test Simulator: FDF71D90-D924-4B1A-B23D-02ECE0938A76

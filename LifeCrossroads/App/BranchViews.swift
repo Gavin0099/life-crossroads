@@ -82,9 +82,9 @@ struct BranchComparisonView: View {
                     ForEach(comparison.rows, id: \.decisionIndex) { row in
                         GroupBox("\(row.original.age)歲 · \(row.storyChanged ? "故事走向不同" : "遇見相同的故事情境")") {
                             VStack(alignment: .leading, spacing: 14) {
-                                route("原來的人生", trace: row.original, arrival: row.originalArrival)
+                                route("原來的人生", prefix: "branch.\(row.decisionIndex).original", trace: row.original, arrival: row.originalArrival)
                                 Divider()
-                                route("改選後的人生", trace: row.alternative, arrival: row.alternativeArrival)
+                                route("改選後的人生", prefix: "branch.\(row.decisionIndex).alternative", trace: row.alternative, arrival: row.alternativeArrival)
                             }
                         }.accessibilityIdentifier("branchRow.\(row.decisionIndex)")
                     }
@@ -96,13 +96,17 @@ struct BranchComparisonView: View {
         }
     }
 
-    private func route(_ label: String, trace: ConsequenceTrace, arrival: TimeJumpTrace) -> some View {
+    private func route(_ label: String, prefix: String, trace: ConsequenceTrace, arrival: TimeJumpTrace) -> some View {
         VStack(alignment: .leading, spacing: 7) {
             Text(label).font(.headline)
             Text(trace.eventTitle).font(.headline)
+                .accessibilityIdentifier("\(prefix).event").accessibilityValue(trace.eventID)
             Text("和\(trace.recurringPerson) · \(trace.choiceTitle)")
+                .accessibilityIdentifier("\(prefix).choice").accessibilityValue(trace.choiceID)
             Text("選前：\(resources(trace.resourcesBefore))").font(.caption)
+                .accessibilityIdentifier("\(prefix).before")
             Text("選後：\(resources(trace.resourcesAfter))").font(.caption)
+                .accessibilityIdentifier("\(prefix).after")
             ForEach(arrival.triggeredHooks, id: \.id) { hook in
                 Text("\(hook.originAge)歲留下的回聲：\(hook.text)").font(.subheadline)
             }

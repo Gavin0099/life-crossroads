@@ -210,12 +210,14 @@ final class LifeCrossroadsUITests: XCTestCase {
         let app = launch(seed: "0")
         start(app)
         var originalEvents: [String] = []
-        for _ in 0..<15 {
+        var originalRecords: [Int: VisibleRecord] = [:]
+        for index in 0..<15 {
             XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 5))
             originalEvents.append(try XCTUnwrap(app.staticTexts["eventTitle"].value as? String))
             let choice = try policyChoice(in: app)
             reveal(choice, in: app); choice.tap()
             XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+            if [0, 3, 7, 14].contains(index) { originalRecords[index] = try recordOutcome(in: app) }
             app.buttons["continueLife"].tap()
         }
         XCTAssertTrue(app.staticTexts["journeyComplete"].waitForExistence(timeout: 5))
@@ -228,6 +230,9 @@ final class LifeCrossroadsUITests: XCTestCase {
         reveal(offline, in: app); offline.tap()
         XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
         XCTAssertEqual(app.staticTexts["chosenAction"].value as? String, "offline")
+        var alternativeRecords = [3: try recordOutcome(in: app)]
+        XCTAssertNotEqual(alternativeRecords[3]?.choiceID, originalRecords[3]?.choiceID)
+        XCTAssertNotEqual(alternativeRecords[3]?.resources, originalRecords[3]?.resources)
         app.terminate()
         app.launchArguments.removeAll { $0 == "-reset-save" }
         app.launch()
@@ -238,22 +243,31 @@ final class LifeCrossroadsUITests: XCTestCase {
         let original = app.buttons["viewOriginal"]; reveal(original, in: app); original.tap()
         XCTAssertTrue(app.staticTexts["journeyComplete"].waitForExistence(timeout: 5))
         XCTAssertEqual(app.staticTexts["endingSeed"].value as? String, "0")
+        try assertOriginalHistory(originalRecords, in: app)
         let resume = app.buttons["resumeBranch"]; reveal(resume, in: app); resume.tap()
         app.buttons["continueLife"].tap()
-        for _ in 4..<15 {
+        for index in 4..<15 {
             XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 5))
             let choice = app.buttons["choice.rest"]; reveal(choice, in: app); choice.tap()
             XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+            if [7, 14].contains(index) { alternativeRecords[index] = try recordOutcome(in: app) }
             app.buttons["continueLife"].tap()
         }
         XCTAssertTrue(app.staticTexts["journeyComplete"].waitForExistence(timeout: 5))
         app.terminate(); app.launch()
         XCTAssertTrue(app.buttons["resumeLife"].waitForExistence(timeout: 10))
         app.buttons["resumeLife"].tap()
+        let preserved = app.buttons["viewOriginal"]; reveal(preserved, in: app); preserved.tap()
+        try assertOriginalHistory(originalRecords, in: app)
+        let returnToBranch = app.buttons["resumeBranch"]; reveal(returnToBranch, in: app); returnToBranch.tap()
         let compare = app.buttons["compareBranches"]; reveal(compare, in: app); compare.tap()
         XCTAssertTrue(app.staticTexts["branchComparisonTitle"].waitForExistence(timeout: 5))
         XCTAssertEqual(app.staticTexts["branchComparisonCount"].value as? String, "12")
         XCTAssertTrue(app.staticTexts["branchComparisonScope"].label.contains("沒有自動代選"))
+        for index in [3, 7, 14] {
+            try assertComparison(try XCTUnwrap(originalRecords[index]), prefix: "branch.\(index).original", in: app)
+            try assertComparison(try XCTUnwrap(alternativeRecords[index]), prefix: "branch.\(index).alternative", in: app)
+        }
         attachScreenshot("lc04-complete-comparison", app: app)
         let last = app.descendants(matching: .any).matching(identifier: "branchRow.14").firstMatch
         reveal(last, in: app)
@@ -262,13 +276,110 @@ final class LifeCrossroadsUITests: XCTestCase {
         XCTAssertEqual(originalEvents.count, 15)
     }
 
-    private func launch(seed: String, largestText: Bool = false) -> XCUIApplication {
+    func testSaveFailuresKeepScreenAndArchiveThenRetryAndRelaunch() throws {
+        // 1=start, 2=failed choice, 3=retry, 4=failed continue, 5=retry.
+        let app = launch(seed: "0", failingSaves: "2,4")
+        start(app)
+        let firstEvent = app.staticTexts["eventTitle"].value as? String
+        let originalChecksum = try archiveChecksum(in: app)
+        let rest = app.buttons["choice.rest"]; reveal(rest, in: app); rest.tap()
+        assertSaveFailure(in: app)
+        XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, firstEvent)
+        XCTAssertFalse(app.buttons["continueLife"].exists)
+        XCTAssertEqual(try archiveChecksum(in: app), originalChecksum)
+        reveal(rest, in: app); rest.tap()
+        XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["chosenAction"].value as? String, "rest")
+        let choiceChecksum = try archiveChecksum(in: app)
+        XCTAssertNotEqual(choiceChecksum, originalChecksum)
+        app.buttons["continueLife"].tap()
+        assertSaveFailure(in: app)
+        XCTAssertTrue(app.buttons["continueLife"].exists)
+        XCTAssertEqual(app.staticTexts["chosenAction"].value as? String, "rest")
+        XCTAssertEqual(try archiveChecksum(in: app), choiceChecksum)
+        app.buttons["continueLife"].tap()
+        XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, "child-friend")
+        let continuedChecksum = try archiveChecksum(in: app)
+        XCTAssertNotEqual(continuedChecksum, choiceChecksum)
+        app.terminate()
+        app.launchArguments.removeAll { ["-reset-save", "-ui-fail-save-at", "2,4"].contains($0) }
+        app.launch()
+        XCTAssertTrue(app.buttons["resumeLife"].waitForExistence(timeout: 10))
+        app.buttons["resumeLife"].tap()
+        XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, "child-friend")
+        XCTAssertEqual(try archiveChecksum(in: app), continuedChecksum)
+        print("W2_ARCHIVE_CHECKSUMS=\(originalChecksum),\(choiceChecksum),\(continuedChecksum)")
+    }
+
+    private struct VisibleRecord {
+        let event: String
+        let eventID: String
+        let choice: String
+        let choiceID: String
+        let resources: String
+    }
+
+    private func recordOutcome(in app: XCUIApplication) throws -> VisibleRecord {
+        let event = app.staticTexts["outcomeEvent"]
+        let choice = app.staticTexts["chosenAction"]
+        let resources = app.staticTexts["outcomeResources"]
+        XCTAssertTrue(resources.waitForExistence(timeout: 5))
+        return try VisibleRecord(event: event.label, eventID: XCTUnwrap(event.value as? String),
+            choice: choice.label, choiceID: XCTUnwrap(choice.value as? String),
+            resources: XCTUnwrap(resources.value as? String))
+    }
+
+    private func assertOriginalHistory(_ records: [Int: VisibleRecord], in app: XCUIApplication) throws {
+        // Reviewed fixed schedule: first/middle/last decisions are ages 8, 32 and 80.
+        for (index, age) in [(0, 8), (7, 32), (14, 80)] {
+            let expected = try XCTUnwrap(records[index])
+            let event = app.staticTexts["history.\(age).event"]
+            reveal(event, in: app)
+            XCTAssertEqual(event.label, expected.event)
+            XCTAssertEqual(event.value as? String, expected.eventID)
+            let choice = app.staticTexts["history.\(age).choice"]
+            XCTAssertEqual(choice.label, expected.choice)
+            XCTAssertEqual(choice.value as? String, expected.choiceID)
+            XCTAssertEqual(app.staticTexts["history.\(age).resources"].value as? String, expected.resources)
+        }
+    }
+
+    private func assertComparison(_ record: VisibleRecord, prefix: String, in app: XCUIApplication) throws {
+        let event = app.staticTexts["\(prefix).event"]
+        reveal(event, in: app)
+        XCTAssertEqual(event.label, record.event)
+        XCTAssertEqual(event.value as? String, record.eventID)
+        let choice = app.staticTexts["\(prefix).choice"]
+        XCTAssertTrue(choice.label.hasSuffix(record.choice))
+        XCTAssertEqual(choice.value as? String, record.choiceID)
+        let beforeAndAfter = record.resources.components(separatedBy: "；")
+        XCTAssertEqual(beforeAndAfter.count, 2)
+        XCTAssertEqual(app.staticTexts["\(prefix).before"].label, beforeAndAfter.first)
+        XCTAssertEqual(app.staticTexts["\(prefix).after"].label, beforeAndAfter.last)
+    }
+
+    private func archiveChecksum(in app: XCUIApplication) throws -> String {
+        let value = try XCTUnwrap(app.staticTexts["uiTestArchiveChecksum"].value as? String)
+        XCTAssertEqual(value.count, 64, "Read the actual archived bytes, not a missing-file placeholder")
+        return value
+    }
+
+    private func assertSaveFailure(in app: XCUIApplication) {
+        let alert = app.alerts["需要留意"]
+        XCTAssertTrue(alert.waitForExistence(timeout: 5))
+        XCTAssertTrue(alert.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "這次操作沒有生效")).firstMatch.exists)
+        alert.buttons["知道了"].tap()
+    }
+
+    private func launch(seed: String, largestText: Bool = false, failingSaves: String? = nil) -> XCUIApplication {
         let app = XCUIApplication()
         app.launchArguments += ["-ui-testing", "-reset-save", "-life-seed", seed,
                                 "-AppleLanguages", "(zh-Hant)", "-AppleLocale", "zh_TW"]
         if largestText {
             app.launchArguments += ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
         }
+        if let failingSaves { app.launchArguments += ["-ui-fail-save-at", failingSaves] }
         app.launch()
         XCTAssertTrue(app.buttons["startLife"].waitForExistence(timeout: 10))
         return app

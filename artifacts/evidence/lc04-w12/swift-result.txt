@@ -1,0 +1,24 @@
+Test Case '-[LifePersistenceTests.SaveRepositoryTests testCorruptAndUnknownVersionFilesThrowAndRetainOriginalBytes]' passed (0.163 seconds).
+Test Case '-[LifePersistenceTests.SaveRepositoryTests testFilesystemFailureDoesNotAlterJourneyOrReplaceOtherPath]' passed (0.081 seconds).
+Test Case '-[LifePersistenceTests.SaveRepositoryTests testInvalidSnapshotCannotOverwriteAnExistingValidSave]' passed (0.200 seconds).
+Test Case '-[LifePersistenceTests.SaveRepositoryTests testRealDiskRoundTripEveryPhaseKeepsOriginalAndReplaysRemainingLife]' passed (4.124 seconds).
+Test Case '-[LifePersistenceTests.SaveRepositoryTests testSingleLifeSaveResumesWithoutChangingLegacySessionResults]' passed (0.015 seconds).
+	 Executed 5 tests, with 0 failures (0 unexpected) in 4.583 (4.584) seconds
+	 Executed 5 tests, with 0 failures (0 unexpected) in 4.583 (4.584) seconds
+	 Executed 5 tests, with 0 failures (0 unexpected) in 4.583 (4.588) seconds
+Test Case '-[LifeDomainTests.BranchExperimentTests testAllCheckpointsPreserveExactPrefixAndOriginalIncludingFirstAndLast]' passed (1.634 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testChangedChoiceRebuildsFutureHooksAndPreservesEarlierPendingHooksExactlyOnce]' passed (0.061 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testDecodedForgedMetadataSnapshotsAndAlternativeCannotResumeOrCompare]' passed (0.727 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testFourCountryTwoFamilyBranchMatrixCompletesAndKeepsOriginal]' passed (3.487 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testIndividuallyValidAlternativeFromDifferentSeedOrBackgroundIsRejected]' passed (0.380 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testInvalidForkAndPhaseFailuresDoNotMutateOriginalOrAlternative]' passed (0.305 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testPairedCandidateDrawsRemainEqualEvenWhenWeightsOrEligibilityChange]' passed (0.181 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testReplayingUnchangedChoicesFromCheckpointExactlyReproducesOriginal]' passed (0.295 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testSameSeedChoicesAndCodableAtEveryPhaseReproduceCompleteAlternative]' passed (14.644 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testSingleChangedChoiceActuallyChangesLaterPersonAndLearningRoute]' passed (0.214 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testUnaffordableAlternateRejectedUsingItsOriginalPreChoiceBudget]' passed (0.059 seconds).
+	 Executed 11 tests, with 0 failures (0 unexpected) in 21.987 (21.990) seconds
+	 Executed 11 tests, with 0 failures (0 unexpected) in 21.987 (21.990) seconds
+	 Executed 11 tests, with 0 failures (0 unexpected) in 21.987 (21.991) seconds
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds

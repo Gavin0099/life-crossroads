@@ -3,6 +3,9 @@ import SwiftUI
 import LifeDomain
 import LifeData
 import LifePersistence
+#if targetEnvironment(simulator)
+import CryptoKit
+#endif
 
 @MainActor
 final class GameStore: ObservableObject {
@@ -23,6 +26,16 @@ final class GameStore: ObservableObject {
     let catalog: ModelCatalog?
     private let launchSeed: UInt64?
     private let invalidLaunchSeed: Bool
+#if targetEnvironment(simulator)
+    // Only automated Simulator launches can request faults; device builds have no injection path.
+    private var failingSaveAttempts: Set<Int> = []
+    private var saveAttempt = 0
+    var uiTestArchiveChecksum: String? {
+        guard ProcessInfo.processInfo.arguments.contains("-ui-testing") else { return nil }
+        guard let data = try? Data(contentsOf: saves.fileURL) else { return "missing" }
+        return SHA256.hash(data: data).map { String(format: "%02x", $0) }.joined()
+    }
+#endif
 
     init() {
         let arguments = ProcessInfo.processInfo.arguments
@@ -30,6 +43,11 @@ final class GameStore: ObservableObject {
             .appendingPathComponent("LifeCrossroads", isDirectory: true)
         let filename = arguments.contains("-ui-testing") ? "ui-journey.json" : "journey.json"
         saves = SaveRepository(fileURL: directory.appendingPathComponent(filename))
+#if targetEnvironment(simulator)
+        if arguments.contains("-ui-testing"), let index = arguments.firstIndex(of: "-ui-fail-save-at"), index + 1 < arguments.count {
+            failingSaveAttempts = Set(arguments[index + 1].split(separator: ",").compactMap { Int($0) })
+        }
+#endif
         if arguments.contains("-ui-testing"), arguments.contains("-reset-save") {
             try? FileManager.default.removeItem(at: saves.fileURL)
         }
@@ -64,6 +82,10 @@ final class GameStore: ObservableObject {
     private func commit(_ next: LifeJourney) -> Bool {
         guard let catalog else { return false }
         do {
+#if targetEnvironment(simulator)
+            saveAttempt += 1
+            if failingSaveAttempts.remove(saveAttempt) != nil { throw CocoaError(.fileWriteNoPermission) }
+#endif
             try saves.save(next, catalog: catalog)
             journey = next; restoreFailed = false
             return true
