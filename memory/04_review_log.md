@@ -47,3 +47,14 @@
 - Validation boundary: PASS: artifacts/evidence/test-results/basic-ci.json -> exit_code=0 (6 basic checks); artifacts/evidence/test-results/ci-pin-rejection.json -> exit_code=0 (bad pin rejected, lock restored); artifacts/evidence/test-results/governance-after-initial-commit.json -> exit_code=0 (14 audit checks).
 - Next action: 依 docs/p1-slices.md 的 LC-01 實作八國資料/16 情境與共通人生規則；尚未驗證 runtime 不作產品前置 Gate。
 - PLAN reconciliation: `updated`
+
+<!-- memory_record_projection:review-log:866e38ed7d2af603d235fce10ff91858cdb01f115a527fa61f076d99558b64be -->
+### Canonical memory checkpoint — LC01-2026-10-23
+
+- Writer: `governance_tools.memory_record`
+- Record identity: `866e38ed7d2af603d235fce10ff91858cdb01f115a527fa61f076d99558b64be`
+- Commit binding: `73f0ae682d130b40ceca7ce10878fac4dab7e65b` (bound)
+- Record: 完成公開前查核並推送既有基線，基本CI通過；LC-01實作資料契約、環境成本/支持/控制權、實際ConsequenceTrace、固定鍵亂數與15決策骨架。保留iOS預設建置器bundle簽章失敗及native成功紀錄；未交付SwiftUI或實機驗收。
+- Validation boundary: PASS: artifacts/evidence/test-results/lc01-committed-swift.json -> exit_code=0, 25 XCTest, 560 skeleton lives; PASS: artifacts/evidence/test-results/lc01-release.json -> exit_code=0; PASS: artifacts/evidence/test-results/lc01-ios-library-native.json -> exit_code=0. FAIL preserved: artifacts/evidence/test-results/lc01-ios-library.json -> exit_code=1. Mutation and baseline CI references: artifacts/evidence/lc01/threshold-mutation.json, artifacts/evidence/lc01/baseline-publication-review.json.
+- Next action: 推送本片兩筆提交並建立LC-01 PR，確認Swift與基本CI；通過後直接開始四國完整人生SwiftUI，不新增文件Gate。
+- PLAN reconciliation: `updated`

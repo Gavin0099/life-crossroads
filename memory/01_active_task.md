@@ -15,3 +15,5 @@
 - GOV-001：本機配置/盤點與七片規劃已備妥；31 測試有正式執行收據，正式導入仍待提交與真實觸發。 <!-- memory_record_projection:active-task-summary:517d1f19931f2560a6f9fc7fb9f5f6336dd6093aa09ad2ecfe61a39d9c19751f -->
 
 - P0-002：已固定八國完整人生路線、建立首次本機提交與基本 CI；LC-01 為下一產品切片，runtime 未驗證不阻擋開發。 <!-- memory_record_projection:active-task-summary:9f6bdb9916c62b39eff13d0671510ef9e2b135840ad3046794a1f6809f621941 -->
+
+- LC-01 純 Swift 實作完成：八國模型/16情境，七國14筆來源資料，台灣口徑缺口；25引擎測試通過，LC-02可開工，遠端本片CI待驗。 <!-- memory_record_projection:active-task-summary:866e38ed7d2af603d235fce10ff91858cdb01f115a527fa61f076d99558b64be -->
