@@ -21,3 +21,5 @@
 - 四動物五階段與A/B原生介面已本機驗證；推送前修正JSON產物並重建未公開提交，待推送供review；素材仍為候選。 <!-- memory_record_projection:active-task-summary:8a4928c343ccd18ff291c4768c4b5cc83b7fb3f45b32ed7c18c8e33b54fb716e -->
 
 - UI事件主導MVP已實作：UI-00/01/02/04/06、兩事件流程、三方向線框與30截圖；8項UI測試在兩Simulator通過，待推送供review，兒少/五秒辨識待驗。 <!-- memory_record_projection:active-task-summary:d9dd96a223632a0dc52ed533a4a9677540a92ed1a633a252e800f47dcbe8b836 -->
+
+- UI-11修正與UI-12兩路回饋原型完成，10項UI方法在兩Simulator通過、50截圖；已刪三台測試裝置並記住每輪刪除，待推送review；真人理解與UI-13待續。 <!-- memory_record_projection:active-task-summary:0515d65777749017edc8815dcd2afd80695938d0f8d01c6c55e26b4483228d8f -->
