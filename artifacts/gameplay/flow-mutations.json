@@ -1,0 +1,23 @@
+[
+  {
+    "mutation": "removed_pause_guard",
+    "build_exit": 0,
+    "run_exit": 1,
+    "caught": true,
+    "diagnostic": "FAIL: paused ticks cannot change world or history"
+  },
+  {
+    "mutation": "removed_payload_key_guard",
+    "build_exit": 0,
+    "run_exit": 1,
+    "caught": true,
+    "diagnostic": "FAIL: dictionary key and payload key must agree"
+  },
+  {
+    "mutation": "removed_year_monotonicity",
+    "build_exit": 0,
+    "run_exit": 1,
+    "caught": true,
+    "diagnostic": "FAIL: backward year is rejected"
+  }
+]

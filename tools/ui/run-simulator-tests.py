@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run EventFirst on a temporary Simulator; retain evidence, always delete device."""
+"""Run a UI prototype on a temporary Simulator; retain evidence, always delete device."""
 import argparse
 from contextlib import contextmanager
 import json
@@ -25,7 +25,7 @@ def select_runtime(device_type, requested=None):
 def temporary_simulator(device_type, runtime):
     # Only this returned ID is owned; never delete by a broad name or 'all'.
     device_id = subprocess.check_output([
-        "xcrun", "simctl", "create", f"LC EventFirst temporary {uuid.uuid4().hex[:8]}",
+        "xcrun", "simctl", "create", f"LC UI temporary {uuid.uuid4().hex[:8]}",
         device_type, runtime], text=True).strip()
     print(f"Created temporary Simulator: {device_id}", flush=True)
     try:
@@ -40,6 +40,7 @@ def temporary_simulator(device_type, runtime):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--scheme", choices=["EventFirst", "WorldGameplay"], default="EventFirst")
     parser.add_argument("--device-type", default="iPhone-17", help="simctl type identifier or suffix")
     parser.add_argument("--runtime", help="Optional installed runtime identifier")
     parser.add_argument("--result-bundle", type=Path, help="External xcresult path (must not exist)")
@@ -47,17 +48,17 @@ def main():
     args = parser.parse_args()
     device_type = args.device_type if args.device_type.startswith("com.apple.") else "com.apple.CoreSimulator.SimDeviceType." + args.device_type
     runtime = select_runtime(device_type, args.runtime)
-    result = args.result_bundle or (ROOT / "UIPrototype/EventFirst/DerivedData" / f"run-{uuid.uuid4().hex}.xcresult")
+    result = args.result_bundle or (ROOT / f"UIPrototype/{args.scheme}/DerivedData" / f"run-{uuid.uuid4().hex}.xcresult")
     result = result.resolve()
     if result.exists():
         parser.error(f"Result bundle already exists: {result}")
     result.parent.mkdir(parents=True, exist_ok=True)
     print(f"Retained result bundle: {result}", flush=True)
     with temporary_simulator(device_type, runtime) as device_id:
-        command = ["xcodebuild", "-project", "UIPrototype/EventFirst.xcodeproj", "-scheme", "EventFirst",
+        command = ["xcodebuild", "-project", f"UIPrototype/{args.scheme}.xcodeproj", "-scheme", args.scheme,
                    "-destination", f"platform=iOS Simulator,id={device_id}", "-parallel-testing-enabled", "NO",
                    "-collect-test-diagnostics", "never", "-test-timeouts-enabled", "YES",
-                   "-maximum-test-execution-time-allowance", "120", "-derivedDataPath", "UIPrototype/EventFirst/DerivedData",
+                   "-maximum-test-execution-time-allowance", "120", "-derivedDataPath", f"UIPrototype/{args.scheme}/DerivedData",
                    "-resultBundlePath", str(result), "CODE_SIGNING_ALLOWED=NO", "test"]
         command.extend(f"-only-testing:{test}" for test in args.only_testing)
         return subprocess.run(command, cwd=ROOT, check=False).returncode

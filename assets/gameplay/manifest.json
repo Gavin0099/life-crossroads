@@ -1,0 +1,221 @@
+{
+  "version": "0.1",
+  "slice": "GS-01–03",
+  "production_approval": false,
+  "assets": [
+    {
+      "path": "assets/gameplay/workshop-background.png",
+      "width": 1536,
+      "height": 1024,
+      "colour_type": 2,
+      "has_alpha_channel": false,
+      "output_sha256": "603de898e434b289c083f8c41730e94213657e18d8173040cddd680af25a7748",
+      "file_bytes": 2454755,
+      "asset_id": "gs-workshop-background-v1",
+      "source_type": "ai_generated",
+      "generator": "builtin:image_gen.imagegen",
+      "model_name": null,
+      "model_version": null,
+      "seed": null,
+      "generated_on": "2026-10-23",
+      "workflow_version": "gs-visual-gameplay-v0.1",
+      "prompt_path": "assets/prompts/gs-workshop-background.txt",
+      "prompt_sha256": "435310804e320a199c75c457706f2c6fbad8e2687042b815ae12bdf3e73964ff",
+      "reference_paths": [
+        "assets/concepts/style-B/scene.png"
+      ],
+      "input_hashes": {
+        "assets/concepts/style-B/scene.png": "415c1c81382b323ced4b0eda45d4909c57c422b7e47a17faf1b5c5f23cd78f41"
+      },
+      "status": "prototype_candidate",
+      "transparent_cutout_verified": false,
+      "review_visual_quality": "agent_screened_human_pending",
+      "review_child_safety": "agent_screened_human_pending",
+      "review_licensing": "pending_account_and_owner_review",
+      "license_evidence": null,
+      "approved_for_app": false,
+      "intended_use": "standalone prototype only",
+      "notes": [
+        "Empty foreground and coherent workshop/courtyard geometry visually inspected by agent.",
+        "Country-neutral illustrative place; no geographic accuracy claim."
+      ]
+    },
+    {
+      "path": "assets/gameplay/characters-atlas-v1.png",
+      "width": 1254,
+      "height": 1254,
+      "colour_type": 6,
+      "has_alpha_channel": true,
+      "output_sha256": "8b059a8710493f49fe81622d592619e2a181fea6348f856e8d7b08a17e632b07",
+      "file_bytes": 1021174,
+      "asset_id": "gs-characters-atlas-v1",
+      "source_type": "ai_generated",
+      "generator": "builtin:image_gen.imagegen",
+      "model_name": null,
+      "model_version": null,
+      "seed": null,
+      "generated_on": "2026-10-23",
+      "workflow_version": "gs-visual-gameplay-v0.1",
+      "prompt_path": "assets/prompts/gs-character-atlas.txt",
+      "prompt_sha256": "4b941989bf1e9d18029ed41c0718e2ab06a19f6148956729ba3bc2e47b269648",
+      "reference_paths": [
+        "assets/characters/concepts/otter-five-stages.png",
+        "assets/concepts/style-B/scene.png"
+      ],
+      "input_hashes": {
+        "assets/characters/concepts/otter-five-stages.png": "3a2012359d1c3e0942c6c6fff3942aa426145f603561598a94de22c1078f44ed",
+        "assets/concepts/style-B/scene.png": "415c1c81382b323ced4b0eda45d4909c57c422b7e47a17faf1b5c5f23cd78f41"
+      },
+      "status": "rejected_grid_layout",
+      "transparent_cutout_verified": true,
+      "review_visual_quality": "agent_screened_human_pending",
+      "review_child_safety": "agent_screened_human_pending",
+      "review_licensing": "pending_account_and_owner_review",
+      "license_evidence": null,
+      "approved_for_app": false,
+      "intended_use": "standalone prototype only",
+      "notes": [
+        "True alpha verified; 94 nontransparent pixels intersect the horizontal center line.",
+        "Four-character arrangement did not obey safe equal-cell margins. Superseded by v2."
+      ]
+    },
+    {
+      "path": "assets/gameplay/characters-atlas-v2.png",
+      "width": 1024,
+      "height": 1536,
+      "colour_type": 6,
+      "has_alpha_channel": true,
+      "output_sha256": "fe66e16cd837cd849306f8562348c62aa974927d340329112b43cb526bbc8dde",
+      "file_bytes": 1786778,
+      "asset_id": "gs-characters-atlas-v2",
+      "source_type": "ai_generated",
+      "generator": "builtin:image_gen.imagegen",
+      "model_name": null,
+      "model_version": null,
+      "seed": null,
+      "generated_on": "2026-10-23",
+      "workflow_version": "gs-visual-gameplay-v0.1",
+      "prompt_path": "assets/prompts/gs-character-atlas-v2.txt",
+      "prompt_sha256": "41b10e687fe51720ffb140cad3099b63e0d019c0cf502e445729526cd158db7d",
+      "reference_paths": [
+        "assets/gameplay/characters-atlas-v1.png",
+        "assets/concepts/style-B/scene.png"
+      ],
+      "input_hashes": {
+        "assets/gameplay/characters-atlas-v1.png": "8b059a8710493f49fe81622d592619e2a181fea6348f856e8d7b08a17e632b07",
+        "assets/concepts/style-B/scene.png": "415c1c81382b323ced4b0eda45d4909c57c422b7e47a17faf1b5c5f23cd78f41"
+      },
+      "status": "prototype_candidate_custom_rects",
+      "transparent_cutout_verified": true,
+      "review_visual_quality": "agent_screened_human_pending",
+      "review_child_safety": "agent_screened_human_pending",
+      "review_licensing": "pending_account_and_owner_review",
+      "license_evidence": null,
+      "approved_for_app": false,
+      "intended_use": "standalone prototype only",
+      "notes": [
+        "True alpha verified: 1184073 of 1572864 pixels are fully transparent.",
+        "Generator did not obey equal-cell layout; consumers MUST use per-character crop_rect_px, not equal 2x3 cells.",
+        "Five principal alpha-connected components confirmed. RGB in fully transparent pixels may look colored in alpha-ignoring preview tools.",
+        "Otter tail remains fuller than strict species silhouette; character identity, age distinction, anatomy and appropriateness await owner/art reviewer QA.",
+        "Hare-to-cat crop split at y=1046 trims only faint outer alpha fringe; visible silhouettes (alpha >=16/255) remain complete."
+      ],
+      "layout": "custom_rects_not_uniform_grid",
+      "sprites": [
+        {
+          "id": "teen",
+          "label": "阿澄，13 歲",
+          "life_stage": "adolescence",
+          "crop_rect_px": {
+            "x": 100,
+            "y": 65,
+            "width": 345,
+            "height": 470
+          },
+          "crop_rect_normalized": {
+            "x": 0.09765625,
+            "y": 0.042317708333333336,
+            "width": 0.3369140625,
+            "height": 0.3059895833333333
+          }
+        },
+        {
+          "id": "adult",
+          "label": "阿澄，22 歲",
+          "life_stage": "young_adult",
+          "crop_rect_px": {
+            "x": 580,
+            "y": 20,
+            "width": 330,
+            "height": 535
+          },
+          "crop_rect_normalized": {
+            "x": 0.56640625,
+            "y": 0.013020833333333334,
+            "width": 0.322265625,
+            "height": 0.3483072916666667
+          }
+        },
+        {
+          "id": "friend",
+          "label": "灰兔朋友",
+          "life_stage": "adolescence",
+          "crop_rect_px": {
+            "x": 180,
+            "y": 537,
+            "width": 265,
+            "height": 509
+          },
+          "crop_rect_normalized": {
+            "x": 0.17578125,
+            "y": 0.349609375,
+            "width": 0.2587890625,
+            "height": 0.3313802083333333
+          }
+        },
+        {
+          "id": "caregiver",
+          "label": "水獺照顧者",
+          "life_stage": "middle_adult",
+          "crop_rect_px": {
+            "x": 580,
+            "y": 560,
+            "width": 375,
+            "height": 510
+          },
+          "crop_rect_normalized": {
+            "x": 0.56640625,
+            "y": 0.3645833333333333,
+            "width": 0.3662109375,
+            "height": 0.33203125
+          }
+        },
+        {
+          "id": "teacher",
+          "label": "貓老師",
+          "life_stage": "adult",
+          "crop_rect_px": {
+            "x": 150,
+            "y": 1046,
+            "width": 320,
+            "height": 488
+          },
+          "crop_rect_normalized": {
+            "x": 0.146484375,
+            "y": 0.6809895833333334,
+            "width": 0.3125,
+            "height": 0.3177083333333333
+          }
+        }
+      ],
+      "alpha_validation": {
+        "pixel_count": 1572864,
+        "fully_transparent_pixels": 1184073,
+        "alpha_1_to_15_pixels": 47046,
+        "alpha_240_to_255_pixels": 324859,
+        "major_connected_components_alpha_at_least_1": 5,
+        "method": "Read-only AppKit NSBitmapImageRep pixel inspection and 4-neighbour alpha component scan; no pixel editing."
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "devicesAndConfigurations" : [
+    {
+      "device" : {
+        "architecture" : "arm64",
+        "deviceId" : "90F528FA-FC7C-4E7A-87EC-C1D045802777",
+        "deviceName" : "LC UI temporary 580bc7f4",
+        "modelName" : "iPhone 17",
+        "osBuildNumber" : "24A434",
+        "osVersion" : "27.0",
+        "platform" : "iOS Simulator"
+      },
+      "expectedFailures" : 0,
+      "failedTests" : 1,
+      "passedTests" : 5,
+      "skippedTests" : 0,
+      "testPlanConfiguration" : {
+        "configurationId" : "1",
+        "configurationName" : "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription" : "WorldGameplay · Built with macOS 27.0",
+  "expectedFailures" : 0,
+  "failedTests" : 1,
+  "finishTime" : 1792746263.074,
+  "passedTests" : 5,
+  "result" : "Failed",
+  "runtimeWarnings" : [
+
+  ],
+  "skippedTests" : 0,
+  "startTime" : 1792745989.599,
+  "statistics" : [
+
+  ],
+  "testFailures" : [
+    {
+      "failureText" : "Failed to get matching snapshot: No matches found for Elements matching predicate '\"world-comparison\" IN identifiers' from input {(\n    Button, identifier: 'world-records', label: '人生紀錄',\n    Button, identifier: 'world-people', label: '家人與朋友',\n    Button, identifier: 'world-map', label: '人生地圖',\n    Button, identifier: 'toggle-event', label: '收起事件，看看世界',\n    Button, identifier: 'world-choice-team', label: '和小禾一起重做、花時間一起試；材料可能還不夠',\n    Button, identifier: 'world-choice-help', label: '向工坊老師求助、先問問借用工具；需要等待確認',\n    Button, identifier: 'world-play', label: '播放片段', Disabled,\n    Button, identifier: 'world-speed', label: '播放速度 1 倍'\n)}",
+      "targetName" : "WorldGameplayTests",
+      "testIdentifier" : 3,
+      "testIdentifierString" : "WorldGameplayTests/testLargestTextAndReducedMotionKeepChoiceAndDetailReachable()",
+      "testIdentifierURL" : "test://com.apple.xcode/WorldGameplay/WorldGameplayTests/WorldGameplayTests/testLargestTextAndReducedMotionKeepChoiceAndDetailReachable",
+      "testName" : "testLargestTextAndReducedMotionKeepChoiceAndDetailReachable()"
+    }
+  ],
+  "title" : "Test - WorldGameplay",
+  "topInsights" : [
+
+  ],
+  "totalTestCount" : 6
+}

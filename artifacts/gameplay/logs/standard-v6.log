@@ -1,0 +1,534 @@
+Retained result bundle: /private/tmp/lc-gs-standard-v6.xcresult
+Created temporary Simulator: 6904978D-E1C7-4F99-B88A-9168F101083E
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project UIPrototype/WorldGameplay.xcodeproj -scheme WorldGameplay -destination "platform=iOS Simulator,id=6904978D-E1C7-4F99-B88A-9168F101083E" -parallel-testing-enabled NO -collect-test-diagnostics never -test-timeouts-enabled YES -maximum-test-execution-time-allowance 120 -derivedDataPath UIPrototype/WorldGameplay/DerivedData -resultBundlePath /private/tmp/lc-gs-standard-v6.xcresult CODE_SIGNING_ALLOWED=NO test "-only-testing:WorldGameplayTests/WorldGameplayTests/testFoldGatePauseAndBackgroundFreezeTime" "-only-testing:WorldGameplayTests/WorldGameplayTests/testMissingRouteDoesNotProduceLifeAndCanRestart" "-only-testing:WorldGameplayTests/WorldGameplayTests/testMissingNextRetainsLastSceneWithoutInventingYears"
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+Writing result bundle at path:
+	/private/tmp/lc-gs-standard-v6.xcresult
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (2 targets)
+    Target 'WorldGameplayTests' in project 'WorldGameplay'
+        ➜ Explicit dependency on target 'WorldGameplay' in project 'WorldGameplay'
+    Target 'WorldGameplay' in project 'WorldGameplay' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+Build description signature: 43141f3b83b549a3ea3e5171e47254d0
+Build description path: /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Intermediates.noindex/XCBuildData/43141f3b83b549a3ea3e5171e47254d0.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-35d3147121984ba087c28d913653d626.sdkstatcache
+    cd /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -o /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-35d3147121984ba087c28d913653d626.sdkstatcache
+
+CompileAssetCatalogVariant thinned /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Products/Debug-iphonesimulator/WorldGameplay.app /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/Assets.xcassets (in target 'WorldGameplay' from project 'WorldGameplay')
+    cd /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/Assets.xcassets --compile /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Intermediates.noindex/WorldGameplay.build/Debug-iphonesimulator/WorldGameplay.build/assetcatalog_output/thinned --output-format human-readable-text --notices --warnings --export-dependency-info /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Intermediates.noindex/WorldGameplay.build/Debug-iphonesimulator/WorldGameplay.build/assetcatalog_dependencies_thinned --output-partial-info-plist /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Intermediates.noindex/WorldGameplay.build/Debug-iphonesimulator/WorldGameplay.build/assetcatalog_generated_info.plist_thinned --compress-pngs --enable-on-demand-resources YES --filter-for-thinning-device-configuration iPhone18,3 --filter-for-device-os-version 27.0 --development-region zh-Hant --target-device iphone --minimum-deployment-target 17.0 --platform iphonesimulator
+/* com.apple.actool.compilation-results */
+/Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Intermediates.noindex/WorldGameplay.build/Debug-iphonesimulator/WorldGameplay.build/assetcatalog_generated_info.plist_thinned
+/Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Intermediates.noindex/WorldGameplay.build/Debug-iphonesimulator/WorldGameplay.build/assetcatalog_output/thinned/Assets.car
+
+
+LinkAssetCatalog /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/Assets.xcassets (in target 'WorldGameplay' from project 'WorldGameplay')
+    cd /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype
+    builtin-linkAssetCatalog --thinned /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Intermediates.noindex/WorldGameplay.build/Debug-iphonesimulator/WorldGameplay.build/assetcatalog_output/thinned --thinned-dependencies /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Intermediates.noindex/WorldGameplay.build/Debug-iphonesimulator/WorldGameplay.build/assetcatalog_dependencies_thinned --thinned-info-plist-content /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Intermediates.noindex/WorldGameplay.build/Debug-iphonesimulator/WorldGameplay.build/assetcatalog_generated_info.plist_thinned --unthinned /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Intermediates.noindex/WorldGameplay.build/Debug-iphonesimulator/WorldGameplay.build/assetcatalog_output/unthinned --unthinned-dependencies /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Intermediates.noindex/WorldGameplay.build/Debug-iphonesimulator/WorldGameplay.build/assetcatalog_dependencies_unthinned --unthinned-info-plist-content /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Intermediates.noindex/WorldGameplay.build/Debug-iphonesimulator/WorldGameplay.build/assetcatalog_generated_info.plist_unthinned --output /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Products/Debug-iphonesimulator/WorldGameplay.app --plist-output /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Intermediates.noindex/WorldGameplay.build/Debug-iphonesimulator/WorldGameplay.build/assetcatalog_generated_info.plist
+note: Emplaced /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Products/Debug-iphonesimulator/WorldGameplay.app/Assets.car (in target 'WorldGameplay' from project 'WorldGameplay')
+
+ProcessInfoPlistFile /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Products/Debug-iphonesimulator/WorldGameplay.app/Info.plist /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Intermediates.noindex/WorldGameplay.build/Debug-iphonesimulator/WorldGameplay.build/empty-WorldGameplay.plist (in target 'WorldGameplay' from project 'WorldGameplay')
+    cd /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype
+    builtin-infoPlistUtility /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Intermediates.noindex/WorldGameplay.build/Debug-iphonesimulator/WorldGameplay.build/empty-WorldGameplay.plist -producttype com.apple.product-type.application -genpkginfo /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Products/Debug-iphonesimulator/WorldGameplay.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Intermediates.noindex/WorldGameplay.build/Debug-iphonesimulator/WorldGameplay.build/assetcatalog_generated_info.plist -o /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Products/Debug-iphonesimulator/WorldGameplay.app/Info.plist
+
+CopySwiftLibs /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Products/Debug-iphonesimulator/WorldGameplay.app (in target 'WorldGameplay' from project 'WorldGameplay')
+    cd /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype
+    builtin-swiftStdLibTool --copy --verbose --scan-executable /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Products/Debug-iphonesimulator/WorldGameplay.app/WorldGameplay.debug.dylib --scan-folder /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Products/Debug-iphonesimulator/WorldGameplay.app/Frameworks --scan-folder /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Products/Debug-iphonesimulator/WorldGameplay.app/PlugIns --scan-folder /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Products/Debug-iphonesimulator/WorldGameplay.app/SystemExtensions --scan-folder /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Products/Debug-iphonesimulator/WorldGameplay.app/Extensions --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Products/Debug-iphonesimulator/WorldGameplay.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Intermediates.noindex/WorldGameplay.build/Debug-iphonesimulator/WorldGameplay.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+Ignoring --strip-bitcode because --sign was not passed
+
+ProcessInfoPlistFile /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Products/Debug-iphonesimulator/WorldGameplayTests-Runner.app/PlugIns/WorldGameplayTests.xctest/Info.plist /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Intermediates.noindex/WorldGameplay.build/Debug-iphonesimulator/WorldGameplayTests.build/empty-WorldGameplayTests.plist (in target 'WorldGameplayTests' from project 'WorldGameplay')
+    cd /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype
+    builtin-infoPlistUtility /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Intermediates.noindex/WorldGameplay.build/Debug-iphonesimulator/WorldGameplayTests.build/empty-WorldGameplayTests.plist -producttype com.apple.product-type.bundle.ui-testing -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Intermediates.noindex/WorldGameplay.build/Debug-iphonesimulator/WorldGameplayTests.build/ProductTypeInfoPlistAdditions.plist -o /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Products/Debug-iphonesimulator/WorldGameplayTests-Runner.app/PlugIns/WorldGameplayTests.xctest/Info.plist
+
+PruneExplicitPrecompiledModules /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/SDKExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules /Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/UIPrototype/WorldGameplay/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+2026-10-23 18:02:14.383 xcodebuild[36428:2256092] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-23 18:02:51.135988+0800 WorldGameplayTests-Runner[36710:2259706] [Default] Running tests...
+objc[36710]: Class UIAccessibilityLoaderWebShared is implemented in both /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.434.0.paE1ws/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x107be8398) and /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.434.0.paE1ws/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x108124310). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-10-23 18:02:56.914.
+Test Suite 'WorldGameplayTests.xctest' started at 2026-10-23 18:02:56.920.
+Test Suite 'WorldGameplayTests' started at 2026-10-23 18:02:56.920.
+Test Case '-[WorldGameplayTests.WorldGameplayTests testFoldGatePauseAndBackgroundFreezeTime]' started.
+    t =     0.02s Start Test at 2026-10-23 18:02:56.942
+    t =     0.39s Set Up
+    t =     0.43s Open com.gavin0099.WorldGameplay
+    t =     0.46s     Launch com.gavin0099.WorldGameplay
+2026-10-23 18:02:58.008 xcodebuild[36428:2256092] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-23 18:02:58.008 xcodebuild[36428:2256092] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-23 18:02:58.121 xcodebuild[36428:2256092] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     7.31s         Setting up automation session
+    t =     9.52s         Wait for com.gavin0099.WorldGameplay to idle
+    t =    11.76s Checking existence of `"world-records" Button`
+    t =    11.91s Find the "world-records" Button
+    t =    11.97s Find the "toggle-event" Button
+    t =    12.01s Find the "toggle-event" Button
+    t =    12.05s Find the "toggle-event" Button
+    t =    12.10s Find the "toggle-event" Button
+    t =    12.13s Checking existence of `"world-records" Button`
+    t =    12.16s Find the "world-records" Button
+    t =    12.20s Find the "toggle-event" Button
+    t =    12.24s Find the "toggle-event" Button
+    t =    12.27s Find the "toggle-event" Button
+    t =    12.30s Find the "toggle-event" Button
+    t =    12.32s Tap "toggle-event" Button[0.50, 0.50]
+    t =    12.32s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    12.33s     Find the "toggle-event" Button
+    t =    12.35s     Check for interrupting elements affecting "toggle-event" Button
+    t =    12.43s     Synthesize event
+    t =    12.43s         Find the "toggle-event" Button
+    t =    12.47s         Find the "toggle-event" Button
+    t =    12.52s         Find the "toggle-event" Button
+    t =    13.00s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    13.19s Checking existence of `"world-choice-team" Button`
+    t =    13.22s Checking existence of `"時間已停下，等你回來作決定。" StaticText`
+    t =    13.25s Find the "world-play" Button
+    t =    14.52s Added attachment named 'world-with-event-folded'
+    t =    14.52s Checking existence of `"world-records" Button`
+    t =    14.54s Find the "world-records" Button
+    t =    14.56s Find the "toggle-event" Button
+    t =    14.61s Find the "toggle-event" Button
+    t =    14.64s Find the "toggle-event" Button
+    t =    14.69s Find the "toggle-event" Button
+    t =    14.71s Checking existence of `"world-records" Button`
+    t =    14.74s Find the "world-records" Button
+    t =    14.79s Find the "toggle-event" Button
+    t =    14.84s Find the "toggle-event" Button
+    t =    14.87s Find the "toggle-event" Button
+    t =    14.92s Find the "toggle-event" Button
+    t =    14.97s Tap "toggle-event" Button[0.50, 0.50]
+    t =    14.97s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    14.97s     Find the "toggle-event" Button
+    t =    14.99s     Check for interrupting elements affecting "toggle-event" Button
+    t =    15.02s     Synthesize event
+    t =    15.02s         Find the "toggle-event" Button
+    t =    15.05s         Find the "toggle-event" Button
+    t =    15.08s         Find the "toggle-event" Button
+    t =    15.41s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    15.43s Checking existence of `"world-records" Button`
+    t =    15.46s Find the "world-records" Button
+    t =    15.52s Find the "world-choice-team" Button
+    t =    15.58s Find the "world-choice-team" Button
+    t =    15.61s Find the "world-choice-team" Button
+    t =    15.64s Find the "world-choice-team" Button
+    t =    15.67s Checking existence of `"world-records" Button`
+    t =    15.69s Find the "world-records" Button
+    t =    15.72s Find the "world-choice-team" Button
+    t =    15.75s Find the "world-choice-team" Button
+    t =    15.77s Find the "world-choice-team" Button
+    t =    15.81s Find the "world-choice-team" Button
+    t =    15.88s Tap "world-choice-team" Button[0.50, 0.50]
+    t =    15.88s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    15.89s     Find the "world-choice-team" Button
+    t =    15.95s     Check for interrupting elements affecting "world-choice-team" Button
+    t =    15.99s     Synthesize event
+    t =    15.99s         Find the "world-choice-team" Button
+    t =    16.06s         Find the "world-choice-team" Button
+    t =    16.12s         Find the "world-choice-team" Button
+    t =    16.45s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    16.48s Checking existence of `"world-records" Button`
+    t =    16.52s Find the "world-records" Button
+    t =    16.62s Find the "world-next" Button
+    t =    16.68s Find the "world-next" Button
+    t =    16.75s Find the "world-next" Button
+    t =    16.85s Find the "world-next" Button
+    t =    16.93s Checking existence of `"world-records" Button`
+    t =    16.96s Find the "world-records" Button
+    t =    17.02s Find the "world-next" Button
+    t =    17.06s Find the "world-next" Button
+    t =    17.10s Find the "world-next" Button
+    t =    17.14s Find the "world-next" Button
+    t =    17.20s Tap "world-next" Button[0.50, 0.50]
+    t =    17.20s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    17.21s     Find the "world-next" Button
+    t =    17.27s     Check for interrupting elements affecting "world-next" Button
+    t =    17.31s     Synthesize event
+    t =    17.32s         Find the "world-next" Button
+    t =    17.38s         Find the "world-next" Button
+    t =    17.45s         Find the "world-next" Button
+    t =    17.79s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    17.80s Checking existence of `"world-records" Button`
+    t =    17.84s Find the "world-records" Button
+    t =    17.89s Find the "world-next" Button
+    t =    17.98s Find the "world-next" Button
+    t =    18.03s Find the "world-next" Button
+    t =    18.08s Find the "world-next" Button
+    t =    18.15s Checking existence of `"world-records" Button`
+    t =    18.19s Find the "world-records" Button
+    t =    18.27s Find the "world-next" Button
+    t =    18.34s Find the "world-next" Button
+    t =    18.39s Find the "world-next" Button
+    t =    18.43s Find the "world-next" Button
+    t =    18.61s Tap "world-next" Button[0.50, 0.50]
+    t =    18.61s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    18.62s     Find the "world-next" Button
+    t =    18.65s     Check for interrupting elements affecting "world-next" Button
+    t =    18.75s     Synthesize event
+    t =    18.75s         Find the "world-next" Button
+    t =    18.82s         Find the "world-next" Button
+    t =    18.89s         Find the "world-next" Button
+    t =    19.31s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    19.32s Checking existence of `"world-records" Button`
+    t =    19.36s Find the "world-records" Button
+    t =    19.40s Find the "world-play" Button
+    t =    19.47s Find the "world-play" Button
+    t =    19.50s Find the "world-play" Button
+    t =    19.55s Checking existence of `"world-play" Button`
+    t =    19.57s Find the "world-play" Button
+    t =    19.59s Swipe up Target Application 'com.gavin0099.WorldGameplay'
+    t =    19.59s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    19.60s     Find the Target Application 'com.gavin0099.WorldGameplay'
+    t =    19.62s     Check for interrupting elements affecting "人生岔路" Application
+    t =    19.64s     Synthesize event
+    t =    20.07s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    20.53s Checking existence of `"world-records" Button`
+    t =    20.56s Find the "world-records" Button
+    t =    20.59s Find the "world-play" Button
+    t =    20.66s Find the "world-play" Button
+    t =    20.72s Find the "world-play" Button
+    t =    20.77s Find the "world-play" Button
+    t =    20.79s Checking existence of `"world-records" Button`
+    t =    20.81s Find the "world-records" Button
+    t =    20.98s Find the "world-play" Button
+    t =    21.01s Find the "world-play" Button
+    t =    21.03s Find the "world-play" Button
+    t =    21.07s Find the "world-play" Button
+    t =    21.17s Tap "world-play" Button[0.50, 0.50]
+    t =    21.17s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    21.20s     Find the "world-play" Button
+    t =    21.23s     Check for interrupting elements affecting "world-play" Button
+    t =    21.30s     Synthesize event
+    t =    21.31s         Find the "world-play" Button
+    t =    21.41s         Find the "world-play" Button
+    t =    21.45s         Find the "world-play" Button
+    t =    21.77s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    22.82s Checking `Expect predicate `label CONTAINS "2029"` for object "year" StaticText`
+    t =    22.82s     Find the "year" StaticText
+    t =    22.85s     Capturing element debug description
+    t =    23.06s         Requesting snapshot of accessibility hierarchy for app with pid 36778
+    t =    23.11s         Find: Descendants matching type StaticText
+    t =    23.11s         Find: Elements matching predicate '"year" IN identifiers'
+    t =    23.13s         Requesting snapshot of accessibility hierarchy for app with pid 36778
+    t =    23.18s         Find: Descendants matching type StaticText
+    t =    23.18s         Requesting snapshot of accessibility hierarchy for app with pid 36778
+    t =    24.82s Checking `Expect predicate `label CONTAINS "2029"` for object "year" StaticText`
+    t =    24.82s     Find the "year" StaticText
+    t =    24.96s Checking existence of `"world-records" Button`
+    t =    25.40s Find the "world-records" Button
+    t =    25.55s Find the "world-play" Button
+    t =    25.73s Find the "world-play" Button
+    t =    25.78s Find the "world-play" Button
+    t =    26.00s Find the "world-play" Button
+    t =    26.05s Checking existence of `"world-records" Button`
+    t =    26.10s Find the "world-records" Button
+    t =    26.16s Find the "world-play" Button
+    t =    26.25s Find the "world-play" Button
+    t =    26.47s Find the "world-play" Button
+    t =    26.51s Find the "world-play" Button
+    t =    26.57s Tap "world-play" Button[0.50, 0.50]
+    t =    26.57s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    26.58s     Find the "world-play" Button
+    t =    26.61s     Check for interrupting elements affecting "world-play" Button
+    t =    26.65s     Synthesize event
+    t =    26.65s         Find the "world-play" Button
+    t =    26.70s         Find the "world-play" Button
+    t =    26.75s         Find the "world-play" Button
+    t =    27.09s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    27.10s Find the "year" StaticText
+    t =    31.21s Find the "year" StaticText
+    t =    31.25s Checking existence of `"world-records" Button`
+    t =    31.28s Find the "world-records" Button
+    t =    31.31s Find the "world-play" Button
+    t =    31.35s Find the "world-play" Button
+    t =    31.40s Find the "world-play" Button
+    t =    31.50s Find the "world-play" Button
+    t =    31.55s Checking existence of `"world-records" Button`
+    t =    31.58s Find the "world-records" Button
+    t =    31.62s Find the "world-play" Button
+    t =    31.65s Find the "world-play" Button
+    t =    31.67s Find the "world-play" Button
+    t =    31.71s Find the "world-play" Button
+    t =    31.74s Tap "world-play" Button[0.50, 0.50]
+    t =    31.74s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    31.74s     Find the "world-play" Button
+    t =    31.76s     Check for interrupting elements affecting "world-play" Button
+    t =    31.79s     Synthesize event
+    t =    31.79s         Find the "world-play" Button
+    t =    31.82s         Find the "world-play" Button
+    t =    31.86s         Find the "world-play" Button
+    t =    32.18s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    32.20s Tap "world-records" Button
+    t =    32.20s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    32.22s     Find the "world-records" Button
+    t =    32.25s     Check for interrupting elements affecting "world-records" Button
+    t =    32.34s     Synthesize event
+    t =    32.65s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    33.01s Tap "close-world-detail" Button
+    t =    33.01s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    33.49s     Find the "close-world-detail" Button
+    t =    33.56s     Check for interrupting elements affecting "close-world-detail" Button
+    t =    33.60s     Synthesize event
+    t =    33.91s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    34.35s Find the "playback-state" StaticText
+    t =    34.40s Checking existence of `"world-records" Button`
+    t =    34.45s Find the "world-records" Button
+    t =    34.52s Find the "world-play" Button
+    t =    34.59s Find the "world-play" Button
+    t =    34.71s Find the "world-play" Button
+    t =    34.85s Find the "world-play" Button
+    t =    34.89s Checking existence of `"world-records" Button`
+    t =    34.93s Find the "world-records" Button
+    t =    35.01s Find the "world-play" Button
+    t =    35.07s Find the "world-play" Button
+    t =    35.11s Find the "world-play" Button
+    t =    35.14s Find the "world-play" Button
+    t =    35.19s Tap "world-play" Button[0.50, 0.50]
+    t =    35.19s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    35.20s     Find the "world-play" Button
+    t =    35.25s     Check for interrupting elements affecting "world-play" Button
+    t =    35.30s     Synthesize event
+    t =    35.31s         Find the "world-play" Button
+    t =    35.37s         Find the "world-play" Button
+    t =    35.52s         Find the "world-play" Button
+    t =    35.95s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    35.96s Pressing Home button
+    t =    36.44s Open com.gavin0099.WorldGameplay
+    t =    36.45s     Activate com.gavin0099.WorldGameplay
+    t =    37.55s         Wait for com.gavin0099.WorldGameplay to idle
+    t =    37.68s Find the "playback-state" StaticText
+    t =    39.07s Added attachment named 'paused-passage'
+    t =    39.08s Tear Down
+Test Case '-[WorldGameplayTests.WorldGameplayTests testFoldGatePauseAndBackgroundFreezeTime]' passed (39.620 seconds).
+Test Case '-[WorldGameplayTests.WorldGameplayTests testMissingNextRetainsLastSceneWithoutInventingYears]' started.
+    t =     0.00s Start Test at 2026-10-23 18:03:36.563
+    t =     0.06s Set Up
+    t =     0.06s Open com.gavin0099.WorldGameplay
+    t =     0.06s     Launch com.gavin0099.WorldGameplay
+    t =     0.06s         Terminate com.gavin0099.WorldGameplay:36778
+2026-10-23 18:03:36.823 xcodebuild[36428:2256092] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-23 18:03:36.838 xcodebuild[36428:2256092] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-23 18:03:36.848 xcodebuild[36428:2256092] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-23 18:03:37.720 xcodebuild[36428:2256092] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-23 18:03:37.721 xcodebuild[36428:2256092] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-23 18:03:37.743 xcodebuild[36428:2256092] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     1.63s         Setting up automation session
+    t =     5.54s         Wait for com.gavin0099.WorldGameplay to idle
+    t =     7.70s Checking existence of `"world-records" Button`
+    t =     7.78s Find the "world-records" Button
+    t =     7.81s Find the "world-choice-team" Button
+    t =     7.84s Find the "world-choice-team" Button
+    t =     7.87s Find the "world-choice-team" Button
+    t =     7.94s Find the "world-choice-team" Button
+    t =     7.97s Checking existence of `"world-records" Button`
+    t =     8.00s Find the "world-records" Button
+    t =     8.03s Find the "world-choice-team" Button
+    t =     8.06s Find the "world-choice-team" Button
+    t =     8.09s Find the "world-choice-team" Button
+    t =     8.12s Find the "world-choice-team" Button
+    t =     8.15s Tap "world-choice-team" Button[0.50, 0.50]
+    t =     8.15s     Wait for com.gavin0099.WorldGameplay to idle
+    t =     8.15s     Find the "world-choice-team" Button
+    t =     8.17s     Check for interrupting elements affecting "world-choice-team" Button
+    t =     8.21s     Synthesize event
+    t =     8.21s         Find the "world-choice-team" Button
+    t =     8.23s         Find the "world-choice-team" Button
+    t =     8.26s         Find the "world-choice-team" Button
+    t =     8.57s     Wait for com.gavin0099.WorldGameplay to idle
+    t =     8.58s Checking existence of `"world-records" Button`
+    t =     8.61s Find the "world-records" Button
+    t =     8.65s Find the "world-next" Button
+    t =     8.70s Find the "world-next" Button
+    t =     8.73s Find the "world-next" Button
+    t =     8.77s Find the "world-next" Button
+    t =     8.81s Checking existence of `"world-records" Button`
+    t =     8.83s Find the "world-records" Button
+    t =     8.87s Find the "world-next" Button
+    t =     8.91s Find the "world-next" Button
+    t =     8.94s Find the "world-next" Button
+    t =     8.97s Find the "world-next" Button
+    t =     9.01s Tap "world-next" Button[0.50, 0.50]
+    t =     9.01s     Wait for com.gavin0099.WorldGameplay to idle
+    t =     9.01s     Find the "world-next" Button
+    t =     9.05s     Check for interrupting elements affecting "world-next" Button
+    t =     9.08s     Synthesize event
+    t =     9.09s         Find the "world-next" Button
+    t =     9.12s         Find the "world-next" Button
+    t =     9.16s         Find the "world-next" Button
+    t =     9.48s     Wait for com.gavin0099.WorldGameplay to idle
+    t =     9.48s Find the "world-error" StaticText
+    t =     9.51s Find the "year" StaticText
+    t =     9.54s Find the "scene-state" StaticText
+    t =     9.56s Checking existence of `"world-next" Button`
+    t =    10.71s Added attachment named 'missing-next-beat'
+    t =    10.71s Tear Down
+Test Case '-[WorldGameplayTests.WorldGameplayTests testMissingNextRetainsLastSceneWithoutInventingYears]' passed (10.955 seconds).
+Test Case '-[WorldGameplayTests.WorldGameplayTests testMissingRouteDoesNotProduceLifeAndCanRestart]' started.
+    t =     0.00s Start Test at 2026-10-23 18:03:47.518
+    t =     0.02s Set Up
+    t =     0.02s Open com.gavin0099.WorldGameplay
+    t =     0.03s     Launch com.gavin0099.WorldGameplay
+    t =     0.03s         Terminate com.gavin0099.WorldGameplay:36928
+2026-10-23 18:03:47.565 xcodebuild[36428:2256092] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-23 18:03:47.565 xcodebuild[36428:2256092] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-23 18:03:47.566 xcodebuild[36428:2256092] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-23 18:03:48.601 xcodebuild[36428:2256092] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-23 18:03:48.601 xcodebuild[36428:2256092] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-23 18:03:48.606 xcodebuild[36428:2256092] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     1.30s         Setting up automation session
+    t =     3.58s         Wait for com.gavin0099.WorldGameplay to idle
+    t =     4.93s Checking existence of `"world-records" Button`
+    t =     5.03s Find the "world-records" Button
+    t =     5.06s Find the "world-choice-team" Button
+    t =     5.10s Find the "world-choice-team" Button
+    t =     5.15s Find the "world-choice-team" Button
+    t =     5.24s Find the "world-choice-team" Button
+    t =     5.28s Checking existence of `"world-records" Button`
+    t =     5.31s Find the "world-records" Button
+    t =     5.35s Find the "world-choice-team" Button
+    t =     5.38s Find the "world-choice-team" Button
+    t =     5.44s Find the "world-choice-team" Button
+    t =     5.48s Find the "world-choice-team" Button
+    t =     5.51s Tap "world-choice-team" Button[0.50, 0.50]
+    t =     5.52s     Wait for com.gavin0099.WorldGameplay to idle
+    t =     5.52s     Find the "world-choice-team" Button
+    t =     5.55s     Check for interrupting elements affecting "world-choice-team" Button
+    t =     5.57s     Synthesize event
+    t =     5.58s         Find the "world-choice-team" Button
+    t =     5.61s         Find the "world-choice-team" Button
+    t =     5.64s         Find the "world-choice-team" Button
+    t =     5.95s     Wait for com.gavin0099.WorldGameplay to idle
+    t =     5.96s Find the "world-error" StaticText
+    t =     5.99s Find the "identity" StaticText
+    t =     6.02s Find the "scene-state" StaticText
+    t =     7.17s Added attachment named 'missing-route'
+    t =     7.18s Tap "world-records" Button
+    t =     7.18s     Wait for com.gavin0099.WorldGameplay to idle
+    t =     7.18s     Find the "world-records" Button
+    t =     7.21s     Check for interrupting elements affecting "world-records" Button
+    t =     7.24s     Synthesize event
+    t =     7.53s     Wait for com.gavin0099.WorldGameplay to idle
+    t =     7.71s Checking existence of `"這段人生還沒有選擇紀錄。" StaticText`
+    t =     7.75s Tap "close-world-detail" Button
+    t =     7.75s     Wait for com.gavin0099.WorldGameplay to idle
+    t =     8.23s     Find the "close-world-detail" Button
+    t =     8.26s     Check for interrupting elements affecting "close-world-detail" Button
+    t =     8.29s     Synthesize event
+    t =     8.59s     Wait for com.gavin0099.WorldGameplay to idle
+    t =     8.93s Checking existence of `"world-records" Button`
+    t =     8.97s Find the "world-records" Button
+    t =     8.99s Find the "world-restart" Button
+    t =     9.02s Find the "world-restart" Button
+    t =     9.05s Find the "world-restart" Button
+    t =     9.08s Find the "world-restart" Button
+    t =     9.11s Checking existence of `"world-restart" Button`
+    t =     9.13s Find the "world-restart" Button
+    t =     9.15s Swipe up Target Application 'com.gavin0099.WorldGameplay'
+    t =     9.15s     Wait for com.gavin0099.WorldGameplay to idle
+    t =     9.16s     Find the Target Application 'com.gavin0099.WorldGameplay'
+    t =     9.17s     Check for interrupting elements affecting "人生岔路" Application
+    t =     9.20s     Synthesize event
+    t =     9.62s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    10.11s Checking existence of `"world-records" Button`
+    t =    10.14s Find the "world-records" Button
+    t =    10.16s Find the "world-restart" Button
+    t =    10.19s Find the "world-restart" Button
+    t =    10.21s Find the "world-restart" Button
+    t =    10.24s Find the "world-restart" Button
+    t =    10.26s Checking existence of `"world-records" Button`
+    t =    10.28s Find the "world-records" Button
+    t =    10.31s Find the "world-restart" Button
+    t =    10.33s Find the "world-restart" Button
+    t =    10.36s Find the "world-restart" Button
+    t =    10.38s Find the "world-restart" Button
+    t =    10.40s Tap "world-restart" Button[0.50, 0.50]
+    t =    10.40s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    10.41s     Find the "world-restart" Button
+    t =    10.43s     Check for interrupting elements affecting "world-restart" Button
+    t =    10.45s     Synthesize event
+    t =    10.45s         Find the "world-restart" Button
+    t =    10.48s         Find the "world-restart" Button
+    t =    10.50s         Find the "world-restart" Button
+    t =    10.80s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    10.81s Checking existence of `"world-records" Button`
+    t =    10.83s Find the "world-records" Button
+    t =    10.85s Find the "world-choice-help" Button
+    t =    10.88s Find the "world-choice-help" Button
+    t =    10.91s Find the "world-choice-help" Button
+    t =    10.94s Find the "world-choice-help" Button
+    t =    10.96s Checking existence of `"world-records" Button`
+    t =    10.98s Find the "world-records" Button
+    t =    11.01s Find the "world-choice-help" Button
+    t =    11.04s Find the "world-choice-help" Button
+    t =    11.06s Find the "world-choice-help" Button
+    t =    11.08s Find the "world-choice-help" Button
+    t =    11.11s Tap "world-choice-help" Button[0.50, 0.50]
+    t =    11.11s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    11.11s     Find the "world-choice-help" Button
+    t =    11.14s     Check for interrupting elements affecting "world-choice-help" Button
+    t =    11.16s     Synthesize event
+    t =    11.17s         Find the "world-choice-help" Button
+    t =    11.19s         Find the "world-choice-help" Button
+    t =    11.22s         Find the "world-choice-help" Button
+    t =    11.53s     Wait for com.gavin0099.WorldGameplay to idle
+    t =    11.53s Find the "scene-state" StaticText
+    t =    11.57s Tear Down
+Test Case '-[WorldGameplayTests.WorldGameplayTests testMissingRouteDoesNotProduceLifeAndCanRestart]' passed (11.840 seconds).
+Test Suite 'WorldGameplayTests' passed at 2026-10-23 18:03:59.359.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 62.415 (62.438) seconds
+Test Suite 'WorldGameplayTests.xctest' passed at 2026-10-23 18:03:59.359.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 62.415 (62.439) seconds
+Test Suite 'Selected tests' passed at 2026-10-23 18:03:59.359.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 62.415 (62.445) seconds
+2026-10-23 18:03:59.401 xcodebuild[36428:2256092] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-23 18:03:59.402 xcodebuild[36428:2256092] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-23 18:03:59.402 xcodebuild[36428:2256092] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-23 18:03:59.449 xcodebuild[36428:2256092] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-23 18:03:59.449 xcodebuild[36428:2256092] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-23 18:03:59.453 xcodebuild[36428:2256092] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-23 18:03:59.746 xcodebuild[36428:2256092] [MT] IDETestOperationsObserverDebug: 107.676 elapsed -- Testing started completed.
+2026-10-23 18:03:59.746 xcodebuild[36428:2256092] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-23 18:03:59.746 xcodebuild[36428:2256092] [MT] IDETestOperationsObserverDebug: 107.676 sec, +107.676 sec -- end
+
+Test session results, code coverage, and logs:
+	/tmp/lc-gs-standard-v6.xcresult
+
+** TEST SUCCEEDED **
+
+Testing started
+Deleted temporary Simulator: 6904978D-E1C7-4F99-B88A-9168F101083E

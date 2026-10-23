@@ -1,0 +1,80 @@
+{
+  "policy": "Delete exactly the temporary device created for each run, including failures. Evidence remains outside device. Other devices untouched.",
+  "owned_runs": [
+    {
+      "device_id": "54146F5B-2471-476E-A527-DB4F6ED97C48",
+      "run": "standard-v4",
+      "deleted_logged": true,
+      "absent_from_inventory": true
+    },
+    {
+      "device_id": "191EAE5D-B486-4351-A62D-C430E2CCC06B",
+      "run": "standard-v5",
+      "deleted_logged": true,
+      "absent_from_inventory": true
+    },
+    {
+      "device_id": "6904978D-E1C7-4F99-B88A-9168F101083E",
+      "run": "standard-v6",
+      "deleted_logged": true,
+      "absent_from_inventory": true
+    },
+    {
+      "device_id": "90F528FA-FC7C-4E7A-87EC-C1D045802777",
+      "run": "standard-v2",
+      "deleted_logged": true,
+      "absent_from_inventory": true
+    },
+    {
+      "device_id": "9A6D05AF-5D33-4316-AF74-77C101D5AE3A",
+      "run": "standard-v3",
+      "deleted_logged": true,
+      "absent_from_inventory": true
+    },
+    {
+      "device_id": "5AD30EE7-1A88-4D17-8D52-B15306EDF7B4",
+      "run": "standard-v1",
+      "deleted_logged": true,
+      "absent_from_inventory": true
+    },
+    {
+      "device_id": "539AB34B-2188-4B69-9B65-A2EB2348D4F3",
+      "run": "simulator-lifecycle",
+      "deleted_logged": true,
+      "absent_from_inventory": true
+    },
+    {
+      "device_id": "83C3A801-AD5B-487F-8153-B8CAD3B1CE68",
+      "run": "simulator-lifecycle",
+      "deleted_logged": true,
+      "absent_from_inventory": true
+    },
+    {
+      "device_id": "D4C57C1E-964F-4E1A-BCBE-B82A0F60B504",
+      "run": "narrow-v1",
+      "deleted_logged": true,
+      "absent_from_inventory": true
+    },
+    {
+      "device_id": "6BF8B50F-52CE-4225-A0A9-491B74BDB8CB",
+      "run": "narrow-v2",
+      "deleted_logged": true,
+      "absent_from_inventory": true
+    },
+    {
+      "device_id": "7C5C34A7-8B37-442A-BC8B-3E8418E23703",
+      "run": "narrow-v3",
+      "deleted_logged": true,
+      "absent_from_inventory": true
+    },
+    {
+      "device_id": "B67AD67B-8F3E-4A31-B9BE-78A45BF03C1F",
+      "run": "narrow-v4",
+      "deleted_logged": true,
+      "absent_from_inventory": true
+    }
+  ],
+  "all_owned_devices_deleted": true,
+  "cleanup_integration_tests": 2,
+  "uncatchable_termination_not_guaranteed": true
+}

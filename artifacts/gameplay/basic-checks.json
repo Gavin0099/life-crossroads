@@ -1,0 +1,95 @@
+{
+  "generated_at": "2026-10-23T10:38:17.282211+00:00",
+  "profile": "basic",
+  "ok": true,
+  "checks": [
+    {
+      "name": "framework-pin",
+      "status": "PASS",
+      "exit_code": 0,
+      "command": [
+        "/Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/.venv/bin/python",
+        "-c",
+        "import json, pathlib, subprocess\nlock = json.loads(pathlib.Path('governance/framework.lock.json').read_text())\nhead = subprocess.check_output(['git','-C','additional/ai-governance-framework','rev-parse','HEAD'],text=True).strip()\nurl = subprocess.check_output(['git','config','-f','.gitmodules','submodule.additional/ai-governance-framework.url'],text=True).strip()\nif head != lock['adopted_commit']:\n    raise SystemExit('framework lock/checkout mismatch')\nif url != lock['framework_repo']:\n    raise SystemExit('framework source mismatch')\nprint(head)\n"
+      ],
+      "output": "artifacts/governance/basic/framework-pin.log"
+    },
+    {
+      "name": "version-compatibility",
+      "status": "PASS",
+      "exit_code": 0,
+      "command": [
+        "/Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/.venv/bin/python",
+        "-m",
+        "governance_tools.governance_version_check",
+        "--required-versions",
+        "/Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/additional/ai-governance-framework/governance/runtime/required_versions.yaml",
+        "--version-manifest",
+        "/Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/.governance/version_manifest.yaml",
+        "--write-artifact",
+        "/Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/artifacts/governance/basic/version_compatibility.json",
+        "--json"
+      ],
+      "output": "artifacts/governance/basic/version-compatibility.log"
+    },
+    {
+      "name": "drift",
+      "status": "PASS",
+      "exit_code": 0,
+      "command": [
+        "/Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/.venv/bin/python",
+        "-m",
+        "governance_tools.governance_drift_checker",
+        "--repo",
+        "/Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads",
+        "--framework-root",
+        "/Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/additional/ai-governance-framework",
+        "--format",
+        "human"
+      ],
+      "output": "artifacts/governance/basic/drift.log"
+    },
+    {
+      "name": "config-syntax",
+      "status": "PASS",
+      "exit_code": 0,
+      "command": [
+        "/Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/.venv/bin/python",
+        "-c",
+        "import json\nfrom pathlib import Path\nimport yaml\nfor path in [Path('contract.yaml'), Path('.governance/version_manifest.yaml'), *Path('.github/workflows').glob('*.yml')]:\n    yaml.safe_load(path.read_text())\nfor path in [Path('governance/framework.lock.json'), *Path('.github/hooks').glob('*.json')]:\n    json.loads(path.read_text())\nprint('Project YAML and JSON parsed successfully')\n"
+      ],
+      "output": "artifacts/governance/basic/config-syntax.log"
+    },
+    {
+      "name": "shell-syntax",
+      "status": "PASS",
+      "exit_code": 0,
+      "command": [
+        "bash",
+        "-n",
+        "scripts/governance-setup.sh",
+        "scripts/governance-check.sh"
+      ],
+      "output": "artifacts/governance/basic/shell-syntax.log"
+    },
+    {
+      "name": "python-syntax",
+      "status": "PASS",
+      "exit_code": 0,
+      "command": [
+        "/Users/macminim4/.codex/worktrees/visual-lv00-lv01/life-crossroads/.venv/bin/python",
+        "-c",
+        "import ast\nfrom pathlib import Path\nfor path in [*Path('scripts').glob('*.py'), *Path('.github/hooks').glob('*.py')]:\n    ast.parse(path.read_text(), filename=str(path))\nprint('Project Python sources parsed successfully')\n"
+      ],
+      "output": "artifacts/governance/basic/python-syntax.log"
+    }
+  ],
+  "not_claimed": [
+    "real Codex lifecycle enforcement",
+    "remote CI success",
+    "real commit/push trigger",
+    "game correctness",
+    "child suitability",
+    "iPhone acceptance"
+  ]
+}

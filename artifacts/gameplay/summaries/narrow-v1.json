@@ -1,0 +1,52 @@
+{
+  "devicesAndConfigurations" : [
+    {
+      "device" : {
+        "architecture" : "arm64",
+        "deviceId" : "D4C57C1E-964F-4E1A-BCBE-B82A0F60B504",
+        "deviceName" : "LC UI temporary bb8e8587",
+        "modelName" : "iPhone SE (3rd generation)",
+        "osBuildNumber" : "24A434",
+        "osVersion" : "27.0",
+        "platform" : "iOS Simulator"
+      },
+      "expectedFailures" : 0,
+      "failedTests" : 1,
+      "passedTests" : 5,
+      "skippedTests" : 0,
+      "testPlanConfiguration" : {
+        "configurationId" : "1",
+        "configurationName" : "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription" : "WorldGameplay · Built with macOS 27.0",
+  "expectedFailures" : 0,
+  "failedTests" : 1,
+  "finishTime" : 1792746653.006,
+  "passedTests" : 5,
+  "result" : "Failed",
+  "runtimeWarnings" : [
+
+  ],
+  "skippedTests" : 0,
+  "startTime" : 1792746403.837,
+  "statistics" : [
+
+  ],
+  "testFailures" : [
+    {
+      "failureText" : "failed - Cannot reveal world-choice-help",
+      "targetName" : "WorldGameplayTests",
+      "testIdentifier" : 3,
+      "testIdentifierString" : "WorldGameplayTests/testLargestTextAndReducedMotionKeepChoiceAndDetailReachable()",
+      "testIdentifierURL" : "test://com.apple.xcode/WorldGameplay/WorldGameplayTests/WorldGameplayTests/testLargestTextAndReducedMotionKeepChoiceAndDetailReachable",
+      "testName" : "testLargestTextAndReducedMotionKeepChoiceAndDetailReachable()"
+    }
+  ],
+  "title" : "Test - WorldGameplay",
+  "topInsights" : [
+
+  ],
+  "totalTestCount" : 6
+}
