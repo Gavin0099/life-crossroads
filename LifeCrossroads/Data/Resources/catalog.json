@@ -1,7 +1,7 @@
 {
-  "schemaVersion": 1,
-  "dataVersion": "lc01-data-1",
-  "contentVersion": "lc02-story-1",
+  "schemaVersion": 2,
+  "dataVersion": "lc01-data-2",
+  "contentVersion": "lc02-story-2",
   "referenceYear": 2023,
   "sources": [
     {
@@ -48,9 +48,15 @@
     },
     {
       "id": "household-scenarios",
+      "version": "2",
+      "statement": "兩個具穩定templateID的虛構家庭：互助共用模板初始健康66、財務35、人際65、技能20；獨用通勤模板初始健康64、財務60、人際50、技能20。所有國家沿用完全相同的模板數值，國名及排序不參與初始資源。",
+      "limitation": "這些初始狀態是具名設計案例，不是家庭聯合分布、典型家庭或醫學因果；沒有真實發生頻率，不能用於國家排名。"
+    },
+    {
+      "id": "learning-channels",
       "version": "1",
-      "statement": "每國兩個刻意對比的虛構家庭：設備、交通、成人照顧安排、材料及初始資源皆為手工情境；不抽樣國家平均值。",
-      "limitation": "不是家庭聯合分布、不代表典型家庭、沒有真實發生頻率；兩種情境可存在於任何國家，不能用於國家排名。"
+      "statement": "數位依賴逐選項明列。線上圖解、遠距課程使用數位情境規則；紙本創作、面對面練習與社區老師路線不讀取網路/電力比例，仍依交通、材料與協助計成本。",
+      "limitation": "相同技能目標有不同途徑；數位人口比例不能限制本來不需要上網的活動。離線途徑的成本/效果也是設計假設。"
     },
     {
       "id": "life-stages",
@@ -305,6 +311,7 @@
     {
       "id": "twn-1",
       "countryCode": "TWN",
+      "templateID": "shared-equipment-near-support",
       "label": "台灣・虛構家庭1：共用設備、近處互助、家人輪班",
       "deviceAccess": "shared",
       "travelCost": 0,
@@ -312,7 +319,7 @@
       "mentorSupport": 2,
       "materialBudget": 2,
       "initialResources": {
-        "health": 65,
+        "health": 66,
         "financial": 35,
         "relationships": 65,
         "skills": 20
@@ -324,6 +331,7 @@
     {
       "id": "twn-2",
       "countryCode": "TWN",
+      "templateID": "own-equipment-long-commute",
       "label": "台灣・虛構家庭2：獨用設備、較遠通勤、收入較穩",
       "deviceAccess": "own",
       "travelCost": 1,
@@ -331,7 +339,7 @@
       "mentorSupport": 1,
       "materialBudget": 4,
       "initialResources": {
-        "health": 65,
+        "health": 64,
         "financial": 60,
         "relationships": 50,
         "skills": 20
@@ -343,6 +351,7 @@
     {
       "id": "jpn-1",
       "countryCode": "JPN",
+      "templateID": "shared-equipment-near-support",
       "label": "日本・虛構家庭1：共用設備、近處互助、家人輪班",
       "deviceAccess": "shared",
       "travelCost": 0,
@@ -362,6 +371,7 @@
     {
       "id": "jpn-2",
       "countryCode": "JPN",
+      "templateID": "own-equipment-long-commute",
       "label": "日本・虛構家庭2：獨用設備、較遠通勤、收入較穩",
       "deviceAccess": "own",
       "travelCost": 1,
@@ -369,7 +379,7 @@
       "mentorSupport": 1,
       "materialBudget": 4,
       "initialResources": {
-        "health": 66,
+        "health": 64,
         "financial": 60,
         "relationships": 50,
         "skills": 20
@@ -381,6 +391,7 @@
     {
       "id": "usa-1",
       "countryCode": "USA",
+      "templateID": "shared-equipment-near-support",
       "label": "美國・虛構家庭1：共用設備、近處互助、家人輪班",
       "deviceAccess": "shared",
       "travelCost": 0,
@@ -388,7 +399,7 @@
       "mentorSupport": 2,
       "materialBudget": 2,
       "initialResources": {
-        "health": 67,
+        "health": 66,
         "financial": 35,
         "relationships": 65,
         "skills": 20
@@ -400,6 +411,7 @@
     {
       "id": "usa-2",
       "countryCode": "USA",
+      "templateID": "own-equipment-long-commute",
       "label": "美國・虛構家庭2：獨用設備、較遠通勤、收入較穩",
       "deviceAccess": "own",
       "travelCost": 1,
@@ -407,7 +419,7 @@
       "mentorSupport": 1,
       "materialBudget": 4,
       "initialResources": {
-        "health": 67,
+        "health": 64,
         "financial": 60,
         "relationships": 50,
         "skills": 20
@@ -419,6 +431,7 @@
     {
       "id": "deu-1",
       "countryCode": "DEU",
+      "templateID": "shared-equipment-near-support",
       "label": "德國・虛構家庭1：共用設備、近處互助、家人輪班",
       "deviceAccess": "shared",
       "travelCost": 0,
@@ -426,7 +439,7 @@
       "mentorSupport": 2,
       "materialBudget": 2,
       "initialResources": {
-        "health": 65,
+        "health": 66,
         "financial": 35,
         "relationships": 65,
         "skills": 20
@@ -438,6 +451,7 @@
     {
       "id": "deu-2",
       "countryCode": "DEU",
+      "templateID": "own-equipment-long-commute",
       "label": "德國・虛構家庭2：獨用設備、較遠通勤、收入較穩",
       "deviceAccess": "own",
       "travelCost": 1,
@@ -445,7 +459,7 @@
       "mentorSupport": 1,
       "materialBudget": 4,
       "initialResources": {
-        "health": 65,
+        "health": 64,
         "financial": 60,
         "relationships": 50,
         "skills": 20
@@ -457,6 +471,7 @@
     {
       "id": "ind-1",
       "countryCode": "IND",
+      "templateID": "shared-equipment-near-support",
       "label": "印度・虛構家庭1：共用設備、近處互助、家人輪班",
       "deviceAccess": "shared",
       "travelCost": 0,
@@ -476,6 +491,7 @@
     {
       "id": "ind-2",
       "countryCode": "IND",
+      "templateID": "own-equipment-long-commute",
       "label": "印度・虛構家庭2：獨用設備、較遠通勤、收入較穩",
       "deviceAccess": "own",
       "travelCost": 1,
@@ -483,7 +499,7 @@
       "mentorSupport": 1,
       "materialBudget": 4,
       "initialResources": {
-        "health": 66,
+        "health": 64,
         "financial": 60,
         "relationships": 50,
         "skills": 20
@@ -495,6 +511,7 @@
     {
       "id": "bra-1",
       "countryCode": "BRA",
+      "templateID": "shared-equipment-near-support",
       "label": "巴西・虛構家庭1：共用設備、近處互助、家人輪班",
       "deviceAccess": "shared",
       "travelCost": 0,
@@ -502,7 +519,7 @@
       "mentorSupport": 2,
       "materialBudget": 2,
       "initialResources": {
-        "health": 67,
+        "health": 66,
         "financial": 35,
         "relationships": 65,
         "skills": 20
@@ -514,6 +531,7 @@
     {
       "id": "bra-2",
       "countryCode": "BRA",
+      "templateID": "own-equipment-long-commute",
       "label": "巴西・虛構家庭2：獨用設備、較遠通勤、收入較穩",
       "deviceAccess": "own",
       "travelCost": 1,
@@ -521,7 +539,7 @@
       "mentorSupport": 1,
       "materialBudget": 4,
       "initialResources": {
-        "health": 67,
+        "health": 64,
         "financial": 60,
         "relationships": 50,
         "skills": 20
@@ -533,6 +551,7 @@
     {
       "id": "vnm-1",
       "countryCode": "VNM",
+      "templateID": "shared-equipment-near-support",
       "label": "越南・虛構家庭1：共用設備、近處互助、家人輪班",
       "deviceAccess": "shared",
       "travelCost": 0,
@@ -540,7 +559,7 @@
       "mentorSupport": 2,
       "materialBudget": 2,
       "initialResources": {
-        "health": 65,
+        "health": 66,
         "financial": 35,
         "relationships": 65,
         "skills": 20
@@ -552,6 +571,7 @@
     {
       "id": "vnm-2",
       "countryCode": "VNM",
+      "templateID": "own-equipment-long-commute",
       "label": "越南・虛構家庭2：獨用設備、較遠通勤、收入較穩",
       "deviceAccess": "own",
       "travelCost": 1,
@@ -559,7 +579,7 @@
       "mentorSupport": 1,
       "materialBudget": 4,
       "initialResources": {
-        "health": 65,
+        "health": 64,
         "financial": 60,
         "relationships": 50,
         "skills": 20
@@ -571,6 +591,7 @@
     {
       "id": "ken-1",
       "countryCode": "KEN",
+      "templateID": "shared-equipment-near-support",
       "label": "肯亞・虛構家庭1：共用設備、近處互助、家人輪班",
       "deviceAccess": "shared",
       "travelCost": 0,
@@ -590,6 +611,7 @@
     {
       "id": "ken-2",
       "countryCode": "KEN",
+      "templateID": "own-equipment-long-commute",
       "label": "肯亞・虛構家庭2：獨用設備、較遠通勤、收入較穩",
       "deviceAccess": "own",
       "travelCost": 1,
@@ -597,7 +619,7 @@
       "mentorSupport": 1,
       "materialBudget": 4,
       "initialResources": {
-        "health": 66,
+        "health": 64,
         "financial": 60,
         "relationships": 50,
         "skills": 20
@@ -630,11 +652,12 @@
             "relationships": 0,
             "skills": 4
           },
-          "requiresDigitalAccess": true,
+          "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "agency"
+            "agency",
+            "learning-channels"
           ]
         },
         {
@@ -704,11 +727,12 @@
             "relationships": 0,
             "skills": 4
           },
-          "requiresDigitalAccess": true,
+          "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "agency"
+            "agency",
+            "learning-channels"
           ]
         },
         {
@@ -778,11 +802,12 @@
             "relationships": 0,
             "skills": 4
           },
-          "requiresDigitalAccess": true,
+          "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "agency"
+            "agency",
+            "learning-channels"
           ]
         },
         {
@@ -839,7 +864,7 @@
       "choices": [
         {
           "id": "invest",
-          "title": "投入時間一起學習",
+          "title": "用線上圖解製作互動作品",
           "kind": "learn",
           "control": "personal",
           "minimumAge": 0,
@@ -856,7 +881,31 @@
           "delayedHook": "reconnect",
           "assumptionIDs": [
             "choice-effects",
-            "agency"
+            "agency",
+            "learning-channels"
+          ]
+        },
+        {
+          "id": "offline",
+          "title": "向社區老師借紙本圖解，一起練習",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 1,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 3
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "learning-channels",
+            "support-network"
           ]
         },
         {
@@ -913,7 +962,7 @@
       "choices": [
         {
           "id": "invest",
-          "title": "投入時間一起學習",
+          "title": "參加需要連網的遠距課程",
           "kind": "learn",
           "control": "personal",
           "minimumAge": 0,
@@ -930,7 +979,31 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "agency"
+            "agency",
+            "learning-channels"
+          ]
+        },
+        {
+          "id": "offline",
+          "title": "向社區老師借紙本圖解，一起練習",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 1,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 3
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "learning-channels",
+            "support-network"
           ]
         },
         {
@@ -1000,11 +1073,12 @@
             "relationships": 0,
             "skills": 4
           },
-          "requiresDigitalAccess": true,
+          "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "agency"
+            "agency",
+            "learning-channels"
           ]
         },
         {
@@ -1061,7 +1135,7 @@
       "choices": [
         {
           "id": "invest",
-          "title": "投入時間一起學習",
+          "title": "投入線上進修課程",
           "kind": "learn",
           "control": "personal",
           "minimumAge": 0,
@@ -1078,7 +1152,31 @@
           "delayedHook": "reconnect",
           "assumptionIDs": [
             "choice-effects",
-            "agency"
+            "agency",
+            "learning-channels"
+          ]
+        },
+        {
+          "id": "offline",
+          "title": "向社區老師借紙本圖解，一起練習",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 1,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 3
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "learning-channels",
+            "support-network"
           ]
         },
         {
@@ -1152,7 +1250,8 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "agency"
+            "agency",
+            "learning-channels"
           ]
         },
         {
@@ -1226,7 +1325,8 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "agency"
+            "agency",
+            "learning-channels"
           ]
         },
         {
@@ -1283,7 +1383,7 @@
       "choices": [
         {
           "id": "invest",
-          "title": "投入時間一起學習",
+          "title": "用遠距課程學新技能",
           "kind": "learn",
           "control": "personal",
           "minimumAge": 0,
@@ -1300,7 +1400,31 @@
           "delayedHook": "reconnect",
           "assumptionIDs": [
             "choice-effects",
-            "agency"
+            "agency",
+            "learning-channels"
+          ]
+        },
+        {
+          "id": "offline",
+          "title": "向社區老師借紙本圖解，一起練習",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 1,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 3
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "choice-effects",
+            "learning-channels",
+            "support-network"
           ]
         },
         {
@@ -1374,7 +1498,8 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "agency"
+            "agency",
+            "learning-channels"
           ]
         },
         {
@@ -1448,7 +1573,8 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "agency"
+            "agency",
+            "learning-channels"
           ]
         },
         {
@@ -1522,7 +1648,8 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "agency"
+            "agency",
+            "learning-channels"
           ]
         },
         {
@@ -1596,7 +1723,8 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "agency"
+            "agency",
+            "learning-channels"
           ]
         },
         {
@@ -1670,7 +1798,8 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "agency"
+            "agency",
+            "learning-channels"
           ]
         },
         {

@@ -58,7 +58,10 @@ struct CrossroadsView: View {
             .sheet(isPresented: $showTrace) {
                 if let trace = store.session?.traces.last {
                     DetailSheet(title: "為什麼會這樣？", closeID: "closeTrace") {
-                        Text("選擇、環境、他人與運氣共同參與這個結果。").font(.headline)
+                        Text(trace.influenceSummary).font(.headline).accessibilityIdentifier("actualInfluences")
+                        if trace.randomTrial?.occurred == false {
+                            Text("這次有檢查機會事件，但未觸發額外後果。").font(.footnote)
+                        }
                         ForEach(Array(trace.explanation.enumerated()), id: \.offset) { _, line in
                             Text(line).padding(.vertical, 5)
                         }
@@ -75,6 +78,11 @@ struct CrossroadsView: View {
             .sheet(item: $comparisonPresentation) { presentation in
                 DetailSheet(title: "換一個環境呢？", closeID: "closeComparison") {
                     Text("先固定同一項選擇、家庭情境、過去資源和運氣種子，看看不同背景的成本。").font(.headline)
+                    if let selected = presentation.traces.first {
+                        Text("比較的選擇：\(store.choiceTitle(selected))").accessibilityIdentifier("comparisonChoiceTitle")
+                    }
+                    Text("固定：選項、年齡、家庭模板、過去狀態與種子。改變：環境指標，以及由它產生的模型成本。")
+                        .font(.footnote)
                     ForEach(presentation.traces, id: \.countryCode) { trace in
                         VStack(alignment: .leading, spacing: 8) {
                             Text(store.name(trace.countryCode)).font(.title3.bold())
@@ -180,10 +188,15 @@ struct CrossroadsView: View {
                     .disabled(!preview.applied).accessibilityIdentifier("choice.\(choice.id)")
                 }
             }
-            Button("同一個投入選擇，換個環境呢？", systemImage: "arrow.triangle.branch") {
-                let traces = store.compare()
-                if !traces.isEmpty { comparisonPresentation = .init(traces: traces) }
-            }.font(.subheadline).accessibilityIdentifier("compareChoice")
+            Menu {
+                ForEach(event.choices, id: \.id) { choice in
+                    Button(choice.title) {
+                        let traces = store.compare(choiceID: choice.id)
+                        if !traces.isEmpty { comparisonPresentation = .init(traces: traces) }
+                    }.accessibilityIdentifier("compare.\(choice.id)")
+                }
+            } label: { Label("選一個行動，換個環境比較", systemImage: "arrow.triangle.branch") }
+                .font(.subheadline).accessibilityIdentifier("compareChoice")
             Text("選項先顯示基本代價與影響；環境、支持和機會也會參與結果。")
                 .font(.caption).foregroundStyle(.secondary)
         }

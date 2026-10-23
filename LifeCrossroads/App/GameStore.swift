@@ -55,9 +55,9 @@ final class GameStore: ObservableObject {
         guard let catalog, let session else { return nil }
         return try? session.preview(choiceID: choiceID, catalog: catalog)
     }
-    func compare() -> [ConsequenceTrace] {
+    func compare(choiceID: String) -> [ConsequenceTrace] {
         guard let catalog, let session else { return [] }
-        do { return try session.compare(choiceID: "invest", countryCodes: Self.firstCountries, catalog: catalog) }
+        do { return try session.compare(choiceID: choiceID, countryCodes: Self.firstCountries, catalog: catalog) }
         catch { errorMessage = "暫時無法比較：\(error)"; return [] }
     }
     func name(_ country: String) -> String { catalog?.countries.first { $0.code == country }?.name ?? country }

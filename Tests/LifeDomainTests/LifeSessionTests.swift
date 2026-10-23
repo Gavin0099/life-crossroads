@@ -7,7 +7,7 @@ final class LifeSessionTests: XCTestCase {
         let c = try StatisticsRepository.bundled()
         XCTAssertEqual(Set(EventNarratives.texts.keys), Set(c.decisions.map(\.id)))
         XCTAssertTrue(EventNarratives.texts.values.allSatisfy { $0.count >= 60 })
-        XCTAssertEqual(c.contentVersion, "lc02-story-1")
+        XCTAssertEqual(c.contentVersion, "lc02-story-2")
     }
     func testFourCountryEightFamilyPlaythroughsReachReviewAndCannotRepeat() throws {
         let c = try StatisticsRepository.bundled()
@@ -33,7 +33,8 @@ final class LifeSessionTests: XCTestCase {
     }
 
     func testUnavailableChoiceDoesNotAdvanceSessionAndRestRemainsPossible() throws {
-        let c = try StatisticsRepository.bundled()
+        var c = try StatisticsRepository.bundled()
+        c.decisions[0].choices[0].timeCost = 8 // Explicit unaffordable option, not a national restriction on an offline child activity.
         var session = try LifeSession.start(catalog: c, countryCode: "KEN", householdID: "ken-2", seed: 42)
         let original = session
         XCTAssertFalse(try session.preview(choiceID: "invest", catalog: c).applied)
@@ -49,10 +50,10 @@ final class LifeSessionTests: XCTestCase {
         let c = try StatisticsRepository.bundled()
         let session = try LifeSession.start(catalog: c, countryCode: "USA", householdID: "usa-2", seed: 42)
         let comparisons = try session.compare(choiceID: "invest", countryCodes: ["USA", "JPN", "IND", "KEN"], catalog: c)
-        XCTAssertEqual(comparisons.map(\.finalCost.time), [3, 4, 4, 5])
+        XCTAssertEqual(comparisons.map(\.finalCost.time), [3, 3, 3, 3])
         XCTAssertEqual(Set(comparisons.map(\.seed)), [42])
         XCTAssertTrue(comparisons.allSatisfy { $0.resourcesBefore == session.state.resources && $0.choiceID == "invest" })
-        XCTAssertEqual(comparisons.map(\.applied), [true, true, true, false])
+        XCTAssertEqual(comparisons.map(\.applied), [true, true, true, true])
         XCTAssertEqual(session.phase, .choosing)
         XCTAssertTrue(session.traces.isEmpty)
     }
@@ -70,6 +71,48 @@ final class LifeSessionTests: XCTestCase {
         var second = replay
         try second.choose("invest", catalog: c)
         XCTAssertEqual(second.traces.first, first.traces.first)
+    }
+
+    func testRestExplanationIncludesOnlyExecutedContribution() throws {
+        let c = try StatisticsRepository.bundled()
+        let session = try LifeSession.start(catalog: c, countryCode: "KEN", householdID: "ken-2", seed: 42)
+        let trace = try session.preview(choiceID: "rest", catalog: c)
+        XCTAssertTrue(trace.applied)
+        XCTAssertFalse(trace.observations.isEmpty) // Observed data alone is not a cause.
+        XCTAssertNil(trace.randomTrial)
+        XCTAssertEqual(trace.contributingInfluences, [.playerChoice])
+        XCTAssertFalse(trace.influenceSummary.contains("運氣"))
+        XCTAssertFalse(trace.influenceSummary.contains("環境條件"))
+        XCTAssertFalse(trace.influenceSummary.contains("他人的協助"))
+    }
+
+    func testUnsuccessfulRandomTrialIsNotListedAsContribution() throws {
+        let c = try StatisticsRepository.bundled()
+        var checked = false
+        for seed in UInt64(0)..<20 {
+            let session = try LifeSession.start(catalog: c, countryCode: "USA", householdID: "usa-2", seed: seed)
+            let trace = try session.preview(choiceID: "invest", catalog: c)
+            if trace.randomTrial?.occurred == false {
+                XCTAssertEqual(trace.contributingInfluences, [.playerChoice, .family, .otherPeople])
+                XCTAssertFalse(trace.influenceSummary.contains("機會事件"))
+                checked = true
+                break
+            }
+        }
+        XCTAssertTrue(checked)
+    }
+
+    func testComparisonUsesSelectedChoiceAndStableTemplateAfterFamilyReordering() throws {
+        var c = try StatisticsRepository.bundled()
+        let ken1 = try XCTUnwrap(c.households.firstIndex { $0.id == "ken-1" })
+        let ken2 = try XCTUnwrap(c.households.firstIndex { $0.id == "ken-2" })
+        c.households.swapAt(ken1, ken2)
+        let session = try LifeSession.start(catalog: c, countryCode: "USA", householdID: "usa-2", seed: 42)
+        let comparisons = try session.compare(choiceID: "rest", countryCodes: ["USA", "KEN"], catalog: c)
+        XCTAssertEqual(comparisons.map(\.householdID), ["usa-2", "ken-2"])
+        XCTAssertTrue(comparisons.allSatisfy { $0.choiceID == "rest" && $0.finalCost == Cost() })
+        XCTAssertTrue(comparisons.allSatisfy { $0.resourcesBefore == session.state.resources && $0.seed == 42 })
+        XCTAssertThrowsError(try session.compare(choiceID: "rest", countryCodes: ["TWN"], catalog: c))
     }
 
     func testDecodedCorruptSessionCannotIndexBeyondCatalog() throws {

@@ -109,6 +109,7 @@ public enum DeviceAccess: String, Codable, Sendable {
 public struct HouseholdProfile: Codable, Equatable, Sendable {
     public var id: String
     public var countryCode: String
+    public var templateID: String
     public var label: String
     public var deviceAccess: DeviceAccess
     public var travelCost: Int
@@ -117,6 +118,12 @@ public struct HouseholdProfile: Codable, Equatable, Sendable {
     public var materialBudget: Int
     public var initialResources: ResourceValues
     public var assumptionIDs: [String]
+
+    public func hasSameConditions(as other: Self) -> Bool {
+        templateID == other.templateID && deviceAccess == other.deviceAccess && travelCost == other.travelCost
+            && careLoad == other.careLoad && mentorSupport == other.mentorSupport
+            && materialBudget == other.materialBudget && initialResources == other.initialResources
+    }
 }
 
 public enum DecisionControl: String, Codable, Sendable {
@@ -163,7 +170,7 @@ public struct ModelCatalog: Codable, Equatable, Sendable {
     public var decisions: [DecisionSkeleton]
 
     public func validate() throws {
-        guard schemaVersion == 1, !dataVersion.isEmpty, !contentVersion.isEmpty,
+        guard schemaVersion == 2, !dataVersion.isEmpty, !contentVersion.isEmpty,
               (1960...2100).contains(referenceYear) else { throw ModelError.invalid("catalog version") }
         func unique(_ ids: [String]) throws {
             guard ids.allSatisfy({ !$0.isEmpty }), Set(ids).count == ids.count else {
@@ -175,7 +182,7 @@ public struct ModelCatalog: Codable, Equatable, Sendable {
         let sourceMap = Dictionary(uniqueKeysWithValues: sources.map { ($0.id, $0) })
         let assumptionSet = Set(assumptions.map(\.id))
         let ruleAssumptions: Set<String> = ["macro-friction", "household-scenarios", "life-stages", "agency",
-            "support-network", "choice-effects", "cost-fatigue", "luck-encouragement", "resource-bounds", "story-callback"]
+            "support-network", "choice-effects", "cost-fatigue", "luck-encouragement", "resource-bounds", "story-callback", "learning-channels"]
         guard ruleAssumptions.isSubset(of: assumptionSet) else { throw ModelError.missing("rule assumption") }
         func checkAssumptions(_ ids: [String]) throws {
             guard !ids.isEmpty, ids.allSatisfy(assumptionSet.contains) else {
@@ -214,14 +221,20 @@ public struct ModelCatalog: Codable, Equatable, Sendable {
                 }
             } else if c.gaps.isEmpty { throw ModelError.missing("blocked country gap") }
         }
+        var templates: [String: HouseholdProfile] = [:]
         for h in households {
             guard countries.contains(where: { $0.code == h.countryCode }),
                   (0...2).contains(h.travelCost), (0...2).contains(h.careLoad),
                   (0...2).contains(h.mentorSupport), (0...4).contains(h.materialBudget),
-                  !h.label.isEmpty else { throw ModelError.invalid("household") }
+                  !h.label.isEmpty, !h.templateID.isEmpty else { throw ModelError.invalid("household") }
             try h.initialResources.validate(in: 0...100)
             try checkAssumptions(h.assumptionIDs)
+            if let previous = templates[h.templateID], !h.hasSameConditions(as: previous) {
+                throw ModelError.invalid("inconsistent household template")
+            }
+            templates[h.templateID] = h
         }
+        for c in countries { try unique(households.filter { $0.countryCode == c.code }.map(\.templateID)) }
         var previousAge = -1
         for d in decisions {
             _ = try LifeStage.at(age: d.age)

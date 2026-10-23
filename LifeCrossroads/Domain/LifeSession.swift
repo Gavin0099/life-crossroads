@@ -49,15 +49,14 @@ public struct LifeSession: Codable, Equatable, Sendable {
     /// A model-only comparison: keep past state, Seed, choice and family template fixed; change contextual indicators.
     public func compare(choiceID: String, countryCodes: [String], catalog: ModelCatalog) throws -> [ConsequenceTrace] {
         let event = try event(catalog: catalog)
-        let currentFamilies = catalog.households.filter { $0.countryCode == state.countryCode }
-        guard let slot = currentFamilies.firstIndex(where: { $0.id == state.householdID }) else {
+        guard let current = catalog.households.first(where: { $0.id == state.householdID }) else {
             throw ModelError.missing("family comparison template")
         }
         return try countryCodes.map { code in
-            let families = catalog.households.filter { $0.countryCode == code }
-            guard slot < families.count else { throw ModelError.missing("comparable family") }
+            guard let family = catalog.households.first(where: { $0.countryCode == code && $0.templateID == current.templateID }),
+                  current.hasSameConditions(as: family) else { throw ModelError.missing("comparable family") }
             var alternative = state
-            alternative.countryCode = code; alternative.householdID = families[slot].id
+            alternative.countryCode = code; alternative.householdID = family.id
             return try DecisionResolver.resolve(state: alternative, eventID: event.id, choiceID: choiceID, catalog: catalog).trace
         }
     }

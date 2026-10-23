@@ -69,3 +69,14 @@
 - Validation boundary: PASS: artifacts/evidence/test-results/lc02-committed-swift.json -> exit_code=0, 31 XCTest; PASS: artifacts/evidence/test-results/lc02-ui-fixed.json -> exit_code=0, 1 full Simulator UI test including four comparison rows and 15 decisions. Expected regression failure preserved: artifacts/evidence/test-results/lc02-ui-regression-before.json -> exit_code=143 after test assertion failed and Xcode was terminated during repeated graph resolution. Screenshots: artifacts/evidence/lc02/.
 - Next action: 推送獨立LC-02草稿PR並驗證CI；接實體iPhone後做操作、閱讀節奏與兒少試玩，LC-02維持驗收中。
 - PLAN reconciliation: `updated`
+
+<!-- memory_record_projection:review-log:f9113d82b84b124644391c23cae314a047cc5e92dc7e78184b9482ec5d9f8121 -->
+### Canonical memory checkpoint — PR1-review-2026-10-23
+
+- Writer: `governance_tools.memory_record`
+- Record identity: `f9113d82b84b124644391c23cae314a047cc5e92dc7e78184b9482ec5d9f8121`
+- Commit binding: `7cdce97` (bound)
+- Record: 回應Review 5624913571，移除國家index健康；加入templateID與一致性驗證，逐選項數位依賴，8歲四國家庭二時間均3。schema2/data2/engine2，原統計bytes不變。新回歸測試先證實舊缺陷後通過。
+- Validation boundary: PASS: artifacts/evidence/test-results/pr1-review-committed.json -> exit_code=0, 29 Swift tests; PASS: artifacts/evidence/test-results/pr1-model-review-python.json -> exit_code=0, 3 Python tests. Pre-fix failures: artifacts/evidence/review/pr1-before-python.txt and pr1-before-swift.txt.
+- Next action: 推回PR #1並同步PR #2，修正實際因素摘要及指定選擇比較，再讓Visual與內容Agent並行。不得合併PR。
+- PLAN reconciliation: `updated`

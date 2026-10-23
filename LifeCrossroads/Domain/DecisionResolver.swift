@@ -64,6 +64,9 @@ public enum DecisionResolver {
             adjust("family.device", .family, .init(time: h.deviceAccess.schedulingCost),
                    ["deviceScheduling": Double(h.deviceAccess.schedulingCost)], [], h.assumptionIDs,
                    "這個虛構家庭的設備安排，多需要 \(h.deviceAccess.schedulingCost) 格時間。")
+        } else if choice.kind == .learn {
+            adjust("learning.offline", .modelRule, .init(), [:], [], ["learning-channels"],
+                   "這次使用紙本或面對面學習；成本只依本次材料、交通與協助安排計算。")
         }
         if choice.kind == .learn || choice.kind == .work || choice.kind == .care {
             let careCost = state.age >= 23 ? h.careLoad : 0
@@ -113,7 +116,7 @@ public enum DecisionResolver {
                        ["support-network"], "一起準備的人陪你練習，也成為這段故事裡的重要夥伴。")
             }
             if choice.kind == .learn && cost.time >= 5 {
-                effect("cost.fatigue", .socialEnvironment, .init(health: -2), ["cost-fatigue"],
+                effect("cost.fatigue", .modelRule, .init(health: -2), ["cost-fatigue"],
                        "這次準備佔去較多時間，你需要休息；限制來自情境和安排，不是努力不夠。")
             }
             if choice.kind == .learn {

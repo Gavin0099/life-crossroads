@@ -13,6 +13,7 @@ final class LifeCrossroadsUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 5))
         let compare = app.buttons["compareChoice"]
         reveal(compare, in: app); compare.tap()
+        app.buttons["compare.invest"].tap()
         XCTAssertTrue(app.staticTexts["換一個環境呢？"].waitForExistence(timeout: 5))
         for name in ["日本", "美國", "印度", "肯亞"] {
             XCTAssertTrue(app.staticTexts[name].exists, "Comparison must contain actual row: \(name)")
