@@ -1,0 +1,68 @@
+testForkPreservesOriginalResumesAfterRelaunchAndComparesFullRemainder]' started.
+    t =     0.00s Start Test at 2026-10-23 15:44:32.171
+    t =     0.15s Set Up
+    t =     0.16s Open com.gavin0099.LifeCrossroads
+    t =     0.16s     Launch com.gavin0099.LifeCrossroads
+    t =     0.16s         Terminate com.gavin0099.LifeCrossroads:19956
+    t =     2.01s         Setting up automation session
+    t =     3.50s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =     5.45s Waiting 10.0s for "startLife" Button to exist
+    t =     6.50s     Checking `Expect predicate `existsNoRetry == 1` for object "startLife" Button`
+    t =     6.50s         Checking existence of `"startLife" Button`
+    t =     6.61s Checking existence of `"continueLife" Button`
+    t =     6.63s Checking existence of `"startLife" Button`
+    t =     6.65s Find the "startLife" Button
+    t =     6.71s Find the "startLife" Button
+    t =     6.75s Find the "startLife" Button
+    t =     6.78s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     6.81s Tap "startLife" Button
+    t =     6.81s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     6.81s     Find the "startLife" Button
+    t =     6.83s     Check for interrupting elements affecting "startLife" Button
+    t =     6.87s     Synthesize event
+    t =     7.16s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     7.34s Waiting 5.0s for "eventTitle" StaticText to exist
+    t =     8.37s     Checking `Expect predicate `existsNoRetry == 1` for object "eventTitle" StaticText`
+    t =     8.37s         Checking existence of `"eventTitle" StaticText`
+    t =     8.44s Waiting 5.0s for "eventTitle" StaticText to exist
+    t =     9.47s     Checking `Expect predicate `existsNoRetry == 1` for object "eventTitle" StaticText`
+    t =     9.47s         Checking existence of `"eventTitle" StaticText`
+    t =     9.52s Find the "eventTitle" StaticText
+    t =     9.56s Checking existence of `"choice.invest" Button`
+    t =     9.60s Find the "choice.invest" Button
+    t =     9.65s Checking existence of `"continueLife" Button`
+    t =     9.71s Checking existence of `"choice.invest" Button`
+    t =     9.79s Find the "choice.invest" Button
+    t =     9.88s Find the "choice.invest" Button
+    t =     9.95s Find the "choice.invest" Button
+    t =    10.00s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    10.03s Tap "choice.invest" Button
+    t =    10.03s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    10.03s     Find the "choice.invest" Button
+    t =    10.10s     Check for interrupting elements affecting "choice.invest" Button
+    t =    10.14s     Synthesize event
+    t =    10.47s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    10.47s Waiting 5.0s for "continueLife" Button to exist
+    t =    11.47s     Checking `Expect predicate `existsNoRetry == 1` for object "continueLife" Button`
+    t =    11.49s         Checking existence of `"continueLife" Button`
+    t =    11.55s         Capturing element debug description
+    t =    12.48s     Checking `Expect predicate `existsNoRetry == 1` for object "continueLife" Button`
+    t =    12.48s         Checking existence of `"continueLife" Button`
+    t =    12.51s         Capturing element debug description
+    t =    13.52s     Checking `Expect predicate `existsNoRetry == 1` for object "continueLife" Button`
+    t =    13.52s         Checking existence of `"continueLife" Button`
+    t =    13.57s         Capturing element debug description
+    t =    14.48s     Checking `Expect predicate `existsNoRetry == 1` for object "continueLife" Button`
+    t =    14.48s         Checking existence of `"continueLife" Button`
+    t =    14.53s         Capturing element debug description
+    t =    15.48s     Checking `Expect predicate `existsNoRetry == 1` for object "continueLife" Button`
+    t =    15.48s         Checking existence of `"continueLife" Button`
+    t =    15.53s         Capturing element debug description
+    t =    15.53s     Checking existence of `"continueLife" Button`
+    t =    15.57s Collecting debug information to assist test failure triage
+    t =    15.58s     Requesting snapshot of accessibility hierarchy for app with pid 24593
+/Users/runner/work/life-crossroads/life-crossroads/UITests/LifeCrossroadsUITests.swift:207: error: -[LifeCrossroadsUITests.LifeCrossroadsUITests testForkPreservesOriginalResumesAfterRelaunchAndComparesFullRemainder] : XCTAssertTrue failed
+    t =    16.23s Tear Down
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testForkPreservesOriginalResumesAfterRelaunchAndComparesFullRemainder]' failed (16.449 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests
+Deleted test Simulator: A1048C2B-A50C-4AF5-922E-6DB7AB84CCD0

@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "swift test -c release --filter BranchExperimentTests",
+  "exit_code": 0,
+  "started_at": "2026-10-23T15:18:59Z",
+  "finished_at": "2026-10-23T15:19:42Z",
+  "runner": "governance_tools.test_evidence_receipt_writer",
+  "linked_commit": "5701a36f55ca09f1c0481c2830014db4f2611fa4",
+  "output_artifacts": [
+    "artifacts/evidence/test-results/lc04-binding.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}

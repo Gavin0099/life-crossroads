@@ -52,6 +52,20 @@ public struct LifeSession: Codable, Equatable, Sendable {
         return restored
     }
 
+    /// Reconstruct the actual pre-choice state, including pending callbacks and selection draws.
+    /// A past event ID alone is insufficient: repeatable events can occur at different ages.
+    public func beforeDecision(at index: Int, catalog: ModelCatalog) throws -> Self {
+        try validate(catalog: catalog)
+        guard traces.indices.contains(index) else { throw ModelError.invalid("decision checkpoint index") }
+        var replay = try Self.start(catalog: catalog, countryCode: state.countryCode,
+                                    householdID: state.householdID, seed: state.seed)
+        for trace in traces.prefix(index) {
+            try replay.choose(trace.choiceID, catalog: catalog)
+            try replay.continueLife(catalog: catalog)
+        }
+        return replay
+    }
+
     /// Full, catalog-backed replay checks every selected event, condition, random draw, outcome and time jump.
     /// Run at the restore boundary; trusted in-memory operations only check the current slot.
     public func validate(catalog: ModelCatalog) throws {

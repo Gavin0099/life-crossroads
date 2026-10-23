@@ -1,0 +1,69 @@
+Application, 0x10324dfd0, pid: 24593, label: '人生岔路' <App element pid: 24593>
+  Window (Main), 0x10324a170, {{0.0, 0.0}, {402.0, 874.0}} <AX element pid: 24593, elementOrHash.elementID: 4321246128.4>
+    Other, 0x10324dc50, {{0.0, 0.0}, {402.0, 874.0}} <AX element pid: 24593, elementOrHash.elementID: 4320451232.5>
+      Other, 0x10324d8f0, {{0.0, 0.0}, {402.0, 874.0}} <AX element pid: 24593, elementOrHash.elementID: 4304981552.6>
+        Other, 0x1032501c0, {{0.0, 0.0}, {402.0, 874.0}} <AX element pid: 24593, elementOrHash.elementID: 4304534368.7>
+          Other, 0x10324e680, {{0.0, 0.0}, {402.0, 874.0}} <AX element pid: 24593, elementOrHash.elementID: 105553169761216.8>
+            Other, 0x10324b2a0, {{0.0, 0.0}, {402.0, 874.0}} <AX element pid: 24593, elementOrHash.elementID: 4320644512.9>
+              NavigationBar, 0x1032557c0, {{0.0, 56.3}, {402.0, 44.0}}, identifier: '人生岔路' <AX element pid: 24593, elementOrHash.elementID: 4320362480.10>
+                Button, 0x10324d220, {{8.0, 56.3}, {49.7, 44.0}}, label: '回首頁，保留目前進度' <AX element pid: 24593, elementOrHash.elementID: 4834290448.52>
+                StaticText, 0x10324faf0, {{167.3, 68.0}, {67.7, 20.3}}, label: '人生岔路' <AX element pid: 24593, elementOrHash.elementID: 4321659248.12>
+                Button, 0x10324ed50, {{296.3, 56.3}, {47.7, 44.0}}, label: '說明與資料' <AX element pid: 24593, elementOrHash.elementID: 4834301808.53>
+                Button, 0x10324b970, {{352.0, 56.3}, {42.0, 44.0}}, identifier: 'restartMenu', label: '重新開始這段人生' <AX element pid: 24593, elementOrHash.elementID: 4834313408.54>
+              Other, 0x1032583a0, {{0.0, 0.0}, {402.0, 874.0}} <AX element pid: 24593, elementOrHash.elementID: 4320645456.11>
+                Other, 0x10324e330, {{0.0, 0.0}, {402.0, 874.0}} <AX element pid: 24593, elementOrHash.elementID: 4321764928.14>
+                  Other, 0x10324ced0, {{0.0, 0.0}, {402.0, 874.0}} <AX element pid: 24593, elementOrHash.elementID: 4320250816.15>
+                    Other, 0x103254d90, {{0.0, 0.0}, {402.0, 874.0}} <AX element pid: 24593, elementOrHash.elementID: 105553169816288.16>
+                      ScrollView, 0x103254a40, {{0.0, 0.0}, {402.0, 874.0}} <AX element pid: 24593, elementOrHash.elementID: 4331021312.55>
+                        Other, 0x103255450, {{0.0, 100.3}, {402.0, 996.3}} <AX element pid: 24593, elementOrHash.elementID: 4305308480.56>
+                          StaticText, 0x103255110, {{18.0, 118.3}, {92.0, 24.0}}, label: '沐沐 · 8歲' <AX element pid: 24593, elementOrHash.elementID: 105553169812928.58>
+                          StaticText, 0x1032546d0, {{350.7, 126.0}, {33.3, 14.3}}, label: '1 / 15' <AX element pid: 24593, elementOrHash.elementID: 105553169811488.59>
+                          StaticText, 0x103255b10, {{18.0, 149.3}, {133.0, 14.3}}, label: '日本 · 童年 · 探索與支持' <AX element pid: 24593, elementOrHash.elementID: 105553169812448.60>
+                          ProgressIndicator, 0x103255e70, {{18.0, 170.7}, {366.0, 4.0}}, label: '已完成0段，共15段', value: 0% <AX element pid: 24593, elementOrHash.elementID: 105553169814368.61>
+                            ProgressIndicator, 0x1032597f0, {{18.0, 160.7}, {366.0, 24.0}}, value: 0% <AX element pid: 24593, elementOrHash.elementID: 4320792288.80>
+                          StaticText, 0x103258da0, {{18.0, 213.5}, {146.7, 26.3}}, identifier: 'eventTitle', label: '想試試新的興趣', value: child-interest <AX element pid: 24593, elementOrHash.elementID: 105553169814048.62>
+                          Other, 0x103259480, {{289.0, 192.7}, {205.0, 110.0}}, identifier: 'decisionScene', label: '8歲的沐沐，在共用的河畔寓言場景' <AX element pid: 24593, elementOrHash.elementID: 105553169820288.63>
+                            Image, 0x10325a5b0, {{289.0, 192.7}, {102.0, 68.0}}, label: 'RiverCrossroads' <AX element pid: 24593, elementOrHash.elementID: 105553169817088.81>
+                            Image, 0x103259ec0, {{318.0, 214.7}, {176.0, 88.0}}, label: 'StoryCast' <AX element pid: 24593, elementOrHash.elementID: 105553169820128.82>
+                          StaticText, 0x10325a940, {{18.0, 271.7}, {338.0, 67.0}}, label: '你把紙箱變成小小的工作室，想做出會動的玩具。照顧你的大人願意聽你說計畫，但工具、設備和一起準備的時間，需要共同安排。' <AX element pid: 24593, elementOrHash.elementID: 105553169820448.64>
+                          StaticText, 0x10325b700, {{18.0, 349.7}, {190.0, 18.0}}, label: '我可以說出自己想做的事嗎？' <AX element pid: 24593, elementOrHash.elementID: 105553169820608.65>
+                          StaticText, 0x10325acb0, {{18.0, 383.7}, {114.0, 20.3}}, label: '你會怎麼安排？' <AX element pid: 24593, elementOrHash.elementID: 105553169820768.66>
+                          StaticText, 0x10325ba80, {{18.0, 421.0}, {89.3, 34.3}}, label: '時間還有4格' <AX element pid: 24593, elementOrHash.elementID: 105553169821088.67>
+                          StaticText, 0x10325b000, {{114.3, 420.0}, {86.3, 36.3}}, label: '精力還有5格' <AX element pid: 24593, elementOrHash.elementID: 105553169821408.68>
+                          StaticText, 0x10325a220, {{207.7, 420.3}, {90.7, 35.3}}, label: '材料還有2格' <AX element pid: 24593, elementOrHash.elementID: 105553169821728.69>
+                          Button, 0x10325b3a0, {{17.5, 471.8}, {367.0, 103.7}}, identifier: 'choice.invest', label: '和大人把紙箱做成會動的玩具、時間1 · 精力2 · 材料1、基本影響：財務安全 -1 · 技能 +4' <AX element pid: 24593, elementOrHash.elementID: 105553169822688.70>
+                            StaticText, 0x10325c4d0, {{36.0, 490.3}, {219.3, 20.3}}, label: '和大人把紙箱做成會動的玩具' <AX element pid: 24593, elementOrHash.elementID: 105553169822048.83>
+                            Image, 0x103257980, {{351.7, 494.3}, {12.3, 12.3}}, identifier: 'arrow.up.right', label: 'arrow.up.right' <AX element pid: 24593, elementOrHash.elementID: 105553169822208.84>
+                            StaticText, 0x10325c150, {{36.0, 517.7}, {149.0, 18.0}}, label: '時間1 · 精力2 · 材料1' <AX element pid: 24593, elementOrHash.elementID: 105553169822368.85>
+                            StaticText, 0x103257cf0, {{36.0, 542.7}, {177.7, 14.3}}, label: '基本影響：財務安全 -1 · 技能 +4' <AX element pid: 24593, elementOrHash.elementID: 105553169822528.86>
+                          Button, 0x1032572d0, {{17.5, 590.5}, {367.0, 103.7}}, identifier: 'choice.ask', label: '請大人幫忙借安全工具和紙本圖解、時間0 · 精力1 · 材料0、基本影響：人際 +2 · 技能 +1' <AX element pid: 24593, elementOrHash.elementID: 105553169823808.71>
+                            StaticText, 0x10325fba0, {{36.0, 609.0}, {253.0, 20.3}}, label: '請大人幫忙借安全工具和紙本圖解' <AX element pid: 24593, elementOrHash.elementID: 105553169823168.87>
+                            Image, 0x10325d5c0, {{351.7, 613.0}, {12.3, 12.3}}, identifier: 'arrow.up.right', label: 'arrow.up.right' <AX element pid: 24593, elementOrHash.elementID: 105553169823328.88>
+                            StaticText, 0x103260230, {{36.0, 636.3}, {152.0, 18.0}}, label: '時間0 · 精力1 · 材料0' <AX element pid: 24593, elementOrHash.elementID: 105553169823488.89>
+                            StaticText, 0x10325cb80, {{36.0, 661.3}, {155.0, 14.3}}, label: '基本影響：人際 +2 · 技能 +1' <AX element pid: 24593, elementOrHash.elementID: 105553169823648.90>
+                          Button, 0x10325d920, {{17.5, 709.2}, {367.0, 103.7}}, identifier: 'choice.rest', label: '先收好紙箱，留時間打球與休息、時間0 · 精力0 · 材料0、基本影響：健康 +2 · 人際 +1' <AX element pid: 24593, elementOrHash.elementID: 105553169824768.72>
+                            StaticText, 0x10325e3a0, {{36.0, 727.7}, {236.3, 20.3}}, label: '先收好紙箱，留時間打球與休息' <AX element pid: 24593, elementOrHash.elementID: 105553169824128.91>
+                            Image, 0x10325cee0, {{351.7, 731.7}, {12.3, 12.3}}, identifier: 'arrow.up.right', label: 'arrow.up.right' <AX element pid: 24593, elementOrHash.elementID: 105553169824288.92>
+                            StaticText, 0x10325ee00, {{36.0, 755.0}, {154.7, 18.0}}, label: '時間0 · 精力0 · 材料0' <AX element pid: 24593, elementOrHash.elementID: 105553169824448.93>
+                            StaticText, 0x10325e020, {{36.0, 780.0}, {155.0, 14.3}}, label: '基本影響：健康 +2 · 人際 +1' <AX element pid: 24593, elementOrHash.elementID: 105553169824608.94>
+                          Button, 0x10325ea70, {{18.0, 828.3}, {171.7, 44.0}}, identifier: 'compareChoice', label: '同一行動，換個環境？' <AX element pid: 24593, elementOrHash.elementID: 105553169800064.73>
+                            Button, 0x10325e710, {{18.0, 828.3}, {171.7, 44.0}} <AX element pid: 24593, elementOrHash.elementID: 4305401184.95>
+                              Other, 0x10325f4c0, {{18.0, 828.3}, {171.7, 44.0}} <AX element pid: 24593, elementOrHash.elementID: 105553169825568.105>
+                                Image, 0x10325f150, {{19.7, 844.0}, {14.7, 13.3}}, identifier: 'arrow.triangle.branch', label: '分開' <AX element pid: 24593, elementOrHash.elementID: 105553169825248.107>
+                                StaticText, 0x10325f830, {{18.0, 828.3}, {171.7, 44.0}}, label: '同一行動，換個環境？' <AX element pid: 24593, elementOrHash.elementID: 105553169825408.108>
+                          Button, 0x10325fee0, {{18.0, 888.3}, {366.0, 28.3}}, label: '多讀一點故事' <AX element pid: 24593, elementOrHash.elementID: 105553169799264.74>
+                            StaticText, 0x1032586f0, {{18.0, 888.3}, {366.0, 28.3}}, label: '多讀一點故事' <AX element pid: 24593, elementOrHash.elementID: 105553169801984.96>
+                            Image, 0x103260900, {{376.3, 896.3}, {7.0, 12.0}}, identifier: 'collapsed' <AX element pid: 24593, elementOrHash.elementID: 105553169805984.97>
+                          Button, 0x103260ff0, {{18.0, 932.7}, {366.0, 28.3}}, identifier: 'eventSelectionDetails', label: '怎麼遇到這件事？' <AX element pid: 24593, elementOrHash.elementID: 105553169783200.75>
+                            StaticText, 0x103260c70, {{18.0, 932.7}, {366.0, 28.3}}, identifier: 'eventSelectionDetails', label: '怎麼遇到這件事？' <AX element pid: 24593, elementOrHash.elementID: 105553169796384.98>
+                            Image, 0x1032605a0, {{376.3, 940.7}, {7.0, 12.0}}, identifier: 'collapsed' <AX element pid: 24593, elementOrHash.elementID: 105553169783360.99>
+                          Button, 0x103261350, {{18.0, 977.0}, {366.0, 26.0}}, label: '人物與近況' <AX element pid: 24593, elementOrHash.elementID: 105553169780960.76>
+                            Image, 0x1032616b0, {{20.0, 983.0}, {17.7, 14.0}}, identifier: 'person.crop.rectangle', label: 'person.crop.rectangle' <AX element pid: 24593, elementOrHash.elementID: 105553169781760.100>
+                            StaticText, 0x103261a10, {{18.0, 977.0}, {366.0, 26.0}}, label: '人物與近況' <AX element pid: 24593, elementOrHash.elementID: 105553169778880.101>
+                            Image, 0x1032620f0, {{376.3, 983.7}, {7.0, 12.0}}, identifier: 'collapsed' <AX element pid: 24593, elementOrHash.elementID: 105553169780800.102>
+                          StaticText, 0x1032627c0, {{18.0, 1019.0}, {358.3, 30.3}}, label: '額度每回合重新安排；健康、人際、技能與財務及選擇紀錄會延續。基本影響之外，實際支持或機會事件會在選後說明。' <AX element pid: 24593, elementOrHash.elementID: 105553169779360.77>
+                          StaticText, 0x103262b10, {{18.0, 1065.3}, {61.7, 13.3}}, identifier: 'lifeSeed', label: '人生種子：0', value: 0 <AX element pid: 24593, elementOrHash.elementID: 105553169781920.78>
+                        Other, 0x103262470, {{369.0, 100.3}, {30.0, 717.7}}, label: '垂直捲軸, 2頁', value: 0% <AX element pid: 24593, elementOrHash.elementID: 4834232864.57>
+                          Other, 0x1032631d0, {{396.0, 103.3}, {3.0, 550.0}} <AX element pid: 24593, elementOrHash.elementID: 4834233296.79>
+                        Other, 0x103263520, {{369.0, 100.3}, {30.0, 717.7}}, label: '垂直捲軸, 2頁', value: 0% <AX element pid: 24593, elementOrHash.elementID: 4834232864.57>
+                          Other, 0x103263860, {{396.0, 103.3}, {3.0, 550.0}} <AX element pid: 24593, elementOrHash.elementID: 4834233296.79>

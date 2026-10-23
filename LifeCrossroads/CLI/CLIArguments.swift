@@ -1,5 +1,5 @@
 enum DemoMode: Equatable {
-    case demo, json, storySamples, batchReport(seedCount: Int)
+    case demo, json, storySamples, branchSample, batchReport(seedCount: Int)
 }
 
 enum DemoArgumentError: Error, CustomStringConvertible {
@@ -7,7 +7,7 @@ enum DemoArgumentError: Error, CustomStringConvertible {
     var description: String {
         switch self {
         case .invalid(let reason):
-            "\(reason)\nUsage: life-demo [--json | --story-samples | --batch-report [--seed-count N]]; N: 2...128 (default 32)"
+            "\(reason)\nUsage: life-demo [--json | --story-samples | --branch-sample | --batch-report [--seed-count N]]; N: 2...128 (default 32)"
         }
     }
 }
@@ -21,7 +21,7 @@ enum DemoCLIArguments {
         while index < arguments.count {
             let flag = arguments[index]
             switch flag {
-            case "--json", "--story-samples", "--batch-report":
+            case "--json", "--story-samples", "--branch-sample", "--batch-report":
                 guard mode == nil else { throw DemoArgumentError.invalid("Duplicate or conflicting mode: \(flag)") }
                 mode = flag
             case "--seed-count":
@@ -44,6 +44,7 @@ enum DemoCLIArguments {
         switch mode {
         case "--json": return .json
         case "--story-samples": return .storySamples
+        case "--branch-sample": return .branchSample
         default: return .demo
         }
     }

@@ -10,6 +10,11 @@ struct CrossroadsView: View {
     @AppStorage("shortStoryText") private var shortText = false
     @State private var showSources = false
     @State private var showTrace = false
+    @State private var showForkPicker = false
+    @State private var branchComparison: BranchComparison?
+    @State private var restartAction: RestartAction?
+    private enum RestartAction { case newLife, sameSeed, newSeed }
+
     @State private var comparisonPresentation: ComparisonPresentation?
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
@@ -34,6 +39,12 @@ struct CrossroadsView: View {
                             else { Text("目前沒有已執行的選擇紀錄。").accessibilityIdentifier("missingOutcome") }
                         }
                     } else { home }
+#if targetEnvironment(simulator)
+                    if let checksum = store.uiTestArchiveChecksum {
+                        Text("自動化測試存檔校驗").font(.caption2)
+                            .accessibilityIdentifier("uiTestArchiveChecksum").accessibilityValue(checksum)
+                    }
+#endif
                 }
                 .padding(18)
                 .frame(maxWidth: 620)
@@ -46,8 +57,8 @@ struct CrossroadsView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     if store.session != nil {
-                        Button("首頁", systemImage: "house") { store.session = nil }
-                            .accessibilityLabel("回首頁，結束目前這段人生")
+                        Button("首頁", systemImage: "house") { store.home() }
+                            .accessibilityLabel("回首頁，保留目前進度")
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
@@ -56,9 +67,9 @@ struct CrossroadsView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     if store.session != nil {
                         Menu {
-                            Button("同背景、同種子重新開始") { store.start(replay: true) }
+                            Button("同背景、同種子重新開始") { restartAction = .sameSeed }
                                 .accessibilityIdentifier("restartSame")
-                            Button("同背景、換個運氣重新開始") { store.replayWithNewSeed() }
+                            Button("同背景、換個運氣重新開始") { restartAction = .newSeed }
                                 .accessibilityIdentifier("restartNewSeed")
                         } label: { Label("重新開始這段人生", systemImage: "arrow.counterclockwise") }
                             .accessibilityIdentifier("restartMenu")
@@ -73,6 +84,25 @@ struct CrossroadsView: View {
                         .padding().background(.bar)
                 }
             }
+            .sheet(isPresented: $showForkPicker) {
+                if let original = store.session, let catalog = store.catalog {
+                    BranchPickerView(original: original, catalog: catalog) { store.startBranch(at: $0, choiceID: $1) }
+                }
+            }
+            .sheet(isPresented: Binding(get: { branchComparison != nil }, set: { if !$0 { branchComparison = nil } })) {
+                if let branchComparison { BranchComparisonView(comparison: branchComparison) }
+            }
+            .confirmationDialog("建立新人生會取代本機的這組人生紀錄", isPresented: Binding(get: { restartAction != nil }, set: { if !$0 { restartAction = nil } }), titleVisibility: .visible) {
+                Button("取代紀錄並開始", role: .destructive) {
+                    switch restartAction {
+                    case .sameSeed: store.start(replay: true)
+                    case .newSeed: store.replayWithNewSeed()
+                    case .newLife: store.start()
+                    case nil: break
+                    }
+                    restartAction = nil
+                }.accessibilityIdentifier("confirmRestart")
+            } message: { Text("回首頁或關閉 App 都能保留進度；只有建立新人生才取代原局與試走路線。") }
             .sheet(isPresented: $showSources) { sources }
             .sheet(isPresented: $showTrace) { traceSheet }
             .sheet(item: $comparisonPresentation) { presentation in comparisonSheet(presentation) }
@@ -84,6 +114,10 @@ struct CrossroadsView: View {
 
     private var home: some View {
         VStack(alignment: .leading, spacing: 22) {
+            if store.journey != nil {
+                Button("繼續已保存的人生", systemImage: "book") { store.resume() }
+                    .buttonStyle(JourneyButtonStyle()).accessibilityIdentifier("resumeLife")
+            }
             StoryEyebrow(title: "一本由你參與的人生故事", icon: "book.closed")
             HStack(spacing: 12) {
                 Text("如果人生，\n走向另一條路？")
@@ -111,7 +145,9 @@ struct CrossroadsView: View {
                         .font(.footnote).foregroundStyle(.secondary)
                 }
             }.card()
-            Button("陪沐沐開始一段人生", systemImage: "pawprint") { store.start() }
+            Button("陪沐沐開始一段人生", systemImage: "pawprint") {
+                if store.journey != nil || store.restoreFailed { restartAction = .newLife } else { store.start() }
+            }
                 .buttonStyle(JourneyButtonStyle()).disabled(store.catalog == nil)
                 .accessibilityIdentifier("startLife")
             if let catalog = store.catalog,
@@ -125,7 +161,7 @@ struct CrossroadsView: View {
             Toggle("使用較短的故事文字", isOn: $shortText).font(.subheadline)
             Text("15段選擇，沒有唯一的好人生。環境影響機會，選擇留下故事，也有些事不由自己控制。")
                 .font(.subheadline).foregroundStyle(.secondary)
-            Text("動物角色演出虛構故事；所有國家共用這座想像的河畔舞台，不是各國生活的實景。包含工作變動與照顧情境，可休息或回首頁。原型關閉後不保存進度。")
+            Text("動物角色演出虛構故事；所有國家共用這座想像的河畔舞台，不是各國生活的實景。包含工作變動與照顧情境，可休息或回首頁。每次操作自動保存一組人生；關閉後可續玩。建立新人生會先詢問是否取代紀錄。")
                 .font(.footnote).foregroundStyle(.secondary)
         }
     }
@@ -158,6 +194,12 @@ struct CrossroadsView: View {
 
     private func progress(_ session: LifeSession) -> some View {
         VStack(alignment: .leading, spacing: 7) {
+            if let experiment = store.experiment {
+                Text("另一條路 · 從\(experiment.snapshot.session.state.age)歲改選，原人生已保留")
+                    .font(.subheadline).accessibilityIdentifier("branchInProgress")
+                Button("看看保留的原人生") { store.viewingOriginal = true }
+                    .accessibilityIdentifier("viewOriginal")
+            }
             HStack(alignment: .firstTextBaseline) {
                 Text("沐沐 · \(session.state.age)歲").font(.system(.title3, design: .rounded).bold())
                 Spacer(minLength: 8)
@@ -209,6 +251,7 @@ struct CrossroadsView: View {
                         }
                         .fixedSize(horizontal: false, vertical: true)
                         .frame(maxWidth: .infinity, minHeight: 64, alignment: .leading).card()
+                        .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
                     .foregroundStyle(preview.applied ? Color.primary : Color.secondary)
@@ -341,9 +384,12 @@ struct CrossroadsView: View {
                 }
             }
             Text(trace.eventTitle).font(.subheadline).foregroundStyle(.secondary)
+                .accessibilityIdentifier("outcomeEvent").accessibilityValue(trace.eventID)
             VStack(alignment: .leading, spacing: 13) {
                 Label("已發生的變化", systemImage: "checkmark.circle").font(.headline)
                 Text(deltaText(trace.resourcesAfter - trace.resourcesBefore)).font(.headline)
+                    .accessibilityIdentifier("outcomeResources")
+                    .accessibilityValue(historyResources(trace))
                 Text("這一段日子，沐沐用了\(trace.finalCost.time)格時間，有\(trace.budgetAfter.time)格沒有用在這個行動上。")
                     .lineSpacing(3).accessibilityIdentifier("roundTimeFeedback")
                 if trace.randomTrial?.occurred == true {
@@ -395,10 +441,11 @@ struct CrossroadsView: View {
             }
             Text("人生種子：\(String(session.state.seed))").font(.caption.monospaced()).foregroundStyle(.secondary)
                 .accessibilityIdentifier("endingSeed").accessibilityValue(String(session.state.seed))
-            Button("同背景、同種子，再走一次", systemImage: "arrow.counterclockwise") { store.start(replay: true) }
+            branchActions
+            Button("同背景、同種子，再走一次", systemImage: "arrow.counterclockwise") { restartAction = .sameSeed }
                 .buttonStyle(JourneyButtonStyle()).accessibilityIdentifier("replaySame")
             Text("同樣的背景與運氣；做相同選擇才會重現，也可以嘗試改選。").font(.footnote).foregroundStyle(.secondary)
-            Button("同背景，換個運氣", systemImage: "shuffle") { store.replayWithNewSeed() }
+            Button("同背景，換個運氣", systemImage: "shuffle") { restartAction = .newSeed }
                 .buttonStyle(.bordered).controlSize(.large).accessibilityIdentifier("replayNewSeed")
             Text("保留國家與家庭，改用新的種子；有些事件仍可能一樣。").font(.footnote).foregroundStyle(.secondary)
             Text("有選擇，有限制，也有一路相伴的人。這些數字描述故事裡的變化，不評定人生的價值。")
@@ -416,7 +463,7 @@ struct CrossroadsView: View {
                 }
             }
             Text("翻看那些重要的日子").font(.title2.bold())
-            ForEach(session.traces, id: \.eventID) { trace in
+            ForEach(session.traces, id: \.age) { trace in
                 HStack(alignment: .top, spacing: 12) {
                     VStack(spacing: 6) {
                         Text("\(trace.age)").font(.headline.monospacedDigit())
@@ -425,23 +472,59 @@ struct CrossroadsView: View {
                     }.frame(width: 38)
                     VStack(alignment: .leading, spacing: 8) {
                         Text(trace.eventTitle).font(.headline)
+                            .accessibilityIdentifier("history.\(trace.age).event").accessibilityValue(trace.eventID)
                         Text(trace.choiceTitle).font(.subheadline)
+                            .accessibilityIdentifier("history.\(trace.age).choice").accessibilityValue(trace.choiceID)
                         if let branch = trace.storyBranch {
                             Text(branch.explanation).font(.footnote).foregroundStyle(.secondary)
                         }
                         Text(deltaText(trace.resourcesAfter - trace.resourcesBefore))
                             .font(.caption).foregroundStyle(.secondary)
+                            .accessibilityIdentifier("history.\(trace.age).resources").accessibilityValue(historyResources(trace))
                     }.fixedSize(horizontal: false, vertical: true)
                     if let companion = StoryCharacter.companion(named: trace.recurringPerson) {
                         StoryPortrait(character: companion).frame(width: 48, height: 48)
                     }
                 }.frame(maxWidth: .infinity, alignment: .leading).card()
             }
-            Button("換個環境，開始新人生") { store.session = nil }.frame(maxWidth: .infinity)
+            Button("換個環境，開始新人生") { store.home() }.frame(maxWidth: .infinity)
             Text("人生種子：\(String(session.state.seed))").font(.caption.monospaced()).foregroundStyle(.secondary)
             Text("晚年回顧是本版故事收束，不表示角色在這個年齡死亡。")
                 .font(.caption).foregroundStyle(.secondary)
         }
+    }
+
+    @ViewBuilder
+    private var branchActions: some View {
+        if let experiment = store.experiment {
+            Text(store.viewingOriginal ? "這是保留的原人生，紀錄不會因改選而改寫。" : "這是你親自走完的另一條路，原人生仍在。")
+                .font(.headline).accessibilityIdentifier("preservedOriginalStatus")
+            if store.viewingOriginal {
+                Button(experiment.alternative.phase == .ended ? "回到改選後的人生" : "繼續試走另一條路") { store.viewingOriginal = false }
+                    .buttonStyle(JourneyButtonStyle()).accessibilityIdentifier("resumeBranch")
+            } else {
+                Button("看看保留的原人生") { store.viewingOriginal = true }
+                    .buttonStyle(.bordered).accessibilityIdentifier("viewOriginal")
+            }
+            if experiment.alternative.phase == .ended {
+                Button("比較完整後半生", systemImage: "arrow.left.arrow.right") {
+                    guard let catalog = store.catalog else { return }
+                    do { branchComparison = try BranchComparisonEngine.compare(experiment, catalog: catalog) }
+                    catch { store.errorMessage = "比較紀錄無法驗證：\(error)" }
+                }.buttonStyle(JourneyButtonStyle()).accessibilityIdentifier("compareBranches")
+            }
+        } else {
+            Button("回到一個重大岔路", systemImage: "arrow.triangle.branch") { showForkPicker = true }
+                .buttonStyle(JourneyButtonStyle()).accessibilityIdentifier("openForkPicker")
+            Text("原人生會保留。回到選擇前改選，接下來每一步仍由你決定。").font(.footnote)
+        }
+    }
+
+    private func historyResources(_ trace: ConsequenceTrace) -> String {
+        func describe(_ value: ResourceValues) -> String {
+            "健康\(value.health) · 財務\(value.financial) · 人際\(value.relationships) · 技能\(value.skills)"
+        }
+        return "選前：\(describe(trace.resourcesBefore))；選後：\(describe(trace.resourcesAfter))"
     }
 
     private var traceSheet: some View {
@@ -521,7 +604,7 @@ struct CrossroadsView: View {
 
     private func resourceChart(_ session: LifeSession) -> some View {
         Chart {
-            ForEach(session.traces, id: \.eventID) { trace in
+            ForEach(session.traces, id: \.age) { trace in
                 LineMark(x: .value("年齡", trace.age), y: .value("資源", trace.resourcesAfter.health))
                     .foregroundStyle(by: .value("類別", "健康"))
                 LineMark(x: .value("年齡", trace.age), y: .value("資源", trace.resourcesAfter.financial))

@@ -1,0 +1,771 @@
+{
+  "purpose": "模型內實際執行的兩條完整人生；不是兒少或現實因果證據。",
+  "baselinePolicy": "樣本工具優先投入、再其他可行主動選項、求助、休息。",
+  "alternativePolicy": "樣本工具在13歲改選紙本，其後每步選休息。這是明示的測試策略；App由玩家親選。",
+  "seed": 0,
+  "country": "JPN",
+  "household": "jpn-1",
+  "checkpointAge": 13,
+  "originalReplayIdentical": true,
+  "alternativeReplayIdentical": true,
+  "restoredEveryStepIdentical": true,
+  "full_execution_artifact": "artifacts/evidence/test-results/lc04-sample.txt",
+  "rows": [
+    {
+      "decisionIndex": 3,
+      "age": 13,
+      "original": {
+        "eventID": "teen-project",
+        "eventTitle": "想參加共同創作",
+        "choiceID": "invest",
+        "choiceTitle": "用線上圖解製作互動作品",
+        "recurringPerson": "樹老師",
+        "storyVariantID": null,
+        "resourcesBefore": {
+          "financial": 32,
+          "health": 66,
+          "relationships": 69,
+          "skills": 35
+        },
+        "resourcesAfter": {
+          "financial": 31,
+          "health": 66,
+          "relationships": 70,
+          "skills": 40
+        },
+        "storyBranch": null,
+        "scheduledHooks": [
+          {
+            "assumptionID": "story-callback",
+            "dueAge": 17,
+            "effect": {
+              "financial": 0,
+              "health": 0,
+              "relationships": 0,
+              "skills": 1
+            },
+            "id": "teen-project:13:reconnect",
+            "originAge": 13,
+            "originChoiceID": "invest",
+            "originEventID": "teen-project",
+            "person": "樹老師",
+            "text": "樹老師記得你當年的選擇，這次邀你一起分享經驗。"
+          }
+        ],
+        "arrivingHooks": []
+      },
+      "alternative": {
+        "eventID": "teen-project",
+        "eventTitle": "想參加共同創作",
+        "choiceID": "offline",
+        "choiceTitle": "向社區老師借紙本圖解，一起練習",
+        "recurringPerson": "樹老師",
+        "storyVariantID": null,
+        "resourcesBefore": {
+          "financial": 32,
+          "health": 66,
+          "relationships": 69,
+          "skills": 35
+        },
+        "resourcesAfter": {
+          "financial": 32,
+          "health": 66,
+          "relationships": 71,
+          "skills": 39
+        },
+        "storyBranch": null,
+        "scheduledHooks": [],
+        "arrivingHooks": []
+      }
+    },
+    {
+      "decisionIndex": 4,
+      "age": 17,
+      "original": {
+        "eventID": "teen-repair-table",
+        "eventTitle": "樹老師的修理桌缺一雙手",
+        "choiceID": "invest",
+        "choiceTitle": "和樹老師修理社區的舊玩具",
+        "recurringPerson": "樹老師",
+        "storyVariantID": null,
+        "resourcesBefore": {
+          "financial": 31,
+          "health": 66,
+          "relationships": 70,
+          "skills": 41
+        },
+        "resourcesAfter": {
+          "financial": 31,
+          "health": 66,
+          "relationships": 73,
+          "skills": 45
+        },
+        "storyBranch": null,
+        "scheduledHooks": [],
+        "arrivingHooks": [
+          {
+            "assumptionID": "story-callback",
+            "dueAge": 17,
+            "effect": {
+              "financial": 0,
+              "health": 0,
+              "relationships": 0,
+              "skills": 1
+            },
+            "id": "teen-project:13:reconnect",
+            "originAge": 13,
+            "originChoiceID": "invest",
+            "originEventID": "teen-project",
+            "person": "樹老師",
+            "text": "樹老師記得你當年的選擇，這次邀你一起分享經驗。"
+          }
+        ]
+      },
+      "alternative": {
+        "eventID": "teen-repair-table",
+        "eventTitle": "樹老師的修理桌缺一雙手",
+        "choiceID": "rest",
+        "choiceTitle": "先當安靜的旁觀者，保留休息時間",
+        "recurringPerson": "樹老師",
+        "storyVariantID": null,
+        "resourcesBefore": {
+          "financial": 32,
+          "health": 66,
+          "relationships": 71,
+          "skills": 39
+        },
+        "resourcesAfter": {
+          "financial": 32,
+          "health": 68,
+          "relationships": 72,
+          "skills": 39
+        },
+        "storyBranch": null,
+        "scheduledHooks": [],
+        "arrivingHooks": []
+      }
+    },
+    {
+      "decisionIndex": 5,
+      "age": 21,
+      "original": {
+        "eventID": "teen-shared-room",
+        "eventTitle": "合租的空間要怎樣使用",
+        "choiceID": "agreement",
+        "choiceTitle": "一起寫清楚安靜時段與共用物品規則",
+        "recurringPerson": "小澄",
+        "storyVariantID": null,
+        "resourcesBefore": {
+          "financial": 31,
+          "health": 66,
+          "relationships": 73,
+          "skills": 45
+        },
+        "resourcesAfter": {
+          "financial": 32,
+          "health": 66,
+          "relationships": 75,
+          "skills": 45
+        },
+        "storyBranch": null,
+        "scheduledHooks": [],
+        "arrivingHooks": []
+      },
+      "alternative": {
+        "eventID": "teen-shared-room",
+        "eventTitle": "合租的空間要怎樣使用",
+        "choiceID": "rest",
+        "choiceTitle": "先不換住處，讓自己多想一天",
+        "recurringPerson": "小澄",
+        "storyVariantID": null,
+        "resourcesBefore": {
+          "financial": 32,
+          "health": 68,
+          "relationships": 72,
+          "skills": 39
+        },
+        "resourcesAfter": {
+          "financial": 32,
+          "health": 70,
+          "relationships": 72,
+          "skills": 39
+        },
+        "storyBranch": null,
+        "scheduledHooks": [],
+        "arrivingHooks": []
+      }
+    },
+    {
+      "decisionIndex": 6,
+      "age": 25,
+      "original": {
+        "eventID": "adult-local-trail",
+        "eventTitle": "沒有舊記錄，也能從今天開始",
+        "choiceID": "record",
+        "choiceTitle": "和阿禾分段記錄沿路植物",
+        "recurringPerson": "阿禾",
+        "storyVariantID": "adult-local-trail-recovery",
+        "resourcesBefore": {
+          "financial": 32,
+          "health": 66,
+          "relationships": 75,
+          "skills": 45
+        },
+        "resourcesAfter": {
+          "financial": 32,
+          "health": 66,
+          "relationships": 76,
+          "skills": 49
+        },
+        "storyBranch": {
+          "assumptionID": "story-branches",
+          "explanation": "目前沒有這條故事的先前參與記錄；這次可以從求助或小規模嘗試重新開始。帶領選項需要先前參與和技能至少24；本次保留入門、求助與休息。",
+          "offeredChoiceIDs": [
+            "record",
+            "seekGuide",
+            "rest"
+          ],
+          "resourceChecks": [
+            {
+              "met": true,
+              "minimum": 24,
+              "resource": "skills",
+              "value": 45
+            }
+          ],
+          "ruleID": "story.nature",
+          "sourceEventID": "",
+          "variantID": "adult-local-trail-recovery"
+        },
+        "scheduledHooks": [],
+        "arrivingHooks": []
+      },
+      "alternative": {
+        "eventID": "adult-local-trail",
+        "eventTitle": "沒有舊記錄，也能從今天開始",
+        "choiceID": "rest",
+        "choiceTitle": "今天不接新的安排，留時間好好休息",
+        "recurringPerson": "阿禾",
+        "storyVariantID": "adult-local-trail-recovery",
+        "resourcesBefore": {
+          "financial": 32,
+          "health": 70,
+          "relationships": 72,
+          "skills": 39
+        },
+        "resourcesAfter": {
+          "financial": 32,
+          "health": 72,
+          "relationships": 72,
+          "skills": 39
+        },
+        "storyBranch": {
+          "assumptionID": "story-branches",
+          "explanation": "目前沒有這條故事的先前參與記錄；這次可以從求助或小規模嘗試重新開始。帶領選項需要先前參與和技能至少24；本次保留入門、求助與休息。",
+          "offeredChoiceIDs": [
+            "record",
+            "seekGuide",
+            "rest"
+          ],
+          "resourceChecks": [
+            {
+              "met": true,
+              "minimum": 24,
+              "resource": "skills",
+              "value": 39
+            }
+          ],
+          "ruleID": "story.nature",
+          "sourceEventID": "",
+          "variantID": "adult-local-trail-recovery"
+        },
+        "scheduledHooks": [],
+        "arrivingHooks": []
+      }
+    },
+    {
+      "decisionIndex": 7,
+      "age": 32,
+      "original": {
+        "eventID": "teen-river-survey",
+        "eventTitle": "阿禾帶來你以前的觀察本",
+        "choiceID": "lead",
+        "choiceTitle": "帶隊整理觀察位置，練習說明安全界線",
+        "recurringPerson": "阿禾",
+        "storyVariantID": "teen-river-survey-continuation",
+        "resourcesBefore": {
+          "financial": 32,
+          "health": 66,
+          "relationships": 76,
+          "skills": 49
+        },
+        "resourcesAfter": {
+          "financial": 32,
+          "health": 65,
+          "relationships": 78,
+          "skills": 51
+        },
+        "storyBranch": {
+          "assumptionID": "story-branches",
+          "explanation": "你在25歲留下的故事記錄，影響這次能否接續已有安排。已有經驗及技能讓你可以接下帶領的工作，也可以選擇休息。",
+          "flagKey": "nature",
+          "offeredChoiceIDs": [
+            "lead",
+            "join",
+            "seekGuide",
+            "rest"
+          ],
+          "resourceChecks": [
+            {
+              "met": true,
+              "minimum": 24,
+              "resource": "skills",
+              "value": 49
+            }
+          ],
+          "ruleID": "story.nature",
+          "sourceAge": 25,
+          "sourceChoiceID": "record",
+          "sourceEventID": "adult-local-trail",
+          "variantID": "teen-river-survey-continuation"
+        },
+        "scheduledHooks": [],
+        "arrivingHooks": []
+      },
+      "alternative": {
+        "eventID": "teen-river-survey",
+        "eventTitle": "從第一張觀察卡認識步道",
+        "choiceID": "rest",
+        "choiceTitle": "今天不接新的安排，留時間好好休息",
+        "recurringPerson": "阿禾",
+        "storyVariantID": "teen-river-survey-recovery",
+        "resourcesBefore": {
+          "financial": 32,
+          "health": 72,
+          "relationships": 72,
+          "skills": 39
+        },
+        "resourcesAfter": {
+          "financial": 32,
+          "health": 74,
+          "relationships": 72,
+          "skills": 39
+        },
+        "storyBranch": {
+          "assumptionID": "story-branches",
+          "explanation": "目前沒有這條故事的先前參與記錄；這次可以從求助或小規模嘗試重新開始。帶領選項需要先前參與和技能至少24；本次保留入門、求助與休息。",
+          "offeredChoiceIDs": [
+            "join",
+            "seekGuide",
+            "rest"
+          ],
+          "resourceChecks": [
+            {
+              "met": true,
+              "minimum": 24,
+              "resource": "skills",
+              "value": 39
+            }
+          ],
+          "ruleID": "story.nature",
+          "sourceEventID": "",
+          "variantID": "teen-river-survey-recovery"
+        },
+        "scheduledHooks": [],
+        "arrivingHooks": []
+      }
+    },
+    {
+      "decisionIndex": 8,
+      "age": 39,
+      "original": {
+        "eventID": "adult-care",
+        "eventTitle": "一起分擔照顧安排",
+        "choiceID": "invest",
+        "choiceTitle": "和小澄共組照顧輪班，訂下聯絡約定",
+        "recurringPerson": "小澄",
+        "storyVariantID": null,
+        "resourcesBefore": {
+          "financial": 32,
+          "health": 65,
+          "relationships": 78,
+          "skills": 51
+        },
+        "resourcesAfter": {
+          "financial": 32,
+          "health": 64,
+          "relationships": 82,
+          "skills": 51
+        },
+        "storyBranch": null,
+        "scheduledHooks": [],
+        "arrivingHooks": []
+      },
+      "alternative": {
+        "eventID": "adult-care",
+        "eventTitle": "一起分擔照顧安排",
+        "choiceID": "rest",
+        "choiceTitle": "先說明精力有限，暫緩承擔新安排",
+        "recurringPerson": "小澄",
+        "storyVariantID": null,
+        "resourcesBefore": {
+          "financial": 32,
+          "health": 74,
+          "relationships": 72,
+          "skills": 39
+        },
+        "resourcesAfter": {
+          "financial": 32,
+          "health": 76,
+          "relationships": 73,
+          "skills": 39
+        },
+        "storyBranch": null,
+        "scheduledHooks": [],
+        "arrivingHooks": []
+      }
+    },
+    {
+      "decisionIndex": 9,
+      "age": 45,
+      "original": {
+        "eventID": "middle-rest-circle",
+        "eventTitle": "夥伴發現大家都有些累",
+        "choiceID": "boundaries",
+        "choiceTitle": "和夥伴重新安排照顧界線",
+        "recurringPerson": "小澄",
+        "storyVariantID": null,
+        "resourcesBefore": {
+          "financial": 32,
+          "health": 64,
+          "relationships": 82,
+          "skills": 51
+        },
+        "resourcesAfter": {
+          "financial": 32,
+          "health": 66,
+          "relationships": 83,
+          "skills": 51
+        },
+        "storyBranch": null,
+        "scheduledHooks": [],
+        "arrivingHooks": []
+      },
+      "alternative": {
+        "eventID": "middle-rest-circle",
+        "eventTitle": "夥伴發現大家都有些累",
+        "choiceID": "rest",
+        "choiceTitle": "今天先睡飽，等精力回來再討論",
+        "recurringPerson": "小澄",
+        "storyVariantID": null,
+        "resourcesBefore": {
+          "financial": 32,
+          "health": 76,
+          "relationships": 73,
+          "skills": 39
+        },
+        "resourcesAfter": {
+          "financial": 32,
+          "health": 78,
+          "relationships": 73,
+          "skills": 39
+        },
+        "storyBranch": null,
+        "scheduledHooks": [],
+        "arrivingHooks": []
+      }
+    },
+    {
+      "decisionIndex": 10,
+      "age": 52,
+      "original": {
+        "eventID": "middle-open-desk",
+        "eventTitle": "小澄想讓互助桌多開一小時",
+        "choiceID": "invest",
+        "choiceTitle": "把輪班經驗寫成一張互助桌小卡",
+        "recurringPerson": "小澄",
+        "storyVariantID": null,
+        "resourcesBefore": {
+          "financial": 32,
+          "health": 66,
+          "relationships": 83,
+          "skills": 51
+        },
+        "resourcesAfter": {
+          "financial": 32,
+          "health": 66,
+          "relationships": 87,
+          "skills": 52
+        },
+        "storyBranch": null,
+        "scheduledHooks": [],
+        "arrivingHooks": []
+      },
+      "alternative": {
+        "eventID": "middle-turn",
+        "eventTitle": "想嘗試新的工作方向",
+        "choiceID": "rest",
+        "choiceTitle": "暫緩轉換，先維持現在的步調",
+        "recurringPerson": "小澄",
+        "storyVariantID": null,
+        "resourcesBefore": {
+          "financial": 32,
+          "health": 78,
+          "relationships": 73,
+          "skills": 39
+        },
+        "resourcesAfter": {
+          "financial": 32,
+          "health": 80,
+          "relationships": 74,
+          "skills": 39
+        },
+        "storyBranch": null,
+        "scheduledHooks": [],
+        "arrivingHooks": []
+      }
+    },
+    {
+      "decisionIndex": 11,
+      "age": 59,
+      "original": {
+        "eventID": "middle-friend-letter",
+        "eventTitle": "一封還沒寄出的問候",
+        "choiceID": "write",
+        "choiceTitle": "寫一張簡短的近況卡，重新約一次碰面",
+        "recurringPerson": "阿禾",
+        "storyVariantID": null,
+        "resourcesBefore": {
+          "financial": 32,
+          "health": 66,
+          "relationships": 87,
+          "skills": 52
+        },
+        "resourcesAfter": {
+          "financial": 32,
+          "health": 66,
+          "relationships": 89,
+          "skills": 52
+        },
+        "storyBranch": null,
+        "scheduledHooks": [],
+        "arrivingHooks": []
+      },
+      "alternative": {
+        "eventID": "middle-friend-letter",
+        "eventTitle": "一封還沒寄出的問候",
+        "choiceID": "rest",
+        "choiceTitle": "先留好地址，今天不勉強自己回覆",
+        "recurringPerson": "阿禾",
+        "storyVariantID": null,
+        "resourcesBefore": {
+          "financial": 32,
+          "health": 80,
+          "relationships": 74,
+          "skills": 39
+        },
+        "resourcesAfter": {
+          "financial": 32,
+          "health": 82,
+          "relationships": 74,
+          "skills": 39
+        },
+        "storyBranch": null,
+        "scheduledHooks": [],
+        "arrivingHooks": []
+      }
+    },
+    {
+      "decisionIndex": 12,
+      "age": 65,
+      "original": {
+        "eventID": "later-path-map",
+        "eventTitle": "觀察本成了社區步道圖的起點",
+        "choiceID": "lead",
+        "choiceTitle": "用觀察記錄標出平緩路段和休息處",
+        "recurringPerson": "阿禾",
+        "storyVariantID": "later-path-map-continuation",
+        "resourcesBefore": {
+          "financial": 32,
+          "health": 66,
+          "relationships": 89,
+          "skills": 52
+        },
+        "resourcesAfter": {
+          "financial": 32,
+          "health": 66,
+          "relationships": 91,
+          "skills": 54
+        },
+        "storyBranch": {
+          "assumptionID": "story-branches",
+          "explanation": "你在32歲留下的故事記錄，影響這次能否接續已有安排。已有經驗及技能讓你可以接下帶領的工作，也可以選擇休息。",
+          "flagKey": "nature",
+          "offeredChoiceIDs": [
+            "lead",
+            "shortWalk",
+            "seekGuide",
+            "rest"
+          ],
+          "resourceChecks": [
+            {
+              "met": true,
+              "minimum": 24,
+              "resource": "skills",
+              "value": 52
+            }
+          ],
+          "ruleID": "story.nature",
+          "sourceAge": 32,
+          "sourceChoiceID": "lead",
+          "sourceEventID": "teen-river-survey",
+          "variantID": "later-path-map-continuation"
+        },
+        "scheduledHooks": [],
+        "arrivingHooks": []
+      },
+      "alternative": {
+        "eventID": "later-path-map",
+        "eventTitle": "一張空白地圖也能慢慢畫起",
+        "choiceID": "rest",
+        "choiceTitle": "今天不接新的安排，留時間好好休息",
+        "recurringPerson": "阿禾",
+        "storyVariantID": "later-path-map-recovery",
+        "resourcesBefore": {
+          "financial": 32,
+          "health": 82,
+          "relationships": 74,
+          "skills": 39
+        },
+        "resourcesAfter": {
+          "financial": 32,
+          "health": 84,
+          "relationships": 74,
+          "skills": 39
+        },
+        "storyBranch": {
+          "assumptionID": "story-branches",
+          "explanation": "目前沒有這條故事的先前參與記錄；這次可以從求助或小規模嘗試重新開始。帶領選項需要先前參與和技能至少24；本次保留入門、求助與休息。",
+          "offeredChoiceIDs": [
+            "shortWalk",
+            "seekGuide",
+            "rest"
+          ],
+          "resourceChecks": [
+            {
+              "met": true,
+              "minimum": 24,
+              "resource": "skills",
+              "value": 39
+            }
+          ],
+          "ruleID": "story.nature",
+          "sourceEventID": "",
+          "variantID": "later-path-map-recovery"
+        },
+        "scheduledHooks": [],
+        "arrivingHooks": []
+      }
+    },
+    {
+      "decisionIndex": 13,
+      "age": 72,
+      "original": {
+        "eventID": "middle-rhythm",
+        "eventTitle": "為下一階段調整節奏",
+        "choiceID": "invest",
+        "choiceTitle": "和小澄交換想保留的散步路線",
+        "recurringPerson": "小澄",
+        "storyVariantID": null,
+        "resourcesBefore": {
+          "financial": 32,
+          "health": 66,
+          "relationships": 91,
+          "skills": 54
+        },
+        "resourcesAfter": {
+          "financial": 32,
+          "health": 66,
+          "relationships": 94,
+          "skills": 55
+        },
+        "storyBranch": null,
+        "scheduledHooks": [],
+        "arrivingHooks": []
+      },
+      "alternative": {
+        "eventID": "middle-rhythm",
+        "eventTitle": "為下一階段調整節奏",
+        "choiceID": "rest",
+        "choiceTitle": "今天獨自慢慢走，留一段安靜時間",
+        "recurringPerson": "小澄",
+        "storyVariantID": null,
+        "resourcesBefore": {
+          "financial": 32,
+          "health": 84,
+          "relationships": 74,
+          "skills": 39
+        },
+        "resourcesAfter": {
+          "financial": 32,
+          "health": 86,
+          "relationships": 75,
+          "skills": 39
+        },
+        "storyBranch": null,
+        "scheduledHooks": [],
+        "arrivingHooks": []
+      }
+    },
+    {
+      "decisionIndex": 14,
+      "age": 80,
+      "original": {
+        "eventID": "later-review",
+        "eventTitle": "回望走過的岔路",
+        "choiceID": "invest",
+        "choiceTitle": "把重要選擇與幫助寫進人生小冊",
+        "recurringPerson": "一路相伴的人",
+        "storyVariantID": null,
+        "resourcesBefore": {
+          "financial": 32,
+          "health": 66,
+          "relationships": 94,
+          "skills": 55
+        },
+        "resourcesAfter": {
+          "financial": 32,
+          "health": 66,
+          "relationships": 97,
+          "skills": 56
+        },
+        "storyBranch": null,
+        "scheduledHooks": [],
+        "arrivingHooks": []
+      },
+      "alternative": {
+        "eventID": "later-review",
+        "eventTitle": "回望走過的岔路",
+        "choiceID": "rest",
+        "choiceTitle": "合上小冊，安靜看看走過的日子",
+        "recurringPerson": "一路相伴的人",
+        "storyVariantID": null,
+        "resourcesBefore": {
+          "financial": 32,
+          "health": 86,
+          "relationships": 75,
+          "skills": 39
+        },
+        "resourcesAfter": {
+          "financial": 32,
+          "health": 88,
+          "relationships": 76,
+          "skills": 39
+        },
+        "storyBranch": null,
+        "scheduledHooks": [],
+        "arrivingHooks": []
+      }
+    }
+  ]
+}

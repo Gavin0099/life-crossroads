@@ -32,6 +32,7 @@ import Foundation
             case .demo: print("demo")
             case .json: print("json")
             case .storySamples: print("story-samples")
+            case .branchSample: print("branch-sample")
             case .batchReport(let count): print("batch:\(count)")
             }
         } catch {
@@ -54,7 +55,7 @@ import Foundation
 
     def test_existing_modes_and_batch_boundaries(self):
         cases = [([], "demo"), (["--json"], "json"), (["--story-samples"], "story-samples"),
-                 (["--batch-report"], "batch:32"), (["--batch-report", "--seed-count", "2"], "batch:2"),
+                 (["--branch-sample"], "branch-sample"), (["--batch-report"], "batch:32"), (["--batch-report", "--seed-count", "2"], "batch:2"),
                  (["--batch-report", "--seed-count", "128"], "batch:128"),
                  (["--seed-count", "4", "--batch-report"], "batch:4")]
         for arguments, expected in cases:
@@ -65,7 +66,7 @@ import Foundation
                 self.assertEqual(result.stderr, "")
 
     def test_unknown_duplicate_conflicting_and_invalid_counts_fail_without_stdout(self):
-        cases = [["--unknown"], ["--batch-report", "extra"], ["--json", "--json"],
+        cases = [["--branch-sample", "--seed-count", "2"], ["--branch-sample", "--json"], ["--unknown"], ["--batch-report", "extra"], ["--json", "--json"],
                  ["--story-samples", "--batch-report"], ["--json", "--story-samples"],
                  ["--batch-report", "--json"], ["--batch-report", "--batch-report"],
                  ["--seed-count", "2"], ["--json", "--seed-count", "2"],

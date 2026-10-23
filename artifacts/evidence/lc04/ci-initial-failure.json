@@ -1,0 +1,20 @@
+{
+  "head": "0524b8cde57fd034362bb2edfb2ff28bf1db41b2",
+  "run": "https://github.com/Gavin0099/life-crossroads/actions/runs/39978641098",
+  "jobs": {
+    "basic-checks": "success",
+    "swift-engine": "success",
+    "governance-audit": "success",
+    "ios-app": "failure"
+  },
+  "swift_passed": 87,
+  "python_passed": 15,
+  "ui_passed": 5,
+  "ui_failed": 1,
+  "failure": "First8-year choice tap did not transition to reflection; UI hierarchy remained choosing without alert.",
+  "device": "iPhone16Pro / iOS18.5",
+  "owned_simulator_deleted": "A1048C2B-A50C-4AF5-922E-6DB7AB84CCD0",
+  "artifact_id": 12513243116,
+  "artifact_sha256": "7718e668bfa7708d8dbfbd3930148addd473eea0381cf2c34904277047533f49",
+  "cause_boundary": "Tap delivery/hit-region suspected; local iOS27 blank-area test passes before change, so no local reproduction claim."
+}

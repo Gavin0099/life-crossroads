@@ -1,0 +1,17 @@
+{
+  "source": "human authoring session, 2026-10-24",
+  "reviewed_start_head": "2f030d2f646dc0c7bcb08c39b57c55bb09bf09c4",
+  "quote": "PR #5：補 W1/W2 定向整合測試，CI 通過後合併 main。維持目前 Draft、不合併的狀態，直到 W1/W2 補測通過。",
+  "authorization": "conditional merge authorization for the requested W1/W2 follow-up in PR #5",
+  "scope": [
+    "W1 original-life UI content invariance",
+    "W2 save failure, unchanged screen/archive and successful retry",
+    "latest-head CI and bounded delta review before merge"
+  ],
+  "excluded": [
+    "release",
+    "LC-03 implementation in this follow-up",
+    "visual branch merge"
+  ],
+  "authority_boundary": "Current direct human instruction supersedes the earlier no-merge instruction for this narrowly scoped follow-up; not inferred from PLAN or agent recommendation."
+}

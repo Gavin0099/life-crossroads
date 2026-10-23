@@ -1,0 +1,52 @@
+{
+  "base_head": "2f030d2f646dc0c7bcb08c39b57c55bb09bf09c4",
+  "date": "2026-10-24",
+  "scope": "W1/W2 follow-up only",
+  "ui": {
+    "command": "bash artifacts/evidence/lc04-w12/run-focused-ios.sh",
+    "exit_code": 0,
+    "unique_tests": 2,
+    "result_bundle": "artifacts/ios/LC04-W12-20261023T172438Z.xcresult",
+    "raw_log": "artifacts/governance/lc04-w12-ios.log",
+    "raw_log_sha256": "78d903b6b90347ae3a0ffc2c0d45be8ff2619d341ab2e7bb5f6af4a14cd1f233"
+  },
+  "swift": {
+    "command": "swift test -c release --filter 'BranchExperimentTests|SaveRepositoryTests'",
+    "exit_code": 0,
+    "unique_tests": 16
+  },
+  "python": {
+    "command": "python3 -m unittest discover -s Tests -p 'test_*.py'",
+    "exit_code": 0,
+    "unique_tests": 15
+  },
+  "simulator": {
+    "uuid": "FDF71D90-D924-4B1A-B23D-02ECE0938A76",
+    "deleted": true,
+    "inventory_absent": true,
+    "shared_runtime_deleted": false
+  },
+  "source_sha256": {
+    "LifeCrossroads/App/BranchViews.swift": "43211fd37a912202a6d69126ed9eac6ca979c17cb8c1f7d4b204e482dfc7613b",
+    "LifeCrossroads/App/CrossroadsView.swift": "6f87cfb2eecbc1c0276890bb801af683e4621934cad0b123c6282fbc315d7755",
+    "LifeCrossroads/App/GameStore.swift": "8e6418a5c2cb6e4af93d8b44ffb726930d10d63a09c9c1d8947ba1baf88c096b",
+    "UITests/LifeCrossroadsUITests.swift": "d19b28b99610309dc32b09d981dd9858a9087ce76ee763e6dd027c7abccf2646",
+    "docs/lc04-w12-followup.md": "751638ce684b7de61b386745c3f68f2a90fd37b2cd8b4f2c557fc1eddfdd0335",
+    "artifacts/evidence/lc04-w12/run-focused-ios.sh": "97212ccf38c34e09b9228de92973bacbd3c16efb846e353d0da766b53d71508e"
+  },
+  "not_claimed": [
+    "latest follow-up HEAD remote CI before push",
+    "merge before its predicates",
+    "physical device",
+    "manual VoiceOver",
+    "child testing",
+    "P1 acceptance",
+    "all iOS storage failure modes"
+  ],
+  "runtime_warnings": [
+    {
+      "issueType": "Runtime Warning",
+      "message": "Publishing changes from within view updates is not allowed, this will cause undefined behavior."
+    }
+  ]
+}
