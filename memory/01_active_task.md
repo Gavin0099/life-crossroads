@@ -33,3 +33,5 @@
 - PR4 c05ee51：Review 5628794428確認工程通過、Draft/HOLD；同HEAD CI成功。後續候選優先故事延續及成長/支持/恢復/關係分項，休息0鏈不等於沒有後果。此輪僅本機審查紀錄，未實作或提交。 <!-- memory_record_projection:active-task-summary:bfc0aa08a2ee952cbca9dc4b2b9247bcbc315d61402c1fd493c9c133be880990 -->
 
 - PR1～4已依序merge至main核心430fbf8；71 Swift/15 Python/5 UI通過且Simulator已刪。Visual WIP3438fc6已推送，新main基底整合分支已交接；待文件/記憶push與最終main CI。後續LC04→LC03；P1及發布未通過。 <!-- memory_record_projection:active-task-summary:ca0b3d6b54b9aa0615b6ff702bc58764a2a60aafdb5567409654905f96739586 -->
+
+- GS-05/SIM-01～03工坊候選完成：13歲選擇持續影響15歲可操作機會；雙機14/14及最終視覺P0/P1=0，待使用者review與SIM-04真人試玩，不合併或發布。 <!-- memory_record_projection:active-task-summary:7a4c25434077dbe32e840dc4467e505910a588982778843f5dd759709ab41263 -->

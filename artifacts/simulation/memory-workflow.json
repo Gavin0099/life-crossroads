@@ -1,0 +1,16 @@
+{
+  "command": "PYTHONPATH=additional/ai-governance-framework python -m governance_tools.memory_workflow --check --repo . --run-guard --fail-on-blocker",
+  "exit_code": 0,
+  "guard_ran": true,
+  "completion_claim_allowed": true,
+  "active_non_canonical_writer": 0,
+  "current_diff_b0_blocker_count": 0,
+  "background_warnings": [
+    "unbound_memory",
+    "test_evidence_provenance_not_found",
+    "test_evidence_linked_commit_mismatch"
+  ],
+  "boundary": "No current memory-workflow blocking item; retained background warnings are not a claim that all historical memory is clean",
+  "raw_output": "memory-workflow.txt",
+  "implementation_commit": "ddbfafce6f0af146df30a72357bd1946423f9775"
+}
