@@ -1,0 +1,67 @@
+{
+  "source_result_bundle": "artifacts/ios/LC02-20261023T094145Z.xcresult",
+  "app_commit": "c48ca6431f225c5cafff273d9488dcf485e474c0",
+  "capture": "Original XCTest PNG attachments, copied without image edits",
+  "images": [
+    {
+      "file": "artifacts/evidence/conditional-event-first/event-first-life-review.png",
+      "source_attachment": "15218E08-872A-4BF1-BDFD-5628894105CE.png",
+      "test": "LifeCrossroadsUITests/testCompleteLifeWithVisibleComparisonAndExecutedExplanation()",
+      "sha256": "752370fc2d6523ffd55fb06a2bedc3cf92e45b123c724d391394eaebabc3c958"
+    },
+    {
+      "file": "artifacts/evidence/conditional-event-first/event-first-outcome.png",
+      "source_attachment": "35FFEF57-DB68-439E-97C1-AA08158A6141.png",
+      "test": "LifeCrossroadsUITests/testCompleteLifeWithVisibleComparisonAndExecutedExplanation()",
+      "sha256": "d9afd3df821e79efd865871246795689059a6fcd5af342dc07141619acaca450"
+    },
+    {
+      "file": "artifacts/evidence/conditional-event-first/event-first-decision.png",
+      "source_attachment": "5C2B8E38-F4A0-4BED-A802-7127910EBA39.png",
+      "test": "LifeCrossroadsUITests/testCompleteLifeWithVisibleComparisonAndExecutedExplanation()",
+      "sha256": "9b44c440e8b58be28c4004b8d0f1957230520767b621b01953f3638d2ae7632e"
+    },
+    {
+      "file": "artifacts/evidence/conditional-event-first/event-first-birth.png",
+      "source_attachment": "6E88191B-ADD8-4A3C-8270-548387EB1D25.png",
+      "test": "LifeCrossroadsUITests/testCompleteLifeWithVisibleComparisonAndExecutedExplanation()",
+      "sha256": "6fa73479b5c93b8448418b941f6dddcb813fc673a6078d685a98ee750b3b5c2d"
+    },
+    {
+      "file": "artifacts/evidence/conditional-event-first/maximum-text-reason.png",
+      "source_attachment": "95EACC99-E148-48FC-A2C5-1CB4827916B6.png",
+      "test": "LifeCrossroadsUITests/testMaximumTextCanReachActionsReasonComparisonAndContinue()",
+      "sha256": "7a41f6cb74653b7f5f3b3056a89e397f448b69812bc3b7f5554cc259188f07c0"
+    },
+    {
+      "file": "artifacts/evidence/conditional-event-first/maximum-text-event-first.png",
+      "source_attachment": "BC7A8F1C-068A-423E-AA41-28760631B30D.png",
+      "test": "LifeCrossroadsUITests/testMaximumTextCanReachActionsReasonComparisonAndContinue()",
+      "sha256": "0a9460483b94ab768ba53f3c5249980e5c36dd57ebcea178f85f2b742bb05a38"
+    },
+    {
+      "file": "artifacts/evidence/conditional-event-first/post-choice-comparison-pre-state.png",
+      "source_attachment": "3EDE1F2E-10F3-4674-A8C0-59FFEECB87FF.png",
+      "test": "LifeCrossroadsUITests/testRestAfterChoiceComparisonKeepsThePreChoiceState()",
+      "sha256": "fb902746159e91a0cdfd9920d74e1c03f9da6784fc7098755f3bd0ab7cf667be"
+    },
+    {
+      "file": "artifacts/evidence/conditional-event-first/seed-2-actual-twelve-year-event.png",
+      "source_attachment": "2EF1C3A5-805A-4E03-8A4A-79E2BBA71466.png",
+      "test": "LifeCrossroadsUITests/testSeedZeroOneTwoShowActualSelectedEvents()",
+      "sha256": "466e4c52a396a8e2f3b401815512711e34741e7e6c0ffb4a66786ff7873b2dfc"
+    },
+    {
+      "file": "artifacts/evidence/conditional-event-first/seed-0-actual-twelve-year-event.png",
+      "source_attachment": "6156F62D-6E55-4F62-BEE1-949CA4C892B3.png",
+      "test": "LifeCrossroadsUITests/testSeedZeroOneTwoShowActualSelectedEvents()",
+      "sha256": "ec872b36d94307c1aaa816f8320f5ce2096f8c40eac66f73d1f121aefaa5ff2b"
+    },
+    {
+      "file": "artifacts/evidence/conditional-event-first/seed-2-executed-selection-conditions.png",
+      "source_attachment": "01F5CDFF-1E1F-424F-96E7-11655F9EAC87.png",
+      "test": "LifeCrossroadsUITests/testSeedZeroOneTwoShowActualSelectedEvents()",
+      "sha256": "de2ee95b5f23011db773d3777cf9361832da70a33e7e0b527429080e23a2c1a5"
+    }
+  ]
+}

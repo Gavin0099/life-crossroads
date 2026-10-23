@@ -1,0 +1,9 @@
+{
+  "owned_device_id": "DB0F1B80-370C-441C-8376-070E69C757F8",
+  "device_type": "iPhone SE (3rd generation)",
+  "runtime": "iOS 27.0",
+  "test_exit_code": 0,
+  "delete_reported_in_receipt": "artifacts/evidence/test-results/conditional-ui.txt",
+  "absent_from_simctl_after_run": true,
+  "scope": "Only the device created by scripts/ios-check.sh; existing devices and shared runtimes untouched"
+}
