@@ -26,6 +26,15 @@ final class LifeCrossroadsUITests: XCTestCase {
                 let prompt = app.staticTexts["eventStoryQuestion"]; reveal(prompt, in: app)
                 XCTAssertEqual(prompt.label, question)
                 XCTAssertTrue(prompt.isHittable, "The end of the full story must be reachable")
+                let storyScroll = app.scrollViews["eventStoryScroll"]
+                let visibleBottom = min(storyScroll.frame.maxY, app.frame.maxY - 24) - 8
+                // A hittable middle does not prove the last line can be read. Keep the
+                // real final edge visible even if a very long prompt begins above the viewport.
+                for _ in 0..<8 {
+                    if prompt.frame.maxY <= visibleBottom { break }
+                    storyScroll.swipeUp(velocity: .slow)
+                }
+                XCTAssertLessThanOrEqual(prompt.frame.maxY, visibleBottom, "The final question line must be visible")
                 attachScreenshot("ll07-full-event-\(age)-\(largest ? "maximum" : "normal")", app: app)
                 app.buttons["closeFullEvent"].tap()
                 XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 5))
