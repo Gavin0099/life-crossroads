@@ -43,3 +43,5 @@
 - LC04 W1/W2本機通過並提交1226fb2：原局/比較內容與失敗畫面/原檔/重試/重開均驗證，Simulator已刪。使用者授權補測+最新CI通過後合併PR5；待最終有界覆核/推送CI核對。保留提示關閉警告與產品驗收缺口，圖片線獨立。 <!-- memory_record_projection:active-task-summary:c0ae39e4d6734219121835b83ffdc186bedeb5c58f3a698c3ffd61849d675a00 -->
 
 - 1226fb2 W1/W2有界獨立覆核APPROVED、新增blocker0；原局UI及選擇/繼續失敗恢復已驗證，R1提示關閉警告保留。待companion候選bytes核對、推送最新CI，符合本輪使用者條件後合併PR5；未發布。 <!-- memory_record_projection:active-task-summary:724e1fe6d1a4d712c59bf28415a10a9f44cbf7fd0a0bb9334aed0716ad58ae4c -->
+
+- LC03工程提交1fb30ba：八國16家庭、31觀測與可比性/未知成本提示；96Swift/23Python、8回歸UI+1定向UI通過，128局含四策略/Seed0及見證Seed3。四台Simulator已刪。台灣同口徑數位/自付仍缺；待獨立Draft推送與HEAD CI，不合併。 <!-- memory_record_projection:active-task-summary:1786e15735915f87c96eaff34a0fc8cd194ccb5861cdd8d3c1d784bf2b82a545 -->
