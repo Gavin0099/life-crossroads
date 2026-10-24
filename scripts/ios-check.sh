@@ -48,6 +48,9 @@ trap 'exit 130' INT
 trap 'exit 143' TERM
 LIFE_TEST_DEVICE="$(xcrun simctl create "LifeCrossroads Test $(date -u +%Y%m%dT%H%M%SZ)" "$LIFE_DEVICE_TYPE" "$LIFE_DEVICE_RUNTIME")"
 echo "Created test Simulator: $LIFE_TEST_DEVICE"
+# Complete first boot before the UI runner starts its own bootstrap timeout.
+xcrun simctl boot "$LIFE_TEST_DEVICE"
+xcrun simctl bootstatus "$LIFE_TEST_DEVICE" -b
 # Separate output paths per invocation; never overwrite an earlier result bundle.
 LIFE_RESULT_PATH="artifacts/ios/LC02-$(date -u +%Y%m%dT%H%M%SZ).xcresult"
 # Optional positional test identifiers narrow diagnostics; every path still owns and deletes its device.

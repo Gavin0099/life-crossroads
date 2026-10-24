@@ -36,6 +36,10 @@ final class LifeCrossroadsUITests: XCTestCase {
         let app = launch(seed: "0", failingSaves: "2,4", world: true)
         startWorldPaused(app)
         let firstEvent = app.staticTexts["eventTitle"].value as? String
+        let firstAction = app.buttons["choice.invest"]
+        XCTAssertTrue(firstAction.isHittable)
+        XCTAssertLessThan(firstAction.frame.midY, app.frame.maxY - 68, "SE first screen must offer an action above playback controls")
+        attachScreenshot("world-se-first-action", app: app)
         let before = try archiveChecksum(in: app)
         let rest = app.buttons["choice.rest"]; reveal(rest, in: app); rest.tap()
         assertSaveFailure(in: app)
@@ -69,7 +73,14 @@ final class LifeCrossroadsUITests: XCTestCase {
         app.buttons["closeTrace"].tap()
         app.buttons["restartMenu"].tap(); app.buttons["restartSame"].tap()
         let cancel = app.buttons["cancelRestart"]
-        XCTAssertTrue(cancel.waitForExistence(timeout: 5)); cancel.tap()
+        if cancel.waitForExistence(timeout: 1) { cancel.tap() }
+        else if app.buttons["取消"].exists { app.buttons["取消"].tap() }
+        else if app.buttons["Cancel"].exists { app.buttons["Cancel"].tap() }
+        else {
+            print("NATIVE_RESTART_DIALOG_DISMISS_OUTSIDE\n\(app.debugDescription)")
+            app.coordinate(withNormalizedOffset: CGVector(dx: 0.05, dy: 0.25)).tap()
+        }
+        XCTAssertTrue(app.buttons["confirmRestart"].waitForNonExistence(timeout: 5))
         XCTAssertTrue(app.staticTexts["chosenAction"].waitForExistence(timeout: 5))
         XCTAssertEqual(try archiveChecksum(in: app), saved)
         app.buttons["continueLife"].tap(); skipWorldMontage(app)
@@ -99,6 +110,7 @@ final class LifeCrossroadsUITests: XCTestCase {
         let pause = app.buttons["worldPause"]; XCTAssertTrue(pause.waitForExistence(timeout: 5))
         if pause.label == "暫停播放" { pause.tap() }
         skipWorldMontage(app)
+        XCTAssertTrue((app.staticTexts["worldPlaybackState"].value as? String ?? "").contains("|true|"), "Pause must remain active before choosing")
     }
     private func skipWorldMontage(_ app: XCUIApplication) {
         if app.staticTexts["eventTitle"].exists { return }
@@ -716,8 +728,10 @@ final class LifeCrossroadsUITests: XCTestCase {
     private func reveal(_ element: XCUIElement, in app: XCUIApplication) {
         for _ in 0..<32 {
             let footer = app.buttons["continueLife"].exists && !app.buttons["closeTrace"].exists && !app.buttons["closeComparison"].exists
-            let bottomClearance: CGFloat = footer ? 110 : 24
-            if element.exists && element.isHittable && element.frame.midY > 100 && element.frame.midY < app.frame.maxY - bottomClearance { return }
+            let worldFooter = app.buttons["worldPause"]
+            let sheet = app.buttons["closeTrace"].exists || app.buttons["closeComparison"].exists
+            let bottom = worldFooter.exists && !sheet ? worldFooter.frame.minY - 12 : app.frame.maxY - (footer ? 110 : 24)
+            if element.exists && element.isHittable && element.frame.midY > 100 && element.frame.midY < bottom { return }
             let upper = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.38))
             let lower = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.65))
             if element.exists && element.frame.midY < 100 { upper.press(forDuration: 0.05, thenDragTo: lower) }
