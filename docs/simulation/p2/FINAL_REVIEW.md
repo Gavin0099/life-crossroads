@@ -37,3 +37,5 @@
 Simulator與Reduce Motion回歸不代表實機、人工VoiceOver、最低iOS17或10～15歲真人理解／重玩驗證。既有素材仍是未正式核准候選，`approved_for_app=false`及商用／正式選稿界線保持不變。僅推送獨立分支供review，不合併main、不發布App。
 
 本分支只推送、不新增PR；目前Project CI的push觸發僅main，故不將本機回歸聲稱為遠端CI通過。待日後PR／正式整合時另依同HEAD確認CI。
+
+實作與證據提交為`6c1c3c320e04cac74354048ca5ef1282afa6a9ab`；來源綁定及canonical記憶採後續收尾提交。[記憶流程檢查](../../../artifacts/simulation-p2/memory-closeout-check.json)已執行guard，本輪阻擋0、允許記憶完成宣告；既有記錄仍有background warnings，不宣稱整個歷史記憶或runtime治理已清理／通過。

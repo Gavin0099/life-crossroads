@@ -15,7 +15,9 @@
     "In-scene observation and read-only thirteen-year-old trace view with return to live fifteen-year-old state",
     "SE3 17/17 and iPhone17 17/17 on matching sixty-one-file snapshot; no failures, skips or expected failures",
     "80 Swift, 15 actual Python tests and 6 basic checks passed",
-    "All eight owned Simulator devices and their data deleted, including failed runs"
+    "All eight owned Simulator devices and their data deleted, including failed runs",
+    "Independent SE and iPhone17 visual reviews each opened nineteen native workshop images; all three former P2 findings closed within candidate scope",
+    "Canonical daily/active memory writer used; memory guard current blockers zero and completion_claim_allowed=true; historical background warnings retained"
   ],
   "claim_ceiling": "Three former P2 presentation findings closed for a reviewable 13-to-15 workshop candidate; independent native visual reports are separate from test results",
   "not_claimed": [
@@ -35,7 +37,9 @@
     "narrow-final-summary.json",
     "standard-final-summary.json",
     "../../docs/simulation/p2/CRITIC_FINAL_SE.md",
-    "../../docs/simulation/p2/CRITIC_FINAL_STANDARD.md"
+    "../../docs/simulation/p2/CRITIC_FINAL_STANDARD.md",
+    "source-binding.json",
+    "memory-closeout-check.json"
   ],
   "risk": [
     "L1 presentation and accessibility/layout changes; Domain/Data unchanged and whole-route JSON matches baseline",
@@ -43,5 +47,6 @@
   ],
   "next_action": "User reviews the focused P2 gallery and diff; SIM-04 human validation remains separate",
   "git_delivery": "Implementation/evidence commit followed by source-binding and canonical memory companion; push independent branch after gates; verify remote ref separately",
-  "push_authority": "Current explicit user instruction to push after two-device regression; no merge or release"
+  "push_authority": "Current explicit user instruction to push after two-device regression; no merge or release",
+  "implementation_commit": "6c1c3c320e04cac74354048ca5ef1282afa6a9ab"
 }

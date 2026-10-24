@@ -35,3 +35,5 @@
 - PR1～4已依序merge至main核心430fbf8；71 Swift/15 Python/5 UI通過且Simulator已刪。Visual WIP3438fc6已推送，新main基底整合分支已交接；待文件/記憶push與最終main CI。後續LC04→LC03；P1及發布未通過。 <!-- memory_record_projection:active-task-summary:ca0b3d6b54b9aa0615b6ff702bc58764a2a60aafdb5567409654905f96739586 -->
 
 - GS-05/SIM-01～03工坊候選完成：13歲選擇持續影響15歲可操作機會；雙機14/14及最終視覺P0/P1=0，待使用者review與SIM-04真人試玩，不合併或發布。 <!-- memory_record_projection:active-task-summary:7a4c25434077dbe32e840dc4467e505910a588982778843f5dd759709ab41263 -->
+
+- 工坊3項P2候選修正完成：真實前因分層、薄紙桁架、場景觀察／過去現在；未增角色圖或改Domain/Data。雙機17/17、獨立圖審3舊P2關閉，8專用Simulator已刪。待使用者Review與SIM-04，不合併／發布。 <!-- memory_record_projection:active-task-summary:3be59a4d699366b5efbcbf1cddbc5e42eb1f012a9c6a73407f2bc7e334a56346 -->
