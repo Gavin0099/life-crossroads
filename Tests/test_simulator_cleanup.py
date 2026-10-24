@@ -44,6 +44,7 @@ elif args[:2] == ['simctl', 'delete']:
                                     env={**os.environ, "PATH": f"{binary}:{os.environ['PATH']}",
                                          "LIFE_SIMULATOR_ID": requested, "LIFE_FAKE_LOG": str(log),
                                          "LIFE_SIMULATOR_DEVICE_TYPE": "", "LIFE_SIMULATOR_RUNTIME": "",
+                                         "LIFE_TEST_DIAGNOSTICS": "",
                                          "LIFE_FAKE_BUILD_STATUS": str(build_status),
                                          "LIFE_FAKE_DELETE_STATUS": str(delete_status), "LIFE_FAKE_BOOT_STATUS": str(boot_status), **(config or {})})
             calls = [json.loads(line) for line in log.read_text().splitlines()] if log.exists() else []
@@ -94,6 +95,19 @@ elif args[:2] == ['simctl', 'delete']:
         result, calls = self.run_wrapper(requested="unknown")
         self.assertNotEqual(result.returncode, 0)
         self.assertEqual(len(calls), 1)
+
+    def test_verbose_diagnostics_are_opt_in_and_invalid_value_creates_no_device(self):
+        for value, expected in [("", "never"), ("never", "never"), ("on-failure", "on-failure")]:
+            with self.subTest(value=value):
+                result, calls = self.run_wrapper(config={"LIFE_TEST_DIAGNOSTICS": value})
+                self.assertEqual(result.returncode, 0, result.stderr)
+                build = next(call for call in calls if call[0] == "xcodebuild")
+                self.assertEqual(build[build.index("-collect-test-diagnostics") + 1], expected)
+                self.assertEqual(calls[-1], ["xcrun", "simctl", "delete", "owned-test-phone"])
+        result, calls = self.run_wrapper(config={"LIFE_TEST_DIAGNOSTICS": "always"})
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("must be never or on-failure", result.stderr)
+        self.assertEqual(calls, [])
 
 
 if __name__ == "__main__":

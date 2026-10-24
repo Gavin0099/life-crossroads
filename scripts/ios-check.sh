@@ -1,6 +1,13 @@
 #!/bin/bash
 set -euo pipefail
 cd "$(dirname "$0")/.."
+# Keep XCTest logs, screenshots and results; verbose OS diagnostics can stall
+# after the suite has finished. Opt in while investigating an actual failure.
+LIFE_TEST_DIAGNOSTICS="${LIFE_TEST_DIAGNOSTICS:-never}"
+case "$LIFE_TEST_DIAGNOSTICS" in
+  never|on-failure) ;;
+  *) echo 'LIFE_TEST_DIAGNOSTICS must be never or on-failure.' >&2; exit 2 ;;
+esac
 mkdir -p artifacts/ios
 if [ -n "${LIFE_SIMULATOR_DEVICE_TYPE:-}${LIFE_SIMULATOR_RUNTIME:-}" ]; then
   if [ -z "${LIFE_SIMULATOR_DEVICE_TYPE:-}" ] || [ -z "${LIFE_SIMULATOR_RUNTIME:-}" ] || [ -n "${LIFE_SIMULATOR_ID:-}" ]; then
@@ -61,5 +68,6 @@ done
 xcodebuild -project LifeCrossroads.xcodeproj -scheme LifeCrossroads \
   -destination "platform=iOS Simulator,id=$LIFE_TEST_DEVICE" \
   -parallel-testing-enabled NO \
+  -collect-test-diagnostics "$LIFE_TEST_DIAGNOSTICS" \
   -derivedDataPath .build/ios-app -resultBundlePath "$LIFE_RESULT_PATH" \
   CODE_SIGNING_ALLOWED=NO "${LIFE_TEST_ARGUMENTS[@]}"
