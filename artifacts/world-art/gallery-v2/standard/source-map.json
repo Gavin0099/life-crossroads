@@ -1,0 +1,72 @@
+[
+  {
+    "path": "artifacts/world-art/gallery-v2/standard/06-elder.png",
+    "sha256": "8dfe33e537a7d7dc8efb76115f57d8b168c06a178c37b084350c1c5de8ac6051",
+    "testIdentifier": "WorldArtUITests/testAdolescentAndElderRemainInSameScene()",
+    "original_exported_filename": "ED9692F9-A6CD-43E0-8303-A9B5046C5726.png",
+    "device": "WorldArt-standard-20261024T050739Z"
+  },
+  {
+    "path": "artifacts/world-art/gallery-v2/standard/05-teen.png",
+    "sha256": "a2c9e8db6d8ff60015190317a449d2ab9d24cad08a004413c798dbb8288aee67",
+    "testIdentifier": "WorldArtUITests/testAdolescentAndElderRemainInSameScene()",
+    "original_exported_filename": "CA696CB8-B4DB-47E1-924C-6430CBBA5667.png",
+    "device": "WorldArt-standard-20261024T050739Z"
+  },
+  {
+    "path": "artifacts/world-art/gallery-v2/standard/07-largest.png",
+    "sha256": "f495ba48a96313a7ac17aac89f1ad8822e8dee2139ed53b680700958d6acba98",
+    "testIdentifier": "WorldArtUITests/testLargestTypeCanInspectAndDismissWithoutLosingActor()",
+    "original_exported_filename": "610AB5AD-5039-4F8D-B384-3C8B0EBCA611.png",
+    "device": "WorldArt-standard-20261024T050739Z"
+  },
+  {
+    "path": "artifacts/world-art/gallery-v2/standard/10-paused.png",
+    "sha256": "060500e122e8f78322d416c0877292104c53d14806fdf0d0f6df8c72867a19b3",
+    "testIdentifier": "WorldArtUITests/testPauseKeepsActorStillAndRetainsScene()",
+    "original_exported_filename": "5B370BCD-5564-47CB-A218-986127B1EF5E.png",
+    "device": "WorldArt-standard-20261024T050739Z"
+  },
+  {
+    "path": "artifacts/world-art/gallery-v2/standard/09-seeking.png",
+    "sha256": "f85014270846ec5bbb40e0898b3948e31de373add94a8f7a3098ca60e1d09138",
+    "testIdentifier": "WorldArtUITests/testReducedMotionRetainsWalkingPoseAndFacts()",
+    "original_exported_filename": "18AA590F-C702-4FD1-BC47-668703127270.png",
+    "device": "WorldArt-standard-20261024T050739Z"
+  },
+  {
+    "path": "artifacts/world-art/gallery-v2/standard/08-reduced-motion-walking.png",
+    "sha256": "b4bb44bb4450e738a9dd2b10e26389d5280dd2864ed728eb6148c08032546fca",
+    "testIdentifier": "WorldArtUITests/testReducedMotionRetainsWalkingPoseAndFacts()",
+    "original_exported_filename": "61988AA8-4A3C-4748-89F8-60459AD346F6.png",
+    "device": "WorldArt-standard-20261024T050739Z"
+  },
+  {
+    "path": "artifacts/world-art/gallery-v2/standard/04-source.png",
+    "sha256": "edcc50d36a9fda81d452dc5cadc6f9542ee7534c96bb1903892c425f563a507d",
+    "testIdentifier": "WorldArtUITests/testThreeBehaviorsAndPersistentObjectSource()",
+    "original_exported_filename": "02E7C2E4-977C-4B24-8CD9-1956740350D0.png",
+    "device": "WorldArt-standard-20261024T050739Z"
+  },
+  {
+    "path": "artifacts/world-art/gallery-v2/standard/03-interacting.png",
+    "sha256": "d608a8f0f15cb74b4262eccb3116e5c1d2aeef6dd6605bb82fd450a6c3c6af4b",
+    "testIdentifier": "WorldArtUITests/testThreeBehaviorsAndPersistentObjectSource()",
+    "original_exported_filename": "23712033-78A9-4237-9284-E2759E6F7645.png",
+    "device": "WorldArt-standard-20261024T050739Z"
+  },
+  {
+    "path": "artifacts/world-art/gallery-v2/standard/02-walking.png",
+    "sha256": "31d788b03a41a69866ecc0ebc3412cb96317467a683414ef76372186b3ce1fc9",
+    "testIdentifier": "WorldArtUITests/testThreeBehaviorsAndPersistentObjectSource()",
+    "original_exported_filename": "CB2AE180-0BFF-4D96-B8B7-BEAFB63A1066.png",
+    "device": "WorldArt-standard-20261024T050739Z"
+  },
+  {
+    "path": "artifacts/world-art/gallery-v2/standard/01-idle.png",
+    "sha256": "31690db70cf3ee10265fde307c8b2ec5181872f4ae2d4fd848a6b52b72ae0f1a",
+    "testIdentifier": "WorldArtUITests/testThreeBehaviorsAndPersistentObjectSource()",
+    "original_exported_filename": "14DAA7D0-7FA6-4A44-9925-A7963611CD14.png",
+    "device": "WorldArt-standard-20261024T050739Z"
+  }
+]

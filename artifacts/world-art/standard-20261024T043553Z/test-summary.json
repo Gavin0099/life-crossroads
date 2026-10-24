@@ -1,0 +1,76 @@
+{
+  "devicesAndConfigurations" : [
+    {
+      "device" : {
+        "architecture" : "arm64",
+        "deviceId" : "BD519A19-67AE-4460-9E72-2784DC56F652",
+        "deviceName" : "WorldArt-standard-20261024T043553Z",
+        "modelName" : "iPhone 17",
+        "osBuildNumber" : "24A434",
+        "osVersion" : "27.0",
+        "platform" : "iOS Simulator"
+      },
+      "expectedFailures" : 0,
+      "failedTests" : 4,
+      "passedTests" : 1,
+      "skippedTests" : 0,
+      "testPlanConfiguration" : {
+        "configurationId" : "1",
+        "configurationName" : "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription" : "LifeCrossroads · Built with macOS 27.0",
+  "expectedFailures" : 0,
+  "failedTests" : 4,
+  "finishTime" : 1792816860.625,
+  "passedTests" : 1,
+  "result" : "Failed",
+  "runtimeWarnings" : [
+
+  ],
+  "skippedTests" : 0,
+  "startTime" : 1792816563.488,
+  "statistics" : [
+
+  ],
+  "testFailures" : [
+    {
+      "failureText" : "Failed to determine hittability of \"preview-interacting\" Button: Activation point invalid and no suggested hit points based on element frame",
+      "targetName" : "LifeCrossroadsUITests",
+      "testIdentifier" : 2,
+      "testIdentifierString" : "WorldArtUITests/testLargestTypeCanInspectAndDismissWithoutLosingActor()",
+      "testIdentifierURL" : "test://com.apple.xcode/WorldArtPreview/LifeCrossroadsUITests/WorldArtUITests/testLargestTypeCanInspectAndDismissWithoutLosingActor",
+      "testName" : "testLargestTypeCanInspectAndDismissWithoutLosingActor()"
+    },
+    {
+      "failureText" : "XCTAssertEqual failed: (\"2460694 bytes\") is not equal to (\"2458641 bytes\")",
+      "targetName" : "LifeCrossroadsUITests",
+      "testIdentifier" : 3,
+      "testIdentifierString" : "WorldArtUITests/testPauseKeepsActorStillAndRetainsScene()",
+      "testIdentifierURL" : "test://com.apple.xcode/WorldArtPreview/LifeCrossroadsUITests/WorldArtUITests/testPauseKeepsActorStillAndRetainsScene",
+      "testName" : "testPauseKeepsActorStillAndRetainsScene()"
+    },
+    {
+      "failureText" : "Failed to determine hittability of \"preview-walking\" Button: Activation point invalid and no suggested hit points based on element frame",
+      "targetName" : "LifeCrossroadsUITests",
+      "testIdentifier" : 4,
+      "testIdentifierString" : "WorldArtUITests/testReducedMotionRetainsWalkingPoseAndFacts()",
+      "testIdentifierURL" : "test://com.apple.xcode/WorldArtPreview/LifeCrossroadsUITests/WorldArtUITests/testReducedMotionRetainsWalkingPoseAndFacts",
+      "testName" : "testReducedMotionRetainsWalkingPoseAndFacts()"
+    },
+    {
+      "failureText" : "XCTAssertTrue failed",
+      "targetName" : "LifeCrossroadsUITests",
+      "testIdentifier" : 5,
+      "testIdentifierString" : "WorldArtUITests/testThreeBehaviorsAndPersistentObjectSource()",
+      "testIdentifierURL" : "test://com.apple.xcode/WorldArtPreview/LifeCrossroadsUITests/WorldArtUITests/testThreeBehaviorsAndPersistentObjectSource",
+      "testName" : "testThreeBehaviorsAndPersistentObjectSource()"
+    }
+  ],
+  "title" : "Test - LifeCrossroads",
+  "topInsights" : [
+
+  ],
+  "totalTestCount" : 5
+}

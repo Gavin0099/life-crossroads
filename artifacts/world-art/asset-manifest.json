@@ -1,0 +1,46 @@
+{
+  "contract": "life-world-view-1",
+  "review_status": "candidate_pending_post_P1_independent_recheck",
+  "tool": "built-in image_gen.imagegen",
+  "assets": [
+    {
+      "role": "background",
+      "path": "LifeCrossroads/App/Assets.xcassets/LifeWorldHome.imageset/river-home-v1.png",
+      "sha256": "95c2f03b7560077fb30b81dc230fe4d1940dff36dd7ea19d030b838f753b4f4d",
+      "new_asset": true
+    },
+    {
+      "role": "poses",
+      "path": "LifeCrossroads/App/Assets.xcassets/LifeWorldPoses.imageset/otter-poses-v3.png",
+      "sha256": "fce33c75e5509db63db33f4d339312ab63722349f3de770606c5914c54253bd4",
+      "new_asset": true
+    },
+    {
+      "role": "existing-cast",
+      "path": "LifeCrossroads/App/Assets.xcassets/StoryCast.imageset/story-cast.png",
+      "sha256": "663bb1b1ce8a0af2ed99be72827a6e4bc69978eb00708df62f7b27cd85e068d8",
+      "new_asset": false
+    },
+    {
+      "role": "existing-companion-interaction-fix",
+      "path": "LifeCrossroads/App/Assets.xcassets/LifeWorldCompanions.imageset/companion-interaction-v1.png",
+      "sha256": "125f8e2b23f2401fe5c471a0e5c39e787d0f4aa1d8a621bb3f42be66cc242246",
+      "new_asset": true
+    }
+  ],
+  "pose_atlas": {
+    "columns": 3,
+    "rows": 2,
+    "row_seam_pixels": 497,
+    "age_rows": [
+      "childhood",
+      "adolescence"
+    ],
+    "behaviors": [
+      "idle",
+      "walking",
+      "interacting"
+    ]
+  },
+  "permissions_boundary": "No external reference-game assets, API billing, Domain, Data or persistence changes. No release or merge."
+}

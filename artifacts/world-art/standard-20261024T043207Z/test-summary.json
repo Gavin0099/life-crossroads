@@ -1,0 +1,76 @@
+{
+  "devicesAndConfigurations" : [
+    {
+      "device" : {
+        "architecture" : "arm64",
+        "deviceId" : "4B2BE46D-CB2A-4462-AB7C-3B3075A676D3",
+        "deviceName" : "WorldArt-standard-20261024T043207Z",
+        "modelName" : "iPhone 17",
+        "osBuildNumber" : "24A434",
+        "osVersion" : "27.0",
+        "platform" : "iOS Simulator"
+      },
+      "expectedFailures" : 0,
+      "failedTests" : 4,
+      "passedTests" : 0,
+      "skippedTests" : 0,
+      "testPlanConfiguration" : {
+        "configurationId" : "1",
+        "configurationName" : "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription" : "LifeCrossroads · Built with macOS 27.0",
+  "expectedFailures" : 0,
+  "failedTests" : 4,
+  "finishTime" : 1792816508.828,
+  "passedTests" : 0,
+  "result" : "Failed",
+  "runtimeWarnings" : [
+
+  ],
+  "skippedTests" : 0,
+  "startTime" : 1792816330.357,
+  "statistics" : [
+
+  ],
+  "testFailures" : [
+    {
+      "failureText" : "Failed to get matching snapshot: No matches found for Elements matching predicate '\"worldActor-mumu\" IN identifiers' from input {(\n    Other,\n    Other,\n    Other,\n    Other,\n    Other, identifier: 'lifeWorldScene', label: '沐沐，13歲，分享手邊的便條',\n    Other, identifier: 'lifeWorldScene', label: '樹老師，13歲，分享手邊的便條',\n    Other, identifier: 'lifeWorldScene',\n    Other,\n    Other,\n    Other, label: '水平捲軸, 2頁', value: 100%,\n    Other\n)}",
+      "targetName" : "LifeCrossroadsUITests",
+      "testIdentifier" : 1,
+      "testIdentifierString" : "WorldArtUITests/testAdolescentAndElderRemainInSameScene()",
+      "testIdentifierURL" : "test://com.apple.xcode/WorldArtPreview/LifeCrossroadsUITests/WorldArtUITests/testAdolescentAndElderRemainInSameScene",
+      "testName" : "testAdolescentAndElderRemainInSameScene()"
+    },
+    {
+      "failureText" : "Failed to get matching snapshot: No matches found for Elements matching predicate '\"worldActor-mumu\" IN identifiers' from input {(\n    Other,\n    Other,\n    Other,\n    Other,\n    Other, identifier: 'lifeWorldScene', label: '沐沐，10歲，分享手邊的便條',\n    Other, identifier: 'lifeWorldScene', label: '阿禾，10歲，分享手邊的便條',\n    Other, identifier: 'lifeWorldScene',\n    Other,\n    Other,\n    Other, label: '水平捲軸, 3頁', value: 0%,\n    Other\n)}",
+      "targetName" : "LifeCrossroadsUITests",
+      "testIdentifier" : 2,
+      "testIdentifierString" : "WorldArtUITests/testLargestTypeCanInspectAndDismissWithoutLosingActor()",
+      "testIdentifierURL" : "test://com.apple.xcode/WorldArtPreview/LifeCrossroadsUITests/WorldArtUITests/testLargestTypeCanInspectAndDismissWithoutLosingActor",
+      "testName" : "testLargestTypeCanInspectAndDismissWithoutLosingActor()"
+    },
+    {
+      "failureText" : "Failed to get matching snapshot: No matches found for Elements matching predicate '\"worldActor-mumu\" IN identifiers' from input {(\n    Other,\n    Other,\n    Other,\n    Other,\n    Other, identifier: 'lifeWorldScene', label: '沐沐，6歲，沿著門廊移動',\n    Other,\n    Other, label: '水平捲軸, 2頁', value: 100%,\n    Other\n)}",
+      "targetName" : "LifeCrossroadsUITests",
+      "testIdentifier" : 3,
+      "testIdentifierString" : "WorldArtUITests/testReducedMotionRetainsWalkingPoseAndFacts()",
+      "testIdentifierURL" : "test://com.apple.xcode/WorldArtPreview/LifeCrossroadsUITests/WorldArtUITests/testReducedMotionRetainsWalkingPoseAndFacts",
+      "testName" : "testReducedMotionRetainsWalkingPoseAndFacts()"
+    },
+    {
+      "failureText" : "Failed to get matching snapshot: No matches found for Elements matching predicate '\"worldActor-mumu\" IN identifiers' from input {(\n    Other,\n    Other,\n    Other,\n    Other,\n    Other, identifier: 'lifeWorldScene', label: '沐沐，8歲，停留觀察',\n    Other,\n    Other, label: '水平捲軸, 2頁', value: 0%,\n    Other\n)}",
+      "targetName" : "LifeCrossroadsUITests",
+      "testIdentifier" : 4,
+      "testIdentifierString" : "WorldArtUITests/testThreeBehaviorsAndPersistentObjectSource()",
+      "testIdentifierURL" : "test://com.apple.xcode/WorldArtPreview/LifeCrossroadsUITests/WorldArtUITests/testThreeBehaviorsAndPersistentObjectSource",
+      "testName" : "testThreeBehaviorsAndPersistentObjectSource()"
+    }
+  ],
+  "title" : "Test - LifeCrossroads",
+  "topInsights" : [
+
+  ],
+  "totalTestCount" : 4
+}

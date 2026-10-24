@@ -1,0 +1,8 @@
+{
+  "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+  "device_id": "BD519A19-67AE-4460-9E72-2784DC56F652",
+  "deleted": true,
+  "test_exit_code": 65,
+  "xcresult_local": "/Users/macminim4/.codex/worktrees/world-art-01/life-crossroads/.build/world-art-preview/standard-20261024T043553Z/result.xcresult"
+}

@@ -1,0 +1,57 @@
+{
+  "base": "c136bebf48ae17e24235d9da72d7f9e51b90bf0c",
+  "contract_version": "life-world-view-1",
+  "contracts": [
+    {
+      "name": "LifePlayback.swift",
+      "sha256": "f8c8f206394bb36a82c480937dfaed9bcc2344cc7f83652178da1cb2b0a27ef3"
+    },
+    {
+      "name": "LifeWorldViewState.swift",
+      "sha256": "68957507afc2533d1890abf5d82761cd4f87eb0c0911ff689ff5d9e5a0d5c1cc"
+    }
+  ],
+  "sources": [
+    {
+      "path": "tools/world-art-preview/run.py",
+      "sha256": "823b7782d2aaef07a2bd6c017e3d2c057cf8a70a1616d4ebfc10c59ad2683761"
+    },
+    {
+      "path": "LifeCrossroads/App/LifeWorldScene.swift",
+      "sha256": "b040cb6de6bf0d2193440b5a0de8380479682db4bc4803890f4f7f11cfaf96d8"
+    },
+    {
+      "path": "tools/world-art-preview/PreviewApp.swift",
+      "sha256": "46627ae74f82566c8e585ffa0af61e7ba1029a6c490c46a73a5b07cff26f66f4"
+    },
+    {
+      "path": "tools/world-art-preview/WorldArtUITests.swift",
+      "sha256": "b95c4226e4cb70699b30a62f47ba721591e63d5e028493745cffa757c4fb66c1"
+    },
+    {
+      "path": "LifeCrossroads/App/Assets.xcassets/LifeWorldHome.imageset/river-home-v1.png",
+      "sha256": "95c2f03b7560077fb30b81dc230fe4d1940dff36dd7ea19d030b838f753b4f4d"
+    },
+    {
+      "path": "LifeCrossroads/App/Assets.xcassets/LifeWorldHome.imageset/Contents.json",
+      "sha256": "dfb10dee69c1883c33922ae3fad6042843b05c3798f4da947f99be0505a51048"
+    },
+    {
+      "path": "LifeCrossroads/App/Assets.xcassets/LifeWorldPoses.imageset/Contents.json",
+      "sha256": "dd7ab102aaff801ae180de057d676183618047dce273dfe8219c9133795da352"
+    },
+    {
+      "path": "LifeCrossroads/App/Assets.xcassets/LifeWorldPoses.imageset/otter-poses-v3.png",
+      "sha256": "fce33c75e5509db63db33f4d339312ab63722349f3de770606c5914c54253bd4"
+    },
+    {
+      "path": "LifeCrossroads/App/Assets.xcassets/StoryCast.imageset/Contents.json",
+      "sha256": "2c595d47ef4769581eb26ab89aae61546ca992edcf92a252f2701177a07fbc27"
+    },
+    {
+      "path": "LifeCrossroads/App/Assets.xcassets/StoryCast.imageset/story-cast.png",
+      "sha256": "663bb1b1ce8a0af2ed99be72827a6e4bc69978eb00708df62f7b27cd85e068d8"
+    }
+  ],
+  "scope": "isolated Visual World harness; not integrated gameplay regression"
+}

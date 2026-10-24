@@ -1,0 +1,122 @@
+{
+  "runs": [
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "38408A81-CF31-4ECA-8A5C-2479B29B0708",
+      "deleted": true,
+      "run": "standard-20261024T044848Z",
+      "absent_from_inventory": true
+    },
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "F1425DD3-CC27-40CE-A348-DAA64D90D2BF",
+      "deleted": true,
+      "test_exit_code": 65,
+      "xcresult_local": "/Users/macminim4/.codex/worktrees/world-art-01/life-crossroads/.build/world-art-preview/standard-20261024T043000Z/result.xcresult",
+      "run": "standard-20261024T043000Z",
+      "absent_from_inventory": true
+    },
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "4A43823A-DC0B-4984-9457-471D88A5DA30",
+      "deleted": true,
+      "test_exit_code": 65,
+      "xcresult_local": "/Users/macminim4/.codex/worktrees/world-art-01/life-crossroads/.build/world-art-preview/standard-20261024T042845Z/result.xcresult",
+      "run": "standard-20261024T042845Z",
+      "absent_from_inventory": true
+    },
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "0B2F6069-D898-41E8-8679-02D209AE4643",
+      "deleted": true,
+      "test_exit_code": 0,
+      "xcresult_local": "/Users/macminim4/.codex/worktrees/world-art-01/life-crossroads/.build/world-art-preview/narrow-20261024T050740Z/result.xcresult",
+      "run": "narrow-20261024T050740Z",
+      "absent_from_inventory": true
+    },
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "BDCC101C-AFB2-498C-B751-F27C9EFC035D",
+      "deleted": true,
+      "test_exit_code": 0,
+      "xcresult_local": "/Users/macminim4/.codex/worktrees/world-art-01/life-crossroads/.build/world-art-preview/narrow-20261024T045202Z/result.xcresult",
+      "run": "narrow-20261024T045202Z",
+      "absent_from_inventory": true
+    },
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "BD519A19-67AE-4460-9E72-2784DC56F652",
+      "deleted": true,
+      "test_exit_code": 65,
+      "xcresult_local": "/Users/macminim4/.codex/worktrees/world-art-01/life-crossroads/.build/world-art-preview/standard-20261024T043553Z/result.xcresult",
+      "run": "standard-20261024T043553Z",
+      "absent_from_inventory": true
+    },
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "C4995D24-B7D2-474F-A63D-9956BC9A0258",
+      "deleted": true,
+      "test_exit_code": 65,
+      "xcresult_local": "/Users/macminim4/.codex/worktrees/world-art-01/life-crossroads/.build/world-art-preview/standard-20261024T044101Z/result.xcresult",
+      "run": "standard-20261024T044101Z",
+      "absent_from_inventory": true
+    },
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "8585AEE3-D6D7-45D5-80BF-C0ABEEA1FCC8",
+      "deleted": true,
+      "test_exit_code": 0,
+      "xcresult_local": "/Users/macminim4/.codex/worktrees/world-art-01/life-crossroads/.build/world-art-preview/standard-20261024T045200Z/result.xcresult",
+      "run": "standard-20261024T045200Z",
+      "absent_from_inventory": true
+    },
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "E3284823-5655-4B5D-A105-8219DFF66E57",
+      "deleted": true,
+      "test_exit_code": 0,
+      "xcresult_local": "/Users/macminim4/.codex/worktrees/world-art-01/life-crossroads/.build/world-art-preview/standard-20261024T050739Z/result.xcresult",
+      "run": "standard-20261024T050739Z",
+      "absent_from_inventory": true
+    },
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "8D17ABED-63B5-4DD5-96EB-57D1E4BCC3A8",
+      "deleted": true,
+      "test_exit_code": 65,
+      "xcresult_local": "/Users/macminim4/.codex/worktrees/world-art-01/life-crossroads/.build/world-art-preview/narrow-20261024T044415Z/result.xcresult",
+      "run": "narrow-20261024T044415Z",
+      "absent_from_inventory": true
+    },
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "39A90EDD-F0EA-4896-A619-6EF7574A99D9",
+      "deleted": true,
+      "run": "narrow-20261024T044850Z",
+      "absent_from_inventory": true
+    },
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "4B2BE46D-CB2A-4462-AB7C-3B3075A676D3",
+      "deleted": true,
+      "test_exit_code": 65,
+      "xcresult_local": "/Users/macminim4/.codex/worktrees/world-art-01/life-crossroads/.build/world-art-preview/standard-20261024T043207Z/result.xcresult",
+      "run": "standard-20261024T043207Z",
+      "absent_from_inventory": true
+    }
+  ],
+  "owned_devices": 12,
+  "all_deleted": true
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "path": "artifacts/world-art/gallery/narrow/06-elder.png",
+    "sha256": "e0aca521a58a3a3b22fdb5cdd6fa72e09699d6c45638a4dd548310ffde0462b5",
+    "testIdentifier": "WorldArtUITests/testAdolescentAndElderRemainInSameScene()",
+    "device": "WorldArt-narrow-20261024T045202Z",
+    "original_exported_filename": "EF75E876-B57F-4D22-AA0B-E9D61FFF0B11.png",
+    "raw_attachment_local_path": "/Users/macminim4/.codex/worktrees/world-art-01/life-crossroads/.build/world-art-preview/final-raw-attachments/narrow-20261024T045202Z/EF75E876-B57F-4D22-AA0B-E9D61FFF0B11.png",
+    "attachment_manifest": "artifacts/world-art/narrow-20261024T045202Z/attachments-manifest.json"
+  },
+  {
+    "path": "artifacts/world-art/gallery/narrow/05-teen.png",
+    "sha256": "bab5fd2f100a064f5053aaf1d7aecf756bffd25a1cc9513f163d0f9de4cc0e4d",
+    "testIdentifier": "WorldArtUITests/testAdolescentAndElderRemainInSameScene()",
+    "device": "WorldArt-narrow-20261024T045202Z",
+    "original_exported_filename": "81479E91-B4F4-4DE2-BC35-3008B0B7E8C4.png",
+    "raw_attachment_local_path": "/Users/macminim4/.codex/worktrees/world-art-01/life-crossroads/.build/world-art-preview/final-raw-attachments/narrow-20261024T045202Z/81479E91-B4F4-4DE2-BC35-3008B0B7E8C4.png",
+    "attachment_manifest": "artifacts/world-art/narrow-20261024T045202Z/attachments-manifest.json"
+  },
+  {
+    "path": "artifacts/world-art/gallery/narrow/07-largest.png",
+    "sha256": "289e8de735d7959a07197323a9b905592e79f984943e2cb5e05300f7aef0f79f",
+    "testIdentifier": "WorldArtUITests/testLargestTypeCanInspectAndDismissWithoutLosingActor()",
+    "device": "WorldArt-narrow-20261024T045202Z",
+    "original_exported_filename": "9BA1E1BE-A6BA-4E38-A72C-7FF47027440B.png",
+    "raw_attachment_local_path": "/Users/macminim4/.codex/worktrees/world-art-01/life-crossroads/.build/world-art-preview/final-raw-attachments/narrow-20261024T045202Z/9BA1E1BE-A6BA-4E38-A72C-7FF47027440B.png",
+    "attachment_manifest": "artifacts/world-art/narrow-20261024T045202Z/attachments-manifest.json"
+  },
+  {
+    "path": "artifacts/world-art/gallery/narrow/10-paused.png",
+    "sha256": "c9587597255b0d6d41c7801e11b401ea099d3a5fa0c1d2e2f52c739b2f06275e",
+    "testIdentifier": "WorldArtUITests/testPauseKeepsActorStillAndRetainsScene()",
+    "device": "WorldArt-narrow-20261024T045202Z",
+    "original_exported_filename": "1CCD9BBD-8276-473F-AFD8-7F37EE5D1158.png",
+    "raw_attachment_local_path": "/Users/macminim4/.codex/worktrees/world-art-01/life-crossroads/.build/world-art-preview/final-raw-attachments/narrow-20261024T045202Z/1CCD9BBD-8276-473F-AFD8-7F37EE5D1158.png",
+    "attachment_manifest": "artifacts/world-art/narrow-20261024T045202Z/attachments-manifest.json"
+  },
+  {
+    "path": "artifacts/world-art/gallery/narrow/09-seeking.png",
+    "sha256": "d51a02842c5a716aa091831cac24dcf5bab864479d9b1ed0ee28a34fdd44da07",
+    "testIdentifier": "WorldArtUITests/testReducedMotionRetainsWalkingPoseAndFacts()",
+    "device": "WorldArt-narrow-20261024T045202Z",
+    "original_exported_filename": "1B28BB9E-5458-446F-91D6-37C93FEDB9C3.png",
+    "raw_attachment_local_path": "/Users/macminim4/.codex/worktrees/world-art-01/life-crossroads/.build/world-art-preview/final-raw-attachments/narrow-20261024T045202Z/1B28BB9E-5458-446F-91D6-37C93FEDB9C3.png",
+    "attachment_manifest": "artifacts/world-art/narrow-20261024T045202Z/attachments-manifest.json"
+  },
+  {
+    "path": "artifacts/world-art/gallery/narrow/08-reduced-motion-walking.png",
+    "sha256": "6aaf0ee25137c3d4b018c30ad76c9754c69dcb56200ade1f40230327c273cf97",
+    "testIdentifier": "WorldArtUITests/testReducedMotionRetainsWalkingPoseAndFacts()",
+    "device": "WorldArt-narrow-20261024T045202Z",
+    "original_exported_filename": "78F054B8-8EE0-4970-8B05-A6497C4DCBD7.png",
+    "raw_attachment_local_path": "/Users/macminim4/.codex/worktrees/world-art-01/life-crossroads/.build/world-art-preview/final-raw-attachments/narrow-20261024T045202Z/78F054B8-8EE0-4970-8B05-A6497C4DCBD7.png",
+    "attachment_manifest": "artifacts/world-art/narrow-20261024T045202Z/attachments-manifest.json"
+  },
+  {
+    "path": "artifacts/world-art/gallery/narrow/04-source.png",
+    "sha256": "f495848c53f711e238daf4d9aa1f6a4ed69b649fce9fb07f744919e6c1fab2ef",
+    "testIdentifier": "WorldArtUITests/testThreeBehaviorsAndPersistentObjectSource()",
+    "device": "WorldArt-narrow-20261024T045202Z",
+    "original_exported_filename": "3560EA63-28DD-4B55-B0CD-6C42323EE1FF.png",
+    "raw_attachment_local_path": "/Users/macminim4/.codex/worktrees/world-art-01/life-crossroads/.build/world-art-preview/final-raw-attachments/narrow-20261024T045202Z/3560EA63-28DD-4B55-B0CD-6C42323EE1FF.png",
+    "attachment_manifest": "artifacts/world-art/narrow-20261024T045202Z/attachments-manifest.json"
+  },
+  {
+    "path": "artifacts/world-art/gallery/narrow/03-interacting.png",
+    "sha256": "65bfe57110d09b544b402daab96d6dad7951fab27f3d16743ad12ef19b5cd95d",
+    "testIdentifier": "WorldArtUITests/testThreeBehaviorsAndPersistentObjectSource()",
+    "device": "WorldArt-narrow-20261024T045202Z",
+    "original_exported_filename": "ED63D9B8-390A-4ACD-91D9-1CB27EF970E8.png",
+    "raw_attachment_local_path": "/Users/macminim4/.codex/worktrees/world-art-01/life-crossroads/.build/world-art-preview/final-raw-attachments/narrow-20261024T045202Z/ED63D9B8-390A-4ACD-91D9-1CB27EF970E8.png",
+    "attachment_manifest": "artifacts/world-art/narrow-20261024T045202Z/attachments-manifest.json"
+  },
+  {
+    "path": "artifacts/world-art/gallery/narrow/02-walking.png",
+    "sha256": "e712917d83c8e8415293f6ceeb1c21de6c93957d190494cd3d5c579f815d7b87",
+    "testIdentifier": "WorldArtUITests/testThreeBehaviorsAndPersistentObjectSource()",
+    "device": "WorldArt-narrow-20261024T045202Z",
+    "original_exported_filename": "5CE4E452-2CE8-4055-AC8D-F529C99DD321.png",
+    "raw_attachment_local_path": "/Users/macminim4/.codex/worktrees/world-art-01/life-crossroads/.build/world-art-preview/final-raw-attachments/narrow-20261024T045202Z/5CE4E452-2CE8-4055-AC8D-F529C99DD321.png",
+    "attachment_manifest": "artifacts/world-art/narrow-20261024T045202Z/attachments-manifest.json"
+  },
+  {
+    "path": "artifacts/world-art/gallery/narrow/01-idle.png",
+    "sha256": "52f4dd0745df96375617cb23b6211a1930ad5c62c5d8ce4c7ac4c6e385b862ad",
+    "testIdentifier": "WorldArtUITests/testThreeBehaviorsAndPersistentObjectSource()",
+    "device": "WorldArt-narrow-20261024T045202Z",
+    "original_exported_filename": "3433AFB1-BAE2-4174-BAA8-3661A23A63B7.png",
+    "raw_attachment_local_path": "/Users/macminim4/.codex/worktrees/world-art-01/life-crossroads/.build/world-art-preview/final-raw-attachments/narrow-20261024T045202Z/3433AFB1-BAE2-4174-BAA8-3661A23A63B7.png",
+    "attachment_manifest": "artifacts/world-art/narrow-20261024T045202Z/attachments-manifest.json"
+  }
+]

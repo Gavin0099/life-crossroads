@@ -1,0 +1,122 @@
+[
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "8585AEE3-D6D7-45D5-80BF-C0ABEEA1FCC8",
+        "deviceName" : "WorldArt-standard-20261024T045200Z",
+        "exportedFileName" : "2A99B849-4159-4440-9CDC-A87AC0A80931.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "06-elder_0_524E243E-067A-489B-802D-86AE42236106.png",
+        "timestamp" : 1792817811.681
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "8585AEE3-D6D7-45D5-80BF-C0ABEEA1FCC8",
+        "deviceName" : "WorldArt-standard-20261024T045200Z",
+        "exportedFileName" : "A84266A3-CF31-467B-811C-C6B2A03BCD38.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "05-teen_0_BAE0A71B-453F-4856-8495-5A1C76D30689.png",
+        "timestamp" : 1792817808.031
+      }
+    ],
+    "testIdentifier" : "WorldArtUITests/testAdolescentAndElderRemainInSameScene()",
+    "testIdentifierURL" : "test://com.apple.xcode/WorldArtPreview/LifeCrossroadsUITests/WorldArtUITests/testAdolescentAndElderRemainInSameScene"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "8585AEE3-D6D7-45D5-80BF-C0ABEEA1FCC8",
+        "deviceName" : "WorldArt-standard-20261024T045200Z",
+        "exportedFileName" : "A543EC2C-C2D3-4F62-8124-C4784D13552E.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "07-largest_0_422C0297-8C2B-4A12-AC66-8510F63D9A86.png",
+        "timestamp" : 1792817826.69
+      }
+    ],
+    "testIdentifier" : "WorldArtUITests/testLargestTypeCanInspectAndDismissWithoutLosingActor()",
+    "testIdentifierURL" : "test://com.apple.xcode/WorldArtPreview/LifeCrossroadsUITests/WorldArtUITests/testLargestTypeCanInspectAndDismissWithoutLosingActor"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "8585AEE3-D6D7-45D5-80BF-C0ABEEA1FCC8",
+        "deviceName" : "WorldArt-standard-20261024T045200Z",
+        "exportedFileName" : "E7795B8A-06CF-4F90-A9B3-8998A5FE5CF2.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "10-paused_0_B0086F42-2741-40D2-A380-AA1B119C1D02.png",
+        "timestamp" : 1792817848.5
+      }
+    ],
+    "testIdentifier" : "WorldArtUITests/testPauseKeepsActorStillAndRetainsScene()",
+    "testIdentifierURL" : "test://com.apple.xcode/WorldArtPreview/LifeCrossroadsUITests/WorldArtUITests/testPauseKeepsActorStillAndRetainsScene"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "8585AEE3-D6D7-45D5-80BF-C0ABEEA1FCC8",
+        "deviceName" : "WorldArt-standard-20261024T045200Z",
+        "exportedFileName" : "4E1C4B8F-FC50-45D0-B7B6-DE96265770D0.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "09-seeking_0_185F15D2-5B59-4AA8-BA30-0EB2C7CDA296.png",
+        "timestamp" : 1792817867.057
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "8585AEE3-D6D7-45D5-80BF-C0ABEEA1FCC8",
+        "deviceName" : "WorldArt-standard-20261024T045200Z",
+        "exportedFileName" : "A82920C7-F6FC-4975-A6EE-618F311F37EF.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "08-reduced-motion-walking_0_118F7691-B96E-4D8A-91A6-4C6E5BC28AB5.png",
+        "timestamp" : 1792817862.122
+      }
+    ],
+    "testIdentifier" : "WorldArtUITests/testReducedMotionRetainsWalkingPoseAndFacts()",
+    "testIdentifierURL" : "test://com.apple.xcode/WorldArtPreview/LifeCrossroadsUITests/WorldArtUITests/testReducedMotionRetainsWalkingPoseAndFacts"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "8585AEE3-D6D7-45D5-80BF-C0ABEEA1FCC8",
+        "deviceName" : "WorldArt-standard-20261024T045200Z",
+        "exportedFileName" : "9F14DE22-CABC-4FAF-B7CA-1A5E8269C465.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "04-source_0_7FF1C9A2-1B29-4472-A807-ECE2E7775F59.png",
+        "timestamp" : 1792817885.522
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "8585AEE3-D6D7-45D5-80BF-C0ABEEA1FCC8",
+        "deviceName" : "WorldArt-standard-20261024T045200Z",
+        "exportedFileName" : "63D6637A-D2F0-4241-A764-70634E91F60A.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "03-interacting_0_47E3A837-346A-4284-B150-3C40E9639335.png",
+        "timestamp" : 1792817883.89
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "8585AEE3-D6D7-45D5-80BF-C0ABEEA1FCC8",
+        "deviceName" : "WorldArt-standard-20261024T045200Z",
+        "exportedFileName" : "CEA7E4F4-7FC5-41A7-8E85-A292A478E58A.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "02-walking_0_E7F0B59F-E81C-4F8C-9EF2-1F44D53050F3.png",
+        "timestamp" : 1792817880.362
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "8585AEE3-D6D7-45D5-80BF-C0ABEEA1FCC8",
+        "deviceName" : "WorldArt-standard-20261024T045200Z",
+        "exportedFileName" : "38041727-B82A-4F4F-8A96-2AE33D38E559.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "01-idle_0_357952B4-66DE-4A44-9C39-897B58E7486D.png",
+        "timestamp" : 1792817876.684
+      }
+    ],
+    "testIdentifier" : "WorldArtUITests/testThreeBehaviorsAndPersistentObjectSource()",
+    "testIdentifierURL" : "test://com.apple.xcode/WorldArtPreview/LifeCrossroadsUITests/WorldArtUITests/testThreeBehaviorsAndPersistentObjectSource"
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "base": "c136bebf48ae17e24235d9da72d7f9e51b90bf0c",
+  "contract_version": "life-world-view-1",
+  "contracts": [
+    {
+      "name": "LifePlayback.swift",
+      "sha256": "f8c8f206394bb36a82c480937dfaed9bcc2344cc7f83652178da1cb2b0a27ef3"
+    },
+    {
+      "name": "LifeWorldViewState.swift",
+      "sha256": "68957507afc2533d1890abf5d82761cd4f87eb0c0911ff689ff5d9e5a0d5c1cc"
+    }
+  ],
+  "sources": [
+    {
+      "path": "LifeCrossroads/App/LifeWorldScene.swift",
+      "sha256": "b33dabbcbc0a99d1b0c6a74bcc8dd6948e0e40c236b12f5d00d2dcbfe4df095e"
+    },
+    {
+      "path": "tools/world-art-preview/PreviewApp.swift",
+      "sha256": "61c4bbfae602477f2447882fe3037a9066691969411cec1307175b0c5fbe5356"
+    },
+    {
+      "path": "tools/world-art-preview/WorldArtUITests.swift",
+      "sha256": "4b0cd5fb54ae1cb12b12cd1537cd5fe61b4fdff2aa4b26702685b87026301d96"
+    },
+    {
+      "path": "LifeCrossroads/App/Assets.xcassets/LifeWorldHome.imageset/river-home-v1.png",
+      "sha256": "95c2f03b7560077fb30b81dc230fe4d1940dff36dd7ea19d030b838f753b4f4d"
+    },
+    {
+      "path": "LifeCrossroads/App/Assets.xcassets/LifeWorldHome.imageset/Contents.json",
+      "sha256": "dfb10dee69c1883c33922ae3fad6042843b05c3798f4da947f99be0505a51048"
+    },
+    {
+      "path": "LifeCrossroads/App/Assets.xcassets/LifeWorldPoses.imageset/Contents.json",
+      "sha256": "13ce5bca18afce139847e1bf5cf9881a99d74f08789b1ed99eda74ad4a9f1ef9"
+    },
+    {
+      "path": "LifeCrossroads/App/Assets.xcassets/LifeWorldPoses.imageset/otter-poses-v2.png",
+      "sha256": "9e19080867d3b30c8718dbc75df08a33e8f1303d2e8fc231221ed12ad2497aea"
+    },
+    {
+      "path": "LifeCrossroads/App/Assets.xcassets/StoryCast.imageset/Contents.json",
+      "sha256": "2c595d47ef4769581eb26ab89aae61546ca992edcf92a252f2701177a07fbc27"
+    },
+    {
+      "path": "LifeCrossroads/App/Assets.xcassets/StoryCast.imageset/story-cast.png",
+      "sha256": "663bb1b1ce8a0af2ed99be72827a6e4bc69978eb00708df62f7b27cd85e068d8"
+    }
+  ],
+  "scope": "isolated Visual World harness; not integrated gameplay regression"
+}

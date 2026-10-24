@@ -1,0 +1,46 @@
+{
+  "removed_generated_derived_data": [
+    {
+      "path": ".build/world-art-preview/standard-20261024T044848Z/DerivedData",
+      "bytes": 150465472
+    },
+    {
+      "path": ".build/world-art-preview/standard-20261024T043000Z/DerivedData",
+      "bytes": 143737514
+    },
+    {
+      "path": ".build/world-art-preview/standard-20261024T042845Z/DerivedData",
+      "bytes": 143839336
+    },
+    {
+      "path": ".build/world-art-preview/narrow-20261024T045202Z/DerivedData",
+      "bytes": 150440234
+    },
+    {
+      "path": ".build/world-art-preview/standard-20261024T043553Z/DerivedData",
+      "bytes": 149334790
+    },
+    {
+      "path": ".build/world-art-preview/standard-20261024T044101Z/DerivedData",
+      "bytes": 149341328
+    },
+    {
+      "path": ".build/world-art-preview/standard-20261024T045200Z/DerivedData",
+      "bytes": 148201082
+    },
+    {
+      "path": ".build/world-art-preview/narrow-20261024T044415Z/DerivedData",
+      "bytes": 148157669
+    },
+    {
+      "path": ".build/world-art-preview/narrow-20261024T044850Z/DerivedData",
+      "bytes": 150440248
+    },
+    {
+      "path": ".build/world-art-preview/standard-20261024T043207Z/DerivedData",
+      "bytes": 149309840
+    }
+  ],
+  "bytes": 1483267513,
+  "preserved": "All xcresult bundles, source snapshots, raw exports, test logs and committed native screenshots retained."
+}

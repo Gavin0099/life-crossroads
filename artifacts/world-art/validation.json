@@ -1,0 +1,103 @@
+{
+  "scope": "SUPERSEDED WORLD-ART-01 prototype; not PR9 LIFE-LOOP 10H implementation",
+  "results": [
+    {
+      "device": "standard",
+      "run": "artifacts/world-art/standard-20261024T050739Z",
+      "summary": {
+        "devicesAndConfigurations": [
+          {
+            "device": {
+              "architecture": "arm64",
+              "deviceId": "E3284823-5655-4B5D-A105-8219DFF66E57",
+              "deviceName": "WorldArt-standard-20261024T050739Z",
+              "modelName": "iPhone 17",
+              "osBuildNumber": "24A434",
+              "osVersion": "27.0",
+              "platform": "iOS Simulator"
+            },
+            "expectedFailures": 0,
+            "failedTests": 0,
+            "passedTests": 5,
+            "skippedTests": 0,
+            "testPlanConfiguration": {
+              "configurationId": "1",
+              "configurationName": "Test Scheme Action"
+            }
+          }
+        ],
+        "environmentDescription": "LifeCrossroads \u00b7 Built with macOS 27.0",
+        "expectedFailures": 0,
+        "failedTests": 0,
+        "finishTime": 1792818777.311,
+        "passedTests": 5,
+        "result": "Passed",
+        "runtimeWarnings": [],
+        "skippedTests": 0,
+        "startTime": 1792818465.235,
+        "statistics": [],
+        "testFailures": [],
+        "title": "Test - LifeCrossroads",
+        "topInsights": [],
+        "totalTestCount": 5
+      },
+      "source_binding": "artifacts/world-art/standard-20261024T050739Z/source-binding.json",
+      "native_gallery": "artifacts/world-art/gallery-v2/standard"
+    },
+    {
+      "device": "narrow",
+      "run": "artifacts/world-art/narrow-20261024T050740Z",
+      "summary": {
+        "devicesAndConfigurations": [
+          {
+            "device": {
+              "architecture": "arm64",
+              "deviceId": "0B2F6069-D898-41E8-8679-02D209AE4643",
+              "deviceName": "WorldArt-narrow-20261024T050740Z",
+              "modelName": "iPhone SE (3rd generation)",
+              "osBuildNumber": "24A434",
+              "osVersion": "27.0",
+              "platform": "iOS Simulator"
+            },
+            "expectedFailures": 0,
+            "failedTests": 0,
+            "passedTests": 5,
+            "skippedTests": 0,
+            "testPlanConfiguration": {
+              "configurationId": "1",
+              "configurationName": "Test Scheme Action"
+            }
+          }
+        ],
+        "environmentDescription": "LifeCrossroads \u00b7 Built with macOS 27.0",
+        "expectedFailures": 0,
+        "failedTests": 0,
+        "finishTime": 1792818688.634,
+        "passedTests": 5,
+        "result": "Passed",
+        "runtimeWarnings": [],
+        "skippedTests": 0,
+        "startTime": 1792818465.235,
+        "statistics": [],
+        "testFailures": [],
+        "title": "Test - LifeCrossroads",
+        "topInsights": [],
+        "totalTestCount": 5
+      },
+      "source_binding": "artifacts/world-art/narrow-20261024T050740Z/source-binding.json",
+      "native_gallery": "artifacts/world-art/gallery-v2/narrow"
+    }
+  ],
+  "source_matches_current": true,
+  "independent_review_v1": "PARTIAL: one visual P1",
+  "independent_review_v2": "NOT RUN; corrections and new native screenshots preserved",
+  "superseded_by": "PR9 c823c820ceea027215df2d2f46c2c0ac4373c871",
+  "cannot_claim": [
+    "PR9 G1-G6",
+    "Formal Gameplay integration",
+    "Continuous shared-clock animation",
+    "Owner art approval",
+    "Full-life regression of new scene",
+    "Physical iPhone / children trials"
+  ]
+}

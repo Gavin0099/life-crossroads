@@ -1,0 +1,168 @@
+{
+  "base": "c136bebf48ae17e24235d9da72d7f9e51b90bf0c",
+  "files": [
+    {
+      "path": "LifeCrossroads.xcodeproj/project.pbxproj",
+      "base_sha256": "591d3aea4c8e8c8c70996b70cbecefba8ce98ec0bdb23aafb11076de135fe757",
+      "actual_sha256": "591d3aea4c8e8c8c70996b70cbecefba8ce98ec0bdb23aafb11076de135fe757",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/App/CrossroadsView.swift",
+      "base_sha256": "e0d51adbd3eaa212e8af219b445ad8f0d37eb7575e1c210ac7885171d07fc4a1",
+      "actual_sha256": "e0d51adbd3eaa212e8af219b445ad8f0d37eb7575e1c210ac7885171d07fc4a1",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/App/GameStore.swift",
+      "base_sha256": "97599960a047020825b066237c21105378797640d2fb1aa6cad07bf953cdc368",
+      "actual_sha256": "97599960a047020825b066237c21105378797640d2fb1aa6cad07bf953cdc368",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Data/EventNarratives.swift",
+      "base_sha256": "28736135c42f45bd478172e3f04b0abe0ea07d922c0e4c5603be93ec64d828e2",
+      "actual_sha256": "28736135c42f45bd478172e3f04b0abe0ea07d922c0e4c5603be93ec64d828e2",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Data/Resources/catalog.json",
+      "base_sha256": "67506238fb0ae8d57c874212971894aa0e8ea867829f95d0e081facd2487f91a",
+      "actual_sha256": "67506238fb0ae8d57c874212971894aa0e8ea867829f95d0e081facd2487f91a",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Data/Resources/raw/taiwan-digital-national-row-2023.json",
+      "base_sha256": "cd05946f6220575df895ac44c53636d0e9da66442254b54d99234b9c3a7ef0eb",
+      "actual_sha256": "cd05946f6220575df895ac44c53636d0e9da66442254b54d99234b9c3a7ef0eb",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Data/Resources/raw/taiwan-nhe-national-row-2023.json",
+      "base_sha256": "324702b38d254a7b9a744b6128c2926dc815ab543b123baf2d01c85545553d14",
+      "actual_sha256": "324702b38d254a7b9a744b6128c2926dc815ab543b123baf2d01c85545553d14",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Data/Resources/raw/wdi-che-gdp-2023-lc03.json",
+      "base_sha256": "2f41ded2530efeb5f3bdfc97e63721d2d12c0be1109e4d3156c2b3f941d4ecde",
+      "actual_sha256": "2f41ded2530efeb5f3bdfc97e63721d2d12c0be1109e4d3156c2b3f941d4ecde",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Data/Resources/raw/wdi-electricity-2023.json",
+      "base_sha256": "333a7f27d6ab8a9cb335fded93f07ed9e8e46de41f8ff24c3aa4a9ea54a2e58b",
+      "actual_sha256": "333a7f27d6ab8a9cb335fded93f07ed9e8e46de41f8ff24c3aa4a9ea54a2e58b",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Data/Resources/raw/wdi-internet-2023.json",
+      "base_sha256": "21b95c877b48a47ff474c856d6e723ceb8c3a4eab4c5b19a536e4ddb7ce859eb",
+      "actual_sha256": "21b95c877b48a47ff474c856d6e723ceb8c3a4eab4c5b19a536e4ddb7ce859eb",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Data/Resources/raw/wdi-oop-2023-lc03.json",
+      "base_sha256": "32e3e82596d405e97ee60c3b8342a3dbe4faa801450e0328dff92802ae2f847c",
+      "actual_sha256": "32e3e82596d405e97ee60c3b8342a3dbe4faa801450e0328dff92802ae2f847c",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Data/StatisticsRepository.swift",
+      "base_sha256": "0e99eda0d0542ee8eb57a1d6fbb65af8b4a2b09e693db570e7d2b7a4831bc0d2",
+      "actual_sha256": "0e99eda0d0542ee8eb57a1d6fbb65af8b4a2b09e693db570e7d2b7a4831bc0d2",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/BranchComparisonEngine.swift",
+      "base_sha256": "f4e2a14e26e6801d1b083e747b819833ea469e378b21d57145c12acbb4cf7c05",
+      "actual_sha256": "f4e2a14e26e6801d1b083e747b819833ea469e378b21d57145c12acbb4cf7c05",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/BranchExperiment.swift",
+      "base_sha256": "f0440ee3fae8409161e6cb729bd25a7b8e537f8b1d5a3a0b8c96ebf4d37f166c",
+      "actual_sha256": "f0440ee3fae8409161e6cb729bd25a7b8e537f8b1d5a3a0b8c96ebf4d37f166c",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/ConsequenceTrace.swift",
+      "base_sha256": "0aa587c059a91f535c13159474e0b6693dfc4bd73239613a46ab07128ef4554f",
+      "actual_sha256": "0aa587c059a91f535c13159474e0b6693dfc4bd73239613a46ab07128ef4554f",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/DecisionResolver.swift",
+      "base_sha256": "0cd561723a7b27c04c015373624fa58326506be2fa93c79b92e66582500e4607",
+      "actual_sha256": "0cd561723a7b27c04c015373624fa58326506be2fa93c79b92e66582500e4607",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/EnvironmentComparison.swift",
+      "base_sha256": "ee66c6ef5b040d54b9e2109317bd596d2fc013cc9c57ac36728303f99695e07b",
+      "actual_sha256": "ee66c6ef5b040d54b9e2109317bd596d2fc013cc9c57ac36728303f99695e07b",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/EventPolicy.swift",
+      "base_sha256": "8720acbcd4661170cf36b7f882bb222b38b1c6c44e352305cb52384c7a2276e8",
+      "actual_sha256": "8720acbcd4661170cf36b7f882bb222b38b1c6c44e352305cb52384c7a2276e8",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/EventSelector.swift",
+      "base_sha256": "2309e14d6835d3d2891e8e686fb569b09ca7e2d458ca3300dba9bcf76bf11e08",
+      "actual_sha256": "2309e14d6835d3d2891e8e686fb569b09ca7e2d458ca3300dba9bcf76bf11e08",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/IndicatorContract.swift",
+      "base_sha256": "80f67874e43ee6304651ee7d0ec4304a1e43a494be230eecfd01f3a28f340544",
+      "actual_sha256": "80f67874e43ee6304651ee7d0ec4304a1e43a494be230eecfd01f3a28f340544",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/LifeSession.swift",
+      "base_sha256": "d72124a2761aebdbc547f8c23c7cd7433d5c39cfb80f3265bf764edd94d56159",
+      "actual_sha256": "d72124a2761aebdbc547f8c23c7cd7433d5c39cfb80f3265bf764edd94d56159",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/LifeState.swift",
+      "base_sha256": "7d01f9d7d2fa761c45a10dc628a5a0943a39442e74b7962462d5ee00074ca0f5",
+      "actual_sha256": "7d01f9d7d2fa761c45a10dc628a5a0943a39442e74b7962462d5ee00074ca0f5",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/Models.swift",
+      "base_sha256": "8e1581ce54fa59473f00afa168b5d9b2541944c33d6f88218945f77845ff2572",
+      "actual_sha256": "8e1581ce54fa59473f00afa168b5d9b2541944c33d6f88218945f77845ff2572",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/RandomSource.swift",
+      "base_sha256": "746e01eff6f8ef03af1902354c8c62c09c3dc74e33e6b2a4c096a6e4a210bb03",
+      "actual_sha256": "746e01eff6f8ef03af1902354c8c62c09c3dc74e33e6b2a4c096a6e4a210bb03",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/StoryBranchEngine.swift",
+      "base_sha256": "127b0ecceb4ce0988ef0e547e66a22bc274d31a2eb34ae978d8984a7d20fb44e",
+      "actual_sha256": "127b0ecceb4ce0988ef0e547e66a22bc274d31a2eb34ae978d8984a7d20fb44e",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/StoryMemory.swift",
+      "base_sha256": "1db231820d64a6c91db6d0ad5f6b6ae5f73879e36e5940c7bacfadf7a782f530",
+      "actual_sha256": "1db231820d64a6c91db6d0ad5f6b6ae5f73879e36e5940c7bacfadf7a782f530",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Persistence/SaveRepository.swift",
+      "base_sha256": "331fb9764027d47f913f3fea4cee9bcf2952e2020352f5954e9ea79ddce0198f",
+      "actual_sha256": "331fb9764027d47f913f3fea4cee9bcf2952e2020352f5954e9ea79ddce0198f",
+      "unchanged": true
+    }
+  ],
+  "unchanged_count": 27
+}

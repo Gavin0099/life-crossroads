@@ -1,0 +1,103 @@
+{
+  "image": "LifeCrossroads/App/Assets.xcassets/LifeWorldPoses.imageset/otter-poses-v3.png",
+  "sha256": "fce33c75e5509db63db33f4d339312ab63722349f3de770606c5914c54253bd4",
+  "size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "transparent_pixels": 946418,
+  "total_pixels": 1572864,
+  "above_opaque_98pct": 554303,
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "cell_background_samples": [
+    {
+      "xy": [
+        0,
+        0
+      ],
+      "alpha": 0
+    },
+    {
+      "xy": [
+        512,
+        0
+      ],
+      "alpha": 0
+    },
+    {
+      "xy": [
+        1024,
+        0
+      ],
+      "alpha": 0
+    },
+    {
+      "xy": [
+        1535,
+        0
+      ],
+      "alpha": 0
+    },
+    {
+      "xy": [
+        0,
+        512
+      ],
+      "alpha": 0
+    },
+    {
+      "xy": [
+        512,
+        512
+      ],
+      "alpha": 0
+    },
+    {
+      "xy": [
+        1024,
+        512
+      ],
+      "alpha": 0
+    },
+    {
+      "xy": [
+        1535,
+        512
+      ],
+      "alpha": 0
+    },
+    {
+      "xy": [
+        0,
+        1023
+      ],
+      "alpha": 0
+    },
+    {
+      "xy": [
+        512,
+        1023
+      ],
+      "alpha": 0
+    },
+    {
+      "xy": [
+        1024,
+        1023
+      ],
+      "alpha": 0
+    },
+    {
+      "xy": [
+        1535,
+        1023
+      ],
+      "alpha": 0
+    }
+  ],
+  "note": "Actual transparent RGBA. Nearly opaque actor pixels max254; renderer uses alpha. No bitmap processing applied."
+}
