@@ -119,6 +119,11 @@ struct CrossroadsView: View {
                     .buttonStyle(JourneyButtonStyle()).accessibilityIdentifier("resumeLife")
             }
             StoryEyebrow(title: "一本由你參與的人生故事", icon: "book.closed")
+            Text("P1 整合預覽 0.1 · 八國完整人生")
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .accessibilityLabel("P1 整合預覽版，八國完整人生，仍待資料、美術與兒少測試驗收")
+                .accessibilityIdentifier("previewBuildStatus")
             HStack(spacing: 12) {
                 Text("如果人生，\n走向另一條路？")
                     .font(.system(.title, design: .rounded).bold())
