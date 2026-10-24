@@ -1,0 +1,50 @@
+{
+  "base": "b896e058bf49f61ec8eafec2a4134a35edff6ddc",
+  "testSource": "ce9f6a7e7f193c3dbe4a57fdd8e4d42b7c40e319",
+  "appSource": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+  "appTreesIdentical": true,
+  "preserved": [
+    {
+      "path": "LifeCrossroads/Domain",
+      "baseObject": "c16c3b401ddd6091cac9041abea0239c9c0b8180",
+      "currentObject": "c16c3b401ddd6091cac9041abea0239c9c0b8180",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Data",
+      "baseObject": "344d1171ff8cb9bfa9114daacbd332a2d6453666",
+      "currentObject": "344d1171ff8cb9bfa9114daacbd332a2d6453666",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Persistence",
+      "baseObject": "635596410b114b0313b6c2608fca286ac4238e05",
+      "currentObject": "635596410b114b0313b6c2608fca286ac4238e05",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Presentation",
+      "baseObject": "7080db0505ae08ec17a34009758a4c27c6d7aa73",
+      "currentObject": "7080db0505ae08ec17a34009758a4c27c6d7aa73",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/App/LifeWorldMotion.swift",
+      "baseObject": "0c7b2701c1d3c6dba5738bc96d0d286f45940942",
+      "currentObject": "0c7b2701c1d3c6dba5738bc96d0d286f45940942",
+      "unchanged": true
+    }
+  ],
+  "sceneSHA256": "ced164aefaa15ec5fd93c49024dd4124209cc1e8cf261442a9c95dce4af313cb",
+  "notClaimed": [
+    "Two complete latest-source local 21-case suites",
+    "Physical iPhone, manual VoiceOver, child playtesting, final art approval or release"
+  ],
+  "priorAppTreeBridge": {
+    "appSource3aa": "f61e36003c7ddc44dfe2ff905809a5a77ac12827",
+    "appSource27": "f61e36003c7ddc44dfe2ff905809a5a77ac12827"
+  },
+  "latestAppTree": "1712e9e0645f6f80868f54b65a31e36726c81840",
+  "readingRetestAppTree": "1712e9e0645f6f80868f54b65a31e36726c81840",
+  "latestWrapperChange": "Scene disclosure moved to a separate row outside artwork; Scene file and actor dimensions unchanged"
+}

@@ -1,0 +1,738 @@
+{
+  "checks": 46,
+  "images": [
+    {
+      "actors": [
+        {
+          "personID": "mumu",
+          "role": "protagonist"
+        },
+        {
+          "personID": "照顧你的大人",
+          "role": "inviter"
+        }
+      ],
+      "age": 8,
+      "changes": [],
+      "eventID": "child-interest",
+      "expectedActivity": "none",
+      "file": "8-before.png",
+      "moment": "eventPaused",
+      "observedActivity": "none",
+      "occurredEcho": false,
+      "reducedMotion": false,
+      "saveBytesUnchangedByRender": true,
+      "savedArchive": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/world-trace-visual/baseline/saves/8-before.json",
+      "sizePoints": [
+        375,
+        260
+      ],
+      "sha256": "d7a0ef0547d02b9c18160f43537b57b60e17a1e0962987f025924d51895b87aa",
+      "saveSHA256": "ad12620ffcb7bc76b861cc78f1516c2529d09feb3a6d30d37ee1a2fe0d70f589"
+    },
+    {
+      "actors": [
+        {
+          "personID": "mumu",
+          "role": "protagonist"
+        }
+      ],
+      "age": 8,
+      "changes": [
+        {
+          "caption": "本次實際變化：健康0、財務-1、人際+1、技能+5",
+          "choiceID": "invest",
+          "eventID": "child-interest",
+          "kind": "resourceChange",
+          "occurred": true,
+          "sourceAge": 8
+        }
+      ],
+      "eventID": "child-interest",
+      "expectedActivity": "cardboardPractice",
+      "file": "8-invest.png",
+      "moment": "committedOutcome",
+      "observedActivity": "none",
+      "occurredEcho": false,
+      "reducedMotion": false,
+      "saveBytesUnchangedByRender": true,
+      "savedArchive": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/world-trace-visual/baseline/saves/8-invest.json",
+      "sizePoints": [
+        375,
+        260
+      ],
+      "sha256": "91ce5990289b72e689ba790823a0bd5d86f94258adb255a111054aae932cc600",
+      "saveSHA256": "c38a4bdb143213d4088263cbdfaca94fc91bde8cd4b08bc40b37b99ac0ca0286"
+    },
+    {
+      "actors": [
+        {
+          "personID": "mumu",
+          "role": "protagonist"
+        }
+      ],
+      "age": 8,
+      "changes": [
+        {
+          "caption": "本次實際變化：健康0、財務0、人際+2、技能+1",
+          "choiceID": "ask",
+          "eventID": "child-interest",
+          "kind": "resourceChange",
+          "occurred": true,
+          "sourceAge": 8
+        }
+      ],
+      "eventID": "child-interest",
+      "expectedActivity": "requestNote",
+      "file": "8-ask.png",
+      "moment": "committedOutcome",
+      "observedActivity": "none",
+      "occurredEcho": false,
+      "reducedMotion": false,
+      "saveBytesUnchangedByRender": true,
+      "savedArchive": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/world-trace-visual/baseline/saves/8-ask.json",
+      "sizePoints": [
+        375,
+        260
+      ],
+      "sha256": "1cdd3196f3f88f7101910df0c85bfab93502d5ed94f4787a1df31e25004ae017",
+      "saveSHA256": "3209bf4e191a741eea7bb15dd81833bd2fa58f250a5672a8570cf8245317db90"
+    },
+    {
+      "actors": [
+        {
+          "personID": "mumu",
+          "role": "protagonist"
+        }
+      ],
+      "age": 8,
+      "changes": [
+        {
+          "caption": "本次實際變化：健康+2、財務0、人際+1、技能0",
+          "choiceID": "rest",
+          "eventID": "child-interest",
+          "kind": "resourceChange",
+          "occurred": true,
+          "sourceAge": 8
+        }
+      ],
+      "eventID": "child-interest",
+      "expectedActivity": "storedBox",
+      "file": "8-rest.png",
+      "moment": "committedOutcome",
+      "observedActivity": "none",
+      "occurredEcho": false,
+      "reducedMotion": false,
+      "saveBytesUnchangedByRender": true,
+      "savedArchive": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/world-trace-visual/baseline/saves/8-rest.json",
+      "sizePoints": [
+        375,
+        260
+      ],
+      "sha256": "fb0111447dea507b29ebbd2d81eee4f35072e041c555e3d925de888d5239134a",
+      "saveSHA256": "e9653fd2444592f01991f933bd3e932badc6bdd37a8b7afd6c8bc7fcd8b9445c"
+    },
+    {
+      "actors": [
+        {
+          "personID": "mumu",
+          "role": "protagonist"
+        },
+        {
+          "personID": "樹老師",
+          "role": "inviter"
+        }
+      ],
+      "age": 13,
+      "changes": [
+        {
+          "caption": "故事記憶：暫緩聯絡，仍可建立新連結（10歲）",
+          "choiceID": "rest",
+          "eventID": "child-friend",
+          "kind": "memory",
+          "occurred": true,
+          "sourceAge": 10
+        }
+      ],
+      "eventID": "teen-project",
+      "expectedActivity": "none",
+      "file": "13-before.png",
+      "moment": "eventPaused",
+      "observedActivity": "none",
+      "occurredEcho": false,
+      "reducedMotion": false,
+      "saveBytesUnchangedByRender": true,
+      "savedArchive": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/world-trace-visual/baseline/saves/13-before.json",
+      "sizePoints": [
+        375,
+        260
+      ],
+      "sha256": "f45ab85f371bdf8a41caaca1bfd80fb74f55a570719ec3d1c1b51eca83098456",
+      "saveSHA256": "13a832d8b8b51097f99e6e4c4977e61d2c03192a4f06e6d393a038cce88b99cf"
+    },
+    {
+      "actors": [
+        {
+          "personID": "mumu",
+          "role": "protagonist"
+        },
+        {
+          "personID": "teacher",
+          "role": "interacted"
+        }
+      ],
+      "age": 13,
+      "changes": [
+        {
+          "caption": "本次實際變化：健康0、財務-1、人際+1、技能+5",
+          "choiceID": "invest",
+          "eventID": "teen-project",
+          "kind": "resourceChange",
+          "occurred": true,
+          "sourceAge": 13
+        },
+        {
+          "caption": "與樹老師留下互動紀錄。",
+          "choiceID": "invest",
+          "eventID": "teen-project",
+          "kind": "relationship",
+          "occurred": true,
+          "sourceAge": 13
+        },
+        {
+          "caption": "故事記憶：暫緩聯絡，仍可建立新連結（10歲）",
+          "choiceID": "rest",
+          "eventID": "child-friend",
+          "kind": "memory",
+          "occurred": true,
+          "sourceAge": 10
+        },
+        {
+          "caption": "故事記憶：留下線上創作經驗（13歲）",
+          "choiceID": "invest",
+          "eventID": "teen-project",
+          "kind": "memory",
+          "occurred": true,
+          "sourceAge": 13
+        },
+        {
+          "caption": "留下線索，尚未實現：樹老師記得你當年的選擇，這次邀你一起分享經驗。",
+          "choiceID": "invest",
+          "eventID": "teen-project",
+          "kind": "pendingClue",
+          "occurred": false,
+          "sourceAge": 13
+        }
+      ],
+      "eventID": "teen-project",
+      "expectedActivity": "onlineGuide",
+      "file": "13-invest.png",
+      "moment": "committedOutcome",
+      "observedActivity": "none",
+      "occurredEcho": false,
+      "reducedMotion": false,
+      "saveBytesUnchangedByRender": true,
+      "savedArchive": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/world-trace-visual/baseline/saves/13-invest.json",
+      "sizePoints": [
+        375,
+        260
+      ],
+      "sha256": "a3b77c02d65f7965ea8ecdb484ed4c9bc5794ba23f562ad7cd7c7c69320e201e",
+      "saveSHA256": "a9246db2a5f59b98b24eee1a3e8d71019fae7132d4c22ba38768e24d4626343f"
+    },
+    {
+      "actors": [
+        {
+          "personID": "mumu",
+          "role": "protagonist"
+        },
+        {
+          "personID": "teacher",
+          "role": "interacted"
+        }
+      ],
+      "age": 13,
+      "changes": [
+        {
+          "caption": "本次實際變化：健康0、財務-1、人際+1、技能+5",
+          "choiceID": "invest",
+          "eventID": "teen-project",
+          "kind": "resourceChange",
+          "occurred": true,
+          "sourceAge": 13
+        },
+        {
+          "caption": "與樹老師留下互動紀錄。",
+          "choiceID": "invest",
+          "eventID": "teen-project",
+          "kind": "relationship",
+          "occurred": true,
+          "sourceAge": 13
+        },
+        {
+          "caption": "故事記憶：暫緩聯絡，仍可建立新連結（10歲）",
+          "choiceID": "rest",
+          "eventID": "child-friend",
+          "kind": "memory",
+          "occurred": true,
+          "sourceAge": 10
+        },
+        {
+          "caption": "故事記憶：留下線上創作經驗（13歲）",
+          "choiceID": "invest",
+          "eventID": "teen-project",
+          "kind": "memory",
+          "occurred": true,
+          "sourceAge": 13
+        },
+        {
+          "caption": "留下線索，尚未實現：樹老師記得你當年的選擇，這次邀你一起分享經驗。",
+          "choiceID": "invest",
+          "eventID": "teen-project",
+          "kind": "pendingClue",
+          "occurred": false,
+          "sourceAge": 13
+        }
+      ],
+      "eventID": "teen-project",
+      "expectedActivity": "onlineGuide",
+      "file": "13-pending-large.png",
+      "moment": "committedOutcome",
+      "observedActivity": "none",
+      "occurredEcho": false,
+      "reducedMotion": true,
+      "saveBytesUnchangedByRender": true,
+      "savedArchive": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/world-trace-visual/baseline/saves/13-pending-large.json",
+      "sizePoints": [
+        375,
+        150
+      ],
+      "sha256": "468acf45520d12e10b0328722b975ad575677470d7853d178908a2cb7f466a39",
+      "saveSHA256": "a9246db2a5f59b98b24eee1a3e8d71019fae7132d4c22ba38768e24d4626343f"
+    },
+    {
+      "actors": [
+        {
+          "personID": "mumu",
+          "role": "protagonist"
+        },
+        {
+          "personID": "樹老師",
+          "role": "inviter"
+        }
+      ],
+      "age": 17,
+      "changes": [
+        {
+          "caption": "故事記憶：暫緩聯絡，仍可建立新連結（10歲）",
+          "choiceID": "rest",
+          "eventID": "child-friend",
+          "kind": "memory",
+          "occurred": true,
+          "sourceAge": 10
+        },
+        {
+          "caption": "故事記憶：留下線上創作經驗（13歲）",
+          "choiceID": "invest",
+          "eventID": "teen-project",
+          "kind": "memory",
+          "occurred": true,
+          "sourceAge": 13
+        },
+        {
+          "caption": "17歲的呼應：樹老師記得你當年的選擇，這次邀你一起分享經驗。",
+          "choiceID": "invest",
+          "eventID": "teen-project",
+          "kind": "delayedConsequence",
+          "occurred": true,
+          "sourceAge": 13
+        }
+      ],
+      "eventID": "teen-repair-table",
+      "expectedActivity": "onlineGuide",
+      "file": "17-invest.png",
+      "moment": "living",
+      "observedActivity": "none",
+      "occurredEcho": false,
+      "reducedMotion": false,
+      "saveBytesUnchangedByRender": true,
+      "savedArchive": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/world-trace-visual/baseline/saves/17-invest.json",
+      "sizePoints": [
+        375,
+        260
+      ],
+      "sha256": "68d50ebdf368b3822ae0898c172eb75e3ac35bb869dd2148d6469f1e76efac5f",
+      "saveSHA256": "4dfa1935fd2730f963461caad9aa58769f93839cca3e5e1aa72ac34317d1c811"
+    },
+    {
+      "actors": [
+        {
+          "personID": "mumu",
+          "role": "protagonist"
+        },
+        {
+          "personID": "樹老師",
+          "role": "inviter"
+        }
+      ],
+      "age": 17,
+      "changes": [
+        {
+          "caption": "故事記憶：暫緩聯絡，仍可建立新連結（10歲）",
+          "choiceID": "rest",
+          "eventID": "child-friend",
+          "kind": "memory",
+          "occurred": true,
+          "sourceAge": 10
+        },
+        {
+          "caption": "故事記憶：留下線上創作經驗（13歲）",
+          "choiceID": "invest",
+          "eventID": "teen-project",
+          "kind": "memory",
+          "occurred": true,
+          "sourceAge": 13
+        },
+        {
+          "caption": "17歲的呼應：樹老師記得你當年的選擇，這次邀你一起分享經驗。",
+          "choiceID": "invest",
+          "eventID": "teen-project",
+          "kind": "delayedConsequence",
+          "occurred": true,
+          "sourceAge": 13
+        }
+      ],
+      "eventID": "teen-repair-table",
+      "expectedActivity": "onlineGuide",
+      "file": "17-echo-large.png",
+      "moment": "living",
+      "observedActivity": "none",
+      "occurredEcho": false,
+      "reducedMotion": true,
+      "saveBytesUnchangedByRender": true,
+      "savedArchive": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/world-trace-visual/baseline/saves/17-echo-large.json",
+      "sizePoints": [
+        375,
+        150
+      ],
+      "sha256": "468acf45520d12e10b0328722b975ad575677470d7853d178908a2cb7f466a39",
+      "saveSHA256": "4dfa1935fd2730f963461caad9aa58769f93839cca3e5e1aa72ac34317d1c811"
+    },
+    {
+      "actors": [
+        {
+          "personID": "mumu",
+          "role": "protagonist"
+        },
+        {
+          "personID": "teacher",
+          "role": "interacted"
+        }
+      ],
+      "age": 13,
+      "changes": [
+        {
+          "caption": "本次實際變化：健康0、財務0、人際+2、技能+4",
+          "choiceID": "offline",
+          "eventID": "teen-project",
+          "kind": "resourceChange",
+          "occurred": true,
+          "sourceAge": 13
+        },
+        {
+          "caption": "與樹老師留下互動紀錄。",
+          "choiceID": "offline",
+          "eventID": "teen-project",
+          "kind": "relationship",
+          "occurred": true,
+          "sourceAge": 13
+        },
+        {
+          "caption": "故事記憶：暫緩聯絡，仍可建立新連結（10歲）",
+          "choiceID": "rest",
+          "eventID": "child-friend",
+          "kind": "memory",
+          "occurred": true,
+          "sourceAge": 10
+        },
+        {
+          "caption": "故事記憶：留下紙本創作經驗（13歲）",
+          "choiceID": "offline",
+          "eventID": "teen-project",
+          "kind": "memory",
+          "occurred": true,
+          "sourceAge": 13
+        }
+      ],
+      "eventID": "teen-project",
+      "expectedActivity": "paperGuide",
+      "file": "13-offline.png",
+      "moment": "committedOutcome",
+      "observedActivity": "none",
+      "occurredEcho": false,
+      "reducedMotion": false,
+      "saveBytesUnchangedByRender": true,
+      "savedArchive": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/world-trace-visual/baseline/saves/13-offline.json",
+      "sizePoints": [
+        375,
+        260
+      ],
+      "sha256": "d9052a5e912f8ca6bd2f7ae6cd8e838d7a6760d6b17a102db0890fbcbc8fa848",
+      "saveSHA256": "219dca1fbc9c0247ad7b5a8636edcedb97faf7e891b8ab138ad5379fb34cbbd8"
+    },
+    {
+      "actors": [
+        {
+          "personID": "mumu",
+          "role": "protagonist"
+        },
+        {
+          "personID": "teacher",
+          "role": "interacted"
+        }
+      ],
+      "age": 13,
+      "changes": [
+        {
+          "caption": "本次實際變化：健康0、財務0、人際+2、技能+4",
+          "choiceID": "offline",
+          "eventID": "teen-project",
+          "kind": "resourceChange",
+          "occurred": true,
+          "sourceAge": 13
+        },
+        {
+          "caption": "與樹老師留下互動紀錄。",
+          "choiceID": "offline",
+          "eventID": "teen-project",
+          "kind": "relationship",
+          "occurred": true,
+          "sourceAge": 13
+        },
+        {
+          "caption": "故事記憶：暫緩聯絡，仍可建立新連結（10歲）",
+          "choiceID": "rest",
+          "eventID": "child-friend",
+          "kind": "memory",
+          "occurred": true,
+          "sourceAge": 10
+        },
+        {
+          "caption": "故事記憶：留下紙本創作經驗（13歲）",
+          "choiceID": "offline",
+          "eventID": "teen-project",
+          "kind": "memory",
+          "occurred": true,
+          "sourceAge": 13
+        }
+      ],
+      "eventID": "teen-project",
+      "expectedActivity": "paperGuide",
+      "file": "13-paper-large-reduced.png",
+      "moment": "committedOutcome",
+      "observedActivity": "none",
+      "occurredEcho": false,
+      "reducedMotion": true,
+      "saveBytesUnchangedByRender": true,
+      "savedArchive": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/world-trace-visual/baseline/saves/13-paper-large-reduced.json",
+      "sizePoints": [
+        375,
+        150
+      ],
+      "sha256": "f1f9cab3061705f19b72782f18286ab2b567f8623a135f305a54f72cccc4f856",
+      "saveSHA256": "219dca1fbc9c0247ad7b5a8636edcedb97faf7e891b8ab138ad5379fb34cbbd8"
+    },
+    {
+      "actors": [
+        {
+          "personID": "mumu",
+          "role": "protagonist"
+        },
+        {
+          "personID": "teacher",
+          "role": "interacted"
+        }
+      ],
+      "age": 13,
+      "changes": [
+        {
+          "caption": "本次實際變化：健康0、財務0、人際+2、技能+1",
+          "choiceID": "ask",
+          "eventID": "teen-project",
+          "kind": "resourceChange",
+          "occurred": true,
+          "sourceAge": 13
+        },
+        {
+          "caption": "與樹老師留下互動紀錄。",
+          "choiceID": "ask",
+          "eventID": "teen-project",
+          "kind": "relationship",
+          "occurred": true,
+          "sourceAge": 13
+        },
+        {
+          "caption": "故事記憶：暫緩聯絡，仍可建立新連結（10歲）",
+          "choiceID": "rest",
+          "eventID": "child-friend",
+          "kind": "memory",
+          "occurred": true,
+          "sourceAge": 10
+        },
+        {
+          "caption": "故事記憶：這次未建立作品，仍可重新尋找起點（13歲）",
+          "choiceID": "ask",
+          "eventID": "teen-project",
+          "kind": "memory",
+          "occurred": true,
+          "sourceAge": 13
+        }
+      ],
+      "eventID": "teen-project",
+      "expectedActivity": "requestNote",
+      "file": "13-ask.png",
+      "moment": "committedOutcome",
+      "observedActivity": "none",
+      "occurredEcho": false,
+      "reducedMotion": false,
+      "saveBytesUnchangedByRender": true,
+      "savedArchive": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/world-trace-visual/baseline/saves/13-ask.json",
+      "sizePoints": [
+        375,
+        260
+      ],
+      "sha256": "88cccef04d6780ed01341d2b644df6e2dd77b0054d4fe1bdcf14157eb604511a",
+      "saveSHA256": "0c4d5c1462153f5484a07100fe50580c0f6f6feec2a0a8944b37dc389b62aadf"
+    },
+    {
+      "actors": [
+        {
+          "personID": "mumu",
+          "role": "protagonist"
+        }
+      ],
+      "age": 13,
+      "changes": [
+        {
+          "caption": "本次實際變化：健康+2、財務0、人際+1、技能0",
+          "choiceID": "rest",
+          "eventID": "teen-project",
+          "kind": "resourceChange",
+          "occurred": true,
+          "sourceAge": 13
+        },
+        {
+          "caption": "故事記憶：暫緩聯絡，仍可建立新連結（10歲）",
+          "choiceID": "rest",
+          "eventID": "child-friend",
+          "kind": "memory",
+          "occurred": true,
+          "sourceAge": 10
+        },
+        {
+          "caption": "故事記憶：這次未建立作品，仍可重新尋找起點（13歲）",
+          "choiceID": "rest",
+          "eventID": "teen-project",
+          "kind": "memory",
+          "occurred": true,
+          "sourceAge": 13
+        }
+      ],
+      "eventID": "teen-project",
+      "expectedActivity": "pausedWork",
+      "file": "13-rest.png",
+      "moment": "committedOutcome",
+      "observedActivity": "none",
+      "occurredEcho": false,
+      "reducedMotion": false,
+      "saveBytesUnchangedByRender": true,
+      "savedArchive": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/world-trace-visual/baseline/saves/13-rest.json",
+      "sizePoints": [
+        375,
+        260
+      ],
+      "sha256": "cc831abd2558230e2b314065a3ce2bf6c40f3ea24c712ac935909b97df665a7c",
+      "saveSHA256": "102c08ff73b859d28e598a5a5c4d4ddfaed5e5ddeeffa04148a6e6dd5a61f3d5"
+    },
+    {
+      "actors": [
+        {
+          "personID": "mumu",
+          "role": "protagonist"
+        },
+        {
+          "personID": "阿禾",
+          "role": "inviter"
+        }
+      ],
+      "age": 17,
+      "changes": [
+        {
+          "caption": "故事記憶：暫緩聯絡，仍可建立新連結（10歲）",
+          "choiceID": "rest",
+          "eventID": "child-friend",
+          "kind": "memory",
+          "occurred": true,
+          "sourceAge": 10
+        },
+        {
+          "caption": "故事記憶：這次未建立作品，仍可重新尋找起點（13歲）",
+          "choiceID": "rest",
+          "eventID": "teen-project",
+          "kind": "memory",
+          "occurred": true,
+          "sourceAge": 13
+        }
+      ],
+      "eventID": "teen-river-survey",
+      "expectedActivity": "pausedWork",
+      "file": "17-rest.png",
+      "moment": "living",
+      "observedActivity": "none",
+      "occurredEcho": false,
+      "reducedMotion": false,
+      "saveBytesUnchangedByRender": true,
+      "savedArchive": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/world-trace-visual/baseline/saves/17-rest.json",
+      "sizePoints": [
+        375,
+        260
+      ],
+      "sha256": "4573768b4aa986beb1ffedf17320b0f1fe59a23080f0a9c23b1c57794a759fbb",
+      "saveSHA256": "028c376424db5d876c9f2013ab78de3580b8ae70b4e54b1a3e8e7f6938fa5112"
+    }
+  ],
+  "kind": "offline macOS production-view render; not iOS or real-device acceptance",
+  "source": "actual JPN/jpn-1/Seed0 LifeSession, SaveRepository atomic save/load, WorldMomentProjector",
+  "baselineCommit": "b896e058bf49f61ec8eafec2a4134a35edff6ddc",
+  "candidate": false,
+  "sceneSHA256": "31b43ccf0a5485c41674594c02718dca3eae84d6bcd22ebaeff9a437e7ca6e75",
+  "sourceHashes": {
+    "LifeCrossroads/Domain/BranchComparisonEngine.swift": "f4e2a14e26e6801d1b083e747b819833ea469e378b21d57145c12acbb4cf7c05",
+    "LifeCrossroads/Domain/BranchExperiment.swift": "f0440ee3fae8409161e6cb729bd25a7b8e537f8b1d5a3a0b8c96ebf4d37f166c",
+    "LifeCrossroads/Domain/ConsequenceTrace.swift": "0aa587c059a91f535c13159474e0b6693dfc4bd73239613a46ab07128ef4554f",
+    "LifeCrossroads/Domain/DecisionResolver.swift": "0cd561723a7b27c04c015373624fa58326506be2fa93c79b92e66582500e4607",
+    "LifeCrossroads/Domain/EnvironmentComparison.swift": "ee66c6ef5b040d54b9e2109317bd596d2fc013cc9c57ac36728303f99695e07b",
+    "LifeCrossroads/Domain/EventPolicy.swift": "8720acbcd4661170cf36b7f882bb222b38b1c6c44e352305cb52384c7a2276e8",
+    "LifeCrossroads/Domain/EventSelector.swift": "2309e14d6835d3d2891e8e686fb569b09ca7e2d458ca3300dba9bcf76bf11e08",
+    "LifeCrossroads/Domain/IndicatorContract.swift": "80f67874e43ee6304651ee7d0ec4304a1e43a494be230eecfd01f3a28f340544",
+    "LifeCrossroads/Domain/LifeSession.swift": "d72124a2761aebdbc547f8c23c7cd7433d5c39cfb80f3265bf764edd94d56159",
+    "LifeCrossroads/Domain/LifeState.swift": "7d01f9d7d2fa761c45a10dc628a5a0943a39442e74b7962462d5ee00074ca0f5",
+    "LifeCrossroads/Domain/Models.swift": "8e1581ce54fa59473f00afa168b5d9b2541944c33d6f88218945f77845ff2572",
+    "LifeCrossroads/Domain/RandomSource.swift": "746e01eff6f8ef03af1902354c8c62c09c3dc74e33e6b2a4c096a6e4a210bb03",
+    "LifeCrossroads/Domain/StoryBranchEngine.swift": "127b0ecceb4ce0988ef0e547e66a22bc274d31a2eb34ae978d8984a7d20fb44e",
+    "LifeCrossroads/Domain/StoryMemory.swift": "1db231820d64a6c91db6d0ad5f6b6ae5f73879e36e5940c7bacfadf7a782f530",
+    "LifeCrossroads/Presentation/LifeWorldFrame.swift": "2a16874e16727bb7fa278cc6f27e94432465ff50eec7e25d30aa3726d84b993a",
+    "LifeCrossroads/Presentation/ProjectMoment.swift": "6a680420bf9de3e970075488b96aca743d2fabb593f8e32d030d0d6e6064ae34",
+    "LifeCrossroads/Presentation/WorldPlayback.swift": "381a2923740f8119824f5c38cf54b3a0475d496a2c020cf0772e9a1d4d056414",
+    "LifeCrossroads/Persistence/SaveRepository.swift": "331fb9764027d47f913f3fea4cee9bcf2952e2020352f5954e9ea79ddce0198f",
+    "LifeCrossroads/App/LifeWorldMotion.swift": "38393b73238c3f9996d567a441e9bfc36a434d5048814e43c2f4c5f4592ef1df",
+    "tools/world-trace-visual/render.py": "c743018a3d7e693f0501ea0e0ef297e700f49124f7ea87bfea98ef4de652e978",
+    "tools/world-trace-visual/Render.swift": "0701862346b256d56e7cda41ed6cdbd1a967665f3cb0f886a1cb7b5bba66cff0",
+    "LifeCrossroads/App/StoryVisuals.swift": "98806c2e4f7d5074f2e0a1a742ccc60b80305d5cc728e9ebec9ccfa5f443ccdb",
+    "LifeCrossroads/Data/Resources/catalog.json": "67506238fb0ae8d57c874212971894aa0e8ea867829f95d0e081facd2487f91a",
+    "LifeCrossroads/App/Assets.xcassets/StoryCast.imageset/Contents.json": "2c595d47ef4769581eb26ab89aae61546ca992edcf92a252f2701177a07fbc27",
+    "LifeCrossroads/App/Assets.xcassets/StoryCast.imageset/story-cast.png": "663bb1b1ce8a0af2ed99be72827a6e4bc69978eb00708df62f7b27cd85e068d8",
+    "LifeCrossroads/App/Assets.xcassets/RiverCrossroads.imageset/Contents.json": "8500c6530ec00823b37563d58f016612a740e1d75ceb123218919598cc0153a5",
+    "LifeCrossroads/App/Assets.xcassets/RiverCrossroads.imageset/river-crossroads.png": "141d42dd9a537d642fb9451338b286ee981893629fee75bdf056066796e37947"
+  }
+}

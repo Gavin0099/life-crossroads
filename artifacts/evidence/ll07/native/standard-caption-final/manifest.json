@@ -1,0 +1,242 @@
+[
+  {
+    "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+    "device": "standard-caption-final",
+    "test": "LifeCrossroadsUITests/testWorldActivityPropsOnlyFollowSavedChoicesAtEightAndThirteen()",
+    "path": "artifacts/evidence/ll07/native/standard-caption-final/ll08-thirteen-rest.png",
+    "sha256": "68684d7f7146fe50c7e817c358e7abdb9d85c00190a7106cf5ee2ee17822579a",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "90432CB6-3DE4-46B5-9DE3-48845DCBB06B",
+      "deviceName": "LifeCrossroads Test 20261024T121030Z",
+      "exportedFileName": "4EE66CCE-5F61-4B62-907A-2D502AE94034.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "ll08-thirteen-rest_0_C91CF7D5-218C-45A4-B843-6443858C441E.png",
+      "timestamp": 1792844137.772
+    }
+  },
+  {
+    "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+    "device": "standard-caption-final",
+    "test": "LifeCrossroadsUITests/testWorldActivityPropsOnlyFollowSavedChoicesAtEightAndThirteen()",
+    "path": "artifacts/evidence/ll07/native/standard-caption-final/ll08-eight-rest.png",
+    "sha256": "13954ee9d8da18892bb9e35098febaa4a898345caa28ada371517eee9d389289",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "90432CB6-3DE4-46B5-9DE3-48845DCBB06B",
+      "deviceName": "LifeCrossroads Test 20261024T121030Z",
+      "exportedFileName": "7CBC0909-0048-4BDC-8F7E-DD8EF3BAEC36.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "ll08-eight-rest_0_CDDF0596-5C21-4E04-8D61-9FACE763EBF1.png",
+      "timestamp": 1792844112.428
+    }
+  },
+  {
+    "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+    "device": "standard-caption-final",
+    "test": "LifeCrossroadsUITests/testWorldActivityPropsOnlyFollowSavedChoicesAtEightAndThirteen()",
+    "path": "artifacts/evidence/ll07/native/standard-caption-final/ll08-thirteen-ask.png",
+    "sha256": "1ae9eaafcc495f541c0ecbaf9cc2da93efdf0e2b71526937ae2490485128bb24",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "90432CB6-3DE4-46B5-9DE3-48845DCBB06B",
+      "deviceName": "LifeCrossroads Test 20261024T121030Z",
+      "exportedFileName": "0ED155A5-7B76-46B8-93FB-291270F97CA9.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "ll08-thirteen-ask_0_B348AEC2-50B0-4C6A-A96F-889A591920E3.png",
+      "timestamp": 1792844094.66
+    }
+  },
+  {
+    "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+    "device": "standard-caption-final",
+    "test": "LifeCrossroadsUITests/testWorldActivityPropsOnlyFollowSavedChoicesAtEightAndThirteen()",
+    "path": "artifacts/evidence/ll07/native/standard-caption-final/ll08-thirteen-offline.png",
+    "sha256": "99b8fa800a4f68d7493d91dc15d74bc1ce63cc494def81dbc3bf225a371f0912",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "90432CB6-3DE4-46B5-9DE3-48845DCBB06B",
+      "deviceName": "LifeCrossroads Test 20261024T121030Z",
+      "exportedFileName": "A4EC40A4-7F52-4FBD-82F8-CF334393EFF4.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "ll08-thirteen-offline_0_86FE7292-65A5-45A6-A986-F4553B7D8564.png",
+      "timestamp": 1792844054.329
+    }
+  },
+  {
+    "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+    "device": "standard-caption-final",
+    "test": "LifeCrossroadsUITests/testWorldActivityPropsOnlyFollowSavedChoicesAtEightAndThirteen()",
+    "path": "artifacts/evidence/ll07/native/standard-caption-final/ll08-eight-invest.png",
+    "sha256": "072029b15b32be631609121554c52bb723704e01fe9d58b23f8279a3b8039426",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "90432CB6-3DE4-46B5-9DE3-48845DCBB06B",
+      "deviceName": "LifeCrossroads Test 20261024T121030Z",
+      "exportedFileName": "3367B421-F1B9-48FD-A304-BCE7A578177B.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "ll08-eight-invest_0_53060D80-2AF1-4391-B834-AE64FAA52C9C.png",
+      "timestamp": 1792844028.911
+    }
+  },
+  {
+    "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+    "device": "standard-caption-final",
+    "test": "LifeCrossroadsUITests/testWorldActivityPropsOnlyFollowSavedChoicesAtEightAndThirteen()",
+    "path": "artifacts/evidence/ll07/native/standard-caption-final/ll08-thirteen-invest.png",
+    "sha256": "5ae520e3e2fec219485b471b2377ee05e5989adfa8d02f94604472af9d02ebc0",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "90432CB6-3DE4-46B5-9DE3-48845DCBB06B",
+      "deviceName": "LifeCrossroads Test 20261024T121030Z",
+      "exportedFileName": "476AA53D-1A57-405F-9EAB-5DF4EEF286AC.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "ll08-thirteen-invest_0_FF06DA25-10B9-49E8-B6CD-D5538F68A832.png",
+      "timestamp": 1792844012.4
+    }
+  },
+  {
+    "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+    "device": "standard-caption-final",
+    "test": "LifeCrossroadsUITests/testWorldActivityPropsOnlyFollowSavedChoicesAtEightAndThirteen()",
+    "path": "artifacts/evidence/ll07/native/standard-caption-final/ll08-eight-ask.png",
+    "sha256": "c490227e526b6afa4a88326a5bdfe4f3ce9a91e9093283a83d5739202725e566",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "90432CB6-3DE4-46B5-9DE3-48845DCBB06B",
+      "deviceName": "LifeCrossroads Test 20261024T121030Z",
+      "exportedFileName": "C8CD552B-E22E-4392-AD00-7E18E9B114A0.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "ll08-eight-ask_0_D1D07B28-03D4-4EB1-AA95-1ED2063D6F7C.png",
+      "timestamp": 1792843990.702
+    }
+  },
+  {
+    "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+    "device": "standard-caption-final",
+    "test": "LifeCrossroadsUITests/testWorldFullEventReadingPreservesTheDecisionAndArchiveAtNormalAndMaximumText()",
+    "path": "artifacts/evidence/ll07/native/standard-caption-final/ll07-full-event-13-maximum.png",
+    "sha256": "64a2f8bee225c5edc07bfd04f6282ff72b67f0ef3bb232f37b1f4ba0299c89f5",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "90432CB6-3DE4-46B5-9DE3-48845DCBB06B",
+      "deviceName": "LifeCrossroads Test 20261024T121030Z",
+      "exportedFileName": "DBDE75AF-9ADB-4090-B38C-4CEBDF82B72A.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "ll07-full-event-13-maximum_0_412FF685-11A7-4824-8902-0CEEDF1CF496.png",
+      "timestamp": 1792844292.451
+    }
+  },
+  {
+    "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+    "device": "standard-caption-final",
+    "test": "LifeCrossroadsUITests/testWorldFullEventReadingPreservesTheDecisionAndArchiveAtNormalAndMaximumText()",
+    "path": "artifacts/evidence/ll07/native/standard-caption-final/ll07-full-event-8-maximum.png",
+    "sha256": "2f7c5f9c04dad77e634a4d84ff8f5daa45db614cc4ef16d97ada5d3ffd8a9c45",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "90432CB6-3DE4-46B5-9DE3-48845DCBB06B",
+      "deviceName": "LifeCrossroads Test 20261024T121030Z",
+      "exportedFileName": "86A7F5D0-67D4-4373-8347-D216648E32DE.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "ll07-full-event-8-maximum_0_0473DF41-8B12-4F37-93E6-6A2304E74F45.png",
+      "timestamp": 1792844212.51
+    }
+  },
+  {
+    "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+    "device": "standard-caption-final",
+    "test": "LifeCrossroadsUITests/testWorldFullEventReadingPreservesTheDecisionAndArchiveAtNormalAndMaximumText()",
+    "path": "artifacts/evidence/ll07/native/standard-caption-final/ll07-full-event-13-normal.png",
+    "sha256": "62f6bf922c0badf3081ff5254dcc6c2897c0a26f06c69dd10d9e233720cdb948",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "90432CB6-3DE4-46B5-9DE3-48845DCBB06B",
+      "deviceName": "LifeCrossroads Test 20261024T121030Z",
+      "exportedFileName": "0E061E5F-B5AD-4455-96E6-7F7AEC796152.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "ll07-full-event-13-normal_0_C1943C1F-025C-482D-AE5D-14680C64BBD5.png",
+      "timestamp": 1792844183.021
+    }
+  },
+  {
+    "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+    "device": "standard-caption-final",
+    "test": "LifeCrossroadsUITests/testWorldFullEventReadingPreservesTheDecisionAndArchiveAtNormalAndMaximumText()",
+    "path": "artifacts/evidence/ll07/native/standard-caption-final/ll07-full-event-8-normal.png",
+    "sha256": "e1074a9d97be19df30f56596eae9e4eff4ff7a187cc15eac7802eecd9af9470a",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "90432CB6-3DE4-46B5-9DE3-48845DCBB06B",
+      "deviceName": "LifeCrossroads Test 20261024T121030Z",
+      "exportedFileName": "A9127505-5549-482F-85E3-6033CAEB7755.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "ll07-full-event-8-normal_0_DCB788DC-42AD-48A0-9359-B13D9F25022A.png",
+      "timestamp": 1792844154.937
+    }
+  },
+  {
+    "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+    "device": "standard-caption-final",
+    "test": "LifeCrossroadsUITests/testWorldKeepsScenePinnedAcrossEventOutcomeAndDrawerScroll()",
+    "path": "artifacts/evidence/ll07/native/standard-caption-final/ll07-outcome-scrolled-world.png",
+    "sha256": "27711c865a184b5a9944123db09b126660c26c9430f523c313cb8e3284901410",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "90432CB6-3DE4-46B5-9DE3-48845DCBB06B",
+      "deviceName": "LifeCrossroads Test 20261024T121030Z",
+      "exportedFileName": "6BC6A038-4448-43CB-9509-BB7BC2E937D3.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "ll07-outcome-scrolled-world_0_7D0210E6-DF88-4DFC-B360-0173D1822CD4.png",
+      "timestamp": 1792844323.075
+    }
+  },
+  {
+    "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+    "device": "standard-caption-final",
+    "test": "LifeCrossroadsUITests/testWorldKeepsScenePinnedAcrossEventOutcomeAndDrawerScroll()",
+    "path": "artifacts/evidence/ll07/native/standard-caption-final/ll07-event-pinned-world.png",
+    "sha256": "8e175f8601add88a8f330afe73fcbd94c0b0e604575d3f8ac51ab236fb0d035b",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "90432CB6-3DE4-46B5-9DE3-48845DCBB06B",
+      "deviceName": "LifeCrossroads Test 20261024T121030Z",
+      "exportedFileName": "9FC501CE-83C3-4E1D-846D-CE0C2C70B5DD.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "ll07-event-pinned-world_0_58DF6616-9F56-476F-96EE-B80C1AF04DBA.png",
+      "timestamp": 1792844308.978
+    }
+  },
+  {
+    "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+    "device": "standard-caption-final",
+    "test": "LifeCrossroadsUITests/testWorldSaveFailuresDoNotPublishReactionsOrAdvanceAndRetryWorks()",
+    "path": "artifacts/evidence/ll07/native/standard-caption-final/world-saved-rest-outcome.png",
+    "sha256": "d65d280b8f6f0b5e026a1fbb2add86518c32bff22f328f877596b986798e652c",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "90432CB6-3DE4-46B5-9DE3-48845DCBB06B",
+      "deviceName": "LifeCrossroads Test 20261024T121030Z",
+      "exportedFileName": "E17A9930-0CAD-427F-895B-C9A8EDF6D2E9.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "world-saved-rest-outcome_0_4654B973-1CE7-4F01-AB97-D84CEB5F7F5D.png",
+      "timestamp": 1792844344.017
+    }
+  },
+  {
+    "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+    "device": "standard-caption-final",
+    "test": "LifeCrossroadsUITests/testWorldSaveFailuresDoNotPublishReactionsOrAdvanceAndRetryWorks()",
+    "path": "artifacts/evidence/ll07/native/standard-caption-final/world-se-first-action.png",
+    "sha256": "2deb577f8944aa598463ff6796f44ef7930021de0156cdd5159fc2d425487300",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "90432CB6-3DE4-46B5-9DE3-48845DCBB06B",
+      "deviceName": "LifeCrossroads Test 20261024T121030Z",
+      "exportedFileName": "45D3BAC9-967B-47C0-A309-F314326CF9C2.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "world-se-first-action_0_E7E39615-1C9D-43FE-B976-30511C773F94.png",
+      "timestamp": 1792844336.259
+    }
+  }
+]

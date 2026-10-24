@@ -27,13 +27,18 @@
 
 ## Current Phase
 
-P1 / LIFE-LOOP 10H v1.1 / LL-01～LL-06。唯一正式規格為 [docs/life-loop-10h/PLAN.md](docs/life-loop-10h/PLAN.md) 及同目錄 SLICES、CONTRACT、MOTION。使用者確認應執行整套10 Agent-hours，先前將「００」解讀為只做LL-00已更正。
+P1 / LIFE-LOOP / LL-07～LL-08 有界改進。PR #10 b896e05為已完成工程基線；本輪依使用者覆審改善事件場景、最大文字控制列及發布警告，保持原10H文件作歷史規格。
 
 ## Current Sprint
 
-於 codex/life-loop-gameplay-10h 完成共用契約、生活播放、事件暫停、已保存後果自然續行、存檔/分岔安全與Visual整合。Gameplay 7h／Visual 2h／獨立覆審1h總上限10 Agent-hours，切片間自主繼續；不建立排程。LL-00快照保持不覆寫，舊原型65fff9e只供逐項參考、不整枝合併。沿用Draft PR #10，不合併、不發布；實際測試及缺口記於同目錄ITERATION_LOG。
+在 codex/ll07-world-continuity 以PR #10為基底：A擁有流程／警告／佈局與整合，既有B擁有Scene及trace視覺映射；詳細邊界與驗收見[LL07_HANDOFF](docs/life-loop-10h/LL07_HANDOFF.md)。不改引擎／版本，不新增大型美術；維持Draft/HOLD、不合併、不發布。LL-09真人結果仍未取得。 本地程式及證據已完成：AppD518、閱讀測試ce9，App tree相同；111 Swift／30 Python、標準機最終4/4，SE三場景案例＋閱讀補測1/1分批通過。舊20／6項及SE固定安全區假設失敗按來源保存，17台本輪專用Simulator已delete。獨立11張最終差異目視關閉遮頭P1／末行證據缺口，保留三P2。下一步獨立Draft推送／當前HEAD CI；詳見LL07_DELIVERY。
 
 ## Acceptance Criteria
+
+- [x] LL-07工程：事件及後果保留固定世界，SE一般字級首屏可行動作；大字播放列52pt、閱讀區至少30%可捲。正式美術／人工閱讀舒適度另驗。
+- [x] LL-07工程：已定位alert重複nil發布並窄修；原受影響3案例、先前雙機6/6及最終4／3+1範圍皆0項此發布warning。完整舊批次／失敗與來源另列，不當新版雙全套。
+- [x] LL-08工程：8歲當次後果、13歲持久記錄及17歲實際呼應對應trace；休息不造幫手，線索未實現分開。既有整張PNG及幾何道具仍非正式acting／美術通過。
+- [ ] LL-09：真人試玩及理解／重玩觀察，未取得真人證據前不標通過。
 
 - [x] LL-00：由PR #9 c823c82建立乾淨分支，確認#6→#7→#8→#9 ancestry及最新HEAD CI（#9查詢時仍執行中）；既有WIP隔離、不更動引擎或正式App。
 - [x] LL-00：日本/台灣家庭一Seed0各15項實際決策及完整trace、三項版本、策略與台灣缺口見證可重跑且位元組一致。

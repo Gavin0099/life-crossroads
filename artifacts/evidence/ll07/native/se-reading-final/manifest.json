@@ -1,0 +1,66 @@
+[
+  {
+    "productSourceCommit": "ce9f6a7e7f193c3dbe4a57fdd8e4d42b7c40e319",
+    "device": "se-reading-final",
+    "test": "LifeCrossroadsUITests/testWorldFullEventReadingPreservesTheDecisionAndArchiveAtNormalAndMaximumText()",
+    "path": "artifacts/evidence/ll07/native/se-reading-final/ll07-full-event-13-maximum.png",
+    "sha256": "0fde1aa57d725c0540c7a4059dbd89125f711659c9a9abd643f118fb23296896",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "1BCA439C-F89D-459D-B254-1207485469FE",
+      "deviceName": "LifeCrossroads Test 20261024T122201Z",
+      "exportedFileName": "4E8FF937-A012-4D6F-AA4C-F74AA911742B.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "ll07-full-event-13-maximum_0_C8802260-5AB1-4DBB-B7ED-7C78BC885F5F.png",
+      "timestamp": 1792844773.798
+    }
+  },
+  {
+    "productSourceCommit": "ce9f6a7e7f193c3dbe4a57fdd8e4d42b7c40e319",
+    "device": "se-reading-final",
+    "test": "LifeCrossroadsUITests/testWorldFullEventReadingPreservesTheDecisionAndArchiveAtNormalAndMaximumText()",
+    "path": "artifacts/evidence/ll07/native/se-reading-final/ll07-full-event-8-maximum.png",
+    "sha256": "135f876536710290ccec9dfc8c6870098b4fe519c11226e4bf566f4585f8f3c0",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "1BCA439C-F89D-459D-B254-1207485469FE",
+      "deviceName": "LifeCrossroads Test 20261024T122201Z",
+      "exportedFileName": "CE654F25-3037-47E3-B58C-C6A3692D2F30.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "ll07-full-event-8-maximum_0_1A87BFD2-CD52-4AEF-BFE0-BC59821A6F22.png",
+      "timestamp": 1792844673.379
+    }
+  },
+  {
+    "productSourceCommit": "ce9f6a7e7f193c3dbe4a57fdd8e4d42b7c40e319",
+    "device": "se-reading-final",
+    "test": "LifeCrossroadsUITests/testWorldFullEventReadingPreservesTheDecisionAndArchiveAtNormalAndMaximumText()",
+    "path": "artifacts/evidence/ll07/native/se-reading-final/ll07-full-event-13-normal.png",
+    "sha256": "ab437ac724cfaecbc70373d545e55cd15c31baf0f402ccbac0991ac9485421a9",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "1BCA439C-F89D-459D-B254-1207485469FE",
+      "deviceName": "LifeCrossroads Test 20261024T122201Z",
+      "exportedFileName": "004B02C7-E3FC-4597-BAA4-57030FA12C7E.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "ll07-full-event-13-normal_0_04066454-8EAD-451A-8E2A-7D078D450EEA.png",
+      "timestamp": 1792844635.089
+    }
+  },
+  {
+    "productSourceCommit": "ce9f6a7e7f193c3dbe4a57fdd8e4d42b7c40e319",
+    "device": "se-reading-final",
+    "test": "LifeCrossroadsUITests/testWorldFullEventReadingPreservesTheDecisionAndArchiveAtNormalAndMaximumText()",
+    "path": "artifacts/evidence/ll07/native/se-reading-final/ll07-full-event-8-normal.png",
+    "sha256": "348b07ccfe22226a8c74503e202b523f3c6ba5f82b55a4daa6030ca96ca2579c",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "1BCA439C-F89D-459D-B254-1207485469FE",
+      "deviceName": "LifeCrossroads Test 20261024T122201Z",
+      "exportedFileName": "4FC59295-CD89-4BC3-A00B-5FE1D6890F9A.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "ll07-full-event-8-normal_0_A705F140-F2BB-444F-8369-B85C624317CE.png",
+      "timestamp": 1792844598.842
+    }
+  }
+]
