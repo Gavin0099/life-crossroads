@@ -1,62 +1,54 @@
 # LIFE-LOOP 10H v1.1：生活循環整合交付
 
-狀態：程式、本機測試與獨立工程覆核完成；遠端最新完整CI仍待。沿用 [Draft PR #10](https://github.com/Gavin0099/life-crossroads/pull/10)，不合併、不發布。
+整套 LL-00～LL-06 程式與本機整合驗證已完成，沿用 [Draft PR #10](https://github.com/Gavin0099/life-crossroads/pull/10)。App／UITests 凍結 `c445e5f0f9bee48832d0e77463d54777a6a3009f`；測試工具最後修正 `e1ca7c702a305f5c49489295ae9d7afdf36fb1cb` 不改 App。文件提交後另核對最終 HEAD CI，不拿舊 HEAD 的成功代替。不合併、不發布。
 
-## 本次可操作成果
+## 實際可玩的差異
 
-正式八國人生現在以大型河畔世界開始，生活片段約3秒後停在真實事件；玩家決定並保存成功，才顯示本次人物、資源、記憶或道具變化，約2秒後自然續行。可以暫停、1×／3×、立即跳過；事件等待永不自選。首頁可切回既有 Event-first，人生與存檔共用。
+開始八國人生後先看大型河畔生活場景，約3秒遇到正式事件並暫停。玩家選擇且保存成功後，同一世界才顯示真實的人物互動、資源、道具或故事記憶，約2秒後自然回到生活。可暫停、1×／3×、立即跳過演出；事件永不自選。原因、比較、背景與原局檢視會暫停，冷啟動不偷偷補算人生。首頁可切回原 Event-first。
 
-世界保留既有五齡沐沐 PNG，採輕微整體待機、水面環境與已保存後果的單次演出；不是新角色骨架或各國實景。13歲紙本創作、求助、休息及延後故事事實由實際 trace 投影，不畫出未發生的幫手或機會。
+保留既有五齡沐沐整張 PNG，做小幅待機、水面環境與單次結果演出。生活場景高300pt、事件88pt、大字90pt、後果170pt，並非每個階段都占半屏。13歲創作、紙本、求助、休息與13→17歲呼應讀取實際 trace；未發生線索明示尚未實現，休息不額外畫出幫手。共同河畔是寓言場景，不能當各國實景。
 
-## 工程邊界
+## 保護與整合範圍
 
-- 基底為 PR #9 `c823c82`，承接 PR #8 `c136beb`；舊原型 `65fff9e` 只保留 checkpoint，未整枝合併。
-- `LifeWorldFrame`／`WorldMomentProjector` 只讀人生；`WorldPlayback` 注入單調時間；GameStore 使用唯一累積演出鐘，保存成功後才更新世界投影。
-- 世界進度、動畫、速度不寫入人生 schema，不改事件抽選、資料版本或 Seed。相同輸入的完整 trace 與存檔仍可重現。
-- generation／identity／in-flight ticket 阻擋過期與重複續行，寫入失敗停在原結果，可重試。背景、遮蓋、離屏、原局檢視凍結演出；冷啟動不補算人生或自動消耗下一事件。
-- 已保存原局仍由原本分岔系統管理。完整後半生和磁碟恢復測試不以畫面 marker 相等替代。
-- 動畫僅參考 rossark 固定來源 `9b20964` 的方法，MIT 及來源 hash 已查核；沒有安裝整包 skill、複製原碼或引入第三方 demo 圖片。
+- 基於 PR #9 `c823c82`，承接 PR #8；舊原型 `65fff9e` 未整枝合併。
+- 只讀 `LifeWorldFrame`／projector、注入單調時間的 `WorldPlayback`、GameStore 保存後更新快取投影；動畫不改事件、Seed、版本或存檔 schema。
+- identity／generation／in-flight ticket 防止過期與重複續行；寫入失敗停留原畫面及原檔，可重試。完整原局與替代後半生仍由原分岔系統保存。
+- 既有 Visual `803539c`／handoff `5551d4d` 只窄接 Scene 裁圖、靜態 bitmap cache 及人物尺寸；沒有合併其整條原型分支。Scene／Motion bytes 與最終作者版吻合。
+- rossark 固定 `9b20964`、MIT 僅供動畫方法參考；沒有複製外部程式、Demo 素材、安裝整包 skill、產生新角色或骨架。
 
 ## 驗證
 
-| 證據 | 結果與範圍 |
+| 項目 | 最後結果與邊界 |
 | --- | --- |
-| 純 Swift | 111個不同案例通過：102基線＋3世界投影＋4時計＋2真實存讀／分岔。獨立Reviewer重跑9項屬其中子集，不加總。 |
-| 固定基準 | LL-00日本／台灣家庭一Seed0完整15項trace保持凍結；normal／fast／skip及逐邊界真實磁碟讀寫與原局bytes一致。八國均能完成15選擇／80歲。 |
-| Python | 24項通過，包含模擬器wrapper參數、boot失敗、成功／失敗清理。 |
-| 正式motion helper | 直接swiftc編譯App實際helper，時間接縫、暫停／恢復／速度連續及one-shot測試通過；沒有另外抄出一個測試版算法。 |
-| 離線畫面 | 18張真實session→正式projector→scene；幾何loop首尾一致。嚴格像素相等曾失敗1/255，同輸入重繪控制亦同幅；保留原失敗與容忍比較，不宣稱pixel-exact。 |
-| 完整原生回歸 | binary `7040802`：SE／iOS27.0，16項中15過1失敗；舊UI11項、新世界完整人生／原局分岔／恢復／存檔重試等通過。最大字體projectMemory的helper拖曳從固定footer開始，無法捲到文字。 |
-| 最新原生定向 | binary `7aa69d2` 五項全部通過（237.324秒）；包含修正手勢的最大字體、新增Reduced Motion、兩事件自然續行／前次原因、冷恢復及寫入失敗。未把前版完整套件冒充本版全套。 |
-| 引擎／資料範圍 | 對基底Domain/Data/Persistence無diff；離線31觀測／8國／16家庭／40事件資料檢查通過。 |
+| 純 Swift | 111個不同案例通過：102基線＋3投影＋4播放＋2真實磁碟／分岔。獨立重跑9項是其中子集。 |
+| 決定論 | 日本／台灣家庭一 Seed0 的 LL-00完整15項 trace 保持凍結；normal／fast／skip、逐邊界磁碟存讀、原局 bytes 與完整替代人生一致。八國15次選擇到80歲可完成。 |
+| Python | 25項通過，含 wrapper 參數、boot失敗、成功／失敗刪除，以及可選診斷正／負向設定。 |
+| 正式 App 全套 | c445e5f：iPhone SE3／iPhone17、iOS27.0各18/18通過，有效 xcresult、截圖與原命令 exit0；各有3筆 Publishing changes runtime warning。 |
+| 新工具收尾 | e1ca7c7：兩機各1/1保存失敗與重試案例，無人工介入即正常結束及自動刪除；各仍有1筆同 warning。不是額外兩個不同 UI 案例。 |
+| 圖像來源 | 兩機各12張原生 PNG、24筆 SHA256重算吻合，22個不同hash；兩機比較末列各有重複截圖，不當新場景。 |
+| 動畫 | 直接編譯 App helper 驗證累積鐘、暫停／速度／loop與one-shot；舊版18張離線圖僅作當時來源證據，不當 c445 原生圖。嚴格像素相等1/255失敗與同輸入控制保留，不宣稱pixel-exact。 |
+| 資料／引擎 | 對正式基底 Domain／Data／Persistence 無diff；31觀測／8國／16家庭／40事件離線檢查通過。 |
+| 清理 | 本輪9台root專用Simulator均delete，對照inventory全部不存在；沒有刪其他任務裝置或runtime。標準機 raw xcresult 已複製回主工作目錄，自己的QA worktree已封存並由附件清單確認。 |
 
-完整原始失敗和通過記錄保留於本機 `artifacts/governance/life-loop-10h/`；可提交的版本化摘要、選定原生圖與來源manifest在 `artifacts/evidence/life-loop/`。測試方法可見正式SLICES／CONTRACT；每次使用專用Simulator，終了以delete清除，不只shutdown。
+兩輪完整測試結束後，Xcode曾卡在額外 `simctl diagnose`。已取樣並核對 parent／argv／owned UUID，只終止兩個可選診斷 child，沒有終止 xcodebuild、runner 或共享服務；原程序隨即正常完成。**額外 OS 診斷不完整**，一般 XCTest/log/截圖/結果保留。`scripts/ios-check.sh` 現預設 `-collect-test-diagnostics never`，可選 `on-failure`；仍保留失敗 exit code／xcresult／清理。這不是 publishing warning 修復。操作明細見 [診斷收據](../../artifacts/evidence/life-loop/diagnostic-stall-action.json)。
 
-## 畫面對照與驗收缺口
+舊 runner 啟動失敗、v2 2/4、704完整15/16、7aa定向5/5及4d延遲1/1依原來源保留；最新雙機18/18不抹去歷史。完整原始檔在本機 `artifacts/governance/life-loop-10h/` 及 `artifacts/ios/`；版本化摘要／畫面在 [integrated-native](../../artifacts/evidence/life-loop/integrated-native)，[機讀驗證](../../artifacts/evidence/life-loop/integration-validation.json)逐項列出來源與hash。
 
-舊新8歲首屏相同日本家庭一Seed0；13歲大字舊新對照同為rest三次後紙本創作。manifest逐張記錄實際binary，不把704圖充作最新圖。生活大場景、事件緊縮場景、已保存後果、下一事件、完整岔路比較分開檢查。
+## 六項 Gate 與覆核
 
-仍需真實iPhone、人工VoiceOver焦點、分齡兒少試玩和真人10–15分鐘節奏。最大字體固定控制列佔較大空間，能操作與閱讀舒適度分開判斷。SwiftUI「Publishing changes from within view updates」warning在本輪仍有，前一版亦記錄同字串；本輪發出點／根因尚未定位或修復，不宣稱零warning或已有資料毀損。台灣資料可比性、完整事件量、正式美術與發布Gate沒有因本次完成而通過。
-
-## 工時
-
-這是10 Agent-hours上限下的整套實作，並非只做LL-00。Gameplay上限7h、Visual2h、Reviewer1h。記錄可核實的工作觀測窗，包含等待的窗是保守上界，不虛構精確逐片工時或花滿10h。最終觀測帳、R1～R4及G1～G6狀態於ITERATION_LOG收束。
-
-## Gate 判斷（工程與玩家證據分開）
-
-| Gate | 本輪判斷 |
+| Gate | 本輪可支持的判斷 |
 | --- | --- |
-| G1 真實人生 | 本地工程通過：八國15決策／80歲，核心與資料無diff。 |
-| G2 生活循環 | 本地原生通過：相鄰兩事件及完整新世界人生可操作，自然續行不自選。 |
-| G3 決定論 | 本地工程通過：凍結trace、速度／skip、真實存讀與原局／完整替代線。 |
-| G4 真實後果 | 一般與13歲反應已原生目視；另有4d3308e正式13→17歲線索／已觸發呼應原生案例1/1通過，兩張真圖保留，沒有修改App或引擎。 |
-| G5 可操作 | SE首屏／最大字體／App減少動態本地通過；最新完整遠端CI與人工VoiceOver仍待。 |
-| G6 動畫與授權 | 實際helper、單一累積鐘、固定時刻與來源MIT查核通過；不宣稱實機FPS或嚴格像素相等。 |
+| G1 真實人生 | 八國完整人生本地工程通過，未關閉既有資料缺口。 |
+| G2 生活循環 | 自然相鄰兩事件與完整新世界人生／分岔原生通過，不是兒少趣味評分。 |
+| G3 決定論 | 凍結 trace、速度／skip、原檔／原局／替代線與存讀工程通過。 |
+| G4 真實後果 | 一般事件、13歲、13→17線索轉真實呼應具正式原生圖及獨立目視證據。 |
+| G5 可操作 | 兩機全套、SE首屏、最大文字、Reduced本地通過；最終HEAD CI另外核對。人工VoiceOver及實機未驗收。 |
+| G6 動畫與授權 | source/helper/單一鐘/靜態與Reduced通過；不宣稱實機FPS、所有連續演出已人測或正式骨架美術完成。 |
 
-獨立覆核由另名Reviewer完成，沒有代替使用者合併批准。維持Draft／HOLD，完整P1與發布Gate均未通過。
+[獨立 Reviewer](../../artifacts/evidence/life-loop/independent-review.md)最後窄覆核核對兩機18項與新工具、6張目視及24個圖hash，未見剩餘已確認工程阻擋，累計約0.966 Agent-hour；未給合併批准。[既有 Visual 作者自查](INTEGRATED_VISUAL_REVIEW.md)逐看24張／22不同畫面來源，屬作者自查，不能當獨立 Critic。
 
-獨立Reviewer主段05:55:25–06:51:06 UTC，另G4補證46.3秒，合計約0.941 Agent-hour（含等待、上限1h）；無剩餘已確認工程阻擋。完整[覆核紀錄](../../artifacts/evidence/life-loop/independent-review.md)已保存，未給合併批准。
+## 工時與尚未驗收
 
-Visual作者與只讀QA保守觀測共0.857 Agent-hour／2h，沒有擴充角色素材。正式原生首屏、休息／Reduced與8→10→12變化已目視，細節見 `artifacts/evidence/life-loop/visual-qa.json`。
+這次做的是10 Agent-hours上限的整套實作，並非只做LL-00，也不是要求等待滿10小時。帳戶仍A7／B2／Reviewer1，不另加圖片工時。觀測窗含工具等待、不是精確逐片秒錶。r2 Visual已知0.857h只占B的一部分；既有Visual另有早期未量測audit及作者QA，合併B與總帳精確值標unknown，不能宣稱每個cap均已核實或花滿10h。正式雙機由A承擔，沒有再分配B2h。詳見 [工時帳](../../artifacts/evidence/life-loop/budget-ledger.json)及 [迭代日誌](ITERATION_LOG.md)。
 
-最後G4 test-only `4d3308e`：13歲pending→17歲已發生呼應1/1通過44.367秒，兩圖由Reviewer獨立實看；第五台專用Simulator已刪。本次工時保守觀測與個別cap見 `artifacts/evidence/life-loop/budget-ledger.json`，文件提交時root仍在PR/CI交付工作窗內。
+仍缺真實iPhone、人工VoiceOver、分齡兒少與10～15分鐘節奏。最大字體固定控制列佔近半屏，事件小角色／固定PNG姿勢與家具風格仍待產品評估；本輪可操作不代表閱讀舒適或正式美術通過。Publishing changes warning發出點未定位，不宣稱零警告、已修復或已有資料毀損。LC-03資料可比性、50～70事件及整體P1／發布Gate均未因本次完成而通過。

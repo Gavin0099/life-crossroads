@@ -1,0 +1,322 @@
+{
+  "productCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+  "kind": "static renderer integration review; not a simulator result",
+  "files": [
+    {
+      "path": "LifeCrossroads/App/LifeWorldScene.swift",
+      "freezeSHA256": "31b43ccf0a5485c41674594c02718dca3eae84d6bcd22ebaeff9a437e7ca6e75",
+      "gameplayWorkingBytesMatch": true,
+      "visualWorkingBytesMatch": true
+    },
+    {
+      "path": "LifeCrossroads/App/LifeWorldMotion.swift",
+      "freezeSHA256": "38393b73238c3f9996d567a441e9bfc36a434d5048814e43c2f4c5f4592ef1df",
+      "gameplayWorkingBytesMatch": true,
+      "visualWorkingBytesMatch": true
+    }
+  ],
+  "reviewer": "Visual author; not independent Critic",
+  "formalRegressionOwner": "Gameplay A",
+  "newSimulatorsCreatedByThisReview": 0,
+  "observedConstraints": {
+    "livingHeightPt": 300,
+    "eventPausedHeightPt": 88,
+    "accessibilityHeightPt": 90,
+    "notFinalArtApproval": true
+  },
+  "formalTests": {
+    "standard": {
+      "result": "Passed",
+      "passedTests": 18,
+      "failedTests": 0,
+      "totalTestCount": 18,
+      "runtimeWarningCount": 3,
+      "summaryPath": "artifacts/evidence/life-loop/integrated-native/standard/summary.json"
+    },
+    "se": {
+      "result": "Passed",
+      "passedTests": 18,
+      "failedTests": 0,
+      "totalTestCount": 18,
+      "runtimeWarningCount": 3,
+      "summaryPath": "artifacts/evidence/life-loop/integrated-native/se/summary.json"
+    }
+  },
+  "screenshots": [
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/standard/world-seventeen-occurred-echo.png",
+      "sha256": "56e4d0fa0d028d3eeb2fc89d620d34e462dea20bd4669874a5402b569feedccf",
+      "device": "standard",
+      "test": "LifeCrossroadsUITests/testWorldDelayedProjectClueBecomesAnOccurredSeventeenYearEcho()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    },
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/standard/world-thirteen-pending-clue.png",
+      "sha256": "3aa1d852f3d943e6d3117e99e8c7eb4015f32ed9fa9048913fd8b0b88874a421",
+      "device": "standard",
+      "test": "LifeCrossroadsUITests/testWorldDelayedProjectClueBecomesAnOccurredSeventeenYearEcho()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    },
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/standard/lc04-comparison-last-age.png",
+      "sha256": "ba222926c116c7779d20d7251d33d1fdcab2e7fa04ecab5822bdeaf70d7bd7b8",
+      "device": "standard",
+      "test": "LifeCrossroadsUITests/testWorldFullLifeForkPreservesOriginalAndComparesRemainder()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    },
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/standard/lc04-complete-comparison.png",
+      "sha256": "ba222926c116c7779d20d7251d33d1fdcab2e7fa04ecab5822bdeaf70d7bd7b8",
+      "device": "standard",
+      "test": "LifeCrossroadsUITests/testWorldFullLifeForkPreservesOriginalAndComparesRemainder()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    },
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/standard/world-workshop-maximum-text-outcome.png",
+      "sha256": "29bbbb27cd6e126875d29f3e75b248e7dba1de6d2bef1c45a0409a7677e57df9",
+      "device": "standard",
+      "test": "LifeCrossroadsUITests/testWorldMaximumTextRetainsActionsAndRealProjectConsequences()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    },
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/standard/world-workshop-maximum-text-event.png",
+      "sha256": "3311fcf51d5857aac75a7eabc7b8550a2903c48159287013014b733affe49fdb",
+      "device": "standard",
+      "test": "LifeCrossroadsUITests/testWorldMaximumTextRetainsActionsAndRealProjectConsequences()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    },
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/standard/world-next-living.png",
+      "sha256": "66d62a2237291a0b5f5f3c1b15734b292bb387135f4ccd6077160b08844e07d1",
+      "device": "standard",
+      "test": "LifeCrossroadsUITests/testWorldNaturallyRunsTwoEventsAndNeverChoosesForThePlayer()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    },
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/standard/world-second-real-event.png",
+      "sha256": "37d5ebf0f0938180ae0490aeae40d462066772be532f0003718094f9251f4dc8",
+      "device": "standard",
+      "test": "LifeCrossroadsUITests/testWorldNaturallyRunsTwoEventsAndNeverChoosesForThePlayer()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    },
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/standard/world-childhood-living.png",
+      "sha256": "bcc20f4fe5f49190c603aa7d3bdd550a400606adbcaa89655b49b6cdfe16b06c",
+      "device": "standard",
+      "test": "LifeCrossroadsUITests/testWorldNaturallyRunsTwoEventsAndNeverChoosesForThePlayer()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    },
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/standard/world-reduced-motion-committed.png",
+      "sha256": "78f209442377449a8208ed4d0c1cb7735d42b0399793fe34918b1b1b601fc7ff",
+      "device": "standard",
+      "test": "LifeCrossroadsUITests/testWorldReducedMotionKeepsSceneFactsAndAccessibleChoices()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    },
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/standard/world-saved-rest-outcome.png",
+      "sha256": "e19acd85507e2298a2009406a9f88992d7620168d9df8893b42170712cd15a94",
+      "device": "standard",
+      "test": "LifeCrossroadsUITests/testWorldSaveFailuresDoNotPublishReactionsOrAdvanceAndRetryWorks()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    },
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/standard/world-se-first-action.png",
+      "sha256": "948995c54cc3a9e653c81ae416cc6ae54b9144bf5c71d6e4cb07762b5cf7fec6",
+      "device": "standard",
+      "test": "LifeCrossroadsUITests/testWorldSaveFailuresDoNotPublishReactionsOrAdvanceAndRetryWorks()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    },
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/se/world-seventeen-occurred-echo.png",
+      "sha256": "94cc2e7ffcb5be53d9dc2550e0fa74f365167fe6c77522c13bf28cee92df70e5",
+      "device": "se",
+      "test": "LifeCrossroadsUITests/testWorldDelayedProjectClueBecomesAnOccurredSeventeenYearEcho()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    },
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/se/world-thirteen-pending-clue.png",
+      "sha256": "db5c2eb17387ba227a2fb39044a5ff7b7fa75a7a7d2c75af3f723e65df64b8bb",
+      "device": "se",
+      "test": "LifeCrossroadsUITests/testWorldDelayedProjectClueBecomesAnOccurredSeventeenYearEcho()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    },
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/se/lc04-comparison-last-age.png",
+      "sha256": "abecf7bf830fa26fb880433231322bcd0b7733470d6fd72bcb1633fb41bd8448",
+      "device": "se",
+      "test": "LifeCrossroadsUITests/testWorldFullLifeForkPreservesOriginalAndComparesRemainder()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    },
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/se/lc04-complete-comparison.png",
+      "sha256": "abecf7bf830fa26fb880433231322bcd0b7733470d6fd72bcb1633fb41bd8448",
+      "device": "se",
+      "test": "LifeCrossroadsUITests/testWorldFullLifeForkPreservesOriginalAndComparesRemainder()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    },
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/se/world-workshop-maximum-text-outcome.png",
+      "sha256": "50ac9d4afa34640f8ac3b3890cd4053679d9a6f279166b2bb062971a16b2e8f2",
+      "device": "se",
+      "test": "LifeCrossroadsUITests/testWorldMaximumTextRetainsActionsAndRealProjectConsequences()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    },
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/se/world-workshop-maximum-text-event.png",
+      "sha256": "0d8f184cac2c020d4f7e72381a692e076b62c77f4dfc39bc55ec2804138a1006",
+      "device": "se",
+      "test": "LifeCrossroadsUITests/testWorldMaximumTextRetainsActionsAndRealProjectConsequences()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    },
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/se/world-next-living.png",
+      "sha256": "ffdf0725e2daa7b654c90782f58c116ed74604a9b87aa1e4fa069e8c2605aa8a",
+      "device": "se",
+      "test": "LifeCrossroadsUITests/testWorldNaturallyRunsTwoEventsAndNeverChoosesForThePlayer()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    },
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/se/world-second-real-event.png",
+      "sha256": "ba37551996902738bab419658822b56008802a69974b61728b197de365c96560",
+      "device": "se",
+      "test": "LifeCrossroadsUITests/testWorldNaturallyRunsTwoEventsAndNeverChoosesForThePlayer()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    },
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/se/world-childhood-living.png",
+      "sha256": "bac82f70a80acac067f9a235e6b6101b9b08be45d846b6bb59794e126f91d51a",
+      "device": "se",
+      "test": "LifeCrossroadsUITests/testWorldNaturallyRunsTwoEventsAndNeverChoosesForThePlayer()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    },
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/se/world-reduced-motion-committed.png",
+      "sha256": "b9169bf0d33c6398c654eda3d0cc0be745df2a3683f972d4585568e1af7723c7",
+      "device": "se",
+      "test": "LifeCrossroadsUITests/testWorldReducedMotionKeepsSceneFactsAndAccessibleChoices()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    },
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/se/world-saved-rest-outcome.png",
+      "sha256": "a9b38ce332fd285190dba87b4e02ebfae2ef78139c6cefa001c0390320ecf505",
+      "device": "se",
+      "test": "LifeCrossroadsUITests/testWorldSaveFailuresDoNotPublishReactionsOrAdvanceAndRetryWorks()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    },
+    {
+      "path": "artifacts/evidence/life-loop/integrated-native/se/world-se-first-action.png",
+      "sha256": "b3cb696f8c963507b0b50c40cbab38d450158c89c1cc93fe4ae930b4793cce63",
+      "device": "se",
+      "test": "LifeCrossroadsUITests/testWorldSaveFailuresDoNotPublishReactionsOrAdvanceAndRetryWorks()",
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "viewedByAuthor": true
+    }
+  ],
+  "previousVisualDevicesRechecked": {
+    "recordedUTC": "2026-10-24T07:24:36.483760+00:00",
+    "ownedCount": 13,
+    "allAbsentFromInventory": true,
+    "deletedAnythingDuringThisReview": false
+  },
+  "screenshotCounts": {
+    "deliveredPNGFiles": 24,
+    "uniqueSHA256": 22,
+    "duplicateReason": "Each device comparison complete/last-age attachment already shows age80, with identical bytes; not extra distinct scene coverage."
+  },
+  "formalOwnedDevicesRechecked": [
+    {
+      "deviceID": "066B070D-30B4-4BF4-928A-B16329E0AD8A",
+      "absentFromInventory": true
+    },
+    {
+      "deviceID": "156D4064-66BE-4E93-8B14-9C74CCAA85C1",
+      "absentFromInventory": true
+    }
+  ],
+  "reviewedUTC": "2026-10-24T07:46:08.103345+00:00",
+  "reviewVerdict": "Engineering integration ready for owner review; visual/game-feel PARTIAL, not final art approval",
+  "diagnosticBoundary": "Gameplay ended only its two confirmed simctl diagnose child processes; original xcodebuilds finished successfully and valid xcresults exported. Additional OS diagnostic collection incomplete.",
+  "claim_ceiling": "Author visual review of these24files/22unique screenshots; no independent Critic, real-phone FPS, manual VoiceOver, children or final style approval.",
+  "task_request": "User requested continue original10h plan, cooperate with Gameplay, full two-device regression then push for review, delete test simulators.",
+  "task_authority": "user_request",
+  "mode": "VALIDATION",
+  "mode_source": "validation_command",
+  "task": "LIFE-LOOP10H formal integration author visual review",
+  "scope": [
+    "docs/life-loop-10h/INTEGRATED_VISUAL_REVIEW.md",
+    "artifacts/evidence/life-loop-visual/integration/formal-integration-review.json"
+  ],
+  "done": [
+    "Scene/Motion bytes match frozen formal product c445e5f",
+    "Both valid formal summaries report18of18 with0failures",
+    "Viewed24native PNGfiles/22unique hashes; tested-source manifest verified",
+    "Read-only inventory confirms both formal devices and13previous B devices absent",
+    "Basic governance check and git diff --check passed"
+  ],
+  "not_claimed": [
+    "Independent Critic approval",
+    "Final art or child game-feel acceptance",
+    "Real-device FPS or manual VoiceOver",
+    "Complete OS diagnostics",
+    "Zero SwiftUI warnings or fixed underlying warning root cause",
+    "Exact total Agent-hours or all individual caps verified",
+    "Main merge or App release"
+  ],
+  "evidence_refs": [
+    {
+      "artifact": "artifacts/evidence/life-loop/integrated-native/standard/summary.json",
+      "result": "PASS"
+    },
+    {
+      "artifact": "artifacts/evidence/life-loop/integrated-native/standard/manifest.json",
+      "result": "PASS"
+    },
+    {
+      "artifact": "artifacts/evidence/life-loop/integrated-native/se/summary.json",
+      "result": "PASS"
+    },
+    {
+      "artifact": "artifacts/evidence/life-loop/integrated-native/se/manifest.json",
+      "result": "PASS"
+    },
+    {
+      "command": "bash scripts/governance-check.sh --profile basic",
+      "result": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "risk": [
+    "Event-scene portrait remains small; SE maximum-text footer occupies almost half screen",
+    "Both results retain3SwiftUI publishing warnings",
+    "Visual timing includes unmetered audit and waiting; shared budget unknown",
+    "Only confirmed diagnostics children interrupted; additional OS diagnostics incomplete"
+  ],
+  "next_action": "Gameplay incorporates this author report with full regression and cleanup evidence, then pushes the same Draft PR10 for owner review after tool smoke completes."
+}

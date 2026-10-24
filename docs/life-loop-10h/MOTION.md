@@ -82,10 +82,16 @@
 - `elapsedMs` 完全由 Gameplay 提供，`frozen` 不被轉成0。暫停／背景／遮蔽停鐘由 A 管理；Visual 沒有 Timer、Date、TimelineView、onAppear 啟動或每幀 RNG。相同 elapsed 會得到相同姿勢，View 本身沒有累積時間狀態。
 - 單次已發生 token 使用 `phaseElapsedMs` 的480ms ease-out並持有末幀，只有 frame 與 motion 都是 committedOutcome、來源為目前事件／年齡、`isOccurred == true` 才使用。已提交 token 首幀 opacity 最低0.45，立即暫停也不會把事實藏成透明；這項針對 frozen-first-frame 的修正有正式 helper 回歸斷言。求助沒有推定成功，pendingClue 只能是問號時鐘，資源圖示是混合變化收據，沒有一律上升的正向訊號。
 - Reduced Motion：角色與環境顯示完整的首幀，已提交結果顯示末幀；沒有做選擇時不會呈現未來結果。AX最大文字隱藏純裝飾，人物、自然中文 accessibility 及所有 worldChanges.caption 仍保留；詳細文字由 A 的正式事件／後果畫面提供。
-- `river`／`workshop`／`community` 都重用既有虛構河畔素材，工作桌及長椅為 SwiftUI shapes；13歲道具只表示已選擇的活動／記憶，不宣稱家庭擁有設備或作品已完成。角色五齡直接使用 `StoryPortrait.protagonist(age:)`。
+- `river`／`workshop`／`community` 都重用既有虛構河畔素材，工作桌及長椅為 SwiftUI shapes；13歲道具只表示已選擇的活動／記憶，不宣稱家庭擁有設備或作品已完成。角色五齡由 `StoryCharacter.protagonist(age:)` 選取同一StoryCast。
 
 來源證據：`artifacts/evidence/life-loop/visual-motion/rossark-source-audit.json`。純函數驗證器直接編譯正式 `LifeWorldMotion.swift`，結果在 `loop-and-arrival-results.json`；0/1000/2000/4000ms、首尾接縫、Reduced Motion、無效時間及一次性480ms末幀均有定點核對。這不取代 A 的暫停／調速／背景時鐘整合測試，也不宣稱正式 UI、實機或兒少已驗收。
 
 離線視覺證據：`render-world.py` 以正式 SwiftUI Scene、真實 `LifeSession`／投影與既有PNG輸出18張固定影格；macOS離線資產adapter只替換讀圖方式，不是Simulator／檔案保存證據。`offline-render-manifest.json` 保留8／13／39歲、同日本家庭Seed0的四種13歲選擇、Reduced Motion對照、立即凍結的結果首幀、90pt緊湊高度、來源與每張SHA。一般與Reduced各選擇的事實欄位完全一致；rest沒有憑空產生互動或運氣。
 
 初次嚴格像素相等檢查失敗，原始結果保留在 `rendered-seam-strict-attempt.json`：首尾6748／1740000色通道相差1／255；**同樣t=0重畫的control也有7135通道相差最多1／255**。`rendered-seam-results.json` 分開報告 exactPixelEquality=false 與1個8-bit量化級、少於1%通道的有界視覺檢查；不宣稱ImageRenderer逐像素決定論。正式motion函數的首尾姿態相同，Gameplay的人生／時鐘決定論仍須獨立驗證。
+
+## H. 既有Visual窄整合／正式雙機來源
+
+`c445e5f`採用既有Visual實作803539c／交接5551d4d對7040802的LifeWorldScene差異：主圖與4×2角色atlas以CGImage先裁切再layout，避免溢出的圖片邊界進入可及性範圍；whole-atlas靜態cache重用既有PNG。單人主角寬70%、同場60%，仍受高度83%上限；配角36%。Motion函數、外部時間及任何人生規則都沒改，沒有新增素材或第三方程式碼。
+
+上節18張離線圖屬原r2來源，不能改稱追加crop renderer的最終畫面；幾何helper不變，原像素量化結果仍只屬原來源。正式App場景在living為300pt、事件88pt、最大字級90pt，事件期人物因可操作性而較小，不把300pt的隔離renderer畫面當實際決策首屏。本次以同一正式App bytes跑SE3與iPhone17完整18項；分工、來源及目前狀態見INTEGRATION_HANDOFF與renderer-integration.json，最終證據不混用。

@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 1,
-  "productSourceCommit": "4d3308e275705972121134582321deaef77609be",
+  "schemaVersion": 2,
+  "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
   "swiftDistinctPassed": 111,
   "swiftPassedCases": [
     "-[LifeAnalysisTests.BatchAnalysisTests testClampUsesNetGainAndSeparatesPartialFullAndLowerBound]",
@@ -115,23 +115,10 @@
     "-[LifePresentationTests.WorldPlaybackTests testNormalFastAndSkipAreIdenticalForEightCountriesAndRestore]",
     "-[LifePresentationTests.WorldPlaybackTests testOffscreenFreezesClockButExplicitContinueAndPausedRestoreRemainReadable]"
   ],
-  "pythonPassed": 24,
+  "pythonPassed": 25,
   "independentFocusedSwift": {
     "passed": 9,
     "subsetOf111": true
-  },
-  "nativeFull": {
-    "source": "7040802846d8829ca969d98ff7023d51fb11913d",
-    "passed": 15,
-    "failed": 1,
-    "xcresult": "artifacts/ios/LC02-20261024T061101Z.xcresult"
-  },
-  "nativeFocused": {
-    "source": "7aa69d24aab70016ca99a9e1a79379ab4ebe5a55",
-    "passed": 5,
-    "failed": 0,
-    "xcresult": "artifacts/ios/LC02-20261024T064333Z.xcresult",
-    "notLatestFullSuite": true
   },
   "historicalFailures": [
     "Runner early exit before any product case",
@@ -188,21 +175,139 @@
     {
       "path": "artifacts/governance/life-loop-10h/world-ui-delayed-final.txt",
       "sha256": "e312a2fce74e7e93e93a74079930ea8c88cee7cac85927afab89699097a5778b"
+    },
+    {
+      "path": "artifacts/governance/life-loop-10h/python-diagnostics-final.txt",
+      "sha256": "cfdd1de581367382aa658ce72eeb6f530139d912427aa0f48efc46b73b851f7c"
+    },
+    {
+      "path": "artifacts/governance/life-loop-10h/integrated-se-full.txt",
+      "sha256": "83c34ed6ccb8745cee4242d1283f5b2ef4c376683a2c7f462dbba4715ab3d49e"
+    },
+    {
+      "path": "artifacts/governance/life-loop-10h/integrated-standard-full.txt",
+      "sha256": "88b3813d077c32225b6fca81756f6609c2ade32381be67cfc7e97bda65744e3c"
+    },
+    {
+      "path": "artifacts/governance/life-loop-10h/diagnostics-never-se.txt",
+      "sha256": "64fa104d313a1100a6f477e49ccd6591aaa0d87924328a2ba3533b10637f416b"
+    },
+    {
+      "path": "artifacts/governance/life-loop-10h/diagnostics-never-standard.txt",
+      "sha256": "25d48571398ef56ef0bee9822aef2821ce2a9d83c19e2eaaa211bfd6f0965ee3"
+    },
+    {
+      "path": "artifacts/governance/life-loop-10h/basic-final-delivery.txt",
+      "sha256": "ec6004f8c9a799759a0ca0fe3103c3b0cc8021eea3f3ddbae1c9908bc659b317"
     }
   ],
   "limits": [
-    "Latest full 18-case remote CI pending",
+    "Final documentation HEAD remote CI checked after push; not inferred from earlier HEAD",
     "physical device/manual VoiceOver/child playtest absent",
-    "SwiftUI runtime publishing warning still unlocated",
-    "strict raster seam equality failed 1/255; same-input control also differs",
-    "existing PNG prototype and shared imagined setting, not real country scenery"
+    "SwiftUI runtime publishing warning still unlocated: full runs3 each, smoke runs1 each",
+    "full runs required optional diagnostic child termination; extra OS diagnostics incomplete",
+    "strict raster seam equality failed1/255; same-input control also differs; offline18 frames predate final renderer",
+    "existing whole-PNG prototype/shared imagined setting, not final rig or real country scenery",
+    "combined Visual/total Agent-hours cannot be certified due to earlier unmetered contributor audit"
   ],
-  "nativeDelayed": {
-    "source": "4d3308e275705972121134582321deaef77609be",
-    "productDiffFrom7aa": "none; test-only followup",
-    "passed": 1,
-    "failed": 0,
-    "xcresult": "artifacts/ios/LC02-20261024T065419Z.xcresult",
-    "coverage": "real 13-year pending clue → real 17-year triggered hook, native screenshots and captions"
-  }
+  "recordedUTC": "2026-10-24T07:56:27.976379+00:00",
+  "testHarnessCommit": "e1ca7c702a305f5c49489295ae9d7afdf36fb1cb",
+  "pythonRaw": "artifacts/governance/life-loop-10h/python-diagnostics-final.txt",
+  "historicalNativeBySource": {
+    "nativeFull": {
+      "source": "7040802846d8829ca969d98ff7023d51fb11913d",
+      "passed": 15,
+      "failed": 1,
+      "xcresult": "artifacts/ios/LC02-20261024T061101Z.xcresult"
+    },
+    "nativeFocused": {
+      "source": "7aa69d24aab70016ca99a9e1a79379ab4ebe5a55",
+      "passed": 5,
+      "failed": 0,
+      "xcresult": "artifacts/ios/LC02-20261024T064333Z.xcresult",
+      "notLatestFullSuite": true
+    },
+    "nativeDelayed": {
+      "source": "4d3308e275705972121134582321deaef77609be",
+      "productDiffFrom7aa": "none; test-only followup",
+      "passed": 1,
+      "failed": 0,
+      "xcresult": "artifacts/ios/LC02-20261024T065419Z.xcresult",
+      "coverage": "real 13-year pending clue → real 17-year triggered hook, native screenshots and captions"
+    }
+  },
+  "nativeFull": {
+    "se": {
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "passed": 18,
+      "failed": 0,
+      "processExitCode": 0,
+      "runtimeWarnings": 3,
+      "summary": "artifacts/evidence/life-loop/integrated-native/se/summary.json",
+      "screenshots": "artifacts/evidence/life-loop/integrated-native/se/manifest.json",
+      "xcresult": "artifacts/ios/LC02-20261024T070638Z.xcresult",
+      "optionalDiagnosticsInterrupted": true,
+      "note": "All XCTest cases passed before optional simctl diagnose stalled; only verified owned diagnostic child terminated; original xcodebuild finalized exit0."
+    },
+    "standard": {
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "passed": 18,
+      "failed": 0,
+      "processExitCode": 0,
+      "runtimeWarnings": 3,
+      "summary": "artifacts/evidence/life-loop/integrated-native/standard/summary.json",
+      "screenshots": "artifacts/evidence/life-loop/integrated-native/standard/manifest.json",
+      "xcresult": "artifacts/ios/integrated-standard-c445e5f.xcresult",
+      "optionalDiagnosticsInterrupted": true,
+      "note": "All XCTest cases passed before optional simctl diagnose stalled; only verified owned diagnostic child terminated; original xcodebuild finalized exit0."
+    }
+  },
+  "nativeHarnessSmoke": {
+    "se": {
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "testHarnessCommit": "e1ca7c702a305f5c49489295ae9d7afdf36fb1cb",
+      "passed": 1,
+      "failed": 0,
+      "processExitCode": 0,
+      "runtimeWarnings": 1,
+      "summary": "artifacts/evidence/life-loop/integrated-native/se/diagnostics-never-summary.json",
+      "xcresult": "artifacts/ios/LC02-20261024T074545Z.xcresult",
+      "test": "testWorldSaveFailuresDoNotPublishReactionsOrAdvanceAndRetryWorks",
+      "unattendedFinalization": true,
+      "extraOSDiagnostics": "never",
+      "notAdditionalDistinctUIcase": true
+    },
+    "standard": {
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "testHarnessCommit": "e1ca7c702a305f5c49489295ae9d7afdf36fb1cb",
+      "passed": 1,
+      "failed": 0,
+      "processExitCode": 0,
+      "runtimeWarnings": 1,
+      "summary": "artifacts/evidence/life-loop/integrated-native/standard/diagnostics-never-summary.json",
+      "xcresult": "artifacts/ios/diagnostics-never-standard-e1ca7c7.xcresult",
+      "test": "testWorldSaveFailuresDoNotPublishReactionsOrAdvanceAndRetryWorks",
+      "unattendedFinalization": true,
+      "extraOSDiagnostics": "never",
+      "notAdditionalDistinctUIcase": true
+    }
+  },
+  "gallery": {
+    "files": 24,
+    "uniqueSHA256": 22,
+    "note": "Each device comparison-last-age and complete-comparison are the same final80-year row; not two distinct scene variants."
+  },
+  "cleanup": {
+    "ownedCount": 9,
+    "allAbsent": true,
+    "receipt": "artifacts/evidence/life-loop/simulator-cleanup-final.json"
+  },
+  "review": {
+    "independent": "artifacts/evidence/life-loop/independent-review.md",
+    "independentAgentHours": 0.966,
+    "confirmedRemainingBlockers": 0,
+    "authorSelfReview": "docs/life-loop-10h/INTEGRATED_VISUAL_REVIEW.md",
+    "authorReviewIsIndependent": false
+  },
+  "basicRequiredChecks": "PASS; basic-final-delivery.txt"
 }

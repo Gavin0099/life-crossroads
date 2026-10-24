@@ -116,6 +116,26 @@ G1正式八國及G3固定基準/存讀/分岔由111案例支援；G2兩事件與
 
 ### 工時觀測帳與最後覆審
 
-總預算10h，Gameplay7／Visual2／獨立QA1；不是保證花滿10h。`budget-ledger.json`保留實際觀測窗與截至文件提交前保守上界（含工具等待，不另重複加每個tool工時）。Gameplay LL00 .238h＋05:45:15 UTC起的本輪窗；Visual作者.319h＋只讀QA.538h＝.857h；Reviewer主段.928h＋G4補證46.3秒≈.941h。每人均低於其cap；root後續PR/CI核對仍在同一7h額度。無逐片秒錶，不虛構逐片精確耗時。
+總預算10h，Gameplay7／Visual2／獨立QA1；不是保證花滿10h。`budget-ledger.json`保留實際觀測窗（含工具等待，不重複加每個tool工時）。Gameplay LL00 .238h＋05:45:15 UTC起的本輪窗；r2 Visual作者.319h＋只讀QA.538h＝.857h；Reviewer主段.928h＋G4補證46.3秒≈.941h。r2不是全部B貢獻：既有Visual另有未全量測audit與下述觀測窗，共享2h的合併核時仍unknown，不宣稱每人cap皆已核實。root後續正式雙機/PR/CI在同一A7h額度。無逐片秒錶，不虛構精確耗時或新增2h。
 
 G4最後原生缺口已由兩圖/1測試與獨立補證目視關閉；Reviewer報告另增46.3秒，沒有重啟完整1h。G1～4本地工程可交付；G5最新HEAD遠端CI與人工VO、G6實機手動流暢度仍依各自邊界，不以本機完成冒稱全產品Gate通過。
+
+### 既有Visual協作追加整合
+
+收到既有工作線5551d4d／實作803539c的patch後，確認對704之差僅LifeWorldScene；c445e5f窄接CGImage裁切、whole-atlas cache與人物尺寸，Motion及App/Domain其餘無diff。289997f凍結handoff：A在主目錄跑SE3，將自己原r2 managed worktree乾淨detached到同source跑iPhone17，原branch010b683保存。兩機獨立build目錄、完整18項各自專用裝置；B不啟動重複Simulator，結果與原候選分開。
+
+既有Visual另回報前置05:18:43–約05:35、續作05:45:18–06:30:41；早期audit未全量測。合併Visual2h及總帳精確耗時/餘額標unknown；沒有再分配2h或新開圖片工作。核時缺口與產品正確性分開，不因此阻止既定主流程與雙機驗收。
+
+### R4／最後凍結版本雙機完成
+
+c445e5f正式App／UITests在SE3與iPhone17、iOS27.0各18/18通過；兩份有效summary、逐圖manifest、各12張PNG保存於 integrated-native/se 與 standard。24筆hash重算吻合，22個不同hash；比較完整／末列各為同一80歲畫面，不算兩個場景。兩機raw xcresult保存在主目錄，來源不隨文件提交改變。
+
+兩套全部case結束後，原xcodebuild卡在可選simctl diagnose。直接取樣顯示XCTHProcessInvocation.simCtlDiagnose等待；核對owned parent87715／87730、兩個UDID及argv後，只TERM診斷子程序93056／93372。未終止xcodebuild／runner／共享服務，原命令均exit0並寫完有效xcresult。額外OS診斷不完整，操作與取樣保留；不能說無人介入或warning已修。
+
+e1ca7c7只改測試wrapper：-collect-test-diagnostics預設never，可選on-failure，不合法值在建裝置前exit2；保留XCTest／附件／失敗exit與delete。新增正負fixture後Python25通過，SE與標準機各重跑真實保存失敗／重試1/1，無干預正常收尾。App／UITests未變，不冒加成兩個新不同案例。完整各3筆／smoke各1筆Publishing changes warning保留，未定位根因。
+
+156D4064／066B070D兩台全套及6D64C64B／05C45E2C兩台工具驗證均delete；本輪root共9台逐一inventory確認不存在，未動其他裝置/runtime。自己的標準QA worktree恢復原r2分支，raw結果複製回root後送出封存；未操作既有另一Visual工作樹。
+
+最終獨立Reviewer窄覆核91.2秒，累積3479秒≈0.966h；已讀兩機完整摘要／工具smoke及6張正式新圖，重算24hash，未見新增工程阻擋。另移入既有Visual最終59eab53之兩份作者報告，逐看24圖但不冒稱獨立Critic。r2與既有B共享2h，早期audit未全計時，合併B／總帳仍unknown，不虛構用滿10h或新增額度。
+
+R1～R3 DONE；R4本機整合／證據收束DONE，最終文件HEAD遠端CI待push後核對並附PR。G1～4本地工程通過；G5兩機／最大文字／Reduced通過，人工VO與實機仍缺；G6來源/helper/static成立，不宣稱實機FPS或完整美術。維持Draft/HOLD、不合併、不發布，沒有再開新玩法迭代。

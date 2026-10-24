@@ -1,5 +1,5 @@
 {
-  "checkedUTC": "2026-10-24T06:56:35.384094+00:00",
+  "checkedUTC": "2026-10-24T07:52:08.818212+00:00",
   "ownedDevices": [
     {
       "udid": "F400C171-BB0B-4C62-87DB-44489D56D8B2",
@@ -20,9 +20,26 @@
     {
       "udid": "4D5BE544-62B0-45D3-9CE2-9695BF438CD8",
       "absentFromSimctl": true
+    },
+    {
+      "udid": "156D4064-66BE-4E93-8B14-9C74CCAA85C1",
+      "absentFromSimctl": true
+    },
+    {
+      "udid": "066B070D-30B4-4BF4-928A-B16329E0AD8A",
+      "absentFromSimctl": true
+    },
+    {
+      "udid": "6D64C64B-B7A9-47E2-9E29-8C0CD93D7E8A",
+      "absentFromSimctl": true
+    },
+    {
+      "udid": "05C45E2C-24EB-4AC6-B22F-4C0B58D99BC4",
+      "absentFromSimctl": true
     }
   ],
   "result": "PASS",
   "method": "scripts/ios-check.sh EXIT trap uses simctl delete; confirmed against simctl list devices --json",
-  "othersOrRuntimesDeleted": false
+  "othersOrRuntimesDeleted": false,
+  "ownedCount": 9
 }

@@ -127,3 +127,21 @@ Review start=2026-10-24T05:55:25+00:00; end=2026-10-24T06:51:06.481111+00:00; el
 raw末尾已明示delete4D5BE544-62B0-45D3-9CE2-9695BF438CD8。沒有啟動新測試或Simulator、沒有產品編輯或GitHub操作。其餘人工VO／實機／兒少／最新CI／G6完整手機連續演出資格邊界維持。
 
 G4 supplement start=2026-10-24T06:56:10+00:00; end=2026-10-24T06:56:56.270341+00:00; actual=46.3s; prior QA window3341.5s + this supplement=3387.8s (0.941 Agent-hour). The interval after the prior final report and before this new bounded request was stopped, not active QA or test waiting. Even reserving60s for prior final-report notification overhead stays below3600s.
+
+## 最後整合圖像與工具接線窄覆核（c445e5f／e1ca7c7）
+
+結論：本次窄覆核未見新增阻擋，維持Draft/HOLD。它補上最後產品renderer的兩機完整回歸，不改寫前輪失敗歷史，亦不等於發布資格。
+
+直接讀 c445e5f57行Scene差異：既有兩張bitmap靜態載入cache，先CGImage裁出背景中心/4×2角色格，再以相同motion擺放；角色僅調整solo70%/paired60%、高度上限。原有facts/AX文字來源仍是同一frame；不抽事件、不寫入、不新造人物或骨架。與96ebba8比較，Motion/Domain/Data/Persistence無diff。未新增外部代碼或資產。
+
+逐張看兩機各3張共6圖：integrated-native/{se,standard}/world-childhood-living.png、world-se-first-action.png、world-saved-rest-outcome.png。兩種尺寸均無原atlas超大版面或裁到其他角色；一般字體首屏可見成本與至少兩個行動，rest只有主角/記錄token，沒有虛構幫手；大living角色較清楚。這不是另外審過全部24圖。
+
+直接讀兩機summary.json：各18/18 PASS，各仍記錄3個Publishing changes runtime warning。兩機12圖manifest共24筆sha256均自行重算吻合、來源c445e5f；沒有把B作者自查冒作本獨立覆審。此輪兩機完整18項結果可作最後產品來源證據，前面704/7aa/4d的結果保留其原版本界線。
+
+e1ca7c7僅shell新增never|on-failure輸入驗證與-collect-test-diagnostics參數，沒有移除XCTest/result/screenshots、set-e/EXIT trap或改成功判定。直接讀兩機diagnostics-never-summary.json各1/1 PASS，各仍有1個同字串runtime warning；沒有在此窄覆核重跑25項Python或Simulator，25項僅為主流程另有證據的結果。沒有宣稱runtime warning已修。
+
+讀 diagnostic-stall-action.json：兩筆記錄PID/parent/ownedUDID與simctl diagnose argv，只對可選診斷child發TERM。這是事後收據覆核，非本Reviewer當時親自取樣。產品18項有效xcresult與之分開，不能把診斷收尾問題隱藏成無干預執行。新never設定是避免冗長可選診斷阻塞，不是掩蓋XCTest失敗。renderer-integration.json內RUNNING屬07:07凍結時快照，最後狀態以兩機summary為準。
+
+範圍外維持：手動VO/實機/兒少/完整動作美術、最後遠端CI及合併批准。本次沒有執行測試、開Simulator、終止程序、修改產品、GitHub發文或合併。
+
+Narrow supplement start=2026-10-24T07:48:23+00:00; end=2026-10-24T07:49:54.198661+00:00; actual=91.2s. Cumulative QA windows=3479.0s (0.966 Agent-hour), below1h; stopped intervals not active QA. Even reserving60s for prior final-notification overhead remains below1h.

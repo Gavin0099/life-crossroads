@@ -1,0 +1,15 @@
+{
+  "recorded_at_utc": "2026-10-24T06:25:57.927535+00:00",
+  "team_budget_hours": 10,
+  "visual_shared_budget_hours": 2,
+  "extra_visual_budget_granted": false,
+  "first_branch_observed_utc": "2026-10-24T05:18:43.486686+00:00",
+  "resumed_work_observed_utc": "2026-10-24T05:45:18+00:00",
+  "exact_agent_hours": null,
+  "timing_boundary": "Observed wall windows are not exact Agent-hours. Initial remote audit unmetered. Gameplay has its own parallel Visualr2 contribution, so A must reconcile combined Visual usage under original2h; do not allocate another2h or claim10h consumed. No more visual expansion in this handoff.",
+  "VW-01": "renderer and source audit ready for integration",
+  "VW-02": "clock-free renderer ready; integrated pause/1x/3x/background acceptance pending",
+  "VW-03": "isolated saved real-choice routes verified; formal GameStore integration acceptance pending",
+  "VW-04": "24 native isolated screenshots+8 actual motion checks; formal full-flow montage/independent review pending",
+  "overall": "PARTIAL / HOLD"
+}

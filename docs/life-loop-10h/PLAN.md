@@ -1,6 +1,6 @@
 # LIFE-LOOP 10H v1.1 — 無排程生活循環 × rossark-motion-skill 整合 PLAN
 
-> 日期：2026-10-24｜狀態：**規格／切片已建立，尚未實作 LIFE-LOOP**  
+> 日期：2026-10-24｜狀態：**整套程式及本機整合驗證完成；最終HEAD CI推送後核對，Draft/HOLD**
 > 基底：PR #8 `c136bebf48ae17e24235d9da72d7f9e51b90bf0c`（其祖先含 PR #7 `49ead5a`、PR #6 `4a6e32b`；PR #5 已合併 main）  
 > 本次範圍：**Gameplay 7h + Visual 2h + 獨立整合驗收 1h = 總計 10 Agent-hours**。計時是任務預算，不是承諾精確牆上時間。Visual 的 Skill 評估與 PoC **包含在既有 2h 內**，不得另外加時。
 > 動畫方法來源：[rossark-motion-skill](https://github.com/rossark0/rossark-motion-skill/tree/9b20964e32f07f8ac7e2948cd175746fa4a7712f)，固定來源 Commit `9b20964e32f07f8ac7e2948cd175746fa4a7712f`（MIT）。只使用方法與經審核的必要 SwiftUI helpers，不依賴自動生影片。  
@@ -125,3 +125,7 @@
 - Swift Unit／重播、Python、XCUITest／最大文字／Reduced Motion；所有測試失敗原紀錄保留。專用 Simulator 成功／失敗／取消都刪除本輪專用裝置，不刪他人或共用 runtime。
 - 每輪結束寫 `DONE / PARTIAL / BLOCKED`、新發現的主要問題及下一輪取捨；必要時停止非核心視覺工作，保住 G1–G4。
 - 整體 P1 尚缺的完整資料、事件量、實機、人工 VoiceOver、分齡兒少試玩與商用美術 Gate 不因本10h 自動關閉。
+
+## 本輪完成索引
+
+實作結果見[DELIVERY.md](DELIVERY.md)與[ITERATION_LOG.md](ITERATION_LOG.md)：111 Swift／25 Python、c445e5f兩機各18項完整回歸、新工具兩機各1項收尾通過，9台本輪專用Simulator已刪。以下規格與預算未擴張；Visual合併核時unknown、診斷收尾介入及warning／人工驗收均明列，不宣稱整體產品或發布Gate通過。

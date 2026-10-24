@@ -1,0 +1,45 @@
+{
+  "freezeProductCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+  "originalCandidateCommit": "96ebba89013cc8f1c92953ede604e8aec6abd991",
+  "foreignBranch": "codex/life-loop-visual-world-10h",
+  "foreignHandoffCommit": "5551d4db85984a8779e2de275f308adf133f0be0",
+  "foreignImplementationCommit": "803539c",
+  "adoption": "only LifeWorldScene patch versus7040802; no branch merge",
+  "patchSHA256": "6b2e472655226e02b1ca9f36e55391d1e0d22c0f4b043affa4d1fde9c9d1d9ad",
+  "sceneSHA256": "31b43ccf0a5485c41674594c02718dca3eae84d6bcd22ebaeff9a437e7ca6e75",
+  "sceneExactlyMatchesForeign": true,
+  "motionDiffVersus96": "",
+  "domainDataPersistenceDiffVersus96": "",
+  "newExternalCodeOrAssets": false,
+  "scope": [
+    "whole-atlas static bitmap cache",
+    "crop portrait/backdrop CGImage before layout to avoid expanded AX bounds",
+    "protagonist size70percent solo/60percent paired, height-capped",
+    "expose same tokenSymbol as static for isolated harness"
+  ],
+  "testsAtSnapshot": {
+    "integratedSE18": "18/18 PASS; valid xcresult; optional diagnose child interrupted",
+    "integratedIPhone1718": "18/18 PASS; valid xcresult; optional diagnose child interrupted",
+    "diagnosticsNeverSE": "1/1 PASS unattended",
+    "diagnosticsNeverIPhone17": "1/1 PASS unattended",
+    "summaries": "artifacts/evidence/life-loop/integrated-native/",
+    "historical": "prior7aa focused5 and foreign isolated5x2 are not current formal full regressions"
+  },
+  "QAWorktree": {
+    "path": "/Users/macminim4/.codex/worktrees/life-loop-visual-10h/life-crossroads",
+    "previousBranchPreserved": "codex/life-loop-visual-world-10h-r2@010b683",
+    "testedDetachedCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+    "operator": "Gameplay/root, not new Visual agent time",
+    "testedDetachedCommits": [
+      "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "e1ca7c702a305f5c49489295ae9d7afdf36fb1cb"
+    ],
+    "cleanup": "returned to original branch010b683; managed archive confirmed by list_artifacts (archived_worktree); raw standard xcresults preserved in root"
+  },
+  "ownedDevices": {
+    "SE3": "156D4064-66BE-4E93-8B14-9C74CCAA85C1",
+    "iPhone17": "066B070D-30B4-4BF4-928A-B16329E0AD8A"
+  },
+  "recordedUTC": "2026-10-24T07:56:27.976379+00:00",
+  "testHarnessCommit": "e1ca7c702a305f5c49489295ae9d7afdf36fb1cb"
+}

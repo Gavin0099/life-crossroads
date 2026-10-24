@@ -38,8 +38,10 @@ P1 / LIFE-LOOP 10H v1.1 / LL-01～LL-06。唯一正式規格為 [docs/life-loop-
 - [x] LL-00：由PR #9 c823c82建立乾淨分支，確認#6→#7→#8→#9 ancestry及最新HEAD CI（#9查詢時仍執行中）；既有WIP隔離、不更動引擎或正式App。
 - [x] LL-00：日本/台灣家庭一Seed0各15項實際決策及完整trace、三項版本、策略與台灣缺口見證可重跑且位元組一致。
 - [x] LL-00：原始基線Swift102/Python23/data/basic通過及可重跑命令留存，原型失敗不當新版驗收；四台前規劃Simulator已刪，本片未新建。
-- [x] LIFE-LOOP 10H：LL-01～05共用契約、累積演出鐘、真實保存後果自然續行／Exactly-once、既有PNG動畫、回退開關及存讀／原局分岔保護已實作；111 Swift／24 Python通過。
-- [ ] LL-06最後收束：完整原生16項15過1失敗，最大字體手勢修正後最新五項定向5/5通過，五台專用Simulator均已刪；Gates／證據／工時與獨立QA詳見[交付報告](docs/life-loop-10h/DELIVERY.md)，不可把前版套件冒作最新HEAD全套。
+- [x] LIFE-LOOP 10H：LL-01～05共用契約、累積演出鐘、真實保存後果自然續行／Exactly-once、既有PNG動畫、回退開關及存讀／原局分岔保護已實作；111 Swift／25 Python通過。
+- [x] LL-06本機收束：凍結c445e5f的SE3／iPhone17完整各18/18、新工具各1/1通過，9台專用Simulator已刪；獨立覆核未見剩餘已確認阻擋。最終文件HEAD遠端CI在push後核對，維持Draft／HOLD。歷史失敗／診斷介入／人工驗收及工時缺口詳見[交付報告](docs/life-loop-10h/DELIVERY.md)。
+
+追加整合凍結：c445e5f窄接既有Visual之CGImage裁切、cache與角色尺寸。A已完成SE3＋iPhone17完整18項雙機回歸，B完成只讀作者自查、不重複Simulator與新素材；分工見 docs/life-loop-10h/INTEGRATION_HANDOFF.md。原候選測試按來源保留。共享B2h另有未量測audit，合併核時仍unknown，不新增預算，不以核時缺口阻擋產品驗證。
 
 - [x] 單事件視覺：正式13歲事件的四種選擇有不同活動道具與反應，取自已保存trace；休息不列未參與人物/支持/運氣，未來線索明示未發生。
 - [x] 單事件視覺：未套用/未知事件不演出；固定Seed、重播、資源上限、資料缺口與存讀投影一致。
