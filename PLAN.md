@@ -27,15 +27,20 @@
 
 ## Current Phase
 
-P1 Integrated Preview 0.1 / 單事件視覺整合。使用者於2026-10-24授權以 PR #7 HEAD 49ead5a 為基底，獨立 Draft PR 推送供 review；不合併、不發布。PR #5已在main f194808；PR #6的八國資料與完整LC-03 Gate分開，台灣部分同口徑資料仍缺。
+P1 / LIFE-LOOP 10H v1.1 / LL-00。唯一正式規格為 [docs/life-loop-10h/PLAN.md](docs/life-loop-10h/PLAN.md) 及同目錄 SLICES、CONTRACT、MOTION。使用者提供 PR #9 c823c82 後，最新「００」先按 LL-00 基線與衝突隔離執行；不是重做十三切片或直接宣稱動畫完成。
 
 ## Current Sprint
 
-整合正式13歲 teen-project：沿用現有動物角色，以 SwiftUI 程式圖形製作共用想像工作室。選前保持 Event-first 小場景，選後由真實 trace 呈現四種活動、人物互動、實際成本/資源、支持/機會和未來線索。LifePresentation 單向讀取 Domain，不改規則、亂數、資料、存檔或版本。
+從共同規劃 c823c82 建立 codex/life-loop-gameplay-10h，保留其 PR #8 c136beb 程式基底。LL-00 只固定父 PR 狀態、正式程式入口、兩段可重跑的15決策/trace快照與迭代日誌。既有生活原型另存 codex/life-loop-01 @65fff9e，不能整枝帶入新版；它仍需手按下一段、沒有累積動畫時鐘，且不符合既有 PNG 微動規格。
 
-寫入成功才演出；重播/存讀呈現一致，未知成本不補0，未發生線索不畫成已完成。一般/最大文字、完整人生及原局/分岔回歸；專用Simulator成功或失敗均刪除。其他圖片工作線獨立，不匯入未核准候選。
+LL-01 尚未凍結 LifeWorldFrame；Visual B 待命，不在未凍結契約前開工。後續仍維持 Gameplay 7h／Visual 2h／獨立覆審1h，共10 Agent-hours上限；LL-00完成不代表R1或G1～G6通過。獨立 Draft 供review，不合併、不發布。實際紀錄見 [ITERATION_LOG.md](docs/life-loop-10h/ITERATION_LOG.md)。
 
 ## Acceptance Criteria
+
+- [x] LL-00：由PR #9 c823c82建立乾淨分支，確認#6→#7→#8→#9 ancestry及最新HEAD CI（#9查詢時仍執行中）；既有WIP隔離、不更動引擎或正式App。
+- [x] LL-00：日本/台灣家庭一Seed0各15項實際決策及完整trace、三項版本、策略與台灣缺口見證可重跑且位元組一致。
+- [x] LL-00：原始基線Swift102/Python23/data/basic通過及可重跑命令留存，原型失敗不當新版驗收；四台前規劃Simulator已刪，本片未新建。
+- [ ] LIFE-LOOP 10H後續：LL-01共用契約、累積演出時間、後果自然續行/Exactly-once、既有PNG動畫、回退開關及G1～G6尚待各slice實作。
 
 - [x] 單事件視覺：正式13歲事件的四種選擇有不同活動道具與反應，取自已保存trace；休息不列未參與人物/支持/運氣，未來線索明示未發生。
 - [x] 單事件視覺：未套用/未知事件不演出；固定Seed、重播、資源上限、資料缺口與存讀投影一致。
