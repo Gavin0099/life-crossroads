@@ -7,8 +7,8 @@ P1 目標為 **8 國、16 種家庭情境、50～70 個事件**，每局 10～15
 首個可玩交付為四國、童年到晚年回顧的完整人生，之後擴至八國。
 候選為台灣、日本、美國、德國、印度、巴西、越南、肯亞；資料與內容尚待逐國驗證。
 
-目前 LC-03 分支提供八國16虛構家庭的完整人生、40事件池、七故事線、Event-first與LC-04完整分岔。台灣部分環境成本仍缺同口徑資料，僅作明示家庭試算；比較頁保留缺口，不能當作0。
-條件事件切片已交付 PR #3，工程覆審通過、產品維持 Draft／HOLD。下一片以其 `4f268b8` 為基底推進 [RNG-V2 人生多樣性與故事線系統](docs/rng-v2.md)，先建立量測基準，再以相同測試格比較新舊結果；維持不合併。
+本分支為 **P1 Integrated Preview 0.1（整合測試版）**：以 LC-04 已合併主線為基礎，加入 LC-03 的八國／16 組虛構家庭、40 事件、七故事線、Event-first、完整人生分岔與原子 JSON 存讀。**並非正式發布版；LC-03 PR #6 仍為 Draft／HOLD。** 台灣部分跨國成本缺同口徑資料，僅能使用明示家庭試算；比較頁保留缺口，不得當作0。正式圖片 WIP 尚未合入。
+完整版本與試玩邊界見 [P1 Integrated Preview 0.1 說明](docs/p1-integrated-preview-20261024.md)。
 產品計畫與待決定事項見 [PLAN.md](PLAN.md)。
 
 ## 執行引擎
@@ -36,7 +36,7 @@ python3 scripts/build-data.py --check
 `LIFE_SIMULATOR_ID` 僅指定參考裝置的硬體／runtime 設定，不會操作或刪除該原有裝置；也可同時指定 `LIFE_SIMULATOR_DEVICE_TYPE` 和 `LIFE_SIMULATOR_RUNTIME`。
 Xcode Launch Arguments 可加入 `-life-seed 0` 重現指定故事；App 的「同種子重新開始」保留背景與 Seed，「換個運氣」保留背景並更換 Seed。完整重現還需要相同選擇與版本。
 實機執行需在 Xcode 設定自己的開發團隊並連接 iPhone；Simulator 通過不等於實機 Gate 通過。
-LC-02 原型目前關閉 app 後不保留進度；SwiftData 完整存檔屬 LC-06。
+目前 App 以一組本機 JSON 原子存檔保留人生及最多一條改選後的路線；關閉 App 可續玩，建立新人生會詢問是否取代。SwiftData、多人生收藏與跨版本存檔遷移仍屬後續範圍。
 
 ## 開始工作
 
@@ -71,10 +71,10 @@ clone 後需重新安裝 hooks；請在啟用 `.venv` 的 terminal 執行 Git �
 [1in8b.life 教學入口](https://1in8b.life/zh/?edu=1)。本專案自行設計內容，不沿用其內容庫。
 治理框架來源與授權見 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
-RNG-V2：40 個事件、5 個固定里程碑＋10 個動態時點，七條具來源故事線。完整 1,024 局新舊比較與限制見 [比較報告](artifacts/evidence/rng-v2/comparison.md)；`python3 scripts/run-rng-v2-evidence.py` 可重跑兩次完整樣本。維持 Draft／HOLD，未合併。
+RNG-V2 已在先前 PR #4 合併到 main：40 個事件、5 個固定里程碑＋10 個動態時點，七條具來源故事線。完整 1,024 局新舊比較與限制見 [比較報告](artifacts/evidence/rng-v2/comparison.md)；`python3 scripts/run-rng-v2-evidence.py` 可重跑兩次完整樣本。工程多樣性量測不等於兒少趣味性驗收。
 
 ## LC-03 國家環境比較
 
 `swift run -c release life-demo --environment-samples` 產出八國×兩家庭×四策略及Seed0/3的128局重播/存讀證據，並比較三組有環境差異的實際事件及一組相同的離線活動。
 
-資料授權、台灣口徑限制、版本與驗收邊界見 [LC-03契約](docs/lc03-country-environments.md)；執行結果見 [比較報告](artifacts/evidence/lc03/environment-report.md)。圖片工作獨立，這個分支不合併、不發布。
+資料授權、台灣口徑限制、版本與驗收邊界見 [LC-03契約](docs/lc03-country-environments.md)；執行結果見 [比較報告](artifacts/evidence/lc03/environment-report.md)。本整合預覽分支不合併、不發布，正式 Visual 素材待獨立選稿與授權驗證。
