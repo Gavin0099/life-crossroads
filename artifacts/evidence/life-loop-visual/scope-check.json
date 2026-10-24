@@ -1,0 +1,23 @@
+{
+  "base": "c823c820ceea027215df2d2f46c2c0ac4373c871",
+  "implementation_commit": "8309845c45b969233502d5c04c6d62c4d5a08689",
+  "protected_paths": [
+    "LifeCrossroads/Domain",
+    "LifeCrossroads/Data",
+    "LifeCrossroads/Persistence",
+    "LifeCrossroads/App/GameStore.swift",
+    "LifeCrossroads/App/CrossroadsView.swift",
+    "Package.swift",
+    "LifeCrossroads.xcodeproj",
+    "LifeCrossroadsUITests",
+    "LifeCrossroads/App/Assets.xcassets",
+    "UITests",
+    "Data",
+    "Resources/Statistics",
+    "LifeCrossroads/Presentation"
+  ],
+  "changed_protected_paths": [],
+  "new_raster_assets": 0,
+  "simulators_created": 0,
+  "gameplay_contract_checked": "4980643cfa5157f62e6853c6a3707209cbe1ab27 (LL-00 only; LL-01 pending)"
+}

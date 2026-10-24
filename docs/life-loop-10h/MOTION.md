@@ -1,7 +1,7 @@
 # LIFE-LOOP 動畫工作準則（MOTION.md）
 
-> 狀態：**前置 fixture PoC 已建立，正式接線待 LL-01；未安裝或複製外部程式碼**。本文件是 Visual Agent 的專案動作規範；基於現有 `LifeCrossroads` 原創角色與資料邊界撰寫，不等於原始外部 Skill 的自動執行授權。  
-> 適用工作：`docs/life-loop-10h/PLAN.md`、`SLICES.md` 的 VW-01～04，共最多 **2 Agent-hours**（不另加時）。  
+> 狀態：**前置 fixture PoC 已建立，正式接線待 LL-01；未安裝或複製外部程式碼**。本文件是 Visual Agent 的專案動作規範；基於現有 `LifeCrossroads` 原創角色與資料邊界撰寫，不等於原始外部 Skill 的自動執行授權。
+> 適用工作：`docs/life-loop-10h/PLAN.md`、`SLICES.md` 的 VW-01～04，共最多 **2 Agent-hours**（不另加時）。
 > 唯一外部方法參考：`rossark0/rossark-motion-skill` @ [固定 Commit `9b20964e32f07f8ac7e2948cd175746fa4a7712f`](https://github.com/rossark0/rossark-motion-skill/tree/9b20964e32f07f8ac7e2948cd175746fa4a7712f)；Repo [MIT LICENSE](https://github.com/rossark0/rossark-motion-skill/blob/9b20964e32f07f8ac7e2948cd175746fa4a7712f/LICENSE)。外部發表日約 2026-10-22，仍屬新 Repo，須以本案實測而非星數作驗收。
 
 ## A. 先審核、再借鏡

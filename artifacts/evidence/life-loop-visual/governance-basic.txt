@@ -1,0 +1,7 @@
+framework-pin: PASS
+version-compatibility: PASS
+drift: PASS
+config-syntax: PASS
+shell-syntax: PASS
+python-syntax: PASS
+Evidence: /Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/artifacts/governance/basic/checks.json

@@ -1,6 +1,6 @@
 {
   "base": "c823c820ceea027215df2d2f46c2c0ac4373c871",
-  "command": "xcrun swiftc -parse-as-library -target arm64-apple-macos14.0 LifeCrossroads/App/LifeWorldScenePreview.swift tools/life-loop-visual/Render.swift -o .build/life-loop-visual/render && .build/life-loop-visual/render \"$PWD\"",
+  "command": "xcrun swiftc -swift-version 6 -parse-as-library -target arm64-apple-macos14.0 LifeCrossroads/App/LifeWorldScenePreview.swift tools/life-loop-visual/Render.swift -o .build/life-loop-visual/render && .build/life-loop-visual/render \"$PWD\"",
   "exit_code": 0,
   "scope": "macOS native SwiftUI fixture render and pure sampling checks; not iOS or actual Session integration",
   "files": [
@@ -52,5 +52,6 @@
       "path": "artifacts/evidence/life-loop-visual/frames/loop-100.png",
       "sha256": "1ffe89fd16b6dea79ae9f08115668de2f6226d4a79aaa66cc0d268ac92051cc9"
     }
-  ]
+  ],
+  "implementation_commit": "8309845c45b969233502d5c04c6d62c4d5a08689"
 }

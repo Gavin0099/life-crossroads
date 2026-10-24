@@ -11,7 +11,7 @@
 
 ## 未完成與接線依賴
 
-本輪查核時遠端尚未有 `codex/life-loop*` 的正式契約提交；目前共享規劃基底只有 `ProjectMoment.swift`。另一工作樹的舊 `LifeWorldViewState`／`LifePlayback` 是未提交的舊接口，不能當作PR9的LL-01已凍結。
+最新查核到 Gameplay 正式分支 `codex/life-loop-gameplay-10h` 的 `4980643cfa5157f62e6853c6a3707209cbe1ab27`：只完成 LL-00 基線與舊原型隔離，尚未發布 LL-01 DTO。共享規劃基底只有 `ProjectMoment.swift`。舊 `codex/life-loop-01` 的 `65fff9e` 使用 `LifeWorldViewState`／`LifePlayback` 舊接口，不能當作 PR9 的 LL-01 已凍結。
 
 Gameplay A需推送 LL-01 可編譯的 `LifeWorldFrame`／投影及累積時間契約，並給出共享SHA。之後B將顯示fixture換成單向adapter，不把fixture當Domain。結果單次動畫需A提供同token的相位經過時間／起點；B不另外造時計。
 
@@ -23,7 +23,7 @@ Visual預算仍為2 Agent-hours，Skill預查包含在內；此次不啟動新�
 
 ```bash
 mkdir -p .build/life-loop-visual
-xcrun swiftc -parse-as-library -target arm64-apple-macos14.0 \
+xcrun swiftc -swift-version 6 -parse-as-library -target arm64-apple-macos14.0 \
   LifeCrossroads/App/LifeWorldScenePreview.swift tools/life-loop-visual/Render.swift \
   -o .build/life-loop-visual/render
 .build/life-loop-visual/render "$PWD"

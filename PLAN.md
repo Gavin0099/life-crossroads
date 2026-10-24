@@ -31,6 +31,10 @@ P1 Integrated Preview 0.1 / 單事件視覺整合。使用者於2026-10-24授權
 
 ## Current Sprint
 
+**2026-10-24 Visual 分支當前狀態：** 使用者採納 PR9 c823c82 的 docs/life-loop-10h 為唯一正式規格；本分支只做 VW-01來源預查與隔離fixture Preview。rossark固定版本與MIT已核對，未安裝或複製helper；既有素材原生SwiftUI定點與七項純取樣檢查通過。正式LL-01契約提交尚缺，VW-01整片仍PARTIAL，VW-02～04及G1～G6未驗收。不得把舊WORLD-ART雙機通過算成本輪接線完成，也不匯入未核准候選圖。
+
+以下保留先前單事件整合紀錄：
+
 整合正式13歲 teen-project：沿用現有動物角色，以 SwiftUI 程式圖形製作共用想像工作室。選前保持 Event-first 小場景，選後由真實 trace 呈現四種活動、人物互動、實際成本/資源、支持/機會和未來線索。LifePresentation 單向讀取 Domain，不改規則、亂數、資料、存檔或版本。
 
 寫入成功才演出；重播/存讀呈現一致，未知成本不補0，未發生線索不畫成已完成。一般/最大文字、完整人生及原局/分岔回歸；專用Simulator成功或失敗均刪除。其他圖片工作線獨立，不匯入未核准候選。

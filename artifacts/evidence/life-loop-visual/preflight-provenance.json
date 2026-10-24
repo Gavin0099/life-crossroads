@@ -1,8 +1,8 @@
 {
   "baseline": "c823c820ceea027215df2d2f46c2c0ac4373c871",
   "observed_initial_worktree_head_time_utc": "2026-10-24T05:18:43.486686+00:00",
-  "recorded_at_utc": "2026-10-24T05:29:31.028004+00:00",
-  "tracked_wall_minutes": 10.79,
+  "recorded_at_utc": "2026-10-24T05:34:59.238481+00:00",
+  "tracked_wall_minutes": 16.26,
   "visual_budget_agent_hours": 2,
   "exact_total_agent_hours": null,
   "timing_boundary": "Tracked branch interval only. Initial remote-source audit preceded branch creation and was not continuously metered; do not call this total team effort or reset remaining 2h. Prior WORLD-ART work belongs to superseded scope.",
