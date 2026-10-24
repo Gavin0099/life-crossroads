@@ -27,13 +27,11 @@
 
 ## Current Phase
 
-P1 / LIFE-LOOP 10H v1.1 / LL-00。唯一正式規格為 [docs/life-loop-10h/PLAN.md](docs/life-loop-10h/PLAN.md) 及同目錄 SLICES、CONTRACT、MOTION。使用者提供 PR #9 c823c82 後，最新「００」先按 LL-00 基線與衝突隔離執行；不是重做十三切片或直接宣稱動畫完成。
+P1 / LIFE-LOOP 10H v1.1 / LL-01～LL-06。唯一正式規格為 [docs/life-loop-10h/PLAN.md](docs/life-loop-10h/PLAN.md) 及同目錄 SLICES、CONTRACT、MOTION。使用者確認應執行整套10 Agent-hours，先前將「００」解讀為只做LL-00已更正。
 
 ## Current Sprint
 
-從共同規劃 c823c82 建立 codex/life-loop-gameplay-10h，保留其 PR #8 c136beb 程式基底。LL-00 只固定父 PR 狀態、正式程式入口、兩段可重跑的15決策/trace快照與迭代日誌。既有生活原型另存 codex/life-loop-01 @65fff9e，不能整枝帶入新版；它仍需手按下一段、沒有累積動畫時鐘，且不符合既有 PNG 微動規格。
-
-LL-01 尚未凍結 LifeWorldFrame；Visual B 待命，不在未凍結契約前開工。後續仍維持 Gameplay 7h／Visual 2h／獨立覆審1h，共10 Agent-hours上限；LL-00完成不代表R1或G1～G6通過。獨立 Draft 供review，不合併、不發布。實際紀錄見 [ITERATION_LOG.md](docs/life-loop-10h/ITERATION_LOG.md)。
+於 codex/life-loop-gameplay-10h 完成共用契約、生活播放、事件暫停、已保存後果自然續行、存檔/分岔安全與Visual整合。Gameplay 7h／Visual 2h／獨立覆審1h總上限10 Agent-hours，切片間自主繼續；不建立排程。LL-00快照保持不覆寫，舊原型65fff9e只供逐項參考、不整枝合併。沿用Draft PR #10，不合併、不發布；實際測試及缺口記於同目錄ITERATION_LOG。
 
 ## Acceptance Criteria
 
