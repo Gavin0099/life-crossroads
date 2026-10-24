@@ -85,6 +85,11 @@ final class GameStore: ObservableObject {
 #endif
         if arguments.contains("-ui-testing"), arguments.contains("-reset-save") {
             try? FileManager.default.removeItem(at: saves.fileURL)
+#if targetEnvironment(simulator)
+            // Each automated fresh-life launch has explicit presentation inputs too.
+            // A normal relaunch without -reset-save preserves the player's preference.
+            UserDefaults.standard.removeObject(forKey: "reducedLifeMotion")
+#endif
         }
         if let index = arguments.firstIndex(of: "-life-seed") {
             launchSeed = index + 1 < arguments.count ? UInt64(arguments[index + 1]) : nil
