@@ -7,6 +7,73 @@ final class LifeCrossroadsUITests: XCTestCase {
         continueAfterFailure = false
     }
 
+    func testWorldActivityPropsOnlyFollowSavedChoicesAtEightAndThirteen() throws {
+        // Labels come from the reviewed LL08 mapping, not from the production renderer.
+        for (choice, expectedProp, childChoice, childProp) in [
+            ("invest", "線上圖解", "ask", "求助紀錄"),
+            ("offline", "紙本練習", "invest", "紙箱練習"),
+            ("ask", "求助紀錄", "rest", "收好紙箱"),
+            ("rest", "保留時間", "rest", "收好紙箱")
+        ] {
+            let app = launch(seed: "0", world: true)
+            startWorldPaused(app)
+            let scene = app.otherElements["lifeWorldScene"]
+            XCTAssertFalse((scene.value as? String ?? "").contains("場景物件：8歲"))
+            for index in 0..<3 {
+                let action = app.buttons["choice.\(index == 0 ? childChoice : "rest")"]
+                reveal(action, in: app); action.tap()
+                XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+                if index == 0 {
+                    XCTAssertTrue((scene.value as? String ?? "").contains("場景物件：8歲的\(childProp)"))
+                    attachScreenshot("ll08-eight-\(childChoice)", app: app)
+                }
+                app.buttons["continueLife"].tap(); skipWorldMontage(app)
+            }
+            XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, "teen-project")
+            XCTAssertFalse((scene.value as? String ?? "").contains("場景物件：13歲"))
+            let action = app.buttons["choice.\(choice)"]; reveal(action, in: app); action.tap()
+            XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+            XCTAssertTrue((scene.value as? String ?? "").contains("場景物件：13歲的\(expectedProp)"))
+            XCTAssertEqual((scene.value as? String ?? "").contains("留下線索，尚未實現"), choice == "invest")
+            if choice == "rest" { XCTAssertFalse(scene.label.contains("樹老師")) }
+            attachScreenshot("ll08-thirteen-\(choice)", app: app)
+            app.terminate()
+        }
+    }
+
+    func testWorldKeepsScenePinnedAcrossEventOutcomeAndDrawerScroll() throws {
+        let app = launch(seed: "0", world: true)
+        let start = app.buttons["startLife"]; reveal(start, in: app); start.tap()
+        let pause = app.buttons["worldPause"]
+        XCTAssertTrue(pause.waitForExistence(timeout: 5)); pause.tap()
+        let scene = app.otherElements["lifeWorldScene"]
+        XCTAssertTrue(scene.waitForExistence(timeout: 5))
+        let initial = scene.frame
+        print("LL07_INITIAL_SCENE=\(initial); STATE=\(app.staticTexts["worldPlaybackState"].value ?? "missing")")
+        XCTAssertGreaterThanOrEqual(initial.height, 200, "The world remains legible on an SE during decisions")
+        skipWorldMontage(app)
+        XCTAssertEqual(scene.frame.height, initial.height, accuracy: 1)
+        XCTAssertEqual(scene.frame.minY, initial.minY, accuracy: 1)
+        let first = app.buttons["choice.invest"]
+        XCTAssertTrue(first.isEnabled && first.isHittable, "A real feasible action must be available on the first screen")
+        let controls = app.descendants(matching: .any).matching(identifier: "worldPlaybackControls").firstMatch
+        XCTAssertLessThanOrEqual(controls.frame.height, 64)
+        attachScreenshot("ll07-event-pinned-world", app: app)
+        let saved = try archiveChecksum(in: app)
+        reveal(app.buttons["compareChoice"], in: app)
+        XCTAssertEqual(scene.frame.minY, initial.minY, accuracy: 1, "Only the drawer scrolls")
+        XCTAssertEqual(scene.frame.height, initial.height, accuracy: 1)
+        XCTAssertEqual(try archiveChecksum(in: app), saved)
+        let rest = app.buttons["choice.rest"]; reveal(rest, in: app); rest.tap()
+        XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+        print("LL07_OUTCOME_SCENE=\(scene.frame); FOOTER=\(controls.frame); STATE=\(app.staticTexts["worldPlaybackState"].value ?? "missing")")
+        XCTAssertEqual(scene.frame.height, initial.height, accuracy: 1)
+        reveal(app.staticTexts["roundBudgetExplanation"], in: app)
+        XCTAssertEqual(scene.frame.minY, initial.minY, accuracy: 1)
+        XCTAssertLessThanOrEqual(controls.frame.height, 64)
+        attachScreenshot("ll07-outcome-scrolled-world", app: app)
+    }
+
     // New-world acceptance is separate from legacy Event-first regression cases below.
     func testWorldNaturallyRunsTwoEventsAndNeverChoosesForThePlayer() throws {
         let app = launch(seed: "0", world: true)
@@ -96,6 +163,21 @@ final class LifeCrossroadsUITests: XCTestCase {
     func testWorldMaximumTextRetainsActionsAndRealProjectConsequences() throws {
         let app = launch(seed: "0", largestText: true, world: true)
         startWorldPaused(app)
+        let scene = app.otherElements["lifeWorldScene"]
+        XCTAssertGreaterThanOrEqual(scene.frame.height, 150)
+        let controls = app.descendants(matching: .any).matching(identifier: "worldPlaybackControls").firstMatch
+        XCTAssertLessThanOrEqual(controls.frame.height, 64, "Large text must not expand the fixed playback footer")
+        let drawer = app.scrollViews["worldDecisionDrawer"]
+        XCTAssertGreaterThanOrEqual(drawer.frame.height, app.frame.height * 0.30)
+        attachScreenshot("ll07-maximum-text-layout", app: app)
+        let beforeSettings = try archiveChecksum(in: app)
+        app.buttons["worldPlaybackOptions"].tap()
+        XCTAssertTrue(app.buttons["worldSpeed"].waitForExistence(timeout: 3))
+        app.buttons["worldSpeed"].tap()
+        app.buttons["worldPlaybackOptions"].tap()
+        XCTAssertTrue(app.buttons["worldSpeed"].label.contains("正常 1×"))
+        app.buttons["worldSpeed"].tap()
+        XCTAssertEqual(try archiveChecksum(in: app), beforeSettings, "Presentation settings cannot submit a life choice")
         for _ in 0..<3 {
             let rest = app.buttons["choice.rest"]; reveal(rest, in: app); rest.tap()
             XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5)); app.buttons["continueLife"].tap()
@@ -784,20 +866,23 @@ final class LifeCrossroadsUITests: XCTestCase {
 
     private func reveal(_ element: XCUIElement, in app: XCUIApplication) {
         for _ in 0..<32 {
+            if element.identifier == "lifeWorldScene", element.exists, element.isHittable { return }
             let footer = app.buttons["continueLife"].exists && !app.buttons["closeTrace"].exists && !app.buttons["closeComparison"].exists
             let worldFooter = app.buttons["worldPause"]
             let sheet = app.buttons["closeTrace"].exists || app.buttons["closeComparison"].exists
-            let bottom = worldFooter.exists && !sheet ? worldFooter.frame.minY - 12 : app.frame.maxY - (footer ? 110 : 24)
-            if element.exists && element.isHittable && element.frame.midY > 100 && element.frame.midY < bottom { return }
-            // At accessibility sizes the fixed footer can cover the old 65% drag
-            // origin. Keep both endpoints inside the actual scroll viewport.
-            let scrollTop = max(app.frame.minY + 100, 100)
+            let pinnedDrawer = app.scrollViews["worldDecisionDrawer"]
+            let scroll = pinnedDrawer.exists && !sheet ? pinnedDrawer : app.scrollViews.firstMatch
+            let scrollTop = max(app.frame.minY + 90, scroll.exists ? scroll.frame.minY + 8 : 100)
+            let footerTop = worldFooter.exists && !sheet ? worldFooter.frame.minY - 6 : app.frame.maxY - (footer ? 110 : 24)
+            let bottom = min(footerTop, scroll.exists ? scroll.frame.maxY - 8 : footerTop)
+            if element.exists && element.isHittable && element.frame.midY > scrollTop && element.frame.midY < bottom { return }
+            // Drag within the actual scroll viewport, excluding the pinned world and control strip.
             let scrollHeight = max(44, bottom - scrollTop)
             let upperY = scrollTop + scrollHeight * 0.2
             let lowerY = scrollTop + scrollHeight * 0.8
             let upper = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: (upperY - app.frame.minY) / app.frame.height))
             let lower = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: (lowerY - app.frame.minY) / app.frame.height))
-            if element.exists && element.frame.midY < 100 { upper.press(forDuration: 0.05, thenDragTo: lower) }
+            if element.exists && element.frame.midY < scrollTop { upper.press(forDuration: 0.05, thenDragTo: lower) }
             else { lower.press(forDuration: 0.05, thenDragTo: upper) }
         }
         attachScreenshot("unrevealed-\(element.identifier)", app: app)
