@@ -31,6 +31,10 @@ final class LifeCrossroadsUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["livingTitle"].waitForExistence(timeout: 8))
         attachScreenshot("world-next-living", app: app)
         XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 8))
+        let previous = app.buttons["whyPrevious"]; reveal(previous, in: app); previous.tap()
+        XCTAssertTrue(app.staticTexts["actualInfluences"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["actualInfluences"].label.contains("你的選擇"))
+        app.buttons["closeTrace"].tap()
     }
 
     func testWorldSaveFailuresDoNotPublishReactionsOrAdvanceAndRetryWorks() throws {

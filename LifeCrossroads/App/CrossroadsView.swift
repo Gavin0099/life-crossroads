@@ -405,6 +405,10 @@ struct CrossroadsView: View {
                     .disabled(!preview.applied).accessibilityIdentifier("choice.\(choice.id)")
                 }
             }
+            if store.worldPreviewEnabled && !session.traces.isEmpty {
+                Button("回看剛才的選擇與原因", systemImage: "clock.arrow.circlepath") { showTrace = true }
+                    .frame(minHeight: 44).accessibilityIdentifier("whyPrevious")
+            }
             Menu {
                 ForEach(event.choices, id: \.id) { choice in
                     Button(choice.title) { presentComparison(choice.id) }
