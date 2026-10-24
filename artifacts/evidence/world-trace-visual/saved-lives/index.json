@@ -1,0 +1,75 @@
+{
+  "source": "Unmodified atomic SaveRepository output used for both baseline and candidate; not manually authored state",
+  "archives": [
+    {
+      "fixturePNG": "8-before.png",
+      "archive": "8-before.json",
+      "sha256": "ad12620ffcb7bc76b861cc78f1516c2529d09feb3a6d30d37ee1a2fe0d70f589"
+    },
+    {
+      "fixturePNG": "8-invest.png",
+      "archive": "8-invest.json",
+      "sha256": "c38a4bdb143213d4088263cbdfaca94fc91bde8cd4b08bc40b37b99ac0ca0286"
+    },
+    {
+      "fixturePNG": "8-ask.png",
+      "archive": "8-ask.json",
+      "sha256": "3209bf4e191a741eea7bb15dd81833bd2fa58f250a5672a8570cf8245317db90"
+    },
+    {
+      "fixturePNG": "8-rest.png",
+      "archive": "8-rest.json",
+      "sha256": "e9653fd2444592f01991f933bd3e932badc6bdd37a8b7afd6c8bc7fcd8b9445c"
+    },
+    {
+      "fixturePNG": "13-before.png",
+      "archive": "13-before.json",
+      "sha256": "13a832d8b8b51097f99e6e4c4977e61d2c03192a4f06e6d393a038cce88b99cf"
+    },
+    {
+      "fixturePNG": "13-invest.png",
+      "archive": "13-invest.json",
+      "sha256": "a9246db2a5f59b98b24eee1a3e8d71019fae7132d4c22ba38768e24d4626343f"
+    },
+    {
+      "fixturePNG": "13-pending-large.png",
+      "archive": "13-pending-large.json",
+      "sha256": "a9246db2a5f59b98b24eee1a3e8d71019fae7132d4c22ba38768e24d4626343f"
+    },
+    {
+      "fixturePNG": "17-invest.png",
+      "archive": "17-invest.json",
+      "sha256": "4dfa1935fd2730f963461caad9aa58769f93839cca3e5e1aa72ac34317d1c811"
+    },
+    {
+      "fixturePNG": "17-echo-large.png",
+      "archive": "17-echo-large.json",
+      "sha256": "4dfa1935fd2730f963461caad9aa58769f93839cca3e5e1aa72ac34317d1c811"
+    },
+    {
+      "fixturePNG": "13-offline.png",
+      "archive": "13-offline.json",
+      "sha256": "219dca1fbc9c0247ad7b5a8636edcedb97faf7e891b8ab138ad5379fb34cbbd8"
+    },
+    {
+      "fixturePNG": "13-paper-large-reduced.png",
+      "archive": "13-paper-large-reduced.json",
+      "sha256": "219dca1fbc9c0247ad7b5a8636edcedb97faf7e891b8ab138ad5379fb34cbbd8"
+    },
+    {
+      "fixturePNG": "13-ask.png",
+      "archive": "13-ask.json",
+      "sha256": "0c4d5c1462153f5484a07100fe50580c0f6f6feec2a0a8944b37dc389b62aadf"
+    },
+    {
+      "fixturePNG": "13-rest.png",
+      "archive": "13-rest.json",
+      "sha256": "102c08ff73b859d28e598a5a5c4d4ddfaed5e5ddeeffa04148a6e6dd5a61f3d5"
+    },
+    {
+      "fixturePNG": "17-rest.png",
+      "archive": "17-rest.json",
+      "sha256": "028c376424db5d876c9f2013ab78de3580b8ae70b4e54b1a3e8e7f6938fa5112"
+    }
+  ]
+}
