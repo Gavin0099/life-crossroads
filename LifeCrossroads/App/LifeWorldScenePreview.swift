@@ -90,6 +90,7 @@ struct LifeWorldScenePreview: View {
                 }.frame(width: geometry.size.width, height: geometry.size.height).clipped()
             }.accessibilityElement(children: .ignore)
                 .accessibilityLabel("\(model.age)歲角色的大型虛構河畔場景預覽；不是人生結果")
+                .accessibilityIdentifier("visual-fixture-scene")
             Text("只使用既有角色；沒有眼睛、手臂或尾巴骨架。")
                 .font(.caption2).fixedSize(horizontal: false, vertical: true)
         }
