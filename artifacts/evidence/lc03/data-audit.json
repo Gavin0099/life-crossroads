@@ -1,0 +1,617 @@
+{
+  "referenceYear": 2023,
+  "dataVersion": "lc03-data-1",
+  "countries": [
+    {
+      "code": "TWN",
+      "status": "limited",
+      "gaps": [
+        "數位調查12歲以上母體與WDI人口口徑不合；家庭自付含商保理賠，不能與WHO直接自付相比。",
+        "未取得同口徑全人口網路與電力資料；相關行動僅試算明示家庭成本，跨國成本比較標為資料不足，不能當作0或台灣缺乏資源。",
+        "國家平均只作背景；家庭為共用虛構模板，沒有抽樣頻率。共用河畔故事不代表當地制度或實景。"
+      ],
+      "observations": [
+        {
+          "indicator": "SH.XPD.CHEX.GD.ZS",
+          "value": 7.25,
+          "year": 2023,
+          "region": "TWN",
+          "unit": "% of GDP",
+          "sourceID": "taiwan-che",
+          "dataVersion": "lc03-2023-snapshot-2026-10-24",
+          "title": "經常醫療支出占 GDP",
+          "comparisonGroup": "sha2011-che-gdp-2023",
+          "definition": "Current health expenditure / nominal GDP; excludes capital. Spending share is not quality, access or insurance coverage.",
+          "usage": "contextOnly"
+        },
+        {
+          "indicator": "TWN.OOP.INCLUDING.REIMBURSEMENT",
+          "value": 38.78,
+          "year": 2023,
+          "region": "TWN",
+          "unit": "% of current health expenditure (including commercial reimbursement)",
+          "sourceID": "taiwan-oop",
+          "dataVersion": "lc03-2023-snapshot-2026-10-24",
+          "title": "家庭自付占經常醫療支出（含商保理賠）",
+          "comparisonGroup": null,
+          "definition": "Taiwan OOP includes reimbursements from commercial insurance; not comparable to WHO OOP/CHE.",
+          "usage": "contextOnly"
+        },
+        {
+          "indicator": "TWN.INTERNET.12PLUS",
+          "value": 87.2,
+          "year": 2023,
+          "region": "TWN",
+          "unit": "% of nationals aged 12+ in households",
+          "sourceID": "taiwan-digital",
+          "dataVersion": "lc03-2023-snapshot-2026-10-24",
+          "title": "12歲以上國民個人上網率",
+          "comparisonGroup": null,
+          "definition": "22 counties, nationals aged 12+ living in households, telephone sample; not WDI all-population denominator.",
+          "usage": "contextOnly"
+        }
+      ]
+    },
+    {
+      "code": "JPN",
+      "status": "ready",
+      "gaps": [
+        "國家平均只作背景；家庭為共用虛構模板，沒有抽樣頻率。共用河畔故事不代表當地制度或實景。"
+      ],
+      "observations": [
+        {
+          "indicator": "IT.NET.USER.ZS",
+          "value": 85.00990295,
+          "year": 2023,
+          "region": "JPN",
+          "unit": "% of population",
+          "sourceID": "wdi-internet-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23",
+          "title": "使用網路的人口",
+          "comparisonGroup": "wdi-internet-population-2023",
+          "definition": "WDI/ITU population; national methods may vary; not an individual access probability.",
+          "usage": "ruleInput"
+        },
+        {
+          "indicator": "EG.ELC.ACCS.ZS",
+          "value": 100,
+          "year": 2023,
+          "region": "JPN",
+          "unit": "% of population",
+          "sourceID": "wdi-electricity-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23",
+          "title": "可取得電力的人口",
+          "comparisonGroup": "wdi-electricity-population-2023",
+          "definition": "Population with electricity access, not reliability or household equipment.",
+          "usage": "ruleInput"
+        },
+        {
+          "indicator": "SH.XPD.OOPC.CH.ZS",
+          "value": 12.23568153,
+          "year": 2023,
+          "region": "JPN",
+          "unit": "% of current health expenditure",
+          "sourceID": "wdi-oop-2023",
+          "dataVersion": "lc03-2023-snapshot-2026-10-24",
+          "title": "家庭直接自付占經常醫療支出",
+          "comparisonGroup": "sha2011-oop-che-2023",
+          "definition": "SHA 2011 household out-of-pocket share of CHE; excludes reimbursement, not a personal bill percentage.",
+          "usage": "ruleInput"
+        },
+        {
+          "indicator": "SH.XPD.CHEX.GD.ZS",
+          "value": 10.73979473,
+          "year": 2023,
+          "region": "JPN",
+          "unit": "% of GDP",
+          "sourceID": "wdi-che-gdp-2023",
+          "dataVersion": "lc03-2023-snapshot-2026-10-24",
+          "title": "經常醫療支出占 GDP",
+          "comparisonGroup": "sha2011-che-gdp-2023",
+          "definition": "Current health expenditure / nominal GDP; excludes capital. Spending share is not quality, access or insurance coverage.",
+          "usage": "contextOnly"
+        }
+      ]
+    },
+    {
+      "code": "USA",
+      "status": "ready",
+      "gaps": [
+        "國家平均只作背景；家庭為共用虛構模板，沒有抽樣頻率。共用河畔故事不代表當地制度或實景。"
+      ],
+      "observations": [
+        {
+          "indicator": "IT.NET.USER.ZS",
+          "value": 93.52559662,
+          "year": 2023,
+          "region": "USA",
+          "unit": "% of population",
+          "sourceID": "wdi-internet-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23",
+          "title": "使用網路的人口",
+          "comparisonGroup": "wdi-internet-population-2023",
+          "definition": "WDI/ITU population; national methods may vary; not an individual access probability.",
+          "usage": "ruleInput"
+        },
+        {
+          "indicator": "EG.ELC.ACCS.ZS",
+          "value": 100,
+          "year": 2023,
+          "region": "USA",
+          "unit": "% of population",
+          "sourceID": "wdi-electricity-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23",
+          "title": "可取得電力的人口",
+          "comparisonGroup": "wdi-electricity-population-2023",
+          "definition": "Population with electricity access, not reliability or household equipment.",
+          "usage": "ruleInput"
+        },
+        {
+          "indicator": "SH.XPD.OOPC.CH.ZS",
+          "value": 10.92723846,
+          "year": 2023,
+          "region": "USA",
+          "unit": "% of current health expenditure",
+          "sourceID": "wdi-oop-2023",
+          "dataVersion": "lc03-2023-snapshot-2026-10-24",
+          "title": "家庭直接自付占經常醫療支出",
+          "comparisonGroup": "sha2011-oop-che-2023",
+          "definition": "SHA 2011 household out-of-pocket share of CHE; excludes reimbursement, not a personal bill percentage.",
+          "usage": "ruleInput"
+        },
+        {
+          "indicator": "SH.XPD.CHEX.GD.ZS",
+          "value": 16.69414902,
+          "year": 2023,
+          "region": "USA",
+          "unit": "% of GDP",
+          "sourceID": "wdi-che-gdp-2023",
+          "dataVersion": "lc03-2023-snapshot-2026-10-24",
+          "title": "經常醫療支出占 GDP",
+          "comparisonGroup": "sha2011-che-gdp-2023",
+          "definition": "Current health expenditure / nominal GDP; excludes capital. Spending share is not quality, access or insurance coverage.",
+          "usage": "contextOnly"
+        }
+      ]
+    },
+    {
+      "code": "DEU",
+      "status": "ready",
+      "gaps": [
+        "國家平均只作背景；家庭為共用虛構模板，沒有抽樣頻率。共用河畔故事不代表當地制度或實景。"
+      ],
+      "observations": [
+        {
+          "indicator": "IT.NET.USER.ZS",
+          "value": 92.4763763,
+          "year": 2023,
+          "region": "DEU",
+          "unit": "% of population",
+          "sourceID": "wdi-internet-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23",
+          "title": "使用網路的人口",
+          "comparisonGroup": "wdi-internet-population-2023",
+          "definition": "WDI/ITU population; national methods may vary; not an individual access probability.",
+          "usage": "ruleInput"
+        },
+        {
+          "indicator": "EG.ELC.ACCS.ZS",
+          "value": 100,
+          "year": 2023,
+          "region": "DEU",
+          "unit": "% of population",
+          "sourceID": "wdi-electricity-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23",
+          "title": "可取得電力的人口",
+          "comparisonGroup": "wdi-electricity-population-2023",
+          "definition": "Population with electricity access, not reliability or household equipment.",
+          "usage": "ruleInput"
+        },
+        {
+          "indicator": "SH.XPD.OOPC.CH.ZS",
+          "value": 11.05290699,
+          "year": 2023,
+          "region": "DEU",
+          "unit": "% of current health expenditure",
+          "sourceID": "wdi-oop-2023",
+          "dataVersion": "lc03-2023-snapshot-2026-10-24",
+          "title": "家庭直接自付占經常醫療支出",
+          "comparisonGroup": "sha2011-oop-che-2023",
+          "definition": "SHA 2011 household out-of-pocket share of CHE; excludes reimbursement, not a personal bill percentage.",
+          "usage": "ruleInput"
+        },
+        {
+          "indicator": "SH.XPD.CHEX.GD.ZS",
+          "value": 11.74428654,
+          "year": 2023,
+          "region": "DEU",
+          "unit": "% of GDP",
+          "sourceID": "wdi-che-gdp-2023",
+          "dataVersion": "lc03-2023-snapshot-2026-10-24",
+          "title": "經常醫療支出占 GDP",
+          "comparisonGroup": "sha2011-che-gdp-2023",
+          "definition": "Current health expenditure / nominal GDP; excludes capital. Spending share is not quality, access or insurance coverage.",
+          "usage": "contextOnly"
+        }
+      ]
+    },
+    {
+      "code": "IND",
+      "status": "ready",
+      "gaps": [
+        "國家平均只作背景；家庭為共用虛構模板，沒有抽樣頻率。共用河畔故事不代表當地制度或實景。"
+      ],
+      "observations": [
+        {
+          "indicator": "IT.NET.USER.ZS",
+          "value": 60.25230026,
+          "year": 2023,
+          "region": "IND",
+          "unit": "% of population",
+          "sourceID": "wdi-internet-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23",
+          "title": "使用網路的人口",
+          "comparisonGroup": "wdi-internet-population-2023",
+          "definition": "WDI/ITU population; national methods may vary; not an individual access probability.",
+          "usage": "ruleInput"
+        },
+        {
+          "indicator": "EG.ELC.ACCS.ZS",
+          "value": 99.5,
+          "year": 2023,
+          "region": "IND",
+          "unit": "% of population",
+          "sourceID": "wdi-electricity-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23",
+          "title": "可取得電力的人口",
+          "comparisonGroup": "wdi-electricity-population-2023",
+          "definition": "Population with electricity access, not reliability or household equipment.",
+          "usage": "ruleInput"
+        },
+        {
+          "indicator": "SH.XPD.OOPC.CH.ZS",
+          "value": 43.88510513,
+          "year": 2023,
+          "region": "IND",
+          "unit": "% of current health expenditure",
+          "sourceID": "wdi-oop-2023",
+          "dataVersion": "lc03-2023-snapshot-2026-10-24",
+          "title": "家庭直接自付占經常醫療支出",
+          "comparisonGroup": "sha2011-oop-che-2023",
+          "definition": "SHA 2011 household out-of-pocket share of CHE; excludes reimbursement, not a personal bill percentage.",
+          "usage": "ruleInput"
+        },
+        {
+          "indicator": "SH.XPD.CHEX.GD.ZS",
+          "value": 3.33944035,
+          "year": 2023,
+          "region": "IND",
+          "unit": "% of GDP",
+          "sourceID": "wdi-che-gdp-2023",
+          "dataVersion": "lc03-2023-snapshot-2026-10-24",
+          "title": "經常醫療支出占 GDP",
+          "comparisonGroup": "sha2011-che-gdp-2023",
+          "definition": "Current health expenditure / nominal GDP; excludes capital. Spending share is not quality, access or insurance coverage.",
+          "usage": "contextOnly"
+        }
+      ]
+    },
+    {
+      "code": "BRA",
+      "status": "ready",
+      "gaps": [
+        "國家平均只作背景；家庭為共用虛構模板，沒有抽樣頻率。共用河畔故事不代表當地制度或實景。"
+      ],
+      "observations": [
+        {
+          "indicator": "IT.NET.USER.ZS",
+          "value": 84.15060238,
+          "year": 2023,
+          "region": "BRA",
+          "unit": "% of population",
+          "sourceID": "wdi-internet-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23",
+          "title": "使用網路的人口",
+          "comparisonGroup": "wdi-internet-population-2023",
+          "definition": "WDI/ITU population; national methods may vary; not an individual access probability.",
+          "usage": "ruleInput"
+        },
+        {
+          "indicator": "EG.ELC.ACCS.ZS",
+          "value": 99.8,
+          "year": 2023,
+          "region": "BRA",
+          "unit": "% of population",
+          "sourceID": "wdi-electricity-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23",
+          "title": "可取得電力的人口",
+          "comparisonGroup": "wdi-electricity-population-2023",
+          "definition": "Population with electricity access, not reliability or household equipment.",
+          "usage": "ruleInput"
+        },
+        {
+          "indicator": "SH.XPD.OOPC.CH.ZS",
+          "value": 26.23070717,
+          "year": 2023,
+          "region": "BRA",
+          "unit": "% of current health expenditure",
+          "sourceID": "wdi-oop-2023",
+          "dataVersion": "lc03-2023-snapshot-2026-10-24",
+          "title": "家庭直接自付占經常醫療支出",
+          "comparisonGroup": "sha2011-oop-che-2023",
+          "definition": "SHA 2011 household out-of-pocket share of CHE; excludes reimbursement, not a personal bill percentage.",
+          "usage": "ruleInput"
+        },
+        {
+          "indicator": "SH.XPD.CHEX.GD.ZS",
+          "value": 9.73092747,
+          "year": 2023,
+          "region": "BRA",
+          "unit": "% of GDP",
+          "sourceID": "wdi-che-gdp-2023",
+          "dataVersion": "lc03-2023-snapshot-2026-10-24",
+          "title": "經常醫療支出占 GDP",
+          "comparisonGroup": "sha2011-che-gdp-2023",
+          "definition": "Current health expenditure / nominal GDP; excludes capital. Spending share is not quality, access or insurance coverage.",
+          "usage": "contextOnly"
+        }
+      ]
+    },
+    {
+      "code": "VNM",
+      "status": "ready",
+      "gaps": [
+        "國家平均只作背景；家庭為共用虛構模板，沒有抽樣頻率。共用河畔故事不代表當地制度或實景。"
+      ],
+      "observations": [
+        {
+          "indicator": "IT.NET.USER.ZS",
+          "value": 78.08,
+          "year": 2023,
+          "region": "VNM",
+          "unit": "% of population",
+          "sourceID": "wdi-internet-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23",
+          "title": "使用網路的人口",
+          "comparisonGroup": "wdi-internet-population-2023",
+          "definition": "WDI/ITU population; national methods may vary; not an individual access probability.",
+          "usage": "ruleInput"
+        },
+        {
+          "indicator": "EG.ELC.ACCS.ZS",
+          "value": 99.8,
+          "year": 2023,
+          "region": "VNM",
+          "unit": "% of population",
+          "sourceID": "wdi-electricity-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23",
+          "title": "可取得電力的人口",
+          "comparisonGroup": "wdi-electricity-population-2023",
+          "definition": "Population with electricity access, not reliability or household equipment.",
+          "usage": "ruleInput"
+        },
+        {
+          "indicator": "SH.XPD.OOPC.CH.ZS",
+          "value": 39.20284653,
+          "year": 2023,
+          "region": "VNM",
+          "unit": "% of current health expenditure",
+          "sourceID": "wdi-oop-2023",
+          "dataVersion": "lc03-2023-snapshot-2026-10-24",
+          "title": "家庭直接自付占經常醫療支出",
+          "comparisonGroup": "sha2011-oop-che-2023",
+          "definition": "SHA 2011 household out-of-pocket share of CHE; excludes reimbursement, not a personal bill percentage.",
+          "usage": "ruleInput"
+        },
+        {
+          "indicator": "SH.XPD.CHEX.GD.ZS",
+          "value": 4.56109476,
+          "year": 2023,
+          "region": "VNM",
+          "unit": "% of GDP",
+          "sourceID": "wdi-che-gdp-2023",
+          "dataVersion": "lc03-2023-snapshot-2026-10-24",
+          "title": "經常醫療支出占 GDP",
+          "comparisonGroup": "sha2011-che-gdp-2023",
+          "definition": "Current health expenditure / nominal GDP; excludes capital. Spending share is not quality, access or insurance coverage.",
+          "usage": "contextOnly"
+        }
+      ]
+    },
+    {
+      "code": "KEN",
+      "status": "ready",
+      "gaps": [
+        "國家平均只作背景；家庭為共用虛構模板，沒有抽樣頻率。共用河畔故事不代表當地制度或實景。"
+      ],
+      "observations": [
+        {
+          "indicator": "IT.NET.USER.ZS",
+          "value": 32.07040024,
+          "year": 2023,
+          "region": "KEN",
+          "unit": "% of population",
+          "sourceID": "wdi-internet-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23",
+          "title": "使用網路的人口",
+          "comparisonGroup": "wdi-internet-population-2023",
+          "definition": "WDI/ITU population; national methods may vary; not an individual access probability.",
+          "usage": "ruleInput"
+        },
+        {
+          "indicator": "EG.ELC.ACCS.ZS",
+          "value": 76.2,
+          "year": 2023,
+          "region": "KEN",
+          "unit": "% of population",
+          "sourceID": "wdi-electricity-2023",
+          "dataVersion": "wdi-2023-snapshot-2026-10-23",
+          "title": "可取得電力的人口",
+          "comparisonGroup": "wdi-electricity-population-2023",
+          "definition": "Population with electricity access, not reliability or household equipment.",
+          "usage": "ruleInput"
+        },
+        {
+          "indicator": "SH.XPD.OOPC.CH.ZS",
+          "value": 24.24565315,
+          "year": 2023,
+          "region": "KEN",
+          "unit": "% of current health expenditure",
+          "sourceID": "wdi-oop-2023",
+          "dataVersion": "lc03-2023-snapshot-2026-10-24",
+          "title": "家庭直接自付占經常醫療支出",
+          "comparisonGroup": "sha2011-oop-che-2023",
+          "definition": "SHA 2011 household out-of-pocket share of CHE; excludes reimbursement, not a personal bill percentage.",
+          "usage": "ruleInput"
+        },
+        {
+          "indicator": "SH.XPD.CHEX.GD.ZS",
+          "value": 4.35172892,
+          "year": 2023,
+          "region": "KEN",
+          "unit": "% of GDP",
+          "sourceID": "wdi-che-gdp-2023",
+          "dataVersion": "lc03-2023-snapshot-2026-10-24",
+          "title": "經常醫療支出占 GDP",
+          "comparisonGroup": "sha2011-che-gdp-2023",
+          "definition": "Current health expenditure / nominal GDP; excludes capital. Spending share is not quality, access or insurance coverage.",
+          "usage": "contextOnly"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "wdi-internet-2023",
+      "publisher": "International Telecommunication Union (ITU)",
+      "indicator": "IT.NET.USER.ZS",
+      "url": "https://data.worldbank.org/indicator/IT.NET.USER.ZS",
+      "downloadURL": "https://api.worldbank.org/v2/country/JPN;USA;DEU;IND;BRA;VNM;KEN/indicator/IT.NET.USER.ZS?date=2023&format=json&per_page=100",
+      "license": "CC-BY-4.0",
+      "licenseURL": "https://www.worldbank.org/ext/en/legal/terms-conditions/datasets",
+      "licenseEvidenceURL": "https://data.worldbank.org/indicator/IT.NET.USER.ZS",
+      "attribution": "The World Bank: World Development Indicators: International Telecommunication Union (ITU). IT.NET.USER.ZS, 2023. CC BY 4.0; World Bank Dataset Terms apply. National data unchanged; game transformations are design assumptions. No endorsement.",
+      "retrievedAt": "2026-10-23",
+      "version": "wdi-2023-snapshot-2026-10-23",
+      "rawPath": "raw/wdi-internet-2023.json",
+      "sha256": "21b95c877b48a47ff474c856d6e723ceb8c3a4eab4c5b19a536e4ddb7ce859eb",
+      "missingPolicy": "Reject playable background if required value is null/absent. Never fill with zero, national neighbors or another year.",
+      "transformation": "Exact API numeric value; 2023 common-year slice, no rounding, interpolation, weighting or household inference. API lastupdated=2026-10-08",
+      "format": "wdi"
+    },
+    {
+      "id": "wdi-electricity-2023",
+      "publisher": "World Bank / ESMAP, SDG 7.1.1 Electrification Dataset",
+      "indicator": "EG.ELC.ACCS.ZS",
+      "url": "https://data.worldbank.org/indicator/EG.ELC.ACCS.ZS",
+      "downloadURL": "https://api.worldbank.org/v2/country/JPN;USA;DEU;IND;BRA;VNM;KEN/indicator/EG.ELC.ACCS.ZS?date=2023&format=json&per_page=100",
+      "license": "CC-BY-4.0",
+      "licenseURL": "https://www.worldbank.org/ext/en/legal/terms-conditions/datasets",
+      "licenseEvidenceURL": "https://data.worldbank.org/indicator/EG.ELC.ACCS.ZS",
+      "attribution": "The World Bank: World Development Indicators: World Bank / ESMAP, SDG 7.1.1 Electrification Dataset. EG.ELC.ACCS.ZS, 2023. CC BY 4.0; World Bank Dataset Terms apply. National data unchanged; game transformations are design assumptions. No endorsement.",
+      "retrievedAt": "2026-10-23",
+      "version": "wdi-2023-snapshot-2026-10-23",
+      "rawPath": "raw/wdi-electricity-2023.json",
+      "sha256": "333a7f27d6ab8a9cb335fded93f07ed9e8e46de41f8ff24c3aa4a9ea54a2e58b",
+      "missingPolicy": "Reject playable background if required value is null/absent. Never fill with zero, national neighbors or another year.",
+      "transformation": "Exact API numeric value; 2023 common-year slice, no rounding, interpolation, weighting or household inference. API lastupdated=2026-10-08",
+      "format": "wdi"
+    },
+    {
+      "id": "wdi-oop-2023",
+      "publisher": "WHO Global Health Expenditure Database / World Bank WDI",
+      "indicator": "SH.XPD.OOPC.CH.ZS",
+      "url": "https://data.worldbank.org/indicator/SH.XPD.OOPC.CH.ZS",
+      "downloadURL": "https://api.worldbank.org/v2/country/JPN;USA;DEU;IND;BRA;VNM;KEN/indicator/SH.XPD.OOPC.CH.ZS?date=2023&format=json&per_page=100",
+      "license": "CC-BY-4.0",
+      "licenseURL": "https://www.worldbank.org/ext/en/legal/terms-conditions/datasets",
+      "licenseEvidenceURL": "https://data.worldbank.org/indicator/SH.XPD.OOPC.CH.ZS",
+      "attribution": "The World Bank: World Development Indicators: World Health Organization, Global Health Expenditure Database. SH.XPD.OOPC.CH.ZS, 2023. CC BY 4.0; Dataset Terms https://www.worldbank.org/ext/en/legal/terms-conditions/datasets . National values unchanged; game mappings are design assumptions. No endorsement.",
+      "retrievedAt": "2026-10-24",
+      "version": "lc03-2023-snapshot-2026-10-24",
+      "rawPath": "raw/wdi-oop-2023-lc03.json",
+      "sha256": "32e3e82596d405e97ee60c3b8342a3dbe4faa801450e0328dff92802ae2f847c",
+      "format": "wdi",
+      "missingPolicy": "No zero filling, interpolation, neighboring country or year substitution.",
+      "transformation": "Exact common-year 2023 API value; lastupdated=2026-10-08"
+    },
+    {
+      "id": "wdi-che-gdp-2023",
+      "publisher": "WHO Global Health Expenditure Database / World Bank WDI",
+      "indicator": "SH.XPD.CHEX.GD.ZS",
+      "url": "https://data.worldbank.org/indicator/SH.XPD.CHEX.GD.ZS",
+      "downloadURL": "https://api.worldbank.org/v2/country/JPN;USA;DEU;IND;BRA;VNM;KEN/indicator/SH.XPD.CHEX.GD.ZS?date=2023&format=json&per_page=100",
+      "license": "CC-BY-4.0",
+      "licenseURL": "https://www.worldbank.org/ext/en/legal/terms-conditions/datasets",
+      "licenseEvidenceURL": "https://data.worldbank.org/indicator/SH.XPD.CHEX.GD.ZS",
+      "attribution": "The World Bank: World Development Indicators: World Health Organization, Global Health Expenditure Database. SH.XPD.CHEX.GD.ZS, 2023. CC BY 4.0; Dataset Terms https://www.worldbank.org/ext/en/legal/terms-conditions/datasets . National values unchanged; game mappings are design assumptions. No endorsement.",
+      "retrievedAt": "2026-10-24",
+      "version": "lc03-2023-snapshot-2026-10-24",
+      "rawPath": "raw/wdi-che-gdp-2023-lc03.json",
+      "sha256": "2f41ded2530efeb5f3bdfc97e63721d2d12c0be1109e4d3156c2b3f941d4ecde",
+      "format": "wdi",
+      "missingPolicy": "No zero filling, interpolation, neighboring country or year substitution.",
+      "transformation": "Exact common-year 2023 API value; lastupdated=2026-10-08"
+    },
+    {
+      "id": "taiwan-che",
+      "publisher": "衛生福利部統計處",
+      "indicator": "SH.XPD.CHEX.GD.ZS",
+      "url": "https://dep.mohw.gov.tw/DOS/fp-5071-85844-113.html",
+      "downloadURL": "https://www.mohw.gov.tw/dl-99629-5e22053d-dad4-4a9e-85f8-f268fc0a1056.html",
+      "license": "OGDL-Taiwan-1.0",
+      "licenseURL": "https://data.gov.tw/license",
+      "licenseEvidenceURL": "https://www.mohw.gov.tw/www/cp-81-155-1.html",
+      "attribution": "衛生福利部統計處 2026 113年NHE統計表之2023年本國列。依政府資料開放授權條款第1版釋出 https://data.gov.tw/license 。遊戲轉換為設計假設，非機關背書。",
+      "retrievedAt": "2026-10-24",
+      "version": "lc03-2023-snapshot-2026-10-24",
+      "rawPath": "raw/taiwan-nhe-national-row-2023.json",
+      "sha256": "324702b38d254a7b9a744b6128c2926dc815ab543b123baf2d01c85545553d14",
+      "format": "taiwan-row",
+      "column": 9,
+      "missingPolicy": "Native non-comparable measures retained under separate IDs; absent electricity/internet population values stay absent.",
+      "transformation": "113年NHE統計表.ods / 表1 / 112年 row (2023), zero-based native cells; national data only; zero-based cell 9; exact numeric value; original download SHA256=b19258262e2a0412667cef90a2f3cf2f5058783d93ef10b6064a5c1d0e3ede1c; national row extraction only, no adjustment."
+    },
+    {
+      "id": "taiwan-oop",
+      "publisher": "衛生福利部統計處",
+      "indicator": "TWN.OOP.INCLUDING.REIMBURSEMENT",
+      "url": "https://dep.mohw.gov.tw/DOS/fp-5071-85844-113.html",
+      "downloadURL": "https://www.mohw.gov.tw/dl-99629-5e22053d-dad4-4a9e-85f8-f268fc0a1056.html",
+      "license": "OGDL-Taiwan-1.0",
+      "licenseURL": "https://data.gov.tw/license",
+      "licenseEvidenceURL": "https://www.mohw.gov.tw/www/cp-81-155-1.html",
+      "attribution": "衛生福利部統計處 2026 113年NHE統計表之2023年本國列。依政府資料開放授權條款第1版釋出 https://data.gov.tw/license 。遊戲轉換為設計假設，非機關背書。",
+      "retrievedAt": "2026-10-24",
+      "version": "lc03-2023-snapshot-2026-10-24",
+      "rawPath": "raw/taiwan-nhe-national-row-2023.json",
+      "sha256": "324702b38d254a7b9a744b6128c2926dc815ab543b123baf2d01c85545553d14",
+      "format": "taiwan-row",
+      "column": 17,
+      "missingPolicy": "Native non-comparable measures retained under separate IDs; absent electricity/internet population values stay absent.",
+      "transformation": "113年NHE統計表.ods / 表1 / 112年 row (2023), zero-based native cells; national data only; zero-based cell 17; exact numeric value; original download SHA256=b19258262e2a0412667cef90a2f3cf2f5058783d93ef10b6064a5c1d0e3ede1c; national row extraction only, no adjustment."
+    },
+    {
+      "id": "taiwan-digital",
+      "publisher": "數位發展部",
+      "indicator": "TWN.INTERNET.12PLUS",
+      "url": "https://data.gov.tw/dataset/5960",
+      "downloadURL": "https://www-api.moda.gov.tw/OpenData/Files/4303",
+      "license": "OGDL-Taiwan-1.0",
+      "licenseURL": "https://data.gov.tw/license",
+      "licenseEvidenceURL": "https://data.gov.tw/dataset/5960",
+      "attribution": "數位發展部 數位近用調查112年度全國列。依政府資料開放授權條款第1版釋出 https://data.gov.tw/license 。遊戲轉換為設計假設，非機關背書。",
+      "retrievedAt": "2026-10-24",
+      "version": "lc03-2023-snapshot-2026-10-24",
+      "rawPath": "raw/taiwan-digital-national-row-2023.json",
+      "sha256": "cd05946f6220575df895ac44c53636d0e9da66442254b54d99234b9c3a7ef0eb",
+      "format": "taiwan-row",
+      "column": 3,
+      "missingPolicy": "Native non-comparable measures retained under separate IDs; absent electricity/internet population values stay absent.",
+      "transformation": "數位近用調查 CSV / CP950 / 年度112 / original national row; zero-based cell 3; exact numeric value; original download SHA256=20a0cccd0a659c7b161b26f73cb65b1186e476e0a5d3004788ff18ebc8748091; national row extraction only, no adjustment."
+    }
+  ],
+  "sourceHashesMatch": true,
+  "upstreamNationalBytesVerification": "taiwan-nhe-national-row-2023.json: full download SHA256 and national row PASS\ntaiwan-digital-national-row-2023.json: full download SHA256 and national row PASS\n",
+  "claimBoundary": "Reviewed national data/rights evidence, not a legal opinion or individual causal model. Taiwan is playable with explicitly limited cost coverage; full LC-03 data Gate remains open."
+}

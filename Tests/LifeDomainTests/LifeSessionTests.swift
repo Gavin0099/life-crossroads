@@ -27,7 +27,7 @@ final class LifeSessionTests: XCTestCase {
         let c = try StatisticsRepository.bundled()
         XCTAssertTrue(Set(c.decisions.map(\.id)).isSubset(of: Set(EventNarratives.texts.keys)))
         XCTAssertTrue(EventNarratives.texts.values.allSatisfy { $0.count >= 40 })
-        XCTAssertEqual(c.contentVersion, "rng-v2-story-1")
+        XCTAssertEqual(c.contentVersion, "lc03-environment-story-1")
     }
     func testFourCountryEightFamilyPlaythroughsReachReviewAndCannotRepeat() throws {
         let c = try StatisticsRepository.bundled()
@@ -133,7 +133,7 @@ final class LifeSessionTests: XCTestCase {
         XCTAssertEqual(comparisons.map(\.householdID), ["usa-2", "ken-2"])
         XCTAssertTrue(comparisons.allSatisfy { $0.choiceID == "rest" && $0.finalCost == Cost() })
         XCTAssertTrue(comparisons.allSatisfy { $0.resourcesBefore == session.state.resources && $0.seed == 42 })
-        XCTAssertThrowsError(try session.compare(choiceID: "rest", countryCodes: ["TWN"], catalog: c))
+        XCTAssertTrue(try XCTUnwrap(session.compare(choiceID: "rest", countryCodes: ["TWN"], catalog: c).first).environmentGaps.isEmpty)
     }
 
     func testDecodedCorruptSessionCannotIndexBeyondCatalog() throws {

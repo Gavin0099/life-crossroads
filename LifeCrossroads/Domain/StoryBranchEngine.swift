@@ -142,6 +142,10 @@ public enum StoryBranchEngine {
             }
             explanation += connected && skilled ? "已有經驗及技能讓你可以接下帶領的工作，也可以選擇休息。" : "帶領選項需要先前參與和技能至少\(route.minimumSkills)；本次保留入門、求助與休息。"
         }
+        if event.choices.contains(where: { $0.requiresCareFinancing == true }) {
+            event.storyQuestion += " 這次也要安排看診交通與預備支出；可以先詢問費用和可用協助。"
+            rename("ask", "請小澄陪你詢問醫療費用與可用協助，先不接新輪班")
+        }
         guard let variantID = event.storyVariantID else { return .init(event: event, evaluation: nil) }
         return .init(event: event, evaluation: .init(ruleID: ruleID, sourceEventID: sourceEventID,
             sourceChoiceID: sourceChoice, sourceAge: sourceFact?.age, flagKey: sourceFact?.key, resourceChecks: checks, variantID: variantID,

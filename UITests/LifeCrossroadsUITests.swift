@@ -7,6 +7,40 @@ final class LifeCrossroadsUITests: XCTestCase {
         continueAfterFailure = false
     }
 
+    func testEightCountriesAndTaiwanComparisonLimitsAreVisible() throws {
+        let app = launch(seed: "0")
+        for code in ["TWN", "JPN", "USA", "DEU", "IND", "BRA", "VNM", "KEN"] {
+            let country = app.buttons["country.\(code)"]
+            reveal(country, in: app)
+            XCTAssertTrue(country.isHittable)
+            country.tap()
+        }
+        app.buttons["country.TWN"].tap()
+        start(app)
+        for _ in 0..<3 {
+            let rest = app.buttons["choice.rest"]
+            reveal(rest, in: app); rest.tap()
+            let next = app.buttons["continueLife"]
+            XCTAssertTrue(next.waitForExistence(timeout: 5))
+            XCTAssertTrue(next.isHittable)
+            next.tap()
+        }
+        XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, "teen-project")
+        XCTAssertTrue(app.staticTexts["choiceDataLimit.invest"].exists)
+        openComparison("invest", in: app)
+        let limit = app.staticTexts["comparisonDataLimit.TWN"]
+        reveal(limit, in: app)
+        XCTAssertTrue(limit.label.contains("資料不足"))
+        attachScreenshot("lc03-taiwan-comparison-limit", app: app)
+        let households = app.buttons["compareHouseholds"]
+        reveal(households, in: app); households.tap()
+        let boundary = app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "不是改寫出生家庭")).firstMatch
+        reveal(boundary, in: app)
+        XCTAssertTrue(boundary.exists)
+        XCTAssertEqual(app.staticTexts["comparisonCostExplanation"].value as? String, "unknown")
+        attachScreenshot("lc03-same-country-households", app: app)
+    }
+
     func testCompleteLifeWithVisibleComparisonAndExecutedExplanation() throws {
         let app = launch(seed: "0")
         attachScreenshot("event-first-birth", app: app)

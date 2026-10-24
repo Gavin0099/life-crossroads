@@ -44,3 +44,24 @@ The pure Swift implementation uses FNV-1a and SplitMix64 arithmetic, with keyed
 streams defined by this project's versioned contract. SplitMix64 reference:
 Sebastiano Vigna, [public-domain reference](https://prng.di.unimi.it/splitmix64.c).
 No reference game's code, event text, artwork or data was imported.
+
+## LC-03 additional national statistics (retrieved 2026-10-24)
+
+WHO Global Health Expenditure Database, redistributed by World Bank WDI:
+`SH.XPD.OOPC.CH.ZS` (out-of-pocket / current health expenditure) and
+`SH.XPD.CHEX.GD.ZS` (current health expenditure / GDP), seven economies, 2023.
+Indicator pages mark CC BY 4.0; retain the World Bank Dataset Terms above.
+Raw API bytes, exact values and hashes accompany the catalog. National financing
+shares are not individual medical bills, service availability or treatment effects.
+
+衛生福利部統計處，2026年發布113年NHE統計表中的112年（2023）本國列。
+數位發展部，數位近用調查112年度全國列（CSV原編碼CP950）。
+兩者依 [政府資料開放授權條款第1版](https://data.gov.tw/license) 釋出。
+使用者遵守該條款可利用及改作；顯名義務仍須保留，不宣稱政府背書。
+授權依據分別為[衛福部宣告](https://www.mohw.gov.tw/www/cp-81-155-1.html)及
+[數發部開放資料集5960](https://data.gov.tw/dataset/5960)。
+只取本國統計列，不含機關標誌、照片、專案文章或NHE內第三方國際表格。
+
+台灣12歲以上國民個人上網率及含商保理賠的家庭自付份額保留原生定義，
+不當作WDI全人口使用率或WHO直接自付份額。CHE/GDP作背景展示，不推算個人機會。
+機讀來源含原始下載SHA256、欄位及年度位置；來源改版需重新核對。

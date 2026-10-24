@@ -29,6 +29,7 @@ import Foundation
     static func main() {
         do {
             switch try DemoCLIArguments.parse(Array(CommandLine.arguments.dropFirst())) {
+            case .environmentSamples: print("environment-samples")
             case .demo: print("demo")
             case .json: print("json")
             case .storySamples: print("story-samples")
@@ -54,7 +55,7 @@ import Foundation
         cls.directory.cleanup()
 
     def test_existing_modes_and_batch_boundaries(self):
-        cases = [([], "demo"), (["--json"], "json"), (["--story-samples"], "story-samples"),
+        cases = [(["--environment-samples"], "environment-samples"), ([], "demo"), (["--json"], "json"), (["--story-samples"], "story-samples"),
                  (["--branch-sample"], "branch-sample"), (["--batch-report"], "batch:32"), (["--batch-report", "--seed-count", "2"], "batch:2"),
                  (["--batch-report", "--seed-count", "128"], "batch:128"),
                  (["--seed-count", "4", "--batch-report"], "batch:4")]

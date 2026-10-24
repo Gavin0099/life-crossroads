@@ -134,21 +134,25 @@ struct CountryContextCard: View {
             Label("\(country.name) · 真實資料背景", systemImage: "globe")
                 .font(.headline)
                 .accessibilityAddTraits(.isHeader)
-            Text("看看這個國家的整體人口情況。")
+            Text("看看這個國家的資料背景與適用範圍。")
                 .font(.subheadline)
-            ForEach(CountryProfile.requiredIndicators, id: \.self) { indicator in
+            ForEach(country.indicators.map(\.indicator), id: \.self) { indicator in
                 observationRow(indicator)
             }
-            Text("這些人口比例不能推定沐沐家有沒有設備或電力；同一國家的家庭也可能不同。")
+            Text("國家平均不能推定沐沐的設備、帳單或可用服務；同一國家的家庭也可能不同。")
                 .font(.footnote).foregroundStyle(.secondary)
             Text("河畔是大家共用的想像舞台，不是\(country.name)的實景。")
                 .font(.footnote)
                 .accessibilityIdentifier("countryStageBoundary")
+            if country.dataStatus == .limited {
+                Text("部分指標不具跨國可比性，遊戲會明示未估算的環境成本。不是這個國家缺少資源。")
+                    .font(.footnote).accessibilityIdentifier("countryDataLimit")
+            }
             DisclosureGroup("查看數字與來源") {
                 VStack(alignment: .leading, spacing: 16) {
                     Text("畫面比例約至小數一位；以下保留資料包的原值。")
                         .font(.caption).foregroundStyle(.secondary)
-                    ForEach(CountryProfile.requiredIndicators, id: \.self) { indicator in
+                    ForEach(country.indicators.map(\.indicator), id: \.self) { indicator in
                         sourceDetails(indicator)
                     }
                     if !country.gaps.isEmpty {
@@ -189,6 +193,10 @@ struct CountryContextCard: View {
         VStack(alignment: .leading, spacing: 6) {
             Text(title(for: indicator)).font(.subheadline.weight(.semibold))
             if let observation = observation(for: indicator), let value = observation.value {
+                Text(observation.definition ?? "")
+                    .font(.caption)
+                Text(observation.comparisonGroup == nil ? "僅供背景閱讀，不能與不同母體/定義的數字並列試算。" : "同口徑群組：\(observation.comparisonGroup!)；\(observation.usage == "contextOnly" ? "只展示，不推算個人服務或成功率" : "規則門檻為遊戲假設")")
+                    .font(.caption)
                 Text("原值：\(String(value)) · \(observation.unit) · \(String(observation.year))年")
                     .font(.footnote)
                 if let source = catalog.sources.first(where: { $0.id == observation.sourceID }) {
@@ -212,10 +220,11 @@ struct CountryContextCard: View {
     }
 
     private func title(for indicator: String) -> String {
+        if let title = observation(for: indicator)?.title { return title }
         switch indicator {
-        case "IT.NET.USER.ZS": "使用網路的人口比例"
-        case "EG.ELC.ACCS.ZS": "可取得電力的人口比例"
-        default: indicator
+        case "IT.NET.USER.ZS": return "使用網路的人口比例"
+        case "EG.ELC.ACCS.ZS": return "可取得電力的人口比例"
+        default: return indicator
         }
     }
 }

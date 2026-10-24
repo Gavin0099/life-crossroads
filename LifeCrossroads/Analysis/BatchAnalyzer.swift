@@ -72,7 +72,7 @@ public enum BatchAnalyzer {
                      randomChannel: policy == .seededVariety ? varietyChannel : nil)
     }
 
-    static func choose(policy: BatchPolicy, available: [ChoiceDefinition], seed: UInt64, eventID: String, age: Int) throws -> String {
+    public static func choose(policy: BatchPolicy, available: [ChoiceDefinition], seed: UInt64, eventID: String, age: Int) throws -> String {
         let ordered = available.sorted { $0.id < $1.id }
         guard !ordered.isEmpty else { throw ModelError.unavailable("analysis found no available choice") }
         if policy == .seededVariety {

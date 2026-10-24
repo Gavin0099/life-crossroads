@@ -141,4 +141,16 @@ public struct LifeSession: Codable, Equatable, Sendable {
             return try DecisionResolver.resolve(state: alternative, eventID: event.id, choiceID: choiceID, catalog: catalog).trace
         }
     }
+    /// Snapshot comparison, not a claim about being born in a different household.
+    /// Past resources/history remain fixed; only the current arrangements/material allowance change.
+    public func compareHouseholds(choiceID: String, catalog: ModelCatalog) throws -> [ConsequenceTrace] {
+        let event = try event(catalog: catalog)
+        return try catalog.households.filter { $0.countryCode == state.countryCode }.sorted { $0.id < $1.id }.map { family in
+            var alternative = state
+            alternative.householdID = family.id
+            alternative.remainingMaterials = family.materialBudget
+            return try DecisionResolver.resolve(state: alternative, eventID: event.id, choiceID: choiceID, catalog: catalog).trace
+        }
+    }
+
 }

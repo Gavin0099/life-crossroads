@@ -3,10 +3,9 @@ import Foundation
 struct EnvironmentContext {
     let observations: [IndicatorObservation]
     let household: HouseholdProfile
-    let internet: IndicatorObservation
-    let electricity: IndicatorObservation
-    let internetPct: Double
-    let electricityPct: Double
+    func observation(_ id: String) -> IndicatorObservation? {
+        observations.first { $0.indicator == id && $0.value != nil && $0.usage == "ruleInput" }
+    }
 }
 
 enum EnvironmentRules {
@@ -14,20 +13,15 @@ enum EnvironmentRules {
         guard let country = catalog.countries.first(where: { $0.code == countryCode }),
               let household = catalog.households.first(where: { $0.id == householdID }),
               household.countryCode == countryCode else { throw ModelError.missing("background") }
-        guard country.dataStatus == .ready else { throw ModelError.unavailable("country data incomplete: \(countryCode)") }
-        func required(_ code: String) throws -> IndicatorObservation {
-            guard let observation = country.indicators.first(where: { $0.indicator == code }),
-                  let value = observation.value, value.isFinite, (0...100).contains(value) else {
-                throw ModelError.missing(code)
+        guard country.dataStatus != .blocked else { throw ModelError.unavailable("country data incomplete: \(countryCode)") }
+        if country.dataStatus == .ready {
+            for id in CountryProfile.requiredIndicators {
+                guard let observation = country.indicators.first(where: { $0.indicator == id }),
+                      let value = observation.value, value.isFinite, (0...100).contains(value),
+                      IndicatorContract.valid(observation) else { throw ModelError.missing(id) }
             }
-            return observation
         }
-        let internet = try required("IT.NET.USER.ZS"), electricity = try required("EG.ELC.ACCS.ZS")
-        guard let internetPct = internet.value, let electricityPct = electricity.value else {
-            throw ModelError.missing("context values")
-        }
-        return .init(observations: country.indicators, household: household, internet: internet,
-                     electricity: electricity, internetPct: internetPct, electricityPct: electricityPct)
+        return .init(observations: country.indicators, household: household)
     }
 }
 
@@ -47,6 +41,7 @@ public enum DecisionResolver {
         let context = try EnvironmentRules.context(catalog: catalog, countryCode: state.countryCode, householdID: state.householdID)
         let h = context.household
         var costSteps: [CostStep] = []
+        var environmentGaps: [String] = []
         let baseCost = Cost(time: choice.timeCost, energy: choice.energyCost, materials: choice.materialCost)
         var cost = baseCost
         func adjust(_ rule: String, _ influence: Influence, _ delta: Cost, _ inputs: [String: Double],
@@ -57,15 +52,20 @@ public enum DecisionResolver {
         }
         if choice.requiresDigitalAccess {
             // National rates are contextual indices, not household probabilities. This mapping is a design assumption.
-            let internet = context.internetPct
-            let electricity = context.electricityPct
-            let informationFriction = internet >= 90 ? 0 : (internet >= 60 ? 1 : 2)
-            let materialFriction = electricity >= 95 ? 0 : 1
-            adjust("context.digital", .socialEnvironment,
-                   .init(time: informationFriction, materials: materialFriction),
-                   ["internetPct": internet, "electricityPct": electricity],
-                   [context.internet.sourceID, context.electricity.sourceID], ["macro-friction"],
-                   "模型把環境資料轉為準備成本：多用 \(informationFriction) 格時間、\(materialFriction) 格材料。這是遊戲假設。")
+            if let internetObservation = context.observation("IT.NET.USER.ZS"),
+               let electricityObservation = context.observation("EG.ELC.ACCS.ZS"),
+               let internet = internetObservation.value, let electricity = electricityObservation.value {
+                let informationFriction = internet >= 90 ? 0 : (internet >= 60 ? 1 : 2)
+                let materialFriction = electricity >= 95 ? 0 : 1
+                adjust("context.digital", .socialEnvironment,
+                       .init(time: informationFriction, materials: materialFriction),
+                       ["internetPct": internet, "electricityPct": electricity],
+                       [internetObservation.sourceID, electricityObservation.sourceID], ["macro-friction"],
+                       "模型把環境資料轉為準備成本：多用 \(informationFriction) 格時間、\(materialFriction) 格材料。這是遊戲假設。")
+            } else {
+                environmentGaps.append("缺少同口徑網路/電力輸入；僅估算行動與家庭安排，未知環境成本不是0，也不表示不能上網。")
+                adjust("context.digital.unestimated", .modelRule, .init(), [:], [], ["partial-environment"], environmentGaps.last!)
+            }
             adjust("family.device", .family, .init(time: h.deviceAccess.schedulingCost),
                    ["deviceScheduling": Double(h.deviceAccess.schedulingCost)], [], h.assumptionIDs,
                    "這個虛構家庭的設備安排，多需要 \(h.deviceAccess.schedulingCost) 格時間。")
@@ -83,6 +83,17 @@ public enum DecisionResolver {
             adjust("support.shared-preparation", .otherPeople, .init(time: -h.mentorSupport),
                    ["support": Double(h.mentorSupport)], [], ["support-network"],
                    "有人一起準備，幫你節省 \(h.mentorSupport) 格時間。")
+        }
+        if choice.requiresCareFinancing == true {
+            if let observation = context.observation("SH.XPD.OOPC.CH.ZS"), let value = observation.value {
+                let materials = value < 20 ? 1 : (value < 40 ? 2 : 3)
+                adjust("context.care-financing", .socialEnvironment, .init(materials: materials),
+                       ["oopShareOfCHE": value], [observation.sourceID], ["care-financing"],
+                       "這個醫療安排情境預留 \(materials) 格材料。全國直接自付份額只是情境背景，門檻為遊戲假設，不是個人帳單或治療效果。")
+            } else {
+                environmentGaps.append("缺少可比的直接自付/CHE；含商保理賠的資料不可代用。家庭試算未估計此項環境成本。")
+                adjust("context.care-financing.unestimated", .modelRule, .init(), [:], [], ["partial-environment"], environmentGaps.last!)
+            }
         }
         let boundedCost = Cost(time: max(0, cost.time), energy: max(0, cost.energy), materials: max(0, cost.materials))
         if cost != boundedCost {
@@ -162,6 +173,7 @@ public enum DecisionResolver {
             effectSteps: effects, randomTrial: randomTrial, resourcesBefore: state.resources,
             resourcesAfter: next.resources, scheduledHooks: hooks,
             recordedStoryFacts: reasons.isEmpty ? next.story.flags.filter { $0.age == state.age && $0.eventID == event.id && $0.choiceID == choice.id } : [],
-            changedRelationships: reasons.isEmpty ? next.story.relationships.filter { nextPerson in state.story.relationships.first { $0.personID == nextPerson.personID } != nextPerson } : []))
+            changedRelationships: reasons.isEmpty ? next.story.relationships.filter { nextPerson in state.story.relationships.first { $0.personID == nextPerson.personID } != nextPerson } : [],
+            environmentGaps: environmentGaps))
     }
 }

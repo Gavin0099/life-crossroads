@@ -63,7 +63,7 @@ final class SaveRepositoryTests: XCTestCase {
         let good = try JSONEncoder().encode(JourneySave(journey: .single(old)))
         var schema = try XCTUnwrap(JSONSerialization.jsonObject(with: good) as? [String: Any]); schema["schemaVersion"] = 999
         let badVersion = try JSONSerialization.data(withJSONObject: schema)
-        let engineVersion = Data(String(decoding: good, as: UTF8.self).replacingOccurrences(of: "rng-v2-1", with: "unknown-engine").utf8)
+        let engineVersion = Data(String(decoding: good, as: UTF8.self).replacingOccurrences(of: LifeState.engineVersion, with: "unknown-engine").utf8)
         for data in [Data(), Data("{partial".utf8), badVersion, engineVersion] {
             try data.write(to: file)
             XCTAssertThrowsError(try repository.load(catalog: catalog))

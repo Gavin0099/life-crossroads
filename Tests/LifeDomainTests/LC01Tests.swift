@@ -27,9 +27,10 @@ final class LC01Tests: XCTestCase {
         }
         XCTAssertEqual(c.countries.filter { $0.dataStatus == .ready }.count, 7)
         let taiwan = try XCTUnwrap(c.countries.first { $0.code == "TWN" })
-        XCTAssertTrue(taiwan.indicators.isEmpty)
+        XCTAssertEqual(taiwan.dataStatus, .limited)
+        XCTAssertEqual(taiwan.indicators.count, 3)
         XCTAssertFalse(taiwan.gaps.isEmpty)
-        XCTAssertThrowsError(try LifeState.born(catalog: c, countryCode: "TWN", householdID: "twn-1", seed: 42))
+        XCTAssertNoThrow(try LifeState.born(catalog: c, countryCode: "TWN", householdID: "twn-1", seed: 42))
     }
 
     func testOfflineChildActivityNeverUsesNationalDigitalRates() throws {
@@ -89,8 +90,10 @@ final class LC01Tests: XCTestCase {
         XCTAssertEqual(kenya.indicators.first { $0.indicator == "EG.ELC.ACCS.ZS" }?.value, 76.2)
         let japan = try XCTUnwrap(c.countries.first { $0.code == "JPN" })
         XCTAssertEqual(japan.indicators.first { $0.indicator == "IT.NET.USER.ZS" }?.value, 85.00990295)
-        XCTAssertEqual(c.sources.count, 2)
-        XCTAssertTrue(c.sources.allSatisfy { $0.license == "CC-BY-4.0" && !$0.attribution.isEmpty })
+        XCTAssertEqual(c.sources.count, 7)
+        XCTAssertEqual(c.sources.filter { $0.license == "CC-BY-4.0" }.count, 4)
+        XCTAssertEqual(c.sources.filter { $0.license == "OGDL-Taiwan-1.0" }.count, 3)
+        XCTAssertTrue(c.sources.allSatisfy { !$0.attribution.isEmpty })
     }
 
     func testCatalogAndStateAndTraceCodableRoundTrip() throws {

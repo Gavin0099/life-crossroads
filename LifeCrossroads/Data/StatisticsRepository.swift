@@ -22,6 +22,23 @@ public enum StatisticsRepository {
             let raw = try Data(contentsOf: directory.appendingPathComponent(source.rawPath))
             let digest = SHA256.hash(data: raw).map { String(format: "%02x", $0) }.joined()
             guard digest == source.sha256 else { throw ModelError.invalid("source SHA256: \(source.id)") }
+            if source.format == "taiwan-row" {
+                let payload = try JSONDecoder().decode(NationalRow.self, from: raw)
+                guard let column = source.column, payload.row.indices.contains(column),
+                      payload.downloadURL == source.downloadURL, payload.originalSHA256.count == 64,
+                      payload.originalSHA256.allSatisfy({ $0.isHexDigit }), !payload.location.isEmpty,
+                      let value = Double(payload.row[column]),
+                      source.indicator == "TWN.INTERNET.12PLUS" || (payload.row.count > 20 && payload.row[20] == "2023") else {
+                    throw ModelError.invalid("national extraction contract")
+                }
+                for observation in catalog.countries.flatMap(\.indicators) where observation.sourceID == source.id {
+                    guard observation.value == value, observation.region == "TWN", observation.year == 2023,
+                          payload.row.first == (source.indicator == "TWN.INTERNET.12PLUS" ? "112" : "112年") else {
+                        throw ModelError.invalid("national source/observation mismatch")
+                    }
+                }
+                continue
+            }
             let payload = try JSONDecoder().decode(WDIPayload.self, from: raw)
             guard payload.metadata.pages == 1, payload.metadata.total == payload.rows.count else {
                 throw ModelError.invalid("incomplete source pagination")
@@ -59,4 +76,11 @@ private struct WDIPayload: Decodable {
         rows = try array.decode([Row].self)
         guard array.isAtEnd else { throw ModelError.invalid("extra source payload") }
     }
+}
+
+private struct NationalRow: Decodable {
+    let downloadURL: String
+    let originalSHA256: String
+    let location: String
+    let row: [String]
 }
