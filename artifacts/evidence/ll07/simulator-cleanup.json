@@ -1,0 +1,123 @@
+{
+  "checkedUTC": "2026-10-24T12:02:02.720731+00:00",
+  "ownedDeviceCount": 14,
+  "allDeleted": true,
+  "devices": [
+    {
+      "deviceID": "0E89B0F7-0041-4A8B-A1ED-30A27A2CADAE",
+      "creationLogs": [
+        "artifacts/governance/ll07/baseline-warning.txt"
+      ],
+      "deleteLogged": true,
+      "absentInFinalInventory": true
+    },
+    {
+      "deviceID": "32A8D536-8A3B-48B1-B70B-567A99CA911F",
+      "creationLogs": [
+        "artifacts/governance/ll07/footer-safe-area.txt"
+      ],
+      "deleteLogged": true,
+      "absentInFinalInventory": true
+    },
+    {
+      "deviceID": "11D7B2C6-DFF0-4164-A390-F4542BEFF53B",
+      "creationLogs": [
+        "artifacts/governance/ll07/layout-first.txt"
+      ],
+      "deleteLogged": true,
+      "absentInFinalInventory": true
+    },
+    {
+      "deviceID": "34AF7D8A-311D-4E1F-95DF-6E014A649287",
+      "creationLogs": [
+        "artifacts/governance/ll07/layout-fixed.txt"
+      ],
+      "deleteLogged": true,
+      "absentInFinalInventory": true
+    },
+    {
+      "deviceID": "0F4A377D-0244-4CBE-8487-5FC1ABD34705",
+      "creationLogs": [
+        "artifacts/governance/ll07/pinned-region-final.txt"
+      ],
+      "deleteLogged": true,
+      "absentInFinalInventory": true
+    },
+    {
+      "deviceID": "E667B407-8D60-4D86-9FB4-5EFC04ACD0E6",
+      "creationLogs": [
+        "artifacts/governance/ll07/pinned-shape.txt"
+      ],
+      "deleteLogged": true,
+      "absentInFinalInventory": true
+    },
+    {
+      "deviceID": "0ACDEC92-AC04-411A-BA76-09845CB62F48",
+      "creationLogs": [
+        "artifacts/governance/ll07/se-final-targeted.txt"
+      ],
+      "deleteLogged": true,
+      "absentInFinalInventory": true
+    },
+    {
+      "deviceID": "16D1D5D2-97F4-4824-A0F2-99296710F711",
+      "creationLogs": [
+        "artifacts/governance/ll07/se-followup.txt"
+      ],
+      "deleteLogged": true,
+      "absentInFinalInventory": true
+    },
+    {
+      "deviceID": "250CEEEE-2047-475F-A6FB-D2658297CDA9",
+      "creationLogs": [
+        "artifacts/governance/ll07/se-full-final.txt"
+      ],
+      "deleteLogged": true,
+      "absentInFinalInventory": true
+    },
+    {
+      "deviceID": "AAA9C77F-B64D-4E04-B24B-975051986378",
+      "creationLogs": [
+        "artifacts/governance/ll07/se-full.txt"
+      ],
+      "deleteLogged": true,
+      "absentInFinalInventory": true
+    },
+    {
+      "deviceID": "B40A562D-C453-4EF6-9EFA-5ADB9EFC2AD7",
+      "creationLogs": [
+        "artifacts/governance/ll07/standard-followup.txt"
+      ],
+      "deleteLogged": true,
+      "absentInFinalInventory": true
+    },
+    {
+      "deviceID": "F27219E0-94A6-424B-86D4-190842556628",
+      "creationLogs": [
+        "artifacts/governance/ll07/standard-full-final.txt"
+      ],
+      "deleteLogged": true,
+      "absentInFinalInventory": true
+    },
+    {
+      "deviceID": "711CAA97-3283-48A4-9CA2-47E39760FE46",
+      "creationLogs": [
+        "artifacts/governance/ll07/standard-world.txt"
+      ],
+      "deleteLogged": true,
+      "absentInFinalInventory": true
+    },
+    {
+      "deviceID": "37AAC913-B562-4E0A-862C-C6562A8136C4",
+      "creationLogs": [
+        "artifacts/governance/ll07/warning-fix-only.txt"
+      ],
+      "deleteLogged": true,
+      "absentInFinalInventory": true
+    }
+  ],
+  "otherTaskDevicesDeleted": false,
+  "runtimesRemoved": false,
+  "scope": "LL07 round only; excludes the earlier LIFE-LOOP10H nine-device batch",
+  "ownedQAWorktree": "raw standard xcresults copied to root before managed archive; separate Visual B worktree untouched"
+}

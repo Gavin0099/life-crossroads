@@ -1,0 +1,60 @@
+{
+  "devicesAndConfigurations" : [
+    {
+      "device" : {
+        "architecture" : "arm64",
+        "deviceId" : "250CEEEE-2047-475F-A6FB-D2658297CDA9",
+        "deviceName" : "LifeCrossroads Test 20261024T110326Z",
+        "modelName" : "iPhone SE (3rd generation)",
+        "osBuildNumber" : "24A434",
+        "osVersion" : "27.0",
+        "platform" : "iOS Simulator"
+      },
+      "expectedFailures" : 0,
+      "failedTests" : 2,
+      "passedTests" : 18,
+      "skippedTests" : 0,
+      "testPlanConfiguration" : {
+        "configurationId" : "1",
+        "configurationName" : "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription" : "LifeCrossroads · Built with macOS 27.0",
+  "expectedFailures" : 0,
+  "failedTests" : 2,
+  "finishTime" : 1792841829.666,
+  "passedTests" : 18,
+  "result" : "Failed",
+  "runtimeWarnings" : [
+
+  ],
+  "skippedTests" : 0,
+  "startTime" : 1792839859.044,
+  "statistics" : [
+
+  ],
+  "testFailures" : [
+    {
+      "failureText" : "failed - Could not reveal an unobscured tap target: choice.ask; exists=true",
+      "targetName" : "LifeCrossroadsUITests",
+      "testIdentifier" : 12,
+      "testIdentifierString" : "LifeCrossroadsUITests/testWorldActivityPropsOnlyFollowSavedChoicesAtEightAndThirteen()",
+      "testIdentifierURL" : "test://com.apple.xcode/LifeCrossroads/LifeCrossroadsUITests/LifeCrossroadsUITests/testWorldActivityPropsOnlyFollowSavedChoicesAtEightAndThirteen",
+      "testName" : "testWorldActivityPropsOnlyFollowSavedChoicesAtEightAndThirteen()"
+    },
+    {
+      "failureText" : "failed - Could not reveal an unobscured tap target: whyResult; exists=true",
+      "targetName" : "LifeCrossroadsUITests",
+      "testIdentifier" : 19,
+      "testIdentifierString" : "LifeCrossroadsUITests/testWorldRestorePauseSheetsAndRestartCancelKeepTheStoredOutcome()",
+      "testIdentifierURL" : "test://com.apple.xcode/LifeCrossroads/LifeCrossroadsUITests/LifeCrossroadsUITests/testWorldRestorePauseSheetsAndRestartCancelKeepTheStoredOutcome",
+      "testName" : "testWorldRestorePauseSheetsAndRestartCancelKeepTheStoredOutcome()"
+    }
+  ],
+  "title" : "Test - LifeCrossroads",
+  "topInsights" : [
+
+  ],
+  "totalTestCount" : 20
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "baseCommit": "b896e058bf49f61ec8eafec2a4134a35edff6ddc",
+  "isolatedFixCommit": "bbe8657",
+  "productFreezeCommit": "27c5084a83ddb07a540d2c517192da7b32bcb1b2",
+  "originalPR10IssueCases": [
+    "testProjectWorkshopDoesNotReactUntilSaveSucceedsWithLargeText",
+    "testSaveFailuresKeepScreenAndArchiveThenRetryAndRelaunch",
+    "testWorldSaveFailuresDoNotPublishReactionsOrAdvanceAndRetryWorks"
+  ],
+  "baselineProbe": {
+    "passed": 1,
+    "failed": 0,
+    "runtimeWarnings": [
+      {
+        "issueType": "Runtime Warning",
+        "message": "Publishing changes from within view updates is not allowed, this will cause undefined behavior."
+      }
+    ],
+    "temporaryProbeRemoved": true,
+    "raw": "artifacts/governance/ll07/baseline-warning.txt",
+    "probePatch": "artifacts/governance/ll07/baseline-probe.patch"
+  },
+  "dismissalCallSequence": [
+    {
+      "previouslyNil": false,
+      "frames": [
+        "0   LifeCrossroads.debug.dylib          0x000000010536d9d4 $s14LifeCrossroads9GameStoreC12errorMessageSSSgvw + 688",
+        "1   LifeCrossroads.debug.dylib          0x00000001053693d8 $s14LifeCrossroads9GameStoreC12errorMessageSSSgvs + 56"
+      ]
+    },
+    {
+      "previouslyNil": true,
+      "frames": [
+        "0   LifeCrossroads.debug.dylib          0x000000010536d9d4 $s14LifeCrossroads9GameStoreC12errorMessageSSSgvw + 688",
+        "1   LifeCrossroads.debug.dylib          0x00000001053693d8 $s14LifeCrossroads9GameStoreC12errorMessageSSSgvs + 56",
+        "5   SwiftUICore                         0x00000001c74e80bc $s7SwiftUI11LocationBoxC3set_11transactiony5ValueQz_AA11TransactionVtF + 144",
+        "6   SwiftUICore                         0x00000001c75e54ec $s7SwiftUI7BindingV12wrappedValuexvsTf4gn_n + 32",
+        "7   SwiftUICore                         0x00000001c75e3798 $s7SwiftUI7BindingV12wrappedValuexvs + 28",
+        "8   SwiftUI                             0x00000001ca2edfa4 $s7SwiftUI17UIKitDialogBridgeC7dismiss19triggerCancellationySb_tF0F8ActuallyL_yyF + 1224"
+      ]
+    },
+    {
+      "previouslyNil": true,
+      "frames": [
+        "0   LifeCrossroads.debug.dylib          0x000000010536d9d4 $s14LifeCrossroads9GameStoreC12errorMessageSSSgvw + 688",
+        "1   LifeCrossroads.debug.dylib          0x00000001053693d8 $s14LifeCrossroads9GameStoreC12errorMessageSSSgvs + 56",
+        "5   SwiftUICore                         0x00000001c74e80bc $s7SwiftUI11LocationBoxC3set_11transactiony5ValueQz_AA11TransactionVtF + 144",
+        "6   SwiftUICore                         0x00000001c75e54ec $s7SwiftUI7BindingV12wrappedValuexvsTf4gn_n + 32",
+        "7   SwiftUICore                         0x00000001c75e3798 $s7SwiftUI7BindingV12wrappedValuexvs + 28",
+        "8   SwiftUI                             0x00000001ca2ec4c0 $s7SwiftUI17UIKitDialogBridgeC5reset33_CE41526C50FA4ACF6DE8F3D533927AA2LLyyF + 1064",
+        "13  SwiftUICore                         0x00000001c7a47ee0 $s7SwiftUI9ViewGraphC13updateOutputs33_7D9EDEF832940A362646A6E979F296C8LL5asyncySb_tF0E0L_yyFTf0snnss_n + 304",
+        "14  SwiftUICore                         0x00000001c7a43728 $s7SwiftUI9ViewGraphC13updateOutputs2atyAA4TimeV_tF + 444"
+      ]
+    }
+  ],
+  "isolatedFix": {
+    "passed": 3,
+    "failed": 0,
+    "runtimeWarnings": [],
+    "raw": "artifacts/governance/ll07/warning-fix-only.txt",
+    "layoutUnchanged": true
+  },
+  "regressionCheck": {
+    "script": "scripts/check-ios-runtime.py",
+    "baselineActualXcresultRejected": true,
+    "fixedActualXcresultAccepted": true,
+    "diagnosticsCollectionSuppressed": false,
+    "note": "Optional OS diagnostic collection setting stays never; normal XCTest runtime issues remain collected and checked."
+  },
+  "limits": [
+    "This repairs the observed duplicate-nil publication path, not proof against every possible future SwiftUI issue",
+    "Temporary instrumentation records setter call stacks; existing PR10 original3 warnings corroborate it was not introduced by the probe"
+  ]
+}

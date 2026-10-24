@@ -1,0 +1,237 @@
+{
+  "reviewer": "/root/simulation_visual_critic",
+  "scope": "LL07/08 integrated native iPhone17 screenshots only at product source 5ab3c977ff035f6772edf0093e8f3325fe069939; SE pending separately",
+  "verdict": "STANDARD_NATIVE_CANDIDATE_NO_P0_P1_WITH_P2_REMAINING",
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 3
+  },
+  "productSourceCommit": "5ab3c977ff035f6772edf0093e8f3325fe069939",
+  "sceneSHA256": "ced164aefaa15ec5fd93c49024dd4124209cc1e8cf261442a9c95dce4af313cb",
+  "findings": [
+    {
+      "priority": "P2",
+      "id": "full_story_and_actions_discoverability",
+      "images": [
+        "ll07-event-pinned-world.png",
+        "ll07-maximum-text-layout.png"
+      ],
+      "finding": "首屏事件摘要以…省略；最大字級初始抽屜只露事件/預算，看不到選項或直接行動導覽。不能由這些首屏圖確保玩家發現下方操作與完整敘述。",
+      "verified_existing_full_story_entry": "受測commit 5ab3c9的CrossroadsView.swift:499–503已有world條件成立時顯示的DisclosureGroup「完整故事與問題」，內含storyText(event)與storyQuestion；位置在選項/比較之後。故「完全缺少全文入口」P1判定不成立。",
+      "recommendation": "將完整閱讀入口/選項導覽提到明確可發現的位置，保留角色尺寸與全文。靜態圖未直接拍到原有Disclosure展開內容；新readFullEvent未提交diff不屬本版受測證據。"
+    },
+    {
+      "priority": "P2",
+      "id": "geometry_vs_illustration",
+      "images": [
+        "ll08-eight-invest.png",
+        "ll08-thirteen-offline.png",
+        "world-seventeen-occurred-echo.png"
+      ],
+      "finding": "桌面、桌腳、紙箱/圖解仍為均一向量色塊，與角色/背景筆觸有落差；承托與接地比純浮動符號清楚，未構成遮臉/裁切P1。"
+    },
+    {
+      "priority": "P2",
+      "id": "static_attention_not_new_acting",
+      "images": [
+        "ll08-thirteen-invest.png",
+        "ll08-thirteen-offline.png",
+        "ll08-thirteen-ask.png"
+      ],
+      "finding": "角色仍沿用朝上/遠方的目光及舊持書姿勢，沒有共同看向/接觸新桌面道具；可觀察活動痕跡不等於已完成新行為演出。"
+    }
+  ],
+  "observations": [
+    {
+      "topic": "pinned large world across stages and scrolling",
+      "images": [
+        "ll07-event-pinned-world.png",
+        "ll07-outcome-scrolled-world.png",
+        "world-childhood-living.png"
+      ],
+      "result": "生活、事件、後果及抽屜捲到底後，世界仍在上半屏保持大尺寸；沒有因文字捲動把人物縮成圖示或整片捲走。固定控制區與世界沒有直接互相遮住。"
+    },
+    {
+      "topic": "maximum text and reduced motion static layout",
+      "images": [
+        "ll07-maximum-text-layout.png",
+        "world-workshop-maximum-text-outcome.png",
+        "world-reduced-motion-committed.png"
+      ],
+      "result": "大字場景中兩人頭部與完整活動桌牌均留在場景內；後果內容長而需捲動，場景保持固定。Reduce Motion截圖保留已提交休息事實；靜態圖本身不證明運動停止。"
+    },
+    {
+      "topic": "face/note/prop clipping",
+      "images": [
+        "ll08-thirteen-invest.png",
+        "world-thirteen-pending-clue.png",
+        "world-seventeen-occurred-echo.png",
+        "world-workshop-maximum-text-outcome.png"
+      ],
+      "result": "線索/呼應紙箋位於右上空間，沒有壓住兩人臉；13歲活動掛牌、桌腳與紙面沒有被drawer/頁尾切斷。一般捲動下文字越過drawer頂/底視窗屬scroll裁切，不能單從該截圖判定內容永久不可達。"
+    },
+    {
+      "topic": "eight-year outcome semantics",
+      "images": [
+        "ll08-eight-ask.png",
+        "ll08-eight-invest.png",
+        "ll08-eight-rest.png"
+      ],
+      "result": "求助只有問號與正在找起點，未畫新工具/幫手；投資為紙箱練習，休息是收好紙箱。不同已提交選擇與後果文字/物件可區別。8歲resourceChange只代表當次結果，不是跨年StoryFact。"
+    },
+    {
+      "topic": "thirteen-year saved activity and rest",
+      "images": [
+        "ll08-thirteen-invest.png",
+        "ll08-thirteen-offline.png",
+        "ll08-thirteen-ask.png",
+        "ll08-thirteen-rest.png"
+      ],
+      "result": "線上/紙本用圖解與網路符號/來源掛牌區分；求助顯示正在找起點、未建立作品經驗；休息保留時間且不畫新夥伴。"
+    },
+    {
+      "topic": "pending vs occurred echo",
+      "images": [
+        "world-thirteen-pending-clue.png",
+        "world-seventeen-occurred-echo.png"
+      ],
+      "result": "13歲記憶桌牌和線索・尚未發生時鐘紙箋，與17歲箭頭/17歲的呼應及真實生活抽屜文字明顯區分，未把未來邀請畫成已發生。"
+    },
+    {
+      "topic": "comparison",
+      "images": [
+        "lc04-complete-comparison.png"
+      ],
+      "result": "原/改選人生及80歲結果的文字對照和關閉入口可見，回顧不等於該歲死亡的註明亦可見；不由此單圖宣稱完整分岔演算法正確。"
+    }
+  ],
+  "full_story_claim_correction": {
+    "missing_full_entry_P1": "REJECTED_AS_FACTUALLY_INCORRECT_FOR_REVIEWED_COMMIT",
+    "reason": "git show 5ab3c9 directly confirms the existing world DisclosureGroup.",
+    "remaining_issue": "P2 discoverability and no native expanded-full-story screenshot in this16-image set"
+  },
+  "integrity": {
+    "actual_png_count": 16,
+    "viewed_png_count": 16,
+    "hashes": "16/16 independently recomputed match manifest",
+    "all_manifest_source_labels": "5ab3c977ff035f6772edf0093e8f3325fe069939",
+    "scene_current_and_frozen_git_blob": "both independently hash to ced164aefaa15ec5fd93c49024dd4124209cc1e8cf261442a9c95dce4af313cb",
+    "attachment_device": "F27219E0-94A6-424B-86D4-190842556628, iPhone17, iOS27 Simulator",
+    "engineering_summary": {
+      "passedTests": 20,
+      "failedTests": 0,
+      "skippedTests": 0,
+      "runtimeWarnings": []
+    },
+    "not_inferred": "Manifest labels and attachment metadata provide correspondence; UI tests do not establish art quality or human comprehension.",
+    "current_uncommitted_A_changes": "CrossroadsView has a new full-reading sheet in progress; not treated as tested5ab content or visual evidence.",
+    "simulators_started_by_reviewer": 0
+  },
+  "viewed_images": [
+    {
+      "path": "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/ll07/native/standard/lc04-complete-comparison.png",
+      "sha256": "9c576857a7ec7bf36fa8488b9073d0f5500b5c057c8ef4411370f337f86199b4",
+      "test": "LifeCrossroadsUITests/testForkPreservesOriginalResumesAfterRelaunchAndComparesFullRemainder()",
+      "native_attachment": "E53EF1C5-3181-42F8-B276-5C1190EBB518.png"
+    },
+    {
+      "path": "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/ll07/native/standard/ll08-thirteen-rest.png",
+      "sha256": "cc38baa110eed350da8fa5c31e893f35a3a307a071f4448a0238d0904c829ef1",
+      "test": "LifeCrossroadsUITests/testWorldActivityPropsOnlyFollowSavedChoicesAtEightAndThirteen()",
+      "native_attachment": "0A810804-E7EC-4639-9828-CB077D97FD17.png"
+    },
+    {
+      "path": "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/ll07/native/standard/ll08-eight-rest.png",
+      "sha256": "e7b57d57e04d288d51f381464c46e06b457d0593feb233e649971e094e2427b3",
+      "test": "LifeCrossroadsUITests/testWorldActivityPropsOnlyFollowSavedChoicesAtEightAndThirteen()",
+      "native_attachment": "9740EF59-2B47-47B8-AC31-CF1EF91E7BC8.png"
+    },
+    {
+      "path": "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/ll07/native/standard/ll08-thirteen-ask.png",
+      "sha256": "e7dfe0c549b3a79daa2706f23fbb2c038dce70a5338eb2e9e9789767812cae95",
+      "test": "LifeCrossroadsUITests/testWorldActivityPropsOnlyFollowSavedChoicesAtEightAndThirteen()",
+      "native_attachment": "9AA60B5C-2F74-4F31-9F81-1BDCCBB38283.png"
+    },
+    {
+      "path": "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/ll07/native/standard/ll08-thirteen-offline.png",
+      "sha256": "4b72ab63f8392ac240a8db6a4ccce392465c1ff86876d656037e9b8508786b34",
+      "test": "LifeCrossroadsUITests/testWorldActivityPropsOnlyFollowSavedChoicesAtEightAndThirteen()",
+      "native_attachment": "A7169B35-4CBE-4FD3-8531-0294A138C4DE.png"
+    },
+    {
+      "path": "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/ll07/native/standard/ll08-eight-invest.png",
+      "sha256": "6bb02020ae16c71c5c3f6ab48cd7ad12dcf9785f0b3572e502a88b0d513cf44b",
+      "test": "LifeCrossroadsUITests/testWorldActivityPropsOnlyFollowSavedChoicesAtEightAndThirteen()",
+      "native_attachment": "60021557-80B8-4089-9596-A59541796E21.png"
+    },
+    {
+      "path": "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/ll07/native/standard/ll08-thirteen-invest.png",
+      "sha256": "277b115e3af7ab7f74329b7838aa486db88157ad288a279ba3da8958fd85b5c9",
+      "test": "LifeCrossroadsUITests/testWorldActivityPropsOnlyFollowSavedChoicesAtEightAndThirteen()",
+      "native_attachment": "2859F527-4962-4AE3-AE44-9B9911B1D4B3.png"
+    },
+    {
+      "path": "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/ll07/native/standard/ll08-eight-ask.png",
+      "sha256": "fb05f340d012f5c28715ac24a64248197a09484826683ade9f3c4c0ca35db175",
+      "test": "LifeCrossroadsUITests/testWorldActivityPropsOnlyFollowSavedChoicesAtEightAndThirteen()",
+      "native_attachment": "E3B3C404-3AEE-43D4-B857-ADF8E21EBE9E.png"
+    },
+    {
+      "path": "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/ll07/native/standard/world-seventeen-occurred-echo.png",
+      "sha256": "5cdb922d1ee1a0b9181b0201f916bf4973b99f3bb99c4ff7cee46acb82397342",
+      "test": "LifeCrossroadsUITests/testWorldDelayedProjectClueBecomesAnOccurredSeventeenYearEcho()",
+      "native_attachment": "83D25425-2E11-4BF5-87EF-A72F4A53C8C2.png"
+    },
+    {
+      "path": "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/ll07/native/standard/world-thirteen-pending-clue.png",
+      "sha256": "04ac55142bf6a4eb862fc0f03494021746227ca2fbed79a8e947ffcdd38daacd",
+      "test": "LifeCrossroadsUITests/testWorldDelayedProjectClueBecomesAnOccurredSeventeenYearEcho()",
+      "native_attachment": "B524B79A-85D9-46DB-8A7E-1D32BADAD97A.png"
+    },
+    {
+      "path": "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/ll07/native/standard/ll07-outcome-scrolled-world.png",
+      "sha256": "1fb12beb70ab2a20871d196d68b0f012f7c6c5fd5bc8a5552fac0ebbf58190ec",
+      "test": "LifeCrossroadsUITests/testWorldKeepsScenePinnedAcrossEventOutcomeAndDrawerScroll()",
+      "native_attachment": "25FD781B-03FF-4FBC-BF99-A7377B0DDD5B.png"
+    },
+    {
+      "path": "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/ll07/native/standard/ll07-event-pinned-world.png",
+      "sha256": "08cb4b7fafb1e9a2a4818c52f7a006f871a7ee9d2423f689eb71484828b2ac4d",
+      "test": "LifeCrossroadsUITests/testWorldKeepsScenePinnedAcrossEventOutcomeAndDrawerScroll()",
+      "native_attachment": "4DD4F52B-C841-4B08-83D0-BDC5F179D8D3.png"
+    },
+    {
+      "path": "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/ll07/native/standard/world-workshop-maximum-text-outcome.png",
+      "sha256": "9766ee64b30904395069a8ea94bd8f082b79b21b41163e397ad6c78676a8a8a4",
+      "test": "LifeCrossroadsUITests/testWorldMaximumTextRetainsActionsAndRealProjectConsequences()",
+      "native_attachment": "435F800A-E4C7-403F-9F7B-A5F491B823EE.png"
+    },
+    {
+      "path": "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/ll07/native/standard/ll07-maximum-text-layout.png",
+      "sha256": "78ed3049a7bff40736f22f091abf0d39a1bcea1d7e39641b865c5ab5cbc58de2",
+      "test": "LifeCrossroadsUITests/testWorldMaximumTextRetainsActionsAndRealProjectConsequences()",
+      "native_attachment": "3C4C8A40-D399-4F53-9737-F967B9C0DB4B.png"
+    },
+    {
+      "path": "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/ll07/native/standard/world-childhood-living.png",
+      "sha256": "3e4f94b2a5c84d318e21983d2e66416df676f889b22555e4d0c7c910ebabbe6e",
+      "test": "LifeCrossroadsUITests/testWorldNaturallyRunsTwoEventsAndNeverChoosesForThePlayer()",
+      "native_attachment": "9559D110-56C8-4CC3-B42C-246B7F1597F6.png"
+    },
+    {
+      "path": "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/ll07/native/standard/world-reduced-motion-committed.png",
+      "sha256": "2c7d4f1160710f9d2b81506a4d23ecb510f29be16e732760c925a630623a8f39",
+      "test": "LifeCrossroadsUITests/testWorldReducedMotionKeepsSceneFactsAndAccessibleChoices()",
+      "native_attachment": "8520084B-DAE5-4DDC-96B9-A50233F1D6FA.png"
+    }
+  ],
+  "limits": [
+    "Only reviewed iPhone17 at5ab source; SE has not been reviewed or marked PASS here.",
+    "Native Simulator still images, not physical iPhone or human VoiceOver session.",
+    "No child gameplay/fun/replay/comprehension results or full-product art completion.",
+    "Motion/Reduce Motion time behavior, complete scroll operation and engine/save correctness require their own functional evidence.",
+    "Formal art selection/commercial rights/merge/release approval not granted."
+  ],
+  "next_review": "SE修復後應按新實際來源重新交雙機對應截圖；保留本5ab iPhone17歷史收據，不將未測A修改或舊offline圖替代新native驗收。"
+}

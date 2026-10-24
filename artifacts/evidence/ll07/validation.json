@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "basePR": 10,
+  "baseCommit": "b896e058bf49f61ec8eafec2a4134a35edff6ddc",
+  "appSourceCommit": "3aa85b56f5a02ba8a1fe99aa515c918c6f0013fb",
+  "latestUITestCommit": "27c5084a83ddb07a540d2c517192da7b32bcb1b2",
+  "sourceBoundary": "artifacts/evidence/ll07/source-boundary.json",
+  "swift": {
+    "distinctCases": 111,
+    "status": "PASS",
+    "command": "swift test -c release",
+    "log": "artifacts/governance/ll07/swift-final.txt"
+  },
+  "python": {
+    "cases": 30,
+    "status": "PASS",
+    "command": "python -m unittest discover -s Tests -p 'test_*.py'",
+    "log": "artifacts/governance/ll07/python-final.txt"
+  },
+  "nativeBatches": [
+    {
+      "batch": "iPhone17-full-20",
+      "sourceCommit": "5ab3c977ff035f6772edf0093e8f3325fe069939",
+      "passed": 20,
+      "failed": 0,
+      "runtimeWarnings": [],
+      "summary": "artifacts/evidence/ll07/native/standard/summary.json",
+      "rawLog": "artifacts/governance/ll07/standard-full-final.txt",
+      "localResultBundle": "artifacts/ios/LL07-standard-5ab3c97.xcresult"
+    },
+    {
+      "batch": "SE3-full-20",
+      "sourceCommit": "5ab3c977ff035f6772edf0093e8f3325fe069939",
+      "passed": 18,
+      "failed": 2,
+      "runtimeWarnings": [],
+      "summary": "artifacts/evidence/ll07/history/5ab-se-failed.json",
+      "rawLog": "artifacts/governance/ll07/se-full-final.txt",
+      "localResultBundle": "artifacts/ios/LC02-20261024T110359Z.xcresult"
+    },
+    {
+      "batch": "SE3-first-followup-6",
+      "sourceCommit": "3aa85b56f5a02ba8a1fe99aa515c918c6f0013fb",
+      "passed": 1,
+      "failed": 5,
+      "runtimeWarnings": [],
+      "summary": "artifacts/evidence/ll07/history/3aa-se-failed.json",
+      "rawLog": "artifacts/governance/ll07/se-followup.txt",
+      "localResultBundle": "artifacts/ios/LC02-20261024T114203Z.xcresult"
+    },
+    {
+      "batch": "iPhone17-followup-6",
+      "sourceCommit": "3aa85b56f5a02ba8a1fe99aa515c918c6f0013fb",
+      "passed": 6,
+      "failed": 0,
+      "runtimeWarnings": [],
+      "summary": "artifacts/evidence/ll07/native/standard-followup/summary.json",
+      "rawLog": "artifacts/governance/ll07/standard-followup.txt",
+      "localResultBundle": "artifacts/ios/LL07-standard-3aa85b5.xcresult"
+    },
+    {
+      "batch": "SE3-final-targeted-6",
+      "sourceCommit": "27c5084a83ddb07a540d2c517192da7b32bcb1b2",
+      "passed": 6,
+      "failed": 0,
+      "runtimeWarnings": [],
+      "summary": "artifacts/evidence/ll07/native/se/summary.json",
+      "rawLog": "artifacts/governance/ll07/se-final-targeted.txt",
+      "localResultBundle": "artifacts/ios/LC02-20261024T114917Z.xcresult"
+    }
+  ],
+  "nativeSelectedScreenshots": 46,
+  "simulatorCleanup": "artifacts/evidence/ll07/simulator-cleanup.json",
+  "warningRootCause": "artifacts/evidence/ll07/warning-proof.json",
+  "offlineVisualProvenance": "artifacts/evidence/ll07/scene-provenance.json",
+  "remoteCI": "To be verified on the final pushed PR HEAD; this pre-push artifact does not pre-claim success",
+  "notClaimed": [
+    "Two latest-source complete local 21-case suites",
+    "Real iPhone, manual VoiceOver or child playtesting",
+    "Full art/rig/acting approval",
+    "Merge, release or completed P1",
+    "Exactly ten hours of new work"
+  ]
+}
