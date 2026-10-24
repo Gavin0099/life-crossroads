@@ -111,6 +111,35 @@ final class LifeCrossroadsUITests: XCTestCase {
         openReason(in: app); XCTAssertTrue(app.staticTexts["actualInfluences"].exists)
     }
 
+    func testWorldDelayedProjectClueBecomesAnOccurredSeventeenYearEcho() throws {
+        let app = launch(seed: "0", world: true)
+        startWorldPaused(app)
+        for _ in 0..<3 {
+            let rest = app.buttons["choice.rest"]; reveal(rest, in: app); rest.tap()
+            XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+            app.buttons["continueLife"].tap(); skipWorldMontage(app)
+        }
+        XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, "teen-project")
+        let project = app.buttons["choice.invest"]; reveal(project, in: app); project.tap()
+        XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+        let scene = app.otherElements["lifeWorldScene"]
+        XCTAssertTrue((scene.value as? String ?? "").contains("留下線索，尚未實現"))
+        reveal(scene, in: app)
+        attachScreenshot("world-thirteen-pending-clue", app: app)
+        app.buttons["continueLife"].tap()
+        // Remain paused in the actual 13→17 time jump: this text is projected
+        // from triggeredHooks, rather than a future invitation invented by the UI.
+        let echo = app.staticTexts.matching(identifier: "worldChange.delayedConsequence").firstMatch
+        XCTAssertTrue(echo.waitForExistence(timeout: 5))
+        reveal(echo, in: app)
+        XCTAssertTrue(echo.label.contains("17歲的呼應"))
+        XCTAssertFalse(echo.label.contains("尚未實現"))
+        attachScreenshot("world-seventeen-occurred-echo", app: app)
+        app.buttons["skipLiving"].tap()
+        XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 5))
+        XCTAssertTrue(scene.label.contains("17歲"))
+    }
+
     func testWorldReducedMotionKeepsSceneFactsAndAccessibleChoices() throws {
         let app = launch(seed: "0", world: true)
         let preference = app.switches["worldReduceMotion"]
