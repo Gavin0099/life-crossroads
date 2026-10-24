@@ -1,0 +1,1 @@
+PASS: two formal18-case summaries and24source-bound native screenshot hashes verified; not a new UI test run
