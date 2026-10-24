@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "python -c \"import json,subprocess; from pathlib import Path; r=json.loads(Path(\\\"artifacts/evidence/life-loop-visual/integration/remote-review-handoff.json\\\").read_text()); assert r[\\\"remote\\\"][\\\"head\\\"]==\\\"b896e058bf49f61ec8eafec2a4134a35edff6ddc\\\"; assert r[\\\"remote\\\"][\\\"draft\\\"] and not r[\\\"remote\\\"][\\\"merged\\\"]; assert len(r[\\\"remote\\\"][\\\"jobs\\\"])==4 and all(j[\\\"conclusion\\\"]==\\\"success\\\" for j in r[\\\"remote\\\"][\\\"jobs\\\"]); root=Path(\\\"/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads\\\"); a=json.loads((root/\\\"artifacts/evidence/life-loop/simulator-cleanup-final.json\\\").read_text()); b=json.loads(Path(\\\"artifacts/evidence/life-loop-visual/simulator-cleanup-summary.json\\\").read_text()); owned={x[\\\"udid\\\"] for x in a[\\\"ownedDevices\\\"]}|{x[\\\"device_id\\\"] for x in b[\\\"receipts\\\"]}; inventory=json.loads(subprocess.check_output([\\\"xcrun\\\",\\\"simctl\\\",\\\"list\\\",\\\"devices\\\",\\\"-j\\\"])); live={x[\\\"udid\\\"] for ds in inventory[\\\"devices\\\"].values() for x in ds}; assert len(owned)==22 and not owned.intersection(live); print(\\\"PASS: final remote snapshot has4successfulCIjobs;22ownedlocalSimulatorIDs absent; read-only verification, no new UI test or deletion\\\")\"",
+  "exit_code": 0,
+  "started_at": "2026-10-24T08:41:17Z",
+  "finished_at": "2026-10-24T08:41:17Z",
+  "runner": "final-remote-review-and-cleanup",
+  "linked_commit": "112f6458f5572e241697828f81fabf8946fa6359",
+  "output_artifacts": [
+    "artifacts/evidence/life-loop-visual/integration/final-handoff-receipt.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}

@@ -1,0 +1,1 @@
+PASS: final remote snapshot has4successfulCIjobs;22ownedlocalSimulatorIDs absent; read-only verification, no new UI test or deletion
