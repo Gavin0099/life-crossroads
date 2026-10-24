@@ -267,8 +267,9 @@ struct CrossroadsView: View {
         .frame(height: 44)
         .buttonStyle(.plain)
         .padding(.horizontal, 12).padding(.vertical, 4)
-        .background(worldPaper)
+        .background(worldPaper, ignoresSafeAreaEdges: [])
         .overlay(alignment: .top) { Rectangle().fill(accent.opacity(0.2)).frame(height: 1) }
+        .contentShape(.accessibility, Rectangle())
         .accessibilityElement(children: .contain).accessibilityIdentifier("worldPlaybackControls")
     }
 
