@@ -9,7 +9,7 @@ import CryptoKit
 
 @MainActor
 final class GameStore: ObservableObject {
-    static let firstCountries = ["JPN", "USA", "IND", "KEN"]
+    static let firstCountries = ["TWN", "JPN", "USA", "DEU", "IND", "BRA", "VNM", "KEN"]
     @Published private(set) var journey: LifeJourney?
     @Published var showingHome = true
     @Published var viewingOriginal = false
@@ -148,7 +148,7 @@ final class GameStore: ObservableObject {
         guard let catalog, let session else { return nil }
         return try? session.preview(choiceID: choiceID, catalog: catalog)
     }
-    func compare(choiceID: String) -> [ConsequenceTrace] {
+    func compare(choiceID: String, households: Bool = false) -> [ConsequenceTrace] {
         guard let catalog, let session else { return [] }
         do {
             let before: LifeSession
@@ -156,8 +156,19 @@ final class GameStore: ObservableObject {
             else if session.phase == .reflecting, session.traces.last?.choiceID == choiceID {
                 before = try session.beforeDecision(at: session.traces.count - 1, catalog: catalog)
             } else { throw ModelError.invalid("comparison requires the chosen action") }
+            if households { return try before.compareHouseholds(choiceID: choiceID, catalog: catalog) }
             return try before.compare(choiceID: choiceID, countryCodes: Self.firstCountries, catalog: catalog)
         } catch { errorMessage = "暫時無法比較：\(error)"; return [] }
+    }
+    func alternatives(for trace: ConsequenceTrace) -> [AvailableAction] {
+        guard let catalog, let session else { return [] }
+        do {
+            let before = session.phase == .choosing ? session : try session.beforeDecision(at: session.traces.count - 1, catalog: catalog)
+            var state = before.state
+            state.countryCode = trace.countryCode; state.householdID = trace.householdID
+            state.remainingMaterials = trace.budgetBefore.materials
+            return try EnvironmentComparisonEngine.preview(state: state, eventID: trace.eventID, choiceID: trace.choiceID, catalog: catalog).availableAlternatives
+        } catch { return [] }
     }
     func name(_ country: String) -> String { catalog?.countries.first { $0.code == country }?.name ?? country }
     func title(_ event: String) -> String { catalog?.decisions.first { $0.id == event }?.title ?? event }

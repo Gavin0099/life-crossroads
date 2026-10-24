@@ -1,0 +1,111 @@
+Test Case '-[LifePersistenceTests.SaveRepositoryTests testCorruptAndUnknownVersionFilesThrowAndRetainOriginalBytes]' passed (0.138 seconds).
+Test Case '-[LifePersistenceTests.SaveRepositoryTests testFilesystemFailureDoesNotAlterJourneyOrReplaceOtherPath]' passed (0.091 seconds).
+Test Case '-[LifePersistenceTests.SaveRepositoryTests testInvalidSnapshotCannotOverwriteAnExistingValidSave]' passed (0.310 seconds).
+Test Case '-[LifePersistenceTests.SaveRepositoryTests testRealDiskRoundTripEveryPhaseKeepsOriginalAndReplaysRemainingLife]' passed (4.722 seconds).
+Test Case '-[LifePersistenceTests.SaveRepositoryTests testSingleLifeSaveResumesWithoutChangingLegacySessionResults]' passed (0.013 seconds).
+	 Executed 5 tests, with 0 failures (0 unexpected) in 5.274 (5.275) seconds
+	 Executed 5 tests, with 0 failures (0 unexpected) in 5.274 (5.275) seconds
+	 Executed 5 tests, with 0 failures (0 unexpected) in 5.274 (5.276) seconds
+Test Case '-[LifeDomainTests.BranchExperimentTests testAllCheckpointsPreserveExactPrefixAndOriginalIncludingFirstAndLast]' passed (2.146 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testChangedChoiceRebuildsFutureHooksAndPreservesEarlierPendingHooksExactlyOnce]' passed (0.097 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testDecodedForgedMetadataSnapshotsAndAlternativeCannotResumeOrCompare]' passed (1.014 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testFourCountryTwoFamilyBranchMatrixCompletesAndKeepsOriginal]' passed (7.874 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testIndividuallyValidAlternativeFromDifferentSeedOrBackgroundIsRejected]' passed (0.723 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testInvalidForkAndPhaseFailuresDoNotMutateOriginalOrAlternative]' passed (0.558 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testPairedCandidateDrawsRemainEqualEvenWhenWeightsOrEligibilityChange]' passed (0.183 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testReplayingUnchangedChoicesFromCheckpointExactlyReproducesOriginal]' passed (0.298 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testSameSeedChoicesAndCodableAtEveryPhaseReproduceCompleteAlternative]' passed (21.451 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testSingleChangedChoiceActuallyChangesLaterPersonAndLearningRoute]' passed (0.196 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testUnaffordableAlternateRejectedUsingItsOriginalPreChoiceBudget]' passed (0.158 seconds).
+	 Executed 11 tests, with 0 failures (0 unexpected) in 34.700 (34.708) seconds
+Test Case '-[LifeDomainTests.EventSelectionTests testCatalogOrderCannotChangeSelectedEventsOrTraces]' passed (0.175 seconds).
+Test Case '-[LifeDomainTests.EventSelectionTests testCatalogRejectsMissingFallbackAndInvalidConditionContract]' passed (0.016 seconds).
+Test Case '-[LifeDomainTests.EventSelectionTests testComparisonKeepsActualEncounterAndSelectionFixed]' passed (0.023 seconds).
+Test Case '-[LifeDomainTests.EventSelectionTests testConditionsShowActualInputsAndIneligibleEventsCannotBeForced]' passed (0.016 seconds).
+Test Case '-[LifeDomainTests.EventSelectionTests testEligibleButUnselectedEventCannotBeExecutedDirectly]' passed (0.009 seconds).
+Test Case '-[LifeDomainTests.EventSelectionTests testLastContinueCannotFinishAgainstAnotherContentVersion]' passed (0.053 seconds).
+Test Case '-[LifeDomainTests.EventSelectionTests testOneThousandLivesHaveFifteenSlotsNoDeadlocksAndPreserveStoryAnchors]' passed (51.824 seconds).
+Test Case '-[LifeDomainTests.EventSelectionTests testPreselectedSeedsProduceDifferentActualEventsWithSameBackgroundAndPolicy]' passed (0.182 seconds).
+Test Case '-[LifeDomainTests.EventSelectionTests testPublicSelectorRejectsInvalidStateAndCatalogBeforeProducingTrace]' passed (0.022 seconds).
+Test Case '-[LifeDomainTests.EventSelectionTests testRestoreReplaysAndRejectsForgedSelectionOrPastConsequencesBeforeContinuation]' passed (0.324 seconds).
+Test Case '-[LifeDomainTests.EventSelectionTests testSameSeedAndPolicyReproduceEveryEventConditionAndOutcome]' passed (0.244 seconds).
+	 Executed 11 tests, with 0 failures (0 unexpected) in 52.887 (52.891) seconds
+Test Case '-[LifeDomainTests.LC01Tests testAgeCostsAndResourceInputsFailBeforeArithmetic]' passed (0.009 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testBadIndicatorRangesAndSourceReferencesAreRejected]' passed (0.055 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testCatalogAndStateAndTraceCodableRoundTrip]' passed (0.049 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testChildAgencyDoesNotTransferAdultCareResponsibility]' passed (0.016 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testChoiceChangeCreatesActualDelayedStoryDifference]' passed (0.012 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testCorruptJSONAndUnknownSchemaFailExplicitly]' passed (0.010 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testCountryNamesAndCodesCannotSetSuccessMultipliers]' passed (0.015 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testDigitalLearningOffersAnIndependentOfflineRoute]' passed (0.013 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testDigitalThresholdBoundaries]' passed (0.028 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testEightCountriesSixteenFamiliesAndHonestReadiness]' passed (0.016 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testEnvironmentCanChangeFeasibilityWithoutConsumingUnavailableChoice]' passed (0.009 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testFifteenSkeletonDecisionsCoverEveryStageAndThreeCallbacks]' passed (0.014 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testFiveStageBoundaries]' passed (0.001 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testForgedOrDuplicateStoryHooksCannotGrantResources]' passed (0.007 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testHouseholdTemplatesStayComparableWhenArraysMove]' passed (0.009 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testInvalidTimeDuplicateDecisionAndVersionAreRejected]' passed (0.008 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testKeyedRandomHasStableGoldenVectorAndNoSharedStream]' passed (0.000 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testManySeededSkeletonLivesStayValidAndCanAlwaysAdvance]' passed (11.080 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testMissingValueCannotBecomeVerifiedZero]' passed (0.050 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testOfflineChildActivityNeverUsesNationalDigitalRates]' passed (0.034 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testOfflineLearningIgnoresDigitalThresholdsAndHasSupport]' passed (0.010 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testPinnedRealStatisticsHaveIndependentExpectedValues]' passed (0.005 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testRepositoryRejectsAbsentAndTamperedEvidence]' passed (0.044 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testRepositoryRejectsAlteredObservationEvenWithIntactSourceHash]' passed (0.018 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testResourceClampingIsVisibleAndCostsCannotGoNegative]' passed (0.003 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testSameChoiceAcrossCountriesHasExplainableCosts]' passed (0.016 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testSameCountryFamiliesHaveDifferentTradeoffsAndSupport]' passed (0.006 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testSameSeedAndSerializedResumeProduceIdenticalTrace]' passed (0.010 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testTraceExactlyReconcilesCostEffectsAndProvenance]' passed (0.014 seconds).
+	 Executed 29 tests, with 0 failures (0 unexpected) in 11.561 (11.569) seconds
+Test Case '-[LifeDomainTests.LC03Tests testCareFinancingThresholdsHaveIndependentExpectedBudgetsAndNoEffectsWhenRejected]' passed (0.016 seconds).
+Test Case '-[LifeDomainTests.LC03Tests testCountryNamesAndOrderingNeverChangeCostsOrSupport]' passed (0.011 seconds).
+Test Case '-[LifeDomainTests.LC03Tests testEightCountriesCompleteRestoreAndReplay]' passed (2.997 seconds).
+Test Case '-[LifeDomainTests.LC03Tests testHouseholdSnapshotComparisonKeepsPastAndShowsWithinCountryDifference]' passed (0.021 seconds).
+Test Case '-[LifeDomainTests.LC03Tests testSameChoiceHasDifferentCostsSupportAndRealFutureRouteConditions]' passed (0.012 seconds).
+Test Case '-[LifeDomainTests.LC03Tests testTaiwanFullBranchPreservesOriginalAndBothCompletedRemaindersOnRestore]' passed (0.339 seconds).
+Test Case '-[LifeDomainTests.LC03Tests testTaiwanNativeDefinitionsAndLicensesRemainDistinct]' passed (0.012 seconds).
+Test Case '-[LifeDomainTests.LC03Tests testUnknownCostIsRecordedAndCannotBecomeAComparableZero]' passed (0.010 seconds).
+Test Case '-[LifeDomainTests.LC03Tests testUnknownLicenseForgedExtractionColumnAndNationalValueAreRejected]' passed (0.058 seconds).
+	 Executed 9 tests, with 0 failures (0 unexpected) in 3.475 (3.477) seconds
+Test Case '-[LifeDomainTests.LifeSessionTests testComparisonHoldsChoiceSeedAndPastResourcesFixed]' passed (0.019 seconds).
+Test Case '-[LifeDomainTests.LifeSessionTests testComparisonUsesSelectedChoiceAndStableTemplateAfterFamilyReordering]' passed (0.019 seconds).
+Test Case '-[LifeDomainTests.LifeSessionTests testDecodedCorruptSessionCannotIndexBeyondCatalog]' passed (0.039 seconds).
+Test Case '-[LifeDomainTests.LifeSessionTests testEveryDecisionHasOriginalStoryText]' passed (0.007 seconds).
+Test Case '-[LifeDomainTests.LifeSessionTests testFourCountryEightFamilyPlaythroughsReachReviewAndCannotRepeat]' passed (0.829 seconds).
+Test Case '-[LifeDomainTests.LifeSessionTests testRestExplanationIncludesOnlyExecutedContribution]' passed (0.008 seconds).
+Test Case '-[LifeDomainTests.LifeSessionTests testRoundAllowancesResetWhileResourcesAndChoicesContinue]' passed (0.009 seconds).
+Test Case '-[LifeDomainTests.LifeSessionTests testSameBackgroundReplayUsesSameTraceAndSessionCodableResumes]' passed (0.006 seconds).
+Test Case '-[LifeDomainTests.LifeSessionTests testUnavailableChoiceDoesNotAdvanceSessionAndRestRemainsPossible]' passed (0.008 seconds).
+Test Case '-[LifeDomainTests.LifeSessionTests testUnsuccessfulRandomTrialIsNotListedAsContribution]' passed (0.008 seconds).
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.951 (0.952) seconds
+Test Case '-[LifeDomainTests.RNGV2Tests testCandidateKeysSurviveReorderingAndAdditionAndRemainPairedAcrossCountries]' passed (0.009 seconds).
+Test Case '-[LifeDomainTests.RNGV2Tests testDynamicWindowsExecuteAtActualAgeAndTraceContinuityWithoutCountryMultipliers]' passed (0.009 seconds).
+Test Case '-[LifeDomainTests.RNGV2Tests testFourNewStoryLinesChangeOptionsAndPreserveSourceDecision]' passed (0.041 seconds).
+Test Case '-[LifeDomainTests.RNGV2Tests testHelpDoesNotEraseExperienceAndFactsCannotBeForged]' passed (0.012 seconds).
+Test Case '-[LifeDomainTests.RNGV2Tests testOneShotCooldownAndMutualExclusionHaveObservableReasons]' passed (0.016 seconds).
+Test Case '-[LifeDomainTests.RNGV2Tests testPolicyValidationRejectsNonfiniteZeroNegativeAndUnknownFields]' passed (0.006 seconds).
+Test Case '-[LifeDomainTests.RNGV2Tests testRaceUsesRecordedWeightsAndIndependentSamples]' passed (0.013 seconds).
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.106 (0.107) seconds
+Test Case '-[LifeDomainTests.StoryBranchTests testAllCountryFamiliesCanFinishWithDiverseChoicesAndBranchNarratives]' passed (5.196 seconds).
+Test Case '-[LifeDomainTests.StoryBranchTests testCareBranchRequiresHistoryAndHealthAndCannotBeBypassedThroughResolver]' passed (0.066 seconds).
+Test Case '-[LifeDomainTests.StoryBranchTests testChildhoodFriendshipChangesWhoAppearsAtSeventyTwo]' passed (0.061 seconds).
+Test Case '-[LifeDomainTests.StoryBranchTests testLearningBranchTraceRecordsActualHistoryAndBothSidesOfResourceThreshold]' passed (0.017 seconds).
+Test Case '-[LifeDomainTests.StoryBranchTests testLearningRouteChangesMentorSceneAndWorkshopOpportunity]' passed (0.046 seconds).
+Test Case '-[LifeDomainTests.StoryBranchTests testPreviewExecutionAndCodableReplayKeepActualVariantAndChoiceSnapshots]' passed (0.054 seconds).
+Test Case '-[LifeDomainTests.StoryBranchTests testSharedCareArrangementUnlocksReciprocalSupport]' passed (0.034 seconds).
+Test Case '-[LifeDomainTests.StoryBranchTests testZeroNationalCostIsObservationAndOnlyOccurredLuckContributes]' passed (0.296 seconds).
+	 Executed 8 tests, with 0 failures (0 unexpected) in 5.769 (5.771) seconds
+	 Executed 85 tests, with 0 failures (0 unexpected) in 109.449 (109.479) seconds
+	 Executed 85 tests, with 0 failures (0 unexpected) in 109.449 (109.480) seconds
+Test Case '-[LifeAnalysisTests.BatchAnalysisTests testClampUsesNetGainAndSeparatesPartialFullAndLowerBound]' passed (0.002 seconds).
+Test Case '-[LifeAnalysisTests.BatchAnalysisTests testHammingIncludesZeroAndSeparatesStoryVariantFromEventID]' passed (0.001 seconds).
+Test Case '-[LifeAnalysisTests.BatchAnalysisTests testInvalidBatchInputsFailInsteadOfDroppingSamples]' passed (0.014 seconds).
+Test Case '-[LifeAnalysisTests.BatchAnalysisTests testMultiHookLossIsOneAggregateAndNeverAllocatedToEachHook]' passed (0.001 seconds).
+Test Case '-[LifeAnalysisTests.BatchAnalysisTests testPoliciesExecuteDifferentChoicesAndSampleOrderDoesNotChangeReport]' passed (8.779 seconds).
+Test Case '-[LifeAnalysisTests.BatchAnalysisTests testRatesDistinguishNoOpportunityFromObservedZero]' passed (0.001 seconds).
+	 Executed 6 tests, with 0 failures (0 unexpected) in 8.797 (8.799) seconds
+	 Executed 6 tests, with 0 failures (0 unexpected) in 8.797 (8.800) seconds
+	 Executed 6 tests, with 0 failures (0 unexpected) in 8.797 (8.802) seconds

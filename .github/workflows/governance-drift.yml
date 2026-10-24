@@ -60,6 +60,10 @@ jobs:
         run: swift run -c release life-demo --story-samples > artifacts/lc01/story-samples.json
       - name: Replay a full branch while preserving its original life
         run: swift run -c release life-demo --branch-sample > artifacts/lc01/branch-sample.json
+      - name: Verify eight-country environments and comparable choice routes
+        run: |
+          swift run -c release life-demo --environment-samples > artifacts/lc01/environment-samples.json
+          python3 scripts/render-environment-report.py artifacts/lc01/environment-samples.json artifacts/lc01/environment-report.md
       - name: Measure all backgrounds and policies with a bounded Seed sample
         run: |
           swift run -c release life-demo --batch-report --seed-count 4 > artifacts/lc01/batch-report.json

@@ -258,8 +258,9 @@ def build(refresh=False):
                               choices=choices, isFallback=False, eligibility=eligibility))
     from rng_v2_content import extend
     extend(decisions, assumptions)
-    return dict(schemaVersion=4, selectionRules=dict(version="story-race-rules-1", continuityMultiplier=2.0, relationshipMultiplier=1.15, recentCategoryMultiplier=0.55, recentCategoryWindow=1), dataVersion=DATA_VERSION, contentVersion="rng-v2-story-1", referenceYear=2023,
-                sources=sources, assumptions=assumptions, countries=countries, households=households, decisions=decisions)
+    from lc03_data import extend as extend_country_data
+    return extend_country_data(dict(schemaVersion=4, selectionRules=dict(version="story-race-rules-1", continuityMultiplier=2.0, relationshipMultiplier=1.15, recentCategoryMultiplier=0.55, recentCategoryWindow=1), dataVersion=DATA_VERSION, contentVersion="rng-v2-story-1", referenceYear=2023,
+                sources=sources, assumptions=assumptions, countries=countries, households=households, decisions=decisions), RESOURCES)
 
 
 if __name__ == "__main__":
@@ -274,7 +275,7 @@ if __name__ == "__main__":
     if args.check:
         if target.read_text() != content:
             raise SystemExit("Catalog differs from pinned source evidence / design contract")
-        print("Offline evidence and deterministic catalog: PASS (14 observations, 8 countries, 16 households, 15 age slots / 40 event candidates)")
+        print("Offline evidence and deterministic catalog: PASS (31 observations, 8 countries (Taiwan comparison gaps explicit), 16 households, 15 age slots / 40 event candidates)")
     else:
         target.write_text(content)
         print(f"Wrote {target.relative_to(ROOT)}")

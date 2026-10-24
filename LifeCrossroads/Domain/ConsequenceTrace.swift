@@ -87,6 +87,8 @@ public struct ConsequenceTrace: Codable, Equatable, Sendable {
     public var recordedStoryFacts: [StoryFact] = []
     public var changedRelationships: [RelationshipState] = []
 
+    public var environmentGaps: [String] = []
+
     /// Only executed, non-zero contributions count; recorded observations and unsuccessful random trials are not causes.
     public var contributingInfluences: [Influence] {
         guard applied else { return [] }

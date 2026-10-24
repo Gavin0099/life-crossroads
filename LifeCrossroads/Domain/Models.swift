@@ -69,6 +69,8 @@ public struct SourceRecord: Codable, Equatable, Sendable {
     public let sha256: String
     public let missingPolicy: String
     public let transformation: String
+    public var format: String? = nil
+    public var column: Int? = nil
 }
 
 public struct DesignAssumption: Codable, Equatable, Sendable {
@@ -86,9 +88,13 @@ public struct IndicatorObservation: Codable, Equatable, Sendable {
     public var unit: String
     public var sourceID: String
     public var dataVersion: String
+    public var title: String? = nil
+    public var definition: String? = nil
+    public var comparisonGroup: String? = nil
+    public var usage: String? = nil
 }
 
-public enum DataStatus: String, Codable, Sendable { case ready, blocked }
+public enum DataStatus: String, Codable, Sendable { case ready, limited, blocked }
 
 public struct CountryProfile: Codable, Equatable, Sendable {
     public var code: String
@@ -96,7 +102,7 @@ public struct CountryProfile: Codable, Equatable, Sendable {
     public var dataStatus: DataStatus
     public var indicators: [IndicatorObservation]
     public var gaps: [String]
-    public static let requiredIndicators = ["IT.NET.USER.ZS", "EG.ELC.ACCS.ZS"]
+    public static let requiredIndicators = ["IT.NET.USER.ZS", "EG.ELC.ACCS.ZS", "SH.XPD.OOPC.CH.ZS", "SH.XPD.CHEX.GD.ZS"]
 }
 
 public enum DeviceAccess: String, Codable, Sendable {
@@ -145,6 +151,7 @@ public struct ChoiceDefinition: Codable, Equatable, Sendable {
     public var materialCost: Int
     public var effect: ResourceValues
     public var requiresDigitalAccess: Bool
+    public var requiresCareFinancing: Bool? = nil
     public var storyChanges: [StoryChange]
     public var delayedHook: String?
     public var assumptionIDs: [String]
@@ -177,7 +184,7 @@ public struct ModelCatalog: Codable, Equatable, Sendable {
     public var decisions: [DecisionSkeleton]
 
     public func validate() throws {
-        guard schemaVersion == 4, !dataVersion.isEmpty, !contentVersion.isEmpty,
+        guard schemaVersion == 5, !dataVersion.isEmpty, !contentVersion.isEmpty,
               (1960...2100).contains(referenceYear) else { throw ModelError.invalid("catalog version") }
         func unique(_ ids: [String]) throws {
             guard ids.allSatisfy({ !$0.isEmpty }), Set(ids).count == ids.count else {
@@ -189,7 +196,7 @@ public struct ModelCatalog: Codable, Equatable, Sendable {
         let sourceMap = Dictionary(uniqueKeysWithValues: sources.map { ($0.id, $0) })
         let assumptionSet = Set(assumptions.map(\.id))
         let ruleAssumptions: Set<String> = ["macro-friction", "household-scenarios", "life-stages", "agency",
-            "support-network", "choice-effects", "cost-fatigue", "luck-encouragement", "resource-bounds", "story-callback", "learning-channels", "story-branches", "event-selection"]
+            "support-network", "choice-effects", "cost-fatigue", "luck-encouragement", "resource-bounds", "story-callback", "learning-channels", "story-branches", "event-selection", "care-financing", "partial-environment"]
         guard ruleAssumptions.isSubset(of: assumptionSet) else { throw ModelError.missing("rule assumption") }
         func checkAssumptions(_ ids: [String]) throws {
             guard !ids.isEmpty, ids.allSatisfy(assumptionSet.contains) else {
@@ -202,8 +209,15 @@ public struct ModelCatalog: Codable, Equatable, Sendable {
             }
         }
         for s in sources {
+            let nationalColumns = ["SH.XPD.CHEX.GD.ZS": 9, "TWN.OOP.INCLUDING.REIMBURSEMENT": 17, "TWN.INTERNET.12PLUS": 3]
+            guard ["wdi", "taiwan-row"].contains(s.format ?? ""),
+                  s.format != "taiwan-row" || (s.license == "OGDL-Taiwan-1.0" && nationalColumns[s.indicator] != nil && s.column == nationalColumns[s.indicator]),
+                  s.format != "wdi" || (s.license == "CC-BY-4.0" && s.column == nil),
+                  s.license != "OGDL-Taiwan-1.0" || s.licenseURL == "https://data.gov.tw/license" else {
+                throw ModelError.invalid("source format/license contract")
+            }
             guard [s.url, s.downloadURL, s.licenseURL, s.licenseEvidenceURL].allSatisfy({ $0.hasPrefix("https://") }),
-                  s.license == "CC-BY-4.0", !s.attribution.isEmpty, !s.publisher.isEmpty,
+                  ["CC-BY-4.0", "OGDL-Taiwan-1.0"].contains(s.license), !s.attribution.isEmpty, !s.publisher.isEmpty,
                   !s.retrievedAt.isEmpty, !s.version.isEmpty, !s.missingPolicy.isEmpty,
                   !s.transformation.isEmpty, s.sha256.count == 64,
                   s.sha256.allSatisfy({ $0.isHexDigit }), s.rawPath.hasPrefix("raw/"),
@@ -215,7 +229,7 @@ public struct ModelCatalog: Codable, Equatable, Sendable {
             for i in c.indicators {
                 guard let s = sourceMap[i.sourceID], s.indicator == i.indicator,
                       i.region == c.code, i.year == referenceYear, i.dataVersion == s.version,
-                      i.unit == "% of population" else { throw ModelError.invalid("indicator provenance") }
+                      IndicatorContract.valid(i) else { throw ModelError.invalid("indicator provenance") }
                 if let value = i.value {
                     guard value.isFinite, (0...100).contains(value) else { throw ModelError.invalid("indicator value") }
                 }
@@ -226,7 +240,8 @@ public struct ModelCatalog: Codable, Equatable, Sendable {
                         throw ModelError.missing("\(c.code):\(indicator)")
                     }
                 }
-            } else if c.gaps.isEmpty { throw ModelError.missing("blocked country gap") }
+            } else if c.gaps.isEmpty { throw ModelError.missing("limited/blocked country gap") }
+            if c.dataStatus == .limited && c.indicators.isEmpty { throw ModelError.missing("limited country evidence") }
         }
         var templates: [String: HouseholdProfile] = [:]
         for h in households {
@@ -281,6 +296,9 @@ public struct ModelCatalog: Codable, Equatable, Sendable {
             }
             try unique(d.choices.map(\.id))
             for choice in d.choices {
+                if choice.requiresCareFinancing == true && (choice.kind != .care || d.selection.minimumAge < 23) {
+                    throw ModelError.invalid("care financing scope")
+                }
                 guard (0...100).contains(choice.minimumAge), (0...8).contains(choice.timeCost),
                       (0...8).contains(choice.energyCost), (0...4).contains(choice.materialCost) else {
                     throw ModelError.invalid("choice cost")

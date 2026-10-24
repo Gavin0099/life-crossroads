@@ -1,0 +1,101 @@
+{
+  "base": "f194808bc2808d5358ee18ee842567731404cd22",
+  "checks": {
+    "swift": {
+      "command": "swift test -c release",
+      "passedCases": 96,
+      "result": "PASS",
+      "testSummaries": [
+        "Executed 5 tests, with 0 failures (0 unexpected) in 5.274 (5.275) seconds",
+        "Executed 5 tests, with 0 failures (0 unexpected) in 5.274 (5.275) seconds",
+        "Executed 5 tests, with 0 failures (0 unexpected) in 5.274 (5.276) seconds",
+        "Executed 11 tests, with 0 failures (0 unexpected) in 34.700 (34.708) seconds",
+        "Executed 11 tests, with 0 failures (0 unexpected) in 52.887 (52.891) seconds",
+        "Executed 29 tests, with 0 failures (0 unexpected) in 11.561 (11.569) seconds",
+        "Executed 9 tests, with 0 failures (0 unexpected) in 3.475 (3.477) seconds",
+        "Executed 10 tests, with 0 failures (0 unexpected) in 0.951 (0.952) seconds",
+        "Executed 7 tests, with 0 failures (0 unexpected) in 0.106 (0.107) seconds",
+        "Executed 8 tests, with 0 failures (0 unexpected) in 5.769 (5.771) seconds",
+        "Executed 85 tests, with 0 failures (0 unexpected) in 109.449 (109.479) seconds",
+        "Executed 85 tests, with 0 failures (0 unexpected) in 109.449 (109.480) seconds",
+        "Executed 6 tests, with 0 failures (0 unexpected) in 8.797 (8.799) seconds",
+        "Executed 6 tests, with 0 failures (0 unexpected) in 8.797 (8.800) seconds",
+        "Executed 6 tests, with 0 failures (0 unexpected) in 8.797 (8.802) seconds"
+      ]
+    },
+    "python": {
+      "command": "python3 -m unittest discover -s Tests -p 'test_*.py'",
+      "passedCases": null,
+      "result": "PASS",
+      "testSummaries": [
+        "Ran 23 tests in 8.090s"
+      ]
+    },
+    "basic": {
+      "command": "bash scripts/governance-check.sh --profile basic",
+      "passedCases": null,
+      "result": "PASS",
+      "testSummaries": [
+        "framework-pin: PASS",
+        "version-compatibility: PASS",
+        "drift: PASS",
+        "config-syntax: PASS",
+        "shell-syntax: PASS",
+        "python-syntax: PASS"
+      ]
+    },
+    "ui_regression": {
+      "command": "bash scripts/ios-check.sh",
+      "passedCases": 8,
+      "result": "PASS",
+      "testSummaries": [
+        "Executed 8 tests, with 0 failures (0 unexpected) in 659.973 (659.991) seconds",
+        "Executed 8 tests, with 0 failures (0 unexpected) in 659.973 (659.992) seconds",
+        "Executed 8 tests, with 0 failures (0 unexpected) in 659.973 (659.994) seconds"
+      ]
+    },
+    "ui_lc03": {
+      "command": "xcodebuild ... -only-testing:LifeCrossroadsUITests/LifeCrossroadsUITests/testEightCountriesAndTaiwanComparisonLimitsAreVisible test",
+      "passedCases": 1,
+      "result": "PASS",
+      "testSummaries": []
+    }
+  },
+  "simulators": [
+    {
+      "id": "61CEA68B-A94C-4DF4-B722-6A752AB4FAB9",
+      "deleteConfirmed": true,
+      "absentFromInventory": true
+    },
+    {
+      "id": "12D72155-0248-4CE2-9CDB-7DE33AE796E8",
+      "deleteConfirmed": true,
+      "absentFromInventory": true
+    },
+    {
+      "id": "8BA523E4-2671-4826-B98D-8C74DBE64A17",
+      "deleteConfirmed": true,
+      "absentFromInventory": true
+    },
+    {
+      "id": "0EE305B3-E90A-41A0-A455-8AA809DED2D4",
+      "deleteConfirmed": true,
+      "absentFromInventory": true
+    }
+  ],
+  "upstreamEvidence": "taiwan-nhe-national-row-2023.json: full download SHA256 and national row PASS\ntaiwan-digital-national-row-2023.json: full download SHA256 and national row PASS\n",
+  "originalUIFailure": "First LC03 test used content-scroll reveal helper on fixed footer; failed to reveal continueLife though screenshot showed it. Corrected test to assert hittability and tap footer directly. Retry and final unknown-status assertion passed; failed device deleted.",
+  "uiScope": "8 full regression tests plus final LC03 focused test; not physical-device or manual VoiceOver evidence. Full xcresult and logs are ignored local artifacts; selected screenshots committed.",
+  "knownWarnings": "Existing failed-save alert dismissal Publishing changes warning is not claimed fixed; Xcode SDK/debugger/accessibility runtime diagnostics do not substitute for product acceptance.",
+  "notClaimed": [
+    "LC03 complete comparable-data Gate",
+    "Taiwan complete national cost model",
+    "release",
+    "merge",
+    "physical device",
+    "manual VoiceOver",
+    "child playtests",
+    "full runtime governance adoption"
+  ],
+  "dataGap": "Taiwan all-population internet/electricity and WHO-compatible OOP absent; native non-comparable measures contextOnly, partial costs suppressed in comparisons."
+}

@@ -173,9 +173,15 @@ struct CrossroadsView: View {
                 ForEach(store.countries, id: \.code) { Text($0.name).tag($0.code) }
             }.pickerStyle(.menu).accessibilityIdentifier("countryPicker")
         } else {
-            Picker("出生國家", selection: $store.countryCode) {
-                ForEach(store.countries, id: \.code) { Text($0.name).tag($0.code) }
-            }.pickerStyle(.segmented).accessibilityIdentifier("countryPicker")
+            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]) {
+                ForEach(store.countries, id: \.code) { country in
+                    Button { store.countryCode = country.code } label: {
+                        Text(country.name).frame(maxWidth: .infinity, minHeight: 44)
+                            .background(store.countryCode == country.code ? Color.accentColor.opacity(0.18) : Color.secondary.opacity(0.06), in: RoundedRectangle(cornerRadius: 10))
+                    }.buttonStyle(.plain).accessibilityIdentifier("country.\(country.code)")
+                        .accessibilityAddTraits(store.countryCode == country.code ? .isSelected : [])
+                }
+            }.accessibilityIdentifier("countryPicker")
         }
     }
 
@@ -244,6 +250,10 @@ struct CrossroadsView: View {
                             }
                             Text("時間\(preview.finalCost.time) · 精力\(preview.finalCost.energy) · 材料\(preview.finalCost.materials)")
                                 .font(.subheadline.weight(.semibold))
+                            if !preview.environmentGaps.isEmpty {
+                                Text("家庭試算；部分環境成本未知，不能作跨國總成本比較。")
+                                    .font(.caption).accessibilityIdentifier("choiceDataLimit.\(choice.id)")
+                            }
                             Text("基本影響：\(deltaText(choice.effect))").font(.caption).foregroundStyle(.secondary)
                             if !preview.applied {
                                 Text(preview.unavailableReasons.joined(separator: "\n")).font(.footnote)
@@ -350,9 +360,12 @@ struct CrossroadsView: View {
         }
     }
 
-    private func presentComparison(_ choiceID: String) {
-        let traces = store.compare(choiceID: choiceID)
-        if !traces.isEmpty { comparisonPresentation = .init(traces: traces) }
+    private func presentComparison(_ choiceID: String, households: Bool = false) {
+        let traces = store.compare(choiceID: choiceID, households: households)
+        if !traces.isEmpty {
+            let alternatives = Dictionary(uniqueKeysWithValues: traces.map { ($0.householdID, store.alternatives(for: $0)) })
+            comparisonPresentation = .init(traces: traces, households: households, alternatives: alternatives)
+        }
     }
 
     @ViewBuilder
@@ -553,7 +566,7 @@ struct CrossroadsView: View {
                         .font(.footnote).accessibilityIdentifier("dataUsage")
                     ForEach(usedObservations, id: \.indicator) { observation in
                         if let value = observation.value {
-                            Text("\(observation.indicator == "IT.NET.USER.ZS" ? "網路使用人口" : "可取得電力人口")：\(value, specifier: "%.2f")%（\(observation.year.formatted(.number.grouping(.never))))")
+                            Text("\(observation.title ?? observation.indicator)：\(value, specifier: "%.2f") \(observation.unit)（\(observation.year.formatted(.number.grouping(.never))))")
                                 .font(.footnote).foregroundStyle(.secondary)
                         }
                     }
@@ -574,27 +587,45 @@ struct CrossroadsView: View {
             Text(presentation.costExplanation)
                 .font(.headline)
                 .accessibilityIdentifier("comparisonCostExplanation")
-                .accessibilityValue(presentation.costsMatch ? "same" : "different")
+                .accessibilityValue(presentation.comparisonStatus)
             if let selected = presentation.traces.first, selected.age < 13 {
                 Text("到了13歲，試著比較線上創作與紙本學習：需要網路的行動，才會使用數位環境規則。看看準備成本是否不同，再選自己想走的路。")
                     .font(.subheadline)
                     .accessibilityIdentifier("digitalComparisonInvitation")
             }
-            Text("固定：這個實際事件、選項、年齡、家庭模板、選擇前的資源與種子。改變：環境指標，以及由它產生的模型成本。")
+            if !presentation.households, let selected = presentation.traces.first {
+                Button("也看看同國不同家庭的安排") { presentComparison(selected.choiceID, households: true) }
+                    .accessibilityIdentifier("compareHouseholds")
+            }
+            Text(presentation.households ? "固定事件、年齡、Seed、前史和選前資源，只改當回合家庭安排與材料預算。不是改寫出生家庭後的完整人生。" : "固定：這個實際事件、選項、年齡、家庭模板、選擇前的資源與種子。改變：環境指標，以及由它產生的模型成本。")
                 .font(.footnote)
             if let selected = presentation.traces.first {
                 Text("選前資源：健康\(selected.resourcesBefore.health) · 財務\(selected.resourcesBefore.financial) · 人際\(selected.resourcesBefore.relationships) · 技能\(selected.resourcesBefore.skills)")
                     .font(.caption).foregroundStyle(.secondary).accessibilityIdentifier("comparisonPreState")
                     .accessibilityValue("health=\(selected.resourcesBefore.health);financial=\(selected.resourcesBefore.financial);relationships=\(selected.resourcesBefore.relationships);skills=\(selected.resourcesBefore.skills)")
             }
-            ForEach(presentation.traces, id: \.countryCode) { trace in
+            ForEach(presentation.traces, id: \.householdID) { trace in
                 VStack(alignment: .leading, spacing: 8) {
-                    Text(store.name(trace.countryCode)).font(.title3.bold())
+                    Text(presentation.households ? (store.catalog?.households.first { $0.id == trace.householdID }?.label ?? trace.householdID) : store.name(trace.countryCode)).font(.title3.bold())
+                    if trace.environmentGaps.isEmpty {
                     Text("時間\(trace.finalCost.time) · 精力\(trace.finalCost.energy) · 材料\(trace.finalCost.materials)")
                     Label(trace.applied ? "目前可以安排" : "目前資源不足，還能求助或休息",
                           systemImage: trace.applied ? "checkmark.circle" : "clock.badge.questionmark")
                         .font(.footnote).foregroundStyle(.secondary)
                     if trace.applied { Text(deltaText(trace.resourcesAfter - trace.resourcesBefore)).font(.footnote) }
+                    } else {
+                        Text("資料不足以比較總成本與可行性。不是成本為0或沒有服務。")
+                            .accessibilityIdentifier("comparisonDataLimit.\(trace.countryCode)")
+                        Text(trace.environmentGaps.joined(separator: "\n")).font(.footnote)
+                    }
+                    Text(trace.costSteps.filter { $0.ruleID.hasPrefix("support.") }.map(\.explanation).joined(separator: "\n")).font(.footnote)
+                    if !trace.unavailableReasons.isEmpty { Text(trace.unavailableReasons.joined(separator: "\n")).font(.footnote) }
+                    ForEach(presentation.alternatives[trace.householdID] ?? [], id: \.id) { action in
+                        Text("可行替代：\(action.title)\(action.environmentGaps.isEmpty ? "" : "（家庭試算，環境成本未估）")").font(.footnote)
+                    }
+                    ForEach(trace.recordedStoryFacts, id: \.key) { fact in
+                        Text(storyFactText(fact)).font(.footnote)
+                    }
                 }.card()
             }
             Text("這是模型內的情境比較，不能證明現實因果，也不代表哪個國家或人生比較有價值。國內也有不同家庭與可取得的支持。")
@@ -623,19 +654,19 @@ struct CrossroadsView: View {
             Text("體驗選擇，也理解限制").font(.title2.bold())
             Text("國家平均不是每個人的命運。家庭、選擇、他人的幫助和運氣可能參與故事；每次實際用了哪些因素，會在原因說明裡列出。")
             Text("沐沐、阿禾、樹老師和小澄是原創動物角色，所有國家共用角色與想像的河畔舞台；物種、服裝與景物不代表國家、族群或真實家庭。插圖由AI生成，故事規則和因果解釋由離線引擎執行。")
-            Text("本版只有兩項宏觀背景指標。家庭、成本門檻、資源變動與機會事件都是明示的遊戲設計假設，不是個人的真實成功機率。")
+            Text("本版包含網路、電力、醫療直接自付及經常醫療支出背景；台灣定義不同的原生指標另列。家庭、成本門檻、資源變動與機會事件是遊戲假設，不是個人成功機率。")
             Text("不含寫實傷害內容；遇到工作或照顧情境，可以選休息或回首頁。短文模式可在首頁開啟。")
             if let catalog = store.catalog {
                 ForEach(catalog.sources, id: \.id) { source in
                     VStack(alignment: .leading, spacing: 8) {
-                        Text(source.indicator == "IT.NET.USER.ZS" ? "網路使用人口比例" : "可取得電力人口比例").font(.headline)
+                        Text(catalog.countries.flatMap(\.indicators).first { $0.sourceID == source.id }?.title ?? source.indicator).font(.headline)
                         Text("2023年 · \(source.publisher)").font(.subheadline)
                         Text(source.attribution).font(.caption)
                         if let url = URL(string: source.url) { Link("原始來源與授權", destination: url) }
-                        if let url = URL(string: source.licenseURL) { Link("World Bank資料條款", destination: url) }
+                        if let url = URL(string: source.licenseURL) { Link("授權條款：\(source.license)", destination: url) }
                     }.card()
                 }
-                Text("台灣仍待可比資料核對；德國、巴西、越南的情境故事還在整理。本版先開放四國。").font(.footnote)
+                Text("八國可玩；台灣部分環境成本未估算，資料不足不代表沒有服務。共用故事未聲稱重現各國制度；仍待在地內容與兒少實測。").font(.footnote)
                 DisclosureGroup("查看遊戲設計假設") {
                     ForEach(catalog.assumptions, id: \.id) { item in
                         VStack(alignment: .leading, spacing: 6) {
@@ -651,6 +682,16 @@ struct CrossroadsView: View {
         EventNarratives.texts[event.storyVariantID ?? event.id] ?? event.storyQuestion
     }
 
+    private func storyFactText(_ fact: StoryFact) -> String {
+        let names = ["friendship": "朋友約定", "learning": "作品經驗", "care": "共同照顧安排",
+                     "repair": "修理經驗", "kitchen": "共煮經驗", "garden": "花圃經驗", "nature": "自然觀察"]
+        let values = ["online": "線上創作", "paper": "紙本創作", "none": "暫未製作",
+                      "shared": "已共同安排", "seeking": "正在尋找協助，尚未保證獲得支持",
+                      "paused": "暫緩安排", "connected": "保留聯絡", "practiced": "已練習",
+                      "tending": "已參與照料", "observing": "已參與觀察"]
+        return "試算會留下的故事記錄：\(names[fact.key] ?? fact.key)・\(values[fact.value] ?? fact.value)。未來邀請仍有條件與機會限制。"
+    }
+
     private func shortStory(_ event: DecisionSkeleton) -> String {
         let text = storyText(event)
         return String(text.split(separator: "\n").first ?? Substring(text))
@@ -660,15 +701,26 @@ struct CrossroadsView: View {
 private struct ComparisonPresentation: Identifiable {
     let id = UUID()
     let traces: [ConsequenceTrace]
+    var households = false
+    var alternatives: [String: [AvailableAction]] = [:]
+
+    var comparisonStatus: String {
+        if traces.filter({ $0.environmentGaps.isEmpty }).count < 2 { return "unknown" }
+        return costsMatch ? "same" : "different"
+    }
 
     var costsMatch: Bool {
-        guard let first = traces.first else { return false }
-        return traces.dropFirst().allSatisfy { $0.finalCost == first.finalCost && $0.applied == first.applied }
+        let qualified = traces.filter { $0.environmentGaps.isEmpty }
+        guard let first = qualified.first else { return false }
+        return qualified.dropFirst().allSatisfy { $0.finalCost == first.finalCost && $0.applied == first.applied }
     }
     var costExplanation: String {
-        costsMatch
+        if comparisonStatus == "unknown" {
+            return "尚無兩個具完整成本資料的情境，不能判斷成本與可行性相同或不同。家庭試算仍可供遊玩，未知環境成本不是0。"
+        }
+        return (traces.contains { !$0.environmentGaps.isEmpty } ? "部分環境尚無同口徑資料，先保留比較缺口。以下相同或不同的判斷只涵蓋資料足夠的情境。" : "") + (costsMatch
             ? "這次比較的成本與可行性相同。不是所有選擇都受國家環境影響；相同的結果，也值得看見。"
-            : "這次比較的成本或可行性不同。下方顯示同一個行動，在各個環境中的模型試算。"
+            : "這次比較的成本或可行性不同。下方顯示同一個行動，在各個環境中的模型試算。")
     }
 }
 
