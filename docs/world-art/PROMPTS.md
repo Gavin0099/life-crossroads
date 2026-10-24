@@ -44,4 +44,3 @@ Change ONLY the two otters in the RIGHTMOST COLUMN (interacting poses). Tilt the
 ```
 
 原檔保留在工具產出目錄；專案使用的兩份素材已複製進 imageset，沒有覆蓋既有素材。沒有外部角色／商標素材匯入；不宣稱已完成所有商用法務核准。
-

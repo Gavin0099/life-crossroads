@@ -11,4 +11,3 @@ Layout: full bodies centered in their respective 768 x 768 cells, feet baseline 
 Style: match the existing original hand-painted textured StoryCast, warm natural fur/feather texture, cream and ochre highlights, confident readable shapes, appropriate to ages10–15. Not 3D, no glossy material.
 Transparency: genuinely transparent RGBA outside character silhouettes; no gradient backdrop, no studio glow, no floor, no cast shadow, no text, no grid, no watermark. Keep skin/clothes/feathers opaque.
 ```
-

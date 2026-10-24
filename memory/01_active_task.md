@@ -47,3 +47,5 @@
 - LC03工程提交1fb30ba：八國16家庭、31觀測與可比性/未知成本提示；96Swift/23Python、8回歸UI+1定向UI通過，128局含四策略/Seed0及見證Seed3。四台Simulator已刪。台灣同口徑數位/自付仍缺；待獨立Draft推送與HEAD CI，不合併。 <!-- memory_record_projection:active-task-summary:1786e15735915f87c96eaff34a0fc8cd194ccb5861cdd8d3c1d784bf2b82a545 -->
 
 - 單事件視覺本機完成88f2713：PR7基底，13歲四種反應讀實際trace，102Swift/23Python通過；首輪UI10過1失敗，SE定向3過，兩台Simulator已刪。原首頁失敗/提示警告保留；待獨立Draft推送與HEAD CI，不合併。 <!-- memory_record_projection:active-task-summary:28bded97035efa15d2a8a909bea62ce2ca79522fa6caf7db063f53fc434ebb78 -->
+
+- WORLD-ART舊候選54183d4封存：修正版雙機各5/5、12台Simulator已刪；初版視覺PARTIAL、新版未覆核。改依PR9 c823c82的VW-01～04，舊Timeline不符合新共同時鐘，不整枝匯入。 <!-- memory_record_projection:active-task-summary:db0babc48169f4f60b533b9d17ff6f4ba85c118b79a3610d39d4b73949a1d981 -->
