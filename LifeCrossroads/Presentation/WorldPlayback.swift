@@ -28,12 +28,13 @@ public struct WorldPlayback: Equatable, Sendable {
     public private(set) var phaseElapsedMs: Double = 0
     public private(set) var paused = false
     public private(set) var suspended = false
+    public private(set) var offscreen = false
     public private(set) var speed: Speed = .normal
     public private(set) var awaitingCommit = false
     private var previousTime: Double?
     public init() {}
     public var isTimed: Bool { phase == .living || phase == .committedOutcome }
-    public var isRunning: Bool { isTimed && !paused && !suspended && !awaitingCommit }
+    public var isRunning: Bool { isTimed && !paused && !suspended && !offscreen && !awaitingCommit }
     public var phaseToken: String { "\(generation):\(phase.rawValue)" }
     public var durationMs: Double { phase == .living ? 3000 : 2000 }
     public var progress: Double { min(1, phaseElapsedMs / durationMs) }
@@ -49,9 +50,11 @@ public struct WorldPlayback: Equatable, Sendable {
         }
         // A cold restored outcome is read-only until the user explicitly continues.
         paused = paused || (restoring && session.phase == .reflecting)
+        if paused && phase == .committedOutcome { phaseElapsedMs = durationMs }
     }
     public mutating func setPaused(_ value: Bool, now: Double) { settle(now); paused = value }
     public mutating func setSuspended(_ value: Bool, now: Double) { settle(now); suspended = value }
+    public mutating func setOffscreen(_ value: Bool, now: Double) { settle(now); offscreen = value }
     public mutating func setSpeed(_ value: Speed, now: Double) { settle(now); speed = value }
     private mutating func settle(_ now: Double) {
         if let previousTime, now >= previousTime, isRunning {

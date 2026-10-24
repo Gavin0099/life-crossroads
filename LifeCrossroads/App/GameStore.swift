@@ -20,6 +20,7 @@ final class GameStore: ObservableObject {
     var canAnimateWorld: Bool {
         worldPreviewEnabled && session != nil && !viewingOriginal && errorMessage == nil && playback.isRunning
     }
+    func setWorldSceneVisible(_ value: Bool) { playback.setOffscreen(!value, now: now) }
     func suspendWorld(_ value: Bool) { playback.setSuspended(value, now: now) }
     func pauseWorld(_ value: Bool) { playback.setPaused(value, now: now) }
     func speedWorld(_ value: WorldPlayback.Speed) { playback.setSpeed(value, now: now) }

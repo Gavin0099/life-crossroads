@@ -48,6 +48,21 @@ final class WorldPlaybackTests: XCTestCase {
         _ = p.skip(now: 503)
         XCTAssertFalse(p.accepts(beforeReset, session: s), "Same-Seed restarts never reuse a callback generation")
     }
+    func testOffscreenFreezesClockButExplicitContinueAndPausedRestoreRemainReadable() throws {
+        let c = try StatisticsRepository.bundled()
+        var s = try LifeSession.start(catalog: c, countryCode: "JPN", householdID: "jpn-1", seed: 0)
+        var p = WorldPlayback(); p.bind(s, now: 0)
+        p.setOffscreen(true, now: 0.5)
+        XCTAssertNil(p.tick(now: 50)); XCTAssertEqual(p.elapsedMs, 500, accuracy: 0.001)
+        XCTAssertNil(p.skip(now: 50)); XCTAssertEqual(p.phase, .eventPaused)
+        try s.choose("rest", catalog: c)
+        p.setPaused(true, now: 50); p.bind(s, now: 50)
+        XCTAssertEqual(p.motion(reduceMotion: false).phaseElapsedMs, 2000, "A newly paused committed outcome uses its completed frame")
+        XCTAssertNotNil(p.skip(now: 50), "Explicit accessible action works when the scene is scrolled away")
+        p.bind(s, now: 51, restoring: true)
+        XCTAssertEqual(p.phaseElapsedMs, 2000); XCTAssertNil(p.tick(now: 500))
+    }
+
     func testNormalFastAndSkipAreIdenticalForEightCountriesAndRestore() throws {
         let c = try StatisticsRepository.bundled()
         for country in ["TWN", "JPN", "USA", "DEU", "IND", "BRA", "VNM", "KEN"] {

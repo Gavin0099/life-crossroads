@@ -50,8 +50,13 @@ LIFE_TEST_DEVICE="$(xcrun simctl create "LifeCrossroads Test $(date -u +%Y%m%dT%
 echo "Created test Simulator: $LIFE_TEST_DEVICE"
 # Separate output paths per invocation; never overwrite an earlier result bundle.
 LIFE_RESULT_PATH="artifacts/ios/LC02-$(date -u +%Y%m%dT%H%M%SZ).xcresult"
+# Optional positional test identifiers narrow diagnostics; every path still owns and deletes its device.
+LIFE_TEST_ARGUMENTS=(test)
+for LIFE_TEST_IDENTIFIER in "$@"; do
+  LIFE_TEST_ARGUMENTS+=("-only-testing:$LIFE_TEST_IDENTIFIER")
+done
 xcodebuild -project LifeCrossroads.xcodeproj -scheme LifeCrossroads \
   -destination "platform=iOS Simulator,id=$LIFE_TEST_DEVICE" \
   -parallel-testing-enabled NO \
   -derivedDataPath .build/ios-app -resultBundlePath "$LIFE_RESULT_PATH" \
-  CODE_SIGNING_ALLOWED=NO test
+  CODE_SIGNING_ALLOWED=NO "${LIFE_TEST_ARGUMENTS[@]}"

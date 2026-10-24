@@ -17,6 +17,7 @@ struct CrossroadsView: View {
     private enum RestartAction { case newLife, sameSeed, newSeed }
 
     @State private var comparisonPresentation: ComparisonPresentation?
+    @State private var worldViewportHeight: CGFloat = 0
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.accessibilityVoiceOverEnabled) private var voiceOver
@@ -60,6 +61,15 @@ struct CrossroadsView: View {
                 .padding(18)
                 .frame(maxWidth: 620)
                 .frame(maxWidth: .infinity)
+            }
+            .coordinateSpace(name: "lifeWorldScroll")
+            .background(GeometryReader { proxy in
+                Color.clear.preference(key: WorldViewportHeightKey.self, value: proxy.size.height)
+            })
+            .onPreferenceChange(WorldViewportHeightKey.self) { worldViewportHeight = $0 }
+            .onPreferenceChange(WorldSceneBoundsKey.self) { rect in
+                guard worldViewportHeight > 0 else { return }
+                store.setWorldSceneVisible(rect.maxY > 0 && rect.minY < worldViewportHeight)
             }
             .id(store.session.map { "\($0.phase.rawValue)-\($0.state.age)" } ?? "home")
             .background(StoryPalette.page)
@@ -150,6 +160,9 @@ struct CrossroadsView: View {
         VStack(alignment: .leading, spacing: 6) {
             LifeWorldScene(frame: world, motion: store.playback.motion(reduceMotion: reduceMotion))
                 .frame(height: dynamicTypeSize.isAccessibilitySize ? 90 : store.playback.phase == .living ? 300 : 170)
+                .background(GeometryReader { proxy in
+                    Color.clear.preference(key: WorldSceneBoundsKey.self, value: proxy.frame(in: .named("lifeWorldScroll")))
+                })
             Text("共用想像場景，非各國實景。動畫不改變歲數、選擇或運氣。")
                 .font(.caption2).foregroundStyle(.secondary)
             Text("生活播放狀態").font(.caption2)
@@ -889,4 +902,13 @@ private func deltaText(_ delta: ResourceValues) -> String {
 
 private func stageName(_ age: Int) -> String {
     switch age { case ...12: "童年 · 探索與支持"; case ...22: "青少年 · 學習與人際"; case ...40: "青年 · 工作與獨立"; case ...60: "中年 · 責任與轉折"; default: "晚年 · 回顧與傳承" }
+}
+
+private struct WorldSceneBoundsKey: PreferenceKey {
+    static let defaultValue = CGRect.zero
+    static func reduce(value: inout CGRect, nextValue: () -> CGRect) { value = nextValue() }
+}
+private struct WorldViewportHeightKey: PreferenceKey {
+    static let defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) { value = nextValue() }
 }
