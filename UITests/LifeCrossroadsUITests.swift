@@ -7,6 +7,126 @@ final class LifeCrossroadsUITests: XCTestCase {
         continueAfterFailure = false
     }
 
+    func testLivingWorldNaturallyPausesForTwoEventsAndRestoresWithoutOfflineChoices() throws {
+        let app = launch(seed: "0")
+        let startButton = app.buttons["startLife"]
+        reveal(startButton, in: app); startButton.tap()
+        let pause = app.buttons["toggleLifePlayback"]
+        XCTAssertTrue(pause.waitForExistence(timeout: 5)); pause.tap()
+        XCTAssertTrue(app.staticTexts["livingTitle"].label.contains("暫停"))
+        let frozen = try playbackState(in: app)
+        let initialFile = try archiveChecksum(in: app)
+        app.buttons["lifeSpeed"].tap(); app.buttons["lifeSpeed.3"].tap()
+        XCTAssertEqual(try playbackState(in: app), frozen)
+        XCUIDevice.shared.press(.home); app.activate()
+        XCTAssertEqual(try playbackState(in: app), frozen)
+        XCTAssertEqual(try archiveChecksum(in: app), initialFile)
+        attachScreenshot("life-loop-paused-world", app: app)
+        app.buttons["toggleLifePlayback"].tap()
+        XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 12), "A real presentation pulse must arrive without skip")
+        XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, "child-interest")
+        XCTAssertTrue(try playbackState(in: app).hasPrefix("event|true|1.0|8|0|river-home"))
+        XCTAssertEqual(try archiveChecksum(in: app), initialFile, "Arrival must not write or make a choice")
+        attachScreenshot("life-loop-first-event", app: app)
+        let invest = app.buttons["choice.invest"]
+        reveal(invest, in: app); invest.tap()
+        XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+        let scene = app.descendants(matching: .any).matching(identifier: "lifeWorldScene").firstMatch
+        XCTAssertTrue(try XCTUnwrap(scene.value as? String).contains("child-interest/invest"))
+        attachScreenshot("life-loop-first-actual-memory", app: app)
+        app.buttons["continueLife"].tap() // deliberately do not skip the return to life
+        XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 12))
+        XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, "child-friend")
+        let ask = app.buttons["choice.ask"]
+        reveal(ask, in: app); ask.tap()
+        XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+        let memories = try XCTUnwrap(scene.value as? String)
+        XCTAssertTrue(memories.contains("friendship=connected"))
+        XCTAssertTrue(memories.contains("child-friend/ask"))
+        XCTAssertTrue(try playbackState(in: app).hasSuffix("|10|2|river-home"))
+        attachScreenshot("life-loop-friendship-outcome", app: app)
+        app.buttons["continueLife"].tap()
+        let savedFile = try archiveChecksum(in: app)
+        app.terminate(); app.launchArguments.removeAll { $0 == "-reset-save" }; app.launch()
+        let resume = app.buttons["resumeLife"]
+        XCTAssertTrue(resume.waitForExistence(timeout: 10)); resume.tap()
+        XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 5))
+        XCTAssertEqual(try playbackState(in: app), "event|true|1.0|12|2|river-home")
+        XCTAssertEqual(try archiveChecksum(in: app), savedFile)
+        XCTAssertTrue(try XCTUnwrap(scene.value as? String).contains("friendship=connected"))
+        attachScreenshot("life-loop-restored-event", app: app)
+    }
+
+    func testLargeTextSkipAndFailedReturnToLifeKeepTheOriginalWorldUntilRetry() throws {
+        let app = launch(seed: "0", largestText: true, failingSaves: "3")
+        start(app) // uses the same visible skip control a player can use
+        let rest = app.buttons["choice.rest"]
+        reveal(rest, in: app); rest.tap()
+        XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+        let saved = try archiveChecksum(in: app)
+        let before = try playbackState(in: app)
+        let scene = app.descendants(matching: .any).matching(identifier: "lifeWorldScene").firstMatch
+        let world = try XCTUnwrap(scene.value as? String)
+        app.buttons["continueLife"].tap()
+        assertSaveFailure(in: app)
+        XCTAssertEqual(try playbackState(in: app), before)
+        XCTAssertEqual(try archiveChecksum(in: app), saved)
+        XCTAssertEqual(scene.value as? String, world)
+        XCTAssertFalse(app.buttons["skipToEvent"].exists)
+        app.buttons["continueLife"].tap()
+        let skip = app.buttons["skipToEvent"]
+        XCTAssertTrue(skip.waitForExistence(timeout: 5))
+        XCTAssertTrue(skip.isHittable)
+        attachScreenshot("life-loop-large-text-controls", app: app)
+        skip.tap()
+        XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, "child-friend")
+        XCTAssertEqual(try playbackState(in: app), "event|true|1.0|10|1|river-home")
+    }
+
+    private func playbackState(in app: XCUIApplication) throws -> String {
+        try XCTUnwrap(app.staticTexts["uiTestPlaybackState"].value as? String)
+    }
+
+    func testRestartConfirmationCapturesItsRequestAndCancellationPreservesTheSave() throws {
+        let app = launch(seed: "0")
+        start(app)
+        var priorSeed = try XCTUnwrap(app.staticTexts["lifeSeed"].value as? String)
+        let rest = app.buttons["choice.rest"]
+        reveal(rest, in: app); rest.tap()
+        XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+        let saved = try archiveChecksum(in: app)
+        let world = try playbackState(in: app)
+        app.buttons["restartMenu"].tap(); app.buttons["restartSame"].tap()
+        let cancel = app.buttons["取消"]
+        XCTAssertTrue(cancel.waitForExistence(timeout: 5)); cancel.tap()
+        XCTAssertEqual(try archiveChecksum(in: app), saved)
+        XCTAssertEqual(try playbackState(in: app), world)
+        for request in ["restartSame", "restartNewSeed", "restartSame"] {
+            app.buttons["restartMenu"].tap(); app.buttons[request].tap()
+            let confirm = app.buttons.matching(identifier: "confirmRestart")
+                .matching(NSPredicate(format: "label == %@", "取代紀錄並開始")).firstMatch
+            XCTAssertTrue(confirm.waitForExistence(timeout: 5)); confirm.tap(); arriveAtEvent(app)
+            XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 5))
+            XCTAssertEqual(try playbackState(in: app), "event|true|1.0|8|0|river-home")
+            let restartedSeed = try XCTUnwrap(app.staticTexts["lifeSeed"].value as? String)
+            if request == "restartNewSeed" { XCTAssertNotEqual(restartedSeed, priorSeed) }
+            else { XCTAssertEqual(restartedSeed, priorSeed) }
+            priorSeed = restartedSeed
+            reveal(rest, in: app); rest.tap()
+            XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+        }
+        app.buttons["回首頁，保留目前進度"].tap()
+        let newLife = app.buttons["startLife"]
+        reveal(newLife, in: app); newLife.tap()
+        app.buttons.matching(identifier: "confirmRestart")
+            .matching(NSPredicate(format: "label == %@", "取代紀錄並開始")).firstMatch.tap()
+        arriveAtEvent(app)
+        XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["lifeSeed"].value as? String, "0")
+        XCTAssertEqual(try playbackState(in: app), "event|true|1.0|8|0|river-home")
+        attachScreenshot("life-loop-confirmed-new-life", app: app)
+    }
+
     func testProjectWorkshopFourReactionsAndRestoredReceipt() throws {
         for (choice, caption, memory) in [("invest", "線上圖解", "線上創作"), ("offline", "紙本圖解", "紙本創作"),
                                           ("ask", "先說出需要", "未建立作品"), ("rest", "留給自己", "未建立作品")] {
@@ -19,6 +139,7 @@ final class LifeCrossroadsUITests: XCTestCase {
             let action = app.buttons["choice.\(choice)"]
             reveal(action, in: app); action.tap()
             XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+            openProjectDetails(in: app)
             XCTAssertTrue(app.staticTexts["projectSceneCaption"].label.contains(caption))
             let recorded = app.staticTexts["projectMemory"]
             reveal(recorded, in: app)
@@ -46,6 +167,7 @@ final class LifeCrossroadsUITests: XCTestCase {
                 app.launch()
                 let resume = app.buttons["resumeLife"]
                 XCTAssertTrue(resume.waitForExistence(timeout: 10)); resume.tap()
+                openProjectDetails(in: app)
                 XCTAssertEqual(app.staticTexts["projectMemory"].label, savedMemory)
                 XCTAssertEqual(app.staticTexts["outcomeResources"].value as? String, actualResources)
                 let restored = app.staticTexts["projectReceipt"]
@@ -70,6 +192,7 @@ final class LifeCrossroadsUITests: XCTestCase {
         XCTAssertEqual(try archiveChecksum(in: app), checksum)
         reveal(paper, in: app); paper.tap()
         XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+        openProjectDetails(in: app)
         let memory = app.staticTexts["projectMemory"]
         reveal(memory, in: app)
         XCTAssertTrue(memory.label.contains("紙本創作"))
@@ -86,7 +209,7 @@ final class LifeCrossroadsUITests: XCTestCase {
             let rest = app.buttons["choice.rest"]
             reveal(rest, in: app); rest.tap()
             let next = app.buttons["continueLife"]
-            XCTAssertTrue(next.waitForExistence(timeout: 5)); next.tap()
+            XCTAssertTrue(next.waitForExistence(timeout: 5)); next.tap(); arriveAtEvent(app)
         }
         XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, "teen-project")
     }
@@ -107,7 +230,7 @@ final class LifeCrossroadsUITests: XCTestCase {
             let next = app.buttons["continueLife"]
             XCTAssertTrue(next.waitForExistence(timeout: 5))
             XCTAssertTrue(next.isHittable)
-            next.tap()
+            next.tap(); arriveAtEvent(app)
         }
         XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, "teen-project")
         XCTAssertTrue(app.staticTexts["choiceDataLimit.invest"].exists)
@@ -184,7 +307,7 @@ final class LifeCrossroadsUITests: XCTestCase {
                 app.buttons["closeTrace"].tap()
             }
             if [3, 10, 13].contains(index) { attachScreenshot("life-stage-\(index)", app: app) }
-            app.buttons["continueLife"].tap()
+            app.buttons["continueLife"].tap(); arriveAtEvent(app)
         }
         XCTAssertEqual(eventIDs.count, 15)
         for id in Set(eventIDs) where id != "middle-rest-circle" { XCTAssertEqual(eventIDs.filter { $0 == id }.count, 1) }
@@ -196,13 +319,13 @@ final class LifeCrossroadsUITests: XCTestCase {
         XCTAssertTrue(newSeed.exists)
         attachScreenshot("event-first-life-review", app: app)
         reveal(newSeed, in: app); newSeed.tap()
-        app.buttons.matching(identifier: "confirmRestart").matching(NSPredicate(format: "label == %@", "取代紀錄並開始")).firstMatch.tap()
+        app.buttons.matching(identifier: "confirmRestart").matching(NSPredicate(format: "label == %@", "取代紀錄並開始")).firstMatch.tap(); arriveAtEvent(app)
         XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 5))
         let changedSeed = try XCTUnwrap(app.staticTexts["lifeSeed"].value as? String)
         XCTAssertNotEqual(changedSeed, "0")
         app.buttons["restartMenu"].tap()
         app.buttons["restartSame"].tap()
-        app.buttons.matching(identifier: "confirmRestart").matching(NSPredicate(format: "label == %@", "取代紀錄並開始")).firstMatch.tap()
+        app.buttons.matching(identifier: "confirmRestart").matching(NSPredicate(format: "label == %@", "取代紀錄並開始")).firstMatch.tap(); arriveAtEvent(app)
         XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 5))
         XCTAssertEqual(app.staticTexts["lifeSeed"].value as? String, changedSeed)
         XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, eventIDs.first)
@@ -267,7 +390,7 @@ final class LifeCrossroadsUITests: XCTestCase {
                 let choice = try policyChoice(in: app)
                 reveal(choice, in: app); choice.tap()
                 XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
-                app.buttons["continueLife"].tap()
+                app.buttons["continueLife"].tap(); arriveAtEvent(app)
             }
             XCTAssertEqual(app.staticTexts["lifeSeed"].value as? String, seed)
             prefixes.append(events)
@@ -299,7 +422,7 @@ final class LifeCrossroadsUITests: XCTestCase {
         XCTAssertEqual(selected.value as? String, "rest")
         attachScreenshot("maximum-text-comparison", app: app)
         app.buttons["closeComparison"].tap()
-        app.buttons["continueLife"].tap()
+        app.buttons["continueLife"].tap(); arriveAtEvent(app)
         XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 5))
         XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, "child-friend")
     }
@@ -336,7 +459,7 @@ final class LifeCrossroadsUITests: XCTestCase {
             reveal(choice, in: app); choice.tap()
             XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
             if [0, 3, 7, 14].contains(index) { originalRecords[index] = try recordOutcome(in: app) }
-            app.buttons["continueLife"].tap()
+            app.buttons["continueLife"].tap(); arriveAtEvent(app)
         }
         XCTAssertTrue(app.staticTexts["journeyComplete"].waitForExistence(timeout: 5))
         let open = app.buttons["openForkPicker"]; reveal(open, in: app); open.tap()
@@ -363,13 +486,13 @@ final class LifeCrossroadsUITests: XCTestCase {
         XCTAssertEqual(app.staticTexts["endingSeed"].value as? String, "0")
         try assertOriginalHistory(originalRecords, in: app)
         let resume = app.buttons["resumeBranch"]; reveal(resume, in: app); resume.tap()
-        app.buttons["continueLife"].tap()
+        app.buttons["continueLife"].tap(); arriveAtEvent(app)
         for index in 4..<15 {
             XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 5))
             let choice = app.buttons["choice.rest"]; reveal(choice, in: app); choice.tap()
             XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
             if [7, 14].contains(index) { alternativeRecords[index] = try recordOutcome(in: app) }
-            app.buttons["continueLife"].tap()
+            app.buttons["continueLife"].tap(); arriveAtEvent(app)
         }
         XCTAssertTrue(app.staticTexts["journeyComplete"].waitForExistence(timeout: 5))
         app.terminate(); app.launch()
@@ -410,12 +533,12 @@ final class LifeCrossroadsUITests: XCTestCase {
         XCTAssertEqual(app.staticTexts["chosenAction"].value as? String, "rest")
         let choiceChecksum = try archiveChecksum(in: app)
         XCTAssertNotEqual(choiceChecksum, originalChecksum)
-        app.buttons["continueLife"].tap()
+        app.buttons["continueLife"].tap(); arriveAtEvent(app)
         assertSaveFailure(in: app)
         XCTAssertTrue(app.buttons["continueLife"].exists)
         XCTAssertEqual(app.staticTexts["chosenAction"].value as? String, "rest")
         XCTAssertEqual(try archiveChecksum(in: app), choiceChecksum)
-        app.buttons["continueLife"].tap()
+        app.buttons["continueLife"].tap(); arriveAtEvent(app)
         XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 5))
         XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, "child-friend")
         let continuedChecksum = try archiveChecksum(in: app)
@@ -505,8 +628,23 @@ final class LifeCrossroadsUITests: XCTestCase {
 
     private func start(_ app: XCUIApplication) {
         let button = app.buttons["startLife"]
-        reveal(button, in: app); button.tap()
+        reveal(button, in: app); button.tap(); arriveAtEvent(app)
         XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 5))
+    }
+
+    private func arriveAtEvent(_ app: XCUIApplication) {
+        // Use the actual player control, never a testing-only bypass of the life loop.
+        let skip = app.buttons["skipToEvent"]
+        // Confirmation dismissal may finish after its tap returns. Wait for the real control,
+        // rather than sampling one transient frame and then waiting only five seconds of an eight-second trip.
+        if skip.waitForExistence(timeout: 3) { skip.tap() }
+    }
+
+    private func openProjectDetails(in app: XCUIApplication) {
+        if !app.staticTexts["projectMemory"].exists {
+            let details = app.descendants(matching: .any).matching(identifier: "projectDetails").firstMatch
+            reveal(details, in: app); details.tap()
+        }
     }
 
     private func policyChoice(in app: XCUIApplication) throws -> XCUIElement {

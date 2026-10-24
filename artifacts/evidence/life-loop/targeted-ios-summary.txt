@@ -1,0 +1,18 @@
+Created test Simulator: 440C78B1-C5B6-4EBB-9D9C-3D54E7FD06ED
+Test Suite 'Selected tests' started at 2026-10-24 12:35:42.999.
+Test Suite 'LifeCrossroadsUITests.xctest' started at 2026-10-24 12:35:43.003.
+Test Suite 'LifeCrossroadsUITests' started at 2026-10-24 12:35:43.003.
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testLargeTextSkipAndFailedReturnToLifeKeepTheOriginalWorldUntilRetry]' started.
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/UITests/LifeCrossroadsUITests.swift:83: error: -[LifeCrossroadsUITests.LifeCrossroadsUITests testLargeTextSkipAndFailedReturnToLifeKeepTheOriginalWorldUntilRetry] : XCTAssertEqual failed: ("event|true|1.000000|10|1|river-home") is not equal to ("event|true|1.0|10|1|river-home")
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testLargeTextSkipAndFailedReturnToLifeKeepTheOriginalWorldUntilRetry]' failed (77.494 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testLivingWorldNaturallyPausesForTwoEventsAndRestoresWithoutOfflineChoices]' started.
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/UITests/LifeCrossroadsUITests.swift:28: error: -[LifeCrossroadsUITests.LifeCrossroadsUITests testLivingWorldNaturallyPausesForTwoEventsAndRestoresWithoutOfflineChoices] : XCTAssertTrue failed
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testLivingWorldNaturallyPausesForTwoEventsAndRestoresWithoutOfflineChoices]' failed (28.575 seconds).
+Test Suite 'LifeCrossroadsUITests' failed at 2026-10-24 12:37:29.079.
+	 Executed 2 tests, with 2 failures (0 unexpected) in 106.070 (106.076) seconds
+Test Suite 'LifeCrossroadsUITests.xctest' failed at 2026-10-24 12:37:29.079.
+	 Executed 2 tests, with 2 failures (0 unexpected) in 106.070 (106.077) seconds
+Test Suite 'Selected tests' failed at 2026-10-24 12:37:29.080.
+	 Executed 2 tests, with 2 failures (0 unexpected) in 106.070 (106.081) seconds
+** TEST FAILED **
+Deleted test Simulator: 440C78B1-C5B6-4EBB-9D9C-3D54E7FD06ED

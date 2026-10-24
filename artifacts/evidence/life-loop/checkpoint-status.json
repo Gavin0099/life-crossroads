@@ -1,0 +1,15 @@
+{
+  "status": "WIP_HOLD_SUPERSEDED_BY_PR9",
+  "newSpecificationBase": "c823c820ceea027215df2d2f46c2c0ac4373c871",
+  "newPlanGatePassed": false,
+  "finalFocusedPassed": 4,
+  "finalFocusedFailed": 1,
+  "remainingIssue": "UITest cancellation button selection failed; remaining restart-regression assertions not executed",
+  "oldFullSuitePassed": 10,
+  "oldFullSuiteFailed": 3,
+  "oldFullFailuresCoveredByFinalFocusedPasses": true,
+  "visualClockAccumulated": false,
+  "automaticOutcomeContinuation": false,
+  "usesExistingPNGForProtagonist": false,
+  "notPushedAsNewImplementationPR": true
+}

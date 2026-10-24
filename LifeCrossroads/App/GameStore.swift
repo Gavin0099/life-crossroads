@@ -3,6 +3,7 @@ import SwiftUI
 import LifeDomain
 import LifeData
 import LifePersistence
+import LifePresentation
 #if targetEnvironment(simulator)
 import CryptoKit
 #endif
@@ -14,6 +15,7 @@ final class GameStore: ObservableObject {
     @Published var showingHome = true
     @Published var viewingOriginal = false
     @Published private(set) var restoreFailed = false
+    @Published private(set) var playback = LifePlayback()
     private let saves: SaveRepository
     var session: LifeSession? {
         guard !showingHome else { return nil }
@@ -64,6 +66,7 @@ final class GameStore: ObservableObject {
             do { journey = try saves.load(catalog: catalog) }
             catch { restoreFailed = true; errorMessage = "存檔無法讀取或版本不相容，原檔仍保留。請稍後重試，或明確選擇建立新人生取代紀錄。\(error)" }
         }
+        if let session = journey?.activeSession { playback.restore(session) }
     }
 
     var countries: [CountryProfile] {
@@ -92,8 +95,27 @@ final class GameStore: ObservableObject {
         } catch { errorMessage = "進度尚未寫入，這次操作沒有生效；原紀錄仍保留。\(error)"; return false }
     }
 
+    var canAnimateLife: Bool {
+        !showingHome && !viewingOriginal && errorMessage == nil && session?.phase == .choosing && playback.isRunning
+    }
+    var world: LifeWorldViewState? {
+        guard let session else { return nil }
+        var shownPlayback = playback
+        if viewingOriginal { shownPlayback.restore(session) }
+        return .init(session: session, playback: shownPlayback, event: currentEvent)
+    }
+    func pulseLife() { if canAnimateLife { playback.pulse() } }
+    func pauseLife() { if playback.isRunning { playback.pause() } }
+    func toggleLifePause() { if !showingHome && !viewingOriginal { playback.togglePause() } }
+    func setLifeSpeed(_ speed: LifePlaybackSpeed) { playback.setSpeed(speed) }
+    func skipToEvent() { if session?.phase == .choosing && !viewingOriginal { playback.skip() } }
     func resume() { viewingOriginal = false; showingHome = false }
-    func home() { showingHome = true }
+    func home() { playback.pause(); showingHome = true }
+
+    private func travel(from age: Int, to session: LifeSession) {
+        do { try playback.travel(from: age, to: session.state.age) }
+        catch { playback.restore(session) } // Invalid presentation interval cannot prevent a legal saved decision.
+    }
 
     func start(replay: Bool = false) {
         guard let catalog else { return }
@@ -111,7 +133,10 @@ final class GameStore: ObservableObject {
                 next = try .start(catalog: catalog, countryCode: countryCode,
                                   householdID: "\(countryCode.lowercased())-\(familyNumber)", seed: seed)
             }
-            if commit(.single(next)) { viewingOriginal = false; showingHome = false }
+            if commit(.single(next)) {
+                playback = LifePlayback(); travel(from: 0, to: next)
+                viewingOriginal = false; showingHome = false
+            }
         } catch { errorMessage = "暫時無法開始：\(error)" }
     }
 
@@ -122,17 +147,30 @@ final class GameStore: ObservableObject {
         do {
             let next = try LifeSession.start(catalog: catalog, countryCode: previous.state.countryCode,
                 householdID: previous.state.householdID, seed: differentSeed)
-            if commit(.single(next)) { viewingOriginal = false; showingHome = false }
+            if commit(.single(next)) {
+                playback = LifePlayback(); travel(from: 0, to: next)
+                viewingOriginal = false; showingHome = false
+            }
         } catch { errorMessage = "暫時無法重新開始：\(error)" }
     }
     func choose(_ choiceID: String) {
-        guard let catalog, var active = journey, !viewingOriginal else { return }
-        do { try active.choose(choiceID, catalog: catalog); commit(active) }
+        guard let catalog, var active = journey, !viewingOriginal, playback.phase == .event else { return }
+        do {
+            try active.choose(choiceID, catalog: catalog)
+            if commit(active) { playback.restore(active.activeSession) }
+        }
         catch { errorMessage = "這次選擇尚無法進行：\(error)" }
     }
     func next() {
-        guard let catalog, var active = journey, !viewingOriginal else { return }
-        do { try active.continueLife(catalog: catalog); commit(active) }
+        guard let catalog, var active = journey, !viewingOriginal, playback.phase == .consequence else { return }
+        let previousAge = active.activeSession.state.age
+        do {
+            try active.continueLife(catalog: catalog)
+            if commit(active) {
+                if active.activeSession.phase == .choosing { travel(from: previousAge, to: active.activeSession) }
+                else { playback.restore(active.activeSession) }
+            }
+        }
         catch { errorMessage = "暫時無法推進：\(error)" }
     }
     @discardableResult
@@ -140,7 +178,10 @@ final class GameStore: ObservableObject {
         guard let catalog, let original = journey?.activeSession, experiment == nil else { return false }
         do {
             let next = try BranchExperiment.start(original: original, decisionIndex: index, choiceID: choiceID, catalog: catalog)
-            if commit(.branch(next)) { viewingOriginal = false; showingHome = false; return true }
+            if commit(.branch(next)) {
+                playback.restore(next.alternative)
+                viewingOriginal = false; showingHome = false; return true
+            }
         } catch { errorMessage = "這個岔路尚無法改選：\(error)" }
         return false
     }

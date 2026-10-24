@@ -1,0 +1,23 @@
+Created test Simulator: DFBAF778-6C5E-427A-95B9-CC4BA95DA627
+Test Suite 'Selected tests' started at 2026-10-24 13:05:41.288.
+Test Suite 'LifeCrossroadsUITests.xctest' started at 2026-10-24 13:05:41.290.
+Test Suite 'LifeCrossroadsUITests' started at 2026-10-24 13:05:41.290.
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testCompleteLifeWithVisibleComparisonAndExecutedExplanation]' started.
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testCompleteLifeWithVisibleComparisonAndExecutedExplanation]' passed (167.804 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testLivingWorldNaturallyPausesForTwoEventsAndRestoresWithoutOfflineChoices]' started.
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testLivingWorldNaturallyPausesForTwoEventsAndRestoresWithoutOfflineChoices]' passed (70.939 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testProjectWorkshopDoesNotReactUntilSaveSucceedsWithLargeText]' started.
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testProjectWorkshopDoesNotReactUntilSaveSucceedsWithLargeText]' passed (159.826 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testProjectWorkshopFourReactionsAndRestoredReceipt]' started.
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testProjectWorkshopFourReactionsAndRestoredReceipt]' passed (205.545 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testRestartConfirmationCapturesItsRequestAndCancellationPreservesTheSave]' started.
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/UITests/LifeCrossroadsUITests.swift:101: error: -[LifeCrossroadsUITests.LifeCrossroadsUITests testRestartConfirmationCapturesItsRequestAndCancellationPreservesTheSave] : XCTAssertTrue failed
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testRestartConfirmationCapturesItsRequestAndCancellationPreservesTheSave]' failed (23.878 seconds).
+Test Suite 'LifeCrossroadsUITests' failed at 2026-10-24 13:16:09.306.
+	 Executed 5 tests, with 1 failure (0 unexpected) in 627.992 (628.016) seconds
+Test Suite 'LifeCrossroadsUITests.xctest' failed at 2026-10-24 13:16:09.310.
+	 Executed 5 tests, with 1 failure (0 unexpected) in 627.992 (628.021) seconds
+Test Suite 'Selected tests' failed at 2026-10-24 13:16:09.311.
+	 Executed 5 tests, with 1 failure (0 unexpected) in 627.992 (628.023) seconds
+** TEST FAILED **
+Deleted test Simulator: DFBAF778-6C5E-427A-95B9-CC4BA95DA627

@@ -1,0 +1,67 @@
+Application, 0x114c61180, pid: 46103, label: '人生岔路' <App element pid: 46103>
+  Window (Main), 0x114c612c0, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 46103, elementOrHash.elementID: 4410622976.4>
+    Other, 0x114c61400, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 46103, elementOrHash.elementID: 4454401536.5>
+      Other, 0x114c61540, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 46103, elementOrHash.elementID: 4455669888.6>
+        Other, 0x114c61680, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 46103, elementOrHash.elementID: 4410621952.7>
+          Other, 0x114c617c0, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 46103, elementOrHash.elementID: 4806526848.8>
+            Other, 0x114c61900, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 46103, elementOrHash.elementID: 4411877888.9>
+              NavigationBar, 0x114c61a40, {{0.0, 20.0}, {375.0, 54.0}}, identifier: '人生岔路' <AX element pid: 46103, elementOrHash.elementID: 4455454720.10>
+                Button, 0x114c61b80, {{20.0, 24.0}, {36.0, 36.0}}, label: '回首頁，保留目前進度' <AX element pid: 46103, elementOrHash.elementID: 4829559808.65>
+                StaticText, 0x114c61040, {{153.5, 31.5}, {67.5, 21.0}}, label: '人生岔路' <AX element pid: 46103, elementOrHash.elementID: 4454422656.13>
+                Button, 0x114c60f00, {{262.0, 24.0}, {40.0, 36.0}}, label: '說明與資料' <AX element pid: 46103, elementOrHash.elementID: 4802783872.14>
+                Button, 0x114c60dc0, {{318.0, 24.0}, {37.0, 36.0}}, identifier: 'restartMenu', label: '重新開始這段人生' <AX element pid: 46103, elementOrHash.elementID: 4829529984.66>
+              Other, 0x114c60c80, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 46103, elementOrHash.elementID: 4411915584.11>
+                Other, 0x114c62e40, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 46103, elementOrHash.elementID: 4454423104.15>
+                  Other, 0x114c62d00, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 46103, elementOrHash.elementID: 4457299968.17>
+                    Other, 0x114c62bc0, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 46103, elementOrHash.elementID: 4806534528.18>
+                      Other, 0x114c62a80, {{-4.5, 82.0}, {384.0, 152.0}}, identifier: 'lifeWorldScene', label: '13歲的想像河畔，傍晚。沐沐在河岸留下一次互動；樹老師在河岸留下一次互動。畫面已停住。這是共用想像舞台，不是各國實景。', value: 13歲留下的記號：13歲：用線上圖解... <AX element pid: 46103, elementOrHash.elementID: 4806527008.67>
+                        Image, 0x114c62940, {{122.9, 97.4}, {221.4, 119.2}}, label: 'StoryCast' <AX element pid: 46103, elementOrHash.elementID: 4457682080.421>
+                        Image, 0x114c62800, {{191.9, 217.1}, {10.9, 10.0}}, identifier: 'note.text', label: '附註' <AX element pid: 46103, elementOrHash.elementID: 4806530688.146>
+                        Image, 0x114c626c0, {{212.5, 217.1}, {10.9, 10.0}}, identifier: 'note.text', label: '附註' <AX element pid: 46103, elementOrHash.elementID: 4874861888.255>
+                        Image, 0x114c62580, {{230.3, 216.6}, {16.7, 10.7}}, identifier: 'laptopcomputer', label: '筆記型電腦' <AX element pid: 46103, elementOrHash.elementID: 4806537568.482>
+                      ScrollView, 0x114c62440, {{0.0, 234.0}, {375.0, 433.0}} <AX element pid: 46103, elementOrHash.elementID: 4874636288.480>
+                        Other, 0x114c62300, {{0.0, 234.0}, {375.0, 1302.5}} <AX element pid: 46103, elementOrHash.elementID: 4411876352.483>
+                          StaticText, 0x114c621c0, {{18.0, 252.0}, {101.0, 24.0}}, label: '沐沐 · 13歲' <AX element pid: 46103, elementOrHash.elementID: 4806529568.485>
+                          StaticText, 0x114c62080, {{323.5, 259.5}, {33.5, 14.5}}, label: '4 / 15' <AX element pid: 46103, elementOrHash.elementID: 4806540768.486>
+                          StaticText, 0x114c61f40, {{18.0, 283.0}, {144.5, 14.5}}, label: '日本 · 青少年 · 學習與人際' <AX element pid: 46103, elementOrHash.elementID: 4806534048.487>
+                          ProgressIndicator, 0x114c62f80, {{18.0, 304.5}, {339.0, 4.0}}, label: '已完成4段，共15段', value: 27% <AX element pid: 46103, elementOrHash.elementID: 4806531008.488>
+                            ProgressIndicator, 0x114c630c0, {{18.0, 294.5}, {339.0, 24.0}}, value: 27% <AX element pid: 46103, elementOrHash.elementID: 4454413312.505>
+                          StaticText, 0x114c63200, {{20.0, 326.9}, {91.0, 14.5}}, label: '這次選擇之後' <AX element pid: 46103, elementOrHash.elementID: 4806530208.489>
+                          StaticText, 0x114c63340, {{18.0, 358.0}, {230.5, 26.5}}, identifier: 'chosenAction', label: '用線上圖解製作互動作品', value: invest <AX element pid: 46103, elementOrHash.elementID: 4806528608.490>
+                          StaticText, 0x114c63480, {{18.0, 400.5}, {104.5, 18.0}}, identifier: 'outcomeEvent', label: '想參加共同創作', value: teen-project <AX element pid: 46103, elementOrHash.elementID: 4806528768.491>
+                          Button, 0x114c635c0, {{-59.5, 434.5}, {488.0, 525.5}}, identifier: 'projectDetails', label: '查看創作桌的詳細紀錄' <AX element pid: 46103, elementOrHash.elementID: 4806529408.492>
+                            StaticText, 0x114c63700, {{18.0, 434.5}, {339.0, 28.5}}, label: '查看創作桌的詳細紀錄' <AX element pid: 46103, elementOrHash.elementID: 4806529088.506>
+                            Image, 0x114c63840, {{345.8, 445.8}, {12.0, 7.0}}, identifier: 'expanded' <AX element pid: 46103, elementOrHash.elementID: 4806529248.507>
+                          StaticText, 0x114c63980, {{32.0, 671.0}, {294.5, 18.0}}, identifier: 'projectDetails', label: '沐沐把線上圖解放上創作桌，留下一次練習。' <AX element pid: 46103, elementOrHash.elementID: 4874861568.515>
+                          StaticText, 0x114c63ac0, {{32.0, 699.0}, {129.5, 14.5}}, identifier: 'projectDetails', label: '時間 3 · 精力 2 · 材料 1' <AX element pid: 46103, elementOrHash.elementID: 4874860448.516>
+                          StaticText, 0x114c63c00, {{33.5, 723.5}, {145.5, 14.5}}, identifier: 'projectDetails', label: '與樹老師留下互動紀錄' <AX element pid: 46103, elementOrHash.elementID: 4806538848.517>
+                          StaticText, 0x114c63d40, {{32.0, 748.0}, {205.5, 18.0}}, identifier: 'projectDetails', label: '故事記錄：留下線上創作經驗。' <AX element pid: 46103, elementOrHash.elementID: 4806530528.518>
+                          StaticText, 0x114c63e80, {{34.0, 777.5}, {265.5, 39.5}}, identifier: 'projectDetails', label: '一起準備的人陪你練習，也成為這段故事裡的重要夥伴。' <AX element pid: 46103, elementOrHash.elementID: 4806539328.519>
+                          StaticText, 0x113618640, {{33.0, 827.0}, {301.5, 14.5}}, identifier: 'projectDetails', label: '留下1條延後線索，還沒發生；不是獲獎或邀請保證。' <AX element pid: 46103, elementOrHash.elementID: 4806534688.520>
+                          StaticText, 0x114c74000, {{32.0, 851.5}, {260.0, 30.5}}, identifier: 'projectDetails', label: '本次實際參與：你的選擇、家庭安排、環境條件、他人的協助' <AX element pid: 46103, elementOrHash.elementID: 4806534208.521>
+                          StaticText, 0x114c74140, {{32.0, 892.0}, {310.5, 30.5}}, identifier: 'projectDetails', label: '取自這次已保存的選擇紀錄；作品是否完成、後續機會仍待後面的故事。', value: teen-project/13/in... <AX element pid: 46103, elementOrHash.elementID: 4806533888.522>
+                          StaticText, 0x114c74280, {{32.0, 932.5}, {165.0, 13.5}}, identifier: 'projectDetails', label: '共用的想像工作室 · 不是各國實景' <AX element pid: 46103, elementOrHash.elementID: 4806539168.523>
+                          StaticText, 0x114c743c0, {{37.5, 994.5}, {128.5, 20.5}}, label: '已發生的變化' <AX element pid: 46103, elementOrHash.elementID: 4806538368.493>
+                          StaticText, 0x114c74500, {{36.0, 1028.0}, {235.5, 20.5}}, identifier: 'outcomeResources', label: '財務安全 -1 · 人際 +1 · 技能 +5', value: 選前：健康72 · 財務35 · 人... <AX element pid: 46103, elementOrHash.elementID: 4874862368.494>
+                          StaticText, 0x114c74640, {{36.0, 1061.5}, {297.0, 44.0}}, identifier: 'roundTimeFeedback', label: '這一段日子，沐沐用了3格時間，有3格沒有用在這個行動上。' <AX element pid: 46103, elementOrHash.elementID: 4874861248.495>
+                          Button, 0x114c74780, {{18.0, 1139.5}, {182.0, 50.5}}, identifier: 'whyResult', label: '為什麼會這樣？' <AX element pid: 46103, elementOrHash.elementID: 4874850688.496>
+                            StaticText, 0x114c748c0, {{18.0, 1139.5}, {182.0, 50.5}}, label: '為什麼會這樣？' <AX element pid: 46103, elementOrHash.elementID: 4874853248.508>
+                            Image, 0x114c74a00, {{39.5, 1156.0}, {17.0, 17.0}}, identifier: 'questionmark.circle', label: '圓圈中的問號' <AX element pid: 46103, elementOrHash.elementID: 4874856448.509>
+                          Button, 0x114c74b40, {{18.0, 1206.0}, {185.5, 50.5}}, identifier: 'compareChosen', label: '比較剛才的行動' <AX element pid: 46103, elementOrHash.elementID: 4874860768.497>
+                            StaticText, 0x114c74c80, {{18.0, 1206.0}, {185.5, 50.5}}, label: '比較剛才的行動' <AX element pid: 46103, elementOrHash.elementID: 4874857888.510>
+                            Image, 0x114c74dc0, {{40.0, 1223.0}, {15.5, 16.0}}, identifier: 'arrow.triangle.branch', label: '分開' <AX element pid: 46103, elementOrHash.elementID: 4874860288.511>
+                          StaticText, 0x114c74f00, {{20.0, 1273.0}, {335.5, 38.0}}, identifier: 'recordedStoryMemory', label: '這個選擇已留下故事記錄，可能影響未來的邀請與行動；仍不保證一定遇見。' <AX element pid: 46103, elementOrHash.elementID: 4874861408.498>
+                          Button, 0x114c75040, {{18.0, 1327.0}, {339.0, 28.5}}, identifier: 'eventSelectionDetails', label: '怎麼遇到這件事？' <AX element pid: 46103, elementOrHash.elementID: 4874854368.499>
+                            StaticText, 0x114c75180, {{18.0, 1327.0}, {339.0, 28.5}}, identifier: 'eventSelectionDetails', label: '怎麼遇到這件事？' <AX element pid: 46103, elementOrHash.elementID: 4874851168.512>
+                            Image, 0x114c752c0, {{349.0, 1335.5}, {7.0, 12.0}}, identifier: 'collapsed' <AX element pid: 46103, elementOrHash.elementID: 4874854048.513>
+                          StaticText, 0x114c75400, {{18.0, 1371.5}, {323.0, 34.0}}, identifier: 'roundBudgetExplanation', label: '時間、精力和材料額度只用於這一回合；下一回合會重新安排，剩下的格數不會累積。' <AX element pid: 46103, elementOrHash.elementID: 4874856128.500>
+                          StaticText, 0x114c75540, {{18.0, 1421.5}, {333.0, 34.0}}, label: '健康、財務安全、人際與技能會延續；選擇也會留下紀錄。沒有唯一正確的答案，下一段仍能調整或求助。' <AX element pid: 46103, elementOrHash.elementID: 4874856768.501>
+                          StaticText, 0x114c75680, {{18.0, 1473.5}, {98.5, 13.5}}, identifier: 'uiTestArchiveChecksum', label: '自動化測試存檔校驗', value: a9246db2a5f59b98b2... <AX element pid: 46103, elementOrHash.elementID: 4874854528.502>
+                          StaticText, 0x114c757c0, {{18.0, 1505.0}, {44.0, 13.5}}, identifier: 'uiTestPlaybackState', label: '播放驗證', value: consequence|true|1... <AX element pid: 46103, elementOrHash.elementID: 4874862048.503>
+                        Other, 0x114c75900, {{342.0, 234.0}, {30.0, 338.5}}, label: '垂直捲軸, 4頁', value: 0% <AX element pid: 46103, elementOrHash.elementID: 4455578112.484>
+                          Other, 0x114c75a40, {{369.0, 237.0}, {3.0, 160.0}} <AX element pid: 46103, elementOrHash.elementID: 4806554304.504>
+                        Other, 0x114c75b80, {{342.0, 234.0}, {30.0, 338.5}}, label: '垂直捲軸, 4頁', value: 0% <AX element pid: 46103, elementOrHash.elementID: 4455578112.484>
+                          Other, 0x114c75cc0, {{369.0, 237.0}, {3.0, 160.0}} <AX element pid: 46103, elementOrHash.elementID: 4806554304.504>
+                      Button, 0x114c75e00, {{16.0, 596.5}, {343.0, 54.5}}, identifier: 'continueLife', label: '回到生活' <AX element pid: 46103, elementOrHash.elementID: 4874858528.481>
+              Toolbar, 0x114c75f40, {{0.0, 0.0}, {375.0, 667.0}}, identifier: 'Toolbar', label: '工具列' <AX element pid: 46103, elementOrHash.elementID: 4411882496.12>
+                Other, 0x114c76080, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 46103, elementOrHash.elementID: 4412047360.16>

@@ -1,0 +1,41 @@
+Created test Simulator: 2C7543FB-7377-4795-B248-41882277822F
+Test Suite 'All tests' started at 2026-10-24 12:40:18.903.
+Test Suite 'LifeCrossroadsUITests.xctest' started at 2026-10-24 12:40:18.921.
+Test Suite 'LifeCrossroadsUITests' started at 2026-10-24 12:40:18.921.
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testCompleteLifeWithVisibleComparisonAndExecutedExplanation]' started.
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/UITests/LifeCrossroadsUITests.swift:283: error: -[LifeCrossroadsUITests.LifeCrossroadsUITests testCompleteLifeWithVisibleComparisonAndExecutedExplanation] : XCTAssertTrue failed
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testCompleteLifeWithVisibleComparisonAndExecutedExplanation]' failed (177.900 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testDecisionCardWhitespaceIsTappable]' started.
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testDecisionCardWhitespaceIsTappable]' passed (22.258 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testEightCountriesAndTaiwanComparisonLimitsAreVisible]' started.
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testEightCountriesAndTaiwanComparisonLimitsAreVisible]' passed (60.806 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testForkPreservesOriginalResumesAfterRelaunchAndComparesFullRemainder]' started.
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testForkPreservesOriginalResumesAfterRelaunchAndComparesFullRemainder]' passed (408.514 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testInvalidDevelopmentSeedDoesNotStartALife]' started.
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testInvalidDevelopmentSeedDoesNotStartALife]' passed (17.328 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testLargeTextSkipAndFailedReturnToLifeKeepTheOriginalWorldUntilRetry]' started.
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testLargeTextSkipAndFailedReturnToLifeKeepTheOriginalWorldUntilRetry]' passed (60.448 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testLivingWorldNaturallyPausesForTwoEventsAndRestoresWithoutOfflineChoices]' started.
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testLivingWorldNaturallyPausesForTwoEventsAndRestoresWithoutOfflineChoices]' passed (53.935 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testMaximumTextCanReachActionsReasonComparisonAndContinue]' started.
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testMaximumTextCanReachActionsReasonComparisonAndContinue]' passed (90.660 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testProjectWorkshopDoesNotReactUntilSaveSucceedsWithLargeText]' started.
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/UITests/LifeCrossroadsUITests.swift:651: error: -[LifeCrossroadsUITests.LifeCrossroadsUITests testProjectWorkshopDoesNotReactUntilSaveSucceedsWithLargeText] : Failed to get matching snapshot: No matches found for Elements matching predicate '"projectMemory" IN identifiers' from input {(
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testProjectWorkshopDoesNotReactUntilSaveSucceedsWithLargeText]' failed (210.903 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testProjectWorkshopFourReactionsAndRestoredReceipt]' started.
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/UITests/LifeCrossroadsUITests.swift:103: error: -[LifeCrossroadsUITests.LifeCrossroadsUITests testProjectWorkshopFourReactionsAndRestoredReceipt] : Failed to get matching snapshot: No matches found for Elements matching predicate '"projectSceneCaption" IN identifiers' from input {(
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testProjectWorkshopFourReactionsAndRestoredReceipt]' failed (32.594 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testRestAfterChoiceComparisonKeepsThePreChoiceState]' started.
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testRestAfterChoiceComparisonKeepsThePreChoiceState]' passed (23.119 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testSaveFailuresKeepScreenAndArchiveThenRetryAndRelaunch]' started.
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testSaveFailuresKeepScreenAndArchiveThenRetryAndRelaunch]' passed (28.565 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testSeedZeroOneTwoShowActualSelectedEvents]' started.
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testSeedZeroOneTwoShowActualSelectedEvents]' passed (74.697 seconds).
+Test Suite 'LifeCrossroadsUITests' failed at 2026-10-24 13:01:20.680.
+	 Executed 13 tests, with 3 failures (0 unexpected) in 1261.729 (1261.758) seconds
+Test Suite 'LifeCrossroadsUITests.xctest' failed at 2026-10-24 13:01:20.685.
+	 Executed 13 tests, with 3 failures (0 unexpected) in 1261.729 (1261.764) seconds
+Test Suite 'All tests' failed at 2026-10-24 13:01:20.686.
+	 Executed 13 tests, with 3 failures (0 unexpected) in 1261.729 (1261.782) seconds
+** TEST FAILED **
+Deleted test Simulator: 2C7543FB-7377-4795-B248-41882277822F

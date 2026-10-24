@@ -1,0 +1,8 @@
+Created test Simulator: 47E54A0B-3452-4AD2-B97E-502D405B821C
+Test Suite 'Selected tests' started at 2026-10-24 13:03:07.861.
+Test Suite 'LifeCrossroadsUITests.xctest' started at 2026-10-24 13:03:07.862.
+Test Suite 'LifeCrossroadsUITests' started at 2026-10-24 13:03:07.862.
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testCompleteLifeWithVisibleComparisonAndExecutedExplanation]' started.
+** BUILD INTERRUPTED **
+Terminated: 15
+Deleted test Simulator: 47E54A0B-3452-4AD2-B97E-502D405B821C

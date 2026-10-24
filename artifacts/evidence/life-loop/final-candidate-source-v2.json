@@ -1,0 +1,12 @@
+{
+  "LifeCrossroads/App/CrossroadsView.swift": "0e1d82aba4f124e8a392d580d18e126a021ae5fca5694f7dbf22eb1b7530aed0",
+  "LifeCrossroads/App/GameStore.swift": "0ed08ae4b223dfb3eeb48149988a182d5c81c23fd4e9d2116fc947ee975d5bca",
+  "LifeCrossroads/App/LifeWorldScene.swift": "311a1aef9dbf14cea5a739faea04819ac6ddbd645e1461d0760cf5bcfd304ad9",
+  "LifeCrossroads/Presentation/LifePlayback.swift": "f8c8f206394bb36a82c480937dfaed9bcc2344cc7f83652178da1cb2b0a27ef3",
+  "LifeCrossroads/Presentation/LifeWorldViewState.swift": "68957507afc2533d1890abf5d82761cd4f87eb0c0911ff689ff5d9e5a0d5c1cc",
+  "UITests/LifeCrossroadsUITests.swift": "a0a4cac03a82746c36556677c187d7eeb3cf192ca1fd04a5ed5cdd2c033652f5",
+  "Tests/LifePresentationTests/LifePlaybackTests.swift": "4ae251bef9a7994cdf4453ccf5bf36824daea50630c44aab43466271fec5e741",
+  "LifeCrossroads.xcodeproj/project.pbxproj": "3c1b5c91abab3fc750c253a9563bd49fdd9e93b86ba7efe3df8300578bb294ed",
+  "Package.swift": "0d63b08982e8f4763df1ab52893ddbc0527915c0dd020ab22e38ebfde8248baa",
+  ".github/workflows/governance-drift.yml": "ec0b493422120469f916e8d458fd95259bab6f8c7169e099a7f5d05eb3e4c53c"
+}
