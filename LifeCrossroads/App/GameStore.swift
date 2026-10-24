@@ -13,9 +13,10 @@ final class GameStore: ObservableObject {
     @Published private(set) var playback = WorldPlayback()
     @Published var worldPreviewEnabled = !ProcessInfo.processInfo.arguments.contains("-legacy-event-first")
     private var now: Double { ProcessInfo.processInfo.systemUptime }
+    @Published private(set) var projectedWorld: LifeWorldFrame?
     var world: LifeWorldFrame? {
-        guard let session, let catalog else { return nil }
-        return (try? WorldMomentProjector.project(session: session, catalog: catalog))?.presenting(playback.phase)
+        guard session != nil, !viewingOriginal else { return nil }
+        return projectedWorld?.presenting(playback.phase)
     }
     var canAnimateWorld: Bool {
         worldPreviewEnabled && session != nil && !viewingOriginal && errorMessage == nil && playback.isRunning
@@ -33,7 +34,11 @@ final class GameStore: ObservableObject {
         if let ticket = playback.skip(now: now) { advanceWorld(ticket) }
     }
     private func bindWorld(restoring: Bool = false, reset: Bool = false) {
-        if let session { playback.bind(session, now: now, restoring: restoring, reset: reset) }
+        if let session, let catalog {
+            // Project once from the saved/restored session, never from presentation ticks.
+            projectedWorld = try? WorldMomentProjector.project(session: session, catalog: catalog)
+            playback.bind(session, now: now, restoring: restoring, reset: reset)
+        }
     }
     private func advanceWorld(_ ticket: WorldAdvanceTicket) {
         guard let session, !viewingOriginal, playback.accepts(ticket, session: session),

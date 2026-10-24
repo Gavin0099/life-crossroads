@@ -24,6 +24,7 @@ final class LifeCrossroadsUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["livingTitle"].waitForExistence(timeout: 8), "Saved outcome returns to living without Continue")
         XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 8))
         XCTAssertNotEqual(app.staticTexts["eventTitle"].value as? String, first)
+        XCTAssertTrue(app.otherElements["lifeWorldScene"].label.contains("10歲"), "World cache must follow the committed session, not the old event")
         attachScreenshot("world-second-real-event", app: app)
         // Normal-speed second outcome must naturally resume too.
         app.buttons["worldSpeed"].tap()
@@ -127,6 +128,7 @@ final class LifeCrossroadsUITests: XCTestCase {
         attachScreenshot("world-reduced-motion-committed", app: app)
         app.buttons["continueLife"].tap(); skipWorldMontage(app)
         XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, "child-friend")
+        XCTAssertTrue(scene.label.contains("10歲"))
         // The setting uses the same branch as the system preference, but this case does not
         // claim that iOS VoiceOver focus or the system Settings UI was manually tested.
     }
