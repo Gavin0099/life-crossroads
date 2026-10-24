@@ -1,39 +1,46 @@
 {
   "mode": "VALIDATION",
   "mode_source": "validation_command",
-  "task": "LIFE-LOOP Visual 前置預查",
-  "task_authority": "user_request / PR9 c823c82",
+  "task": "LIFE-LOOP Visual continued shared-renderer delta",
+  "task_authority": "user correction to continue original10h plan",
   "scope": [
-    "LifeWorldScenePreview isolated fixture",
-    "official MOTION/HANDOFF",
-    "evidence and canonical memory"
+    "existing integrated7040802 Scene",
+    "unchanged Motion fromA",
+    "isolated saved-session UI evidence",
+    "canonical memory and handoff"
   ],
   "done": [
-    "pinned motion source audit",
-    "Swift6 compilation",
-    "7 pure sampling checks and 8 macOS native frames"
+    "pre-layout bitmap cropping and larger hero in existing interface",
+    "native isolated UI5/5 on each phone",
+    "8 adopted-motion checks",
+    "26 saved-source checks",
+    "24 native screenshot gallery",
+    "13 dedicated devices deleted"
   ],
   "claim_ceiling": [
-    "VW-01 PARTIAL; not production integration"
+    "Visual delta ready for A integration; overall PARTIAL/HOLD"
   ],
   "not_claimed": [
-    "LL-01 formal DTO",
-    "VW-02–04 acceptance",
-    "G1–G6",
-    "iOS Simulator or device validation",
-    "new raster art",
+    "formal App full regression",
+    "pending-clue negative case in these fixed seeds",
+    "independent visual PASS",
+    "G1-G6",
+    "exact team Agent-hours or10h completion",
     "merge or release"
   ],
   "risk": [
-    "Fixture does not prove Gameplay clock/controller correctness; downstream adapter awaits LL-01 shared SHA."
+    "A integration must use narrow delta vs7040802, not merge historical alternative branch",
+    "Gameplay has parallel Visualr2 contribution; reconcile original shared2h, not another2h"
   ],
-  "next_action": "Await Gameplay LL-01 published SHA, then adapt readonly world and accumulated presentation time.",
+  "next_action": "A integrates renderer delta, runs formal flow/clock/failure regression and independent review within original team budget.",
   "evidence_refs": [
-    "source-binding.json",
-    "preview-validation.json",
-    "scope-check.json",
+    "native-source-binding.json",
+    "saved-source-validation.json",
+    "actual-motion-validation.json",
+    "gallery-index.json",
+    "simulator-cleanup-summary.json",
     "governance-basic.json",
     "memory-workflow.txt"
   ],
-  "publish_state": "Implementation8309845 locally committed; documentation companion/push pending at record time"
+  "publish_state_at_record": "Implementation803539c committed; evidence/memory companion and push pending"
 }

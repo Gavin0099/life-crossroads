@@ -1,0 +1,74 @@
+[
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "171267C7-DC9C-4395-A92B-243FDED48622",
+        "deviceName" : "VisualFixture-narrow-20261024T055129Z",
+        "exportedFileName" : "34FE90F4-C39B-4A24-B9CD-103F881C80C9.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "03-adult_0_6767AEF5-990C-4AB2-9BA7-21DC7A195A26.png",
+        "timestamp" : 1792821234.103
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "171267C7-DC9C-4395-A92B-243FDED48622",
+        "deviceName" : "VisualFixture-narrow-20261024T055129Z",
+        "exportedFileName" : "C1706812-A2D8-4E10-8F2F-406E4D281A62.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "02-teen_0_2964662D-D38B-4ABD-BBEE-66676E3F3FAF.png",
+        "timestamp" : 1792821233.046
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "171267C7-DC9C-4395-A92B-243FDED48622",
+        "deviceName" : "VisualFixture-narrow-20261024T055129Z",
+        "exportedFileName" : "77E89B48-BEE3-4A4A-9E63-2807B5F80698.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "01-child_0_A6B2FD26-48B0-4991-93A7-0A3F58631FE0.png",
+        "timestamp" : 1792821231.684
+      }
+    ],
+    "testIdentifier" : "VisualFixtureUITests/testLargeSceneAndThreeAgeFixtures()",
+    "testIdentifierURL" : "test://com.apple.xcode/VisualFixture/LifeCrossroadsUITests/VisualFixtureUITests/testLargeSceneAndThreeAgeFixtures"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "171267C7-DC9C-4395-A92B-243FDED48622",
+        "deviceName" : "VisualFixture-narrow-20261024T055129Z",
+        "exportedFileName" : "A4CDB5D8-29F8-46ED-B4C6-2977DC9FCA1E.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "04-largest-first-screen_0_E658565F-C5A2-4F00-A362-32F60D088706.png",
+        "timestamp" : 1792821242.413
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "171267C7-DC9C-4395-A92B-243FDED48622",
+        "deviceName" : "VisualFixture-narrow-20261024T055129Z",
+        "exportedFileName" : "7C2F1C1F-E60F-45B0-BB28-A9A8BCDE9452.mp4",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Screen Recording 2026-10-24 at 01.53.54 下午.mp4",
+        "timestamp" : 1792821234.75
+      }
+    ],
+    "testIdentifier" : "VisualFixtureUITests/testLargestTextCanReachStageAndFullBoundaryText()",
+    "testIdentifierURL" : "test://com.apple.xcode/VisualFixture/LifeCrossroadsUITests/VisualFixtureUITests/testLargestTextCanReachStageAndFullBoundaryText"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "171267C7-DC9C-4395-A92B-243FDED48622",
+        "deviceName" : "VisualFixture-narrow-20261024T055129Z",
+        "exportedFileName" : "20938E6B-BB5A-4BB2-B448-7B10A0896F6D.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "06-reduced-teen_0_95042764-9FDE-4826-9EAB-D347F83D1AF8.png",
+        "timestamp" : 1792821278.812
+      }
+    ],
+    "testIdentifier" : "VisualFixtureUITests/testReducedFixtureRetainsAgeAndResultBoundary()",
+    "testIdentifierURL" : "test://com.apple.xcode/VisualFixture/LifeCrossroadsUITests/VisualFixtureUITests/testReducedFixtureRetainsAgeAndResultBoundary"
+  }
+]

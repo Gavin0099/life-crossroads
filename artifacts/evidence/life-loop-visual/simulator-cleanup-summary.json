@@ -1,0 +1,157 @@
+{
+  "devices_owned": 13,
+  "all_deleted": true,
+  "shared_runtimes_deleted": false,
+  "other_tasks_devices_deleted": false,
+  "receipts": [
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "C9AD7EC1-C8A3-4B8B-840C-9919A70864EE",
+      "deleted": true,
+      "test_exit_code": 65,
+      "xcresult_local": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/life-loop-visual-ios/narrow-20261024T054646Z/result.xcresult",
+      "absent_from_inventory": true,
+      "receipt": "artifacts/evidence/life-loop-visual/ios/narrow-20261024T054646Z/simulator-cleanup.json",
+      "final_inventory_absent": true
+    },
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "171267C7-DC9C-4395-A92B-243FDED48622",
+      "deleted": true,
+      "test_exit_code": 65,
+      "xcresult_local": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/life-loop-visual-ios/narrow-20261024T055129Z/result.xcresult",
+      "absent_from_inventory": true,
+      "receipt": "artifacts/evidence/life-loop-visual/ios/narrow-20261024T055129Z/simulator-cleanup.json",
+      "final_inventory_absent": true
+    },
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "2301D0BC-8C99-4184-AA89-B88C5EB9CB39",
+      "deleted": true,
+      "test_exit_code": -15,
+      "xcresult_local": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/life-loop-visual-ios/narrow-20261024T055747Z/result.xcresult",
+      "absent_from_inventory": true,
+      "receipt": "artifacts/evidence/life-loop-visual/ios/narrow-20261024T055747Z/simulator-cleanup.json",
+      "final_inventory_absent": true
+    },
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "90766ED1-9B52-45F7-9C96-B2C085341BDF",
+      "deleted": true,
+      "test_exit_code": 0,
+      "xcresult_local": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/life-loop-visual-ios/narrow-20261024T060445Z/result.xcresult",
+      "absent_from_inventory": true,
+      "receipt": "artifacts/evidence/life-loop-visual/ios/narrow-20261024T060445Z/simulator-cleanup.json",
+      "final_inventory_absent": true
+    },
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "7A82DD93-6BB2-49AE-B220-8A7B2559180E",
+      "deleted": true,
+      "process_timeout_seconds": 1.0,
+      "test_exit_code": 124,
+      "xcresult_local": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/life-loop-visual-ios/narrow-20261024T061234Z/result.xcresult",
+      "result_bundle_readable": false,
+      "absent_from_inventory": true,
+      "receipt": "artifacts/evidence/life-loop-visual/ios/narrow-20261024T061234Z/simulator-cleanup.json",
+      "final_inventory_absent": true
+    },
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "233CB422-5030-4333-A1BD-B413D8E49AEF",
+      "deleted": true,
+      "test_exit_code": 0,
+      "xcresult_local": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/life-loop-visual-ios/narrow-20261024T061320Z/result.xcresult",
+      "result_bundle_readable": true,
+      "absent_from_inventory": true,
+      "receipt": "artifacts/evidence/life-loop-visual/ios/narrow-20261024T061320Z/simulator-cleanup.json",
+      "final_inventory_absent": true
+    },
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "BC86F116-93F9-413F-9500-4348DCDD3EF0",
+      "deleted": true,
+      "test_exit_code": 0,
+      "xcresult_local": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/life-loop-visual-ios/narrow-20261024T061948Z/result.xcresult",
+      "result_bundle_readable": true,
+      "absent_from_inventory": true,
+      "receipt": "artifacts/evidence/life-loop-visual/ios/narrow-20261024T061948Z/simulator-cleanup.json",
+      "final_inventory_absent": true
+    },
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "781E58FF-0C3F-4CB1-9118-C67F6A06DD79",
+      "deleted": true,
+      "test_exit_code": 65,
+      "xcresult_local": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/life-loop-visual-ios/standard-20261024T054702Z/result.xcresult",
+      "absent_from_inventory": true,
+      "receipt": "artifacts/evidence/life-loop-visual/ios/standard-20261024T054702Z/simulator-cleanup.json",
+      "final_inventory_absent": true
+    },
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "6B140AEB-3387-4C21-A1AA-FE0BF841F530",
+      "deleted": true,
+      "test_exit_code": 65,
+      "xcresult_local": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/life-loop-visual-ios/standard-20261024T055138Z/result.xcresult",
+      "absent_from_inventory": true,
+      "receipt": "artifacts/evidence/life-loop-visual/ios/standard-20261024T055138Z/simulator-cleanup.json",
+      "final_inventory_absent": true
+    },
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+      "deleted": true,
+      "test_exit_code": 65,
+      "xcresult_local": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/life-loop-visual-ios/standard-20261024T055756Z/result.xcresult",
+      "absent_from_inventory": true,
+      "receipt": "artifacts/evidence/life-loop-visual/ios/standard-20261024T055756Z/simulator-cleanup.json",
+      "final_inventory_absent": true
+    },
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "B9D0EE38-A3D3-46DB-968B-39AAF2628563",
+      "deleted": true,
+      "test_exit_code": 0,
+      "xcresult_local": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/life-loop-visual-ios/standard-20261024T060446Z/result.xcresult",
+      "absent_from_inventory": true,
+      "receipt": "artifacts/evidence/life-loop-visual/ios/standard-20261024T060446Z/simulator-cleanup.json",
+      "final_inventory_absent": true
+    },
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "90DB8671-E6F6-4D79-9CAA-3E1E687076C7",
+      "deleted": true,
+      "test_exit_code": 0,
+      "xcresult_local": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/life-loop-visual-ios/standard-20261024T061321Z/result.xcresult",
+      "result_bundle_readable": true,
+      "absent_from_inventory": true,
+      "receipt": "artifacts/evidence/life-loop-visual/ios/standard-20261024T061321Z/simulator-cleanup.json",
+      "final_inventory_absent": true
+    },
+    {
+      "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "device_id": "6C303238-0860-47B5-B450-8221DF54E899",
+      "deleted": true,
+      "test_exit_code": 0,
+      "xcresult_local": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/life-loop-visual-ios/standard-20261024T061950Z/result.xcresult",
+      "result_bundle_readable": true,
+      "absent_from_inventory": true,
+      "receipt": "artifacts/evidence/life-loop-visual/ios/standard-20261024T061950Z/simulator-cleanup.json",
+      "final_inventory_absent": true
+    }
+  ]
+}

@@ -1,0 +1,320 @@
+[
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "C43B34B0-6CEC-47AF-998B-EA030E0EBC32.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "App UI hierarchy for com.gavin0099_0_90089FA7-0CA0-4F0F-B387-F5958E0846BC.VisualFixture",
+        "timestamp" : 1792821691.681
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "67C0A8A9-32D8-4F60-B99A-BEBEFA71F4D1",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "UI Snapshot 2026-10-24 at 02.01.31 下午",
+        "timestamp" : 1792821691.681
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "05EA9366-A121-4777-B016-4340691C4C6D.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Debug description for `\"life-world-canvas\" Other`_0_20EF4534-13F9-4A52-8BE7-5D0B0454E1B3.txt",
+        "timestamp" : 1792821691.618
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "4D12FD5E-2E03-4617-AD8F-6A1E426EB9F1.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Debug description for `\"life-world-canvas\" Other`_0_74281758-71D8-4B81-B34B-F1F5A5CCBF2C.txt",
+        "timestamp" : 1792821690.634
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "92167EA6-909C-45BD-B4AF-AE42838D881A.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Debug description for `\"life-world-canvas\" Other`_0_A682CF5F-FAAB-464E-8F2B-6B7C76DCA27F.txt",
+        "timestamp" : 1792821689.8
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "33EEDD35-3A37-487F-8ADB-067518AF3E8D.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Debug description for `\"life-world-canvas\" Other`_0_3A6CB178-99EE-44A3-81AB-687748EB38FC.txt",
+        "timestamp" : 1792821688.7
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "E680A225-185F-480A-A9F3-6DC43F22D84A.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Debug description for `\"life-world-canvas\" Other`_0_CC789213-D6C2-4AF7-9132-DDDA6B31EEB0.txt",
+        "timestamp" : 1792821687.679
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "74E214B5-D2BC-4793-8F6B-A107FC9CEAAD.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Debug description for `\"life-world-canvas\" Other`_0_3083E2EF-32F4-4960-848A-0A04BB3B3651.txt",
+        "timestamp" : 1792821686.628
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "A9F0502D-E78A-4FAE-A10A-EBECB1A92AA7.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Debug description for `\"life-world-canvas\" Other`_0_F79B976B-3CE8-42D5-B1C4-F320F764E3DD.txt",
+        "timestamp" : 1792821685.774
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "198C35E1-771C-40C2-A89F-1B487245A995.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Debug description for `\"life-world-canvas\" Other`_0_7127D154-8E3F-49F1-83C0-4A83E85C234E.txt",
+        "timestamp" : 1792821684.635
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "48847764-91B9-42CB-8C53-48EB366546F5.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Debug description for `\"life-world-canvas\" Other`_0_060031EA-7452-4C74-9A95-2ABD1777474A.txt",
+        "timestamp" : 1792821683.679
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "2405E3F8-B1A5-4F35-982E-B2CAEC38EDC5.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Debug description for `\"life-world-canvas\" Other`_0_60AA073E-A335-4056-8875-D2717B674757.txt",
+        "timestamp" : 1792821682.756
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "6AF8A4A2-0B45-4648-B06F-2BEBABC861D8.mp4",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Screen Recording 2026-10-24 at 02.00.54 下午.mp4",
+        "timestamp" : 1792821654.932
+      }
+    ],
+    "testIdentifier" : "VisualFixtureUITests/testCommittedPaperAndRestUseDifferentRealRecords()",
+    "testIdentifierURL" : "test://com.apple.xcode/VisualFixture/LifeCrossroadsUITests/VisualFixtureUITests/testCommittedPaperAndRestUseDifferentRealRecords"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "430B1C78-A0CE-4C7E-B30D-3F80BA4FE521.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "03-adult_0_7C0BE00C-8439-4B24-AB77-2042B8DC1361.png",
+        "timestamp" : 1792821717.405
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "8CB34AAD-EB45-4A5C-A28A-8164799B2D1B.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "02-teen_0_867814CA-1758-4AA3-949C-69D669852660.png",
+        "timestamp" : 1792821716.82
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "953B6BE8-F50E-47ED-B9AE-3E240E6C02BF.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "01-child_0_C16779A8-899D-415C-A2A9-CC30F81F6FE5.png",
+        "timestamp" : 1792821715.945
+      }
+    ],
+    "testIdentifier" : "VisualFixtureUITests/testLargeSceneAndThreeAgeFixtures()",
+    "testIdentifierURL" : "test://com.apple.xcode/VisualFixture/LifeCrossroadsUITests/VisualFixtureUITests/testLargeSceneAndThreeAgeFixtures"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "9996E292-19D7-4845-8AB1-569886701DBF.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "05-largest-reachable-text_0_B8B6C7E9-02D0-400C-8949-D2AF4DAEA0FC.png",
+        "timestamp" : 1792821737.719
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "457B25C1-E285-4FFB-AB15-B1530CF07708.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "04-largest-first-screen_0_4112BC9B-17A3-4074-A5A3-59B7F6D34989.png",
+        "timestamp" : 1792821728.63
+      }
+    ],
+    "testIdentifier" : "VisualFixtureUITests/testLargestTextCanReachStageAndFullBoundaryText()",
+    "testIdentifierURL" : "test://com.apple.xcode/VisualFixture/LifeCrossroadsUITests/VisualFixtureUITests/testLargestTextCanReachStageAndFullBoundaryText"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "373DBF62-A20B-4C31-9BAB-EB574C49F40C.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "App UI hierarchy for com.gavin0099_0_E499970D-5718-40A9-BEA3-43B2CAFEE4E9.VisualFixture",
+        "timestamp" : 1792821757.468
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "5DB67F13-CE95-433A-9D77-CC5F17019498",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "UI Snapshot 2026-10-24 at 02.02.37 下午",
+        "timestamp" : 1792821757.469
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "622EC3D3-4EAB-4BEE-956E-9D1860AF6B2D.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Debug description for `\"life-world-canvas\" Other`_0_D25E839F-BFA5-4CDB-9684-4B4B84254040.txt",
+        "timestamp" : 1792821757.283
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "679B7425-5B34-40F8-933E-C7A99A46E342.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Debug description for `\"life-world-canvas\" Other`_0_A02182EE-A613-4F04-B333-90416F7E6A98.txt",
+        "timestamp" : 1792821756.193
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "D7159A09-6B2A-4ED7-8770-FDD0545EB899.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Debug description for `\"life-world-canvas\" Other`_0_0F4786AF-0A88-41E5-8684-E3D7D83EB206.txt",
+        "timestamp" : 1792821755.261
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "82289BB5-9D4A-42FC-BF0C-AA967F861DA9.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Debug description for `\"life-world-canvas\" Other`_0_23E9FB99-ED45-4BB2-92EF-6DFE74B56F21.txt",
+        "timestamp" : 1792821754.339
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "A5DBD613-4BA2-4FCC-B281-61FAC22C9498.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Debug description for `\"life-world-canvas\" Other`_0_AB348C8B-5E9A-471E-B2BB-E1B1315E9D23.txt",
+        "timestamp" : 1792821753.318
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "F842F354-DD9F-42B8-9B9B-4BA911C11389.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Debug description for `\"life-world-canvas\" Other`_0_2B5AE915-E83B-4A5A-AC2A-CD0E677F183E.txt",
+        "timestamp" : 1792821752.19
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "EF281507-BD8B-4755-A7DA-7C3391A5DFA7.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Debug description for `\"life-world-canvas\" Other`_0_1AC3FD73-34B9-44AE-8E40-4C57D9759D60.txt",
+        "timestamp" : 1792821751.21
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "2CEFB553-6851-455C-87D1-E8710416C80E.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Debug description for `\"life-world-canvas\" Other`_0_FC02DB88-B8D4-4C38-BF03-624FB3EC5F4C.txt",
+        "timestamp" : 1792821750.239
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "C0AAC62D-3592-4C7F-9F13-2546803619BD.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Debug description for `\"life-world-canvas\" Other`_0_A26D8B9F-BFB4-468A-BE1F-7CC21FE4791E.txt",
+        "timestamp" : 1792821749.188
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "056A1266-705A-44AA-81C9-C8BA4FCC1C87.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Debug description for `\"life-world-canvas\" Other`_0_E3F25327-C0C9-4E7A-9398-7AB4EAC352DA.txt",
+        "timestamp" : 1792821748.324
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "89E38D1A-C8D9-44C3-A867-14FDA4E73434.mp4",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Screen Recording 2026-10-24 at 02.02.20 下午.mp4",
+        "timestamp" : 1792821740.606
+      }
+    ],
+    "testIdentifier" : "VisualFixtureUITests/testRealRecordInspectionLargestTypeRemainsReachable()",
+    "testIdentifierURL" : "test://com.apple.xcode/VisualFixture/LifeCrossroadsUITests/VisualFixtureUITests/testRealRecordInspectionLargestTypeRemainsReachable"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+        "deviceName" : "VisualFixture-standard-20261024T055756Z",
+        "exportedFileName" : "647789AA-D799-4277-9A0F-3D1B4790D9BD.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "06-reduced-teen_0_54AFC381-04B4-4540-A888-A13E23D03CC4.png",
+        "timestamp" : 1792821771.177
+      }
+    ],
+    "testIdentifier" : "VisualFixtureUITests/testReducedFixtureRetainsAgeAndResultBoundary()",
+    "testIdentifierURL" : "test://com.apple.xcode/VisualFixture/LifeCrossroadsUITests/VisualFixtureUITests/testReducedFixtureRetainsAgeAndResultBoundary"
+  }
+]

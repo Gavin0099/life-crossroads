@@ -1,0 +1,52 @@
+{
+  "head_before_run": "8321340041d12e6a27b886e6d494c001c8c44169",
+  "sources": [
+    {
+      "path": "tools/life-loop-visual/run_ios.py",
+      "sha256": "d40aa378137d88ea6db352a97c3c0d559969656e1cdce8ee1a43440884636a3f"
+    },
+    {
+      "path": "LifeCrossroads/App/LifeWorldScenePreview.swift",
+      "sha256": "101d655bdfadbf612948c21374e4aae7f06003de437e04c77dc47a6a96402904"
+    },
+    {
+      "path": "LifeCrossroads/App/LifeWorldScene.swift",
+      "sha256": "31b43ccf0a5485c41674594c02718dca3eae84d6bcd22ebaeff9a437e7ca6e75"
+    },
+    {
+      "path": "LifeCrossroads/App/LifeWorldMotion.swift",
+      "sha256": "38393b73238c3f9996d567a441e9bfc36a434d5048814e43c2f4c5f4592ef1df"
+    },
+    {
+      "path": "LifeCrossroads/App/StoryVisuals.swift",
+      "sha256": "98806c2e4f7d5074f2e0a1a742ccc60b80305d5cc728e9ebec9ccfa5f443ccdb"
+    },
+    {
+      "path": "tools/life-loop-visual/PreviewApp.swift",
+      "sha256": "98a9e987f212f5e86be413a0f03cf89e997d99b2022e43f56dab4b7fffde89f3"
+    },
+    {
+      "path": "tools/life-loop-visual/VisualFixtureUITests.swift",
+      "sha256": "611c264f15d3b0118b9e28fdd72152f07248c556145622111cc4869363c8971b"
+    },
+    {
+      "path": "LifeCrossroads/App/Assets.xcassets/StoryCast.imageset/Contents.json",
+      "sha256": "2c595d47ef4769581eb26ab89aae61546ca992edcf92a252f2701177a07fbc27"
+    },
+    {
+      "path": "LifeCrossroads/App/Assets.xcassets/StoryCast.imageset/story-cast.png",
+      "sha256": "663bb1b1ce8a0af2ed99be72827a6e4bc69978eb00708df62f7b27cd85e068d8"
+    },
+    {
+      "path": "LifeCrossroads/App/Assets.xcassets/RiverCrossroads.imageset/river-crossroads.png",
+      "sha256": "141d42dd9a537d642fb9451338b286ee981893629fee75bdf056066796e37947"
+    },
+    {
+      "path": "LifeCrossroads/App/Assets.xcassets/RiverCrossroads.imageset/Contents.json",
+      "sha256": "8500c6530ec00823b37563d58f016612a740e1d75ceb123218919598cc0153a5"
+    }
+  ],
+  "contract_commit": "7040802846d8829ca969d98ff7023d51fb11913d",
+  "contract_file_sha256": "2a16874e16727bb7fa278cc6f27e94432465ff50eec7e25d30aa3726d84b993a",
+  "scope": "Isolated renderer against published LL-01 and saved genuine Session; not integrated GameStore or playback regression"
+}

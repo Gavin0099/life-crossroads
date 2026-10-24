@@ -1,0 +1,106 @@
+diff --git a/LifeCrossroads/App/LifeWorldScene.swift b/LifeCrossroads/App/LifeWorldScene.swift
+index 77b7d0b..2b620ec 100644
+--- a/LifeCrossroads/App/LifeWorldScene.swift
++++ b/LifeCrossroads/App/LifeWorldScene.swift
+@@ -1,5 +1,10 @@
+ import SwiftUI
+ import LifePresentation
++#if canImport(UIKit)
++import UIKit
++#else
++import AppKit
++#endif
+ 
+ /// Render-only world. Gameplay supplies a committed projection and its single accumulated clock.
+ /// Existing atlas characters remain whole PNGs: no invented eyes, hands, head or tail rig.
+@@ -15,8 +20,10 @@ struct LifeWorldScene: View {
+         GeometryReader { geometry in
+             let size = geometry.size
+             ZStack {
+-                Image("RiverCrossroads").resizable().scaledToFill()
+-                    .frame(width: size.width, height: size.height).clipped()
++                if let background = croppedBackground(size: size) {
++                    Image(decorative: background, scale: 1).resizable()
++                        .frame(width: size.width, height: size.height)
++                } else { StoryPalette.forest.opacity(0.25) }
+                 LinearGradient(colors: [.clear, Color(red: 0.97, green: 0.92, blue: 0.78).opacity(0.20)],
+                                startPoint: .top, endPoint: .bottom)
+                 if !typeSize.isAccessibilitySize {
+@@ -44,18 +51,36 @@ struct LifeWorldScene: View {
+         .transaction { $0.animation = nil }
+     }
+ 
++    private func croppedBackground(size: CGSize) -> CGImage? {
++        guard let image = WorldSceneBitmaps.background, size.width > 0, size.height > 0 else { return nil }
++        let scale = max(size.width / Double(image.width), size.height / Double(image.height))
++        let width = size.width / scale, height = size.height / scale
++        return image.cropping(to: CGRect(x: (Double(image.width) - width) / 2,
++            y: (Double(image.height) - height) / 2, width: width, height: height).integral)
++    }
++    private func croppedPortrait(_ character: StoryCharacter) -> CGImage? {
++        guard let image = WorldSceneBitmaps.cast else { return nil }
++        let index = character.rawValue
++        return image.cropping(to: CGRect(x: Double(index % 4) * Double(image.width) / 4,
++            y: Double(index / 4) * Double(image.height) / 2,
++            width: Double(image.width) / 4, height: Double(image.height) / 2).integral)
++    }
++
+     private func actorView(_ character: StoryCharacter, index: Int, size: CGSize) -> some View {
+         let pose = LifeWorldMotion.pose(elapsedMs: motion.elapsedMs, reduceMotion: reduced, actorIndex: index)
+         let protagonist = character.rawValue <= StoryCharacter.elder.rawValue
+-        let width = min(size.width * (protagonist ? 0.52 : 0.41), size.height * 0.83)
++        let heroFraction = frame.actors.count > 1 ? 0.60 : 0.70
++        let width = min(size.width * (protagonist ? heroFraction : 0.36), size.height * 0.83)
+         let x = frame.actors.count > 1 ? size.width * (index == 0 ? 0.36 : 0.72) : size.width * 0.50
+         return ZStack(alignment: .bottom) {
+             Ellipse().fill(StoryPalette.forest.opacity(0.19))
+                 .frame(width: width * 0.48, height: max(4, width * 0.065))
+-            StoryPortrait(character: character)
+-                .frame(width: width, height: width)
+-                .rotationEffect(.degrees(pose.leanDegrees), anchor: .bottom)
+-                .offset(y: pose.vertical - 3)
++            if let portrait = croppedPortrait(character) {
++                Image(decorative: portrait, scale: 1).resizable().scaledToFit()
++                    .frame(width: width, height: width)
++                    .rotationEffect(.degrees(pose.leanDegrees), anchor: .bottom)
++                    .offset(y: pose.vertical - 3)
++            }
+         }
+         .frame(width: width, height: width, alignment: .bottom)
+         .position(x: x, y: size.height * 0.84 - width / 2)
+@@ -137,7 +162,7 @@ struct LifeWorldScene: View {
+         let currentOutcome = frame.moment == .committedOutcome && motion.phase == .committedOutcome
+             && change.isOccurred && change.sourceEventID == frame.eventID && change.sourceAge == frame.age
+         let progress = currentOutcome ? LifeWorldMotion.arrival(phaseElapsedMs: motion.phaseElapsedMs, reduceMotion: reduced) : 1
+-        return Image(systemName: tokenSymbol(change))
++        return Image(systemName: Self.tokenSymbol(change))
+             .font(.system(size: min(21, size.height * 0.09), weight: .medium))
+             .foregroundStyle(StoryPalette.forest)
+             .frame(width: min(36, size.width * 0.11), height: min(32, size.height * 0.14))
+@@ -150,7 +175,7 @@ struct LifeWorldScene: View {
+             .opacity(LifeWorldMotion.committedTokenOpacity(arrival: progress))
+     }
+ 
+-    private func tokenSymbol(_ change: WorldChangeProjection) -> String {
++    static func tokenSymbol(_ change: WorldChangeProjection) -> String {
+         if !change.isOccurred { return "clock.badge.questionmark" }
+         switch change.kind {
+         case .relationship: return "bubble.left.and.bubble.right"
+@@ -195,3 +220,17 @@ struct LifeWorldScene: View {
+         return captions.isEmpty ? "目前沒有新的後果紀錄。" : captions
+     }
+ }
++
++/// Cache unchanged whole-atlas bitmaps; crop texels before layout so accessibility
++/// never receives the bounds of a 4×2 atlas or overflowing scaled-to-fill image.
++@MainActor private enum WorldSceneBitmaps {
++    static let background = load("RiverCrossroads")
++    static let cast = load("StoryCast")
++    private static func load(_ name: String) -> CGImage? {
++        #if canImport(UIKit)
++        UIImage(named: name)?.cgImage
++        #else
++        NSImage(named: name)?.cgImage(forProposedRect: nil, context: nil, hints: nil)
++        #endif
++    }
++}

@@ -1,0 +1,1627 @@
+{
+  "actors" : [
+    {
+      "personID" : "mumu",
+      "role" : "protagonist"
+    },
+    {
+      "personID" : "照顧你的大人",
+      "role" : "inviter"
+    }
+  ],
+  "age" : 8,
+  "changes" : [
+
+  ],
+  "contractCommit" : "7040802846d8829ca969d98ff7023d51fb11913d",
+  "mode" : "child",
+  "moment" : "eventPaused",
+  "saveRoundTripEqual" : true,
+  "scope" : "isolated saved-session renderer, not formal GameStore or playback",
+  "session" : {
+    "jumps" : [
+      {
+        "assumptionID" : "life-stages",
+        "clampAdjustment" : {
+          "financial" : 0,
+          "health" : 0,
+          "relationships" : 0,
+          "skills" : 0
+        },
+        "fromAge" : 0,
+        "resourcesAfter" : {
+          "financial" : 35,
+          "health" : 66,
+          "relationships" : 65,
+          "skills" : 20
+        },
+        "resourcesBefore" : {
+          "financial" : 35,
+          "health" : 66,
+          "relationships" : 65,
+          "skills" : 20
+        },
+        "toAge" : 8,
+        "triggeredHooks" : [
+
+        ]
+      }
+    ],
+    "phase" : "choosing",
+    "selectionTraces" : [
+      {
+        "age" : 8,
+        "algorithm" : "fnv1a-splitmix64-v1+independent-exponential-race-v2",
+        "assumptionID" : "event-selection",
+        "candidates" : [
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "adult-balance",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : true,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "work",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 52,
+              "minimumAge" : 32,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "13:adult-balance|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.1989063906257883,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "adult-broken-bicycle",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1.25,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "recovery",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 59,
+              "minimumAge" : 25,
+              "repeatable" : false,
+              "resourceWeights" : [
+                {
+                  "atMost" : 45,
+                  "multiplier" : 1.25,
+                  "resource" : "financial"
+                }
+              ]
+            },
+            "randomKey" : "20:adult-broken-bicycle|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.010846762147968203,
+            "weightSteps" : [
+              {
+                "input" : "financial=35<=45",
+                "multiplier" : 1.25,
+                "ruleID" : "resource-context"
+              }
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "adult-care",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : true,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "care",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 39,
+              "minimumAge" : 39,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "10:adult-care|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.13336740280731185,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "adult-learning",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : true,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "learning",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 45,
+              "minimumAge" : 25,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "14:adult-learning|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.56794087772975055,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "adult-local-trail",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "nature",
+              "continuityFlag" : "nature",
+              "continuityValues" : [
+                "observing"
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 59,
+              "minimumAge" : 25,
+              "relationshipID" : "ahe",
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "17:adult-local-trail|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.39187639005094577,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "adult-meal-circle",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "care",
+              "continuityFlag" : "kitchen",
+              "continuityValues" : [
+                "shared"
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 59,
+              "minimumAge" : 25,
+              "relationshipID" : "cheng",
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "17:adult-meal-circle|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.84187411273841262,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+              {
+                "actualValue" : 35,
+                "condition" : {
+                  "choiceIDs" : [
+
+                  ],
+                  "id" : "current-financial-room",
+                  "key" : "financial",
+                  "kind" : "resourceAtMost",
+                  "threshold" : 65
+                },
+                "matched" : true
+              },
+              {
+                "actualValue" : 2,
+                "condition" : {
+                  "choiceIDs" : [
+
+                  ],
+                  "id" : "market-helper",
+                  "key" : "mentorSupport",
+                  "kind" : "householdAtLeast",
+                  "threshold" : 1
+                },
+                "matched" : true
+              }
+            ],
+            "eligible" : false,
+            "eventID" : "adult-neighbor-market",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "work",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "exclusiveGroup" : "side-work-commitment",
+              "maximumAge" : 52,
+              "minimumAge" : 25,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "21:adult-neighbor-market|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.64518735094401869,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "adult-repair-coop",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "work",
+              "continuityFlag" : "repair",
+              "continuityValues" : [
+                "practiced"
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 59,
+              "minimumAge" : 25,
+              "relationshipID" : "teacher",
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "17:adult-repair-coop|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.94913119065868168,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "adult-shift-offer",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "work",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "exclusiveGroup" : "side-work-commitment",
+              "maximumAge" : 52,
+              "minimumAge" : 25,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "17:adult-shift-offer|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.70375491383144806,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "child-friend",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : true,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "friendship",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 10,
+              "minimumAge" : 10,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "12:child-friend|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.29997633439803761,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : true,
+            "eventID" : "child-interest",
+            "exclusions" : [
+
+            ],
+            "finalWeight" : 1,
+            "isFallback" : true,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "learning",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 8,
+              "minimumAge" : 8,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "raceScore" : 0.69406740992115934,
+            "randomKey" : "14:child-interest|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.49954009695998802,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+              {
+                "actualValue" : 2,
+                "condition" : {
+                  "choiceIDs" : [
+
+                  ],
+                  "id" : "nearby-guide",
+                  "key" : "mentorSupport",
+                  "kind" : "householdAtLeast",
+                  "threshold" : 1
+                },
+                "matched" : true
+              }
+            ],
+            "eligible" : false,
+            "eventID" : "child-library-map",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "learning",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 12,
+              "minimumAge" : 12,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "17:child-library-map|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.9746586423052731,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "child-quiet-stage",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "friendship",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 17,
+              "minimumAge" : 12,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "17:child-quiet-stage|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.012585159844448301,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "child-rain-notebook",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "nature",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 17,
+              "minimumAge" : 12,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "19:child-rain-notebook|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.087849575845411643,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "child-transition",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : true,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "learning",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 12,
+              "minimumAge" : 12,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "16:child-transition|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.073208226056543979,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+              {
+                "condition" : {
+                  "choiceIDs" : [
+                    "connected"
+                  ],
+                  "id" : "windmill-promise",
+                  "key" : "friendship",
+                  "kind" : "storyFlag"
+                },
+                "matched" : false
+              }
+            ],
+            "eligible" : false,
+            "eventID" : "child-wind-team",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot",
+              "condition:windmill-promise"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "friendship",
+              "continuityFlag" : "friendship",
+              "continuityValues" : [
+                "connected"
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 17,
+              "minimumAge" : 12,
+              "relationshipID" : "ahe",
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "15:child-wind-team|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.93037240817292011,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "later-pass-on",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : true,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "community",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 72,
+              "minimumAge" : 65,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "13:later-pass-on|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.88492561290029537,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "later-path-map",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "nature",
+              "continuityFlag" : "nature",
+              "continuityValues" : [
+                "observing"
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 72,
+              "minimumAge" : 59,
+              "relationshipID" : "ahe",
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "14:later-path-map|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.009691105176329318,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "later-reconnect",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : true,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "friendship",
+              "continuityFlag" : "friendship",
+              "continuityValues" : [
+                "connected"
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 72,
+              "minimumAge" : 72,
+              "relationshipID" : "ahe",
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "15:later-reconnect|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.25169148865241286,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "later-review",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : true,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "reflection",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 80,
+              "minimumAge" : 80,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "12:later-review|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.71335793981029172,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "later-shared-recipes",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "community",
+              "continuityFlag" : "kitchen",
+              "continuityValues" : [
+                "shared"
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 72,
+              "minimumAge" : 59,
+              "relationshipID" : "cheng",
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "20:later-shared-recipes|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.8097450106939994,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "later-tool-stories",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "learning",
+              "continuityFlag" : "repair",
+              "continuityValues" : [
+                "practiced"
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 72,
+              "minimumAge" : 59,
+              "relationshipID" : "teacher",
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "18:later-tool-stories|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.7299521290531491,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+              {
+                "actualValue" : 2,
+                "condition" : {
+                  "choiceIDs" : [
+
+                  ],
+                  "id" : "recording-companion",
+                  "key" : "mentorSupport",
+                  "kind" : "householdAtLeast",
+                  "threshold" : 1
+                },
+                "matched" : true
+              },
+              {
+                "actualValue" : 65,
+                "condition" : {
+                  "choiceIDs" : [
+
+                  ],
+                  "id" : "sharing-connection",
+                  "key" : "relationships",
+                  "kind" : "resourceAtLeast",
+                  "threshold" : 60
+                },
+                "matched" : true
+              }
+            ],
+            "eligible" : false,
+            "eventID" : "later-voice-booth",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "community",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 72,
+              "minimumAge" : 59,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "17:later-voice-booth|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.29336965304108731,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "middle-friend-letter",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "friendship",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 65,
+              "minimumAge" : 32,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "20:middle-friend-letter|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.85971460128403898,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+              {
+                "actualValue" : 66,
+                "condition" : {
+                  "choiceIDs" : [
+
+                  ],
+                  "id" : "garden-energy",
+                  "key" : "health",
+                  "kind" : "resourceAtLeast",
+                  "threshold" : 45
+                },
+                "matched" : true
+              }
+            ],
+            "eligible" : false,
+            "eventID" : "middle-garden-table",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "community",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 65,
+              "minimumAge" : 32,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "19:middle-garden-table|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.67911550336487492,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+              {
+                "condition" : {
+                  "choiceIDs" : [
+                    "shared"
+                  ],
+                  "id" : "shared-care-contacts",
+                  "key" : "care",
+                  "kind" : "storyFlag"
+                },
+                "matched" : false
+              }
+            ],
+            "eligible" : false,
+            "eventID" : "middle-open-desk",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot",
+              "condition:shared-care-contacts"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "community",
+              "continuityFlag" : "care",
+              "continuityValues" : [
+                "shared"
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 72,
+              "minimumAge" : 45,
+              "relationshipID" : "cheng",
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "16:middle-open-desk|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.10837634603013513,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "middle-rest-circle",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "recovery",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 2,
+              "maximumAge" : 72,
+              "minimumAge" : 45,
+              "repeatable" : true,
+              "resourceWeights" : [
+                {
+                  "atMost" : 60,
+                  "multiplier" : 1.5,
+                  "resource" : "health"
+                }
+              ]
+            },
+            "randomKey" : "18:middle-rest-circle|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.38409040189620902,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "middle-rhythm",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : true,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "community",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 72,
+              "minimumAge" : 59,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "13:middle-rhythm|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.45961067795817645,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "middle-seed-exchange",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "nature",
+              "continuityFlag" : "garden",
+              "continuityValues" : [
+                "tending"
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 72,
+              "minimumAge" : 45,
+              "relationshipID" : "cheng",
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "20:middle-seed-exchange|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.5908121269734089,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "middle-skill-exchange",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "learning",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 65,
+              "minimumAge" : 32,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "21:middle-skill-exchange|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.58241815592881174,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "middle-support",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : true,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "care",
+              "continuityFlag" : "care",
+              "continuityValues" : [
+                "shared"
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 72,
+              "minimumAge" : 52,
+              "relationshipID" : "cheng",
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "14:middle-support|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.082954082431236364,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "middle-turn",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : true,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "learning",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 59,
+              "minimumAge" : 45,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "11:middle-turn|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.56599120478684595,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "teen-direction",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : true,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "learning",
+              "continuityFlag" : "learning",
+              "continuityValues" : [
+                "online",
+                "paper"
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 25,
+              "minimumAge" : 17,
+              "relationshipID" : "teacher",
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "14:teen-direction|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.53278474640111928,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "teen-launch",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : true,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "learning",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 25,
+              "minimumAge" : 21,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "11:teen-launch|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.56982034315642494,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "teen-project",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : true,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "learning",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 13,
+              "minimumAge" : 13,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "12:teen-project|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.081552766151219092,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+              {
+                "condition" : {
+                  "choiceIDs" : [
+                    "online",
+                    "paper"
+                  ],
+                  "id" : "made-a-project",
+                  "key" : "learning",
+                  "kind" : "storyFlag"
+                },
+                "matched" : false
+              },
+              {
+                "actualValue" : 20,
+                "condition" : {
+                  "choiceIDs" : [
+
+                  ],
+                  "id" : "repair-practice",
+                  "key" : "skills",
+                  "kind" : "resourceAtLeast",
+                  "threshold" : 25
+                },
+                "matched" : false
+              }
+            ],
+            "eligible" : false,
+            "eventID" : "teen-repair-table",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot",
+              "condition:made-a-project",
+              "condition:repair-practice"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "learning",
+              "continuityFlag" : "learning",
+              "continuityValues" : [
+                "online",
+                "paper"
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 32,
+              "minimumAge" : 17,
+              "relationshipID" : "teacher",
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "17:teen-repair-table|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.92255745553393287,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "teen-river-survey",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "nature",
+              "continuityFlag" : "nature",
+              "continuityValues" : [
+                "observing"
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 32,
+              "minimumAge" : 17,
+              "relationshipID" : "ahe",
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "17:teen-river-survey|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.91033386073720879,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+              {
+                "actualValue" : 1,
+                "condition" : {
+                  "choiceIDs" : [
+
+                  ],
+                  "id" : "family-rotations",
+                  "key" : "careLoad",
+                  "kind" : "householdAtLeast",
+                  "threshold" : 1
+                },
+                "matched" : true
+              },
+              {
+                "actualValue" : 66,
+                "condition" : {
+                  "choiceIDs" : [
+
+                  ],
+                  "id" : "kitchen-energy",
+                  "key" : "health",
+                  "kind" : "resourceAtLeast",
+                  "threshold" : 50
+                },
+                "matched" : true
+              }
+            ],
+            "eligible" : false,
+            "eventID" : "teen-shared-kitchen",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "community",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 32,
+              "minimumAge" : 17,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "19:teen-shared-kitchen|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.08808159320776765,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "teen-shared-room",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "community",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 32,
+              "minimumAge" : 21,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "16:teen-shared-room|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.49006703325969947,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "teen-tool-library",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : false,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "learning",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 32,
+              "minimumAge" : 17,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "17:teen-tool-library|8|0|31:independent-exponential-race-v2",
+            "uniform" : 0.46360191845370635,
+            "weightSteps" : [
+
+            ]
+          }
+        ],
+        "draw" : 0.49954009695998802,
+        "eligibleEventIDs" : [
+          "child-interest"
+        ],
+        "key" : "14:child-interest|8|0|31:independent-exponential-race-v2",
+        "rules" : {
+          "continuityMultiplier" : 2,
+          "recentCategoryMultiplier" : 0.55000000000000004,
+          "recentCategoryWindow" : 1,
+          "relationshipMultiplier" : 1.1499999999999999,
+          "version" : "story-race-rules-1"
+        },
+        "seed" : 0,
+        "selectedEventID" : "child-interest"
+      }
+    ],
+    "state" : {
+      "age" : 8,
+      "contentVersion" : "lc03-environment-story-1",
+      "countryCode" : "JPN",
+      "dataVersion" : "lc03-data-1",
+      "decisions" : [
+
+      ],
+      "engineVersion" : "lc03-environment-1",
+      "householdID" : "jpn-1",
+      "memories" : [
+
+      ],
+      "pendingHooks" : [
+
+      ],
+      "remainingEnergy" : 5,
+      "remainingMaterials" : 2,
+      "remainingTime" : 4,
+      "resources" : {
+        "financial" : 35,
+        "health" : 66,
+        "relationships" : 65,
+        "skills" : 20
+      },
+      "seed" : 0,
+      "story" : {
+        "events" : [
+
+        ],
+        "flags" : [
+
+        ],
+        "relationships" : [
+
+        ]
+      }
+    },
+    "traces" : [
+
+    ]
+  }
+}

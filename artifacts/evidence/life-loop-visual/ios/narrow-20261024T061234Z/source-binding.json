@@ -1,0 +1,44 @@
+{
+  "head_before_run": "4a42a9385cef0b75a81a9675f9b63a760137bb38",
+  "sources": [
+    {
+      "path": "tools/life-loop-visual/run_ios.py",
+      "sha256": "1f77999fd5deb04fb1be96b15612d423bb56daa1bdf52c1b2c1a6e74e63c8590"
+    },
+    {
+      "path": "LifeCrossroads/App/LifeWorldScenePreview.swift",
+      "sha256": "101d655bdfadbf612948c21374e4aae7f06003de437e04c77dc47a6a96402904"
+    },
+    {
+      "path": "LifeCrossroads/App/LifeWorldScene.swift",
+      "sha256": "c8bfab7b468ea02251dc135e1b1b309ed6bd8850b34cc2d46748bc4a8e36328c"
+    },
+    {
+      "path": "tools/life-loop-visual/PreviewApp.swift",
+      "sha256": "0ea5573efe1bb525998d3dde8c03c9a952554e3a2372e45f905a6ae8973b496e"
+    },
+    {
+      "path": "tools/life-loop-visual/VisualFixtureUITests.swift",
+      "sha256": "e32ba17d37eb8b5c2a0a6efd3e7d2edddbdf8d56256b8c530c88c1323a936f6f"
+    },
+    {
+      "path": "LifeCrossroads/App/Assets.xcassets/StoryCast.imageset/Contents.json",
+      "sha256": "2c595d47ef4769581eb26ab89aae61546ca992edcf92a252f2701177a07fbc27"
+    },
+    {
+      "path": "LifeCrossroads/App/Assets.xcassets/StoryCast.imageset/story-cast.png",
+      "sha256": "663bb1b1ce8a0af2ed99be72827a6e4bc69978eb00708df62f7b27cd85e068d8"
+    },
+    {
+      "path": "LifeCrossroads/App/Assets.xcassets/RiverCrossroads.imageset/river-crossroads.png",
+      "sha256": "141d42dd9a537d642fb9451338b286ee981893629fee75bdf056066796e37947"
+    },
+    {
+      "path": "LifeCrossroads/App/Assets.xcassets/RiverCrossroads.imageset/Contents.json",
+      "sha256": "8500c6530ec00823b37563d58f016612a740e1d75ceb123218919598cc0153a5"
+    }
+  ],
+  "contract_commit": "6f5e3c1c4211e00f7a3c8eaa7bbc057a2c83fca1",
+  "contract_file_sha256": "39afb2a8cff3ad86d464b9d92a4ff14a11a5a8056265de61d8fafe3c5565f865",
+  "scope": "Isolated renderer against published LL-01 and saved genuine Session; not integrated GameStore or playback regression"
+}

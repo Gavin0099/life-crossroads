@@ -31,7 +31,7 @@ P1 Integrated Preview 0.1 / 單事件視覺整合。使用者於2026-10-24授權
 
 ## Current Sprint
 
-**2026-10-24 Visual 分支當前狀態：** 使用者採納 PR9 c823c82 的 docs/life-loop-10h 為唯一正式規格；本分支只做 VW-01來源預查與隔離fixture Preview。rossark固定版本與MIT已核對，未安裝或複製helper；既有素材原生SwiftUI定點與七項純取樣檢查通過。正式LL-01契約提交尚缺，VW-01整片仍PARTIAL，VW-02～04及G1～G6未驗收。不得把舊WORLD-ART雙機通過算成本輪接線完成，也不匯入未核准候選圖。
+**2026-10-24 Visual 分支當前狀態：** 唯一規格仍為PR9的docs/life-loop-10h。使用者更正過早收尾後已續作，最終803539c沿用A／Visual r2的7040802場景，補顯示前裁切與較大角色；雙機隔離各5/5、採用Motion純取樣8項、真實存檔來源26項通過。24張原生截圖可查，13台專用Simulator均已delete。無新角色圖、無Domain／主流程修改；G1～G6及10h整體尚未宣稱完成。剩餘是A接回唯一正式流程與獨立Reviewer，Visual貢獻須共用原2h總額，不另加2h；見VISUAL_HANDOFF與progress-ledger。
 
 以下保留先前單事件整合紀錄：
 

@@ -1,0 +1,8 @@
+{
+  "observed_at_utc": "2026-10-24T06:08:02.068160+00:00",
+  "pid": 72077,
+  "action": "TERM to owned xcodebuild only; later KILL attempt found process already absent",
+  "reason": "All five tests had ended at 14:02:51 Asia/Taipei with two failures, but xcodebuild remained after more than five minutes. Preserve log and xcresult; no success claimed. Parent runner finally owns device deletion.",
+  "suite_result": "5 executed / 2 failed from xcodebuild.log",
+  "result_bundle_status": "Not readable after interruption (missing Info.plist); original incomplete bundle and xcodebuild log retained. No xcresult PASS claim."
+}

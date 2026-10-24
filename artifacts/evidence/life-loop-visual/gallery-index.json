@@ -1,0 +1,173 @@
+{
+  "scope": "Native isolated renderer against integrated contract7040802, not formal App gameplay regression",
+  "images": [
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/narrow/12-saved-child.png",
+      "run": "narrow-20261024T061948Z",
+      "test": "VisualFixtureUITests/testCommittedPaperAndRestUseDifferentRealRecords()",
+      "original": "440A5FF1-EFA6-4C2A-806B-BC97B0FFCC0A.png",
+      "sha256": "0d61603e253d18140eeb356390c6b7000b7f4959a9e674e82c94d31069a6e9ab"
+    },
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/narrow/11-saved-adult.png",
+      "run": "narrow-20261024T061948Z",
+      "test": "VisualFixtureUITests/testCommittedPaperAndRestUseDifferentRealRecords()",
+      "original": "93D924C5-A3F7-4F84-8314-8F19F8D57723.png",
+      "sha256": "801ec859e0dca3a84712a8e4fc8a676ba657bb633756de989fe20ef9c3c4d8de"
+    },
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/narrow/08-saved-rest.png",
+      "run": "narrow-20261024T061948Z",
+      "test": "VisualFixtureUITests/testCommittedPaperAndRestUseDifferentRealRecords()",
+      "original": "D986F32F-80BF-4AAB-BCB4-A26D1F05A72F.png",
+      "sha256": "a51981b178b1fd43da686d5c2a18ab128070c297aee3a3209632d80081e3e7d7"
+    },
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/narrow/07-saved-paper.png",
+      "run": "narrow-20261024T061948Z",
+      "test": "VisualFixtureUITests/testCommittedPaperAndRestUseDifferentRealRecords()",
+      "original": "9732B192-1C5E-4370-AFB8-7F9C55B35E21.png",
+      "sha256": "f9d9db8101b24bd6519c28e72e7840c20c949deaa5ac0d6b831c0d367291bd05"
+    },
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/narrow/03-adult.png",
+      "run": "narrow-20261024T061948Z",
+      "test": "VisualFixtureUITests/testLargeSceneAndThreeAgeFixtures()",
+      "original": "8FCC708B-096B-43F1-941A-D617FBD9B162.png",
+      "sha256": "d1c0df6686c53fbb623577d0250a9a86e90c426c1410d90bd1947196d7ef9b19"
+    },
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/narrow/02-teen.png",
+      "run": "narrow-20261024T061948Z",
+      "test": "VisualFixtureUITests/testLargeSceneAndThreeAgeFixtures()",
+      "original": "6268D4E4-EE3D-4D89-88F9-D60A7AB2DD5B.png",
+      "sha256": "7ec01543f7a12bd6526154d5df5691702d14b6b0f7b5525af819e6994fa1b158"
+    },
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/narrow/01-child.png",
+      "run": "narrow-20261024T061948Z",
+      "test": "VisualFixtureUITests/testLargeSceneAndThreeAgeFixtures()",
+      "original": "C3F1E605-06D8-4241-8F33-1F97F17E6373.png",
+      "sha256": "8c2795c92dbf96b40e9d1a0dd664ba42d0eecf36977ce667e80316ca0ac10f99"
+    },
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/narrow/05-largest-reachable-text.png",
+      "run": "narrow-20261024T061948Z",
+      "test": "VisualFixtureUITests/testLargestTextCanReachStageAndFullBoundaryText()",
+      "original": "E02140D4-CD6E-46F2-B59B-8CDDC9B679C6.png",
+      "sha256": "519b62b87794c0c2ad0bf8240edb37a583e31daa8ba1b2577557ccb4e5d3b596"
+    },
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/narrow/04-largest-first-screen.png",
+      "run": "narrow-20261024T061948Z",
+      "test": "VisualFixtureUITests/testLargestTextCanReachStageAndFullBoundaryText()",
+      "original": "B5CE3E28-0542-4E2B-9E25-44E160E904B7.png",
+      "sha256": "81a102a0cae0250438a412afa84c9069fad7793e29bf7d801b3c80b6e02e3c4b"
+    },
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/narrow/10-formal-source-largest.png",
+      "run": "narrow-20261024T061948Z",
+      "test": "VisualFixtureUITests/testRealRecordInspectionLargestTypeRemainsReachable()",
+      "original": "4EA1624F-4C83-4F25-AD60-AFE8086503FE.png",
+      "sha256": "645a3b0d1b4acd042a3a75a1e29d289fcdf2706a37f5c287f9b40a461cc46be5"
+    },
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/narrow/09-formal-largest-first-screen.png",
+      "run": "narrow-20261024T061948Z",
+      "test": "VisualFixtureUITests/testRealRecordInspectionLargestTypeRemainsReachable()",
+      "original": "B1445F4D-6062-45D9-B38D-C9C9297B65E0.png",
+      "sha256": "021bb530dc1676066c4c16d8e55b4859366587517c5959e2efbc69a28537aad9"
+    },
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/narrow/06-reduced-teen.png",
+      "run": "narrow-20261024T061948Z",
+      "test": "VisualFixtureUITests/testReducedFixtureRetainsAgeAndResultBoundary()",
+      "original": "7855C986-5852-4E31-B2CF-6096D6009A93.png",
+      "sha256": "4b07ea7bb5662a8c0388960c76b216155be5ea5ad80ab0e07227f6d9111b2c68"
+    },
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/standard/12-saved-child.png",
+      "run": "standard-20261024T061950Z",
+      "test": "VisualFixtureUITests/testCommittedPaperAndRestUseDifferentRealRecords()",
+      "original": "3AF06AFE-5208-4FCB-9E01-CB9F52F1C1C5.png",
+      "sha256": "f13480e93adb5b68733f76d1cb6feb26fdf918bb846f5b4edf8e341184a0502e"
+    },
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/standard/11-saved-adult.png",
+      "run": "standard-20261024T061950Z",
+      "test": "VisualFixtureUITests/testCommittedPaperAndRestUseDifferentRealRecords()",
+      "original": "6014DF97-96EE-4CB0-AC1A-8357574060FB.png",
+      "sha256": "1eb0bcb7a98971acbb2ed467673e793af17c70992867567a34ee6d1904012eef"
+    },
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/standard/08-saved-rest.png",
+      "run": "standard-20261024T061950Z",
+      "test": "VisualFixtureUITests/testCommittedPaperAndRestUseDifferentRealRecords()",
+      "original": "C989A825-6B88-4C0F-B262-175CF4BCFBCA.png",
+      "sha256": "6395cad97395c090c3f1968baabb3deb3cd0b8ea0f9bc11686ea7dc5298623f5"
+    },
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/standard/07-saved-paper.png",
+      "run": "standard-20261024T061950Z",
+      "test": "VisualFixtureUITests/testCommittedPaperAndRestUseDifferentRealRecords()",
+      "original": "CB5066C7-E0A1-4827-9E75-719C7BC23AC4.png",
+      "sha256": "4087ea284e793cc17a6ff3304f6ca0643265c829aebca5c4239a0d546b3ba69e"
+    },
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/standard/03-adult.png",
+      "run": "standard-20261024T061950Z",
+      "test": "VisualFixtureUITests/testLargeSceneAndThreeAgeFixtures()",
+      "original": "2780954A-4057-4D87-A9C0-33165327B4AC.png",
+      "sha256": "116af67046e029cfd13e62a08c394f586192027d0609d23a669114e7e67f2d1b"
+    },
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/standard/02-teen.png",
+      "run": "standard-20261024T061950Z",
+      "test": "VisualFixtureUITests/testLargeSceneAndThreeAgeFixtures()",
+      "original": "DBF84419-C20B-4BAD-A76E-BC2DB0A4F9CD.png",
+      "sha256": "e5bc455b941bdd1a8f30378c88330131c35a84b80a4c889dae0efd8b2bbc2d7d"
+    },
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/standard/01-child.png",
+      "run": "standard-20261024T061950Z",
+      "test": "VisualFixtureUITests/testLargeSceneAndThreeAgeFixtures()",
+      "original": "BF0BB88B-9CE0-4161-B8C5-5168072CDABF.png",
+      "sha256": "530e9fada67aa40a43471d396d9ab3e0e15b378dc39650ac25d1f95db6e2f30c"
+    },
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/standard/05-largest-reachable-text.png",
+      "run": "standard-20261024T061950Z",
+      "test": "VisualFixtureUITests/testLargestTextCanReachStageAndFullBoundaryText()",
+      "original": "475E4406-A221-4C1F-B659-0E33EC1D9209.png",
+      "sha256": "fcafdf2460cbfa3e855d4efe38f30055afdb9d6a4d93654288d8bb85dd885043"
+    },
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/standard/04-largest-first-screen.png",
+      "run": "standard-20261024T061950Z",
+      "test": "VisualFixtureUITests/testLargestTextCanReachStageAndFullBoundaryText()",
+      "original": "15EFF163-8C13-434B-90E4-F082BAC95286.png",
+      "sha256": "21f6ae7cbbd4225c79fb5b2f000673584d42e55a0989627c9747860b49dfcf32"
+    },
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/standard/10-formal-source-largest.png",
+      "run": "standard-20261024T061950Z",
+      "test": "VisualFixtureUITests/testRealRecordInspectionLargestTypeRemainsReachable()",
+      "original": "C4EA8300-AE3B-480B-B3ED-67622AAE86B4.png",
+      "sha256": "c86d93d10a7b64e2c3f76eddba406260f0a12460a5314a3a4235201745e2ac75"
+    },
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/standard/09-formal-largest-first-screen.png",
+      "run": "standard-20261024T061950Z",
+      "test": "VisualFixtureUITests/testRealRecordInspectionLargestTypeRemainsReachable()",
+      "original": "FCF15486-016C-47A3-B181-986F172CBC86.png",
+      "sha256": "d29aaefeef731f548a2e8e2cee11d4d372e64dd7ed135d5d3520490199859a6e"
+    },
+    {
+      "path": "artifacts/evidence/life-loop-visual/gallery/standard/06-reduced-teen.png",
+      "run": "standard-20261024T061950Z",
+      "test": "VisualFixtureUITests/testReducedFixtureRetainsAgeAndResultBoundary()",
+      "original": "FA683E5F-98CC-4DFB-B02E-7A0BB8B2E989.png",
+      "sha256": "fe14ac68d4d2d9d02ed2a4b9da07e18e2c8c23b1a186d3cdcc3d7f5db229a792"
+    }
+  ]
+}

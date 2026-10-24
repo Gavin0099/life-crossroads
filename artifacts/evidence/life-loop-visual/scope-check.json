@@ -18,6 +18,7 @@
   ],
   "changed_protected_paths": [],
   "new_raster_assets": 0,
-  "simulators_created": 0,
-  "gameplay_contract_checked": "4980643cfa5157f62e6853c6a3707209cbe1ab27 (LL-00 only; LL-01 pending)"
+  "simulators_created": 13,
+  "gameplay_contract_checked": "7040802846d8829ca969d98ff7023d51fb11913d",
+  "production_renderers": "LifeWorldScene adopted from7040802 with delta, not two alternate production components"
 }

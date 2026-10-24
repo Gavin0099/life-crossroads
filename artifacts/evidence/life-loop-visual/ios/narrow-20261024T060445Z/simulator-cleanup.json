@@ -1,0 +1,9 @@
+{
+  "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+  "device_id": "90766ED1-9B52-45F7-9C96-B2C085341BDF",
+  "deleted": true,
+  "test_exit_code": 0,
+  "xcresult_local": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/life-loop-visual-ios/narrow-20261024T060445Z/result.xcresult",
+  "absent_from_inventory": true
+}

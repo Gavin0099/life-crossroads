@@ -1,0 +1,7 @@
+{
+  "integrated_base": "7040802846d8829ca969d98ff7023d51fb11913d",
+  "scene_base_blob": "77b7d0bf6514d5518e1ae01400687cf339d86894",
+  "motion_base_blob": "0c7b2701c1d3c6dba5738bc96d0d286f45940942",
+  "motion_worktree_blob": "0c7b2701c1d3c6dba5738bc96d0d286f45940942",
+  "scope": "Adopt existing integrated renderer; patch pre-layout CG cropping and hero size, preserve frame/motion interface, no second production scene/controller. Prior alternate renderer remains historical in8321340."
+}

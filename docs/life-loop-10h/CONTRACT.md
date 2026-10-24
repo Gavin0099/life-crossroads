@@ -1,6 +1,6 @@
 # LIFE-LOOP 10H v1.1 — Gameplay／Visual／Motion 單一共同契約（CONTRACT）
 
-> 這是 LL-01 一開始必須凍結的 DTO、狀態轉移與動畫時鐘契約。**初版規格，不表示型別已存在。** 可在 LL-01 依真實 Swift API 微調，但需先在同一提交更新本文件，兩 Agent 再使用同版契約。動畫方法來源為 [rossark-motion-skill@9b20964](https://github.com/rossark0/rossark-motion-skill/tree/9b20964e32f07f8ac7e2948cd175746fa4a7712f)（MIT）；本案實際採用與授權清單見 [MOTION.md](MOTION.md)。
+> 這是 LL-01 一開始必須凍結的 DTO、狀態轉移與動畫時鐘契約。**LL-01實作契約：型別見 LifeCrossroads/Presentation/LifeWorldFrame.swift。** 可在 LL-01 依真實 Swift API 微調，但需先在同一提交更新本文件，兩 Agent 再使用同版契約。動畫方法來源為 [rossark-motion-skill@9b20964](https://github.com/rossark0/rossark-motion-skill/tree/9b20964e32f07f8ac7e2948cd175746fa4a7712f)（MIT）；本案實際採用與授權清單見 [MOTION.md](MOTION.md)。
 
 ## A. 嚴格分離三種狀態
 
@@ -190,3 +190,7 @@ struct LifeWorldScene: View {
 - 若出現跨版本存檔、資料來源/授權或安全問題，列 BLOCKED，保留原檔並可回退到 PR #8 舊 UI；不能用臨時造假資料通過測試。
 - 不需要重寫 `docs/p1-slices.md`；本契約是一次獨立、可驗收的體驗實驗，不宣稱 LC-03/05/06/07 已完成。
 - 動畫方法的審查和接入限於 Visual 既有 2h 工作預算，不能額外新增專門 Skill Agent；初次 PoC 若被圖層限制阻擋，保留正式人生／靜態世界可玩，後續骨架需求另列 backlog。
+
+## LL-01 凍結補充
+
+實作保留上述欄位，增加 `LifeWorldFrame.environmentGaps` 與 `WorldChangeProjection.Kind.delayedConsequence`，以區分未知成本與已觸發呼應。`PresentationMotionFrame`位於純Swift Presentation，`phase`使用`LifeWorldMomentKind`、增加`phaseElapsedMs`供one-shot末幀。Visual唯一介面為`LifeWorldScene(frame: LifeWorldFrame, motion: PresentationMotionFrame)`。`WorldMomentProjector.personName`只映射既有虛構人物；frame.age永遠是權威年齡，living用`frame.presenting(.living)`。App只在正式保存後投影reflecting；DTO本身不聲稱preview已保存。

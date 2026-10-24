@@ -1,0 +1,41 @@
+{
+  "retained_local_directory": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/life-loop-visual-ios/standard-20261024T055138Z/exported-attachments",
+  "original_xcresult": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/life-loop-visual-ios/standard-20261024T055138Z/result.xcresult",
+  "files": [
+    {
+      "file": "E32E1B99-4F5C-4A0B-8222-327411BF34C0.png",
+      "sha256": "165be45b64e6cc197be45dff19cef2b124716deeeea4d23b65da8a1c85f6fb7a",
+      "bytes": 2644404
+    },
+    {
+      "file": "18C447CC-B96E-483F-A3BA-03DA167CEDDF.png",
+      "sha256": "61da92608a33bfb958e19440ce56ae720e69983fdcea928af10608d5bd52913c",
+      "bytes": 2632639
+    },
+    {
+      "file": "8B2B0E2F-8396-4700-B314-A69ACD609D7F.png",
+      "sha256": "7891fe899f1b3c91c6538307fc1866c200647e91a761030ba1ed8a41acdaa304",
+      "bytes": 2577675
+    },
+    {
+      "file": "00359EE6-80AB-44C8-8E09-307A3ED9DE64.png",
+      "sha256": "98fd9fa81ecee3dec6167276bad603183db0df0dcf3691cfa09ef5fbad470ea4",
+      "bytes": 2655766
+    },
+    {
+      "file": "manifest.json",
+      "sha256": "ea2a0295f3a123404c7b411e7f3eeb1f8031a0ed5a77935b09a58cc78b2d0b95",
+      "bytes": 3517
+    },
+    {
+      "file": "17206A9B-88BA-4DF5-AB52-F485E6A5D6A4.mp4",
+      "sha256": "1142e3f73e0ff0a19341866cd00f9d22c0b8015bfc56e272ee804a6a3acf3404",
+      "bytes": 7979611
+    },
+    {
+      "file": "2E68A894-5910-47E8-A2F0-788AC60C6BFE.png",
+      "sha256": "7d2b94fe2bdaf24f50e78cb2b7eca64cee0d7ade2de2bceb99ab03275267d04d",
+      "bytes": 2572740
+    }
+  ]
+}

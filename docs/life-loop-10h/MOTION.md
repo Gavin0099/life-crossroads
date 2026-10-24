@@ -1,6 +1,6 @@
 # LIFE-LOOP 動畫工作準則（MOTION.md）
 
-> 狀態：**前置 fixture PoC 已建立，正式接線待 LL-01；未安裝或複製外部程式碼**。本文件是 Visual Agent 的專案動作規範；基於現有 `LifeCrossroads` 原創角色與資料邊界撰寫，不等於原始外部 Skill 的自動執行授權。
+> 狀態：**已依 LL-01 與7040802整合場景驗證，正式App總驗收待A整合；未安裝或複製外部程式碼**。本文件是 Visual Agent 的專案動作規範；基於現有 `LifeCrossroads` 原創角色與資料邊界撰寫，不等於原始外部 Skill 的自動執行授權。
 > 適用工作：`docs/life-loop-10h/PLAN.md`、`SLICES.md` 的 VW-01～04，共最多 **2 Agent-hours**（不另加時）。
 > 唯一外部方法參考：`rossark0/rossark-motion-skill` @ [固定 Commit `9b20964e32f07f8ac7e2948cd175746fa4a7712f`](https://github.com/rossark0/rossark-motion-skill/tree/9b20964e32f07f8ac7e2948cd175746fa4a7712f)；Repo [MIT LICENSE](https://github.com/rossark0/rossark-motion-skill/blob/9b20964e32f07f8ac7e2948cd175746fa4a7712f/LICENSE)。外部發表日約 2026-10-22，仍屬新 Repo，須以本案實測而非星數作驗收。
 
@@ -69,7 +69,7 @@
 | 真正複製/修改檔 | **NONE**；只參考方法，自行寫 `LifeWorldScenePreview.swift` 的純時間取樣 PoC，沒有複製外部 helpers |
 | Notices／版權保留 | 無外部程式碼／Demo引入；保留固定來源和五檔blob SHA於 `artifacts/evidence/life-loop-visual/rossark-audit.json`。未安裝 Skill |
 | Demo PNG／MP4 使用 | **NONE** |
-| 是否開始實作、Simulator 測試 | 已做隔離 fixture Preview 與 macOS SwiftUI 定點輸出；本分支未接正式 DTO／未跑 Simulator，不表示正式生活循環完成 |
+| 是否開始實作、Simulator 測試 | 已接 LL-01／7040802 場景並完成雙機隔離測試；正式主流程接線與總驗收由A負責 |
 | 人工／實機／兒少測試 | **未驗收** |
 
 執行 Agent 若真的複製任何上游程式碼，必須更新這張表與可追溯 notices；若只參考算法概念，自行實作的程式碼不自動等同抄用，但仍要保留研究來源。
@@ -83,3 +83,9 @@
 依 CONTRACT §D，尚未取得 LL-01 已推送可編譯型別時，先使用明確命名的 `LifeWorldScenePreviewModel`；它是顯示 fixture，不是替代人生模型。`WorldPreviewMotion.sample` 僅讀外部傳入時間，無 Date／Timeline／Timer／遊戲亂數；frozen 不將相位歸零。0／25／50／100% loop、13歲單次取樣、Reduced Motion 末幀與39歲 Preview 已以 macOS ImageRenderer 輸出，七個純取樣不變量通過。
 
 這不能證明 Gameplay 累積鐘的 pause/resume／1×→3×／背景恢復正確，也不是 iPhone Simulator、真實 trace、保存成功或正式 App 接線證據。正式 `LifeWorldFrame`／`PresentationMotionFrame` 和 token/phase elapsed adapter 仍由 A 凍結後供應；結果示意不能作為已發生後果使用。VW-01仍為有界 PARTIAL；VW-02～04與G1～G6尚未驗收。
+
+## H. 使用者更正後的續作與整合邊界（2026-10-24）
+
+前節G是第一次查核的歷史狀態，正式LL-01已於6f5e3c1發布。最終B實作803539c沿用Gameplay／其Visual r2在7040802已整合的LifeWorldScene與LifeWorldMotion，僅追加既有bitmap的顯示前裁切、快取及放大主角；保留同一frame/motion介面，不整枝匯入早期候選、不重畫角色。
+
+最新雙機各5項隔離renderer測試、8項採用Motion純取樣、26項真實存檔/來源核對已通過，24張原生截圖可檢視。13台專用Simulator已delete，連同失敗/逾時收據均留證。早期fixture的7項與macOS輸出另列，不混成正式App結果；全流程、實機、獨立覆審與G1～G6仍未由B驗收。詳見VISUAL_HANDOFF.md與evidence/life-loop-visual的來源綁定。沒有新增外部程式碼、模型、PNG資產或付費API。

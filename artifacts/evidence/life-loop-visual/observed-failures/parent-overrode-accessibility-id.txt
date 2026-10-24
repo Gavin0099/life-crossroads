@@ -1,0 +1,41 @@
+Application, 0x108db4780, pid: 74659, label: '人生岔路' <App element pid: 74659>
+  Window (Main), 0x108db5180, {{0.0, 0.0}, {402.0, 874.0}} <AX element pid: 74659, elementOrHash.elementID: 4334879744.3>
+    Other, 0x108db5540, {{0.0, 0.0}, {402.0, 874.0}} <AX element pid: 74659, elementOrHash.elementID: 4336816128.4>
+      Other, 0x108db4000, {{0.0, 0.0}, {402.0, 874.0}} <AX element pid: 74659, elementOrHash.elementID: 4336831616.5>
+        Other, 0x108db4140, {{0.0, 0.0}, {402.0, 874.0}} <AX element pid: 74659, elementOrHash.elementID: 4334878720.6>
+          Other, 0x108db4280, {{0.0, 0.0}, {402.0, 874.0}} <AX element pid: 74659, elementOrHash.elementID: 4381749440.7>
+            ScrollView, 0x108db4c80, {{0.0, 0.0}, {402.0, 746.7}} <AX element pid: 74659, elementOrHash.elementID: 4334898176.8>
+              Other, 0x108db4dc0, {{0.0, 0.0}, {402.0, 746.7}} <AX element pid: 74659, elementOrHash.elementID: 4335699712.10>
+                Other, 0x108db4f00, {{0.0, 0.0}, {402.0, 102.0}} <AX element pid: 74659, elementOrHash.elementID: 4335701952.14>
+              Other, 0x108db6080, {{0.0, 0.0}, {402.0, 746.7}} <AX element pid: 74659, elementOrHash.elementID: 4335698816.11>
+              Other, 0x108db48c0, {{0.0, 62.0}, {402.0, 1828.3}} <AX element pid: 74659, elementOrHash.elementID: 4336820224.12>
+                StaticText, 0x108db5040, {{12.0, 74.0}, {376.7, 102.3}}, label: '正式 DTO 隔離檢查，尚未接入主流程' <AX element pid: 74659, elementOrHash.elementID: 4381745280.15>
+                StaticText, 0x108db5400, {{12.0, 188.3}, {147.0, 125.3}}, label: '沐沐 · 13歲' <AX element pid: 74659, elementOrHash.elementID: 4381737600.16>
+                StaticText, 0x108db4a00, {{186.7, 197.7}, {203.3, 102.3}}, label: '選擇已留下紀錄' <AX element pid: 74659, elementOrHash.elementID: 4381746240.17>
+                Other, 0x108db4b40, {{12.0, 323.7}, {378.0, 230.0}}, identifier: 'life-world-stage', label: '13歲的沐沐。樹老師有互動紀錄。共用虛構舞台。' <AX element pid: 74659, elementOrHash.elementID: 4381744960.18>
+                  Image, 0x108db61c0, {{12.0, 323.7}, {378.0, 230.0}} <AX element pid: 74659, elementOrHash.elementID: 4381746080.27>
+                  Image, 0x108db5b80, {{113.7, 356.0}, {174.7, 174.7}} <AX element pid: 74659, elementOrHash.elementID: 4381745600.28>
+                StaticText, 0x108db5cc0, {{12.0, 563.7}, {364.0, 102.3}}, label: '創作工坊 · 共用虛構舞台' <AX element pid: 74659, elementOrHash.elementID: 4381745440.19>
+                Button, 0x108db43c0, {{-2.3, 682.0}, {388.7, 311.7}}, identifier: 'world-change-0', label: '已記錄。本次實際變化：健康0、財務0、人際+2、技能+4。查看來源' <AX element pid: 74659, elementOrHash.elementID: 4381746560.20>
+                  Image, 0x108db4500, {{-2.3, 686.7}, {52.3, 44.0}}, identifier: 'slider.horizontal.3', label: '編輯' <AX element pid: 74659, elementOrHash.elementID: 4381745920.29>
+                  StaticText, 0x108db5e00, {{45.0, 682.0}, {261.7, 311.7}}, label: '本次實際變化：健康0、財務0、人際+2、技能+4' <AX element pid: 74659, elementOrHash.elementID: 4381745120.30>
+                  Image, 0x108db5f40, {{343.3, 685.7}, {43.0, 43.0}}, identifier: 'info.circle', label: '資訊' <AX element pid: 74659, elementOrHash.elementID: 4381746400.31>
+                Button, 0x108db57c0, {{-12.0, 1015.7}, {398.3, 187.3}}, identifier: 'world-change-1', label: '已記錄。與樹老師留下互動紀錄。。查看來源' <AX element pid: 74659, elementOrHash.elementID: 4381747360.21>
+                  Image, 0x108db5900, {{-12.0, 1020.3}, {75.7, 51.7}}, identifier: 'person.2', label: '兩人' <AX element pid: 74659, elementOrHash.elementID: 4381746880.32>
+                  StaticText, 0x108db6300, {{45.0, 1015.7}, {200.3, 187.3}}, label: '與樹老師留下互動紀錄。' <AX element pid: 74659, elementOrHash.elementID: 4381747040.33>
+                  Image, 0x108db6440, {{343.3, 1019.3}, {43.0, 43.0}}, identifier: 'info.circle', label: '資訊' <AX element pid: 74659, elementOrHash.elementID: 4381747200.34>
+                Button, 0x108db6580, {{6.7, 1225.0}, {379.7, 249.3}}, identifier: 'world-change-2', label: '已記錄。故事記憶：friendship＝paused（10歲）。查看來源' <AX element pid: 74659, elementOrHash.elementID: 4381748000.22>
+                  Image, 0x108db66c0, {{6.7, 1229.7}, {35.0, 55.7}}, identifier: 'bookmark', label: '書籤' <AX element pid: 74659, elementOrHash.elementID: 4381747520.35>
+                  StaticText, 0x108db6800, {{45.0, 1225.0}, {238.7, 249.3}}, label: '故事記憶：friendship＝paused（10歲）' <AX element pid: 74659, elementOrHash.elementID: 4381747680.36>
+                  Image, 0x108db6940, {{343.3, 1228.7}, {43.0, 43.0}}, identifier: 'info.circle', label: '資訊' <AX element pid: 74659, elementOrHash.elementID: 4381747840.37>
+                Button, 0x108db6a80, {{2.3, 1496.3}, {384.0, 249.3}}, identifier: 'world-change-3', label: '已記錄。故事記憶：learning＝paper（13歲）。查看來源' <AX element pid: 74659, elementOrHash.elementID: 4381748640.23>
+                  Image, 0x108db6bc0, {{2.3, 1501.0}, {43.7, 55.7}}, identifier: 'doc.text', label: '純文字文件' <AX element pid: 74659, elementOrHash.elementID: 4381748160.38>
+                  StaticText, 0x108db6d00, {{45.0, 1496.3}, {238.7, 249.3}}, label: '故事記憶：learning＝paper（13歲）' <AX element pid: 74659, elementOrHash.elementID: 4381748320.39>
+                  Image, 0x108db6e40, {{343.3, 1500.0}, {43.0, 43.0}}, identifier: 'info.circle', label: '資訊' <AX element pid: 74659, elementOrHash.elementID: 4381748480.40>
+                StaticText, 0x108db6f80, {{12.0, 1763.7}, {114.0, 51.3}}, identifier: 'formal-route-status', label: 'offline' <AX element pid: 74659, elementOrHash.elementID: 4381748800.24>
+                StaticText, 0x108db70c0, {{12.0, 1827.0}, {244.0, 51.3}}, identifier: 'inspection-status', label: '來源檢視關閉' <AX element pid: 74659, elementOrHash.elementID: 4381748960.25>
+              Other, 0x108db7200, {{369.0, 62.0}, {30.0, 684.7}}, label: '垂直捲軸, 3頁', value: 0% <AX element pid: 74659, elementOrHash.elementID: 4336817664.13>
+                Other, 0x108db7340, {{396.0, 65.0}, {3.0, 268.0}} <AX element pid: 74659, elementOrHash.elementID: 4335701504.26>
+              Other, 0x108db7480, {{369.0, 62.0}, {30.0, 684.7}}, label: '垂直捲軸, 3頁', value: 0% <AX element pid: 74659, elementOrHash.elementID: 4336817664.13>
+                Other, 0x108db75c0, {{396.0, 65.0}, {3.0, 268.0}} <AX element pid: 74659, elementOrHash.elementID: 4335701504.26>
+            Button, 0x108db7700, {{79.0, 754.7}, {244.3, 77.3}}, identifier: 'formal-route', label: '切換路線' <AX element pid: 74659, elementOrHash.elementID: 4381749280.9>

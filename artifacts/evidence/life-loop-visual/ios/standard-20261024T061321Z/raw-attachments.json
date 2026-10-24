@@ -1,0 +1,71 @@
+{
+  "retained_local_directory": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/life-loop-visual-ios/standard-20261024T061321Z/exported-attachments",
+  "original_xcresult": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/life-loop-visual-ios/standard-20261024T061321Z/result.xcresult",
+  "files": [
+    {
+      "file": "AF28A0D7-63CD-4456-9CE3-21D0323FBA63.png",
+      "sha256": "6d31790b37652a0dfe27f2c0567345b4b5d9c8a505ed9a2239743a1ec2873d2e",
+      "bytes": 2074997
+    },
+    {
+      "file": "6CE07E5F-B9F5-45E0-A73A-44D3CF526AE9.png",
+      "sha256": "12fe9aaf824511f1c389aa8e3855aa38e2b336f0faeea0f1437568fd6088619d",
+      "bytes": 2656216
+    },
+    {
+      "file": "32A49C48-B645-4945-B8C5-FDACE4EC171E.png",
+      "sha256": "e3e186fed796620cdb7089149c5aead5a89f0c9d19b0ed71fc7370cd7df74211",
+      "bytes": 2578274
+    },
+    {
+      "file": "9F936292-55E5-42EC-9AC8-D6948B05418F.png",
+      "sha256": "3e32020d4a701a2e0d38858a671ae4be07ef13bee5edbae183c1c2d4111ad20e",
+      "bytes": 2109275
+    },
+    {
+      "file": "70454C4C-7340-4CA0-BD72-A42821970120.png",
+      "sha256": "3990ba243b687ae563407d28e2d6df0a352820e188006e1fd609a865ee3fa668",
+      "bytes": 2127156
+    },
+    {
+      "file": "379E97AE-3A28-446C-BF49-24FD4F8478A4.png",
+      "sha256": "5343db51265d254e5f9ae135169e8375273af77f06364b72f8e5155b69966628",
+      "bytes": 2632764
+    },
+    {
+      "file": "5E078CE4-2BFE-4165-9EF0-FD04780E86BA.png",
+      "sha256": "7bfdbba5beaa97d3f689817a31e2b58ffa4319ce94b1d4b87f1cb143b1470cbb",
+      "bytes": 2572530
+    },
+    {
+      "file": "DF2CF8DF-12AD-4A97-976B-E011FC20A7F1.png",
+      "sha256": "843b22b6da45aad71a8281b963fb6b09cc56150013dfd75640e584a4fb8df74e",
+      "bytes": 232658
+    },
+    {
+      "file": "manifest.json",
+      "sha256": "256edfa7ab6ccc5b6aed69f04a6dc902153aa8bb7c49b04f88161e79bb5a89a1",
+      "bytes": 6844
+    },
+    {
+      "file": "3B7B36FB-2231-4AD1-8761-4AE98BCB3539.png",
+      "sha256": "df5917716531bef1fac891994c394c371aa4723b626df5563bb9a8acf8f95b8e",
+      "bytes": 2650431
+    },
+    {
+      "file": "98DB75D5-788C-46FC-9D5E-9D19BA8B629A.png",
+      "sha256": "1b565ca2f7fd79a3faf5273aab18a1105f2dd12e8945afb78f1c844d8d5443ac",
+      "bytes": 2072082
+    },
+    {
+      "file": "D4BE2542-3559-45CC-B974-6CCAE7EA206A.png",
+      "sha256": "efc0cb814fefa330895621e2d181a692b0c057c5a2768f0d3b503a779d5e7159",
+      "bytes": 2644276
+    },
+    {
+      "file": "EC5753F2-803C-4712-BE8E-E1666F702276.png",
+      "sha256": "45038e1391ee2a8beb744f802344dfd6ea708b21f49dfe33a17a001455b6c6ca",
+      "bytes": 2153379
+    }
+  ]
+}

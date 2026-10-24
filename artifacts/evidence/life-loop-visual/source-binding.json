@@ -2,11 +2,11 @@
   "base": "c823c820ceea027215df2d2f46c2c0ac4373c871",
   "command": "xcrun swiftc -swift-version 6 -parse-as-library -target arm64-apple-macos14.0 LifeCrossroads/App/LifeWorldScenePreview.swift tools/life-loop-visual/Render.swift -o .build/life-loop-visual/render && .build/life-loop-visual/render \"$PWD\"",
   "exit_code": 0,
-  "scope": "macOS native SwiftUI fixture render and pure sampling checks; not iOS or actual Session integration",
+  "scope": "Historical standalone fixture render, refreshed after layout correction. Does not cover adopted LifeWorldScene/LifeWorldMotion.",
   "files": [
     {
       "path": "LifeCrossroads/App/LifeWorldScenePreview.swift",
-      "sha256": "85c6fe72c01c2446caa20d0718b41d3dc8133ebaa587043f6da9eda5ae61c963"
+      "sha256": "101d655bdfadbf612948c21374e4aae7f06003de437e04c77dc47a6a96402904"
     },
     {
       "path": "tools/life-loop-visual/Render.swift",
@@ -22,36 +22,35 @@
     },
     {
       "path": "artifacts/evidence/life-loop-visual/frames/teen-reduced-final.png",
-      "sha256": "8d99bde41d818bb47ede512416132b88948ccc9b19533065ec8ba505e243bd4c"
+      "sha256": "5c8622523cff2d717eb3c6e870dad6c993e904a0ac094825f2ae7058675d48c2"
     },
     {
       "path": "artifacts/evidence/life-loop-visual/frames/loop-25.png",
-      "sha256": "3249630b29995d0f6709b85dd3e8ecf55e4a7848e941b7764a32d295d7ba4ef1"
+      "sha256": "f3c5acffe27bf57ba7cf7194bce1d4de3b35e81a9ea4d8e6d071b8a1c79f4e46"
     },
     {
       "path": "artifacts/evidence/life-loop-visual/frames/loop-50.png",
-      "sha256": "18bf8712406a9553dbd1f5f6febfe0ba8d4009810d37dc3f3afda032df8e6ba0"
+      "sha256": "2c4abfb115156f69a9bdd72d4d17249020c8113770890c6b84bfdbaefaca7391"
     },
     {
       "path": "artifacts/evidence/life-loop-visual/frames/teen-outcome-start.png",
-      "sha256": "2dc5fb66c1438098e93222f65b83ba676b9aab857e12ce1859a05dfc44db2cca"
+      "sha256": "b0a2c839effb76d90ae00a84734f0a9516a7649ba70416787b5624e5a3d26e97"
     },
     {
       "path": "artifacts/evidence/life-loop-visual/frames/teen-outcome-final.png",
-      "sha256": "89c28d278a093a53787548b1e052ddd4b3107fed3a4004e6474ee2336e41da4c"
+      "sha256": "1aa202f624cd9c38b3a55ce1c7bf4fc0f05a359e9e46e72fefdaf53721cd1814"
     },
     {
       "path": "artifacts/evidence/life-loop-visual/frames/loop-0.png",
-      "sha256": "4eb089a2b2c618b5d9b9af62fb569edbc68f723e3b3f83fdba61cd57393de537"
+      "sha256": "d1673b7023d9926a04eab6432316354a3905d2c6b3da73bacbe83abb7a97c058"
     },
     {
       "path": "artifacts/evidence/life-loop-visual/frames/adult.png",
-      "sha256": "a330910a05df7f2cefccfb8e61314e968326095dc26935518c8c6700a6428c37"
+      "sha256": "c43ba526a9e594f845fea84f4767c10dc5d42c0f388b09f08d0dde4defbe4962"
     },
     {
       "path": "artifacts/evidence/life-loop-visual/frames/loop-100.png",
-      "sha256": "1ffe89fd16b6dea79ae9f08115668de2f6226d4a79aaa66cc0d268ac92051cc9"
+      "sha256": "44080ac142b97e8e92188716b44d69ad5192c554338631a75eb4bc5cbacdacfd"
     }
-  ],
-  "implementation_commit": "8309845c45b969233502d5c04c6d62c4d5a08689"
+  ]
 }

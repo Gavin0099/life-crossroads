@@ -1,0 +1,112 @@
+{
+  "checks": [
+    {
+      "name": "narrow-20261024T061948Z/offline: exported session matches actual saved bytes",
+      "passed": true
+    },
+    {
+      "name": "narrow-20261024T061948Z/offline: authoritative age and pinned contract",
+      "passed": true
+    },
+    {
+      "name": "narrow-20261024T061948Z/rest: exported session matches actual saved bytes",
+      "passed": true
+    },
+    {
+      "name": "narrow-20261024T061948Z/rest: authoritative age and pinned contract",
+      "passed": true
+    },
+    {
+      "name": "narrow-20261024T061948Z/ask: exported session matches actual saved bytes",
+      "passed": true
+    },
+    {
+      "name": "narrow-20261024T061948Z/ask: authoritative age and pinned contract",
+      "passed": true
+    },
+    {
+      "name": "narrow-20261024T061948Z/adult: exported session matches actual saved bytes",
+      "passed": true
+    },
+    {
+      "name": "narrow-20261024T061948Z/adult: authoritative age and pinned contract",
+      "passed": true
+    },
+    {
+      "name": "narrow-20261024T061948Z/child: exported session matches actual saved bytes",
+      "passed": true
+    },
+    {
+      "name": "narrow-20261024T061948Z/child: authoritative age and pinned contract",
+      "passed": true
+    },
+    {
+      "name": "narrow-20261024T061948Z/offline: distinct recorded activity marker",
+      "passed": true
+    },
+    {
+      "name": "narrow-20261024T061948Z/rest: distinct recorded activity marker",
+      "passed": true
+    },
+    {
+      "name": "narrow-20261024T061948Z: paper includes recorded teacher; rest excludes teacher",
+      "passed": true
+    },
+    {
+      "name": "standard-20261024T061950Z/offline: exported session matches actual saved bytes",
+      "passed": true
+    },
+    {
+      "name": "standard-20261024T061950Z/offline: authoritative age and pinned contract",
+      "passed": true
+    },
+    {
+      "name": "standard-20261024T061950Z/rest: exported session matches actual saved bytes",
+      "passed": true
+    },
+    {
+      "name": "standard-20261024T061950Z/rest: authoritative age and pinned contract",
+      "passed": true
+    },
+    {
+      "name": "standard-20261024T061950Z/ask: exported session matches actual saved bytes",
+      "passed": true
+    },
+    {
+      "name": "standard-20261024T061950Z/ask: authoritative age and pinned contract",
+      "passed": true
+    },
+    {
+      "name": "standard-20261024T061950Z/adult: exported session matches actual saved bytes",
+      "passed": true
+    },
+    {
+      "name": "standard-20261024T061950Z/adult: authoritative age and pinned contract",
+      "passed": true
+    },
+    {
+      "name": "standard-20261024T061950Z/child: exported session matches actual saved bytes",
+      "passed": true
+    },
+    {
+      "name": "standard-20261024T061950Z/child: authoritative age and pinned contract",
+      "passed": true
+    },
+    {
+      "name": "standard-20261024T061950Z/offline: distinct recorded activity marker",
+      "passed": true
+    },
+    {
+      "name": "standard-20261024T061950Z/rest: distinct recorded activity marker",
+      "passed": true
+    },
+    {
+      "name": "standard-20261024T061950Z: paper includes recorded teacher; rest excludes teacher",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "pending_clues_exercised": 0,
+  "pending_boundary": "NOT EXERCISED in these fixed seeds",
+  "scope": "Native isolated saved-session renderer; not formal App/clock, GameStore failure handling, G1-G6, or human review"
+}

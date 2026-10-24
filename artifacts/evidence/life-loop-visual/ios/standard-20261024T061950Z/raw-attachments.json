@@ -1,0 +1,71 @@
+{
+  "retained_local_directory": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/life-loop-visual-ios/standard-20261024T061950Z/exported-attachments",
+  "original_xcresult": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/life-loop-visual-ios/standard-20261024T061950Z/result.xcresult",
+  "files": [
+    {
+      "file": "CB5066C7-E0A1-4827-9E75-719C7BC23AC4.png",
+      "sha256": "4087ea284e793cc17a6ff3304f6ca0643265c829aebca5c4239a0d546b3ba69e",
+      "bytes": 2116430
+    },
+    {
+      "file": "6014DF97-96EE-4CB0-AC1A-8357574060FB.png",
+      "sha256": "1eb0bcb7a98971acbb2ed467673e793af17c70992867567a34ee6d1904012eef",
+      "bytes": 2107407
+    },
+    {
+      "file": "3AF06AFE-5208-4FCB-9E01-CB9F52F1C1C5.png",
+      "sha256": "f13480e93adb5b68733f76d1cb6feb26fdf918bb846f5b4edf8e341184a0502e",
+      "bytes": 2100026
+    },
+    {
+      "file": "DBF84419-C20B-4BAD-A76E-BC2DB0A4F9CD.png",
+      "sha256": "e5bc455b941bdd1a8f30378c88330131c35a84b80a4c889dae0efd8b2bbc2d7d",
+      "bytes": 2571239
+    },
+    {
+      "file": "2780954A-4057-4D87-A9C0-33165327B4AC.png",
+      "sha256": "116af67046e029cfd13e62a08c394f586192027d0609d23a669114e7e67f2d1b",
+      "bytes": 2631389
+    },
+    {
+      "file": "C4EA8300-AE3B-480B-B3ED-67622AAE86B4.png",
+      "sha256": "c86d93d10a7b64e2c3f76eddba406260f0a12460a5314a3a4235201745e2ac75",
+      "bytes": 204010
+    },
+    {
+      "file": "BF0BB88B-9CE0-4161-B8C5-5168072CDABF.png",
+      "sha256": "530e9fada67aa40a43471d396d9ab3e0e15b378dc39650ac25d1f95db6e2f30c",
+      "bytes": 2643683
+    },
+    {
+      "file": "475E4406-A221-4C1F-B659-0E33EC1D9209.png",
+      "sha256": "fcafdf2460cbfa3e855d4efe38f30055afdb9d6a4d93654288d8bb85dd885043",
+      "bytes": 2649558
+    },
+    {
+      "file": "FCF15486-016C-47A3-B181-986F172CBC86.png",
+      "sha256": "d29aaefeef731f548a2e8e2cee11d4d372e64dd7ed135d5d3520490199859a6e",
+      "bytes": 2229883
+    },
+    {
+      "file": "15EFF163-8C13-434B-90E4-F082BAC95286.png",
+      "sha256": "21f6ae7cbbd4225c79fb5b2f000673584d42e55a0989627c9747860b49dfcf32",
+      "bytes": 2655076
+    },
+    {
+      "file": "manifest.json",
+      "sha256": "687b5dff4a52131ecf1167230da17e6112388e602acbf524b60361413d031bb1",
+      "bytes": 6845
+    },
+    {
+      "file": "C989A825-6B88-4C0F-B262-175CF4BCFBCA.png",
+      "sha256": "6395cad97395c090c3f1968baabb3deb3cd0b8ea0f9bc11686ea7dc5298623f5",
+      "bytes": 2091894
+    },
+    {
+      "file": "FA683E5F-98CC-4DFB-B02E-7A0BB8B2E989.png",
+      "sha256": "fe14ac68d4d2d9d02ed2a4b9da07e18e2c8c23b1a186d3cdcc3d7f5db229a792",
+      "bytes": 2578258
+    }
+  ]
+}

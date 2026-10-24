@@ -1,0 +1,9 @@
+{
+  "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+  "device_id": "D14A2A23-24FB-466A-987C-A4AB7F46EA93",
+  "deleted": true,
+  "test_exit_code": 65,
+  "xcresult_local": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/.build/life-loop-visual-ios/standard-20261024T055756Z/result.xcresult",
+  "absent_from_inventory": true
+}

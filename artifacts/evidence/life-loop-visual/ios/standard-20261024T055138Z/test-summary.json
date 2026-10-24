@@ -1,0 +1,52 @@
+{
+  "devicesAndConfigurations" : [
+    {
+      "device" : {
+        "architecture" : "arm64",
+        "deviceId" : "6B140AEB-3387-4C21-A1AA-FE0BF841F530",
+        "deviceName" : "VisualFixture-standard-20261024T055138Z",
+        "modelName" : "iPhone 17",
+        "osBuildNumber" : "24A434",
+        "osVersion" : "27.0",
+        "platform" : "iOS Simulator"
+      },
+      "expectedFailures" : 0,
+      "failedTests" : 1,
+      "passedTests" : 2,
+      "skippedTests" : 0,
+      "testPlanConfiguration" : {
+        "configurationId" : "1",
+        "configurationName" : "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription" : "LifeCrossroads · Built with macOS 27.0",
+  "expectedFailures" : 0,
+  "failedTests" : 1,
+  "finishTime" : 1792821318.324,
+  "passedTests" : 2,
+  "result" : "Failed",
+  "runtimeWarnings" : [
+
+  ],
+  "skippedTests" : 0,
+  "startTime" : 1792821101.004,
+  "statistics" : [
+
+  ],
+  "testFailures" : [
+    {
+      "failureText" : "XCTAssertTrue failed - Largest type needs a visible first-screen entry",
+      "targetName" : "LifeCrossroadsUITests",
+      "testIdentifier" : 2,
+      "testIdentifierString" : "VisualFixtureUITests/testLargestTextCanReachStageAndFullBoundaryText()",
+      "testIdentifierURL" : "test://com.apple.xcode/VisualFixture/LifeCrossroadsUITests/VisualFixtureUITests/testLargestTextCanReachStageAndFullBoundaryText",
+      "testName" : "testLargestTextCanReachStageAndFullBoundaryText()"
+    }
+  ],
+  "title" : "Test - LifeCrossroads",
+  "topInsights" : [
+
+  ],
+  "totalTestCount" : 3
+}

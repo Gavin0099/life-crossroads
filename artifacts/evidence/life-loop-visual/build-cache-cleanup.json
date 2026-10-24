@@ -1,0 +1,36 @@
+{
+  "deleted_owned_generated_directories": [
+    ".build/life-loop-visual-ios/narrow-20261024T054646Z/DerivedData",
+    ".build/life-loop-visual-ios/narrow-20261024T055129Z/DerivedData",
+    ".build/life-loop-visual-ios/narrow-20261024T055747Z/DerivedData",
+    ".build/life-loop-visual-ios/narrow-20261024T055747Z/contract-source",
+    ".build/life-loop-visual-ios/narrow-20261024T060445Z/DerivedData",
+    ".build/life-loop-visual-ios/narrow-20261024T060445Z/contract-source",
+    ".build/life-loop-visual-ios/narrow-20261024T061234Z/contract-source",
+    ".build/life-loop-visual-ios/narrow-20261024T061320Z/DerivedData",
+    ".build/life-loop-visual-ios/narrow-20261024T061320Z/contract-source",
+    ".build/life-loop-visual-ios/narrow-20261024T061948Z/DerivedData",
+    ".build/life-loop-visual-ios/narrow-20261024T061948Z/contract-source",
+    ".build/life-loop-visual-ios/standard-20261024T054702Z/DerivedData",
+    ".build/life-loop-visual-ios/standard-20261024T055138Z/DerivedData",
+    ".build/life-loop-visual-ios/standard-20261024T055756Z/DerivedData",
+    ".build/life-loop-visual-ios/standard-20261024T055756Z/contract-source",
+    ".build/life-loop-visual-ios/standard-20261024T060446Z/DerivedData",
+    ".build/life-loop-visual-ios/standard-20261024T060446Z/contract-source",
+    ".build/life-loop-visual-ios/standard-20261024T061321Z/DerivedData",
+    ".build/life-loop-visual-ios/standard-20261024T061321Z/contract-source",
+    ".build/life-loop-visual-ios/standard-20261024T061950Z/DerivedData",
+    ".build/life-loop-visual-ios/standard-20261024T061950Z/contract-source"
+  ],
+  "retained": [
+    "original xcresult bundles, including incomplete interrupted bundle",
+    "xcodebuild logs",
+    "exported attachments/video in own .build run directories"
+  ],
+  "not_deleted": [
+    "other worktrees",
+    "shared Xcode caches",
+    "shared Simulator runtimes",
+    "iPhone or user files"
+  ]
+}

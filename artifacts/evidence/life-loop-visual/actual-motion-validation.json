@@ -1,0 +1,37 @@
+{
+  "checks" : [
+    {
+      "name" : "Loop returns to the same pose at 4000ms, including companion phase",
+      "passed" : true
+    },
+    {
+      "name" : "Whole PNG motion stays within the small-motion specification",
+      "passed" : true
+    },
+    {
+      "name" : "Adjacent supplied times remain continuous",
+      "passed" : true
+    },
+    {
+      "name" : "Reduced motion selects the full static first pose",
+      "passed" : true
+    },
+    {
+      "name" : "Nonfinite time has a finite fallback",
+      "passed" : true
+    },
+    {
+      "name" : "One shot starts at zero and holds the final frame",
+      "passed" : true
+    },
+    {
+      "name" : "Reduced committed outcome uses the final frame immediately",
+      "passed" : true
+    },
+    {
+      "name" : "A committed record remains visible even at a frozen initial frame",
+      "passed" : true
+    }
+  ],
+  "scope" : "Adopted render-only LifeWorldMotion; does not prove Gameplay clock, saving, phase-token ownership, or G1-G6"
+}

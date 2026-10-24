@@ -1,0 +1,140 @@
+[
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "BC86F116-93F9-413F-9500-4348DCDD3EF0",
+        "deviceName" : "VisualFixture-narrow-20261024T061948Z",
+        "exportedFileName" : "440A5FF1-EFA6-4C2A-806B-BC97B0FFCC0A.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "12-saved-child_0_F9DC9B9F-86B5-4E0D-AE54-345B8C9ECAED.png",
+        "timestamp" : 1792822937.317
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "BC86F116-93F9-413F-9500-4348DCDD3EF0",
+        "deviceName" : "VisualFixture-narrow-20261024T061948Z",
+        "exportedFileName" : "93D924C5-A3F7-4F84-8314-8F19F8D57723.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "11-saved-adult_0_566AA004-32B0-433B-B8D4-78A8CB76EDE6.png",
+        "timestamp" : 1792822933.439
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "BC86F116-93F9-413F-9500-4348DCDD3EF0",
+        "deviceName" : "VisualFixture-narrow-20261024T061948Z",
+        "exportedFileName" : "D986F32F-80BF-4AAB-BCB4-A26D1F05A72F.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "08-saved-rest_0_C70CF307-D72A-496C-8FEE-9C1992C11189.png",
+        "timestamp" : 1792822925.677
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "BC86F116-93F9-413F-9500-4348DCDD3EF0",
+        "deviceName" : "VisualFixture-narrow-20261024T061948Z",
+        "exportedFileName" : "9732B192-1C5E-4370-AFB8-7F9C55B35E21.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "07-saved-paper_0_101C1274-F361-4F0B-90B4-42FF9453FB33.png",
+        "timestamp" : 1792822919.458
+      }
+    ],
+    "testIdentifier" : "VisualFixtureUITests/testCommittedPaperAndRestUseDifferentRealRecords()",
+    "testIdentifierURL" : "test://com.apple.xcode/VisualFixture/LifeCrossroadsUITests/VisualFixtureUITests/testCommittedPaperAndRestUseDifferentRealRecords"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "BC86F116-93F9-413F-9500-4348DCDD3EF0",
+        "deviceName" : "VisualFixture-narrow-20261024T061948Z",
+        "exportedFileName" : "8FCC708B-096B-43F1-941A-D617FBD9B162.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "03-adult_0_6B770F94-CDF8-49E6-A271-90D970D46BF3.png",
+        "timestamp" : 1792822948.58
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "BC86F116-93F9-413F-9500-4348DCDD3EF0",
+        "deviceName" : "VisualFixture-narrow-20261024T061948Z",
+        "exportedFileName" : "6268D4E4-EE3D-4D89-88F9-D60A7AB2DD5B.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "02-teen_0_F74A8160-C49C-4D85-9D4F-056ACD5E417D.png",
+        "timestamp" : 1792822947.52
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "BC86F116-93F9-413F-9500-4348DCDD3EF0",
+        "deviceName" : "VisualFixture-narrow-20261024T061948Z",
+        "exportedFileName" : "C3F1E605-06D8-4241-8F33-1F97F17E6373.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "01-child_0_A9AC1A3F-CE96-4826-9A06-4B7F6369E608.png",
+        "timestamp" : 1792822946.375
+      }
+    ],
+    "testIdentifier" : "VisualFixtureUITests/testLargeSceneAndThreeAgeFixtures()",
+    "testIdentifierURL" : "test://com.apple.xcode/VisualFixture/LifeCrossroadsUITests/VisualFixtureUITests/testLargeSceneAndThreeAgeFixtures"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "BC86F116-93F9-413F-9500-4348DCDD3EF0",
+        "deviceName" : "VisualFixture-narrow-20261024T061948Z",
+        "exportedFileName" : "E02140D4-CD6E-46F2-B59B-8CDDC9B679C6.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "05-largest-reachable-text_0_1349CBBA-112C-4CD4-B572-1C34DE0D7D98.png",
+        "timestamp" : 1792822969.326
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "BC86F116-93F9-413F-9500-4348DCDD3EF0",
+        "deviceName" : "VisualFixture-narrow-20261024T061948Z",
+        "exportedFileName" : "B5CE3E28-0542-4E2B-9E25-44E160E904B7.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "04-largest-first-screen_0_C65CE497-16EB-4592-A755-F46F30AE0AE1.png",
+        "timestamp" : 1792822956.566
+      }
+    ],
+    "testIdentifier" : "VisualFixtureUITests/testLargestTextCanReachStageAndFullBoundaryText()",
+    "testIdentifierURL" : "test://com.apple.xcode/VisualFixture/LifeCrossroadsUITests/VisualFixtureUITests/testLargestTextCanReachStageAndFullBoundaryText"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "BC86F116-93F9-413F-9500-4348DCDD3EF0",
+        "deviceName" : "VisualFixture-narrow-20261024T061948Z",
+        "exportedFileName" : "4EA1624F-4C83-4F25-AD60-AFE8086503FE.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "10-formal-source-largest_0_C6411FDD-DD9A-4591-83F0-1015449AED51.png",
+        "timestamp" : 1792822983.746
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "BC86F116-93F9-413F-9500-4348DCDD3EF0",
+        "deviceName" : "VisualFixture-narrow-20261024T061948Z",
+        "exportedFileName" : "B1445F4D-6062-45D9-B38D-C9C9297B65E0.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "09-formal-largest-first-screen_0_83D59601-82DC-4394-BA5C-69E32A7DC3CB.png",
+        "timestamp" : 1792822978.947
+      }
+    ],
+    "testIdentifier" : "VisualFixtureUITests/testRealRecordInspectionLargestTypeRemainsReachable()",
+    "testIdentifierURL" : "test://com.apple.xcode/VisualFixture/LifeCrossroadsUITests/VisualFixtureUITests/testRealRecordInspectionLargestTypeRemainsReachable"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "BC86F116-93F9-413F-9500-4348DCDD3EF0",
+        "deviceName" : "VisualFixture-narrow-20261024T061948Z",
+        "exportedFileName" : "7855C986-5852-4E31-B2CF-6096D6009A93.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "06-reduced-teen_0_FBE03613-0688-43A3-B911-A7897EA87918.png",
+        "timestamp" : 1792822991.542
+      }
+    ],
+    "testIdentifier" : "VisualFixtureUITests/testReducedFixtureRetainsAgeAndResultBoundary()",
+    "testIdentifierURL" : "test://com.apple.xcode/VisualFixture/LifeCrossroadsUITests/VisualFixtureUITests/testReducedFixtureRetainsAgeAndResultBoundary"
+  }
+]
