@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "python -c \"import hashlib,json,pathlib\nroot=pathlib.Path(\\\".\\\")\nbase=pathlib.Path(\\\"artifacts/evidence/world-trace-visual\\\")\nb=json.loads((base/\\\"baseline/manifest.json\\\").read_text())\nc=json.loads((base/\\\"candidate/manifest.json\\\").read_text())\nassert b[\\\"sourceHashes\\\"]==c[\\\"sourceHashes\\\"]\nassert len(b[\\\"images\\\"])==len(c[\\\"images\\\"])==14\nfor m,label in [(b,\\\"baseline\\\"),(c,\\\"candidate\\\")]:\n for p,h in m[\\\"sourceHashes\\\"].items(): assert hashlib.sha256((root/p).read_bytes()).hexdigest()==h,p\n for i in m[\\\"images\\\"]: assert hashlib.sha256((base/label/i[\\\"file\\\"]).read_bytes()).hexdigest()==i[\\\"sha256\\\"]\nfor x,y in zip(b[\\\"images\\\"],c[\\\"images\\\"]):\n assert x[\\\"file\\\"]==y[\\\"file\\\"] and x[\\\"saveSHA256\\\"]==y[\\\"saveSHA256\\\"] and x[\\\"changes\\\"]==y[\\\"changes\\\"] and x[\\\"actors\\\"]==y[\\\"actors\\\"]\nassert hashlib.sha256(pathlib.Path(\\\"LifeCrossroads/App/LifeWorldScene.swift\\\").read_bytes()).hexdigest()==c[\\\"sceneSHA256\\\"]\nprint(\\\"14 saved-life pairs: source/PNG hashes match; archives, changes and actors identical; candidate Scene bound. Offline only.\\\")\n\"",
+  "exit_code": 0,
+  "started_at": "2026-10-24T10:32:12Z",
+  "finished_at": "2026-10-24T10:32:12Z",
+  "runner": "visual-b-offline-integrity",
+  "linked_commit": "129ca195e5be45d6cd88db12fa345dad9b4fcd73",
+  "output_artifacts": [
+    "artifacts/evidence/world-trace-visual/integrity-receipt.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}
