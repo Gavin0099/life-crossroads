@@ -71,5 +71,7 @@
       "archive": "17-rest.json",
       "sha256": "028c376424db5d876c9f2013ab78de3580b8ae70b4e54b1a3e8e7f6938fa5112"
     }
-  ]
+  ],
+  "archiveFiles": 14,
+  "uniqueArchiveByteSequences": 11
 }

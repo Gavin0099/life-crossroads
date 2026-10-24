@@ -1,6 +1,5 @@
 {
   "kind": "offline source-bound comparison; not native iOS acceptance",
-  "pairedSavedLives": 14,
   "baselineGuardChecks": 46,
   "candidateGuardChecks": 74,
   "sameSavedArchiveBytes": true,
@@ -19,5 +18,7 @@
     "No gameplay, country data, DTO, asset or motion-clock changes",
     "8-year activity only has current committed-outcome evidence, not persistent memory",
     "Whole PNG cast remains; no new rig or acting claims"
-  ]
+  ],
+  "pairedSavedFrames": 14,
+  "uniqueArchiveByteSequences": 11
 }

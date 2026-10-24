@@ -38,7 +38,7 @@
 - [實際使用的存檔與雜湊索引](../../artifacts/evidence/world-trace-visual/saved-lives/index.json)（逐位元複製正式 SaveRepository 輸出，兩版共用，非手造狀態）
 - [獨立離線視覺覆核](../../artifacts/evidence/world-trace-visual/independent-review.json)
 
-工具使用正式 Domain、SaveRepository 原子存讀、WorldMomentProjector 與實際 Scene，固定 JPN／jpn-1／Seed0。14組相同存檔逐一對照，存檔SHA、changes、actors完全相同，繪圖前後檔案不變；基準46與候選74項來源／狀態守衛通過。這是守衛斷言數，不是新增74項 XCTest。
+工具使用正式 Domain、SaveRepository 原子存讀、WorldMomentProjector 與實際 Scene，固定 JPN／jpn-1／Seed0。14組畫面逐一對照同來源存檔，其中是11份不同存檔bytes（大字等畫面重用同份狀態），不是14段不同人生。兩版的存檔SHA、changes、actors完全相同，繪圖前後檔案不變；基準46與候選74項來源／狀態守衛通過。這是守衛斷言數，不是新增74項 XCTest。
 
 Visual B 逐張檢視全部14張候選圖。初輪發現紙箋遮臉、道具懸浮與150pt底緣裁切，修正後重畫。包含8歲3路、13歲4路、決策前、17歲兩條路，以及最大 Dynamic Type／Reduce Motion。沒有啟動 Simulator，沒有新增待清理裝置。這是作者自檢，**不是獨立 Critic、iOS 原生、VoiceOver 實機或兒少試玩 PASS**。
 
