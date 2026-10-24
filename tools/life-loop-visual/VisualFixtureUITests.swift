@@ -6,7 +6,9 @@ import XCTest
     func testCommittedPaperAndRestUseDifferentRealRecords() {
         let app = XCUIApplication(); app.launchArguments = ["-formal"]; app.launch()
         let canvas = app.otherElements["life-world-canvas"]
-        XCTAssertTrue(canvas.waitForExistence(timeout: 10))
+        let found = canvas.waitForExistence(timeout: 10)
+        if !found { print(app.debugDescription) }
+        XCTAssertTrue(found)
         XCTAssertTrue(canvas.label.contains("13歲"))
         XCTAssertTrue(canvas.label.contains("樹老師有互動紀錄"))
         capture("07-saved-paper", app)
@@ -14,8 +16,17 @@ import XCTest
         let route = app.staticTexts["formal-route-status"]
         XCTAssertTrue(route.waitForExistence(timeout: 5))
         XCTAssertTrue(canvas.waitForExistence(timeout: 5))
+        wait(for: [XCTNSPredicateExpectation(predicate: NSPredicate(format: "NOT(label CONTAINS %@)", "樹老師"), object: canvas)], timeout: 5)
         XCTAssertFalse(canvas.label.contains("樹老師"), "Rest cannot invent another person's support")
         capture("08-saved-rest", app)
+        app.buttons["formal-route"].tap() // ask
+        wait(for: [XCTNSPredicateExpectation(predicate: NSPredicate(format: "label == %@", "ask"), object: route)], timeout: 5)
+        app.buttons["formal-route"].tap() // adult
+        wait(for: [XCTNSPredicateExpectation(predicate: NSPredicate(format: "label CONTAINS %@", "39歲"), object: canvas)], timeout: 5)
+        capture("11-saved-adult", app)
+        app.buttons["formal-route"].tap() // child
+        wait(for: [XCTNSPredicateExpectation(predicate: NSPredicate(format: "label CONTAINS %@", "8歲"), object: canvas)], timeout: 5)
+        capture("12-saved-child", app)
     }
 
     func testRealRecordInspectionLargestTypeRemainsReachable() {

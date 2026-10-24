@@ -8,7 +8,7 @@ struct LifeWorldScene: View {
     let motion: PresentationMotionFrame
     var onInspectionChanged: (Bool) -> Void = { _ in }
     @Environment(\.dynamicTypeSize) private var typeSize
-    @State private var inspectedIndex: Int?
+    @State private var inspectedChange: WorldChangeProjection?
 
     private let forest = Color(red: 0.15, green: 0.36, blue: 0.29)
     private var sample: LifeWorldScenePreviewModel {
@@ -40,16 +40,17 @@ struct LifeWorldScene: View {
                         }.padding(12).accessibilityHidden(true)
                     }
                 }.frame(width: geometry.size.width, height: geometry.size.height).clipped()
-            }.frame(minHeight: 230).accessibilityIdentifier("life-world-stage")
+            }.frame(minHeight: 280)
             Text(frame.sceneID == "workshop" ? "創作工坊 · 共用虛構舞台" : "河畔社區 · 共用虛構舞台")
                 .font(.caption).foregroundStyle(.secondary)
             ForEach(Array(frame.worldChanges.enumerated()), id: \.offset) { index, change in
-                Button { inspectedIndex = index; onInspectionChanged(true) } label: {
+                Button { inspectedChange = change; onInspectionChanged(true) } label: {
                     HStack(alignment: .top, spacing: 9) {
-                        Image(systemName: Self.symbol(for: change)).frame(width: 24)
+                        Image(systemName: Self.symbol(for: change)).font(.system(size: 18))
+                            .frame(width: 24).accessibilityHidden(true)
                         Text(change.caption).fixedSize(horizontal: false, vertical: true)
                         Spacer(minLength: 0)
-                        Image(systemName: "info.circle").font(.caption)
+                        Image(systemName: "info.circle").font(.system(size: 18)).accessibilityHidden(true)
                     }.frame(maxWidth: .infinity, alignment: .leading).padding(.vertical, 6)
                 }.buttonStyle(.plain).foregroundStyle(forest)
                     .accessibilityIdentifier("world-change-\(index)")
@@ -59,16 +60,15 @@ struct LifeWorldScene: View {
                 Label(gap, systemImage: "questionmark.circle").font(.caption)
                     .fixedSize(horizontal: false, vertical: true)
             }
-        }.sheet(isPresented: Binding(get: { inspectedIndex != nil }, set: { if !$0 { inspectedIndex = nil } }),
+        }.sheet(isPresented: Binding(get: { inspectedChange != nil }, set: { if !$0 { inspectedChange = nil } }),
             onDismiss: { onInspectionChanged(false) }) {
-            if let index = inspectedIndex, frame.worldChanges.indices.contains(index) {
-                let change = frame.worldChanges[index]
+            if let change = inspectedChange {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 16) {
                         Text(change.isOccurred ? "世界留下的紀錄" : "留下線索，尚未發生").font(.title2.bold())
                         Text(change.caption).fixedSize(horizontal: false, vertical: true)
                         Text("來源：\(change.sourceAge)歲的選擇紀錄。")
-                        Button("回到生活場景") { inspectedIndex = nil }.buttonStyle(.borderedProminent)
+                        Button("回到生活場景") { inspectedChange = nil }.buttonStyle(.borderedProminent)
                     }.padding(20)
                 }
             }

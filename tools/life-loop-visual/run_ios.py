@@ -12,6 +12,7 @@ import re
 import shutil
 import signal
 import subprocess
+import time
 from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -29,6 +30,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--device', choices=['standard', 'narrow'], default='standard')
     parser.add_argument('--only-testing', default='LifeCrossroadsUITests/VisualFixtureUITests')
+    parser.add_argument('--process-timeout', type=float, default=600,
+                        help='Bound xcodebuild including boot/finalization; timeout still deletes the dedicated device')
     args = parser.parse_args()
     def interrupted(signum, _frame):
         raise SystemExit(128 + signum)
@@ -86,6 +89,17 @@ def main():
     device_type = 'com.apple.CoreSimulator.SimDeviceType.' + ('iPhone-17' if args.device == 'standard' else 'iPhone-SE-3rd-generation')
     device = run('xcrun', 'simctl', 'create', f'VisualFixture-{args.device}-{stamp}', device_type, runtime, capture_output=True).stdout.strip()
     receipt = {'device_type': device_type, 'runtime': runtime, 'device_id': device, 'deleted': False}
+    def capture_records():
+        # XCTest may reset the app container between launches. Capture while tests run,
+        # scoped strictly to this dedicated device; no real phone/user app data is read.
+        containers = Path.home() / 'Library/Developer/CoreSimulator/Devices' / device / 'data/Containers/Data/Application'
+        destination = evidence / 'saved-sources'
+        for path in containers.glob('*/Library/Application Support/VisualFixture/*.json'):
+            destination.mkdir(exist_ok=True)
+            try:
+                shutil.copy2(path, destination / path.name)
+            except FileNotFoundError:
+                pass  # A container reset raced the copy; next tick retries.
     exit_code = 1
     try:
         with (work / 'xcodebuild.log').open('w') as log:
@@ -95,7 +109,25 @@ def main():
                 '-only-testing:' + args.only_testing, 'CODE_SIGNING_ALLOWED=NO', 'test']
             process = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT, text=True)
             try:
-                exit_code = process.wait()
+                deadline = time.monotonic() + args.process_timeout
+                while process.poll() is None:
+                    capture_records()
+                    if time.monotonic() >= deadline:
+                        receipt['process_timeout_seconds'] = args.process_timeout
+                        process.terminate()
+                        try:
+                            process.wait(timeout=20)
+                        except subprocess.TimeoutExpired:
+                            process.kill(); process.wait()
+                        exit_code = 124
+                        break
+                    try:
+                        process.wait(timeout=1)
+                    except subprocess.TimeoutExpired:
+                        pass
+                else:
+                    exit_code = process.returncode
+                capture_records()
             except BaseException:
                 process.terminate()
                 try:
@@ -104,19 +136,18 @@ def main():
                     process.kill()
                     process.wait()
                 raise
-        container = subprocess.run(['xcrun', 'simctl', 'get_app_container', device, 'com.gavin0099.VisualFixture', 'data'], capture_output=True, text=True)
-        if container.returncode == 0:
-            records = Path(container.stdout.strip()) / 'Library/Application Support/VisualFixture'
-            if records.exists():
-                shutil.copytree(records, evidence / 'saved-sources')
         receipt['test_exit_code'] = exit_code
         receipt['xcresult_local'] = str(work / 'result.xcresult')
         print((work / 'xcodebuild.log').read_text()[-7000:], flush=True)
-        if (work / 'result.xcresult').exists():
+        receipt['result_bundle_readable'] = (work / 'result.xcresult/Info.plist').exists()
+        if receipt['result_bundle_readable']:
             run('xcrun', 'xcresulttool', 'export', 'attachments', '--path', str(work / 'result.xcresult'),
                 '--output-path', str(evidence / 'screenshots'))
             with (evidence / 'test-summary.json').open('w') as summary:
                 run('xcrun', 'xcresulttool', 'get', 'test-results', 'summary', '--path', str(work / 'result.xcresult'), stdout=summary)
+        elif exit_code == 0:
+            exit_code = 125
+            receipt['test_exit_code'] = exit_code
     finally:
         subprocess.run(['xcrun', 'simctl', 'shutdown', device], capture_output=True)
         cleanup = subprocess.run(['xcrun', 'simctl', 'delete', device], capture_output=True, text=True)
