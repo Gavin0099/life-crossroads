@@ -906,14 +906,19 @@ final class LifeCrossroadsUITests: XCTestCase {
         for _ in 0..<32 {
             if element.identifier == "lifeWorldScene", element.exists, element.isHittable { return }
             let footer = app.buttons["continueLife"].exists && !app.buttons["closeTrace"].exists && !app.buttons["closeComparison"].exists && !app.buttons["closeFullEvent"].exists
-            let worldFooter = app.buttons["worldPause"]
+            let worldFooter = app.descendants(matching: .any).matching(identifier: "worldPlaybackControls").firstMatch
             let sheet = app.buttons["closeTrace"].exists || app.buttons["closeComparison"].exists || app.buttons["closeFullEvent"].exists
             let pinnedDrawer = app.scrollViews["worldDecisionDrawer"]
             let scroll = app.scrollViews["eventStoryScroll"].exists ? app.scrollViews["eventStoryScroll"] : pinnedDrawer.exists && !sheet ? pinnedDrawer : app.scrollViews.firstMatch
             let scrollTop = max(app.frame.minY + 90, scroll.exists ? scroll.frame.minY + 8 : 100)
-            let footerTop = worldFooter.exists && !sheet ? worldFooter.frame.minY - 6 : app.frame.maxY - (footer ? 110 : 24)
+            let footerTop = worldFooter.exists && !sheet ? worldFooter.frame.minY - 8 : app.frame.maxY - (footer ? 110 : 24)
             let bottom = min(footerTop, scroll.exists ? scroll.frame.maxY - 8 : footerTop)
-            if element.exists && element.isHittable && element.frame.midY > scrollTop && element.frame.midY < bottom { return }
+            if element.exists && element.isHittable && element.frame.midY > scrollTop && element.frame.midY < bottom {
+                if pinnedDrawer.exists && !sheet {
+                    print("LL07_REVEALED \(element.identifier): target=\(element.frame), visible=\(scrollTop)...\(bottom), controls=\(worldFooter.frame)")
+                }
+                return
+            }
             // Drag within the actual scroll viewport, excluding the pinned world and control strip.
             let scrollHeight = max(44, bottom - scrollTop)
             if pinnedDrawer.exists && !sheet {
