@@ -3,12 +3,47 @@ import SwiftUI
 import LifeDomain
 import LifeData
 import LifePersistence
+import LifePresentation
 #if targetEnvironment(simulator)
 import CryptoKit
 #endif
 
 @MainActor
 final class GameStore: ObservableObject {
+    @Published private(set) var playback = WorldPlayback()
+    @Published var worldPreviewEnabled = !ProcessInfo.processInfo.arguments.contains("-legacy-event-first")
+    private var now: Double { ProcessInfo.processInfo.systemUptime }
+    var world: LifeWorldFrame? {
+        guard let session, let catalog else { return nil }
+        return (try? WorldMomentProjector.project(session: session, catalog: catalog))?.presenting(playback.phase)
+    }
+    var canAnimateWorld: Bool {
+        worldPreviewEnabled && session != nil && !viewingOriginal && errorMessage == nil && playback.isRunning
+    }
+    func suspendWorld(_ value: Bool) { playback.setSuspended(value, now: now) }
+    func pauseWorld(_ value: Bool) { playback.setPaused(value, now: now) }
+    func speedWorld(_ value: WorldPlayback.Speed) { playback.setSpeed(value, now: now) }
+    func pulseWorld() {
+        guard canAnimateWorld else { return }
+        if let ticket = playback.tick(now: now) { advanceWorld(ticket) }
+    }
+    func skipWorld() {
+        guard worldPreviewEnabled, session != nil, !viewingOriginal else { return }
+        if let ticket = playback.skip(now: now) { advanceWorld(ticket) }
+    }
+    private func bindWorld(restoring: Bool = false, reset: Bool = false) {
+        if reset { playback = WorldPlayback() }
+        if let session { playback.bind(session, now: now, restoring: restoring) }
+    }
+    private func advanceWorld(_ ticket: WorldAdvanceTicket) {
+        guard let session, !viewingOriginal, playback.accepts(ticket, session: session),
+              let catalog, var active = journey else { return }
+        do {
+            try active.continueLife(catalog: catalog)
+            if commit(active) { bindWorld() }
+            else { playback.commitFailed(now: now) }
+        } catch { playback.commitFailed(now: now); errorMessage = "暫時無法推進：\(error)" }
+    }
     static let firstCountries = ["TWN", "JPN", "USA", "DEU", "IND", "BRA", "VNM", "KEN"]
     @Published private(set) var journey: LifeJourney?
     @Published var showingHome = true
@@ -92,8 +127,8 @@ final class GameStore: ObservableObject {
         } catch { errorMessage = "進度尚未寫入，這次操作沒有生效；原紀錄仍保留。\(error)"; return false }
     }
 
-    func resume() { viewingOriginal = false; showingHome = false }
-    func home() { showingHome = true }
+    func resume() { viewingOriginal = false; showingHome = false; bindWorld(restoring: true) }
+    func home() { playback.setSuspended(true, now: now); showingHome = true }
 
     func start(replay: Bool = false) {
         guard let catalog else { return }
@@ -111,7 +146,7 @@ final class GameStore: ObservableObject {
                 next = try .start(catalog: catalog, countryCode: countryCode,
                                   householdID: "\(countryCode.lowercased())-\(familyNumber)", seed: seed)
             }
-            if commit(.single(next)) { viewingOriginal = false; showingHome = false }
+            if commit(.single(next)) { viewingOriginal = false; showingHome = false; bindWorld(reset: true) }
         } catch { errorMessage = "暫時無法開始：\(error)" }
     }
 
@@ -122,17 +157,17 @@ final class GameStore: ObservableObject {
         do {
             let next = try LifeSession.start(catalog: catalog, countryCode: previous.state.countryCode,
                 householdID: previous.state.householdID, seed: differentSeed)
-            if commit(.single(next)) { viewingOriginal = false; showingHome = false }
+            if commit(.single(next)) { viewingOriginal = false; showingHome = false; bindWorld(reset: true) }
         } catch { errorMessage = "暫時無法重新開始：\(error)" }
     }
     func choose(_ choiceID: String) {
         guard let catalog, var active = journey, !viewingOriginal else { return }
-        do { try active.choose(choiceID, catalog: catalog); commit(active) }
+        do { try active.choose(choiceID, catalog: catalog); if commit(active) { bindWorld() } }
         catch { errorMessage = "這次選擇尚無法進行：\(error)" }
     }
     func next() {
         guard let catalog, var active = journey, !viewingOriginal else { return }
-        do { try active.continueLife(catalog: catalog); commit(active) }
+        do { try active.continueLife(catalog: catalog); if commit(active) { bindWorld() } }
         catch { errorMessage = "暫時無法推進：\(error)" }
     }
     @discardableResult
@@ -140,7 +175,7 @@ final class GameStore: ObservableObject {
         guard let catalog, let original = journey?.activeSession, experiment == nil else { return false }
         do {
             let next = try BranchExperiment.start(original: original, decisionIndex: index, choiceID: choiceID, catalog: catalog)
-            if commit(.branch(next)) { viewingOriginal = false; showingHome = false; return true }
+            if commit(.branch(next)) { viewingOriginal = false; showingHome = false; bindWorld(); return true }
         } catch { errorMessage = "這個岔路尚無法改選：\(error)" }
         return false
     }

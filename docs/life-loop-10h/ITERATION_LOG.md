@@ -60,3 +60,22 @@ LL-00預算0.50 Agent-hour，包含本片基線盤點/隔離/快照；實際觀�
 1. LL-01：先凍結只讀 `LifeWorldFrame` / `WorldMomentProjector`，分開真實年齡與視覺蒙太奇，補未發生/未知來源負面測試。
 2. 由同一契約提交交接Visual獨立分支；既有PNG微動、外部固定SHA/MIT查核算在Visual2h內。
 3. LL-02／04：累積演出時間、暫停/速度連續、Exactly-once與後果自然續行，再驗新版G1～G6；目前均未完成。
+
+## 使用者更正後：接續整套10 Agent-hours（2026-10-24）
+
+先前將「００」解讀為僅LL-00、完成後停下，與完整10h授權不符，已更正。從05:45:15 UTC接續Gameplay現場執行；使用者等待間隔不計主動工作。總帳維持Gameplay7h／Visual2h／Reviewer1h上限，未要求等待滿10h或建立排程。
+
+### R1 / LL-01
+
+- 共用契約提交 `6f5e3c1` 已推至PR #10同分支。新增純Swift LifeWorldFrame / WorldMomentProjector / PresentationMotionFrame，沒有修改Domain、存檔schema或版本。
+- 3項實際投影測試通過：choosing沒有未做選擇後果、rest不編造人物或運氣、真實故事記憶/延後線索/已觸發呼應、台灣缺口及ended/restore。
+- DTO保留真實年齡，另列visualFromAge；動畫輸入分global elapsed與phase elapsed，Visual不可自建時鐘。
+- Visual於05:48:23 UTC起研究固定上游SHA/MIT，收到契約後在獨立worktree及`codex/life-loop-visual-world-10h-r2`實作。未更動其他已存在的Visual工作樹；不整枝合併舊WIP。
+
+### R2～R4 執行中
+
+- 新增純Swift WorldPlayback：注入單調時間、3秒Living／2秒保存後結果、1×／3×、暫停／背景、每phase世代與exactly-once ticket；冷啟動reflecting保持暫停待玩家操作。
+- GameStore仍先save再publish。動畫回呼只在identity與generation仍匹配reflecting時呼叫合法continueLife；失敗保持原結果、暫停自動重試。
+- 正式Crossroads接scene／事件／結果與可回退開關；說明/比較/岔路/警告/背景及VoiceOver阻止自動續行。未完成UI驗證前不標DONE。
+- 原有UI回歸明確用legacy開關；新世界UI另有自然兩事件、存檔失敗、冷恢復、最大文字、完整人生/分岔案例，不混計為同一路徑。
+- 新增日本/台灣凍結trace與normal/fast/skip真實磁碟存讀一致性；八國15決策與完整分岔原局bytes保持，結果待本輪測試完成後記錄。

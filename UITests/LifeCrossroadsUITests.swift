@@ -7,6 +7,105 @@ final class LifeCrossroadsUITests: XCTestCase {
         continueAfterFailure = false
     }
 
+    // New-world acceptance is separate from legacy Event-first regression cases below.
+    func testWorldNaturallyRunsTwoEventsAndNeverChoosesForThePlayer() throws {
+        let app = launch(seed: "0", world: true)
+        let start = app.buttons["startLife"]; reveal(start, in: app); start.tap()
+        XCTAssertTrue(app.staticTexts["livingTitle"].waitForExistence(timeout: 3))
+        attachScreenshot("world-childhood-living", app: app)
+        XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 6))
+        let first = try XCTUnwrap(app.staticTexts["eventTitle"].value as? String)
+        let checksum = try archiveChecksum(in: app)
+        // Real event pause: speeding presentation does not submit a choice.
+        app.buttons["worldSpeed"].tap()
+        XCTAssertFalse(app.staticTexts["chosenAction"].exists)
+        XCTAssertEqual(try archiveChecksum(in: app), checksum)
+        let choice = app.buttons["choice.invest"]; reveal(choice, in: app); choice.tap()
+        XCTAssertTrue(app.staticTexts["livingTitle"].waitForExistence(timeout: 8), "Saved outcome returns to living without Continue")
+        XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 8))
+        XCTAssertNotEqual(app.staticTexts["eventTitle"].value as? String, first)
+        attachScreenshot("world-second-real-event", app: app)
+        // Normal-speed second outcome must naturally resume too.
+        app.buttons["worldSpeed"].tap()
+        let nextChoice = app.buttons["choice.rest"]; reveal(nextChoice, in: app); nextChoice.tap()
+        XCTAssertTrue(app.staticTexts["livingTitle"].waitForExistence(timeout: 8))
+        XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 8))
+    }
+
+    func testWorldSaveFailuresDoNotPublishReactionsOrAdvanceAndRetryWorks() throws {
+        let app = launch(seed: "0", failingSaves: "2,4", world: true)
+        startWorldPaused(app)
+        let firstEvent = app.staticTexts["eventTitle"].value as? String
+        let before = try archiveChecksum(in: app)
+        let rest = app.buttons["choice.rest"]; reveal(rest, in: app); rest.tap()
+        assertSaveFailure(in: app)
+        XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, firstEvent)
+        XCTAssertFalse(app.staticTexts["chosenAction"].exists)
+        XCTAssertEqual(try archiveChecksum(in: app), before)
+        reveal(rest, in: app); rest.tap()
+        XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+        let saved = try archiveChecksum(in: app); XCTAssertNotEqual(saved, before)
+        attachScreenshot("world-saved-rest-outcome", app: app)
+        app.buttons["continueLife"].tap(); assertSaveFailure(in: app)
+        XCTAssertTrue(app.staticTexts["chosenAction"].exists)
+        XCTAssertEqual(try archiveChecksum(in: app), saved)
+        XCTAssertTrue((app.staticTexts["worldPlaybackState"].value as? String ?? "").contains("committedOutcome|true|8|1|"))
+        app.buttons["continueLife"].tap(); skipWorldMontage(app)
+        XCTAssertNotEqual(app.staticTexts["eventTitle"].value as? String, firstEvent)
+    }
+
+    func testWorldRestorePauseSheetsAndRestartCancelKeepTheStoredOutcome() throws {
+        let app = launch(seed: "0", world: true)
+        startWorldPaused(app)
+        let rest = app.buttons["choice.rest"]; reveal(rest, in: app); rest.tap()
+        XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+        let saved = try archiveChecksum(in: app)
+        app.terminate(); app.launchArguments.removeAll { $0 == "-reset-save" }; app.launch()
+        XCTAssertTrue(app.buttons["resumeLife"].waitForExistence(timeout: 10)); app.buttons["resumeLife"].tap()
+        XCTAssertTrue(app.staticTexts["chosenAction"].waitForExistence(timeout: 5))
+        XCTAssertTrue((app.staticTexts["worldPlaybackState"].value as? String ?? "").contains("committedOutcome|true|8|1|"))
+        openReason(in: app)
+        XCTAssertEqual(try archiveChecksum(in: app), saved)
+        app.buttons["closeTrace"].tap()
+        app.buttons["restartMenu"].tap(); app.buttons["restartSame"].tap()
+        let cancel = app.buttons["cancelRestart"]
+        XCTAssertTrue(cancel.waitForExistence(timeout: 5)); cancel.tap()
+        XCTAssertTrue(app.staticTexts["chosenAction"].waitForExistence(timeout: 5))
+        XCTAssertEqual(try archiveChecksum(in: app), saved)
+        app.buttons["continueLife"].tap(); skipWorldMontage(app)
+        XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, "child-friend")
+    }
+
+    func testWorldMaximumTextRetainsActionsAndRealProjectConsequences() throws {
+        let app = launch(seed: "0", largestText: true, world: true)
+        startWorldPaused(app)
+        for _ in 0..<3 {
+            let rest = app.buttons["choice.rest"]; reveal(rest, in: app); rest.tap()
+            XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5)); app.buttons["continueLife"].tap()
+            skipWorldMontage(app)
+        }
+        XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, "teen-project")
+        let paper = app.buttons["choice.offline"]; reveal(paper, in: app); XCTAssertTrue(paper.isHittable)
+        attachScreenshot("world-workshop-maximum-text-event", app: app); paper.tap()
+        XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+        let memory = app.staticTexts["projectMemory"]; reveal(memory, in: app)
+        XCTAssertTrue(memory.label.contains("紙本創作"))
+        attachScreenshot("world-workshop-maximum-text-outcome", app: app)
+        openReason(in: app); XCTAssertTrue(app.staticTexts["actualInfluences"].exists)
+    }
+
+    private func startWorldPaused(_ app: XCUIApplication) {
+        let start = app.buttons["startLife"]; reveal(start, in: app); start.tap()
+        let pause = app.buttons["worldPause"]; XCTAssertTrue(pause.waitForExistence(timeout: 5))
+        if pause.label == "暫停播放" { pause.tap() }
+        skipWorldMontage(app)
+    }
+    private func skipWorldMontage(_ app: XCUIApplication) {
+        let skip = app.buttons["skipLiving"]
+        if skip.waitForExistence(timeout: 3) { skip.tap() }
+        XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 6))
+    }
+
     func testProjectWorkshopFourReactionsAndRestoredReceipt() throws {
         for (choice, caption, memory) in [("invest", "線上圖解", "線上創作"), ("offline", "紙本圖解", "紙本創作"),
                                           ("ask", "先說出需要", "未建立作品"), ("rest", "留給自己", "未建立作品")] {
@@ -324,6 +423,76 @@ final class LifeCrossroadsUITests: XCTestCase {
         XCTAssertEqual(app.staticTexts["chosenAction"].value as? String, "invest")
     }
 
+    func testWorldFullLifeForkPreservesOriginalAndComparesRemainder() throws {
+        let app = launch(seed: "0", world: true)
+        startWorldPaused(app)
+        var originalEvents: [String] = []
+        var originalRecords: [Int: VisibleRecord] = [:]
+        for index in 0..<15 {
+            skipWorldMontage(app)
+            originalEvents.append(try XCTUnwrap(app.staticTexts["eventTitle"].value as? String))
+            let choice = try policyChoice(in: app)
+            reveal(choice, in: app); choice.tap()
+            XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+            if [0, 3, 7, 14].contains(index) { originalRecords[index] = try recordOutcome(in: app) }
+            app.buttons["continueLife"].tap()
+        }
+        XCTAssertTrue(app.staticTexts["journeyComplete"].waitForExistence(timeout: 5))
+        let open = app.buttons["openForkPicker"]; reveal(open, in: app); open.tap()
+        let point = app.buttons["forkPoint.3"]; reveal(point, in: app); point.tap()
+        let offline = app.buttons["forkChoice.offline"]
+        XCTAssertTrue(offline.waitForExistence(timeout: 5))
+        XCTAssertFalse(app.buttons["forkChoice.invest"].isEnabled)
+        attachScreenshot("lc04-fork-options", app: app)
+        reveal(offline, in: app); offline.tap()
+        XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["chosenAction"].value as? String, "offline")
+        var alternativeRecords = [3: try recordOutcome(in: app)]
+        XCTAssertNotEqual(alternativeRecords[3]?.choiceID, originalRecords[3]?.choiceID)
+        XCTAssertNotEqual(alternativeRecords[3]?.resources, originalRecords[3]?.resources)
+        app.terminate()
+        app.launchArguments.removeAll { $0 == "-reset-save" }
+        app.launch()
+        XCTAssertTrue(app.buttons["resumeLife"].waitForExistence(timeout: 10))
+        app.buttons["resumeLife"].tap()
+        XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["chosenAction"].value as? String, "offline")
+        let original = app.buttons["viewOriginal"]; reveal(original, in: app); original.tap()
+        XCTAssertTrue(app.staticTexts["journeyComplete"].waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["endingSeed"].value as? String, "0")
+        try assertOriginalHistory(originalRecords, in: app)
+        let resume = app.buttons["resumeBranch"]; reveal(resume, in: app); resume.tap()
+        app.buttons["continueLife"].tap()
+        for index in 4..<15 {
+            skipWorldMontage(app)
+            let choice = app.buttons["choice.rest"]; reveal(choice, in: app); choice.tap()
+            XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+            if [7, 14].contains(index) { alternativeRecords[index] = try recordOutcome(in: app) }
+            app.buttons["continueLife"].tap()
+        }
+        XCTAssertTrue(app.staticTexts["journeyComplete"].waitForExistence(timeout: 5))
+        app.terminate(); app.launch()
+        XCTAssertTrue(app.buttons["resumeLife"].waitForExistence(timeout: 10))
+        app.buttons["resumeLife"].tap()
+        let preserved = app.buttons["viewOriginal"]; reveal(preserved, in: app); preserved.tap()
+        try assertOriginalHistory(originalRecords, in: app)
+        let returnToBranch = app.buttons["resumeBranch"]; reveal(returnToBranch, in: app); returnToBranch.tap()
+        let compare = app.buttons["compareBranches"]; reveal(compare, in: app); compare.tap()
+        XCTAssertTrue(app.staticTexts["branchComparisonTitle"].waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["branchComparisonCount"].value as? String, "12")
+        XCTAssertTrue(app.staticTexts["branchComparisonScope"].label.contains("沒有自動代選"))
+        for index in [3, 7, 14] {
+            try assertComparison(try XCTUnwrap(originalRecords[index]), prefix: "branch.\(index).original", in: app)
+            try assertComparison(try XCTUnwrap(alternativeRecords[index]), prefix: "branch.\(index).alternative", in: app)
+        }
+        attachScreenshot("lc04-complete-comparison", app: app)
+        let last = app.descendants(matching: .any).matching(identifier: "branchRow.14").firstMatch
+        reveal(last, in: app)
+        XCTAssertTrue(last.exists)
+        attachScreenshot("lc04-comparison-last-age", app: app)
+        XCTAssertEqual(originalEvents.count, 15)
+    }
+
     func testForkPreservesOriginalResumesAfterRelaunchAndComparesFullRemainder() throws {
         let app = launch(seed: "0")
         start(app)
@@ -490,14 +659,15 @@ final class LifeCrossroadsUITests: XCTestCase {
         alert.buttons["知道了"].tap()
     }
 
-    private func launch(seed: String, largestText: Bool = false, failingSaves: String? = nil) -> XCUIApplication {
+    private func launch(seed: String, largestText: Bool = false, failingSaves: String? = nil, world: Bool = false) -> XCUIApplication {
         let app = XCUIApplication()
-        app.launchArguments += ["-ui-testing", "-reset-save", "-life-seed", seed,
+        app.launchArguments += ["-ui-testing", "-legacy-event-first", "-reset-save", "-life-seed", seed,
                                 "-AppleLanguages", "(zh-Hant)", "-AppleLocale", "zh_TW"]
         if largestText {
             app.launchArguments += ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
         }
         if let failingSaves { app.launchArguments += ["-ui-fail-save-at", failingSaves] }
+        if world { app.launchArguments.removeAll { $0 == "-legacy-event-first" } }
         app.launch()
         XCTAssertTrue(app.buttons["startLife"].waitForExistence(timeout: 10))
         return app

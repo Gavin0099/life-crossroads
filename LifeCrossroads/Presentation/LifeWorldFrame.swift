@@ -75,7 +75,7 @@ public enum WorldMomentProjector {
         }
         // Persistent objects are backed by retained facts, including rest/recovery facts.
         for fact in state.story.flags {
-            changes.append(.init(kind: .memory, caption: "故事記憶：\(fact.key)＝\(fact.value)（\(fact.age)歲）",
+            changes.append(.init(kind: .memory, caption: "故事記憶：\(memoryCaption(fact))（\(fact.age)歲）",
                 sourceEventID: fact.eventID, sourceChoiceID: fact.choiceID, sourceAge: fact.age, isOccurred: true))
         }
         for hook in state.pendingHooks {
@@ -89,6 +89,24 @@ public enum WorldMomentProjector {
         let scene = state.age == 13 && eventID == "teen-project" ? "workshop" : stage == .childhood ? "river" : "community"
         return .init(stage: stage, age: state.age, visualFromAge: session.jumps.last?.fromAge,
             sceneID: scene, actors: actors, worldChanges: changes, moment: moment, eventID: eventID, environmentGaps: gaps)
+    }
+
+    private static func memoryCaption(_ fact: StoryFact) -> String {
+        switch (fact.key, fact.value) {
+        case ("learning", "online"): "留下線上創作經驗"
+        case ("learning", "paper"): "留下紙本創作經驗"
+        case ("learning", "none"): "這次未建立作品，仍可重新尋找起點"
+        case ("friendship", "connected"): "保留與阿禾的連結"
+        case ("friendship", "paused"): "暫緩聯絡，仍可建立新連結"
+        case ("care", "shared"): "建立共同照顧安排"
+        case ("care", "paused"): "先為照顧責任留出休息"
+        case (_, "seeking"): "已說出需要，正在尋找協助"
+        case ("repair", "practiced"): "留下修理練習"
+        case ("kitchen", "shared"): "參與共食安排"
+        case ("garden", "tending"): "留下照顧花園的經驗"
+        case ("nature", "observing"): "留下觀察自然的經驗"
+        default: "留下這次行動的記錄"
+        }
     }
 
     public static func personName(_ id: String) -> String {

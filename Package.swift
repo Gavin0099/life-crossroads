@@ -27,7 +27,7 @@ let package = Package(
                     path: "Tests/LifePersistenceTests"),
         .testTarget(name: "LifeAnalysisTests", dependencies: ["LifeAnalysis", "LifeDomain", "LifeData"],
                     path: "Tests/LifeAnalysisTests"),
-        .testTarget(name: "LifePresentationTests", dependencies: ["LifePresentation", "LifeDomain", "LifeData"],
+        .testTarget(name: "LifePresentationTests", dependencies: ["LifePresentation", "LifeDomain", "LifeData", "LifePersistence"],
                     path: "Tests/LifePresentationTests")
     ]
 )
