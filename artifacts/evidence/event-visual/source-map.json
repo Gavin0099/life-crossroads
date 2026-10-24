@@ -1,0 +1,92 @@
+[
+  {
+    "file": "workshop-large-text-saved.png",
+    "testIdentifier": "LifeCrossroadsUITests/testProjectWorkshopDoesNotReactUntilSaveSucceedsWithLargeText()",
+    "source": "artifacts/ios/EventVisual-20261024T035341Z.xcresult",
+    "native": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "02EB4201-0419-4E43-8DDA-B337F33A3F2A",
+      "deviceName": "LifeCrossroads Event Visual Focused",
+      "exportedFileName": "660022D9-C894-4DE9-908F-1CF152646576.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "workshop-large-text-saved_0_F024D90E-168F-4EC6-8FD3-60E4DBE0873C.png",
+      "timestamp": 1792814385.163
+    },
+    "sha256": "058d5ff02b57283b19fde86e9899ee5f803ef9efe4d9472453a5d76764809f1b"
+  },
+  {
+    "file": "workshop-rest-committed.png",
+    "testIdentifier": "LifeCrossroadsUITests/testProjectWorkshopFourReactionsAndRestoredReceipt()",
+    "source": "artifacts/ios/EventVisual-20261024T035341Z.xcresult",
+    "native": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "02EB4201-0419-4E43-8DDA-B337F33A3F2A",
+      "deviceName": "LifeCrossroads Event Visual Focused",
+      "exportedFileName": "135B49B0-25B7-459B-8838-27F8E53899BA.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "workshop-rest-committed_0_20E815C5-BAC9-4D2A-9CC2-289C0ED83A5E.png",
+      "timestamp": 1792814560.087
+    },
+    "sha256": "3de439874e5d58c9c636f742775b114bcf0512652275be2b33a2fe21202c22e4"
+  },
+  {
+    "file": "workshop-ask-committed.png",
+    "testIdentifier": "LifeCrossroadsUITests/testProjectWorkshopFourReactionsAndRestoredReceipt()",
+    "source": "artifacts/ios/EventVisual-20261024T035341Z.xcresult",
+    "native": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "02EB4201-0419-4E43-8DDA-B337F33A3F2A",
+      "deviceName": "LifeCrossroads Event Visual Focused",
+      "exportedFileName": "A9CA94AA-EBEA-402B-9256-5E5946E82C3B.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "workshop-ask-committed_0_028B86A0-F60F-43D2-9B20-96E6D0C6D575.png",
+      "timestamp": 1792814522.153
+    },
+    "sha256": "6fda2f24cac1782bcbcacbdcd361c8b8af48de109f79e110a1a2252a7a063b37"
+  },
+  {
+    "file": "workshop-offline-committed.png",
+    "testIdentifier": "LifeCrossroadsUITests/testProjectWorkshopFourReactionsAndRestoredReceipt()",
+    "source": "artifacts/ios/EventVisual-20261024T035341Z.xcresult",
+    "native": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "02EB4201-0419-4E43-8DDA-B337F33A3F2A",
+      "deviceName": "LifeCrossroads Event Visual Focused",
+      "exportedFileName": "A3D33B35-36EA-4DCD-A487-A496D8EE4CEA.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "workshop-offline-committed_0_E30EAC9D-9FA2-43C0-8D0B-B52E449B0252.png",
+      "timestamp": 1792814470.247
+    },
+    "sha256": "0eac8eb27f97053af5c8c7dea3845dfc7fdbb2c7f6f69969e65c7eb157f9a4f6"
+  },
+  {
+    "file": "workshop-invitation.png",
+    "testIdentifier": "LifeCrossroadsUITests/testProjectWorkshopFourReactionsAndRestoredReceipt()",
+    "source": "artifacts/ios/EventVisual-20261024T035341Z.xcresult",
+    "native": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "02EB4201-0419-4E43-8DDA-B337F33A3F2A",
+      "deviceName": "LifeCrossroads Event Visual Focused",
+      "exportedFileName": "2ACDC9C1-3949-4738-9336-FD7A793C67C4.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "workshop-invitation_0_A9D24184-CA1B-4C60-B74E-7F0FF4BC0452.png",
+      "timestamp": 1792814458.525
+    },
+    "sha256": "4c30dc661c7d1c5b451f3463b2105a80338020d5fd020951e7d4c4366594b868"
+  },
+  {
+    "file": "workshop-invest-committed.png",
+    "testIdentifier": "LifeCrossroadsUITests/testProjectWorkshopFourReactionsAndRestoredReceipt()",
+    "source": "artifacts/ios/EventVisual-20261024T035341Z.xcresult",
+    "native": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "02EB4201-0419-4E43-8DDA-B337F33A3F2A",
+      "deviceName": "LifeCrossroads Event Visual Focused",
+      "exportedFileName": "81B6295B-ACEA-445F-BB27-EEE7F04F0507.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "workshop-invest-committed_0_A19CF0A4-38B5-4BE1-B549-3CA0A2A83F3A.png",
+      "timestamp": 1792814431.64
+    },
+    "sha256": "6b379594e85c8776e5f9ff2ac3e0bea22f5ea809d6ad1baf14eb808a71edb150"
+  }
+]

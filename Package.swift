@@ -9,6 +9,7 @@ let package = Package(
         .library(name: "LifeData", targets: ["LifeData"]),
         .library(name: "LifeAnalysis", targets: ["LifeAnalysis"]),
         .library(name: "LifePersistence", targets: ["LifePersistence"]),
+        .library(name: "LifePresentation", targets: ["LifePresentation"]),
         .executable(name: "life-demo", targets: ["LifeDemo"])
     ],
     targets: [
@@ -16,6 +17,7 @@ let package = Package(
         .target(name: "LifeData", dependencies: ["LifeDomain"], path: "LifeCrossroads/Data",
                 resources: [.copy("Resources")]),
         .target(name: "LifePersistence", dependencies: ["LifeDomain"], path: "LifeCrossroads/Persistence"),
+        .target(name: "LifePresentation", dependencies: ["LifeDomain"], path: "LifeCrossroads/Presentation"),
         .target(name: "LifeAnalysis", dependencies: ["LifeDomain"], path: "LifeCrossroads/Analysis"),
         .executableTarget(name: "LifeDemo", dependencies: ["LifeDomain", "LifeData", "LifeAnalysis"],
                           path: "LifeCrossroads/CLI"),
@@ -24,6 +26,8 @@ let package = Package(
         .testTarget(name: "LifePersistenceTests", dependencies: ["LifePersistence", "LifeDomain", "LifeData"],
                     path: "Tests/LifePersistenceTests"),
         .testTarget(name: "LifeAnalysisTests", dependencies: ["LifeAnalysis", "LifeDomain", "LifeData"],
-                    path: "Tests/LifeAnalysisTests")
+                    path: "Tests/LifeAnalysisTests"),
+        .testTarget(name: "LifePresentationTests", dependencies: ["LifePresentation", "LifeDomain", "LifeData"],
+                    path: "Tests/LifePresentationTests")
     ]
 )

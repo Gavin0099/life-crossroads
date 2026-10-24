@@ -1,0 +1,33 @@
+Test Suite 'Selected tests' started at 2026-10-24 11:46:45.284.
+Test Suite 'LifePresentationTests.xctest' started at 2026-10-24 11:46:45.288.
+Test Suite 'ProjectMomentTests' started at 2026-10-24 11:46:45.288.
+Test Case '-[LifePresentationTests.ProjectMomentTests testActualClampedDeltasAndMissingEnvironmentSurviveProjection]' passed (0.031 seconds).
+Test Case '-[LifePresentationTests.ProjectMomentTests testChanceBadgeRequiresAnOccurredNonzeroEffectAndNoNewDraw]' passed (0.231 seconds).
+Test Case '-[LifePresentationTests.ProjectMomentTests testCodableRestoreAndFixedSeedReplayProduceIdenticalPresentation]' passed (0.054 seconds).
+Test Case '-[LifePresentationTests.ProjectMomentTests testForkUsesItsOwnReactionWithoutRewritingOriginalAndRestoresBoth]' passed (0.202 seconds).
+Test Case '-[LifePresentationTests.ProjectMomentTests testFourActualChoicesHaveDistinctPropsMemoryAndOnlyRecordedPeople]' passed (0.044 seconds).
+Test Case '-[LifePresentationTests.ProjectMomentTests testUnknownAndUnappliedEventsNeverProduceACommittedReaction]' passed (0.025 seconds).
+Test Suite 'ProjectMomentTests' passed at 2026-10-24 11:46:45.878.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.588 (0.590) seconds
+Test Suite 'LifePresentationTests.xctest' passed at 2026-10-24 11:46:45.878.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.588 (0.590) seconds
+Test Suite 'Selected tests' passed at 2026-10-24 11:46:45.878.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.588 (0.594) seconds
+Test Suite 'Selected tests' started at 2026-10-24 11:46:46.175.
+Test Suite 'LifePersistenceTests.xctest' started at 2026-10-24 11:46:46.177.
+Test Suite 'LifePersistenceTests.xctest' passed at 2026-10-24 11:46:46.177.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-24 11:46:46.177.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.002) seconds
+Test Suite 'Selected tests' started at 2026-10-24 11:46:46.393.
+Test Suite 'LifeDomainTests.xctest' started at 2026-10-24 11:46:46.394.
+Test Suite 'LifeDomainTests.xctest' passed at 2026-10-24 11:46:46.394.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-24 11:46:46.394.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.002) seconds
+Test Suite 'Selected tests' started at 2026-10-24 11:46:46.615.
+Test Suite 'LifeAnalysisTests.xctest' started at 2026-10-24 11:46:46.617.
+Test Suite 'LifeAnalysisTests.xctest' passed at 2026-10-24 11:46:46.617.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-24 11:46:46.617.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.002) seconds

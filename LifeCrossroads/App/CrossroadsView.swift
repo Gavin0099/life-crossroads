@@ -2,6 +2,7 @@ import SwiftUI
 import Charts
 import LifeDomain
 import LifeData
+import LifePresentation
 
 private let accent = StoryPalette.forest
 
@@ -232,12 +233,20 @@ struct CrossroadsView: View {
                         .accessibilityValue(event.id).accessibilityAddTraits(.isHeader)
                     if !dynamicTypeSize.isAccessibilitySize {
                         Spacer(minLength: 0)
-                        CompactStoryScene(age: session.state.age, person: event.recurringPerson, sceneID: "decisionScene")
-                            .frame(width: 88, height: 68)
+                        if event.id == "teen-project" {
+                            ProjectWorkshopView(moment: nil, compact: true).frame(width: 118, height: 88)
+                        } else {
+                            CompactStoryScene(age: session.state.age, person: event.recurringPerson, sceneID: "decisionScene")
+                                .frame(width: 88, height: 68)
+                        }
                     }
                 }
                 Text(shortStory(event)).lineSpacing(3).fixedSize(horizontal: false, vertical: true)
                 Text(event.storyQuestion).font(.subheadline.weight(.semibold))
+                if event.id == "teen-project" {
+                    Text("創作桌：圖解、材料，也可以先休息。共用想像場景，非各國實景。")
+                        .font(.caption).foregroundStyle(.secondary).accessibilityIdentifier("projectSceneCaption")
+                }
             }
             Text("你會怎麼安排？").font(.headline).accessibilityAddTraits(.isHeader)
             ViewThatFits(in: .horizontal) {
@@ -390,12 +399,13 @@ struct CrossroadsView: View {
     }
 
     private func feedback(_ trace: ConsequenceTrace) -> some View {
-        VStack(alignment: .leading, spacing: 16) {
+        let moment = ProjectMoment(trace: trace)
+        return VStack(alignment: .leading, spacing: 16) {
             StoryEyebrow(title: "這次選擇之後", icon: "bookmark")
             HStack(spacing: 12) {
                 Text(trace.choiceTitle).font(.title2.bold()).accessibilityIdentifier("chosenAction")
                     .accessibilityValue(trace.choiceID)
-                if !dynamicTypeSize.isAccessibilitySize {
+                if trace.eventID != "teen-project" && !dynamicTypeSize.isAccessibilitySize {
                     Spacer(minLength: 0)
                     CompactStoryScene(age: trace.age, person: trace.recurringPerson, sceneID: "reflectionScene")
                         .frame(width: 88, height: 68)
@@ -403,14 +413,15 @@ struct CrossroadsView: View {
             }
             Text(trace.eventTitle).font(.subheadline).foregroundStyle(.secondary)
                 .accessibilityIdentifier("outcomeEvent").accessibilityValue(trace.eventID)
+            if let moment { ProjectWorkshopView(moment: moment) }
             VStack(alignment: .leading, spacing: 13) {
                 Label("已發生的變化", systemImage: "checkmark.circle").font(.headline)
-                Text(deltaText(trace.resourcesAfter - trace.resourcesBefore)).font(.headline)
+                Text(deltaText(moment?.actualChange ?? (trace.resourcesAfter - trace.resourcesBefore))).font(.headline)
                     .accessibilityIdentifier("outcomeResources")
                     .accessibilityValue(historyResources(trace))
                 Text("這一段日子，沐沐用了\(trace.finalCost.time)格時間，有\(trace.budgetAfter.time)格沒有用在這個行動上。")
                     .lineSpacing(3).accessibilityIdentifier("roundTimeFeedback")
-                if trace.randomTrial?.occurred == true {
+                if trace.eventID != "teen-project" && trace.randomTrial?.occurred == true {
                     Label("這次，也意外收到別人的鼓勵。", systemImage: "sparkle")
                 }
             }.card()
@@ -433,7 +444,7 @@ struct CrossroadsView: View {
                 Text("部分資源已到上限；上方只顯示實際增加的數量，故事記錄仍會保留。")
                     .font(.footnote).accessibilityIdentifier("resourceCapExplanation")
             }
-            if !trace.scheduledHooks.isEmpty {
+            if trace.eventID != "teen-project" && !trace.scheduledHooks.isEmpty {
                 VStack(alignment: .leading, spacing: 9) {
                     Label("已留下的線索 · 還沒發生", systemImage: "clock").font(.headline)
                     Text("這次的行動已記入延後故事；到了後面的年齡，才會知道這段線索如何接續。")
@@ -698,6 +709,9 @@ struct CrossroadsView: View {
     }
 
     private func shortStory(_ event: DecisionSkeleton) -> String {
+        if event.id == "teen-project" {
+            return "樹老師備好創作圖解。你可以選線上、借紙本、先商量，也可以保留課後時間。"
+        }
         let text = storyText(event)
         return String(text.split(separator: "\n").first ?? Substring(text))
     }

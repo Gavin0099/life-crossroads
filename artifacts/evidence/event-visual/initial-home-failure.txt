@@ -1,0 +1,65 @@
+Application, 0x10ac57700, pid: 6222, label: '人生岔路' <App element pid: 6222>
+  Window (Main), 0x10ac57840, {{0.0, 0.0}, {466.0, 678.0}} <AX element pid: 6222, elementOrHash.elementID: 4372889600.4>
+    Other, 0x10ac57980, {{0.0, 0.0}, {466.0, 678.0}} <AX element pid: 6222, elementOrHash.elementID: 4417676032.5>
+      Other, 0x10ac57ac0, {{0.0, 0.0}, {466.0, 678.0}} <AX element pid: 6222, elementOrHash.elementID: 4417677312.6>
+        Other, 0x10ac57c00, {{0.0, 0.0}, {466.0, 678.0}} <AX element pid: 6222, elementOrHash.elementID: 4372974080.7>
+          Other, 0x10ac57d40, {{0.0, 0.0}, {466.0, 678.0}} <AX element pid: 6222, elementOrHash.elementID: 4776952448.8>
+            Other, 0x10ac57e80, {{0.0, 0.0}, {466.0, 678.0}} <AX element pid: 6222, elementOrHash.elementID: 4374268928.9>
+              NavigationBar, 0x10ac57480, {{0.0, 24.0}, {466.0, 58.0}}, identifier: '人生岔路' <AX element pid: 6222, elementOrHash.elementID: 4417299456.10>
+              Other, 0x10ac575c0, {{0.0, 0.0}, {466.0, 678.0}} <AX element pid: 6222, elementOrHash.elementID: 4374000320.11>
+                Other, 0x10ac55180, {{0.0, 0.0}, {466.0, 678.0}} <AX element pid: 6222, elementOrHash.elementID: 4417622016.14>
+                  Other, 0x10ac566c0, {{0.0, 0.0}, {466.0, 678.0}} <AX element pid: 6222, elementOrHash.elementID: 4372890624.16>
+                    Other, 0x10ac56800, {{0.0, 0.0}, {466.0, 678.0}} <AX element pid: 6222, elementOrHash.elementID: 4776962208.18>
+                      ScrollView, 0x10ac56940, {{0.0, 0.0}, {466.0, 678.0}} <AX element pid: 6222, elementOrHash.elementID: 4372876288.20>
+                        Other, 0x10ac56a80, {{0.0, -396.7}, {382.0, 1040.7}} <AX element pid: 6222, elementOrHash.elementID: 4426871936.24>
+                          StaticText, 0x10ac56bc0, {{19.3, -378.3}, {151.3, 14.3}}, label: '一本由你參與的人生故事' <AX element pid: 6222, elementOrHash.elementID: 4776956128.28>
+                          StaticText, 0x10ac56d00, {{18.0, -341.7}, {168.7, 14.3}}, identifier: 'previewBuildStatus', label: 'P1 整合預覽版，八國完整人生，仍待資料、美術與兒少測試驗收' <AX element pid: 6222, elementOrHash.elementID: 4776955648.29>
+                          StaticText, 0x10ac56e40, {{18.0, -297.2}, {180.7, 67.7}}, label: '如果人生，
+走向另一條路？' <AX element pid: 6222, elementOrHash.elementID: 4776955168.30>
+                          Other, 0x10ac56f80, {{251.0, -305.3}, {238.0, 132.0}}, identifier: 'birthScene', label: '8歲的沐沐，在共用的河畔寓言場景' <AX element pid: 6222, elementOrHash.elementID: 4776953248.31>
+                            Image, 0x10ac570c0, {{251.0, -305.3}, {126.0, 84.0}}, label: 'RiverCrossroads' <AX element pid: 6222, elementOrHash.elementID: 4776955488.48>
+                            Image, 0x10ac57200, {{289.0, -273.3}, {200.0, 100.0}}, label: 'StoryCast' <AX element pid: 6222, elementOrHash.elementID: 4776957248.49>
+                          StaticText, 0x10ac57340, {{18.0, -199.4}, {142.7, 26.3}}, label: '嗨，我是沐沐。' <AX element pid: 6222, elementOrHash.elementID: 4776957408.32>
+                          StaticText, 0x10a45bac0, {{18.0, -164.0}, {316.7, 44.7}}, label: '陪我從童年走到晚年吧。要留時間給什麼？遇到困難，又能找誰幫忙？' <AX element pid: 6222, elementOrHash.elementID: 4776957568.33>
+                          StaticText, 0x10a459cc0, {{37.3, -79.3}, {129.3, 14.3}}, label: '第一頁 · 選一個起點' <AX element pid: 6222, elementOrHash.elementID: 4776957888.34>
+                          StaticText, 0x10a459400, {{36.0, -47.0}, {168.7, 24.0}}, label: '這次，從哪裡開始？' <AX element pid: 6222, elementOrHash.elementID: 4776958048.35>
+                          Other, 0x10a459900, {{36.0, -5.0}, {310.0, 96.0}}, identifier: 'countryPicker' <AX element pid: 6222, elementOrHash.elementID: 4776959488.36>
+                            Button, 0x10a459b80, {{36.0, -5.0}, {71.7, 44.0}}, identifier: 'country.TWN', label: '台灣' <AX element pid: 6222, elementOrHash.elementID: 4776958208.50>
+                            Button, 0x10a4597c0, {{115.7, -5.0}, {71.3, 44.0}}, identifier: 'country.JPN', label: '日本', Selected <AX element pid: 6222, elementOrHash.elementID: 4776958368.51>
+                            Button, 0x10a459a40, {{195.0, -5.0}, {71.7, 44.0}}, identifier: 'country.USA', label: '美國' <AX element pid: 6222, elementOrHash.elementID: 4776958528.52>
+                            Button, 0x10a45ae40, {{274.7, -5.0}, {71.3, 44.0}}, identifier: 'country.DEU', label: '德國' <AX element pid: 6222, elementOrHash.elementID: 4776958688.53>
+                            Button, 0x10a45b200, {{36.0, 47.0}, {71.7, 44.0}}, identifier: 'country.IND', label: '印度' <AX element pid: 6222, elementOrHash.elementID: 4776958848.54>
+                            Button, 0x10a45b340, {{115.7, 47.0}, {71.3, 44.0}}, identifier: 'country.BRA', label: '巴西' <AX element pid: 6222, elementOrHash.elementID: 4776959008.55>
+                            Button, 0x10a45b5c0, {{195.0, 47.0}, {71.7, 44.0}}, identifier: 'country.VNM', label: '越南' <AX element pid: 6222, elementOrHash.elementID: 4776959168.56>
+                            Button, 0x10a45b480, {{274.7, 47.0}, {71.3, 44.0}}, identifier: 'country.KEN', label: '肯亞' <AX element pid: 6222, elementOrHash.elementID: 4776959328.57>
+                          SegmentedControl, 0x10a45b700, {{36.0, 109.0}, {310.0, 31.0}}, identifier: 'familyPicker' <AX element pid: 6222, elementOrHash.elementID: 4417300992.37>
+                            Button, 0x10a45b840, {{36.0, 109.0}, {155.0, 32.0}}, label: '家庭一', Selected <AX element pid: 6222, elementOrHash.elementID: 4417301760.58>
+                            Button, 0x10af44000, {{191.0, 109.0}, {155.0, 32.0}}, label: '家庭二' <AX element pid: 6222, elementOrHash.elementID: 4417302528.59>
+                          StaticText, 0x10af44140, {{36.0, 158.0}, {273.0, 38.0}}, label: '日本・虛構家庭1：共用設備、近處互助、家人輪班' <AX element pid: 6222, elementOrHash.elementID: 4776959808.38>
+                          StaticText, 0x10af44280, {{36.0, 214.0}, {297.3, 33.7}}, label: '兩種家庭各有支持與限制，是虛構示例，不代表這個國家的每個家庭。' <AX element pid: 6222, elementOrHash.elementID: 4776959968.39>
+                          Button, 0x10af443c0, {{18.0, 287.7}, {346.0, 55.0}}, identifier: 'startLife', label: '陪沐沐開始一段人生' <AX element pid: 6222, elementOrHash.elementID: 4776960448.40>
+                            StaticText, 0x10af44500, {{18.0, 287.7}, {346.0, 55.0}}, label: '陪沐沐開始一段人生' <AX element pid: 6222, elementOrHash.elementID: 4776960288.60>
+                            Image, 0x10af44640, {{102.0, 306.0}, {18.7, 18.3}}, identifier: 'pawprint', label: '動物爪印' <AX element pid: 6222, elementOrHash.elementID: 4776960128.61>
+                          Button, 0x10af44780, {{18.0, 364.7}, {346.0, 28.3}}, identifier: 'countryContextToggle', label: '認識日本的資料背景' <AX element pid: 6222, elementOrHash.elementID: 4776960928.41>
+                            StaticText, 0x10af448c0, {{18.0, 364.7}, {346.0, 28.3}}, identifier: 'countryContextToggle', label: '認識日本的資料背景' <AX element pid: 6222, elementOrHash.elementID: 4776960608.62>
+                            Image, 0x10af44a00, {{356.3, 373.0}, {7.0, 12.0}}, identifier: 'collapsed' <AX element pid: 6222, elementOrHash.elementID: 4776960768.63>
+                          Switch, 0x10af44b40, {{18.0, 415.0}, {346.0, 28.0}}, label: '使用較短的故事文字', value: 0 <AX element pid: 6222, elementOrHash.elementID: 4776961408.42>
+                            StaticText, 0x10af44c80, {{18.0, 420.0}, {134.0, 18.0}}, label: '使用較短的故事文字' <AX element pid: 6222, elementOrHash.elementID: 4776961088.64>
+                            Switch, 0x10af44dc0, {{303.0, 415.0}, {63.0, 28.0}}, value: 0 <AX element pid: 6222, elementOrHash.elementID: 4426862976.65>
+                          StaticText, 0x10af44f00, {{18.0, 465.0}, {346.0, 38.0}}, label: '15段選擇，沒有唯一的好人生。環境影響機會，選擇留下故事，也有些事不由自己控制。' <AX element pid: 6222, elementOrHash.elementID: 4776961568.43>
+                          StaticText, 0x10af45040, {{18.0, 525.0}, {345.7, 69.7}}, label: '動物角色演出虛構故事；所有國家共用這座想像的河畔舞台，不是各國生活的實景。包含工作變動與照顧情境，可休息或回首頁。每次操作自動保存一組人生；關閉後可續玩。建立新人生會先詢問是否取代紀錄。' <AX element pid: 6222, elementOrHash.elementID: 4776961728.44>
+                          StaticText, 0x10af45180, {{18.0, 612.7}, {98.7, 13.3}}, identifier: 'uiTestArchiveChecksum', label: '自動化測試存檔校驗', value: missing <AX element pid: 6222, elementOrHash.elementID: 4776961888.45>
+                        Other, 0x10af452c0, {{433.0, 82.0}, {30.0, 537.0}}, label: '垂直捲軸, 2頁', value: 100% <AX element pid: 6222, elementOrHash.elementID: 4417626624.25>
+                          Other, 0x10af45400, {{460.0, 288.3}, {3.0, 327.7}} <AX element pid: 6222, elementOrHash.elementID: 4374564800.46>
+                        Other, 0x10af45540, {{433.0, 82.0}, {30.0, 537.0}}, label: '垂直捲軸, 2頁', value: 100% <AX element pid: 6222, elementOrHash.elementID: 4417626624.25>
+                          Other, 0x10af45680, {{460.0, 288.3}, {3.0, 327.7}} <AX element pid: 6222, elementOrHash.elementID: 4374564800.46>
+              Toolbar, 0x10af457c0, {{0.0, 0.0}, {466.0, 678.0}}, identifier: 'Toolbar', label: '工具列' <AX element pid: 6222, elementOrHash.elementID: 4426870656.12>
+                Other, 0x10af45900, {{0.0, 0.0}, {466.0, 678.0}} <AX element pid: 6222, elementOrHash.elementID: 4426871296.15>
+                  Other, 0x10af45a40, {{0.0, 0.0}, {466.0, 678.0}} <AX element pid: 6222, elementOrHash.elementID: 4374571968.17>
+                    Other, 0x10af45b80, {{0.0, 0.0}, {466.0, 678.0}} <AX element pid: 6222, elementOrHash.elementID: 4374572416.19>
+                      Other, 0x10af45cc0, {{0.0, 0.0}, {0.0, 0.0}} <AX element pid: 6222, elementOrHash.elementID: 4374572864.21>
+                        Other, 0x10af45e00, {{394.0, 174.0}, {48.0, 48.0}} <AX element pid: 6222, elementOrHash.elementID: 4417632768.26>
+                          Other, 0x10af45f40, {{394.0, 174.0}, {48.0, 48.0}} <AX element pid: 6222, elementOrHash.elementID: 4374573312.47>
+                            Other, 0x10af46080, {{399.0, 179.0}, {38.0, 38.0}} <AX element pid: 6222, elementOrHash.elementID: 4774302976.66>
+                              Other, 0x10af461c0, {{399.0, 179.0}, {38.0, 38.0}} <AX element pid: 6222, elementOrHash.elementID: 4417631232.68>
+                                Button, 0x10af46300, {{399.0, 179.0}, {38.0, 38.0}}, label: '說明與資料' <AX element pid: 6222, elementOrHash.elementID: 4775186176.69>
