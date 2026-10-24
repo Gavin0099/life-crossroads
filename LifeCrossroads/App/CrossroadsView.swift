@@ -131,8 +131,8 @@ struct CrossroadsView: View {
             .sheet(isPresented: $showSources) { sources }
             .sheet(isPresented: $showTrace) { traceSheet }
             .sheet(item: $comparisonPresentation) { presentation in comparisonSheet(presentation) }
-            .alert("需要留意", isPresented: Binding(get: { store.errorMessage != nil }, set: { if !$0 { store.errorMessage = nil } })) {
-                Button("知道了") { store.errorMessage = nil }
+            .alert("需要留意", isPresented: Binding(get: { store.errorMessage != nil }, set: { if !$0 { store.dismissError() } })) {
+                Button("知道了") { store.dismissError() }
             } message: { Text(store.errorMessage ?? "") }
             .onChange(of: worldSuspended) { _, value in store.suspendWorld(value) }
             .onChange(of: voiceOver) { _, enabled in if enabled { store.pauseWorld(true) } }
