@@ -1,6 +1,6 @@
-# LIFE-LOOP 10H — Gameplay／Visual 共同契約（CONTRACT）
+# LIFE-LOOP 10H v1.1 — Gameplay／Visual／Motion 單一共同契約（CONTRACT）
 
-> 這是 LL-01 一開始必須凍結的 DTO 與狀態轉移契約。初版規格，不表示型別已存在。可在 LL-01 依真實 Swift API 微調，但需先在同一提交更新本文件，兩 Agent 再使用同版契約。
+> 這是 LL-01 一開始必須凍結的 DTO、狀態轉移與動畫時鐘契約。**初版規格，不表示型別已存在。** 可在 LL-01 依真實 Swift API 微調，但需先在同一提交更新本文件，兩 Agent 再使用同版契約。動畫方法來源為 [rossark-motion-skill@9b20964](https://github.com/rossark0/rossark-motion-skill/tree/9b20964e32f07f8ac7e2948cd175746fa4a7712f)（MIT）；本案實際採用與授權清單見 [MOTION.md](MOTION.md)。
 
 ## A. 嚴格分離三種狀態
 
@@ -8,7 +8,8 @@
 | --- | --- | --- | --- |
 | 人生／運算 | `LifeDomain.LifeSession`、`EventSelector`、`DecisionResolver` | `start`、`choose`、`continueLife`、`beforeDecision`、`compare` | Visual 自行抽事件、修改資源、補國家機率 |
 | 儲存／發佈 | `LifePersistence.SaveRepository`、`GameStore.commit` | 先儲存完整 LifeJourney，成功後 `@Published` 更新 | 演出 speculative preview 當作已發生的後果 |
-| 顯示／播放 | `LifePresentation.LifeWorldFrame` + App `WorldPlaybackController` | 投影已知 trace、場景、演出速度與可及性 | UI timer 寫入人生歲數、`LifeState`、亂數或新故事事實 |
+| 顯示／播放 | `LifePresentation.LifeWorldFrame` + App `WorldPlaybackController` | 投影已知 trace、場景、演出速度與可及性，向場景輸出連續演出時間 | UI timer 寫入人生歲數、`LifeState`、亂數或新故事事實 |
+| 圖形與動作 | `LifeWorldScene`／可審計的 SwiftUI motion helpers | 消費 DTO／可暫停時間值，只畫角色／背景／已提交後果 | 自己呼叫 `GameStore.next`、亂數抽遊戲事件、修改存檔、硬做無分層 PNG 的骨架動畫 |
 
 **關鍵：`Living` 是演出階段，不是新的儲存引擎回合。** 不加入 365 天／12 個月的虛擬模擬時鐘。
 
@@ -87,6 +88,8 @@ enum WorldPlaybackPhase {
 final class WorldPlaybackController: ObservableObject {
     @Published private(set) var phase: WorldPlaybackPhase
     @Published private(set) var speed: PlaybackSpeed // paused / normal / fast
+    // Authoritative animation-only accumulated time, monotonic across pause/speed change.
+    @Published private(set) var presentationElapsedMs: Double
     // UI tick only; never mutate LifeState, Seed or draw random.
     // advanceOnce() checks current authoritative LifeSession phase
     // and event/decision index before calling GameStore.next().
@@ -94,6 +97,31 @@ final class WorldPlaybackController: ObservableObject {
 ```
 
 **請把實際傳遞設計成依賴注入或可測試動作 closure，不要讓 Presentation target import SwiftUI 或 GameStore。** UI controller 只可呼叫 GameStore 的合法命令；任何 save fail 不得改變 UI 中的 authoritative session。
+
+**動畫鐘必須獨立於人生鐘。** 當視圖被遮擋、切到背景、使用者暫停或 Reduce Motion 時，應停止不必要的每幀刷新。播放速度變更時，先以舊速度結算截至切換點的累積演出時間，再以新速度增量；不得用 `Date()` 的絕對經過時間重算整個演出並瞬間跳姿勢。即時生命遊戲時間仍由 `LifeSession` / `SimulationEngine` 控制，且只能在合法選擇和保存邊界改變。
+
+### 動畫播放相位契約（Gameplay A 的時間，Visual B 的畫面）
+
+**輸入範本（命名可調，語意不得變）**
+
+```swift
+// App 層，與生命 Domain 的 Seed / RNG 完全分離。
+struct PresentationMotionFrame: Equatable, Sendable {
+    let elapsedMs: Double     // 演出累積有效毫秒數
+    let frozen: Bool          // pause / hidden / background / event decision
+    let reduceMotion: Bool    // 靜態就能讀完整內容
+    let phase: WorldPlaybackPhase
+    let phaseToken: String    // 同一次結果只播一次，重入不得重播決策
+}
+```
+
+- **連續性：** 正常播時 `elapsedMs += wallDeltaMs × presentationSpeed`。暫停時保持固定 elapsed，恢復從固定值繼續；速度改變須先依先前速度結算 elapsed，再重設壁鐘參考點；背景恢復不得補算隱藏期間的時間。
+- **首尾：** 例如 4 秒 loop 在 `0/1000/2000/4000ms` 觀察一致的邊界姿勢。單次 outcome 只在正式結果已保存後啟動，完成後固定末幀；不得因反覆 appear 又從零套用遊戲行動。
+- **場景效率：** 每個場景**一個**可停更時間源，子物件用純函數 `wave/flow/track` 計算視覺變換。裝飾性 phase 允許固定 index 的 `seeded(i)`，但不得每 frame `random()` 或呼叫 Domain 的 `KeyedRandom`。
+- **Skill 語意陷阱：** 上游 `templates/swiftui/Motion.swift` 的 `LoopClock` 在 `paused || reduceMotion` 時直接輸出 `t=0`，恢復後則用 `Date().timeIntervalSince(start)`；若直接拿它作使用者可暫停/調速的場景時鐘，會在暫停和恢復時跳姿勢。本專案必須**包裝或重寫相位累積器**，且針對 pause/resume/1×→3×/背景切換測試。不能以套用 `LoopClock` 宣稱這些 Gate 已過。
+- **圖層限制：** `StoryPortrait` 使用單張 `StoryCast` atlas 角色裁切，無單獨眼睛/手臂/頭/尾巴的 rig。本輪只能做整體細微變換與分離可用的場景道具。禁止在未拆圖情況下用 `LiveFace` 模擬已具有獨立眼睛圖層；完整表情骨架是後續工作。
+- **減少動態效果：** 呼吸／環境迴圈靜止於資訊完整的 frame0；已發生 outcome 的 one-shot 呈現完成時的末幀。事件還未做選擇時，不能顯示 outcome 末幀；活動與結果原因仍用文字保留。
+- **授權：** 若複製 `rossark-motion-skill` 的代碼，保留 MIT LICENSE 的版權與許可、Commit、原始檔、修改清單及第三方 notice；若僅參考原理自行寫，紀錄「無直接代碼引入」。官方 Demo 人物／影片及其他來源 PNG 不因 Skill MIT 而自動核准。
 
 ### 狀態對照
 
@@ -123,8 +151,8 @@ Visual 只新增 App 下的可重用 `LifeWorldScene` 及視覺輔助檔案，**
 ```swift
 struct LifeWorldScene: View {
     let frame: LifeWorldFrame        // 或由 gameplay 實作的薄 adapter 包裝
-    let reduceMotion: Bool
-    // Render-only: no random, no timer-driven state mutations.
+    let motion: PresentationMotionFrame
+    // Render-only: no random, no timer-driven LifeSession mutation.
 }
 ```
 
@@ -133,6 +161,8 @@ struct LifeWorldScene: View {
 - 事件後至少兩種不同的 trace-backed 世界變化（如故事記憶留下道具、人物互動記號），不能改寫選擇歷史。
 - 大型畫面不犧牲選項可達；長篇說明仍可展開，最大文字只隱藏裝飾。
 - 動畫穩定且易跳過，低動態/VoiceOver 不因畫面隱藏而遺漏文意。
+- Visual 動畫必須只消費 A 已累積的 motion elapsed；不要自行用 `Date()` 與 `LoopClock` 更新情節、不要每層獨立 `TimelineView`；事件選擇期間背景運動凍結或只保留不影響決策的輕微動作。
+- 場景基本動作優先使用原有動物角色微幅移動（1–2pt）、柔和轉頭感/傾斜及 1–2 種環境元素。外部範例的高幅度跳躍、四肢骨架、重製臉部，只有分層正式素材到位才另立 Slice。
 
 ## E. 逐案驗收的矩陣
 
@@ -146,6 +176,10 @@ struct LifeWorldScene: View {
 | Age/stage | 8、13、25/39、65/80 的正式事件 | 人物五階段、不產生假年齡或已發生後果 |
 | Cause boundaries | 13歲 invest/offline/ask/rest，台灣資料缺口、未觸發 luck | 人物／成本／支持／未來線索各讀真實 trace |
 | Accessibility | iPhone SE、超大字級、Reduce Motion、VoiceOver基本標籤 | 首屏可操作；不把互動或原因只放在動畫/顏色 |
+| Motion continuity | 在 3× 時暫停、恢復、改1×、隱藏 sheet 再開 | 姿勢連續、elapsed 不重設、不補算背景時間；無額外 `next()` |
+| Clock isolation | 生活動作 frame 序列與同 Seed 的完整人生重播 | 動畫 phase/draw 不影響 `LifeSession` 或存檔；禁每 frame game random |
+| Loop/reduced motion | 檢查循環時間0%/25%/50%/100%，Reduced Motion 及 one-shot 末幀 | 接縫不跳、靜態不漏事實、只有保存後才顯示已發生後果 |
+| Motion provenance | 有/無複製上游 SwiftUI helpers 兩種情境 | 有複製則附 MIT notice＋SHA；沒複製則明列未安裝／只借鏡方法 |
 | Finish | 八國現有完整人生＋至少一條分岔 | 15項決策到80歲回顧，無卡死 |
 
 ## F. 邊界與交接
@@ -155,3 +189,4 @@ struct LifeWorldScene: View {
 - 兩 Agent 的所有畫面與變更需標明作者與 Commit，整合由 A 在單獨 Integration PR/branch 進行；避免把 WIP 原型全枝合併。
 - 若出現跨版本存檔、資料來源/授權或安全問題，列 BLOCKED，保留原檔並可回退到 PR #8 舊 UI；不能用臨時造假資料通過測試。
 - 不需要重寫 `docs/p1-slices.md`；本契約是一次獨立、可驗收的體驗實驗，不宣稱 LC-03/05/06/07 已完成。
+- 動畫方法的審查和接入限於 Visual 既有 2h 工作預算，不能額外新增專門 Skill Agent；初次 PoC 若被圖層限制阻擋，保留正式人生／靜態世界可玩，後續骨架需求另列 backlog。
