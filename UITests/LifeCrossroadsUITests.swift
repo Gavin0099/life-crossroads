@@ -101,6 +101,7 @@ final class LifeCrossroadsUITests: XCTestCase {
         skipWorldMontage(app)
     }
     private func skipWorldMontage(_ app: XCUIApplication) {
+        if app.staticTexts["eventTitle"].exists { return }
         let skip = app.buttons["skipLiving"]
         if skip.waitForExistence(timeout: 3) { skip.tap() }
         XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 6))

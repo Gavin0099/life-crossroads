@@ -32,8 +32,7 @@ final class GameStore: ObservableObject {
         if let ticket = playback.skip(now: now) { advanceWorld(ticket) }
     }
     private func bindWorld(restoring: Bool = false, reset: Bool = false) {
-        if reset { playback = WorldPlayback() }
-        if let session { playback.bind(session, now: now, restoring: restoring) }
+        if let session { playback.bind(session, now: now, restoring: restoring, reset: reset) }
     }
     private func advanceWorld(_ ticket: WorldAdvanceTicket) {
         guard let session, !viewingOriginal, playback.accepts(ticket, session: session),

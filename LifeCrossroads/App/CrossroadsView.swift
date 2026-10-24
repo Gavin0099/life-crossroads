@@ -317,7 +317,7 @@ struct CrossroadsView: View {
                 HStack(alignment: .center, spacing: 12) {
                     Text(event.title).font(.title2.bold()).accessibilityIdentifier("eventTitle")
                         .accessibilityValue(event.id).accessibilityAddTraits(.isHeader)
-                    if !dynamicTypeSize.isAccessibilitySize {
+                    if !store.worldPreviewEnabled && !dynamicTypeSize.isAccessibilitySize {
                         Spacer(minLength: 0)
                         if event.id == "teen-project" {
                             ProjectWorkshopView(moment: nil, compact: true).frame(width: 118, height: 88)
@@ -499,7 +499,7 @@ struct CrossroadsView: View {
             }
             Text(trace.eventTitle).font(.subheadline).foregroundStyle(.secondary)
                 .accessibilityIdentifier("outcomeEvent").accessibilityValue(trace.eventID)
-            if let moment { ProjectWorkshopView(moment: moment) }
+            if let moment { ProjectWorkshopView(moment: moment, showArtwork: !store.worldPreviewEnabled) }
             VStack(alignment: .leading, spacing: 13) {
                 Label("已發生的變化", systemImage: "checkmark.circle").font(.headline)
                 Text(deltaText(moment?.actualChange ?? (trace.resourcesAfter - trace.resourcesBefore))).font(.headline)

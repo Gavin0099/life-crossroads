@@ -33,6 +33,7 @@ final class WorldPlaybackTests: XCTestCase {
         XCTAssertNil(p.tick(now: 100)); XCTAssertFalse(p.accepts(ticket, session: s))
         let retry = try XCTUnwrap(p.skip(now: 100))
         XCTAssertTrue(p.accepts(retry, session: s))
+        XCTAssertFalse(p.accepts(ticket, session: s), "An older failed ticket must not revive during a retry")
         try s.continueLife(catalog: c); p.bind(s, now: 100)
         XCTAssertFalse(p.accepts(retry, session: s)); XCTAssertNil(p.skip(now: 100))
         XCTAssertEqual(p.phase, .eventPaused); XCTAssertNil(p.skip(now: 100))
@@ -42,6 +43,10 @@ final class WorldPlaybackTests: XCTestCase {
         let oldGeneration = p.generation; p.bind(s, now: 501)
         XCTAssertGreaterThan(p.generation, oldGeneration)
         XCTAssertFalse(p.accepts(retry, session: s))
+        let beforeReset = try XCTUnwrap(p.skip(now: 502))
+        p.bind(s, now: 503, reset: true)
+        _ = p.skip(now: 503)
+        XCTAssertFalse(p.accepts(beforeReset, session: s), "Same-Seed restarts never reuse a callback generation")
     }
     func testNormalFastAndSkipAreIdenticalForEightCountriesAndRestore() throws {
         let c = try StatisticsRepository.bundled()

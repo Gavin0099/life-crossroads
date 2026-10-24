@@ -38,7 +38,8 @@ public struct WorldPlayback: Equatable, Sendable {
     public var durationMs: Double { phase == .living ? 3000 : 2000 }
     public var progress: Double { min(1, phaseElapsedMs / durationMs) }
 
-    public mutating func bind(_ session: LifeSession, now: Double, restoring: Bool = false) {
+    public mutating func bind(_ session: LifeSession, now: Double, restoring: Bool = false, reset: Bool = false) {
+        if reset { elapsedMs = 0; paused = false; speed = .normal }
         generation &+= 1; identity = .init(session); awaitingCommit = false
         previousTime = now; phaseElapsedMs = 0
         switch session.phase {
@@ -85,7 +86,7 @@ public struct WorldPlayback: Equatable, Sendable {
             && ticket.identity == WorldSessionIdentity(session) && session.phase == .reflecting
     }
     public mutating func commitFailed(now: Double) {
-        previousTime = now; awaitingCommit = false; paused = true
+        generation &+= 1; previousTime = now; awaitingCommit = false; paused = true
     }
     public func motion(reduceMotion: Bool) -> PresentationMotionFrame {
         .init(elapsedMs: elapsedMs, frozen: !isRunning, reduceMotion: reduceMotion,

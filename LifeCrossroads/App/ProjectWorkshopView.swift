@@ -6,6 +6,7 @@ import LifePresentation
 struct ProjectWorkshopView: View {
     let moment: ProjectMoment?
     var compact = false
+    var showArtwork = true
     @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var entered = false
@@ -15,7 +16,7 @@ struct ProjectWorkshopView: View {
             workshop.clipShape(RoundedRectangle(cornerRadius: 12)).accessibilityHidden(true)
         } else {
             VStack(alignment: .leading, spacing: 10) {
-                if !typeSize.isAccessibilitySize {
+                if showArtwork && !typeSize.isAccessibilitySize {
                     workshop
                         .frame(height: moment == nil ? 144 : 184)
                         .clipShape(RoundedRectangle(cornerRadius: 18))
