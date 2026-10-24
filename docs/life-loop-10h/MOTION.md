@@ -85,3 +85,7 @@
 - `river`／`workshop`／`community` 都重用既有虛構河畔素材，工作桌及長椅為 SwiftUI shapes；13歲道具只表示已選擇的活動／記憶，不宣稱家庭擁有設備或作品已完成。角色五齡直接使用 `StoryPortrait.protagonist(age:)`。
 
 來源證據：`artifacts/evidence/life-loop/visual-motion/rossark-source-audit.json`。純函數驗證器直接編譯正式 `LifeWorldMotion.swift`，結果在 `loop-and-arrival-results.json`；0/1000/2000/4000ms、首尾接縫、Reduced Motion、無效時間及一次性480ms末幀均有定點核對。這不取代 A 的暫停／調速／背景時鐘整合測試，也不宣稱正式 UI、實機或兒少已驗收。
+
+離線視覺證據：`render-world.py` 以正式 SwiftUI Scene、真實 `LifeSession`／投影與既有PNG輸出18張固定影格；macOS離線資產adapter只替換讀圖方式，不是Simulator／檔案保存證據。`offline-render-manifest.json` 保留8／13／39歲、同日本家庭Seed0的四種13歲選擇、Reduced Motion對照、立即凍結的結果首幀、90pt緊湊高度、來源與每張SHA。一般與Reduced各選擇的事實欄位完全一致；rest沒有憑空產生互動或運氣。
+
+初次嚴格像素相等檢查失敗，原始結果保留在 `rendered-seam-strict-attempt.json`：首尾6748／1740000色通道相差1／255；**同樣t=0重畫的control也有7135通道相差最多1／255**。`rendered-seam-results.json` 分開報告 exactPixelEquality=false 與1個8-bit量化級、少於1%通道的有界視覺檢查；不宣稱ImageRenderer逐像素決定論。正式motion函數的首尾姿態相同，Gameplay的人生／時鐘決定論仍須獨立驗證。

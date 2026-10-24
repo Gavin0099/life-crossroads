@@ -1,0 +1,30 @@
+{
+  "scope": "VW-01–04 independent render-only delivery, shared DTO base 6f5e3c1",
+  "authored_files": [
+    "LifeCrossroads/App/LifeWorldScene.swift",
+    "LifeCrossroads/App/LifeWorldMotion.swift"
+  ],
+  "code_commits": [
+    "2ed3a87",
+    "bf18852"
+  ],
+  "pure_motion_result": "PASS: quarter points, loop seam, same-time freeze, near-resume, reduced, one-shot hold, invalid time, frozen first-frame opacity",
+  "actual_offline_renderer": "PASS: 18 frames from real Session and projector; existing PNG asset adapter; not Simulator, not storage proof",
+  "paired_normal_reduced_facts": "PASS all four teen choices",
+  "rest_boundary": "PASS: no invented interaction or occurred-chance entry in the rest fixture",
+  "clock_access_source_check": "PASS: View has no timer, Date, TimelineView, game RNG, GameStore, LifeSession or local @State",
+  "first_strict_pixel_result": "FAIL: endpoint 6,748 / 1,740,000 channels differ by exactly 1/255; retained in rendered-seam-strict-attempt.json",
+  "same_input_control": "7,135 channels differ by at most 1/255 even when rerendering the same t=0. Geometry helper is exact. Endpoint visual comparison is within the disclosed raster quantization bound, not exact pixel equality.",
+  "limitations": [
+    "Caller clock freeze/speed/background must be verified in Gameplay integration; helper repetition alone does not prove lifecycle correctness.",
+    "Formal app saved-trace UI screenshots, accessibility operation and device checks are owned by Gameplay; offline images are not substitutes.",
+    "No new raster art, separate eye/limb layers, local cultural scenes, original prototype WorldOtter or external skill code imported.",
+    "Only four prioritized tokens fit the decorative shelf; full worldChanges remain in accessibility captions and the owner must retain readable event/outcome text.",
+    "Actual shared projection at 6f5e3c1 still has raw key/value memory captions. Gameplay owner said it will map them to natural Chinese without changing DTO."
+  ],
+  "simulator_devices_created": [],
+  "source_sha256": {
+    "LifeCrossroads/App/LifeWorldScene.swift": "29296f41d45e71646f540a41d25bfad20f0b76f7b76b2241f39dc23ca87bbf83",
+    "LifeCrossroads/App/LifeWorldMotion.swift": "38393b73238c3f9996d567a441e9bfc36a434d5048814e43c2f4c5f4592ef1df"
+  }
+}
