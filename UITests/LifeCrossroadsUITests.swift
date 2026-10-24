@@ -7,6 +7,90 @@ final class LifeCrossroadsUITests: XCTestCase {
         continueAfterFailure = false
     }
 
+    func testProjectWorkshopFourReactionsAndRestoredReceipt() throws {
+        for (choice, caption, memory) in [("invest", "線上圖解", "線上創作"), ("offline", "紙本圖解", "紙本創作"),
+                                          ("ask", "先說出需要", "未建立作品"), ("rest", "留給自己", "未建立作品")] {
+            let app = launch(seed: "0")
+            reachProject(in: app)
+            XCTAssertTrue(app.staticTexts["projectSceneCaption"].label.contains("創作桌"))
+            XCTAssertLessThan(app.buttons["choice.invest"].frame.minY, app.frame.maxY - 48,
+                              "The event illustration must leave an action in the first screen")
+            if choice == "offline" { attachScreenshot("workshop-invitation", app: app) }
+            let action = app.buttons["choice.\(choice)"]
+            reveal(action, in: app); action.tap()
+            XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+            XCTAssertTrue(app.staticTexts["projectSceneCaption"].label.contains(caption))
+            let recorded = app.staticTexts["projectMemory"]
+            reveal(recorded, in: app)
+            XCTAssertTrue(recorded.label.contains(memory))
+            let savedMemory = recorded.label
+            XCTAssertEqual(app.staticTexts["projectPerson"].exists, choice != "rest")
+            XCTAssertEqual(app.staticTexts["projectPending"].exists, choice == "invest")
+            if choice == "rest" {
+                XCTAssertFalse(app.staticTexts["projectChance"].exists)
+                XCTAssertFalse(app.staticTexts["projectSupport"].exists)
+                XCTAssertEqual(app.staticTexts["projectInfluences"].label, "本次實際參與：你的選擇")
+            }
+            let receipt = app.staticTexts["projectReceipt"]
+            reveal(receipt, in: app)
+            XCTAssertEqual(receipt.value as? String, "teen-project/13/\(choice)/0")
+            let resources = app.staticTexts["outcomeResources"]
+            reveal(resources, in: app)
+            let actualResources = try XCTUnwrap(resources.value as? String)
+            reveal(app.staticTexts["chosenAction"], in: app)
+            attachScreenshot("workshop-\(choice)-committed", app: app)
+            if choice == "offline" {
+                let checksum = try archiveChecksum(in: app)
+                app.terminate()
+                app.launchArguments.removeAll { $0 == "-reset-save" }
+                app.launch()
+                let resume = app.buttons["resumeLife"]
+                XCTAssertTrue(resume.waitForExistence(timeout: 10)); resume.tap()
+                XCTAssertEqual(app.staticTexts["projectMemory"].label, savedMemory)
+                XCTAssertEqual(app.staticTexts["outcomeResources"].value as? String, actualResources)
+                let restored = app.staticTexts["projectReceipt"]
+                reveal(restored, in: app)
+                XCTAssertEqual(restored.value as? String, "teen-project/13/offline/0")
+                XCTAssertEqual(try archiveChecksum(in: app), checksum)
+            }
+            app.terminate()
+        }
+    }
+
+    func testProjectWorkshopDoesNotReactUntilSaveSucceedsWithLargeText() throws {
+        let app = launch(seed: "0", largestText: true, failingSaves: "8")
+        reachProject(in: app)
+        let checksum = try archiveChecksum(in: app)
+        let paper = app.buttons["choice.offline"]
+        reveal(paper, in: app); paper.tap()
+        assertSaveFailure(in: app)
+        XCTAssertFalse(app.staticTexts["projectReceipt"].exists)
+        XCTAssertFalse(app.staticTexts["chosenAction"].exists)
+        XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, "teen-project")
+        XCTAssertEqual(try archiveChecksum(in: app), checksum)
+        reveal(paper, in: app); paper.tap()
+        XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+        let memory = app.staticTexts["projectMemory"]
+        reveal(memory, in: app)
+        XCTAssertTrue(memory.label.contains("紙本創作"))
+        attachScreenshot("workshop-large-text-saved", app: app)
+        let receipt = app.staticTexts["projectReceipt"]
+        reveal(receipt, in: app)
+        XCTAssertEqual(receipt.value as? String, "teen-project/13/offline/0")
+        XCTAssertNotEqual(try archiveChecksum(in: app), checksum)
+    }
+
+    private func reachProject(in app: XCUIApplication) {
+        start(app)
+        for _ in 0..<3 {
+            let rest = app.buttons["choice.rest"]
+            reveal(rest, in: app); rest.tap()
+            let next = app.buttons["continueLife"]
+            XCTAssertTrue(next.waitForExistence(timeout: 5)); next.tap()
+        }
+        XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, "teen-project")
+    }
+
     func testEightCountriesAndTaiwanComparisonLimitsAreVisible() throws {
         let app = launch(seed: "0")
         for code in ["TWN", "JPN", "USA", "DEU", "IND", "BRA", "VNM", "KEN"] {
