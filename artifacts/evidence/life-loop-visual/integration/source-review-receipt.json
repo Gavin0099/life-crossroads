@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "python -c \"import json,hashlib; from pathlib import Path; p=Path(\\\"artifacts/evidence/life-loop-visual/integration/formal-integration-review.json\\\"); r=json.loads(p.read_text()); root=Path(\\\"/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads\\\"); assert all(v[\\\"passedTests\\\"]==18 and v[\\\"failedTests\\\"]==0 and v[\\\"result\\\"]==\\\"Passed\\\" for v in r[\\\"formalTests\\\"].values()); assert len(r[\\\"screenshots\\\"])==24; assert all(hashlib.sha256((root/s[\\\"path\\\"]).read_bytes()).hexdigest()==s[\\\"sha256\\\"] for s in r[\\\"screenshots\\\"]); assert all(x[\\\"gameplayWorkingBytesMatch\\\"] and x[\\\"visualWorkingBytesMatch\\\"] for x in r[\\\"files\\\"]); print(\\\"PASS: two formal18-case summaries and24source-bound native screenshot hashes verified; not a new UI test run\\\")\"",
+  "exit_code": 0,
+  "started_at": "2026-10-24T07:57:15Z",
+  "finished_at": "2026-10-24T07:57:15Z",
+  "runner": "visual-source-integrity",
+  "linked_commit": "59eab53b05a33ddf4b51ab57fb7dbc96181918a6",
+  "output_artifacts": [
+    "artifacts/evidence/life-loop-visual/integration/source-review-receipt.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}
