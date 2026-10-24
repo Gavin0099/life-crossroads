@@ -1,0 +1,39 @@
+{
+  "boundary" : "Pure visual functions only; Gameplay integration must verify clock pause\/speed\/background and authoritative life equality.",
+  "frames" : [
+    {
+      "elapsedMs" : 0,
+      "pose" : {
+        "leanDegrees" : 0,
+        "rippleHorizontal" : 0,
+        "vertical" : -0
+      }
+    },
+    {
+      "elapsedMs" : 1000,
+      "pose" : {
+        "leanDegrees" : 0.65000000000000002,
+        "rippleHorizontal" : 2,
+        "vertical" : -1.25
+      }
+    },
+    {
+      "elapsedMs" : 2000,
+      "pose" : {
+        "leanDegrees" : 7.9602041944577967e-17,
+        "rippleHorizontal" : 2.4492935982947064e-16,
+        "vertical" : -1.5308084989341916e-16
+      }
+    },
+    {
+      "elapsedMs" : 4000,
+      "pose" : {
+        "leanDegrees" : 0,
+        "rippleHorizontal" : 0,
+        "vertical" : -0
+      }
+    }
+  ],
+  "result" : "PASS",
+  "source" : "actual App\/LifeWorldMotion.swift"
+}
