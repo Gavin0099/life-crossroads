@@ -1,0 +1,30 @@
+[
+  {
+    "sourceCommit": "4d3308e275705972121134582321deaef77609be",
+    "test": "LifeCrossroadsUITests/testWorldDelayedProjectClueBecomesAnOccurredSeventeenYearEcho()",
+    "path": "artifacts/evidence/life-loop/native/world-seventeen-occurred-echo-4d3308e.png",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "4D5BE544-62B0-45D3-9CE2-9695BF438CD8",
+      "deviceName": "LifeCrossroads Test 20261024T065350Z",
+      "exportedFileName": "81B2E296-6DA2-4234-8FEC-8000AFE8DFA2.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "world-seventeen-occurred-echo_0_48640275-6FF6-4005-AFFE-BE38F44612FE.png",
+      "timestamp": 1792824936.759
+    }
+  },
+  {
+    "sourceCommit": "4d3308e275705972121134582321deaef77609be",
+    "test": "LifeCrossroadsUITests/testWorldDelayedProjectClueBecomesAnOccurredSeventeenYearEcho()",
+    "path": "artifacts/evidence/life-loop/native/world-thirteen-pending-clue-4d3308e.png",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "4D5BE544-62B0-45D3-9CE2-9695BF438CD8",
+      "deviceName": "LifeCrossroads Test 20261024T065350Z",
+      "exportedFileName": "D62D270D-76C1-45D3-B8B2-D7A7170D3852.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "world-thirteen-pending-clue_0_7AEED8D2-25AB-4FD1-BC57-74A051958A8E.png",
+      "timestamp": 1792824932.834
+    }
+  }
+]

@@ -1,0 +1,54 @@
+{
+  "scope": "LIFE-LOOP10H v1.1 complete plan; pre-plan65fff9e excluded",
+  "snapshotUTC": "2026-10-24T06:57:51.958965+00:00",
+  "measurement": "Conservative observed windows include tool/coordination waiting; not precise CPU or per-slice billing. Concurrent tools are not added again to owner window. Root delivery/CI verification remains open after snapshot.",
+  "capsHours": {
+    "gameplay": 7,
+    "visual": 2,
+    "independentReviewer": 1,
+    "total": 10
+  },
+  "observedUpperBoundsHours": {
+    "gameplayAtSnapshot": 1.448,
+    "visualFinal": 0.857,
+    "independentReviewerFinal": 0.941,
+    "totalAtSnapshot": 3.246
+  },
+  "windows": {
+    "LL00": {
+      "start": "2026-10-24T05:11:40Z",
+      "end": "2026-10-24T05:25:56Z",
+      "hours": 0.238
+    },
+    "rootResumed": {
+      "start": "2026-10-24T05:45:15Z",
+      "end": "OPEN: delivery / CI"
+    },
+    "visualAuthoring": {
+      "start": "2026-10-24T05:48:23Z",
+      "end": "2026-10-24T06:07:31Z",
+      "hours": 0.319
+    },
+    "visualReadQA": {
+      "start": "2026-10-24T06:19:59Z",
+      "end": "2026-10-24T06:52:15Z",
+      "hours": 0.538
+    },
+    "reviewerPrimary": {
+      "start": "2026-10-24T05:55:25Z",
+      "end": "2026-10-24T06:51:06Z",
+      "hours": 0.928
+    },
+    "reviewerG4Supplement": {
+      "start": "2026-10-24T06:56:10Z",
+      "end": "2026-10-24T06:56:56Z",
+      "hours": 0.013
+    }
+  },
+  "notClaimed": [
+    "10 hours actually consumed",
+    "accurate per-slice stopwatch",
+    "pre-plan prototype work included",
+    "idle stopped reviewer interval billed"
+  ]
+}

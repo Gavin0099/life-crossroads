@@ -72,10 +72,50 @@ LL-00預算0.50 Agent-hour，包含本片基線盤點/隔離/快照；實際觀�
 - DTO保留真實年齡，另列visualFromAge；動畫輸入分global elapsed與phase elapsed，Visual不可自建時鐘。
 - Visual於05:48:23 UTC起研究固定上游SHA/MIT，收到契約後在獨立worktree及`codex/life-loop-visual-world-10h-r2`實作。未更動其他已存在的Visual工作樹；不整枝合併舊WIP。
 
-### R2～R4 執行中
+### R2～R4 實作紀錄
 
 - 新增純Swift WorldPlayback：注入單調時間、3秒Living／2秒保存後結果、1×／3×、暫停／背景、每phase世代與exactly-once ticket；冷啟動reflecting保持暫停待玩家操作。
 - GameStore仍先save再publish。動畫回呼只在identity與generation仍匹配reflecting時呼叫合法continueLife；失敗保持原結果、暫停自動重試。
 - 正式Crossroads接scene／事件／結果與可回退開關；說明/比較/岔路/警告/背景及VoiceOver阻止自動續行。未完成UI驗證前不標DONE。
 - 原有UI回歸明確用legacy開關；新世界UI另有自然兩事件、存檔失敗、冷恢復、最大文字、完整人生/分岔案例，不混計為同一路徑。
 - 新增日本/台灣凍結trace與normal/fast/skip真實磁碟存讀一致性；八國15決策與完整分岔原局bytes保持，結果待本輪測試完成後記錄。
+
+### R2 / R3 工程進展與修正證據
+
+- `61657dd` 接正式保存/選擇/自然續行；`7eff8a0` 修正失敗ticket復活與同Seed重開世代重用，獨立Reviewer提出後有敏感回歸斷言。
+- `5556edc` 接Visual與App target、冷恢復/預先暫停結果末幀、ScrollView離屏停更但仍可手動繼續；單純中途暫停保持原姿勢。`7040802` 改SE首屏/大字安全區與native dialog測試接縫。
+- Visual原始三提交 `2ed3a87` / `bf18852` / `010b683` 在主流程對應 `cb8cae4` / `2d92a97` / `93a7ef8`。只移入Scene/Motion/來源與證據；全域與phase時間皆由Gameplay供給，既有PNG五齡，不合併舊整枝原型。
+- `00b7886` 補App內減少動態與新原生案例；`80f0bd9` 讓Simulator fresh-run偏好可重設，防止案例互相污染。`6e6eea3` 自然續行後仍可回看真正last trace；`e52886d` 新world隱藏舊反饋小插圖，避免重複或依recurringPerson推定本次互動。
+- 正式Domain/Data/Persistence、事件/版本皆無diff；來源資料離線驗證31觀測/8國/16家庭/40事件通過。
+- 111個不同Swift案例通過（102基線＋3投影＋4播放＋2真實存讀/分岔）；Reviewer獨立focused9是此111的子集，不重複加總。Python24包含wrapper正/負向、boot失敗與測後刪除實際shell接線；motion正式helper另編譯執行通過並接CI。
+
+### R4 / 原生驗收執行紀錄
+
+1. `F400C171-BB0B-4C62-87DB-44489D56D8B2`：首輪Runner bootstrap early exit，沒有進入產品case；exit65、裝置已刪。保留xcresult與raw log，不當4個案例失敗或通過。
+2. `6EDBF7B2-C1A7-436E-922F-F5711A5BEC53`：新world四案例2過2失敗。自然相鄰兩事件、save-before-publish失敗/重試通過；大字點擊與native取消尋址失敗。實際hierarchy顯示rest卡中心630.75落在542.5開始的footer；dialog只有confirm，沒有Cancel AX。修正reveal採實際footer上界、cancel可用原生外部dismiss，仍驗證原結果與存檔checksum。裝置已刪，沒有把測試定位問題稱為保存/人生引擎錯誤。
+3. `1CF72ECB-FD3F-40BD-968A-2A462181272B`：`7040802`完整16案例在SE/iOS27.0完成15/16通過：舊UI11項及新world完整人生/分岔373.952秒、自然兩事件24.786秒、恢復/取消40.680秒、保存失敗重試26.173秒通過。新world大字141.894秒失敗，projectMemory存在但helper拖點落在固定footer，裝置已刪；保留失敗，不稱引擎錯誤。
+
+本輪預算仍未用滿。Visual主要觀測窗05:48:23–06:07:31 UTC（約0.319h），06:19:59 UTC起另做只讀正式App QA；Reviewer05:55:25 UTC起上限1h。Gameplay從05:45:15 UTC接續，包含工具等待，LL-00先前觀測窗另列。完整工時/Gates在收束時據真實結果更新，不虛構花滿10h。
+
+4. `169B437B-65BB-4449-869B-2A42E8A87F3D`：`7aa69d2`讓drag兩端位於實際scroll viewport，保留unobscured與真實內容斷言。最新五案例5/5通過：大字126.610秒、相鄰事件28.383秒、Reduced20.333秒、恢復/取消37.449秒、故障/重試24.550秒；237.324秒，不冒作最新18項全套。裝置已delete，本輪五台owned UUID對simctl確認均不存在，沒有刪他人或runtime。
+
+### 本機迭代完成狀態
+
+| 迭代 | 狀態 | 可覆核成果與主要取捨 |
+| --- | --- | --- |
+| R1 | DONE | LL00凍結快照、6f5契約、Visual獨立worktree；原型隔離。 |
+| R2 | DONE | 累積鐘、生活/事件、暫停/速度/遮蓋；舊ticket與sameSeed世代回歸修正。 |
+| R3 | DONE | 保存後真實反應/自然續行，Visual小幅PNG演出；不做骨架或新素材。 |
+| R4 | PARTIAL：待遠端CI | 111 Swift／24 Python、完整15/16及最新focused5/5、五台刪除、原局與磁碟保護；保留歷史失敗、runtime警告和人工缺口。 |
+
+G1正式八國及G3固定基準/存讀/分岔由111案例支援；G2兩事件與完整新世界人生有原生證據；G4真實後果有正式原生及source-bound離線圖。G5本機SE首屏/最大字體/Reduced可操作通過，遠端完整CI待完成，人工VoiceOver仍未驗收。G6正式helper連續性、單一鐘與既有PNG/source audit通過；嚴格pixel equality1/255失敗與同輸入控制一併保留，不升格成實機FPS/真人動畫評分。
+
+本機驗證摘要：`artifacts/evidence/life-loop/integration-validation.json`；原生逐圖版本：`native/{full,focused}-manifest.json`；清理收據：`simulator-cleanup-final.json`。完整交付說明見DELIVERY.md。
+
+5. `4D5BE544-62B0-45D3-9CE2-9695BF438CD8`：為補G4原生延遲回顧缺口，test-only `4d3308e`新增正式JPN jpn1 Seed0 rest三次→13歲invest→17歲。尚未發生與已發生caption／17歲／人物與兩圖均驗證，1/1通過44.367秒。App/Domain未變，不重跑已通過純Swift全套；新增第五台owned裝置也已delete，inventory確認不存在。這是本輪最後有界驗收，不開新玩法。
+
+### 工時觀測帳與最後覆審
+
+總預算10h，Gameplay7／Visual2／獨立QA1；不是保證花滿10h。`budget-ledger.json`保留實際觀測窗與截至文件提交前保守上界（含工具等待，不另重複加每個tool工時）。Gameplay LL00 .238h＋05:45:15 UTC起的本輪窗；Visual作者.319h＋只讀QA.538h＝.857h；Reviewer主段.928h＋G4補證46.3秒≈.941h。每人均低於其cap；root後續PR/CI核對仍在同一7h額度。無逐片秒錶，不虛構逐片精確耗時。
+
+G4最後原生缺口已由兩圖/1測試與獨立補證目視關閉；Reviewer報告另增46.3秒，沒有重啟完整1h。G1～4本地工程可交付；G5最新HEAD遠端CI與人工VO、G6實機手動流暢度仍依各自邊界，不以本機完成冒稱全產品Gate通過。

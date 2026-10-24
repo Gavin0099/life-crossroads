@@ -194,3 +194,19 @@ struct LifeWorldScene: View {
 ## LL-01 凍結補充
 
 實作保留上述欄位，增加 `LifeWorldFrame.environmentGaps` 與 `WorldChangeProjection.Kind.delayedConsequence`，以區分未知成本與已觸發呼應。`PresentationMotionFrame`位於純Swift Presentation，`phase`使用`LifeWorldMomentKind`、增加`phaseElapsedMs`供one-shot末幀。Visual唯一介面為`LifeWorldScene(frame: LifeWorldFrame, motion: PresentationMotionFrame)`。`WorldMomentProjector.personName`只映射既有虛構人物；frame.age永遠是權威年齡，living用`frame.presenting(.living)`。App只在正式保存後投影reflecting；DTO本身不聲稱preview已保存。
+
+## 正式播放接線（LL-02～05）
+
+實際實作以 `GameStore.playback: WorldPlayback` 包裝上述建議的 `WorldPlaybackController` 責任，沒有新增第二個 ObservableObject 或 SessionPhase。純Swift `WorldPlayback` 接受單調 `now`，App唯一時間來源為 `ProcessInfo.systemUptime`；可見timed phase由一個可取消task更新，場景/子物件不另建clock。Living 3000ms、committedOutcome 2000ms；1×/3×只縮放有效演出時間。
+
+- `WorldSessionIdentity`取國家、家庭、Seed、trace數、SessionPhase；`WorldAdvanceTicket`另帶持續增加的generation。失敗、同Seed重開和bind均使舊ticket失效；`awaitingCommit`阻止重複tick/skip。
+- `GameStore`驗證ticket仍對應當前reflecting且非原局後，才呼叫原有continueLife並save；成功才bind新session，失敗保持原JSON/結果且paused，可手動重試。
+- 新/冷恢復的paused結果直接提供one-shot末幀；正常中途pause保留既有phase elapsed。全域elapsed不因普通phase切換歸零。
+- `suspended`為sheet/背景/首頁/原局等遮蓋；`offscreen`來自ScrollView具名座標與viewport交集。兩者皆停止tick；單純捲出場景仍可在底欄手動繼續，不形成閱讀後死鎖。背景時間不補算。
+- 首頁「生活世界預覽」可切回同一journey的legacy Event-first；命令列`-legacy-event-first`供回歸。同一組App儲存/決策仍唯一。
+- 系統Reduce Motion或首頁「減少動態效果」任一啟用即用同一靜態分支；後者是AppStorage偏好，不寫入人生JSON。Simulator `-ui-testing -reset-save`同時重設此測試偏好，普通重開保留設定。測試App內設定不代表已人工操作iOS設定或VoiceOver焦點。
+- 自動續行後，下一事件保留「回看剛才的選擇與原因」，讀真正last trace，打開時同樣暫停；不由目前事件倒推舊原因。
+
+可見時使用GameStore的單一累積鐘，Reduce Motion減少刷新頻率；停留event/ending、隱藏或暫停時沒有持續tick。`.transaction`禁止場景自行啟動隱式重複動畫。正式Actor/後果圖只由本次投影供給；legacy小插圖在新世界模式隱藏。
+
+世界投影在成功保存/恢復的bind邊界更新一次；逐幀只切換只讀frame的moment。`GameStore`不在動畫刷新時讀currentEvent/preview重新抽算候選；age/人物/後果由新session重新投影，不沿用前事件快取。
