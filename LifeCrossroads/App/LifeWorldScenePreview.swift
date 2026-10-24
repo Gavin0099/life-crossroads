@@ -48,17 +48,23 @@ struct LifeWorldPreviewAssets {
 struct LifeWorldScenePreview: View {
     let model: LifeWorldScenePreviewModel
     var assets: LifeWorldPreviewAssets = .bundled
+    var showsNotes = true
+    var canvasIdentifier = "visual-fixture-scene"
+    var canvasDescription: String? = nil
+    @Environment(\.dynamicTypeSize) private var typeSize
     var body: some View {
         VStack(spacing: 8) {
-            Text("\(model.age)歲 · 視覺取樣示意，尚未接正式人生")
-                .font(.caption).fixedSize(horizontal: false, vertical: true)
+            if showsNotes {
+                Text("\(model.age)歲 · 視覺取樣示意，尚未接正式人生")
+                    .font(.caption).fixedSize(horizontal: false, vertical: true)
+            }
             GeometryReader { geometry in
                 let pose = WorldPreviewMotion.sample(model)
                 let actorWidth = min(geometry.size.width * 0.70, geometry.size.height * 0.76)
                 ZStack(alignment: .bottom) {
-                    if let background = assets.background {
-                        Image(decorative: background, scale: 1).resizable().scaledToFill()
-                            .frame(width: geometry.size.width, height: geometry.size.height).clipped()
+                    if let background = backgroundCrop(size: geometry.size) {
+                        Image(decorative: background, scale: 1).resizable()
+                            .frame(width: geometry.size.width, height: geometry.size.height)
                     } else { Color(red: 0.78, green: 0.85, blue: 0.71) }
                     // One quiet environmental loop; no per-leaf clock or random values.
                     HStack(spacing: -2) {
@@ -77,7 +83,7 @@ struct LifeWorldScenePreview: View {
                                 .scaleEffect(x: 1, y: pose.stretch, anchor: .bottom)
                         }
                     }.padding(.bottom, geometry.size.height * 0.10)
-                    if model.committedOutcome {
+                    if model.committedOutcome && !typeSize.isAccessibilitySize {
                         VStack(spacing: 2) {
                             Image(systemName: "book.closed").font(.system(size: 27))
                             Text("記憶物件示意").font(.caption2)
@@ -89,11 +95,20 @@ struct LifeWorldScenePreview: View {
                     }
                 }.frame(width: geometry.size.width, height: geometry.size.height).clipped()
             }.accessibilityElement(children: .ignore)
-                .accessibilityLabel("\(model.age)歲角色的大型虛構河畔場景預覽；不是人生結果")
-                .accessibilityIdentifier("visual-fixture-scene")
-            Text("只使用既有角色；沒有眼睛、手臂或尾巴骨架。")
-                .font(.caption2).fixedSize(horizontal: false, vertical: true)
+                .accessibilityLabel(canvasDescription ?? "\(model.age)歲角色的大型虛構河畔場景預覽；不是人生結果")
+                .accessibilityIdentifier(canvasIdentifier)
+            if showsNotes {
+                Text("只使用既有角色；沒有眼睛、手臂或尾巴骨架。")
+                    .font(.caption2).fixedSize(horizontal: false, vertical: true)
+            }
         }
+    }
+    private func backgroundCrop(size: CGSize) -> CGImage? {
+        guard let image = assets.background, size.width > 0, size.height > 0 else { return nil }
+        let scale = max(size.width / Double(image.width), size.height / Double(image.height))
+        let width = size.width / scale, height = size.height / scale
+        return image.cropping(to: CGRect(x: (Double(image.width) - width) / 2,
+            y: (Double(image.height) - height) / 2, width: width, height: height).integral)
     }
     private var portrait: CGImage? {
         guard let cast = assets.cast else { return nil }

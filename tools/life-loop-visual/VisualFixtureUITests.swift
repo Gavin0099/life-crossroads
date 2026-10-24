@@ -3,6 +3,39 @@ import XCTest
 @MainActor final class VisualFixtureUITests: XCTestCase {
     override func setUp() { continueAfterFailure = false }
 
+    func testCommittedPaperAndRestUseDifferentRealRecords() {
+        let app = XCUIApplication(); app.launchArguments = ["-formal"]; app.launch()
+        let canvas = app.otherElements["life-world-canvas"]
+        XCTAssertTrue(canvas.waitForExistence(timeout: 10))
+        XCTAssertTrue(canvas.label.contains("13歲"))
+        XCTAssertTrue(canvas.label.contains("樹老師有互動紀錄"))
+        capture("07-saved-paper", app)
+        app.buttons["formal-route"].tap()
+        let route = app.staticTexts["formal-route-status"]
+        XCTAssertTrue(route.waitForExistence(timeout: 5))
+        XCTAssertTrue(canvas.waitForExistence(timeout: 5))
+        XCTAssertFalse(canvas.label.contains("樹老師"), "Rest cannot invent another person's support")
+        capture("08-saved-rest", app)
+    }
+
+    func testRealRecordInspectionLargestTypeRemainsReachable() {
+        let app = XCUIApplication()
+        app.launchArguments = ["-formal", "-fixture-reduced", "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
+        app.launch()
+        XCTAssertTrue(app.otherElements["life-world-canvas"].waitForExistence(timeout: 10))
+        capture("09-formal-largest-first-screen", app)
+        let record = app.buttons["world-change-0"]
+        for _ in 0..<12 where !record.isHittable { app.swipeUp() }
+        XCTAssertTrue(record.isHittable); record.tap()
+        let close = app.buttons["回到生活場景"]
+        for _ in 0..<12 where !close.isHittable { app.swipeUp() }
+        XCTAssertTrue(close.isHittable)
+        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "來源：13歲")).firstMatch.exists)
+        capture("10-formal-source-largest", app)
+        close.tap()
+        XCTAssertTrue(app.buttons["formal-route"].isHittable)
+    }
+
     func testLargeSceneAndThreeAgeFixtures() {
         let app = XCUIApplication(); app.launch()
         let scene = app.otherElements["visual-fixture-scene"]
@@ -23,10 +56,12 @@ import XCTest
         app.launchArguments = ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
         app.launch()
         XCTAssertTrue(app.otherElements["visual-fixture-scene"].waitForExistence(timeout: 10))
+        XCTAssertGreaterThan(app.otherElements["visual-fixture-scene"].frame.height, 200,
+            "Largest type must retain the character canvas, not squeeze it into a strip")
         capture("04-largest-first-screen", app)
         let stage = app.buttons["fixture-stage"]
-        for _ in 0..<8 where !stage.isHittable { app.swipeUp() }
-        XCTAssertTrue(stage.isHittable); stage.tap()
+        XCTAssertTrue(stage.isHittable, "Largest type needs a visible first-screen entry"); stage.tap()
+        for _ in 0..<8 where !app.staticTexts["fixture-status"].isHittable { app.swipeUp() }
         XCTAssertTrue(app.staticTexts["fixture-status"].label.contains("13歲"))
         let boundary = app.staticTexts["fixture-boundary"]
         for _ in 0..<8 where !boundary.isHittable { app.swipeUp() }

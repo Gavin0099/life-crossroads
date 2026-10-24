@@ -38,21 +38,31 @@ def main():
     evidence = ROOT / 'artifacts/evidence/life-loop-visual/ios' / f'{args.device}-{stamp}'
     work.mkdir(parents=True)
     evidence.mkdir(parents=True)
+    contract = '6f5e3c1c4211e00f7a3c8eaa7bbc057a2c83fca1'
+    support = work / 'contract-source'
+    support.mkdir()
+    archive = work / 'contract-source.tar'
+    with archive.open('wb') as output:
+        run('git', '-C', str(ROOT), 'archive', '--format=tar', contract, 'Package.swift', 'LifeCrossroads', stdout=output)
+    run('tar', '-xf', str(archive), '-C', str(support))
+    archive.unlink()
     project = work / 'VisualFixture.xcodeproj'
     project.mkdir()
     pbx = (ROOT / 'LifeCrossroads.xcodeproj/project.pbxproj').read_text()
     pbx = pbx.replace('name = App; path = LifeCrossroads/App;', f'name = App; path = "{ROOT}/LifeCrossroads/App";')
     pbx = pbx.replace('path = UITests;', f'path = "{ROOT}/tools/life-loop-visual";')
-    pbx = pbx.replace('packageReferences = (A00000000000000000000030);', 'packageReferences = ();')
-    pbx = re.sub(r'packageProductDependencies = \([^;]+\);', 'packageProductDependencies = ();', pbx)
-    pbx = re.sub(r'(A00000000000000000000021 = \{isa = PBXFrameworksBuildPhase;[^;]+; files = )\([^;]+\)', r'\1()', pbx)
+    pbx = pbx.replace('relativePath = ".";', f'relativePath = "{support}";')
+    pbx = pbx.replace('objects = {', 'objects = {\n' +
+        'A00000000000000000000072 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeWorldScene.swift; sourceTree = "<group>"; };\n' +
+        'A00000000000000000000073 = {isa = PBXBuildFile; fileRef = A00000000000000000000072; };')
+    pbx = pbx.replace('children = (A00000000000000000000040,', 'children = (A00000000000000000000072, A00000000000000000000040,')
     pbx = pbx.replace('path = LifeCrossroadsApp.swift; sourceTree = "<group>";',
         f'path = "{ROOT}/tools/life-loop-visual/PreviewApp.swift"; sourceTree = "<absolute>";')
     pbx = pbx.replace('path = CrossroadsView.swift;', 'path = LifeWorldScenePreview.swift;')
     pbx = pbx.replace('path = LifeCrossroadsUITests.swift;', 'path = VisualFixtureUITests.swift;')
     # App source phase contains only the isolated entry and new component.
     pbx = re.sub(r'(A00000000000000000000020 = \{isa = PBXSourcesBuildPhase;[^;]+; files = )\([^;]+\)',
-        r'\1(A00000000000000000000060, A00000000000000000000062)', pbx)
+        r'\1(A00000000000000000000060, A00000000000000000000062, A00000000000000000000073)', pbx)
     pbx = pbx.replace('com.gavin0099.LifeCrossroads', 'com.gavin0099.VisualFixture')
     pbx = pbx.replace('SWIFT_OPTIMIZATION_LEVEL = "-Onone";',
         'SWIFT_OPTIMIZATION_LEVEL = "-Onone"; SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;')
@@ -62,13 +72,14 @@ def main():
     source_scheme = ROOT / 'LifeCrossroads.xcodeproj/xcshareddata/xcschemes/LifeCrossroads.xcscheme'
     scheme = source_scheme.read_text().replace('LifeCrossroads.xcodeproj', 'VisualFixture.xcodeproj')
     (scheme_dir / 'LifeCrossroads.xcscheme').write_text(scheme)
-    source_paths = [Path(__file__), ROOT / 'LifeCrossroads/App/LifeWorldScenePreview.swift',
+    source_paths = [Path(__file__), ROOT / 'LifeCrossroads/App/LifeWorldScenePreview.swift', ROOT / 'LifeCrossroads/App/LifeWorldScene.swift',
         ROOT / 'tools/life-loop-visual/PreviewApp.swift', ROOT / 'tools/life-loop-visual/VisualFixtureUITests.swift']
     for name in ['StoryCast', 'RiverCrossroads']:
         source_paths += list((ROOT / f'LifeCrossroads/App/Assets.xcassets/{name}.imageset').glob('*'))
     binding = {'head_before_run': run('git', '-C', str(ROOT), 'rev-parse', 'HEAD', capture_output=True).stdout.strip(),
         'sources': [{'path': str(p.relative_to(ROOT)), 'sha256': sha(p)} for p in source_paths],
-        'scope': 'Standalone Visual fixture; no Domain, no formal DTO, no integrated gameplay regression'}
+        'contract_commit': contract, 'contract_file_sha256': sha(support / 'LifeCrossroads/Presentation/LifeWorldFrame.swift'),
+        'scope': 'Isolated renderer against published LL-01 and saved genuine Session; not integrated GameStore or playback regression'}
     (evidence / 'source-binding.json').write_text(json.dumps(binding, indent=2) + '\n')
     inventory = json.loads(run('xcrun', 'simctl', 'list', 'runtimes', '-j', capture_output=True).stdout)
     runtime = next(r['identifier'] for r in inventory['runtimes'] if r['isAvailable'] and r['name'].startswith('iOS'))
@@ -93,6 +104,11 @@ def main():
                     process.kill()
                     process.wait()
                 raise
+        container = subprocess.run(['xcrun', 'simctl', 'get_app_container', device, 'com.gavin0099.VisualFixture', 'data'], capture_output=True, text=True)
+        if container.returncode == 0:
+            records = Path(container.stdout.strip()) / 'Library/Application Support/VisualFixture'
+            if records.exists():
+                shutil.copytree(records, evidence / 'saved-sources')
         receipt['test_exit_code'] = exit_code
         receipt['xcresult_local'] = str(work / 'result.xcresult')
         print((work / 'xcodebuild.log').read_text()[-7000:], flush=True)
