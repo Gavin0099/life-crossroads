@@ -760,8 +760,14 @@ final class LifeCrossroadsUITests: XCTestCase {
             let sheet = app.buttons["closeTrace"].exists || app.buttons["closeComparison"].exists
             let bottom = worldFooter.exists && !sheet ? worldFooter.frame.minY - 12 : app.frame.maxY - (footer ? 110 : 24)
             if element.exists && element.isHittable && element.frame.midY > 100 && element.frame.midY < bottom { return }
-            let upper = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.38))
-            let lower = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.65))
+            // At accessibility sizes the fixed footer can cover the old 65% drag
+            // origin. Keep both endpoints inside the actual scroll viewport.
+            let scrollTop = max(app.frame.minY + 100, 100)
+            let scrollHeight = max(44, bottom - scrollTop)
+            let upperY = scrollTop + scrollHeight * 0.2
+            let lowerY = scrollTop + scrollHeight * 0.8
+            let upper = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: (upperY - app.frame.minY) / app.frame.height))
+            let lower = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: (lowerY - app.frame.minY) / app.frame.height))
             if element.exists && element.frame.midY < 100 { upper.press(forDuration: 0.05, thenDragTo: lower) }
             else { lower.press(forDuration: 0.05, thenDragTo: upper) }
         }
