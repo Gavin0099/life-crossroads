@@ -535,7 +535,7 @@ struct CrossroadsView: View {
             HStack(spacing: 12) {
                 Text(trace.choiceTitle).font(.title2.bold()).accessibilityIdentifier("chosenAction")
                     .accessibilityValue(trace.choiceID)
-                if trace.eventID != "teen-project" && !dynamicTypeSize.isAccessibilitySize {
+                if !store.worldPreviewEnabled && trace.eventID != "teen-project" && !dynamicTypeSize.isAccessibilitySize {
                     Spacer(minLength: 0)
                     CompactStoryScene(age: trace.age, person: trace.recurringPerson, sceneID: "reflectionScene")
                         .frame(width: 88, height: 68)
