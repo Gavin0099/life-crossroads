@@ -47,6 +47,7 @@ private struct FormalWorldScreen: View {
     @State private var inspecting = false
     @State private var frame: LifeWorldFrame?
     @State private var failed = false
+    @State private var inspectedChange: WorldChangeProjection?
     private let modes = ["offline", "rest", "ask", "adult", "child"]
     var body: some View {
         VStack(spacing: 0) {
@@ -57,8 +58,14 @@ private struct FormalWorldScreen: View {
                         LifeWorldScene(frame: frame,
                             motion: .init(elapsedMs: 1250, frozen: true,
                                 reduceMotion: ProcessInfo.processInfo.arguments.contains("-fixture-reduced"),
-                                phase: frame.moment, phaseToken: modes[route], phaseElapsedMs: 450),
-                            onInspectionChanged: { inspecting = $0 })
+                                phase: frame.moment, phaseToken: modes[route], phaseElapsedMs: 450))
+                            .frame(height: 300)
+                        ForEach(Array(frame.worldChanges.enumerated()), id: \.offset) { index, change in
+                            Button { inspectedChange = change; inspecting = true } label: {
+                                Label(change.caption, systemImage: LifeWorldScene.tokenSymbol(change))
+                                    .fixedSize(horizontal: false, vertical: true)
+                            }.buttonStyle(.plain).accessibilityIdentifier("world-change-\(index)")
+                        }
                     } else if failed { Text("來源載入失敗").accessibilityIdentifier("formal-error") }
                     else { Text("讀取已保存的測試人生") }
                     Text(modes[route]).font(.caption).accessibilityIdentifier("formal-route-status")
@@ -69,6 +76,18 @@ private struct FormalWorldScreen: View {
             Button("切換路線") { route = (route + 1) % modes.count }
                 .buttonStyle(.borderedProminent).padding(8).accessibilityIdentifier("formal-route")
         }.background(Color(red: 0.96, green: 0.94, blue: 0.88))
+            .sheet(isPresented: Binding(get: { inspectedChange != nil }, set: { if !$0 { inspectedChange = nil } }),
+                onDismiss: { inspecting = false }) {
+                if let change = inspectedChange {
+                    ScrollView {
+                        VStack(alignment: .leading, spacing: 16) {
+                            Text(change.caption).fixedSize(horizontal: false, vertical: true)
+                            Text("來源：\(change.sourceAge)歲的選擇紀錄。")
+                            Button("回到生活場景") { inspectedChange = nil }.buttonStyle(.borderedProminent)
+                        }.padding(20)
+                    }
+                }
+            }
             .task(id: route) {
                 do { frame = try savedFrame(modes[route]); failed = false }
                 catch { frame = nil; failed = true }
@@ -92,13 +111,13 @@ private struct FormalWorldScreen: View {
         }
         let frame = try WorldMomentProjector.project(session: restored, catalog: catalog)
         let evidence: [String: Any] = ["scope": "isolated saved-session renderer, not formal GameStore or playback",
-            "contractCommit": "6f5e3c1c4211e00f7a3c8eaa7bbc057a2c83fca1", "mode": mode,
+            "contractCommit": "7040802846d8829ca969d98ff7023d51fb11913d", "mode": mode,
             "saveRoundTripEqual": true, "age": frame.age, "moment": frame.moment.rawValue,
             "actors": frame.actors.map { ["personID": $0.personID, "role": $0.role] },
             "changes": frame.worldChanges.map { ["kind": $0.kind.rawValue, "caption": $0.caption,
                 "sourceEventID": $0.sourceEventID, "sourceChoiceID": $0.sourceChoiceID,
                 "sourceAge": $0.sourceAge, "isOccurred": $0.isOccurred,
-                "symbol": LifeWorldScene.symbol(for: $0)] as [String: Any] },
+                "symbol": LifeWorldScene.tokenSymbol($0)] as [String: Any] },
             "session": try JSONSerialization.jsonObject(with: JSONEncoder().encode(restored))]
         try JSONSerialization.data(withJSONObject: evidence, options: [.sortedKeys, .prettyPrinted])
             .write(to: directory.appendingPathComponent("\(mode)-source.json"), options: .atomic)

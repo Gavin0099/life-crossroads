@@ -5,12 +5,14 @@ import XCTest
 
     func testCommittedPaperAndRestUseDifferentRealRecords() {
         let app = XCUIApplication(); app.launchArguments = ["-formal"]; app.launch()
-        let canvas = app.otherElements["life-world-canvas"]
+        let canvas = app.otherElements["lifeWorldScene"]
         let found = canvas.waitForExistence(timeout: 10)
         if !found { print(app.debugDescription) }
         XCTAssertTrue(found)
         XCTAssertTrue(canvas.label.contains("13歲"))
-        XCTAssertTrue(canvas.label.contains("樹老師有互動紀錄"))
+        XCTAssertGreaterThanOrEqual(canvas.frame.minX, 0)
+        XCTAssertLessThanOrEqual(canvas.frame.maxX, app.frame.width)
+        XCTAssertTrue(canvas.label.contains("樹老師"))
         capture("07-saved-paper", app)
         app.buttons["formal-route"].tap()
         let route = app.staticTexts["formal-route-status"]
@@ -33,7 +35,7 @@ import XCTest
         let app = XCUIApplication()
         app.launchArguments = ["-formal", "-fixture-reduced", "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
         app.launch()
-        XCTAssertTrue(app.otherElements["life-world-canvas"].waitForExistence(timeout: 10))
+        XCTAssertTrue(app.otherElements["lifeWorldScene"].waitForExistence(timeout: 10))
         capture("09-formal-largest-first-screen", app)
         let record = app.buttons["world-change-0"]
         for _ in 0..<12 where !record.isHittable { app.swipeUp() }

@@ -1,138 +1,236 @@
 import SwiftUI
 import LifePresentation
+#if canImport(UIKit)
+import UIKit
+#else
+import AppKit
+#endif
 
-/// Read-only renderer of Gameplay's LL-01 contract (6f5e3c1).
-/// Caller must project the published, successfully saved Session, never a choice preview.
+/// Render-only world. Gameplay supplies a committed projection and its single accumulated clock.
+/// Existing atlas characters remain whole PNGs: no invented eyes, hands, head or tail rig.
 struct LifeWorldScene: View {
     let frame: LifeWorldFrame
     let motion: PresentationMotionFrame
-    var onInspectionChanged: (Bool) -> Void = { _ in }
+    @Environment(\.accessibilityReduceMotion) private var systemReduceMotion
     @Environment(\.dynamicTypeSize) private var typeSize
-    @State private var inspectedChange: WorldChangeProjection?
 
-    private let forest = Color(red: 0.15, green: 0.36, blue: 0.29)
-    private var sample: LifeWorldScenePreviewModel {
-        .init(age: frame.age, elapsedMs: motion.elapsedMs, frozen: motion.frozen,
-              reducedMotion: motion.reduceMotion, committedOutcome: false, outcomeElapsedMs: 0)
-    }
+    private var reduced: Bool { systemReduceMotion || motion.reduceMotion }
+
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            HStack(alignment: .firstTextBaseline) {
-                Text("沐沐 · \(frame.age)歲").font(.headline)
-                Spacer(minLength: 4)
-                Text(momentLabel).font(.caption)
-            }.fixedSize(horizontal: false, vertical: true)
-            GeometryReader { geometry in
-                ZStack(alignment: .bottomLeading) {
-                    LifeWorldScenePreview(model: sample, showsNotes: false,
-                        canvasIdentifier: "life-world-canvas",
-                        canvasDescription: "\(frame.age)歲的沐沐。\(actorDescriptions)。共用虛構舞台。")
-                    if !typeSize.isAccessibilitySize {
-                        companion(size: geometry.size)
-                        HStack(alignment: .bottom, spacing: 8) {
-                            ForEach(Array(visibleProps.enumerated()), id: \.offset) { _, change in
-                                Image(systemName: Self.symbol(for: change))
-                                    .font(.system(size: 25, weight: .medium))
-                                    .foregroundStyle(forest)
-                                    .padding(9).background(.regularMaterial, in: RoundedRectangle(cornerRadius: 4))
-                                    .scaleEffect(propScale(change), anchor: .bottom)
-                            }
-                        }.padding(12).accessibilityHidden(true)
+        GeometryReader { geometry in
+            let size = geometry.size
+            ZStack {
+                if let background = croppedBackground(size: size) {
+                    Image(decorative: background, scale: 1).resizable()
+                        .frame(width: size.width, height: size.height)
+                } else { StoryPalette.forest.opacity(0.25) }
+                LinearGradient(colors: [.clear, Color(red: 0.97, green: 0.92, blue: 0.78).opacity(0.20)],
+                               startPoint: .top, endPoint: .bottom)
+                if !typeSize.isAccessibilitySize {
+                    riverRipples(size: size)
+                    stageFurniture(size: size)
+                }
+                ForEach(Array(frame.actors.enumerated()), id: \.offset) { index, actor in
+                    if let character = portrait(for: actor.personID) {
+                        actorView(character, index: index, size: size)
                     }
-                }.frame(width: geometry.size.width, height: geometry.size.height).clipped()
-            }.frame(minHeight: 280)
-            Text(frame.sceneID == "workshop" ? "創作工坊 · 共用虛構舞台" : "河畔社區 · 共用虛構舞台")
-                .font(.caption).foregroundStyle(.secondary)
-            ForEach(Array(frame.worldChanges.enumerated()), id: \.offset) { index, change in
-                Button { inspectedChange = change; onInspectionChanged(true) } label: {
-                    HStack(alignment: .top, spacing: 9) {
-                        Image(systemName: Self.symbol(for: change)).font(.system(size: 18))
-                            .frame(width: 24).accessibilityHidden(true)
-                        Text(change.caption).fixedSize(horizontal: false, vertical: true)
-                        Spacer(minLength: 0)
-                        Image(systemName: "info.circle").font(.system(size: 18)).accessibilityHidden(true)
-                    }.frame(maxWidth: .infinity, alignment: .leading).padding(.vertical, 6)
-                }.buttonStyle(.plain).foregroundStyle(forest)
-                    .accessibilityIdentifier("world-change-\(index)")
-                    .accessibilityLabel("\(change.isOccurred ? "已記錄" : "尚未發生")。\(change.caption)。查看來源")
-            }
-            ForEach(Array(frame.environmentGaps.enumerated()), id: \.offset) { _, gap in
-                Label(gap, systemImage: "questionmark.circle").font(.caption)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
-        }.sheet(isPresented: Binding(get: { inspectedChange != nil }, set: { if !$0 { inspectedChange = nil } }),
-            onDismiss: { onInspectionChanged(false) }) {
-            if let change = inspectedChange {
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 16) {
-                        Text(change.isOccurred ? "世界留下的紀錄" : "留下線索，尚未發生").font(.title2.bold())
-                        Text(change.caption).fixedSize(horizontal: false, vertical: true)
-                        Text("來源：\(change.sourceAge)歲的選擇紀錄。")
-                        Button("回到生活場景") { inspectedChange = nil }.buttonStyle(.borderedProminent)
-                    }.padding(20)
+                }
+                if !typeSize.isAccessibilitySize && !visibleTokens.isEmpty {
+                    tokenShelf(size: size)
                 }
             }
+            .frame(width: size.width, height: size.height)
+            .clipped()
+        }
+        .clipShape(RoundedRectangle(cornerRadius: 22))
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(spokenScene)
+        .accessibilityValue(spokenChanges)
+        .accessibilityIdentifier("lifeWorldScene")
+        // No implicit/repeating animation can continue after Gameplay freezes its supplied time.
+        .transaction { $0.animation = nil }
+    }
+
+    private func croppedBackground(size: CGSize) -> CGImage? {
+        guard let image = WorldSceneBitmaps.background, size.width > 0, size.height > 0 else { return nil }
+        let scale = max(size.width / Double(image.width), size.height / Double(image.height))
+        let width = size.width / scale, height = size.height / scale
+        return image.cropping(to: CGRect(x: (Double(image.width) - width) / 2,
+            y: (Double(image.height) - height) / 2, width: width, height: height).integral)
+    }
+    private func croppedPortrait(_ character: StoryCharacter) -> CGImage? {
+        guard let image = WorldSceneBitmaps.cast else { return nil }
+        let index = character.rawValue
+        return image.cropping(to: CGRect(x: Double(index % 4) * Double(image.width) / 4,
+            y: Double(index / 4) * Double(image.height) / 2,
+            width: Double(image.width) / 4, height: Double(image.height) / 2).integral)
+    }
+
+    private func actorView(_ character: StoryCharacter, index: Int, size: CGSize) -> some View {
+        let pose = LifeWorldMotion.pose(elapsedMs: motion.elapsedMs, reduceMotion: reduced, actorIndex: index)
+        let protagonist = character.rawValue <= StoryCharacter.elder.rawValue
+        let heroFraction = frame.actors.count > 1 ? 0.60 : 0.70
+        let width = min(size.width * (protagonist ? heroFraction : 0.36), size.height * 0.83)
+        let x = frame.actors.count > 1 ? size.width * (index == 0 ? 0.36 : 0.72) : size.width * 0.50
+        return ZStack(alignment: .bottom) {
+            Ellipse().fill(StoryPalette.forest.opacity(0.19))
+                .frame(width: width * 0.48, height: max(4, width * 0.065))
+            if let portrait = croppedPortrait(character) {
+                Image(decorative: portrait, scale: 1).resizable().scaledToFit()
+                    .frame(width: width, height: width)
+                    .rotationEffect(.degrees(pose.leanDegrees), anchor: .bottom)
+                    .offset(y: pose.vertical - 3)
+            }
+        }
+        .frame(width: width, height: width, alignment: .bottom)
+        .position(x: x, y: size.height * 0.84 - width / 2)
+    }
+
+    @ViewBuilder private func stageFurniture(size: CGSize) -> some View {
+        if frame.sceneID == "workshop" {
+            // A shared fictional work surface; its existence is not a household equipment claim.
+            VStack(spacing: 0) {
+                RoundedRectangle(cornerRadius: 5)
+                    .fill(Color(red: 0.63, green: 0.43, blue: 0.29)).frame(height: 10)
+                HStack { Rectangle().frame(width: 6); Spacer(); Rectangle().frame(width: 6) }
+                    .foregroundStyle(Color(red: 0.50, green: 0.34, blue: 0.23))
+                    .padding(.horizontal, 14).frame(height: size.height * 0.13)
+            }
+            .frame(width: size.width * 0.30)
+            .position(x: size.width * 0.82, y: size.height * 0.77)
+        } else if frame.sceneID == "community" {
+            VStack(spacing: 4) {
+                RoundedRectangle(cornerRadius: 2).frame(height: 7)
+                RoundedRectangle(cornerRadius: 2).frame(height: 6)
+                HStack { Rectangle().frame(width: 5); Spacer(); Rectangle().frame(width: 5) }
+                    .padding(.horizontal, 9).frame(height: size.height * 0.07)
+            }
+            .foregroundStyle(Color(red: 0.55, green: 0.37, blue: 0.25))
+            .frame(width: size.width * 0.22)
+            .position(x: size.width * 0.15, y: size.height * 0.70)
         }
     }
 
-    private var momentLabel: String {
-        switch frame.moment {
-        case .living: "生活繼續"
-        case .eventPaused: "遇到一個岔路"
-        case .committedOutcome: "選擇已留下紀錄"
-        case .ending: "回顧這段人生"
-        }
-    }
-    private var actorDescriptions: String {
-        frame.actors.filter { $0.role != "protagonist" }.map {
-            "\(WorldMomentProjector.personName($0.personID))\($0.role == "interacted" ? "有互動紀錄" : "在場邀請")"
-        }.joined(separator: "，")
-    }
-    private var visibleProps: [WorldChangeProjection] {
-        Array(frame.worldChanges.filter { $0.isOccurred && ($0.kind == .memory || $0.kind == .relationship) }.suffix(2))
-    }
-    static func symbol(for change: WorldChangeProjection) -> String {
-        if !change.isOccurred { return "ellipsis.bubble" }
-        if change.kind == .memory && change.sourceEventID == "teen-project" {
-            switch change.sourceChoiceID {
-            case "offline": return "doc.text"
-            case "invest": return "rectangle.and.pencil.and.ellipsis"
-            case "ask": return "questionmark.bubble"
-            case "rest": return "moon"
-            default: break
+    private func riverRipples(size: CGSize) -> some View {
+        let pose = LifeWorldMotion.pose(elapsedMs: motion.elapsedMs, reduceMotion: reduced)
+        return ZStack {
+            ForEach(0..<3) { index in
+                Capsule().fill(.white.opacity(0.48))
+                    .frame(width: CGFloat(14 + index * 6), height: 1.5)
+                    .offset(x: pose.rippleHorizontal * (index.isMultiple(of: 2) ? 1 : -1))
+                    .position(x: size.width * (0.83 + Double(index % 2) * 0.06),
+                              y: size.height * (0.42 + Double(index) * 0.065))
             }
         }
+    }
+
+    private var visibleTokens: [WorldChangeProjection] {
+        // A pending token is a note about an unresolved clue, never an achieved outcome.
+        frame.worldChanges.enumerated().filter { $0.element.isOccurred || $0.element.kind == .pendingClue }
+            .sorted {
+                let first = tokenPriority($0.element), second = tokenPriority($1.element)
+                return first == second ? $0.offset < $1.offset : first < second
+            }.map(\.element)
+    }
+
+    private func tokenPriority(_ change: WorldChangeProjection) -> Int {
+        let current = change.sourceEventID == frame.eventID && change.sourceAge == frame.age
         switch change.kind {
-        case .resourceChange: return "slider.horizontal.3"
-        case .relationship: return "person.2"
-        case .memory: return "bookmark"
-        case .occurredChance: return "sparkle"
-        case .pendingClue: return "ellipsis.bubble"
-        case .delayedConsequence: return "arrow.turn.down.right"
+        case .memory: return current ? 0 : 3
+        case .relationship: return current ? 1 : 4
+        case .occurredChance: return 2
+        case .delayedConsequence: return 4
+        case .pendingClue: return 5
+        case .resourceChange: return 6
         }
     }
-    private func propScale(_ change: WorldChangeProjection) -> Double {
-        guard frame.moment == .committedOutcome, motion.phase == .committedOutcome,
-              change.isOccurred, change.sourceEventID == frame.eventID,
-              change.sourceAge == frame.age else { return 1 }
-        let phase = LifeWorldScenePreviewModel(age: frame.age, elapsedMs: motion.elapsedMs,
-            frozen: motion.frozen, reducedMotion: motion.reduceMotion,
-            committedOutcome: true, outcomeElapsedMs: motion.phaseElapsedMs)
-        return 0.96 + 0.04 * WorldPreviewMotion.sample(phase).arrival
-    }
-    @ViewBuilder private func companion(size: CGSize) -> some View {
-        if let actor = frame.actors.first(where: { ["ahe", "teacher", "cheng"].contains($0.personID) && $0.role != "protagonist" }),
-           let cast = LifeWorldPreviewAssets.bundled.cast {
-            let index = actor.personID == "ahe" ? 5 : actor.personID == "teacher" ? 6 : 7
-            if let cell = cast.cropping(to: CGRect(x: Double(index % 4) * Double(cast.width) / 4,
-                y: Double(index / 4) * Double(cast.height) / 2,
-                width: Double(cast.width) / 4, height: Double(cast.height) / 2).integral) {
-                Image(decorative: cell, scale: 1).resizable().scaledToFit()
-                    .frame(width: size.width * 0.30, height: size.width * 0.30)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
-                    .padding(.trailing, 8).padding(.bottom, size.height * 0.10)
-                    .accessibilityHidden(true)
+
+    private func tokenShelf(size: CGSize) -> some View {
+        HStack(alignment: .bottom, spacing: 6) {
+            ForEach(Array(visibleTokens.prefix(4).enumerated()), id: \.offset) { _, change in
+                token(change, size: size)
             }
         }
+        .padding(.horizontal, 8).padding(.vertical, 5)
+        .background(alignment: .bottom) {
+            RoundedRectangle(cornerRadius: 3).fill(Color(red: 0.57, green: 0.39, blue: 0.26)).frame(height: 5)
+        }
+        .position(x: size.width * 0.50, y: size.height * 0.92)
+    }
+
+    private func token(_ change: WorldChangeProjection, size: CGSize) -> some View {
+        let currentOutcome = frame.moment == .committedOutcome && motion.phase == .committedOutcome
+            && change.isOccurred && change.sourceEventID == frame.eventID && change.sourceAge == frame.age
+        let progress = currentOutcome ? LifeWorldMotion.arrival(phaseElapsedMs: motion.phaseElapsedMs, reduceMotion: reduced) : 1
+        return Image(systemName: Self.tokenSymbol(change))
+            .font(.system(size: min(21, size.height * 0.09), weight: .medium))
+            .foregroundStyle(StoryPalette.forest)
+            .frame(width: min(36, size.width * 0.11), height: min(32, size.height * 0.14))
+            .background(Color(red: 1, green: 0.97, blue: 0.87), in: RoundedRectangle(cornerRadius: 5))
+            .overlay(RoundedRectangle(cornerRadius: 5).stroke(StoryPalette.forest.opacity(0.18), lineWidth: 1))
+            .scaleEffect(0.94 + progress * 0.06)
+            .offset(y: (1 - progress) * 4)
+            // The fact has already committed: even an immediate pause at frame zero must leave
+            // a readable token. Motion only emphasizes its arrival; it never gates the evidence.
+            .opacity(LifeWorldMotion.committedTokenOpacity(arrival: progress))
+    }
+
+    static func tokenSymbol(_ change: WorldChangeProjection) -> String {
+        if !change.isOccurred { return "clock.badge.questionmark" }
+        switch change.kind {
+        case .relationship: return "bubble.left.and.bubble.right"
+        case .pendingClue: return "clock.badge.questionmark"
+        case .occurredChance: return "sparkle"
+        case .resourceChange: return "list.bullet.rectangle"
+        case .delayedConsequence: return "arrow.turn.down.right"
+        case .memory:
+            // These are selected activity tokens. Neither a laptop nor notebook asserts completion,
+            // access ownership, a reward or a future invitation. Unknown memories stay neutral.
+            if change.sourceEventID == "teen-project" {
+                switch change.sourceChoiceID {
+                case "invest": return "laptopcomputer"
+                case "offline": return "book.closed"
+                case "ask": return "questionmark.bubble"
+                case "rest": return "leaf"
+                default: break
+                }
+            }
+            return "note.text"
+        }
+    }
+
+    private func portrait(for personID: String) -> StoryCharacter? {
+        switch personID {
+        case "mumu": .protagonist(age: frame.age)
+        case "ahe", "阿禾": .ahe
+        case "teacher", "樹老師": .teacher
+        case "cheng", "小澄": .xiaocheng
+        default: nil // Do not invent a new person when no reviewed portrait exists.
+        }
+    }
+
+    private var spokenScene: String {
+        let people = frame.actors.map { WorldMomentProjector.personName($0.personID) }.joined(separator: "、")
+        let place = frame.sceneID == "workshop" ? "想像工作室" : "想像河畔"
+        return "\(frame.age)歲，\(people)在\(place)。跨國共用的虛構舞台，不是當地實景。"
+    }
+
+    private var spokenChanges: String {
+        let captions = frame.worldChanges.map(\.caption).joined(separator: "。")
+        return captions.isEmpty ? "目前沒有新的後果紀錄。" : captions
+    }
+}
+
+/// Cache unchanged whole-atlas bitmaps; crop texels before layout so accessibility
+/// never receives the bounds of a 4×2 atlas or overflowing scaled-to-fill image.
+@MainActor private enum WorldSceneBitmaps {
+    static let background = load("RiverCrossroads")
+    static let cast = load("StoryCast")
+    private static func load(_ name: String) -> CGImage? {
+        #if canImport(UIKit)
+        UIImage(named: name)?.cgImage
+        #else
+        NSImage(named: name)?.cgImage(forProposedRect: nil, context: nil, hints: nil)
+        #endif
     }
 }

@@ -41,7 +41,7 @@ def main():
     evidence = ROOT / 'artifacts/evidence/life-loop-visual/ios' / f'{args.device}-{stamp}'
     work.mkdir(parents=True)
     evidence.mkdir(parents=True)
-    contract = '6f5e3c1c4211e00f7a3c8eaa7bbc057a2c83fca1'
+    contract = '7040802846d8829ca969d98ff7023d51fb11913d'
     support = work / 'contract-source'
     support.mkdir()
     archive = work / 'contract-source.tar'
@@ -57,15 +57,17 @@ def main():
     pbx = pbx.replace('relativePath = ".";', f'relativePath = "{support}";')
     pbx = pbx.replace('objects = {', 'objects = {\n' +
         'A00000000000000000000072 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeWorldScene.swift; sourceTree = "<group>"; };\n' +
+        'A00000000000000000000074 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeWorldMotion.swift; sourceTree = "<group>"; };\n' +
+        'A00000000000000000000075 = {isa = PBXBuildFile; fileRef = A00000000000000000000074; };\n' +
         'A00000000000000000000073 = {isa = PBXBuildFile; fileRef = A00000000000000000000072; };')
-    pbx = pbx.replace('children = (A00000000000000000000040,', 'children = (A00000000000000000000072, A00000000000000000000040,')
+    pbx = pbx.replace('children = (A00000000000000000000040,', 'children = (A00000000000000000000074, A00000000000000000000072, A00000000000000000000040,')
     pbx = pbx.replace('path = LifeCrossroadsApp.swift; sourceTree = "<group>";',
         f'path = "{ROOT}/tools/life-loop-visual/PreviewApp.swift"; sourceTree = "<absolute>";')
     pbx = pbx.replace('path = CrossroadsView.swift;', 'path = LifeWorldScenePreview.swift;')
     pbx = pbx.replace('path = LifeCrossroadsUITests.swift;', 'path = VisualFixtureUITests.swift;')
     # App source phase contains only the isolated entry and new component.
     pbx = re.sub(r'(A00000000000000000000020 = \{isa = PBXSourcesBuildPhase;[^;]+; files = )\([^;]+\)',
-        r'\1(A00000000000000000000060, A00000000000000000000062, A00000000000000000000073)', pbx)
+        r'\1(A00000000000000000000060, A00000000000000000000062, A00000000000000000000073, A00000000000000000000075, A00000000000000000000066)', pbx)
     pbx = pbx.replace('com.gavin0099.LifeCrossroads', 'com.gavin0099.VisualFixture')
     pbx = pbx.replace('SWIFT_OPTIMIZATION_LEVEL = "-Onone";',
         'SWIFT_OPTIMIZATION_LEVEL = "-Onone"; SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;')
@@ -75,7 +77,7 @@ def main():
     source_scheme = ROOT / 'LifeCrossroads.xcodeproj/xcshareddata/xcschemes/LifeCrossroads.xcscheme'
     scheme = source_scheme.read_text().replace('LifeCrossroads.xcodeproj', 'VisualFixture.xcodeproj')
     (scheme_dir / 'LifeCrossroads.xcscheme').write_text(scheme)
-    source_paths = [Path(__file__), ROOT / 'LifeCrossroads/App/LifeWorldScenePreview.swift', ROOT / 'LifeCrossroads/App/LifeWorldScene.swift',
+    source_paths = [Path(__file__), ROOT / 'LifeCrossroads/App/LifeWorldScenePreview.swift', ROOT / 'LifeCrossroads/App/LifeWorldScene.swift', ROOT / 'LifeCrossroads/App/LifeWorldMotion.swift', ROOT / 'LifeCrossroads/App/StoryVisuals.swift',
         ROOT / 'tools/life-loop-visual/PreviewApp.swift', ROOT / 'tools/life-loop-visual/VisualFixtureUITests.swift']
     for name in ['StoryCast', 'RiverCrossroads']:
         source_paths += list((ROOT / f'LifeCrossroads/App/Assets.xcassets/{name}.imageset').glob('*'))
