@@ -194,18 +194,16 @@ struct CrossroadsView: View {
         "\(worldSuspended)-\(store.canAnimateWorld)-\(store.playback.phaseToken)-\(reduceMotion)-\(voiceOver)"
     }
     private func worldStage(_ world: LifeWorldFrame, height: CGFloat) -> some View {
+        VStack(alignment: .leading, spacing: 5) {
+            if !dynamicTypeSize.isAccessibilitySize {
+                Text("共用想像場景 · 非各國實景")
+                    .font(.caption2).foregroundStyle(.secondary).padding(.horizontal, 8)
+                    .accessibilityHidden(true) // Also retained in the scene's spoken label.
+            }
         LifeWorldScene(frame: world, motion: store.playback.motion(reduceMotion: reduceMotion))
             .frame(height: height)
             // Decorative poses and outcome tokens must not enlarge the VoiceOver hit region.
             .contentShape(.accessibility, Rectangle())
-            .overlay(alignment: .topLeading) {
-                if !dynamicTypeSize.isAccessibilitySize {
-                    Text("共用想像場景 · 非各國實景")
-                        .font(.caption2).padding(.horizontal, 7).padding(.vertical, 4)
-                        .background(worldPaper.opacity(0.92), in: Capsule()).padding(8)
-                        .accessibilityHidden(true) // The scene's spoken label retains this distinction at every size.
-                }
-            }
             .overlay(alignment: .topTrailing) {
 #if targetEnvironment(simulator)
                 if ProcessInfo.processInfo.arguments.contains("-ui-testing") {
@@ -215,6 +213,7 @@ struct CrossroadsView: View {
                 }
 #endif
             }
+        }
     }
     private func living(_ session: LifeSession) -> some View {
         VStack(alignment: .leading, spacing: 12) {
