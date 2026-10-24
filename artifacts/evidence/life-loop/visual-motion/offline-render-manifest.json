@@ -1,0 +1,799 @@
+{
+  "baseDTO": "6f5e3c1",
+  "images": [
+    {
+      "age": 8,
+      "changes": [],
+      "country": "JPN",
+      "elapsedMs": 0,
+      "eventID": "child-interest",
+      "file": "loop-0ms.png",
+      "household": "jpn-1",
+      "moment": "living",
+      "pastDecisionCount": 0,
+      "phaseElapsedMs": 480,
+      "reduceMotion": false,
+      "renderScale": 2,
+      "seed": 0,
+      "sizePoints": [
+        375,
+        290
+      ],
+      "source": "Actual catalog, LifeSession.choose/continueLife and WorldMomentProjector; actual production scene with offline PNG adapter. Not iOS UI or persisted file proof.",
+      "sha256": "b378ae931c225a3abe399802e3b425b9cd2d650689358deab2eecc1ef12ffab1"
+    },
+    {
+      "age": 8,
+      "changes": [],
+      "country": "JPN",
+      "elapsedMs": 1000,
+      "eventID": "child-interest",
+      "file": "loop-1000ms.png",
+      "household": "jpn-1",
+      "moment": "living",
+      "pastDecisionCount": 0,
+      "phaseElapsedMs": 480,
+      "reduceMotion": false,
+      "renderScale": 2,
+      "seed": 0,
+      "sizePoints": [
+        375,
+        290
+      ],
+      "source": "Actual catalog, LifeSession.choose/continueLife and WorldMomentProjector; actual production scene with offline PNG adapter. Not iOS UI or persisted file proof.",
+      "sha256": "043d63d75e969b8141f30846810f7a8a1a2dec1378005dcc55eb9ea109327cec"
+    },
+    {
+      "age": 8,
+      "changes": [],
+      "country": "JPN",
+      "elapsedMs": 2000,
+      "eventID": "child-interest",
+      "file": "loop-2000ms.png",
+      "household": "jpn-1",
+      "moment": "living",
+      "pastDecisionCount": 0,
+      "phaseElapsedMs": 480,
+      "reduceMotion": false,
+      "renderScale": 2,
+      "seed": 0,
+      "sizePoints": [
+        375,
+        290
+      ],
+      "source": "Actual catalog, LifeSession.choose/continueLife and WorldMomentProjector; actual production scene with offline PNG adapter. Not iOS UI or persisted file proof.",
+      "sha256": "a7d8a9fe08058b5664fca5d0aaa7dcbcdc30f0d4d68b3d4c007c4632d5ee4ae2"
+    },
+    {
+      "age": 8,
+      "changes": [],
+      "country": "JPN",
+      "elapsedMs": 4000,
+      "eventID": "child-interest",
+      "file": "loop-4000ms.png",
+      "household": "jpn-1",
+      "moment": "living",
+      "pastDecisionCount": 0,
+      "phaseElapsedMs": 480,
+      "reduceMotion": false,
+      "renderScale": 2,
+      "seed": 0,
+      "sizePoints": [
+        375,
+        290
+      ],
+      "source": "Actual catalog, LifeSession.choose/continueLife and WorldMomentProjector; actual production scene with offline PNG adapter. Not iOS UI or persisted file proof.",
+      "sha256": "e40d1a7cbc130d11e016ccbe7d90f78754353ba21443dffe3cb5c83efdf66620"
+    },
+    {
+      "age": 8,
+      "changes": [],
+      "country": "JPN",
+      "elapsedMs": 0,
+      "eventID": "child-interest",
+      "file": "loop-control-0ms.png",
+      "household": "jpn-1",
+      "moment": "living",
+      "pastDecisionCount": 0,
+      "phaseElapsedMs": 480,
+      "reduceMotion": false,
+      "renderScale": 2,
+      "seed": 0,
+      "sizePoints": [
+        375,
+        290
+      ],
+      "source": "Actual catalog, LifeSession.choose/continueLife and WorldMomentProjector; actual production scene with offline PNG adapter. Not iOS UI or persisted file proof.",
+      "sha256": "110e5a8b02159459a4e6b3e0e7e7e0c36110a516231650c384ee3cdc09a80e6f"
+    },
+    {
+      "age": 8,
+      "changes": [],
+      "country": "JPN",
+      "elapsedMs": 0,
+      "eventID": "child-interest",
+      "file": "child-event.png",
+      "household": "jpn-1",
+      "moment": "eventPaused",
+      "pastDecisionCount": 0,
+      "phaseElapsedMs": 480,
+      "reduceMotion": false,
+      "renderScale": 2,
+      "seed": 0,
+      "sizePoints": [
+        375,
+        230
+      ],
+      "source": "Actual catalog, LifeSession.choose/continueLife and WorldMomentProjector; actual production scene with offline PNG adapter. Not iOS UI or persisted file proof.",
+      "sha256": "9ab906b744e9efd5fb83b3ca1fc451b53305cd20daa6436e3d3180a2166e6c3d"
+    },
+    {
+      "age": 13,
+      "changes": [
+        {
+          "age": 10,
+          "caption": "故事記憶：friendship＝connected（10歲）",
+          "choiceID": "invest",
+          "eventID": "child-friend",
+          "isOccurred": true,
+          "kind": "memory"
+        }
+      ],
+      "country": "JPN",
+      "elapsedMs": 0,
+      "eventID": "teen-project",
+      "file": "teen-before.png",
+      "household": "jpn-1",
+      "moment": "eventPaused",
+      "pastDecisionCount": 3,
+      "phaseElapsedMs": 480,
+      "reduceMotion": false,
+      "renderScale": 2,
+      "seed": 0,
+      "sizePoints": [
+        375,
+        230
+      ],
+      "source": "Actual catalog, LifeSession.choose/continueLife and WorldMomentProjector; actual production scene with offline PNG adapter. Not iOS UI or persisted file proof.",
+      "sha256": "4ada4cb7453ea07522d23791deb89588a0d114a89ecc4626860560ad059045c4"
+    },
+    {
+      "age": 13,
+      "changes": [
+        {
+          "age": 13,
+          "caption": "本次實際變化：健康0、財務-1、人際+1、技能+5",
+          "choiceID": "invest",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "resourceChange"
+        },
+        {
+          "age": 13,
+          "caption": "與樹老師留下互動紀錄。",
+          "choiceID": "invest",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "relationship"
+        },
+        {
+          "age": 10,
+          "caption": "故事記憶：friendship＝connected（10歲）",
+          "choiceID": "invest",
+          "eventID": "child-friend",
+          "isOccurred": true,
+          "kind": "memory"
+        },
+        {
+          "age": 13,
+          "caption": "故事記憶：learning＝online（13歲）",
+          "choiceID": "invest",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "memory"
+        },
+        {
+          "age": 13,
+          "caption": "留下線索，尚未實現：樹老師記得你當年的選擇，這次邀你一起分享經驗。",
+          "choiceID": "invest",
+          "eventID": "teen-project",
+          "isOccurred": false,
+          "kind": "pendingClue"
+        }
+      ],
+      "choiceID": "invest",
+      "country": "JPN",
+      "elapsedMs": 0,
+      "eventID": "teen-project",
+      "file": "teen-invest.png",
+      "household": "jpn-1",
+      "moment": "committedOutcome",
+      "pastDecisionCount": 4,
+      "phaseElapsedMs": 480,
+      "reduceMotion": false,
+      "renderScale": 2,
+      "seed": 0,
+      "sizePoints": [
+        375,
+        290
+      ],
+      "source": "Actual catalog, LifeSession.choose/continueLife and WorldMomentProjector; actual production scene with offline PNG adapter. Not iOS UI or persisted file proof.",
+      "traceApplied": true,
+      "sha256": "a8bc22b53e03c2ea539df3ddfe57dd406b5f13ff9b46a11942bc7b1a384f2601"
+    },
+    {
+      "age": 13,
+      "changes": [
+        {
+          "age": 13,
+          "caption": "本次實際變化：健康0、財務-1、人際+1、技能+5",
+          "choiceID": "invest",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "resourceChange"
+        },
+        {
+          "age": 13,
+          "caption": "與樹老師留下互動紀錄。",
+          "choiceID": "invest",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "relationship"
+        },
+        {
+          "age": 10,
+          "caption": "故事記憶：friendship＝connected（10歲）",
+          "choiceID": "invest",
+          "eventID": "child-friend",
+          "isOccurred": true,
+          "kind": "memory"
+        },
+        {
+          "age": 13,
+          "caption": "故事記憶：learning＝online（13歲）",
+          "choiceID": "invest",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "memory"
+        },
+        {
+          "age": 13,
+          "caption": "留下線索，尚未實現：樹老師記得你當年的選擇，這次邀你一起分享經驗。",
+          "choiceID": "invest",
+          "eventID": "teen-project",
+          "isOccurred": false,
+          "kind": "pendingClue"
+        }
+      ],
+      "choiceID": "invest",
+      "country": "JPN",
+      "elapsedMs": 0,
+      "eventID": "teen-project",
+      "file": "teen-invest-reduced.png",
+      "household": "jpn-1",
+      "moment": "committedOutcome",
+      "pastDecisionCount": 4,
+      "phaseElapsedMs": 480,
+      "reduceMotion": true,
+      "renderScale": 2,
+      "seed": 0,
+      "sizePoints": [
+        375,
+        290
+      ],
+      "source": "Actual catalog, LifeSession.choose/continueLife and WorldMomentProjector; actual production scene with offline PNG adapter. Not iOS UI or persisted file proof.",
+      "traceApplied": true,
+      "sha256": "8a9791e86422c4fa3657f44b216a6216cfdb34212c62510edda581d3be5a502b"
+    },
+    {
+      "age": 13,
+      "changes": [
+        {
+          "age": 13,
+          "caption": "本次實際變化：健康0、財務0、人際+2、技能+4",
+          "choiceID": "offline",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "resourceChange"
+        },
+        {
+          "age": 13,
+          "caption": "與樹老師留下互動紀錄。",
+          "choiceID": "offline",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "relationship"
+        },
+        {
+          "age": 10,
+          "caption": "故事記憶：friendship＝connected（10歲）",
+          "choiceID": "invest",
+          "eventID": "child-friend",
+          "isOccurred": true,
+          "kind": "memory"
+        },
+        {
+          "age": 13,
+          "caption": "故事記憶：learning＝paper（13歲）",
+          "choiceID": "offline",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "memory"
+        }
+      ],
+      "choiceID": "offline",
+      "country": "JPN",
+      "elapsedMs": 0,
+      "eventID": "teen-project",
+      "file": "teen-offline.png",
+      "household": "jpn-1",
+      "moment": "committedOutcome",
+      "pastDecisionCount": 4,
+      "phaseElapsedMs": 480,
+      "reduceMotion": false,
+      "renderScale": 2,
+      "seed": 0,
+      "sizePoints": [
+        375,
+        290
+      ],
+      "source": "Actual catalog, LifeSession.choose/continueLife and WorldMomentProjector; actual production scene with offline PNG adapter. Not iOS UI or persisted file proof.",
+      "traceApplied": true,
+      "sha256": "93201c042b07c05911ec6cd85a0696aa956b108a7bda08098942e64c705bb719"
+    },
+    {
+      "age": 13,
+      "changes": [
+        {
+          "age": 13,
+          "caption": "本次實際變化：健康0、財務0、人際+2、技能+4",
+          "choiceID": "offline",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "resourceChange"
+        },
+        {
+          "age": 13,
+          "caption": "與樹老師留下互動紀錄。",
+          "choiceID": "offline",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "relationship"
+        },
+        {
+          "age": 10,
+          "caption": "故事記憶：friendship＝connected（10歲）",
+          "choiceID": "invest",
+          "eventID": "child-friend",
+          "isOccurred": true,
+          "kind": "memory"
+        },
+        {
+          "age": 13,
+          "caption": "故事記憶：learning＝paper（13歲）",
+          "choiceID": "offline",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "memory"
+        }
+      ],
+      "choiceID": "offline",
+      "country": "JPN",
+      "elapsedMs": 0,
+      "eventID": "teen-project",
+      "file": "teen-offline-reduced.png",
+      "household": "jpn-1",
+      "moment": "committedOutcome",
+      "pastDecisionCount": 4,
+      "phaseElapsedMs": 480,
+      "reduceMotion": true,
+      "renderScale": 2,
+      "seed": 0,
+      "sizePoints": [
+        375,
+        290
+      ],
+      "source": "Actual catalog, LifeSession.choose/continueLife and WorldMomentProjector; actual production scene with offline PNG adapter. Not iOS UI or persisted file proof.",
+      "traceApplied": true,
+      "sha256": "c5a4480349e14a3c1acfae2c1995e395702235e37eeb809e4fb7cd37143a0c29"
+    },
+    {
+      "age": 13,
+      "changes": [
+        {
+          "age": 13,
+          "caption": "本次實際變化：健康0、財務0、人際+2、技能+4",
+          "choiceID": "offline",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "resourceChange"
+        },
+        {
+          "age": 13,
+          "caption": "與樹老師留下互動紀錄。",
+          "choiceID": "offline",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "relationship"
+        },
+        {
+          "age": 10,
+          "caption": "故事記憶：friendship＝connected（10歲）",
+          "choiceID": "invest",
+          "eventID": "child-friend",
+          "isOccurred": true,
+          "kind": "memory"
+        },
+        {
+          "age": 13,
+          "caption": "故事記憶：learning＝paper（13歲）",
+          "choiceID": "offline",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "memory"
+        }
+      ],
+      "choiceID": "offline",
+      "country": "JPN",
+      "elapsedMs": 0,
+      "eventID": "teen-project",
+      "file": "teen-offline-frozen-first.png",
+      "household": "jpn-1",
+      "moment": "committedOutcome",
+      "pastDecisionCount": 4,
+      "phaseElapsedMs": 0,
+      "reduceMotion": false,
+      "renderScale": 2,
+      "seed": 0,
+      "sizePoints": [
+        375,
+        290
+      ],
+      "source": "Actual catalog, LifeSession.choose/continueLife and WorldMomentProjector; actual production scene with offline PNG adapter. Not iOS UI or persisted file proof.",
+      "traceApplied": true,
+      "sha256": "e0fc3334ff7335150247103c765200408b473293f5f5f9cf4040f673681cc51e"
+    },
+    {
+      "age": 13,
+      "changes": [
+        {
+          "age": 13,
+          "caption": "本次實際變化：健康0、財務0、人際+2、技能+1",
+          "choiceID": "ask",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "resourceChange"
+        },
+        {
+          "age": 13,
+          "caption": "與樹老師留下互動紀錄。",
+          "choiceID": "ask",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "relationship"
+        },
+        {
+          "age": 10,
+          "caption": "故事記憶：friendship＝connected（10歲）",
+          "choiceID": "invest",
+          "eventID": "child-friend",
+          "isOccurred": true,
+          "kind": "memory"
+        },
+        {
+          "age": 13,
+          "caption": "故事記憶：learning＝none（13歲）",
+          "choiceID": "ask",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "memory"
+        }
+      ],
+      "choiceID": "ask",
+      "country": "JPN",
+      "elapsedMs": 0,
+      "eventID": "teen-project",
+      "file": "teen-ask.png",
+      "household": "jpn-1",
+      "moment": "committedOutcome",
+      "pastDecisionCount": 4,
+      "phaseElapsedMs": 480,
+      "reduceMotion": false,
+      "renderScale": 2,
+      "seed": 0,
+      "sizePoints": [
+        375,
+        290
+      ],
+      "source": "Actual catalog, LifeSession.choose/continueLife and WorldMomentProjector; actual production scene with offline PNG adapter. Not iOS UI or persisted file proof.",
+      "traceApplied": true,
+      "sha256": "278e893ff6d1b84935cb41c463687081976ef038754c42db31ed1a4660d64b92"
+    },
+    {
+      "age": 13,
+      "changes": [
+        {
+          "age": 13,
+          "caption": "本次實際變化：健康0、財務0、人際+2、技能+1",
+          "choiceID": "ask",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "resourceChange"
+        },
+        {
+          "age": 13,
+          "caption": "與樹老師留下互動紀錄。",
+          "choiceID": "ask",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "relationship"
+        },
+        {
+          "age": 10,
+          "caption": "故事記憶：friendship＝connected（10歲）",
+          "choiceID": "invest",
+          "eventID": "child-friend",
+          "isOccurred": true,
+          "kind": "memory"
+        },
+        {
+          "age": 13,
+          "caption": "故事記憶：learning＝none（13歲）",
+          "choiceID": "ask",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "memory"
+        }
+      ],
+      "choiceID": "ask",
+      "country": "JPN",
+      "elapsedMs": 0,
+      "eventID": "teen-project",
+      "file": "teen-ask-reduced.png",
+      "household": "jpn-1",
+      "moment": "committedOutcome",
+      "pastDecisionCount": 4,
+      "phaseElapsedMs": 480,
+      "reduceMotion": true,
+      "renderScale": 2,
+      "seed": 0,
+      "sizePoints": [
+        375,
+        290
+      ],
+      "source": "Actual catalog, LifeSession.choose/continueLife and WorldMomentProjector; actual production scene with offline PNG adapter. Not iOS UI or persisted file proof.",
+      "traceApplied": true,
+      "sha256": "13eed4b9be1b3932d6745438cc4def9df03db5cf114ad15fab171ae8f7436851"
+    },
+    {
+      "age": 13,
+      "changes": [
+        {
+          "age": 13,
+          "caption": "本次實際變化：健康+2、財務0、人際+1、技能0",
+          "choiceID": "rest",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "resourceChange"
+        },
+        {
+          "age": 10,
+          "caption": "故事記憶：friendship＝connected（10歲）",
+          "choiceID": "invest",
+          "eventID": "child-friend",
+          "isOccurred": true,
+          "kind": "memory"
+        },
+        {
+          "age": 13,
+          "caption": "故事記憶：learning＝none（13歲）",
+          "choiceID": "rest",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "memory"
+        }
+      ],
+      "choiceID": "rest",
+      "country": "JPN",
+      "elapsedMs": 0,
+      "eventID": "teen-project",
+      "file": "teen-rest.png",
+      "household": "jpn-1",
+      "moment": "committedOutcome",
+      "pastDecisionCount": 4,
+      "phaseElapsedMs": 480,
+      "reduceMotion": false,
+      "renderScale": 2,
+      "seed": 0,
+      "sizePoints": [
+        375,
+        290
+      ],
+      "source": "Actual catalog, LifeSession.choose/continueLife and WorldMomentProjector; actual production scene with offline PNG adapter. Not iOS UI or persisted file proof.",
+      "traceApplied": true,
+      "sha256": "f7ab03051f77669c88d7e1ea9f4c83ee3ffa4d66dee9d62d33502ed075fbd25c"
+    },
+    {
+      "age": 13,
+      "changes": [
+        {
+          "age": 13,
+          "caption": "本次實際變化：健康+2、財務0、人際+1、技能0",
+          "choiceID": "rest",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "resourceChange"
+        },
+        {
+          "age": 10,
+          "caption": "故事記憶：friendship＝connected（10歲）",
+          "choiceID": "invest",
+          "eventID": "child-friend",
+          "isOccurred": true,
+          "kind": "memory"
+        },
+        {
+          "age": 13,
+          "caption": "故事記憶：learning＝none（13歲）",
+          "choiceID": "rest",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "memory"
+        }
+      ],
+      "choiceID": "rest",
+      "country": "JPN",
+      "elapsedMs": 0,
+      "eventID": "teen-project",
+      "file": "teen-rest-reduced.png",
+      "household": "jpn-1",
+      "moment": "committedOutcome",
+      "pastDecisionCount": 4,
+      "phaseElapsedMs": 480,
+      "reduceMotion": true,
+      "renderScale": 2,
+      "seed": 0,
+      "sizePoints": [
+        375,
+        290
+      ],
+      "source": "Actual catalog, LifeSession.choose/continueLife and WorldMomentProjector; actual production scene with offline PNG adapter. Not iOS UI or persisted file proof.",
+      "traceApplied": true,
+      "sha256": "f7ab03051f77669c88d7e1ea9f4c83ee3ffa4d66dee9d62d33502ed075fbd25c"
+    },
+    {
+      "age": 39,
+      "changes": [
+        {
+          "age": 10,
+          "caption": "故事記憶：friendship＝connected（10歲）",
+          "choiceID": "invest",
+          "eventID": "child-friend",
+          "isOccurred": true,
+          "kind": "memory"
+        },
+        {
+          "age": 21,
+          "caption": "故事記憶：kitchen＝seeking（21歲）",
+          "choiceID": "agreement",
+          "eventID": "teen-shared-room",
+          "isOccurred": true,
+          "kind": "memory"
+        },
+        {
+          "age": 13,
+          "caption": "故事記憶：learning＝paper（13歲）",
+          "choiceID": "offline",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "memory"
+        },
+        {
+          "age": 32,
+          "caption": "故事記憶：nature＝observing（32歲）",
+          "choiceID": "lead",
+          "eventID": "teen-river-survey",
+          "isOccurred": true,
+          "kind": "memory"
+        },
+        {
+          "age": 17,
+          "caption": "故事記憶：repair＝practiced（17歲）",
+          "choiceID": "invest",
+          "eventID": "teen-repair-table",
+          "isOccurred": true,
+          "kind": "memory"
+        }
+      ],
+      "country": "JPN",
+      "elapsedMs": 1000,
+      "eventID": "adult-care",
+      "file": "adult-community.png",
+      "household": "jpn-1",
+      "moment": "living",
+      "pastDecisionCount": 8,
+      "phaseElapsedMs": 480,
+      "reduceMotion": false,
+      "renderScale": 2,
+      "seed": 0,
+      "sizePoints": [
+        375,
+        290
+      ],
+      "source": "Actual catalog, LifeSession.choose/continueLife and WorldMomentProjector; actual production scene with offline PNG adapter. Not iOS UI or persisted file proof.",
+      "sha256": "bf1c279072f02e5c307b558d54f9e2eed2eab97da467eed3570b9d841802f84e"
+    },
+    {
+      "age": 39,
+      "changes": [
+        {
+          "age": 10,
+          "caption": "故事記憶：friendship＝connected（10歲）",
+          "choiceID": "invest",
+          "eventID": "child-friend",
+          "isOccurred": true,
+          "kind": "memory"
+        },
+        {
+          "age": 21,
+          "caption": "故事記憶：kitchen＝seeking（21歲）",
+          "choiceID": "agreement",
+          "eventID": "teen-shared-room",
+          "isOccurred": true,
+          "kind": "memory"
+        },
+        {
+          "age": 13,
+          "caption": "故事記憶：learning＝paper（13歲）",
+          "choiceID": "offline",
+          "eventID": "teen-project",
+          "isOccurred": true,
+          "kind": "memory"
+        },
+        {
+          "age": 32,
+          "caption": "故事記憶：nature＝observing（32歲）",
+          "choiceID": "lead",
+          "eventID": "teen-river-survey",
+          "isOccurred": true,
+          "kind": "memory"
+        },
+        {
+          "age": 17,
+          "caption": "故事記憶：repair＝practiced（17歲）",
+          "choiceID": "invest",
+          "eventID": "teen-repair-table",
+          "isOccurred": true,
+          "kind": "memory"
+        }
+      ],
+      "country": "JPN",
+      "elapsedMs": 0,
+      "eventID": "adult-care",
+      "file": "compact-90pt.png",
+      "household": "jpn-1",
+      "moment": "eventPaused",
+      "pastDecisionCount": 8,
+      "phaseElapsedMs": 480,
+      "reduceMotion": false,
+      "renderScale": 2,
+      "seed": 0,
+      "sizePoints": [
+        375,
+        90
+      ],
+      "source": "Actual catalog, LifeSession.choose/continueLife and WorldMomentProjector; actual production scene with offline PNG adapter. Not iOS UI or persisted file proof.",
+      "sha256": "47f5483a476298fea20d762650a0d8d763d225004f2560ab2ac00344e4709d04"
+    }
+  ],
+  "render": "offline macOS ImageRenderer; not Simulator",
+  "sourceCheckpointReplayed": true,
+  "sourceHashes": {
+    "LifeCrossroads/App/LifeWorldScene.swift": "29296f41d45e71646f540a41d25bfad20f0b76f7b76b2241f39dc23ca87bbf83",
+    "LifeCrossroads/App/LifeWorldMotion.swift": "38393b73238c3f9996d567a441e9bfc36a434d5048814e43c2f4c5f4592ef1df",
+    "LifeCrossroads/Presentation/LifeWorldFrame.swift": "39afb2a8cff3ad86d464b9d92a4ff14a11a5a8056265de61d8fafe3c5565f865",
+    "LifeCrossroads/Data/Resources/catalog.json": "67506238fb0ae8d57c874212971894aa0e8ea867829f95d0e081facd2487f91a",
+    "LifeCrossroads/App/Assets.xcassets/StoryCast.imageset/story-cast.png": "663bb1b1ce8a0af2ed99be72827a6e4bc69978eb00708df62f7b27cd85e068d8",
+    "LifeCrossroads/App/Assets.xcassets/RiverCrossroads.imageset/river-crossroads.png": "141d42dd9a537d642fb9451338b286ee981893629fee75bdf056066796e37947"
+  }
+}

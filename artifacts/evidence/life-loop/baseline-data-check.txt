@@ -1,0 +1,1 @@
+Offline evidence and deterministic catalog: PASS (31 observations, 8 countries (Taiwan comparison gaps explicit), 16 households, 15 age slots / 40 event candidates)

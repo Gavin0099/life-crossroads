@@ -1,0 +1,2 @@
+Captured baseline-jpn-seed0.json SHA256=0774a1589d2d5abae818a2861aa7639646fff846ef2348fff04983634fb7997c
+Captured baseline-twn-seed0.json SHA256=63d93086f7875b2c3d150673750ec1f3fbd1e3f823aaa5d83115dc79a0f3bdc9

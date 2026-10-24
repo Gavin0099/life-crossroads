@@ -9,7 +9,7 @@ import unittest
 
 
 class SimulatorCleanupTests(unittest.TestCase):
-    def run_wrapper(self, build_status=0, delete_status=0, requested="existing-phone", config=None):
+    def run_wrapper(self, build_status=0, delete_status=0, requested="existing-phone", config=None, tests=(), boot_status=0):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             (root / "scripts").mkdir()
@@ -30,6 +30,8 @@ if args[:3] == ['simctl', 'list', 'devices']:
          'deviceTypeIdentifier': 'com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation'}]}}))
 elif args[:2] == ['simctl', 'create']:
     print('owned-test-phone')
+elif args[:2] == ['simctl', 'bootstatus']:
+    sys.exit(int(os.environ.get('LIFE_FAKE_BOOT_STATUS', '0')))
 elif args[:2] == ['simctl', 'delete']:
     sys.exit(int(os.environ['LIFE_FAKE_DELETE_STATUS']))
 '''
@@ -38,12 +40,13 @@ elif args[:2] == ['simctl', 'delete']:
                 path.write_text(tool)
                 path.chmod(0o755)
             log = root / "calls.jsonl"
-            result = subprocess.run(["bash", "scripts/ios-check.sh"], cwd=root, text=True, capture_output=True,
+            result = subprocess.run(["bash", "scripts/ios-check.sh", *tests], cwd=root, text=True, capture_output=True,
                                     env={**os.environ, "PATH": f"{binary}:{os.environ['PATH']}",
                                          "LIFE_SIMULATOR_ID": requested, "LIFE_FAKE_LOG": str(log),
                                          "LIFE_SIMULATOR_DEVICE_TYPE": "", "LIFE_SIMULATOR_RUNTIME": "",
+                                         "LIFE_TEST_DIAGNOSTICS": "",
                                          "LIFE_FAKE_BUILD_STATUS": str(build_status),
-                                         "LIFE_FAKE_DELETE_STATUS": str(delete_status), **(config or {})})
+                                         "LIFE_FAKE_DELETE_STATUS": str(delete_status), "LIFE_FAKE_BOOT_STATUS": str(boot_status), **(config or {})})
             calls = [json.loads(line) for line in log.read_text().splitlines()] if log.exists() else []
             return result, calls
 
@@ -71,6 +74,18 @@ elif args[:2] == ['simctl', 'delete']:
                 self.assertIn("platform=iOS Simulator,id=owned-test-phone", build)
                 self.assertEqual(build[build.index("-parallel-testing-enabled") + 1], "NO")
 
+    def test_boot_failure_still_deletes_and_filtered_run_preserves_exact_identifier(self):
+        failed, calls = self.run_wrapper(boot_status=9)
+        self.assertEqual(failed.returncode, 9)
+        self.assertFalse(any(c[0] == "xcodebuild" for c in calls))
+        self.assertEqual(calls[-1], ["xcrun", "simctl", "delete", "owned-test-phone"])
+        identifier = "LifeCrossroadsUITests/LifeCrossroadsUITests/testWorldNaturallyRunsTwoEventsAndNeverChoosesForThePlayer"
+        passed, calls = self.run_wrapper(tests=(identifier,))
+        self.assertEqual(passed.returncode, 0, passed.stderr)
+        build = next(c for c in calls if c[0] == "xcodebuild")
+        self.assertIn("-only-testing:" + identifier, build)
+        self.assertLess(next(i for i,c in enumerate(calls) if c[1:3] == ["simctl", "bootstatus"]), calls.index(build))
+
     def test_cleanup_failure_is_visible_and_fails_an_otherwise_successful_run(self):
         result, _ = self.run_wrapper(delete_status=1)
         self.assertEqual(result.returncode, 1)
@@ -80,6 +95,19 @@ elif args[:2] == ['simctl', 'delete']:
         result, calls = self.run_wrapper(requested="unknown")
         self.assertNotEqual(result.returncode, 0)
         self.assertEqual(len(calls), 1)
+
+    def test_verbose_diagnostics_are_opt_in_and_invalid_value_creates_no_device(self):
+        for value, expected in [("", "never"), ("never", "never"), ("on-failure", "on-failure")]:
+            with self.subTest(value=value):
+                result, calls = self.run_wrapper(config={"LIFE_TEST_DIAGNOSTICS": value})
+                self.assertEqual(result.returncode, 0, result.stderr)
+                build = next(call for call in calls if call[0] == "xcodebuild")
+                self.assertEqual(build[build.index("-collect-test-diagnostics") + 1], expected)
+                self.assertEqual(calls[-1], ["xcrun", "simctl", "delete", "owned-test-phone"])
+        result, calls = self.run_wrapper(config={"LIFE_TEST_DIAGNOSTICS": "always"})
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("must be never or on-failure", result.stderr)
+        self.assertEqual(calls, [])
 
 
 if __name__ == "__main__":

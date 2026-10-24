@@ -13,7 +13,7 @@ jobs:
   ios-app:
     needs: swift-engine
     runs-on: macos-15
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - name: Build and exercise a complete iPhone Simulator life
@@ -50,6 +50,11 @@ jobs:
           python3 -m unittest discover -s Tests -p 'test_*.py'
       - name: Test pure Swift rules and source integrity
         run: swift test -c release
+      - name: Verify actual world motion helper boundaries
+        run: |
+          mkdir -p artifacts/lc01
+          swiftc LifeCrossroads/App/LifeWorldMotion.swift artifacts/evidence/life-loop/visual-motion/verify-motion.swift -o artifacts/lc01/motion-check
+          artifacts/lc01/motion-check > artifacts/lc01/world-motion.json
       - name: Build release executable
         run: swift build -c release
       - name: Execute four-country comparison and life skeletons

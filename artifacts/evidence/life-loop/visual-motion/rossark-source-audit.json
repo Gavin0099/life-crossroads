@@ -1,0 +1,50 @@
+{
+  "repository": "rossark0/rossark-motion-skill",
+  "commit": "9b20964e32f07f8ac7e2948cd175746fa4a7712f",
+  "read_via": "GitHub plugin github_fetch_file at fixed ref",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "git_blob": "b1d0dac4794814190297d12e64d1aee0393ca05c",
+      "url": "https://github.com/rossark0/rossark-motion-skill/blob/9b20964e32f07f8ac7e2948cd175746fa4a7712f/SKILL.md"
+    },
+    {
+      "path": "MOTION.md",
+      "git_blob": "e540b1f1d2878d8958df12b2a10b52bc1f2b3a57",
+      "url": "https://github.com/rossark0/rossark-motion-skill/blob/9b20964e32f07f8ac7e2948cd175746fa4a7712f/MOTION.md"
+    },
+    {
+      "path": "templates/swiftui/Motion.swift",
+      "git_blob": "83b14ae40c1a8614ba4560bf2577f3960f4bf364",
+      "url": "https://github.com/rossark0/rossark-motion-skill/blob/9b20964e32f07f8ac7e2948cd175746fa4a7712f/templates/swiftui/Motion.swift"
+    },
+    {
+      "path": "templates/swiftui/LiveFace.swift",
+      "git_blob": "c30fa5ea897c221f90d647a3d39b303442b60a3f",
+      "url": "https://github.com/rossark0/rossark-motion-skill/blob/9b20964e32f07f8ac7e2948cd175746fa4a7712f/templates/swiftui/LiveFace.swift"
+    },
+    {
+      "path": "LICENSE",
+      "git_blob": "f4b80ff65b129f3aa6293b730ca5f4149d97337c",
+      "url": "https://github.com/rossark0/rossark-motion-skill/blob/9b20964e32f07f8ac7e2948cd175746fa4a7712f/LICENSE",
+      "license": "MIT License\n\nCopyright (c) 2026 rossark0\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    }
+  ],
+  "decision": {
+    "code_copied": [],
+    "dependency_installed": false,
+    "demo_assets_used": [],
+    "adopted_methods": [
+      "calm small-amplitude whole-PNG transforms",
+      "one shared caller-owned presentation time",
+      "good static frame zero and committed one-shot final frame",
+      "deterministic phase offsets"
+    ],
+    "not_adopted": [
+      "LoopClock: pauses at zero then resumes against original Date start",
+      "OneShotClock: independently owns Date",
+      "LiveFace: requires separate pupil/white/lid art not present in StoryCast atlas",
+      "full-body skeleton, demo PNG/MP4 and reference videos"
+    ]
+  }
+}

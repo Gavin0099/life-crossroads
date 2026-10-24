@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "target": "arm64-apple-ios17.0-simulator",
+  "validation": "swiftc -typecheck actual StoryVisuals.swift + LifeWorldMotion.swift + LifeWorldScene.swift against actual LifeDomain and LifePresentation modules",
+  "exitCode": 0,
+  "simulatorDeviceCreated": false,
+  "sourceHashes": {
+    "LifeCrossroads/App/StoryVisuals.swift": "98806c2e4f7d5074f2e0a1a742ccc60b80305d5cc728e9ebec9ccfa5f443ccdb",
+    "LifeCrossroads/App/LifeWorldMotion.swift": "38393b73238c3f9996d567a441e9bfc36a434d5048814e43c2f4c5f4592ef1df",
+    "LifeCrossroads/App/LifeWorldScene.swift": "29296f41d45e71646f540a41d25bfad20f0b76f7b76b2241f39dc23ca87bbf83"
+  },
+  "claimBoundary": "Typecheck only, not linked App, UI run, save-file proof or physical iPhone."
+}

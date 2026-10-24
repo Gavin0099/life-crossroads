@@ -1,0 +1,18 @@
+[
+  {
+    "pid": 93056,
+    "parent": 87715,
+    "ownedUDID": "066B070D-30B4-4BF4-928A-B16329E0AD8A",
+    "argv": "87715 /Library/Developer/PrivateFrameworks/CoreSimulator.framework/Versions/A/Resources/bin/simctl diagnose -l -b --timeout=600 --log-option=--last --log-option=29m --output=/Users/macminim4/.codex/worktrees/life-loop-visual-10h/life-crossroads/artifacts/ios/LC02-20261024T070635Z.xcresult/Staging/1_Test/Diagnostics/simctl_diagnostics --no-archive --udid=066B070D-30B4-4BF4-928A-B16329E0AD8A",
+    "action": "SIGTERM optional simulator diagnostic child only; test suites already18/18",
+    "utc": "2026-10-24T07:40:38.812574+00:00"
+  },
+  {
+    "pid": 93372,
+    "parent": 87730,
+    "ownedUDID": "156D4064-66BE-4E93-8B14-9C74CCAA85C1",
+    "argv": "87730 /Library/Developer/PrivateFrameworks/CoreSimulator.framework/Versions/A/Resources/bin/simctl diagnose -l -b --timeout=600 --log-option=--last --log-option=31m --output=/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/ios/LC02-20261024T070638Z.xcresult/Staging/1_Test/Diagnostics/simctl_diagnostics --no-archive --udid=156D4064-66BE-4E93-8B14-9C74CCAA85C1",
+    "action": "SIGTERM optional simulator diagnostic child only; test suites already18/18",
+    "utc": "2026-10-24T07:40:38.816022+00:00"
+  }
+]

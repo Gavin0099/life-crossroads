@@ -1,0 +1,85 @@
+{
+  "scope": "LIFE-LOOP10H v1.1 complete plan; pre-plan65fff9e excluded",
+  "snapshotUTC": "2026-10-24T07:56:27.976379+00:00",
+  "measurement": "Conservative observed windows include tool/coordination waiting, not precise CPU/billing. r2-only visual subtotal excludes existing contributor unmetered audit/readQA. Root CI verification remains open.",
+  "capsHours": {
+    "gameplay": 7,
+    "visual": 2,
+    "independentReviewer": 1,
+    "total": 10
+  },
+  "observedUpperBoundsHours": {
+    "gameplayAtSnapshot": 2.425,
+    "visualFinal": 0.857,
+    "independentReviewerFinal": 0.966,
+    "scope": "Only previously known A/r2/reviewer windows; excludes existing Visual contribution",
+    "knownContributionSubtotalAtSnapshot": 4.248
+  },
+  "windows": {
+    "LL00": {
+      "start": "2026-10-24T05:11:40Z",
+      "end": "2026-10-24T05:25:56Z",
+      "hours": 0.238
+    },
+    "rootResumed": {
+      "start": "2026-10-24T05:45:15Z",
+      "end": "OPEN: delivery / CI"
+    },
+    "visualAuthoring": {
+      "start": "2026-10-24T05:48:23Z",
+      "end": "2026-10-24T06:07:31Z",
+      "hours": 0.319
+    },
+    "visualReadQA": {
+      "start": "2026-10-24T06:19:59Z",
+      "end": "2026-10-24T06:52:15Z",
+      "hours": 0.538
+    },
+    "reviewerPrimary": {
+      "start": "2026-10-24T05:55:25Z",
+      "end": "2026-10-24T06:51:06Z",
+      "hours": 0.928
+    },
+    "reviewerG4Supplement": {
+      "start": "2026-10-24T06:56:10Z",
+      "end": "2026-10-24T06:56:56Z",
+      "hours": 0.013
+    },
+    "reviewerNarrowSupplement": {
+      "start": "2026-10-24T07:48:23Z",
+      "end": "2026-10-24T07:49:54Z",
+      "hours": 0.025
+    }
+  },
+  "notClaimed": [
+    "10 hours actually consumed",
+    "accurate per-slice stopwatch",
+    "pre-plan prototype work included",
+    "idle stopped reviewer interval billed",
+    "combined B cap independently verified after discovering existing external contribution"
+  ],
+  "priorVisualFinalRefersToR2Only": true,
+  "additionalExistingVisualContribution": {
+    "sourceBranch": "codex/life-loop-visual-world-10h",
+    "sourceCommit": "5551d4d",
+    "progressLedgerRecordedUTC": "2026-10-24T06:25:57.927535Z",
+    "resumedWindowStart": "2026-10-24T05:45:18Z",
+    "initialAuditUnmetered": true,
+    "combinedVisualExactAgentHours": null,
+    "status": "shared B2h; cannot certify cap until unmetered interval reconciled; no new Visual development or Simulator work assigned",
+    "note": "A owns formal two-device regression; do not add another2h",
+    "observedWindowsReportedByContributor": [
+      {
+        "start": "2026-10-24T05:18:43Z",
+        "endApproximate": "2026-10-24T05:35:00Z"
+      },
+      {
+        "start": "2026-10-24T05:45:18Z",
+        "end": "2026-10-24T06:30:41Z"
+      }
+    ]
+  },
+  "combinedTeamAgentHours": null,
+  "combinedVisualAgentHours": null,
+  "claimBoundary": "Observed windows preserved; initial external audit unmetered. Cannot certify precise B2h or total remaining, no additional B budget granted. New formal dual tests owned by A, no new Visual development."
+}

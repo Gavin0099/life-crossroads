@@ -17,13 +17,25 @@ struct CrossroadsView: View {
     private enum RestartAction { case newLife, sameSeed, newSeed }
 
     @State private var comparisonPresentation: ComparisonPresentation?
+    @State private var worldViewportHeight: CGFloat = 0
+    @Environment(\.scenePhase) private var scenePhase
+    @AppStorage("reducedLifeMotion") private var reducedLifeMotion = false
+    @Environment(\.accessibilityReduceMotion) private var systemReduceMotion
+    private var reduceMotion: Bool { systemReduceMotion || reducedLifeMotion }
+    @Environment(\.accessibilityVoiceOverEnabled) private var voiceOver
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 18) {
+                VStack(alignment: .leading, spacing: store.worldPreviewEnabled ? 10 : 18) {
                     if let session = store.session {
+                        if store.worldPreviewEnabled && !store.viewingOriginal, let world = store.world {
+                            worldStage(world)
+                        }
+                        if store.worldPreviewEnabled && store.playback.phase == .living && !store.viewingOriginal {
+                            living(session)
+                        } else {
                         switch session.phase {
                         case .ended: ending(session)
                         case .choosing:
@@ -39,6 +51,7 @@ struct CrossroadsView: View {
                             if let trace = session.traces.last { feedback(trace) }
                             else { Text("目前沒有已執行的選擇紀錄。").accessibilityIdentifier("missingOutcome") }
                         }
+                        }
                     } else { home }
 #if targetEnvironment(simulator)
                     if let checksum = store.uiTestArchiveChecksum {
@@ -50,6 +63,15 @@ struct CrossroadsView: View {
                 .padding(18)
                 .frame(maxWidth: 620)
                 .frame(maxWidth: .infinity)
+            }
+            .coordinateSpace(name: "lifeWorldScroll")
+            .background(GeometryReader { proxy in
+                Color.clear.preference(key: WorldViewportHeightKey.self, value: proxy.size.height)
+            })
+            .onPreferenceChange(WorldViewportHeightKey.self) { worldViewportHeight = $0 }
+            .onPreferenceChange(WorldSceneBoundsKey.self) { rect in
+                guard worldViewportHeight > 0 else { return }
+                store.setWorldSceneVisible(rect.maxY > 0 && rect.minY < worldViewportHeight)
             }
             .id(store.session.map { "\($0.phase.rawValue)-\($0.state.age)" } ?? "home")
             .background(StoryPalette.page)
@@ -78,7 +100,9 @@ struct CrossroadsView: View {
                 }
             }
             .safeAreaInset(edge: .bottom) {
-                if store.session?.phase == .reflecting {
+                if store.worldPreviewEnabled && store.session != nil && !store.viewingOriginal && store.session?.phase != .ended {
+                    playbackControls
+                } else if store.session?.phase == .reflecting {
                     Button(store.session.map { $0.traces.count == $0.plannedDecisionCount } == true ? "翻開人生回憶冊" : "走向下一段") { store.next() }
                         .buttonStyle(JourneyButtonStyle())
                         .accessibilityIdentifier("continueLife")
@@ -93,24 +117,101 @@ struct CrossroadsView: View {
             .sheet(isPresented: Binding(get: { branchComparison != nil }, set: { if !$0 { branchComparison = nil } })) {
                 if let branchComparison { BranchComparisonView(comparison: branchComparison) }
             }
-            .confirmationDialog("建立新人生會取代本機的這組人生紀錄", isPresented: Binding(get: { restartAction != nil }, set: { if !$0 { restartAction = nil } }), titleVisibility: .visible) {
+            .confirmationDialog("建立新人生會取代本機的這組人生紀錄", isPresented: Binding(get: { restartAction != nil }, set: { if !$0 { restartAction = nil } }), titleVisibility: .visible, presenting: restartAction) { action in
                 Button("取代紀錄並開始", role: .destructive) {
-                    switch restartAction {
+                    switch action {
                     case .sameSeed: store.start(replay: true)
                     case .newSeed: store.replayWithNewSeed()
                     case .newLife: store.start()
-                    case nil: break
                     }
                     restartAction = nil
                 }.accessibilityIdentifier("confirmRestart")
-            } message: { Text("回首頁或關閉 App 都能保留進度；只有建立新人生才取代原局與試走路線。") }
+                Button("取消", role: .cancel) { restartAction = nil }.accessibilityIdentifier("cancelRestart")
+            } message: { _ in Text("回首頁或關閉 App 都能保留進度；只有建立新人生才取代原局與試走路線。") }
             .sheet(isPresented: $showSources) { sources }
             .sheet(isPresented: $showTrace) { traceSheet }
             .sheet(item: $comparisonPresentation) { presentation in comparisonSheet(presentation) }
             .alert("需要留意", isPresented: Binding(get: { store.errorMessage != nil }, set: { if !$0 { store.errorMessage = nil } })) {
                 Button("知道了") { store.errorMessage = nil }
             } message: { Text(store.errorMessage ?? "") }
+            .onChange(of: worldSuspended) { _, value in store.suspendWorld(value) }
+            .onChange(of: voiceOver) { _, enabled in if enabled { store.pauseWorld(true) } }
+            .onDisappear { store.suspendWorld(true) }
+            .task(id: worldTaskID) {
+                store.suspendWorld(worldSuspended)
+                if voiceOver { store.pauseWorld(true) }
+                while store.canAnimateWorld && !worldSuspended {
+                    do { try await Task.sleep(for: .milliseconds(reduceMotion ? 250 : 50)) }
+                    catch { return }
+                    guard !Task.isCancelled, !worldSuspended else { return }
+                    store.pulseWorld()
+                }
+            }
         }.tint(accent)
+    }
+
+    private var worldSuspended: Bool {
+        scenePhase != .active || store.showingHome || store.viewingOriginal || !store.worldPreviewEnabled
+            || showSources || showTrace || showForkPicker || branchComparison != nil
+            || comparisonPresentation != nil || restartAction != nil || store.errorMessage != nil
+    }
+    private var worldTaskID: String {
+        "\(worldSuspended)-\(store.canAnimateWorld)-\(store.playback.phaseToken)-\(reduceMotion)-\(voiceOver)"
+    }
+    private func worldStage(_ world: LifeWorldFrame) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            LifeWorldScene(frame: world, motion: store.playback.motion(reduceMotion: reduceMotion))
+                .frame(height: dynamicTypeSize.isAccessibilitySize ? 90 : store.playback.phase == .living ? 300 : store.playback.phase == .eventPaused ? 88 : 170)
+                .background(GeometryReader { proxy in
+                    Color.clear.preference(key: WorldSceneBoundsKey.self, value: proxy.frame(in: .named("lifeWorldScroll")))
+                })
+            Text("共用想像場景 · 非各國實景")
+                .font(.caption2).foregroundStyle(.secondary)
+#if targetEnvironment(simulator)
+            if ProcessInfo.processInfo.arguments.contains("-ui-testing") {
+            Text("生活播放狀態").font(.system(size: 1)).foregroundStyle(.clear)
+                .accessibilityIdentifier("worldPlaybackState")
+                .accessibilityValue(Text(verbatim: "\(store.playback.phase.rawValue)|\(store.playback.paused)|\(world.age)|\(store.session?.traces.count ?? -1)|\(store.playback.phaseToken)"))
+            }
+#endif
+        }
+    }
+    private func living(_ session: LifeSession) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text(store.playback.paused ? "生活暫停了" : "生活，還在繼續。")
+                .font(.title2.bold()).accessibilityIdentifier("livingTitle")
+            Text("\(store.world?.visualFromAge ?? session.state.age)～\(session.state.age)歲 · 走向下一段故事")
+                .accessibilityIdentifier("livingInterval")
+            ProgressView(value: store.playback.progress).accessibilityLabel("這段生活的播放進度")
+            Text("遇到需要決定的事，生活會停下來等你。你也能直接跳至事件。")
+            if let world = store.world {
+                ForEach(Array(world.worldChanges.enumerated()), id: \.offset) { _, change in
+                    Text(change.caption).font(.subheadline)
+                        .accessibilityIdentifier("worldChange.\(change.kind.rawValue)")
+                }
+            }
+        }
+    }
+    private var playbackControls: some View {
+        VStack(spacing: 8) {
+            HStack {
+                Button(store.playback.paused ? "繼續播放" : "暫停播放") { store.pauseWorld(!store.playback.paused) }
+                    .accessibilityIdentifier("worldPause").frame(minHeight: 44)
+                Button(store.playback.speed == .normal ? "加速 3×" : "正常 1×") {
+                    store.speedWorld(store.playback.speed == .normal ? .fast : .normal)
+                }.accessibilityIdentifier("worldSpeed").frame(minHeight: 44)
+                Spacer(minLength: 0)
+                if store.playback.phase == .living {
+                    Button("跳至事件") { store.skipWorld() }.accessibilityIdentifier("skipLiving").frame(minHeight: 44)
+                }
+            }.font(.subheadline)
+            if store.session?.phase == .reflecting {
+                Button(store.session.map { $0.traces.count == $0.plannedDecisionCount } == true ? "翻開人生回憶冊" : "繼續生活") { store.skipWorld() }
+                    .buttonStyle(JourneyButtonStyle()).accessibilityIdentifier("continueLife")
+                Text(store.playback.paused || voiceOver ? "已暫停，讀完再繼續。" : "已保存，稍後生活會繼續；可暫停查看原因。")
+                    .font(.caption2)
+            }
+        }.padding(.horizontal).padding(.vertical, 8).background(.bar)
     }
 
     private var home: some View {
@@ -119,6 +220,12 @@ struct CrossroadsView: View {
                 Button("繼續已保存的人生", systemImage: "book") { store.resume() }
                     .buttonStyle(JourneyButtonStyle()).accessibilityIdentifier("resumeLife")
             }
+            Toggle("生活世界預覽", isOn: $store.worldPreviewEnabled)
+                .accessibilityIdentifier("LifeWorldPreview")
+            Toggle("減少動態效果", isOn: $reducedLifeMotion)
+                .accessibilityIdentifier("worldReduceMotion")
+            Text("關閉可回到事件優先介面；使用同一份人生與存檔。")
+                .font(.caption).foregroundStyle(.secondary)
             StoryEyebrow(title: "一本由你參與的人生故事", icon: "book.closed")
             Text("P1 整合預覽 0.1 · 八國完整人生")
                 .font(.caption.weight(.semibold))
@@ -204,7 +311,17 @@ struct CrossroadsView: View {
         }
     }
 
-    private func progress(_ session: LifeSession) -> some View {
+    @ViewBuilder private func progress(_ session: LifeSession) -> some View {
+        if store.worldPreviewEnabled {
+            HStack {
+                Text("沐沐 · \(session.state.age)歲 · \(store.name(session.state.countryCode))").font(.subheadline.weight(.semibold))
+                Spacer(minLength: 4)
+                Text("\(min(15, session.traces.count + (session.phase == .choosing ? 1 : 0))) / 15").font(.caption.monospacedDigit())
+            }
+            if store.experiment != nil {
+                Button("查看保留的原人生") { store.viewingOriginal = true }.accessibilityIdentifier("viewOriginal")
+            }
+        } else {
         VStack(alignment: .leading, spacing: 7) {
             if let experiment = store.experiment {
                 Text("另一條路 · 從\(experiment.snapshot.session.state.age)歲改選，原人生已保留")
@@ -223,15 +340,16 @@ struct CrossroadsView: View {
             ProgressView(value: Double(session.traces.count), total: Double(session.plannedDecisionCount))
                 .accessibilityLabel("已完成\(session.traces.count)段，共\(session.plannedDecisionCount)段")
         }
+        }
     }
 
     private func decision(_ event: DecisionSkeleton, _ session: LifeSession) -> some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: store.worldPreviewEnabled ? 12 : 16) {
             VStack(alignment: .leading, spacing: 11) {
                 HStack(alignment: .center, spacing: 12) {
                     Text(event.title).font(.title2.bold()).accessibilityIdentifier("eventTitle")
                         .accessibilityValue(event.id).accessibilityAddTraits(.isHeader)
-                    if !dynamicTypeSize.isAccessibilitySize {
+                    if !store.worldPreviewEnabled && !dynamicTypeSize.isAccessibilitySize {
                         Spacer(minLength: 0)
                         if event.id == "teen-project" {
                             ProjectWorkshopView(moment: nil, compact: true).frame(width: 118, height: 88)
@@ -241,17 +359,22 @@ struct CrossroadsView: View {
                         }
                     }
                 }
-                Text(shortStory(event)).lineSpacing(3).fixedSize(horizontal: false, vertical: true)
-                Text(event.storyQuestion).font(.subheadline.weight(.semibold))
+                Text(shortStory(event)).lineSpacing(3).lineLimit(store.worldPreviewEnabled ? 3 : nil)
+                    .fixedSize(horizontal: false, vertical: true)
+                if !store.worldPreviewEnabled { Text(event.storyQuestion).font(.subheadline.weight(.semibold)) }
                 if event.id == "teen-project" {
                     Text("創作桌：圖解、材料，也可以先休息。共用想像場景，非各國實景。")
                         .font(.caption).foregroundStyle(.secondary).accessibilityIdentifier("projectSceneCaption")
                 }
             }
+            if store.worldPreviewEnabled {
+                Text("可用時間\(session.state.remainingTime) · 精力\(session.state.remainingEnergy) · 材料\(session.state.remainingMaterials)").font(.caption)
+            } else {
             Text("你會怎麼安排？").font(.headline).accessibilityAddTraits(.isHeader)
             ViewThatFits(in: .horizontal) {
                 budget(session, vertical: false)
                 budget(session, vertical: true)
+            }
             }
             ForEach(event.choices, id: \.id) { choice in
                 if let preview = store.preview(choice.id) {
@@ -282,6 +405,10 @@ struct CrossroadsView: View {
                     .disabled(!preview.applied).accessibilityIdentifier("choice.\(choice.id)")
                 }
             }
+            if store.worldPreviewEnabled && !session.traces.isEmpty {
+                Button("回看剛才的選擇與原因", systemImage: "clock.arrow.circlepath") { showTrace = true }
+                    .frame(minHeight: 44).accessibilityIdentifier("whyPrevious")
+            }
             Menu {
                 ForEach(event.choices, id: \.id) { choice in
                     Button(choice.title) { presentComparison(choice.id) }
@@ -295,8 +422,11 @@ struct CrossroadsView: View {
                 Text("試算線上與紙本選項：只有需要網路的行動，才會使用數位環境規則。比較不會替你選擇。")
                     .font(.footnote).foregroundStyle(.secondary).accessibilityIdentifier("digitalLearningGuide")
             }
-            if !shortText {
-                DisclosureGroup("多讀一點故事") { Text(storyText(event)).lineSpacing(4).padding(.top, 10) }
+            if store.worldPreviewEnabled || !shortText {
+                DisclosureGroup("完整故事與問題") {
+                    Text(storyText(event)).lineSpacing(4).padding(.top, 10)
+                    Text(event.storyQuestion).font(.headline)
+                }
             }
             if let selection = session.currentSelection { selectionDetails(selection) }
             if let jump = session.jumps.last, !jump.triggeredHooks.isEmpty {
@@ -405,7 +535,7 @@ struct CrossroadsView: View {
             HStack(spacing: 12) {
                 Text(trace.choiceTitle).font(.title2.bold()).accessibilityIdentifier("chosenAction")
                     .accessibilityValue(trace.choiceID)
-                if trace.eventID != "teen-project" && !dynamicTypeSize.isAccessibilitySize {
+                if !store.worldPreviewEnabled && trace.eventID != "teen-project" && !dynamicTypeSize.isAccessibilitySize {
                     Spacer(minLength: 0)
                     CompactStoryScene(age: trace.age, person: trace.recurringPerson, sceneID: "reflectionScene")
                         .frame(width: 88, height: 68)
@@ -413,7 +543,7 @@ struct CrossroadsView: View {
             }
             Text(trace.eventTitle).font(.subheadline).foregroundStyle(.secondary)
                 .accessibilityIdentifier("outcomeEvent").accessibilityValue(trace.eventID)
-            if let moment { ProjectWorkshopView(moment: moment) }
+            if let moment { ProjectWorkshopView(moment: moment, showArtwork: !store.worldPreviewEnabled) }
             VStack(alignment: .leading, spacing: 13) {
                 Label("已發生的變化", systemImage: "checkmark.circle").font(.headline)
                 Text(deltaText(moment?.actualChange ?? (trace.resourcesAfter - trace.resourcesBefore))).font(.headline)
@@ -803,4 +933,13 @@ private func deltaText(_ delta: ResourceValues) -> String {
 
 private func stageName(_ age: Int) -> String {
     switch age { case ...12: "童年 · 探索與支持"; case ...22: "青少年 · 學習與人際"; case ...40: "青年 · 工作與獨立"; case ...60: "中年 · 責任與轉折"; default: "晚年 · 回顧與傳承" }
+}
+
+private struct WorldSceneBoundsKey: PreferenceKey {
+    static let defaultValue = CGRect.zero
+    static func reduce(value: inout CGRect, nextValue: () -> CGRect) { value = nextValue() }
+}
+private struct WorldViewportHeightKey: PreferenceKey {
+    static let defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) { value = nextValue() }
 }

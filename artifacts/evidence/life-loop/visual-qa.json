@@ -1,0 +1,31 @@
+{
+  "sourceCommit": "7aa69d24aab70016ca99a9e1a79379ab4ebe5a55",
+  "reviewer": "/root/visual_world",
+  "scope": "read-only Visual native QA; not engine or release approval",
+  "result": "no new blocking visual issue",
+  "imagesViewed": "all 8 in native/focused-manifest.json",
+  "verified": [
+    "SE first two actions and costs visible",
+    "8→10→12 same river with actual people/memory",
+    "rest/Reduced no extra actors or duplicate old illustration",
+    "maximum text paper choice/outcome reachable"
+  ],
+  "nonBlockingUX": [
+    "eventPaused playback wording can confuse; isTimed guard prevents skipping choices",
+    "AX outcome footer uses approximately half viewport; more scrolling needed"
+  ],
+  "endedUTC": "2026-10-24T06:52:15Z",
+  "budget": {
+    "authoringObservedHours": 0.319,
+    "readOnlyQAObservedHours": 0.538,
+    "conservativeTotalHours": 0.857,
+    "capHours": 2
+  },
+  "simulatorsCreatedDuringReadQA": [],
+  "productFilesModifiedDuringReadQA": [],
+  "notClaimed": [
+    "physical device/manual VoiceOver/child playtest",
+    "latest full suite green",
+    "merge or release"
+  ]
+}

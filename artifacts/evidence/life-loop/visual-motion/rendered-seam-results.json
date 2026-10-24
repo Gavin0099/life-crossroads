@@ -1,0 +1,15 @@
+{
+  "changedChannels" : 6748,
+  "decodedBytes" : 1740000,
+  "exactPixelEquality" : false,
+  "first" : "loop-0ms.png",
+  "firstRGBA256" : "79c351d66005a042a65253fa08cb31ff3138433d05dcf86198a1bade41ee1972",
+  "last" : "loop-4000ms.png",
+  "lastRGBA256" : "756acc1005f542b3637ebf596ddfb9e4e40ecdd173b7bce8e35980d5e2aae965",
+  "maximumChannelDifference" : 1,
+  "result" : "PASS_WITH_RENDER_QUANTIZATION_LIMIT",
+  "sameInputControlChangedChannels" : 7135,
+  "sameInputControlMaximumDifference" : 1,
+  "source" : "Decoded RGBA of actual offline production scene render",
+  "tolerance" : "At most 1\/255 per 8-bit channel and fewer than 1% changed channels; exact equality is reported separately"
+}

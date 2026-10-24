@@ -1,0 +1,101 @@
+{
+  "observed_at": "2026-10-24 05:16:10 UTC",
+  "prs": [
+    {
+      "number": 6,
+      "head": "4a6e32bc3a0ad980bca9eecd1c02d9bc57f9a6b5",
+      "head_branch": "codex/lc-03-country-environments",
+      "base": "main",
+      "base_sha": "f194808bc2808d5358ee18ee842567731404cd22",
+      "draft": true,
+      "merged": false,
+      "state": "open",
+      "ci": {
+        "workflow_runs": [
+          {
+            "id": 40056224935,
+            "name": "Project CI",
+            "status": "completed",
+            "conclusion": "success",
+            "run_number": 19,
+            "jobs_url": "https://api.github.com/repos/Gavin0099/life-crossroads/actions/runs/40056224935/jobs",
+            "logs_url": "https://api.github.com/repos/Gavin0099/life-crossroads/actions/runs/40056224935/logs",
+            "workflow_id": 393686415
+          }
+        ]
+      }
+    },
+    {
+      "number": 7,
+      "head": "49ead5a85387bb8c54e6677165161dd5e98cfa7f",
+      "head_branch": "integration/p1-preview-20261024",
+      "base": "codex/lc-03-country-environments",
+      "base_sha": "4a6e32bc3a0ad980bca9eecd1c02d9bc57f9a6b5",
+      "draft": true,
+      "merged": false,
+      "state": "open",
+      "ci": {
+        "workflow_runs": [
+          {
+            "id": 40057853073,
+            "name": "Project CI",
+            "status": "completed",
+            "conclusion": "success",
+            "run_number": 20,
+            "jobs_url": "https://api.github.com/repos/Gavin0099/life-crossroads/actions/runs/40057853073/jobs",
+            "logs_url": "https://api.github.com/repos/Gavin0099/life-crossroads/actions/runs/40057853073/logs",
+            "workflow_id": 393686415
+          }
+        ]
+      }
+    },
+    {
+      "number": 8,
+      "head": "c136bebf48ae17e24235d9da72d7f9e51b90bf0c",
+      "head_branch": "codex/visual-event-trace-preview",
+      "base": "integration/p1-preview-20261024",
+      "base_sha": "49ead5a85387bb8c54e6677165161dd5e98cfa7f",
+      "draft": true,
+      "merged": false,
+      "state": "open",
+      "ci": {
+        "workflow_runs": [
+          {
+            "id": 40061160059,
+            "name": "Project CI",
+            "status": "completed",
+            "conclusion": "success",
+            "run_number": 21,
+            "jobs_url": "https://api.github.com/repos/Gavin0099/life-crossroads/actions/runs/40061160059/jobs",
+            "logs_url": "https://api.github.com/repos/Gavin0099/life-crossroads/actions/runs/40061160059/logs",
+            "workflow_id": 393686415
+          }
+        ]
+      }
+    },
+    {
+      "number": 9,
+      "head": "c823c820ceea027215df2d2f46c2c0ac4373c871",
+      "head_branch": "plan/life-loop-10h-no-schedule",
+      "base": "codex/visual-event-trace-preview",
+      "base_sha": "c136bebf48ae17e24235d9da72d7f9e51b90bf0c",
+      "draft": true,
+      "merged": false,
+      "state": "open",
+      "ci": {
+        "workflow_runs": [
+          {
+            "id": 40065015620,
+            "name": "Project CI",
+            "status": "in_progress",
+            "conclusion": null,
+            "run_number": 26,
+            "jobs_url": "https://api.github.com/repos/Gavin0099/life-crossroads/actions/runs/40065015620/jobs",
+            "logs_url": "https://api.github.com/repos/Gavin0099/life-crossroads/actions/runs/40065015620/logs",
+            "workflow_id": 393686415
+          }
+        ]
+      }
+    }
+  ]
+}

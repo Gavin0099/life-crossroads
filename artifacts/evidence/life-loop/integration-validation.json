@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 2,
+  "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+  "swiftDistinctPassed": 111,
+  "swiftPassedCases": [
+    "-[LifeAnalysisTests.BatchAnalysisTests testClampUsesNetGainAndSeparatesPartialFullAndLowerBound]",
+    "-[LifeAnalysisTests.BatchAnalysisTests testHammingIncludesZeroAndSeparatesStoryVariantFromEventID]",
+    "-[LifeAnalysisTests.BatchAnalysisTests testInvalidBatchInputsFailInsteadOfDroppingSamples]",
+    "-[LifeAnalysisTests.BatchAnalysisTests testMultiHookLossIsOneAggregateAndNeverAllocatedToEachHook]",
+    "-[LifeAnalysisTests.BatchAnalysisTests testPoliciesExecuteDifferentChoicesAndSampleOrderDoesNotChangeReport]",
+    "-[LifeAnalysisTests.BatchAnalysisTests testRatesDistinguishNoOpportunityFromObservedZero]",
+    "-[LifeDomainTests.BranchExperimentTests testAllCheckpointsPreserveExactPrefixAndOriginalIncludingFirstAndLast]",
+    "-[LifeDomainTests.BranchExperimentTests testChangedChoiceRebuildsFutureHooksAndPreservesEarlierPendingHooksExactlyOnce]",
+    "-[LifeDomainTests.BranchExperimentTests testDecodedForgedMetadataSnapshotsAndAlternativeCannotResumeOrCompare]",
+    "-[LifeDomainTests.BranchExperimentTests testFourCountryTwoFamilyBranchMatrixCompletesAndKeepsOriginal]",
+    "-[LifeDomainTests.BranchExperimentTests testIndividuallyValidAlternativeFromDifferentSeedOrBackgroundIsRejected]",
+    "-[LifeDomainTests.BranchExperimentTests testInvalidForkAndPhaseFailuresDoNotMutateOriginalOrAlternative]",
+    "-[LifeDomainTests.BranchExperimentTests testPairedCandidateDrawsRemainEqualEvenWhenWeightsOrEligibilityChange]",
+    "-[LifeDomainTests.BranchExperimentTests testReplayingUnchangedChoicesFromCheckpointExactlyReproducesOriginal]",
+    "-[LifeDomainTests.BranchExperimentTests testSameSeedChoicesAndCodableAtEveryPhaseReproduceCompleteAlternative]",
+    "-[LifeDomainTests.BranchExperimentTests testSingleChangedChoiceActuallyChangesLaterPersonAndLearningRoute]",
+    "-[LifeDomainTests.BranchExperimentTests testUnaffordableAlternateRejectedUsingItsOriginalPreChoiceBudget]",
+    "-[LifeDomainTests.EventSelectionTests testCatalogOrderCannotChangeSelectedEventsOrTraces]",
+    "-[LifeDomainTests.EventSelectionTests testCatalogRejectsMissingFallbackAndInvalidConditionContract]",
+    "-[LifeDomainTests.EventSelectionTests testComparisonKeepsActualEncounterAndSelectionFixed]",
+    "-[LifeDomainTests.EventSelectionTests testConditionsShowActualInputsAndIneligibleEventsCannotBeForced]",
+    "-[LifeDomainTests.EventSelectionTests testEligibleButUnselectedEventCannotBeExecutedDirectly]",
+    "-[LifeDomainTests.EventSelectionTests testLastContinueCannotFinishAgainstAnotherContentVersion]",
+    "-[LifeDomainTests.EventSelectionTests testOneThousandLivesHaveFifteenSlotsNoDeadlocksAndPreserveStoryAnchors]",
+    "-[LifeDomainTests.EventSelectionTests testPreselectedSeedsProduceDifferentActualEventsWithSameBackgroundAndPolicy]",
+    "-[LifeDomainTests.EventSelectionTests testPublicSelectorRejectsInvalidStateAndCatalogBeforeProducingTrace]",
+    "-[LifeDomainTests.EventSelectionTests testRestoreReplaysAndRejectsForgedSelectionOrPastConsequencesBeforeContinuation]",
+    "-[LifeDomainTests.EventSelectionTests testSameSeedAndPolicyReproduceEveryEventConditionAndOutcome]",
+    "-[LifeDomainTests.LC01Tests testAgeCostsAndResourceInputsFailBeforeArithmetic]",
+    "-[LifeDomainTests.LC01Tests testBadIndicatorRangesAndSourceReferencesAreRejected]",
+    "-[LifeDomainTests.LC01Tests testCatalogAndStateAndTraceCodableRoundTrip]",
+    "-[LifeDomainTests.LC01Tests testChildAgencyDoesNotTransferAdultCareResponsibility]",
+    "-[LifeDomainTests.LC01Tests testChoiceChangeCreatesActualDelayedStoryDifference]",
+    "-[LifeDomainTests.LC01Tests testCorruptJSONAndUnknownSchemaFailExplicitly]",
+    "-[LifeDomainTests.LC01Tests testCountryNamesAndCodesCannotSetSuccessMultipliers]",
+    "-[LifeDomainTests.LC01Tests testDigitalLearningOffersAnIndependentOfflineRoute]",
+    "-[LifeDomainTests.LC01Tests testDigitalThresholdBoundaries]",
+    "-[LifeDomainTests.LC01Tests testEightCountriesSixteenFamiliesAndHonestReadiness]",
+    "-[LifeDomainTests.LC01Tests testEnvironmentCanChangeFeasibilityWithoutConsumingUnavailableChoice]",
+    "-[LifeDomainTests.LC01Tests testFifteenSkeletonDecisionsCoverEveryStageAndThreeCallbacks]",
+    "-[LifeDomainTests.LC01Tests testFiveStageBoundaries]",
+    "-[LifeDomainTests.LC01Tests testForgedOrDuplicateStoryHooksCannotGrantResources]",
+    "-[LifeDomainTests.LC01Tests testHouseholdTemplatesStayComparableWhenArraysMove]",
+    "-[LifeDomainTests.LC01Tests testInvalidTimeDuplicateDecisionAndVersionAreRejected]",
+    "-[LifeDomainTests.LC01Tests testKeyedRandomHasStableGoldenVectorAndNoSharedStream]",
+    "-[LifeDomainTests.LC01Tests testManySeededSkeletonLivesStayValidAndCanAlwaysAdvance]",
+    "-[LifeDomainTests.LC01Tests testMissingValueCannotBecomeVerifiedZero]",
+    "-[LifeDomainTests.LC01Tests testOfflineChildActivityNeverUsesNationalDigitalRates]",
+    "-[LifeDomainTests.LC01Tests testOfflineLearningIgnoresDigitalThresholdsAndHasSupport]",
+    "-[LifeDomainTests.LC01Tests testPinnedRealStatisticsHaveIndependentExpectedValues]",
+    "-[LifeDomainTests.LC01Tests testRepositoryRejectsAbsentAndTamperedEvidence]",
+    "-[LifeDomainTests.LC01Tests testRepositoryRejectsAlteredObservationEvenWithIntactSourceHash]",
+    "-[LifeDomainTests.LC01Tests testResourceClampingIsVisibleAndCostsCannotGoNegative]",
+    "-[LifeDomainTests.LC01Tests testSameChoiceAcrossCountriesHasExplainableCosts]",
+    "-[LifeDomainTests.LC01Tests testSameCountryFamiliesHaveDifferentTradeoffsAndSupport]",
+    "-[LifeDomainTests.LC01Tests testSameSeedAndSerializedResumeProduceIdenticalTrace]",
+    "-[LifeDomainTests.LC01Tests testTraceExactlyReconcilesCostEffectsAndProvenance]",
+    "-[LifeDomainTests.LC03Tests testCareFinancingThresholdsHaveIndependentExpectedBudgetsAndNoEffectsWhenRejected]",
+    "-[LifeDomainTests.LC03Tests testCountryNamesAndOrderingNeverChangeCostsOrSupport]",
+    "-[LifeDomainTests.LC03Tests testEightCountriesCompleteRestoreAndReplay]",
+    "-[LifeDomainTests.LC03Tests testHouseholdSnapshotComparisonKeepsPastAndShowsWithinCountryDifference]",
+    "-[LifeDomainTests.LC03Tests testSameChoiceHasDifferentCostsSupportAndRealFutureRouteConditions]",
+    "-[LifeDomainTests.LC03Tests testTaiwanFullBranchPreservesOriginalAndBothCompletedRemaindersOnRestore]",
+    "-[LifeDomainTests.LC03Tests testTaiwanNativeDefinitionsAndLicensesRemainDistinct]",
+    "-[LifeDomainTests.LC03Tests testUnknownCostIsRecordedAndCannotBecomeAComparableZero]",
+    "-[LifeDomainTests.LC03Tests testUnknownLicenseForgedExtractionColumnAndNationalValueAreRejected]",
+    "-[LifeDomainTests.LifeSessionTests testComparisonHoldsChoiceSeedAndPastResourcesFixed]",
+    "-[LifeDomainTests.LifeSessionTests testComparisonUsesSelectedChoiceAndStableTemplateAfterFamilyReordering]",
+    "-[LifeDomainTests.LifeSessionTests testDecodedCorruptSessionCannotIndexBeyondCatalog]",
+    "-[LifeDomainTests.LifeSessionTests testEveryDecisionHasOriginalStoryText]",
+    "-[LifeDomainTests.LifeSessionTests testFourCountryEightFamilyPlaythroughsReachReviewAndCannotRepeat]",
+    "-[LifeDomainTests.LifeSessionTests testRestExplanationIncludesOnlyExecutedContribution]",
+    "-[LifeDomainTests.LifeSessionTests testRoundAllowancesResetWhileResourcesAndChoicesContinue]",
+    "-[LifeDomainTests.LifeSessionTests testSameBackgroundReplayUsesSameTraceAndSessionCodableResumes]",
+    "-[LifeDomainTests.LifeSessionTests testUnavailableChoiceDoesNotAdvanceSessionAndRestRemainsPossible]",
+    "-[LifeDomainTests.LifeSessionTests testUnsuccessfulRandomTrialIsNotListedAsContribution]",
+    "-[LifeDomainTests.RNGV2Tests testCandidateKeysSurviveReorderingAndAdditionAndRemainPairedAcrossCountries]",
+    "-[LifeDomainTests.RNGV2Tests testDynamicWindowsExecuteAtActualAgeAndTraceContinuityWithoutCountryMultipliers]",
+    "-[LifeDomainTests.RNGV2Tests testFourNewStoryLinesChangeOptionsAndPreserveSourceDecision]",
+    "-[LifeDomainTests.RNGV2Tests testHelpDoesNotEraseExperienceAndFactsCannotBeForged]",
+    "-[LifeDomainTests.RNGV2Tests testOneShotCooldownAndMutualExclusionHaveObservableReasons]",
+    "-[LifeDomainTests.RNGV2Tests testPolicyValidationRejectsNonfiniteZeroNegativeAndUnknownFields]",
+    "-[LifeDomainTests.RNGV2Tests testRaceUsesRecordedWeightsAndIndependentSamples]",
+    "-[LifeDomainTests.StoryBranchTests testAllCountryFamiliesCanFinishWithDiverseChoicesAndBranchNarratives]",
+    "-[LifeDomainTests.StoryBranchTests testCareBranchRequiresHistoryAndHealthAndCannotBeBypassedThroughResolver]",
+    "-[LifeDomainTests.StoryBranchTests testChildhoodFriendshipChangesWhoAppearsAtSeventyTwo]",
+    "-[LifeDomainTests.StoryBranchTests testLearningBranchTraceRecordsActualHistoryAndBothSidesOfResourceThreshold]",
+    "-[LifeDomainTests.StoryBranchTests testLearningRouteChangesMentorSceneAndWorkshopOpportunity]",
+    "-[LifeDomainTests.StoryBranchTests testPreviewExecutionAndCodableReplayKeepActualVariantAndChoiceSnapshots]",
+    "-[LifeDomainTests.StoryBranchTests testSharedCareArrangementUnlocksReciprocalSupport]",
+    "-[LifeDomainTests.StoryBranchTests testZeroNationalCostIsObservationAndOnlyOccurredLuckContributes]",
+    "-[LifePersistenceTests.SaveRepositoryTests testCorruptAndUnknownVersionFilesThrowAndRetainOriginalBytes]",
+    "-[LifePersistenceTests.SaveRepositoryTests testFilesystemFailureDoesNotAlterJourneyOrReplaceOtherPath]",
+    "-[LifePersistenceTests.SaveRepositoryTests testInvalidSnapshotCannotOverwriteAnExistingValidSave]",
+    "-[LifePersistenceTests.SaveRepositoryTests testRealDiskRoundTripEveryPhaseKeepsOriginalAndReplaysRemainingLife]",
+    "-[LifePersistenceTests.SaveRepositoryTests testSingleLifeSaveResumesWithoutChangingLegacySessionResults]",
+    "-[LifePresentationTests.LifeWorldFrameTests testChoosingNeverProjectsAnUnmadeChoiceOrFutureSuccess]",
+    "-[LifePresentationTests.LifeWorldFrameTests testFactsPendingHooksTriggeredHooksAndTaiwanGapsHaveSources]",
+    "-[LifePresentationTests.LifeWorldFrameTests testRestAndUnknownEventDoNotInventSupport]",
+    "-[LifePresentationTests.ProjectMomentTests testActualClampedDeltasAndMissingEnvironmentSurviveProjection]",
+    "-[LifePresentationTests.ProjectMomentTests testChanceBadgeRequiresAnOccurredNonzeroEffectAndNoNewDraw]",
+    "-[LifePresentationTests.ProjectMomentTests testCodableRestoreAndFixedSeedReplayProduceIdenticalPresentation]",
+    "-[LifePresentationTests.ProjectMomentTests testForkUsesItsOwnReactionWithoutRewritingOriginalAndRestoresBoth]",
+    "-[LifePresentationTests.ProjectMomentTests testFourActualChoicesHaveDistinctPropsMemoryAndOnlyRecordedPeople]",
+    "-[LifePresentationTests.ProjectMomentTests testUnknownAndUnappliedEventsNeverProduceACommittedReaction]",
+    "-[LifePresentationTests.WorldPersistenceTests testForkOriginalBytesSurvivePresentationAndMidBranchDiskRestore]",
+    "-[LifePresentationTests.WorldPersistenceTests testPlaybackReproducesFrozenPreImplementationTracesAndSaveBytes]",
+    "-[LifePresentationTests.WorldPlaybackTests testAccumulatedClockPauseSpeedAndBackgroundDoNotJump]",
+    "-[LifePresentationTests.WorldPlaybackTests testExactlyOnceStaleGenerationFailureRetryAndRestore]",
+    "-[LifePresentationTests.WorldPlaybackTests testNormalFastAndSkipAreIdenticalForEightCountriesAndRestore]",
+    "-[LifePresentationTests.WorldPlaybackTests testOffscreenFreezesClockButExplicitContinueAndPausedRestoreRemainReadable]"
+  ],
+  "pythonPassed": 25,
+  "independentFocusedSwift": {
+    "passed": 9,
+    "subsetOf111": true
+  },
+  "historicalFailures": [
+    "Runner early exit before any product case",
+    "v2 2/4 failed: gesture footer and native cancel targeting",
+    "full704 maximumText reveal failed, retained; focused7aa passed"
+  ],
+  "protectedDomainDataPersistenceDiff": "",
+  "sourceVersionsChanged": false,
+  "rawArtifacts": [
+    {
+      "path": "artifacts/governance/life-loop-10h/swift-final.txt",
+      "sha256": "4c8654838d41dfb6ddc79be251daba1a02f9f419db2bfd641ef5b8b040b4ab8d"
+    },
+    {
+      "path": "artifacts/governance/life-loop-10h/python-final.txt",
+      "sha256": "a1587ccf054df863c0b14852ab07518e9bab736b158119ef9b40f6cdd7d8e09f"
+    },
+    {
+      "path": "artifacts/governance/life-loop-10h/data-final.txt",
+      "sha256": "cf1742b60de0140f368b02ec1286f1fffd6d86857d91083b37e749bf4b80b9aa"
+    },
+    {
+      "path": "artifacts/governance/life-loop-10h/basic-final.txt",
+      "sha256": "ec6004f8c9a799759a0ca0fe3103c3b0cc8021eea3f3ddbae1c9908bc659b317"
+    },
+    {
+      "path": "artifacts/governance/life-loop-10h/motion-final.json",
+      "sha256": "78bdfacf6891882c5dca8a672b7975e4b1f250ab3d88b85dd5b94605869d85f8"
+    },
+    {
+      "path": "artifacts/governance/life-loop-10h/world-ui-first.txt",
+      "sha256": "e9019700dfc8e45f97a2ed2b142dd05d91f5b7858909eba656133285bbf02c88"
+    },
+    {
+      "path": "artifacts/governance/life-loop-10h/world-ui-v2.txt",
+      "sha256": "d3934004bb30e3615b2e9192053204dd336682f7fc353ff9cfe37d662bbe141c"
+    },
+    {
+      "path": "artifacts/governance/life-loop-10h/world-ui-full.txt",
+      "sha256": "d51584923f4c429f793e0fe8ac659e34ee9f3e924c895511b8c4f341ffaa2d93"
+    },
+    {
+      "path": "artifacts/governance/life-loop-10h/world-ui-focused-final.txt",
+      "sha256": "b9d83534994ef77206f4ad8fe7ea38a0e7c2b0cca95e20695e62988173bfe129"
+    },
+    {
+      "path": "artifacts/governance/life-loop-10h/world-ui-full-summary.json",
+      "sha256": "06325ef3a8cead48a6451931e2b142aca56c57f30ef1778de896f16892da2114"
+    },
+    {
+      "path": "artifacts/governance/life-loop-10h/world-ui-focused-summary.json",
+      "sha256": "267203bf472c8406a578d57ac15403fb96e0301e578f0a0c83e4c23ef966b8e2"
+    },
+    {
+      "path": "artifacts/governance/life-loop-10h/world-ui-delayed-final.txt",
+      "sha256": "e312a2fce74e7e93e93a74079930ea8c88cee7cac85927afab89699097a5778b"
+    },
+    {
+      "path": "artifacts/governance/life-loop-10h/python-diagnostics-final.txt",
+      "sha256": "cfdd1de581367382aa658ce72eeb6f530139d912427aa0f48efc46b73b851f7c"
+    },
+    {
+      "path": "artifacts/governance/life-loop-10h/integrated-se-full.txt",
+      "sha256": "83c34ed6ccb8745cee4242d1283f5b2ef4c376683a2c7f462dbba4715ab3d49e"
+    },
+    {
+      "path": "artifacts/governance/life-loop-10h/integrated-standard-full.txt",
+      "sha256": "88b3813d077c32225b6fca81756f6609c2ade32381be67cfc7e97bda65744e3c"
+    },
+    {
+      "path": "artifacts/governance/life-loop-10h/diagnostics-never-se.txt",
+      "sha256": "64fa104d313a1100a6f477e49ccd6591aaa0d87924328a2ba3533b10637f416b"
+    },
+    {
+      "path": "artifacts/governance/life-loop-10h/diagnostics-never-standard.txt",
+      "sha256": "25d48571398ef56ef0bee9822aef2821ce2a9d83c19e2eaaa211bfd6f0965ee3"
+    },
+    {
+      "path": "artifacts/governance/life-loop-10h/basic-final-delivery.txt",
+      "sha256": "ec6004f8c9a799759a0ca0fe3103c3b0cc8021eea3f3ddbae1c9908bc659b317"
+    }
+  ],
+  "limits": [
+    "Final documentation HEAD remote CI checked after push; not inferred from earlier HEAD",
+    "physical device/manual VoiceOver/child playtest absent",
+    "SwiftUI runtime publishing warning still unlocated: full runs3 each, smoke runs1 each",
+    "full runs required optional diagnostic child termination; extra OS diagnostics incomplete",
+    "strict raster seam equality failed1/255; same-input control also differs; offline18 frames predate final renderer",
+    "existing whole-PNG prototype/shared imagined setting, not final rig or real country scenery",
+    "combined Visual/total Agent-hours cannot be certified due to earlier unmetered contributor audit"
+  ],
+  "recordedUTC": "2026-10-24T07:56:27.976379+00:00",
+  "testHarnessCommit": "e1ca7c702a305f5c49489295ae9d7afdf36fb1cb",
+  "pythonRaw": "artifacts/governance/life-loop-10h/python-diagnostics-final.txt",
+  "historicalNativeBySource": {
+    "nativeFull": {
+      "source": "7040802846d8829ca969d98ff7023d51fb11913d",
+      "passed": 15,
+      "failed": 1,
+      "xcresult": "artifacts/ios/LC02-20261024T061101Z.xcresult"
+    },
+    "nativeFocused": {
+      "source": "7aa69d24aab70016ca99a9e1a79379ab4ebe5a55",
+      "passed": 5,
+      "failed": 0,
+      "xcresult": "artifacts/ios/LC02-20261024T064333Z.xcresult",
+      "notLatestFullSuite": true
+    },
+    "nativeDelayed": {
+      "source": "4d3308e275705972121134582321deaef77609be",
+      "productDiffFrom7aa": "none; test-only followup",
+      "passed": 1,
+      "failed": 0,
+      "xcresult": "artifacts/ios/LC02-20261024T065419Z.xcresult",
+      "coverage": "real 13-year pending clue → real 17-year triggered hook, native screenshots and captions"
+    }
+  },
+  "nativeFull": {
+    "se": {
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "passed": 18,
+      "failed": 0,
+      "processExitCode": 0,
+      "runtimeWarnings": 3,
+      "summary": "artifacts/evidence/life-loop/integrated-native/se/summary.json",
+      "screenshots": "artifacts/evidence/life-loop/integrated-native/se/manifest.json",
+      "xcresult": "artifacts/ios/LC02-20261024T070638Z.xcresult",
+      "optionalDiagnosticsInterrupted": true,
+      "note": "All XCTest cases passed before optional simctl diagnose stalled; only verified owned diagnostic child terminated; original xcodebuild finalized exit0."
+    },
+    "standard": {
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "passed": 18,
+      "failed": 0,
+      "processExitCode": 0,
+      "runtimeWarnings": 3,
+      "summary": "artifacts/evidence/life-loop/integrated-native/standard/summary.json",
+      "screenshots": "artifacts/evidence/life-loop/integrated-native/standard/manifest.json",
+      "xcresult": "artifacts/ios/integrated-standard-c445e5f.xcresult",
+      "optionalDiagnosticsInterrupted": true,
+      "note": "All XCTest cases passed before optional simctl diagnose stalled; only verified owned diagnostic child terminated; original xcodebuild finalized exit0."
+    }
+  },
+  "nativeHarnessSmoke": {
+    "se": {
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "testHarnessCommit": "e1ca7c702a305f5c49489295ae9d7afdf36fb1cb",
+      "passed": 1,
+      "failed": 0,
+      "processExitCode": 0,
+      "runtimeWarnings": 1,
+      "summary": "artifacts/evidence/life-loop/integrated-native/se/diagnostics-never-summary.json",
+      "xcresult": "artifacts/ios/LC02-20261024T074545Z.xcresult",
+      "test": "testWorldSaveFailuresDoNotPublishReactionsOrAdvanceAndRetryWorks",
+      "unattendedFinalization": true,
+      "extraOSDiagnostics": "never",
+      "notAdditionalDistinctUIcase": true
+    },
+    "standard": {
+      "productSourceCommit": "c445e5f0f9bee48832d0e77463d54777a6a3009f",
+      "testHarnessCommit": "e1ca7c702a305f5c49489295ae9d7afdf36fb1cb",
+      "passed": 1,
+      "failed": 0,
+      "processExitCode": 0,
+      "runtimeWarnings": 1,
+      "summary": "artifacts/evidence/life-loop/integrated-native/standard/diagnostics-never-summary.json",
+      "xcresult": "artifacts/ios/diagnostics-never-standard-e1ca7c7.xcresult",
+      "test": "testWorldSaveFailuresDoNotPublishReactionsOrAdvanceAndRetryWorks",
+      "unattendedFinalization": true,
+      "extraOSDiagnostics": "never",
+      "notAdditionalDistinctUIcase": true
+    }
+  },
+  "gallery": {
+    "files": 24,
+    "uniqueSHA256": 22,
+    "note": "Each device comparison-last-age and complete-comparison are the same final80-year row; not two distinct scene variants."
+  },
+  "cleanup": {
+    "ownedCount": 9,
+    "allAbsent": true,
+    "receipt": "artifacts/evidence/life-loop/simulator-cleanup-final.json"
+  },
+  "review": {
+    "independent": "artifacts/evidence/life-loop/independent-review.md",
+    "independentAgentHours": 0.966,
+    "confirmedRemainingBlockers": 0,
+    "authorSelfReview": "docs/life-loop-10h/INTEGRATED_VISUAL_REVIEW.md",
+    "authorReviewIsIndependent": false
+  },
+  "basicRequiredChecks": "PASS; basic-final-delivery.txt"
+}
