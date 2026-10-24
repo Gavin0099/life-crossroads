@@ -39,6 +39,8 @@ import Foundation
         near(LifeWorldMotion.arrival(phaseElapsedMs: 480, reduceMotion: false), 1, "one-shot final")
         near(LifeWorldMotion.arrival(phaseElapsedMs: 2_000, reduceMotion: false), 1, "one-shot holds")
         near(LifeWorldMotion.arrival(phaseElapsedMs: 0, reduceMotion: true), 1, "reduced committed final")
+        near(LifeWorldMotion.committedTokenOpacity(arrival: 0), 0.45, "frozen committed first-frame token stays visible")
+        near(LifeWorldMotion.committedTokenOpacity(arrival: 1), 1, "committed final token opaque")
         for invalid in [-1.0, Double.nan, Double.infinity] {
             let pose = LifeWorldMotion.pose(elapsedMs: invalid, reduceMotion: false)
             precondition(pose.vertical.isFinite && pose.leanDegrees.isFinite && pose.rippleHorizontal.isFinite)

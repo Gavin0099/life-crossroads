@@ -32,4 +32,8 @@ enum LifeWorldMotion {
         let remaining = 1 - fraction
         return 1 - remaining * remaining * remaining
     }
+
+    static func committedTokenOpacity(arrival: Double) -> Double {
+        0.45 + min(1, max(0, arrival)) * 0.55
+    }
 }

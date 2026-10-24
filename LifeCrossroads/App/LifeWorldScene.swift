@@ -101,7 +101,23 @@ struct LifeWorldScene: View {
 
     private var visibleTokens: [WorldChangeProjection] {
         // A pending token is a note about an unresolved clue, never an achieved outcome.
-        frame.worldChanges.filter { $0.isOccurred || $0.kind == .pendingClue }
+        frame.worldChanges.enumerated().filter { $0.element.isOccurred || $0.element.kind == .pendingClue }
+            .sorted {
+                let first = tokenPriority($0.element), second = tokenPriority($1.element)
+                return first == second ? $0.offset < $1.offset : first < second
+            }.map(\.element)
+    }
+
+    private func tokenPriority(_ change: WorldChangeProjection) -> Int {
+        let current = change.sourceEventID == frame.eventID && change.sourceAge == frame.age
+        switch change.kind {
+        case .memory: return current ? 0 : 3
+        case .relationship: return current ? 1 : 4
+        case .occurredChance: return 2
+        case .delayedConsequence: return 4
+        case .pendingClue: return 5
+        case .resourceChange: return 6
+        }
     }
 
     private func tokenShelf(size: CGSize) -> some View {
@@ -129,7 +145,9 @@ struct LifeWorldScene: View {
             .overlay(RoundedRectangle(cornerRadius: 5).stroke(StoryPalette.forest.opacity(0.18), lineWidth: 1))
             .scaleEffect(0.94 + progress * 0.06)
             .offset(y: (1 - progress) * 4)
-            .opacity(progress)
+            // The fact has already committed: even an immediate pause at frame zero must leave
+            // a readable token. Motion only emphasizes its arrival; it never gates the evidence.
+            .opacity(LifeWorldMotion.committedTokenOpacity(arrival: progress))
     }
 
     private func tokenSymbol(_ change: WorldChangeProjection) -> String {

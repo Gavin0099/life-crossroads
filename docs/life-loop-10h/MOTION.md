@@ -80,7 +80,7 @@
 
 - `LifeWorldMotion` 是原創、無時鐘的純函數。4秒循環；沐沐整張 PNG 上下幅度1.25pt、整體微傾0.65度；配角使用固定 index 的四分之一相位差。河水裝飾水平幅度2pt。沒有手腳／眼睛／頭／尾巴骨架，沒有重畫水獺。
 - `elapsedMs` 完全由 Gameplay 提供，`frozen` 不被轉成0。暫停／背景／遮蔽停鐘由 A 管理；Visual 沒有 Timer、Date、TimelineView、onAppear 啟動或每幀 RNG。相同 elapsed 會得到相同姿勢，View 本身沒有累積時間狀態。
-- 單次已發生 token 使用 `phaseElapsedMs` 的480ms ease-out並持有末幀，只有 frame 與 motion 都是 committedOutcome、來源為目前事件／年齡、`isOccurred == true` 才使用。求助沒有推定成功，pendingClue 只能是問號時鐘，資源圖示是混合變化收據，沒有一律上升的正向訊號。
+- 單次已發生 token 使用 `phaseElapsedMs` 的480ms ease-out並持有末幀，只有 frame 與 motion 都是 committedOutcome、來源為目前事件／年齡、`isOccurred == true` 才使用。已提交 token 首幀 opacity 最低0.45，立即暫停也不會把事實藏成透明；這項針對 frozen-first-frame 的修正有正式 helper 回歸斷言。求助沒有推定成功，pendingClue 只能是問號時鐘，資源圖示是混合變化收據，沒有一律上升的正向訊號。
 - Reduced Motion：角色與環境顯示完整的首幀，已提交結果顯示末幀；沒有做選擇時不會呈現未來結果。AX最大文字隱藏純裝飾，人物、自然中文 accessibility 及所有 worldChanges.caption 仍保留；詳細文字由 A 的正式事件／後果畫面提供。
 - `river`／`workshop`／`community` 都重用既有虛構河畔素材，工作桌及長椅為 SwiftUI shapes；13歲道具只表示已選擇的活動／記憶，不宣稱家庭擁有設備或作品已完成。角色五齡直接使用 `StoryPortrait.protagonist(age:)`。
 
