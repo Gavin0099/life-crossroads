@@ -47,3 +47,5 @@
 - LC03工程提交1fb30ba：八國16家庭、31觀測與可比性/未知成本提示；96Swift/23Python、8回歸UI+1定向UI通過，128局含四策略/Seed0及見證Seed3。四台Simulator已刪。台灣同口徑數位/自付仍缺；待獨立Draft推送與HEAD CI，不合併。 <!-- memory_record_projection:active-task-summary:1786e15735915f87c96eaff34a0fc8cd194ccb5861cdd8d3c1d784bf2b82a545 -->
 
 - 單事件視覺本機完成88f2713：PR7基底，13歲四種反應讀實際trace，102Swift/23Python通過；首輪UI10過1失敗，SE定向3過，兩台Simulator已刪。原首頁失敗/提示警告保留；待獨立Draft推送與HEAD CI，不合併。 <!-- memory_record_projection:active-task-summary:28bded97035efa15d2a8a909bea62ce2ca79522fa6caf7db063f53fc434ebb78 -->
+
+- LL-00本機完成：44bd153基於PR9 c823c82，日/台Seed0各15筆完整trace可重現；102Swift/23Python與basic通過，App/引擎無修改。舊原型65fff9e WIP隔離、四台Simulator已刪；待Draft/CI review，LL-01與新動畫未開始。 <!-- memory_record_projection:active-task-summary:890342ace273c18dd686305ffbbe5d0f482b5f2985d07b58af85cd0e434e4668 -->
