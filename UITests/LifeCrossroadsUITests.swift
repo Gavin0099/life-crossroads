@@ -7,6 +7,44 @@ final class LifeCrossroadsUITests: XCTestCase {
         continueAfterFailure = false
     }
 
+    func testWorldFullEventReadingPreservesTheDecisionAndArchiveAtNormalAndMaximumText() throws {
+        // Literal final paragraphs/questions are reviewed narrative fixtures, not renderer output.
+        for largest in [false, true] {
+            let app = launch(seed: "0", largestText: largest, world: true)
+            startWorldPaused(app)
+            for (age, ending, question) in [
+                (8, "你可以說出自己的期待，也可以先休息。讓生活運作起來，是大人和社會一起負責的事。", "我可以說出自己想做的事嗎？"),
+                (13, "你想走哪條路？兩種作品都可能累積經驗，也能先找人商量或保留課後時間。", "同樣投入，為什麼準備成本不同？")
+            ] {
+                let before = try archiveChecksum(in: app)
+                let eventID = app.staticTexts["eventTitle"].value as? String
+                let sceneFrame = app.otherElements["lifeWorldScene"].frame
+                let read = app.buttons["readFullEvent"]; reveal(read, in: app); read.tap()
+                let finalParagraph = app.staticTexts["eventStoryParagraph.1"]
+                XCTAssertTrue(finalParagraph.waitForExistence(timeout: 5))
+                XCTAssertEqual(finalParagraph.label, ending)
+                let prompt = app.staticTexts["eventStoryQuestion"]; reveal(prompt, in: app)
+                XCTAssertEqual(prompt.label, question)
+                XCTAssertTrue(prompt.isHittable, "The end of the full story must be reachable")
+                attachScreenshot("ll07-full-event-\(age)-\(largest ? "maximum" : "normal")", app: app)
+                app.buttons["closeFullEvent"].tap()
+                XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 5))
+                XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, eventID)
+                XCTAssertEqual(try archiveChecksum(in: app), before)
+                XCTAssertFalse(app.staticTexts["chosenAction"].exists)
+                XCTAssertEqual(app.otherElements["lifeWorldScene"].frame.height, sceneFrame.height, accuracy: 1)
+                if age == 8 {
+                    for _ in 0..<3 {
+                        let rest = app.buttons["choice.rest"]; reveal(rest, in: app); rest.tap()
+                        XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+                        app.buttons["continueLife"].tap(); skipWorldMontage(app)
+                    }
+                }
+            }
+            app.terminate()
+        }
+    }
+
     func testWorldActivityPropsOnlyFollowSavedChoicesAtEightAndThirteen() throws {
         // Labels come from the reviewed LL08 mapping, not from the production renderer.
         for (choice, expectedProp, childChoice, childProp) in [
@@ -867,17 +905,30 @@ final class LifeCrossroadsUITests: XCTestCase {
     private func reveal(_ element: XCUIElement, in app: XCUIApplication) {
         for _ in 0..<32 {
             if element.identifier == "lifeWorldScene", element.exists, element.isHittable { return }
-            let footer = app.buttons["continueLife"].exists && !app.buttons["closeTrace"].exists && !app.buttons["closeComparison"].exists
+            let footer = app.buttons["continueLife"].exists && !app.buttons["closeTrace"].exists && !app.buttons["closeComparison"].exists && !app.buttons["closeFullEvent"].exists
             let worldFooter = app.buttons["worldPause"]
-            let sheet = app.buttons["closeTrace"].exists || app.buttons["closeComparison"].exists
+            let sheet = app.buttons["closeTrace"].exists || app.buttons["closeComparison"].exists || app.buttons["closeFullEvent"].exists
             let pinnedDrawer = app.scrollViews["worldDecisionDrawer"]
-            let scroll = pinnedDrawer.exists && !sheet ? pinnedDrawer : app.scrollViews.firstMatch
+            let scroll = app.scrollViews["eventStoryScroll"].exists ? app.scrollViews["eventStoryScroll"] : pinnedDrawer.exists && !sheet ? pinnedDrawer : app.scrollViews.firstMatch
             let scrollTop = max(app.frame.minY + 90, scroll.exists ? scroll.frame.minY + 8 : 100)
             let footerTop = worldFooter.exists && !sheet ? worldFooter.frame.minY - 6 : app.frame.maxY - (footer ? 110 : 24)
             let bottom = min(footerTop, scroll.exists ? scroll.frame.maxY - 8 : footerTop)
             if element.exists && element.isHittable && element.frame.midY > scrollTop && element.frame.midY < bottom { return }
             // Drag within the actual scroll viewport, excluding the pinned world and control strip.
             let scrollHeight = max(44, bottom - scrollTop)
+            if pinnedDrawer.exists && !sheet {
+                // A full-height flick can overshoot an SE target and oscillate forever.
+                // Move its observed center toward the viewport center and stop before release.
+                let distance = element.exists ? element.frame.midY - (scrollTop + bottom) / 2 : scrollHeight
+                let delta = min(scrollHeight * 0.55, max(-scrollHeight * 0.55, distance))
+                let fromY = scrollTop + scrollHeight * (delta >= 0 ? 0.78 : 0.22)
+                let toY = fromY - delta
+                print("LL07_REVEAL \(element.identifier): target=\(element.exists ? element.frame : .zero), viewport=\(scroll.frame), drag=\(fromY)->\(toY)")
+                let from = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: (fromY - app.frame.minY) / app.frame.height))
+                let to = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: (toY - app.frame.minY) / app.frame.height))
+                from.press(forDuration: 0.05, thenDragTo: to, withVelocity: .slow, thenHoldForDuration: 0.2)
+                continue
+            }
             let upperY = scrollTop + scrollHeight * 0.2
             let lowerY = scrollTop + scrollHeight * 0.8
             let upper = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: (upperY - app.frame.minY) / app.frame.height))

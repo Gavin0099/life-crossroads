@@ -12,6 +12,7 @@ struct CrossroadsView: View {
     @AppStorage("shortStoryText") private var shortText = false
     @State private var showSources = false
     @State private var showTrace = false
+    @State private var showEventStory = false
     @State private var showForkPicker = false
     @State private var branchComparison: BranchComparison?
     @State private var restartAction: RestartAction?
@@ -84,6 +85,9 @@ struct CrossroadsView: View {
             } message: { _ in Text("回首頁或關閉 App 都能保留進度；只有建立新人生才取代原局與試走路線。") }
             .sheet(isPresented: $showSources) { sources }
             .sheet(isPresented: $showTrace) { traceSheet }
+            .sheet(isPresented: $showEventStory) {
+                if let event = store.currentEvent { fullEventStory(event) }
+            }
             .sheet(item: $comparisonPresentation) { presentation in comparisonSheet(presentation) }
             .alert("需要留意", isPresented: Binding(get: { store.errorMessage != nil }, set: { if !$0 { store.dismissError() } })) {
                 Button("知道了") { store.dismissError() }
@@ -183,7 +187,7 @@ struct CrossroadsView: View {
 
     private var worldSuspended: Bool {
         scenePhase != .active || store.showingHome || store.viewingOriginal || !store.worldPreviewEnabled
-            || showSources || showTrace || showForkPicker || branchComparison != nil
+            || showSources || showTrace || showEventStory || showForkPicker || branchComparison != nil
             || comparisonPresentation != nil || restartAction != nil || store.errorMessage != nil
     }
     private var worldTaskID: String {
@@ -420,6 +424,15 @@ struct CrossroadsView: View {
                 HStack(alignment: .center, spacing: 12) {
                     Text(event.title).font(store.worldPreviewEnabled ? .title3.bold() : .title2.bold()).accessibilityIdentifier("eventTitle")
                         .accessibilityValue(event.id).accessibilityAddTraits(.isHeader)
+                    if store.worldPreviewEnabled {
+                        Spacer(minLength: 0)
+                        Button { showEventStory = true } label: {
+                            Label("閱讀全文", systemImage: "text.alignleft").font(.caption)
+                                .frame(minWidth: 44, minHeight: 44)
+                        }
+                        .accessibilityLabel("閱讀完整事件")
+                        .accessibilityIdentifier("readFullEvent")
+                    }
                     if !store.worldPreviewEnabled && !dynamicTypeSize.isAccessibilitySize {
                         Spacer(minLength: 0)
                         if event.id == "teen-project" {
@@ -910,6 +923,31 @@ struct CrossroadsView: View {
                       "paused": "暫緩安排", "connected": "保留聯絡", "practiced": "已練習",
                       "tending": "已參與照料", "observing": "已參與觀察"]
         return "試算會留下的故事記錄：\(names[fact.key] ?? fact.key)・\(values[fact.value] ?? fact.value)。未來邀請仍有條件與機會限制。"
+    }
+
+    private func fullEventStory(_ event: DecisionSkeleton) -> some View {
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 18) {
+                    Text(event.title).font(.title2.bold()).accessibilityAddTraits(.isHeader)
+                    ForEach(Array(storyText(event).components(separatedBy: "\n").enumerated()), id: \.offset) { index, paragraph in
+                        Text(paragraph).fixedSize(horizontal: false, vertical: true)
+                            .accessibilityIdentifier("eventStoryParagraph.\(index)")
+                    }
+                    Text(event.storyQuestion).font(.headline)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .accessibilityIdentifier("eventStoryQuestion")
+                }
+                .padding(20).frame(maxWidth: 620, alignment: .leading).frame(maxWidth: .infinity)
+            }
+            .accessibilityIdentifier("eventStoryScroll")
+            .navigationTitle("完整事件").navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("回到選擇") { showEventStory = false }.accessibilityIdentifier("closeFullEvent")
+                }
+            }
+        }
     }
 
     private func shortStory(_ event: DecisionSkeleton) -> String {
