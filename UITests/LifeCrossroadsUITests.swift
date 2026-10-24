@@ -29,6 +29,7 @@ final class LifeCrossroadsUITests: XCTestCase {
         app.buttons["worldSpeed"].tap()
         let nextChoice = app.buttons["choice.rest"]; reveal(nextChoice, in: app); nextChoice.tap()
         XCTAssertTrue(app.staticTexts["livingTitle"].waitForExistence(timeout: 8))
+        attachScreenshot("world-next-living", app: app)
         XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 8))
     }
 
@@ -103,6 +104,27 @@ final class LifeCrossroadsUITests: XCTestCase {
         XCTAssertTrue(memory.label.contains("紙本創作"))
         attachScreenshot("world-workshop-maximum-text-outcome", app: app)
         openReason(in: app); XCTAssertTrue(app.staticTexts["actualInfluences"].exists)
+    }
+
+    func testWorldReducedMotionKeepsSceneFactsAndAccessibleChoices() throws {
+        let app = launch(seed: "0", world: true)
+        let preference = app.switches["worldReduceMotion"]
+        reveal(preference, in: app)
+        if preference.value as? String == "0" { preference.tap() }
+        XCTAssertEqual(preference.value as? String, "1")
+        startWorldPaused(app)
+        let scene = app.otherElements["lifeWorldScene"]
+        XCTAssertTrue(scene.exists)
+        XCTAssertTrue(scene.label.contains("8歲"))
+        let rest = app.buttons["choice.rest"]; reveal(rest, in: app); rest.tap()
+        XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["chosenAction"].exists)
+        XCTAssertFalse((scene.value as? String ?? "").contains("這次意外"))
+        attachScreenshot("world-reduced-motion-committed", app: app)
+        app.buttons["continueLife"].tap(); skipWorldMontage(app)
+        XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, "child-friend")
+        // The setting uses the same branch as the system preference, but this case does not
+        // claim that iOS VoiceOver focus or the system Settings UI was manually tested.
     }
 
     private func startWorldPaused(_ app: XCUIApplication) {

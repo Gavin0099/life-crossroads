@@ -19,7 +19,9 @@ struct CrossroadsView: View {
     @State private var comparisonPresentation: ComparisonPresentation?
     @State private var worldViewportHeight: CGFloat = 0
     @Environment(\.scenePhase) private var scenePhase
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @AppStorage("reducedLifeMotion") private var reducedLifeMotion = false
+    @Environment(\.accessibilityReduceMotion) private var systemReduceMotion
+    private var reduceMotion: Bool { systemReduceMotion || reducedLifeMotion }
     @Environment(\.accessibilityVoiceOverEnabled) private var voiceOver
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
@@ -220,6 +222,8 @@ struct CrossroadsView: View {
             }
             Toggle("生活世界預覽", isOn: $store.worldPreviewEnabled)
                 .accessibilityIdentifier("LifeWorldPreview")
+            Toggle("減少動態效果", isOn: $reducedLifeMotion)
+                .accessibilityIdentifier("worldReduceMotion")
             Text("關閉可回到事件優先介面；使用同一份人生與存檔。")
                 .font(.caption).foregroundStyle(.secondary)
             StoryEyebrow(title: "一本由你參與的人生故事", icon: "book.closed")
