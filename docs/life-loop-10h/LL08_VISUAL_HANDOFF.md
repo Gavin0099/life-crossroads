@@ -56,3 +56,21 @@ python3 tools/world-trace-visual/render.py
 ## A 的原生回歸重點
 
 在相同整合版本核對：8歲未選／休息不多出幫手；13歲線上／紙本／求助／休息可區別；17歲已觸發呼應與休息無呼應；最大字級150pt、普通字級大型世界均不遮臉、不裁紙箋；Reduce Motion 仍保留正確道具。保留正式 screenshot、來源hash、存檔與warning證據；每輪專用 Simulator 完成、失敗或中止均 delete，不刪別人的裝置或 runtime。
+
+## 原生覆核歷史（不冒充最終雙機）
+
+[5ab3c97 iPhone17獨立報告](../../artifacts/evidence/world-trace-visual/standard-native-review-5ab3c97.json)：實看全部16張同來源原生圖，未見P0／P1，保留3項P2：全文／選項入口可發現性、幾何道具質感、舊PNG視線／手部未參與新道具。該版標準機20/20、runtimeWarnings=[]；不能當成SE或後來版本已通過。
+
+B曾只讀取摘要段落便誤判「沒有全文入口」為P1；獨立Reviewer以 `git show 5ab3c97` 核對，選項下方原有「完整故事與問題」DisclosureGroup，內含全文及問題。B已向使用者與A更正並撤回這項P1。正確剩餘議題是P2導覽／驗證證據；後續前方閱讀入口若保留，應描述為更易找到的改善，不能宣稱修好原本不存在的入口。判定內容不可達前，必須核對整段View／既有展開入口與實際操作，不能只從省略號或局部程式推論缺失。
+
+A的後續修正版與SE捲動處理仍須各自保留實際來源和測試結果；本歷史報告不替代最終雙機回歸。
+
+## 最後有界增量覆核
+
+[最終增量報告](../../artifacts/evidence/world-trace-visual/native-final-incremental-review.json)：獨立Reviewer實看11張新原生圖，核對三份manifest共30附件hash。SE四路角色頭部／耳朵完整；場景來源文字改由A放在圖片外獨立列，沒有縮小人物或改動Scene。兩機13歲最大字級問題末行完整可見，SE8歲問題亦完整。原遮頭P1及末行證據P2關閉；本候選範圍未見新P0／P1。
+
+保留3項P2：最大字級首屏導覽密度、幾何道具和插畫質感差異、靜態PNG目光／手勢未參與道具。不能宣告正式美術或角色acting完成。歷史30圖與17歲呼應的舊版證據分開引用，沒有改標成最新截圖。
+
+最新產品App tree為 `1712e9e0645f6f80868f54b65a31e36726c81840`。d518標準機4/4定點測試；SE同批3通過／1失敗，原失敗證據保留，其後ce9只修測試閱讀viewport並1/1補測通過，App tree相同、warnings均空。先前5ab完整標準20/20、SE18/20及後續各6/6定點結果保留各自來源。**不宣稱最新版本完整21/21雙機回歸**。A的整合報告為正式測試交付來源，B沒有另外啟動Simulator。
+
+A清理收據記錄本輪17台專用裝置均已delete，未刪其他任務裝置或共用runtime。LL09實機／VoiceOver人工／兒少遊戲性仍未驗證；不合併、不發布。主要Review應指向A的整合Draft PR，B分支只供場景與來源追溯。
