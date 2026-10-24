@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "basePR": 10,
   "baseCommit": "b896e058bf49f61ec8eafec2a4134a35edff6ddc",
-  "appSourceCommit": "3aa85b56f5a02ba8a1fe99aa515c918c6f0013fb",
-  "latestUITestCommit": "27c5084a83ddb07a540d2c517192da7b32bcb1b2",
+  "appSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+  "latestUITestCommit": "ce9f6a7e7f193c3dbe4a57fdd8e4d42b7c40e319",
   "sourceBoundary": "artifacts/evidence/ll07/source-boundary.json",
   "swift": {
     "distinctCases": 111,
@@ -67,9 +67,39 @@
       "summary": "artifacts/evidence/ll07/native/se/summary.json",
       "rawLog": "artifacts/governance/ll07/se-final-targeted.txt",
       "localResultBundle": "artifacts/ios/LC02-20261024T114917Z.xcresult"
+    },
+    {
+      "batch": "iPhone17-caption-4",
+      "sourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+      "passed": 4,
+      "failed": 0,
+      "runtimeWarnings": [],
+      "summary": "artifacts/evidence/ll07/native/standard-caption-final/summary.json",
+      "rawLog": "artifacts/governance/ll07/standard-caption-final.txt",
+      "localResultBundle": "artifacts/ios/LL07-standard-d518c3b.xcresult"
+    },
+    {
+      "batch": "SE3-caption-4-with-reading-inset-failure",
+      "sourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+      "passed": 3,
+      "failed": 1,
+      "runtimeWarnings": [],
+      "summary": "artifacts/evidence/ll07/native/se-caption-final/summary.json",
+      "rawLog": "artifacts/governance/ll07/se-caption-final.txt",
+      "localResultBundle": "artifacts/ios/LC02-20261024T121056Z.xcresult"
+    },
+    {
+      "batch": "SE3-actual-reading-viewport-retest-1",
+      "sourceCommit": "ce9f6a7e7f193c3dbe4a57fdd8e4d42b7c40e319",
+      "passed": 1,
+      "failed": 0,
+      "runtimeWarnings": [],
+      "summary": "artifacts/evidence/ll07/native/se-reading-final/summary.json",
+      "rawLog": "artifacts/governance/ll07/se-reading-final.txt",
+      "localResultBundle": "artifacts/ios/LC02-20261024T122222Z.xcresult"
     }
   ],
-  "nativeSelectedScreenshots": 46,
+  "nativeSelectedScreenshots": 76,
   "simulatorCleanup": "artifacts/evidence/ll07/simulator-cleanup.json",
   "warningRootCause": "artifacts/evidence/ll07/warning-proof.json",
   "offlineVisualProvenance": "artifacts/evidence/ll07/scene-provenance.json",
@@ -80,5 +110,18 @@
     "Full art/rig/acting approval",
     "Merge, release or completed P1",
     "Exactly ten hours of new work"
-  ]
+  ],
+  "latestAppCoverage": {
+    "iPhone17": "D518: 4/4 in one batch",
+    "SE3": "D518: 3 passed scene/choice/save cases; failed reading margin separately corrected and passed1/1 at ce9 with identical App tree",
+    "SEReadingFailureReason": "Test assumed an extra24pt inset; actual SE viewport ended667, question647. Corrected to actual viewport minus8; no font/content/App change",
+    "notClaimed": "A single SE4/4 run or two latest-source complete local21-case suites"
+  },
+  "finalVisualReview": {
+    "path": "artifacts/evidence/ll07/native/final-incremental-independent-review.json",
+    "viewedNewFrames": 11,
+    "earlierFramesReferenced": 30,
+    "verdict": "PASS_WITH_P2_FOR_BOUNDED_VISUAL_CANDIDATE — previous SE head-occlusion P1 and maximum-text final-question evidence gap closed. No new P0/P1 in these 11 inspected frames. Not all-product art/release approval.",
+    "notClaimed": "New whole-suite or all-product art/release approval"
+  }
 }

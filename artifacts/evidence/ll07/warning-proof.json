@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "baseCommit": "b896e058bf49f61ec8eafec2a4134a35edff6ddc",
   "isolatedFixCommit": "bbe8657",
-  "productFreezeCommit": "27c5084a83ddb07a540d2c517192da7b32bcb1b2",
+  "productFreezeCommit": "ce9f6a7e7f193c3dbe4a57fdd8e4d42b7c40e319",
   "originalPR10IssueCases": [
     "testProjectWorkshopDoesNotReactUntilSaveSucceedsWithLargeText",
     "testSaveFailuresKeepScreenAndArchiveThenRetryAndRelaunch",

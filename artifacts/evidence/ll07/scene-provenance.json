@@ -1,7 +1,7 @@
 {
   "kind": "Root recomputed offline provenance; not a native result",
   "checkedUTC": "2026-10-24T11:17:03.450664+00:00",
-  "productFreeze": "27c5084a83ddb07a540d2c517192da7b32bcb1b2",
+  "productFreeze": "ce9f6a7e7f193c3dbe4a57fdd8e4d42b7c40e319",
   "authorImplementation": "129ca19",
   "evidenceCompanion": "2beceb9",
   "pairedFixtures": 14,
@@ -12,7 +12,7 @@
   "actorsChangesAndArchivesPaired": true,
   "sceneSHA256": "ced164aefaa15ec5fd93c49024dd4124209cc1e8cf261442a9c95dce4af313cb",
   "sceneMatchesRoot": true,
-  "nativeTests": "Separate real batches are preserved in validation.json; latest App identical across 3aa and27c, with six targeted passes per device",
+  "nativeTests": "Real source-specific batches in validation.json; latest App D518 equals ce9, with standard4/4 and SE3 plus corrected reader1/1",
   "independentReview": "artifacts/evidence/world-trace-visual/independent-review.json",
   "notClaimed": [
     "14 distinct lives",

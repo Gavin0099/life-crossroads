@@ -1,73 +1,60 @@
-# LL-07／LL-08：固定世界、真實道具與發布警告修正
+# LL-07／LL-08：固定世界與真實後果呈現
 
-狀態：正式App來源 `3aa85b56f5a02ba8a1fe99aa515c918c6f0013fb`；27c5084僅修UI測試footer定位，App tree完全相同。兩機最新定向各6/6、runtimeWarnings=[]，本地工程已完成；推送及遠端CI由最終PR HEAD另行核對，不預記成功。5ab原批次標準機20/20、SE18/20，失敗手勢及截圖保留，不當雙機全過。基於 PR #10 `b896e05` 的有界改進，原PR保持Draft/HOLD；不合併、不發布。
+本地工程已完成，以 PR #10 `b896e05` 為基底，維持獨立 Draft／HOLD、不合併、不發布。正式 App 來源 `d518c3b`；`ce9f6a7` 只修閱讀測試的可視區計算，兩者 App tree 完全相同。遠端結果由推送後新 PR 當前 HEAD 的 checks 與描述提供，本文件不預記成功。
 
 ## 玩家看到的改變
 
-事件和後果保留同一大型世界，只有下方決策抽屜捲動；同字級切換生活／事件／後果不再縮圖。一般畫面約210～300pt、大字約160～210pt，依可用高度調整。播放控制只一列52pt，底部系統安全區另保留；大字次要速度設定放選單，主要操作維持44pt觸控範圍。
+- 生活、事件、後果保留同一大型世界，只有下方決策抽屜捲動。一般場景約210～300pt，大字約160～210pt，phase切換不縮成88pt。播放控制為52pt單列，保留系統安全區；大字的次要速度設定收進選單，主要觸控範圍44pt。
+- 8歲當次已保存後果顯示紙箱練習／求助紀錄／收好紙箱；13歲按真實記憶顯示線上／紙本／求助／保留時間，17歲只有真正觸發才有呼應。未實現線索明示尚未發生，休息不新增幫手。
+- 原本選項下方已有「完整故事與問題」，內容未被刪除。本輪在標題旁增加「閱讀全文」便利入口，完整敘述與問題可捲讀，開關不提交選擇或改存檔。最終截圖前另檢查問題最後一行進入實際可視區。
+- 場景說明放在圖片外的一行文字，不遮角色頭部，也不縮角色。仍是跨國共用寓言河畔，不是當地實景；大字的Scene spoken label保留這項區別。
 
-8歲已保存後果有紙箱練習／求助紀錄／收好紙箱；13歲有線上圖解／紙本練習／找起點／保留時間；17歲只有真正觸發才顯示呼應。待發生線索明示未發生，休息不增加未記錄的幫手。8歲目前沒有持久StoryFact，道具只在該次後果顯示，未聲稱跨年記憶。
+## SwiftUI警告：根因、窄修正及回歸
 
-暖紙色抽屜與紙帶道具重組既有素材。角色仍是整張PNG的輕量演出，沒有新增眼睛、手部、視線或骨架；不是正式美術完成。河畔仍是跨國共用寓言舞台，並非當地實景。
+原PR10三筆警告都在保存故障提示案例。暫時探針記錄到：按「知道了」已把錯誤清為nil，UIKitDialogBridge後續dismiss／reset又經Binding重複寫nil；其中reset在ViewGraph.updateOutputs內，重複觸發@Published。
 
-## 警告根因與實際修正
+`bbe8657`只增加共用`dismissError()`的nil guard，未改佈局；原三案例3/3且runtimeWarnings=[]。探針移除後才整合其他改動。[warning-proof.json](../../artifacts/evidence/ll07/warning-proof.json)保留原警告、堆疊與修正後摘要。
 
-原PR10三筆警告集中在保存失敗提示案例。暫時探針證實：按「知道了」已清除錯誤，UIKitDialogBridge後續dismiss／reset又經Binding寫入nil；其中reset位於ViewGraph.updateOutputs，重複觸發@Published。
+`scripts/check-ios-runtime.py`讀真正xcresult，一旦再回報此發布警告即令UI檢查失敗，完整runtime摘要照常保存。已實際拒絕舊警告bundle、接受修正後bundle，並有正／負／空摘要及清理fixture。沒有關閉一般runtime issue蒐集來讓測試過關；可選OS診斷模式維持原設定。此修正針對觀察到的重複nil路徑，不宣稱消除所有未來SwiftUI風險。
 
-`bbe8657` 只增加 `dismissError()` 的nil guard並共用於提示按鈕與Binding，佈局未變；三個原案例3/3、runtimeWarnings=[]。探針移除後才整合佈局。原始1/1但有1筆warning的基準、堆疊與修正後摘要保留於 [warning-proof.json](../../artifacts/evidence/ll07/warning-proof.json)。
+## 驗證：來源與批次分開
 
-新增 `scripts/check-ios-runtime.py`：讀真正xcresult，一旦回報此發布警告即令UI檢查失敗；完整runtime摘要照常保存。它實際拒絕舊有警告bundle並接受修正後bundle；正／負／空摘要及清理fixture有測試。沒有以關閉一般診斷或忽略warning當修正，可選OS診斷模式仍維持原設定。
-
-## 來源與未改範圍
-
-- A主流程分支 `codex/ll07-world-continuity`；B只窄接Scene，不合併其整條舊原型分支。
-- B實作129ca19、離線證據companion2beceb9；Scene SHA256 `ced164aefaa15ec5fd93c49024dd4124209cc1e8cf261442a9c95dce4af313cb`。
-- Domain／Data／Persistence、世界DTO／投影、WorldPlayback、Motion、PNG及遊戲版本皆與b896無diff。來源仍是保存成功後的同一Session／Trace；選擇與抽選不由View執行。
-- 固定世界取消捲動場景的geometry preference狀態回寫；使用iOS17的[accessibility content shape](https://developer.apple.com/documentation/swiftui/contentshapekinds/accessibility)限定語意範圍，未採UIKit/private橋接。
-- 控制列背景不延伸到home-indicator安全區，AX shape限定真正控制範圍；系統安全間隔未刪除，64pt門檻未放寬。
-
-## 驗證與歷史（不互相冒充）
-
-| 證據 | 狀態／範圍 |
+| 範圍 | 實際結果 |
 | --- | --- |
-| 純Swift | 111個不同案例通過，含固定Seed、凍結trace、真實存讀及完整原局／替代人生。 |
-| Python | 30項通過，包含真實shell接線、runtime警告負向fixture及失敗清理。 |
-| Basic／build-for-testing | 通過；正式App／新UITests可編譯。 |
-| isolated nil guard | 三個受影響UI案例3/3、0 runtime warning；不冒充新佈局全套。 |
-| 5ab3c97 SE3完整20 | 18過2失敗：新增道具choice.ask與冷恢復whyResult，固定捲動來回；runtimeWarnings=[]，裝置已delete。 |
-| 5ab3c97 iPhone17完整20 | 20/20，runtimeWarnings=[]，裝置已delete。 |
-| 3aa85b5 iPhone17定向6 | 6/6，runtimeWarnings=[]；包含全文normal/AX、四選項、大字、固定世界、冷恢復與保存故障，專用裝置已delete。 |
-| 27c5084 SE3定向6 | 6/6，runtimeWarnings=[]；App與3aa tree相同，測試邊界更嚴，專用裝置已delete，與舊全套分開。 |
-| B離線對照 | 14組固定來源畫面、11份不同存檔bytes；28PNG／14份存檔與27來源hash可重算。46／74是守衛斷言數，不是新增XCTest或14段不同人生。 |
-| 離線獨立專項覆核 | 無P0／P1，兩項P2：向量道具與插畫筆觸差異、原PNG視線／手部未參與新道具；不代替原生或真人驗收。 |
+| 純Swift／Python／basic | 111個不同Swift案例、30項Python及basic通過。核心來源未變，含固定Seed、trace、真實磁碟存讀與原局／完整替代後半生回歸。 |
+| 最終App：iPhone17 D518 | 四項4/4、runtimeWarnings=[]；8／13四選項、正常／最大文字全文、固定Scene／首屏行動、保存故障與重試。 |
+| 最終App：SE D518 | 原四項batch為3/4：場景／選擇／首屏／保存三案例過，閱讀測試錯扣固定24pt安全區而失敗。原summary不改標4/4。 |
+| 同App：SE ce9閱讀補測 | 1/1、runtimeWarnings=[]；改讀實際viewport再留8pt，8／13歲一般與最大字級問題末行均可見，關閉後事件／存檔／Scene不變。不縮字、不改文案或App。 |
+| 先前3aa／27c定向 | 兩機各6/6、0項此發布警告，包含大字、冷恢復／提示取消與保存故障；其後目視仍抓到SE badge遮頭，故不能拿這批代替最終視覺驗收。 |
+| 5ab舊完整20 | 標準機20/20、SE18/20，SE求助及whyResult手勢失敗；不當作新版雙機全21。 |
+| 最終原生證據 | 76張選取PNG含歷史批次；每圖標實際commit／test／SHA。最新畫面為標準15＋SE場景11＋SE閱讀4，共30圖，沒有覆寫舊圖。 |
+| 清理 | 本輪root17台專用Simulator均delete，最終inventory查無；自己的標準QA checkout保留raw後封存，不動B工作樹、其他裝置或runtime。 |
 
-歷史保留：SE首輪1/2、後續2/3的AX邊界差1.5pt失敗；誤用UIKit命名modifier的編譯失敗（0個產品案例）；改用public content shape後固定世界案例1/1，場景前後240pt。668標準機7/9敗在AX包含34pt安全區，runtimeWarnings=[]；該來源SE批次由A主動中止，exit75，不當20項完成。修正後iPhone17單項1/1，場景前後298.667pt、頁尾52pt。這些來源均不冒充最終20項。
+[機讀批次總表](../../artifacts/evidence/ll07/validation.json)／[未改動邊界與App tree橋接](../../artifacts/evidence/ll07/source-boundary.json)／[清理收據](../../artifacts/evidence/ll07/simulator-cleanup.json)。原始log與xcresult保留本機artifacts/governance/ll07/及artifacts/ios/；各摘要與必要失敗圖已提交供遠端覆核。沒有宣稱兩機最新來源各完整21項本地全套。
 
-必要原始log／xcresult留在本機 `artifacts/governance/ll07/` 與 `artifacts/ios/`。最終原生summary／逐圖manifest與46張選取PNG在native/，各圖標明實際batch／來源／test／SHA；14台本輪專用Simulator均delete且最終inventory查無。自己的標準QA checkout已保留raw後封存；沒有刪其他任務裝置、工作樹或runtime。
+## 目視覆核與修正歷史
 
-## 真人與產品驗收
+- B實作129ca19、離線證據2beceb9、計數澄清b4d8780；只窄接Scene，不合併舊原型整枝。Scene SHA256為`ced164aefaa15ec5fd93c49024dd4124209cc1e8cf261442a9c95dce4af313cb`。
+- B離線對照為14組來源畫面、11份不同存檔bytes；28PNG、14份存檔及27來源hash已重算。46／74是守衛斷言，並非XCTest數量或14段不同人生；macOS ImageRenderer不代替原生驗收。
+- 初報「沒有全文入口」是B與A漏看既有DisclosureGroup的誤判，已撤回；實際為P2導覽問題。新便利入口不宣稱修復不存在的內容遺失。
+- 同一獨立Reviewer覆核舊30原生圖判PARTIAL：SE13歲線上／紙本／求助的badge碰頭頂／上耳輪廓，為真正P1。A以57178c5把說明移至圖片外一行，沒有縮角色或改Scene。原圖／manifest與[修正前報告](../../artifacts/evidence/ll07/native/followup-review-before-caption.json)保留。最終增量目視另列，不把舊標準機0P1冒充雙機整體通過。
+- 舊13歲AX全文圖只證明問題node可達／label完整，末行未拍全；d518增加底邊可見斷言。SE647pt的末行本在667pt實際視窗內，測試卻誤扣24pt要求635pt，故ce9只修這個測試假設並定向補測。
+- 工程歷史亦保留：AX邊界差1.5pt、誤用UIKit命名modifier的編譯失敗（0產品案例）、668標準7/9因頁尾AX86pt失敗及SE主動中止。使用public iOS17 accessibility content shape及正確safe-area背景後，Scene固定、頁尾52pt；1pt／64pt門檻未放寬。手勢按實際target與整列controls定位，保留isHittable／中點限制及32次上限。
 
-[LL-09試玩步驟與空白紀錄](LL09_PLAYTEST.md)已備妥，沒有真人結果。尚缺實機、人工VoiceOver焦點、真人節奏、孩子理解與自發重玩；CI不能代替。正式角色表演與美術語言仍是部分達成，不擴充生圖或人生引擎來掩蓋這些缺口。
+## 可直接查看的最終畫面
 
-本輪不是新的十小時大計畫。先修已確認的工程問題，再用可玩的整合結果供審查；兩機、來源與測試批次據實記錄。完整P1、LC03資料可比性及發布Gate維持原狀。
+[SE紙本後果／完整頭部](../../artifacts/evidence/ll07/native/se-caption-final/ll08-thirteen-offline.png)／[SE事件首屏](../../artifacts/evidence/ll07/native/se-caption-final/ll07-event-pinned-world.png)／[SE大字問題末行](../../artifacts/evidence/ll07/native/se-reading-final/ll07-full-event-13-maximum.png)／[標準機事件](../../artifacts/evidence/ll07/native/standard-caption-final/ll07-event-pinned-world.png)。
 
-## 全文入口的覆核更正
+Xcode開啟LifeCrossroads scheme，首頁啟用生活世界預覽；日本／家庭一／Seed0可看8→13→17的保存後果。選擇前只有情境，保存後才呈現活動物件。自動化存檔checksum只在Simulator測試顯示，不是正式遊戲資訊。
 
-B初報『摘要截斷且無全文入口』，A亦漏看下方而採納；獨立Reviewer核對後確認5ab本已保留『完整故事與問題』DisclosureGroup，故撤回原零入口P1判斷。原內容未遺失，實際為選項下方入口不易找到的P2。A保留已完成的標題旁『閱讀全文』便利入口，完整逐段storyText與storyQuestion在原生頁面可捲讀，modal暫停世界；新增審閱過的8／13歲末段與問題literal回歸，在normal/AX讀到底、關閉後比對存檔／事件／場景。不以錯誤判斷宣稱修復了不存在的資料遺失。
+## 邊界與產品缺口
 
-3aa也只修測試helper的SE捲動：根據實際target／viewport朝中央短距離、slow且停0.2秒再放手；保留isHittable／中點範圍及32次上限。5ab兩張失敗圖顯示停在目標上下之外，原log反覆正反拖；Scene與可行性沒有被修改來讓測試通過。
+Domain／Data／Persistence、世界DTO／投影、WorldPlayback、Motion、PNG及遊戲版本與b896未變。8歲沒有持久StoryFact，本輪只顯示當次已提交resourceChange，未聲稱跨年記憶。
 
-## 測試helper的第二次定位更正
+暖紙UI與幾何道具仍未完全融入插畫筆觸；角色仍是整張PNG，未新增視線、手部或骨架acting。最大字級的標題／全文入口與首屏選項導覽仍須真人閱讀驗收。這是可審查工程改進，不是正式美術、P1或發布完成。
 
-3aa SE定向6為1過5敗，原摘要保留history/3aa-se-failed.json。第一次按frame短拖後，仍以worldPause按鈕估頁尾上緣；按鈕內縮讓測試容許中點落進控制列背景，tap沒有作用。27c改讀整列worldPlaybackControls再留8pt，正常SE可視區334～607pt、控制列615～667pt。來源、限制及實際frame在raw log，不把這些測試失敗刪除，也沒有改App可行性讓它過關。
+[LL-09操作與空白記錄](LL09_PLAYTEST.md)已準備，沒有真人結果。仍缺真實iPhone、人工VoiceOver、真人10～15分鐘節奏、兒少理解與自發重玩；CI及AI目視不能代替。這輪不是新的十小時大型計畫，不宣稱精確花滿十小時。
 
-同一App tree f61e36003c7ddc44dfe2ff905809a5a77ac12827串起3aa標準機與27c SE；每張PNG仍標實際執行commit，不把不同批次改標同一次全套。
+## 最終獨立增量覆核
 
-## 審查入口與操作
-
-- [機讀批次與來源總表](../../artifacts/evidence/ll07/validation.json)／[未改動邊界與App tree橋接](../../artifacts/evidence/ll07/source-boundary.json)／[14台清理收據](../../artifacts/evidence/ll07/simulator-cleanup.json)。
-- [SE最終事件](../../artifacts/evidence/ll07/native/se/ll07-event-pinned-world.png)／[最大字級](../../artifacts/evidence/ll07/native/se/ll07-maximum-text-layout.png)／[13歲紙本後果](../../artifacts/evidence/ll07/native/se/ll08-thirteen-offline.png)。
-- [標準機最終事件](../../artifacts/evidence/ll07/native/standard-followup/ll07-event-pinned-world.png)／[全文末段與問題](../../artifacts/evidence/ll07/native/standard-followup/ll07-full-event-13-maximum.png)。原5ab完整20圖在native/standard/，未改標為新版全套。
-- Xcode開啟LifeCrossroads scheme，首頁啟用生活世界預覽；固定日本／家庭一／Seed0可看8→13→17保存後果。選擇前只看情境，保存後才有活動物件；閱讀全文不提交選擇。UI自動化存檔checksum僅Simulator測試顯示，非正式遊戲資訊。
-
-本輪保持獨立Draft／HOLD，以PR #10分支為base；不改或合併父PR，不發布。遠端檢查以新PR當前HEAD的Actions與PR描述為準，本地文件不先寫遠端成功。
+[最終原生專項報告](../../artifacts/evidence/ll07/native/final-incremental-independent-review.json)：同一Reviewer實看11張最新差異圖，連同先前30圖歷史覆核，確認SE三路遮頭P1與最大字級問題末行證據缺口已關閉；這11張未見新P0／P1。Root已重算11張hash，來源吻合。保留三項P2：AX首屏導覽密度、扁平道具與插畫質感差異、角色尚未注意／接觸新道具。這不是重新看遍所有最新圖、雙機最新21/21或正式美術／發布批准。

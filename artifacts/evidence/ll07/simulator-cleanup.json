@@ -1,6 +1,6 @@
 {
-  "checkedUTC": "2026-10-24T12:02:02.720731+00:00",
-  "ownedDeviceCount": 14,
+  "checkedUTC": "2026-10-24T12:27:33.157821+00:00",
+  "ownedDeviceCount": 17,
   "allDeleted": true,
   "devices": [
     {
@@ -52,6 +52,14 @@
       "absentInFinalInventory": true
     },
     {
+      "deviceID": "B0F87C69-D8D1-498A-8A7D-5C98B1272AF6",
+      "creationLogs": [
+        "artifacts/governance/ll07/se-caption-final.txt"
+      ],
+      "deleteLogged": true,
+      "absentInFinalInventory": true
+    },
+    {
       "deviceID": "0ACDEC92-AC04-411A-BA76-09845CB62F48",
       "creationLogs": [
         "artifacts/governance/ll07/se-final-targeted.txt"
@@ -79,6 +87,22 @@
       "deviceID": "AAA9C77F-B64D-4E04-B24B-975051986378",
       "creationLogs": [
         "artifacts/governance/ll07/se-full.txt"
+      ],
+      "deleteLogged": true,
+      "absentInFinalInventory": true
+    },
+    {
+      "deviceID": "1BCA439C-F89D-459D-B254-1207485469FE",
+      "creationLogs": [
+        "artifacts/governance/ll07/se-reading-final.txt"
+      ],
+      "deleteLogged": true,
+      "absentInFinalInventory": true
+    },
+    {
+      "deviceID": "90432CB6-3DE4-46B5-9DE3-48845DCBB06B",
+      "creationLogs": [
+        "artifacts/governance/ll07/standard-caption-final.txt"
       ],
       "deleteLogged": true,
       "absentInFinalInventory": true
@@ -119,5 +143,6 @@
   "otherTaskDevicesDeleted": false,
   "runtimesRemoved": false,
   "scope": "LL07 round only; excludes the earlier LIFE-LOOP10H nine-device batch",
-  "ownedQAWorktree": "raw standard xcresults copied to root before managed archive; separate Visual B worktree untouched"
+  "ownedQAWorktreeArchived": true,
+  "note": "Raw standard xcresults copied to root before managed archive; separate Visual B worktree untouched"
 }

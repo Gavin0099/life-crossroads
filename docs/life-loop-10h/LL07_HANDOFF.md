@@ -1,6 +1,6 @@
 # LL-07／LL-08 有界改進交接
 
-> 最新：本地工程完成。App3aa與測試27c的兩機定向各6/6、0項此發布警告；14台專用裝置已delete。以下進度按時間保留，舊失敗／中止不冒充新版全套；最終資料在LL07_DELIVERY.md與artifacts/evidence/ll07/validation.json。推送／遠端CI另核對。
+> 最新：本地已完成。App D518（ce9只改讀取測試，App tree相同），標準機4/4；SE的D518三個場景／首屏／存檔案例通過＋ce9閱讀補測1/1通過，分批不冒充單次4/4。17台專用裝置delete且inventory查無，自己的QA checkout已封存。維持Draft/HOLD，待新PR遠端CI與產品驗收。以下進度按時間保留，舊失敗／中止不冒充新版全套；最終資料在LL07_DELIVERY.md與artifacts/evidence/ll07/validation.json。推送／遠端CI另核對。
 
 基底固定為 PR #10 `b896e058bf49f61ec8eafec2a4134a35edff6ddc`。這是該輪審查後的有界改進，不重開10小時計畫；PR #10維持Draft/HOLD，不合併、不發布。
 
@@ -92,3 +92,27 @@ SE27c四選項真實道具案例197.290秒已過，正繼續其餘5項，完成�
 SE27c六項6/6、runtimeWarnings=[]，0ACDEC92已delete。15張原生PNG／summary／逐圖manifest已在artifacts/evidence/ll07/native/se/；標準機3aa15張在standard-followup/，App tree相同的橋接見source-boundary.json。所有原批次、失敗、中止與最終成功分開記錄validation.json；不是聲稱兩機最新21項全套。14台本輪root專用Simulator均delete且inventory查無，runtime/他任裝置未動。自己的QA checkout raw已全保留，再次封存；B工作樹不動。
 
 既有B／同一Reviewer請對standard-followup及se的最終圖增量只讀覆核，特別是全文入口、最大字級、Scene/頁尾遮擋及不造幫手/因果；不新開Simulator或改renderer。可把有界native覆核JSON留在原B證據分支或/tmp供A納入，不需跨chat回覆。A本地工程已完成，下一步只整理證據、記憶及獨立Draft交付，不再擴充美術或App功能。
+
+### 目視P1與有界回歸：d518c3bf1d0e9fb14d59906a0b7359a6324354a4
+
+30張3aa/27c原生圖的獨立覆核PARTIAL：SE13歲線上／紙本／求助的左上說明badge碰頭頂／上耳輪廓，眼嘴雖可見仍列P1。A已採納，以57178c5將非各國實景文字改在圖片外上方一行；Scene、角色尺寸、PNG／Motion與引擎都不改。最大字級原本已有Scene spoken label，因此不加入重複說明行。原30圖與報告原地保留，不覆寫；綜合報告native/followup-review-before-caption.json。
+
+另P2：舊13歲AX全文截圖只證明問題node可達及完整label，末行未拍全，不能叫同張完整全文。d518只加UI證據檢查：問題maxY捲進sheet可視底邊再截圖，不縮字、不改文案。相同來源雙機各4項：四選項8/13真實道具、normal/AX全文末行、固定Scene/首屏行動、保存故障/重試。新圖預定native/se-caption-final/與standard-caption-final/，raw se-caption-final.txt／standard-caption-final.txt。B與同一Reviewer等新圖後只做最後增量目視；不新開Simulator或改renderer。
+
+### 圖片外說明的原生圖就緒；閱讀假設更正
+
+D518標準機4/4、runtimeWarnings=[]、90432已delete；15張新圖在native/standard-caption-final/。D518 SE原批3/4：四選項、固定世界及保存故障/首屏三案例通過，11張在native/se-caption-final/，原summary仍明示1個閱讀失敗，未當4/4。原新圖目錄沒有覆寫舊批次。
+
+閱讀失敗是測試額外假設app底部要扣24pt，要求maxY<=635；SE沒有home inset，實際Scroll可視至667、問題底邊647本已完整在畫面內，不能解讀為永久截斷。ce9只改測試以actual Scroll/app viewport再留8pt驗證；App tree與D518完全相同。只重跑SE該1案例，含8/13正常/AX末行，再輸出native/se-reading-final/四圖；不重跑已通過三案例、不改內容/字級。
+
+B／同Reviewer可先讀standard-caption-final15與se-caption-final11，檢查說明確實在圖片外且人物頭部完整，等se-reading-final4再確認13歲AX完整末行。最新App來源D518，UI補測ce9只改讀取邊界；不把不同批次改標單次SE4/4，不新增Scene變更。
+
+### 最終補測與目視入口
+
+SE ce9閱讀補測1/1、runtimeWarnings=[]，1BCA439C已delete；四張新圖／summary／manifest在native/se-reading-final/，13歲AX問題末行已捲入actual viewport。D518標準15圖在standard-caption-final/，D518 SE三個已過案例11圖在se-caption-final/；原4項batch的3/4與固定24pt假設失敗summary原樣保留，沒有標成單次4/4。
+
+最終App D518與ce9的App tree相同，只改測試實際可視範圍；Scene仍ced164...。B／同一Reviewer最後可只讀上述15＋11＋4圖共30圖，確認說明在圖片外、13歲三路頭部無badge遮擋、最大文字問題末行完整及來源hash。這是最後增量覆核，不再開Simulator／改Scene。Root的17台本輪專用裝置均delete、QA raw保留後封存；不合併或發布。
+
+### 最終目視收束
+
+已窄取same Reviewer的final-incremental-independent-review.json，Root重算11張原圖hash均吻合。11張最新差異＋先前30張歷史範圍：遮頭P1與問題末行缺口關閉，無新P0/P1，三P2保留；不當全產品美術或最新雙21全套。App/Scene不再改，17台delete已完成；接下來僅證據／記憶companion與獨立Draft／當前HEAD CI，不合併發布。
