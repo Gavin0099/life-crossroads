@@ -1,5 +1,7 @@
 # 紙橋工坊 Gameplay／Simulation 候選圖庫
 
+本頁保留上一輪14項回歸與三項P2的歷史版本；[本輪P2修正與雙機17項回歸圖庫](p2/REVIEW.md)另行記錄。
+
 從13歲的行動留下經驗，再於15歲真正操作不同機會。先看[驗收紀錄](FINAL_REVIEW.md)及[規則／真人試玩標準](GAMEPLAY_SLICE.md)。工程、視覺候選及真人遊戲感分別判定。
 
 ![SE 3原生截圖總覽](../../artifacts/simulation/contact-sheet.png)

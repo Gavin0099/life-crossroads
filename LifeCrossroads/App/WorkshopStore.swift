@@ -35,6 +35,18 @@ import LifeData
         return try? session.event(catalog:catalog)
     }
     var fact: StoryFact? { session?.state.story.fact("workshop") }
+    var origin: ConsequenceTrace? { session?.traces.first { $0.age == 13 } }
+    var branch: StoryBranchEvaluation? {
+        guard let event,let session else { return nil }
+        return StoryBranchEngine.project(event:event,state:session.state).evaluation
+    }
+    var opportunityOrigin: ConsequenceTrace? {
+        guard let branch else { return nil }
+        return session?.traces.first { $0.eventID == branch.sourceEventID && $0.choiceID == branch.sourceChoiceID && $0.age == branch.sourceAge }
+    }
+    func recordedFamiliarity(_ id: String,through age: Int) -> Int {
+        session?.traces.filter { $0.age <= age }.flatMap(\.changedRelationships).last { $0.personID == id }?.familiarity ?? 0
+    }
     var art: WorkshopArt {
         switch fact?.value { case "prototype": .team;case "plan": .help;default: .idle }
     }

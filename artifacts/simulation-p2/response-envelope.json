@@ -1,0 +1,47 @@
+{
+  "mode": "completion",
+  "mode_source": "User-authorized focused three-P2 recovery; no new character art",
+  "task": "Workshop presentation P2 recovery and two-device regression",
+  "task_authority": "user_request",
+  "scope": [
+    "LifeCrossroads/App read-only presentation",
+    "UITests preserved fourteen plus three",
+    "docs/simulation/p2 and artifacts/simulation-p2",
+    "PLAN and canonical repo memory closeout"
+  ],
+  "done": [
+    "Actual trace origin cue and exclusive opportunity hierarchy",
+    "Native folded-paper truss treatment with unchanged character bitmaps",
+    "In-scene observation and read-only thirteen-year-old trace view with return to live fifteen-year-old state",
+    "SE3 17/17 and iPhone17 17/17 on matching sixty-one-file snapshot; no failures, skips or expected failures",
+    "80 Swift, 15 actual Python tests and 6 basic checks passed",
+    "All eight owned Simulator devices and their data deleted, including failed runs"
+  ],
+  "claim_ceiling": "Three former P2 presentation findings closed for a reviewable 13-to-15 workshop candidate; independent native visual reports are separate from test results",
+  "not_claimed": [
+    "Continuous annual world simulation or whole P1 acceptance",
+    "Human child fun, understanding or replay motivation",
+    "Real hardware, manual VoiceOver or minimum iOS17 runtime acceptance",
+    "Commercial asset clearance or production art approval",
+    "Remote CI success; this branch push does not trigger the main-only CI push workflow",
+    "Main merge, App publication or real-session runtime governance enforcement"
+  ],
+  "evidence_refs": [
+    "verification.json",
+    "native-source-final.json",
+    "swift-final.log",
+    "python-tests.log",
+    "governance-basic-checks.json",
+    "narrow-final-summary.json",
+    "standard-final-summary.json",
+    "../../docs/simulation/p2/CRITIC_FINAL_SE.md",
+    "../../docs/simulation/p2/CRITIC_FINAL_STANDARD.md"
+  ],
+  "risk": [
+    "L1 presentation and accessibility/layout changes; Domain/Data unchanged and whole-route JSON matches baseline",
+    "Existing candidate assets remain approved_for_app=false"
+  ],
+  "next_action": "User reviews the focused P2 gallery and diff; SIM-04 human validation remains separate",
+  "git_delivery": "Implementation/evidence commit followed by source-binding and canonical memory companion; push independent branch after gates; verify remote ref separately",
+  "push_authority": "Current explicit user instruction to push after two-device regression; no merge or release"
+}

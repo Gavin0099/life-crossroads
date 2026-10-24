@@ -1,0 +1,965 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project LifeCrossroads.xcodeproj -scheme LifeCrossroads -destination "platform=iOS Simulator,id=61D65BB0-24E0-45B2-9131-1023B6F572DA" -parallel-testing-enabled NO -collect-test-diagnostics never -derivedDataPath .build/ios-app -resultBundlePath /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/artifacts/ios/SIM-p2-focused-2-20261024T022741Z.xcresult CODE_SIGNING_ALLOWED=NO "-only-testing:LifeCrossroadsUITests/WorkshopGameplayTests/testPaperAndPeopleInspectionStayInTheWorkshopWithoutSpending" "-only-testing:LifeCrossroadsUITests/WorkshopGameplayTests/testOpportunityCuesUseEachRoutesActualOrigin" "-only-testing:LifeCrossroadsUITests/WorkshopGameplayTests/testLargestTextCanBrowseActualPastAndReturnWithoutRewritingLife" "-only-testing:LifeCrossroadsUITests/WorkshopGameplayTests/testObserveWithoutSpendingAndKeepSameWorkshopAfterChoice" "-only-testing:LifeCrossroadsUITests/WorkshopGameplayTests/testLargestTextReducedMotionCanObserveCancelAndChoose" test
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  LifeCrossroads: /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads @ local
+
+Writing result bundle at path:
+	/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/artifacts/ios/SIM-p2-focused-2-20261024T022741Z.xcresult
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (7 targets)
+    Target 'LifeCrossroadsUITests' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeCrossroads' in project 'LifeCrossroads'
+    Target 'LifeCrossroads' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeDomain-product' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeData-product' in project 'LifeCrossroads'
+    Target 'LifeData-product' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeData' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeCrossroads_LifeData' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeDomain' in project 'LifeCrossroads'
+    Target 'LifeData' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeCrossroads_LifeData' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeDomain' in project 'LifeCrossroads'
+    Target 'LifeCrossroads_LifeData' in project 'LifeCrossroads' (no dependencies)
+    Target 'LifeDomain-product' in project 'LifeCrossroads'
+        ➜ Explicit dependency on target 'LifeDomain' in project 'LifeCrossroads'
+    Target 'LifeDomain' in project 'LifeCrossroads' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads/App/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+Build description signature: 4d1c4166a37884ef890b8eb8b0919bb0
+Build description path: /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/XCBuildData/4d1c4166a37884ef890b8eb8b0919bb0.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-35d3147121984ba087c28d913653d626.sdkstatcache
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -o /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-35d3147121984ba087c28d913653d626.sdkstatcache
+
+ProcessInfoPlistFile /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads_LifeData.bundle/Info.plist /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads_LifeData-b.build/empty-LifeCrossroads_LifeData.plist (in target 'LifeCrossroads_LifeData' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/Package.swift')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-infoPlistUtility /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads_LifeData-b.build/empty-LifeCrossroads_LifeData.plist -producttype com.apple.product-type.bundle -expandbuildsettings -format binary -platform iphonesimulator -o /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads_LifeData.bundle/Info.plist
+
+SwiftDriver LifeCrossroads normal arm64 com.apple.xcode.tools.swift.compiler (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name LifeCrossroads -Onone @/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads.SwiftFileList -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/ModuleCache.noindex -Xfrontend -serialize-debugging-options -index-store-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Index.noindex/DataStore -swift-version 6 -I /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator -F /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-35d3147121984ba087c28d913653d626.sdkstatcache -output-file-map /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/ModuleCache.noindex -sdk-module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -emit-const-values -const-gather-protocols-list /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads_const_extract_protocols.json -Xcc -iquote -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/LifeCrossroads-generated-files.hmap -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/LifeCrossroads-own-target-headers.hmap -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/LifeCrossroads-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads-10c82a6369ddccff687dc9990a7f29d8-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/LifeCrossroads-project-headers.hmap -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/DerivedSources-normal/arm64 -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/DerivedSources/arm64 -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads-Swift.h -working-directory /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads -experimental-emit-module-separately -disable-cmo
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ LifeCrossroads (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+
+SwiftCompile normal arm64 (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for LifeCrossroads (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+
+SwiftDriver\ Compilation\ Requirements LifeCrossroads normal arm64 com.apple.xcode.tools.swift.compiler (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name LifeCrossroads -Onone @/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads.SwiftFileList -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/ModuleCache.noindex -Xfrontend -serialize-debugging-options -index-store-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Index.noindex/DataStore -swift-version 6 -I /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator -F /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-35d3147121984ba087c28d913653d626.sdkstatcache -output-file-map /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/ModuleCache.noindex -sdk-module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -emit-const-values -const-gather-protocols-list /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads_const_extract_protocols.json -Xcc -iquote -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/LifeCrossroads-generated-files.hmap -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/LifeCrossroads-own-target-headers.hmap -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/LifeCrossroads-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads-10c82a6369ddccff687dc9990a7f29d8-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/LifeCrossroads-project-headers.hmap -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/DerivedSources-normal/arm64 -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/DerivedSources/arm64 -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads-Swift.h -working-directory /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads -experimental-emit-module-separately -disable-cmo
+
+Copy /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads.swiftmodule (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads.swiftmodule /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.swiftmodule/arm64-apple-ios-simulator.swiftmodule
+
+Copy /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.swiftmodule/arm64-apple-ios-simulator.abi.json /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads.abi.json (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads.abi.json /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.swiftmodule/arm64-apple-ios-simulator.abi.json
+
+Copy /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads.swiftsourceinfo (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads.swiftsourceinfo /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
+
+SwiftDriver LifeCrossroadsUITests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'LifeCrossroadsUITests' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name LifeCrossroadsUITests -Onone @/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests.SwiftFileList -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/ModuleCache.noindex -Xfrontend -serialize-debugging-options -index-store-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Index.noindex/DataStore -swift-version 6 -I /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk/Developer/Library/Frameworks -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-35d3147121984ba087c28d913653d626.sdkstatcache -output-file-map /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/ModuleCache.noindex -sdk-module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -emit-const-values -const-gather-protocols-list /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests_const_extract_protocols.json -Xcc -iquote -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/LifeCrossroadsUITests-generated-files.hmap -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/LifeCrossroadsUITests-own-target-headers.hmap -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/LifeCrossroadsUITests-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads-10c82a6369ddccff687dc9990a7f29d8-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/LifeCrossroadsUITests-project-headers.hmap -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/DerivedSources-normal/arm64 -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/DerivedSources/arm64 -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests-Swift.h -working-directory /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads -experimental-emit-module-separately -disable-cmo
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ LifeCrossroadsUITests (in target 'LifeCrossroadsUITests' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+
+SwiftCompile normal arm64 (in target 'LifeCrossroadsUITests' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for LifeCrossroadsUITests (in target 'LifeCrossroadsUITests' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+
+SwiftDriver\ Compilation\ Requirements LifeCrossroadsUITests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'LifeCrossroadsUITests' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name LifeCrossroadsUITests -Onone @/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests.SwiftFileList -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/ModuleCache.noindex -Xfrontend -serialize-debugging-options -index-store-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Index.noindex/DataStore -swift-version 6 -I /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk/Developer/Library/Frameworks -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-35d3147121984ba087c28d913653d626.sdkstatcache -output-file-map /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/ModuleCache.noindex -sdk-module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -emit-const-values -const-gather-protocols-list /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests_const_extract_protocols.json -Xcc -iquote -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/LifeCrossroadsUITests-generated-files.hmap -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/LifeCrossroadsUITests-own-target-headers.hmap -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/LifeCrossroadsUITests-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads-10c82a6369ddccff687dc9990a7f29d8-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/LifeCrossroadsUITests-project-headers.hmap -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/DerivedSources-normal/arm64 -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/DerivedSources/arm64 -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests-Swift.h -working-directory /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads -experimental-emit-module-separately -disable-cmo
+
+SwiftCompile normal arm64 Compiling\ WorkshopGameplayTests.swift /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/UITests/WorkshopGameplayTests.swift (in target 'LifeCrossroadsUITests' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+
+SwiftCompile normal arm64 /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/UITests/WorkshopGameplayTests.swift (in target 'LifeCrossroadsUITests' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-SwiftPerFileCompile WorkshopGameplayTests.swift
+
+SwiftDriverJobDiscovery normal arm64 Compiling WorkshopGameplayTests.swift (in target 'LifeCrossroadsUITests' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+
+SwiftDriver\ Compilation LifeCrossroadsUITests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'LifeCrossroadsUITests' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name LifeCrossroadsUITests -Onone @/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests.SwiftFileList -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/ModuleCache.noindex -Xfrontend -serialize-debugging-options -index-store-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Index.noindex/DataStore -swift-version 6 -I /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk/Developer/Library/Frameworks -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-35d3147121984ba087c28d913653d626.sdkstatcache -output-file-map /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/ModuleCache.noindex -sdk-module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -emit-const-values -const-gather-protocols-list /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests_const_extract_protocols.json -Xcc -iquote -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/LifeCrossroadsUITests-generated-files.hmap -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/LifeCrossroadsUITests-own-target-headers.hmap -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/LifeCrossroadsUITests-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads-10c82a6369ddccff687dc9990a7f29d8-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/LifeCrossroadsUITests-project-headers.hmap -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/DerivedSources-normal/arm64 -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/DerivedSources/arm64 -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests-Swift.h -working-directory /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads -experimental-emit-module-separately -disable-cmo
+
+SwiftCompile normal arm64 Compiling\ WorkshopWorldView.swift /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads/App/WorkshopWorldView.swift (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+
+SwiftCompile normal arm64 /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads/App/WorkshopWorldView.swift (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-SwiftPerFileCompile WorkshopWorldView.swift
+
+SwiftCompile normal arm64 Compiling\ WorkshopArt.swift /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads/App/WorkshopArt.swift (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+
+SwiftCompile normal arm64 /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads/App/WorkshopArt.swift (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-SwiftPerFileCompile WorkshopArt.swift
+
+SwiftDriverJobDiscovery normal arm64 Compiling WorkshopArt.swift (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+
+SwiftDriverJobDiscovery normal arm64 Compiling WorkshopWorldView.swift (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+
+SwiftDriver\ Compilation LifeCrossroads normal arm64 com.apple.xcode.tools.swift.compiler (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name LifeCrossroads -Onone @/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads.SwiftFileList -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/ModuleCache.noindex -Xfrontend -serialize-debugging-options -index-store-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Index.noindex/DataStore -swift-version 6 -I /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator -F /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-35d3147121984ba087c28d913653d626.sdkstatcache -output-file-map /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/ModuleCache.noindex -sdk-module-cache-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -emit-const-values -const-gather-protocols-list /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads_const_extract_protocols.json -Xcc -iquote -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/LifeCrossroads-generated-files.hmap -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/LifeCrossroads-own-target-headers.hmap -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/LifeCrossroads-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads-10c82a6369ddccff687dc9990a7f29d8-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/LifeCrossroads-project-headers.hmap -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/DerivedSources-normal/arm64 -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/DerivedSources/arm64 -Xcc -I/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads-Swift.h -working-directory /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/LifeCrossroads.debug.dylib normal (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -Os -Xlinker -no_warn_duplicate_libraries -L/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator -F/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator -filelist /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads.LinkFileList -install_name @rpath/LifeCrossroads.debug.dylib -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @loader_path -Xlinker -rpath -Xlinker /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/PackageFrameworks -Xlinker -dead_strip -Xlinker -object_path_lto -Xlinker /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads_lto.o -rdynamic -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads.swiftmodule -Xlinker -alias -Xlinker _main -Xlinker ___debug_main_executable_dylib_entry_point -o /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/LifeCrossroads.debug.dylib
+
+ConstructStubExecutorLinkFileList /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/LifeCrossroads-ExecutorLinkFileList-normal-arm64.txt (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    construct-stub-executor-link-file-list /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/LifeCrossroads.debug.dylib /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor_no_swift_entry_point.a /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a --output /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/LifeCrossroads-ExecutorLinkFileList-normal-arm64.txt
+note: Using stub executor library with Swift entry point. (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+
+Ld /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/LifeCrossroads normal (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -Os -Xlinker -no_warn_duplicate_libraries -L/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator -F/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker @loader_path -Xlinker -rpath -Xlinker /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/PackageFrameworks -rdynamic -Xlinker -objc_abi_version -Xlinker 2 -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/LifeCrossroads-DebugDylibPath-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/LifeCrossroads-DebugDylibInstallName-normal-arm64.txt -Xlinker -filelist -Xlinker /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/LifeCrossroads-ExecutorLinkFileList-normal-arm64.txt /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/LifeCrossroads.debug.dylib -o /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/LifeCrossroads
+
+ProcessInfoPlistFile /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/Info.plist /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/empty-LifeCrossroads.plist (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-infoPlistUtility /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/empty-LifeCrossroads.plist -producttype com.apple.product-type.application -genpkginfo /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/assetcatalog_generated_info.plist -scanforprivacyfile /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/LifeCrossroads_LifeData.bundle -o /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/Info.plist
+
+ExtractAppIntentsMetadata (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name LifeCrossroads --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk --xcode-version 27A9275 --platform-family iOS --deployment-target 17.0 --bundle-identifier com.gavin0099.LifeCrossroads --output /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app --target-triple arm64-apple-ios17.0-simulator --binary-file /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/LifeCrossroads --dependency-file /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads_dependency_info.dat --stringsdata-file /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads.SwiftFileList --metadata-file-list /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/LifeCrossroads.DependencyMetadataFileList --static-metadata-file-list /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/LifeCrossroads.DependencyStaticMetadataFileList --swift-const-vals-list /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/Objects-normal/arm64/LifeCrossroads.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --no-app-shortcuts-localization
+2026-10-24 10:27:48.898 appintentsmetadataprocessor[92902:2297880] Starting appintentsmetadataprocessor export
+2026-10-24 10:27:48.904 appintentsmetadataprocessor[92902:2297880] warning: Metadata extraction skipped, no AppIntents.framework dependency found
+
+CopySwiftLibs /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app (in target 'LifeCrossroads' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-swiftStdLibTool --copy --verbose --scan-executable /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/LifeCrossroads.debug.dylib --scan-folder /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/Frameworks --scan-folder /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/PlugIns --scan-folder /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/SystemExtensions --scan-folder /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/Extensions --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroads.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroads.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+Ignoring --strip-bitcode because --sign was not passed
+
+Ld /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/LifeCrossroadsUITests normal (in target 'LifeCrossroadsUITests' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -bundle -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -Os -Xlinker -no_warn_duplicate_libraries -L/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator -L/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk/Developer/Library/Frameworks -filelist /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests.LinkFileList -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @loader_path/Frameworks -Xlinker -dead_strip -Xlinker -object_path_lto -Xlinker /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests_lto.o -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests.swiftmodule -Xlinker -needed_framework -Xlinker XCTest -framework XCTest -Xlinker -needed-lXCTestSwiftSupport -lXCTestSwiftSupport -o /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/LifeCrossroadsUITests
+
+ProcessInfoPlistFile /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/Info.plist /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/empty-LifeCrossroadsUITests.plist (in target 'LifeCrossroadsUITests' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-infoPlistUtility /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/empty-LifeCrossroadsUITests.plist -producttype com.apple.product-type.bundle.ui-testing -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/ProductTypeInfoPlistAdditions.plist -o /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/Info.plist
+
+Copy /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests.swiftmodule/arm64-apple-ios-simulator.abi.json /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests.abi.json (in target 'LifeCrossroadsUITests' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests.abi.json /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests.swiftmodule/arm64-apple-ios-simulator.abi.json
+
+Copy /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests.swiftsourceinfo (in target 'LifeCrossroadsUITests' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests.swiftsourceinfo /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
+
+CopySwiftLibs /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest (in target 'LifeCrossroadsUITests' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    builtin-swiftStdLibTool --copy --verbose --scan-executable /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/LifeCrossroadsUITests --scan-folder /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/Frameworks --scan-folder /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/PlugIns --scan-folder /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/SystemExtensions --scan-folder /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/Extensions --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+Ignoring --strip-bitcode because --sign was not passed
+
+ExtractAppIntentsMetadata (in target 'LifeCrossroadsUITests' from project 'LifeCrossroads' at path '/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/LifeCrossroads.xcodeproj')
+    cd /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name LifeCrossroadsUITests --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk --xcode-version 27A9275 --platform-family iOS --deployment-target 17.0 --bundle-identifier com.gavin0099.LifeCrossroadsUITests --output /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest --target-triple arm64-apple-ios17.0-simulator --binary-file /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Products/Debug-iphonesimulator/LifeCrossroadsUITests-Runner.app/PlugIns/LifeCrossroadsUITests.xctest/LifeCrossroadsUITests --dependency-file /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests_dependency_info.dat --stringsdata-file /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests.SwiftFileList --metadata-file-list /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/LifeCrossroadsUITests.DependencyMetadataFileList --static-metadata-file-list /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/LifeCrossroadsUITests.DependencyStaticMetadataFileList --swift-const-vals-list /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/LifeCrossroads.build/Debug-iphonesimulator/LifeCrossroadsUITests.build/Objects-normal/arm64/LifeCrossroadsUITests.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --no-app-shortcuts-localization
+2026-10-24 10:27:49.052 appintentsmetadataprocessor[92905:2297893] Starting appintentsmetadataprocessor export
+2026-10-24 10:27:49.052 appintentsmetadataprocessor[92905:2297893] warning: Metadata extraction skipped, no AppIntents.framework dependency found
+
+PruneExplicitPrecompiledModules /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/SDKExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules /Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/.build/ios-app/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+Resolve Package Graph
+
+2026-10-24 10:27:51.923 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 10:28:26.815156+0800 LifeCrossroadsUITests-Runner[93130:2300322] [Default] Running tests...
+objc[93130]: Class UIAccessibilityLoaderWebShared is implemented in both /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.434.0.mOGmbD/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x107c0c398) and /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.434.0.mOGmbD/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x107d8c310). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-10-24 10:28:35.015.
+Test Suite 'LifeCrossroadsUITests.xctest' started at 2026-10-24 10:28:35.018.
+Test Suite 'WorkshopGameplayTests' started at 2026-10-24 10:28:35.019.
+Test Case '-[LifeCrossroadsUITests.WorkshopGameplayTests testLargestTextCanBrowseActualPastAndReturnWithoutRewritingLife]' started.
+    t =     0.01s Start Test at 2026-10-24 10:28:35.032
+    t =     0.47s Set Up
+    t =     0.48s Open com.gavin0099.LifeCrossroads
+    t =     0.48s     Launch com.gavin0099.LifeCrossroads
+2026-10-24 10:28:36.006 xcodebuild[92872:2297592] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 10:28:36.006 xcodebuild[92872:2297592] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 10:28:36.130 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+Resolve Package Graph
+
+    t =     3.46s         Setting up automation session
+    t =     5.96s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =     8.10s Waiting 8.0s for "workshop-actions" Button to exist
+    t =     9.18s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-actions" Button`
+    t =     9.18s         Checking existence of `"workshop-actions" Button`
+    t =    10.35s Checking `Expect predicate `exists == 1 AND hittable == 1` for object "workshop-actions" Button`
+    t =    10.35s     Checking existence of `"workshop-actions" Button`
+    t =    10.39s     Find the "workshop-actions" Button
+    t =    10.57s Tap "workshop-actions" Button
+    t =    10.57s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    10.58s     Find the "workshop-actions" Button
+    t =    10.60s     Check for interrupting elements affecting "workshop-actions" Button
+    t =    10.65s     Synthesize event
+    t =    11.08s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    11.58s Waiting 8.0s for "workshop-choice-team" Button to exist
+Resolve Package Graph
+
+    t =    12.66s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-choice-team" Button`
+    t =    12.67s         Checking existence of `"workshop-choice-team" Button`
+    t =    12.71s Find the "workshop-choice-team" Button
+    t =    12.80s Find the "workshop-choice-team" Button
+    t =    12.86s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    12.91s Find the "workshop-choice-team" Button
+    t =    12.98s Tap "workshop-choice-team" Button
+    t =    12.98s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    12.99s     Find the "workshop-choice-team" Button
+    t =    13.02s     Check for interrupting elements affecting "workshop-choice-team" Button
+    t =    13.06s     Synthesize event
+    t =    13.38s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    13.61s Waiting 8.0s for "workshop-advance" Button to exist
+    t =    14.70s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-advance" Button`
+    t =    14.70s         Checking existence of `"workshop-advance" Button`
+    t =    15.84s Checking `Expect predicate `exists == 1 AND hittable == 1` for object "workshop-advance" Button`
+    t =    15.84s     Checking existence of `"workshop-advance" Button`
+    t =    15.88s     Find the "workshop-advance" Button
+    t =    15.94s Tap "workshop-advance" Button
+    t =    15.94s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    15.94s     Find the "workshop-advance" Button
+    t =    15.97s     Check for interrupting elements affecting "workshop-advance" Button
+    t =    16.00s     Synthesize event
+    t =    16.32s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    16.35s Waiting 8.0s for "workshop-actions" Button to exist
+    t =    17.43s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-actions" Button`
+    t =    17.43s         Checking existence of `"workshop-actions" Button`
+    t =    18.55s Checking `Expect predicate `exists == 1 AND hittable == 1` for object "workshop-actions" Button`
+    t =    18.55s     Checking existence of `"workshop-actions" Button`
+    t =    18.59s     Find the "workshop-actions" Button
+    t =    18.65s Tap "workshop-actions" Button
+    t =    18.65s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    18.65s     Find the "workshop-actions" Button
+    t =    18.73s     Check for interrupting elements affecting "workshop-actions" Button
+    t =    18.78s     Synthesize event
+    t =    19.10s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    19.48s Waiting 8.0s for "workshop-choice-lead" Button to exist
+    t =    20.56s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-choice-lead" Button`
+    t =    20.56s         Checking existence of `"workshop-choice-lead" Button`
+    t =    20.62s Find the "workshop-choice-lead" Button
+    t =    20.69s Find the "workshop-choice-lead" Button
+    t =    20.76s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    20.81s Find the "workshop-choice-lead" Button
+    t =    20.85s Tap "workshop-choice-lead" Button
+    t =    20.85s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    20.85s     Find the "workshop-choice-lead" Button
+    t =    20.90s     Check for interrupting elements affecting "workshop-choice-lead" Button
+    t =    20.95s     Synthesize event
+    t =    21.25s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    21.31s Waiting 8.0s for "workshop-age" StaticText to exist
+    t =    22.39s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-age" StaticText`
+    t =    22.39s         Checking existence of `"workshop-age" StaticText`
+    t =    22.41s Find the "workshop-age" StaticText
+    t =    22.44s Waiting 8.0s for "workshop-memory-13" Button to exist
+    t =    23.51s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-memory-13" Button`
+    t =    23.51s         Checking existence of `"workshop-memory-13" Button`
+    t =    23.55s Find the "workshop-memory-13" Button
+    t =    23.66s Find the "workshop-memory-13" Button
+    t =    23.71s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    23.73s Checking existence of `"workshop-panel-scroll" ScrollView`
+    t =    23.76s Find the "workshop-memory-13" Button
+    t =    23.79s Swipe up Target Application 'com.gavin0099.LifeCrossroads'
+    t =    23.79s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    23.79s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    23.81s     Check for interrupting elements affecting "人生岔路" Application
+    t =    23.83s     Synthesize event
+    t =    24.27s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    26.35s Find the "workshop-memory-13" Button
+    t =    26.41s Find the "workshop-memory-13" Button
+    t =    26.44s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    26.47s Find the "workshop-memory-13" Button
+    t =    26.50s Checking existence of `"workshop-panel-scroll" ScrollView`
+    t =    26.54s Find the "workshop-memory-13" Button
+    t =    26.56s Swipe down Target Application 'com.gavin0099.LifeCrossroads'
+    t =    26.57s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    26.57s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    26.68s     Check for interrupting elements affecting "人生岔路" Application
+    t =    26.72s     Synthesize event
+    t =    27.18s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    29.27s Find the "workshop-memory-13" Button
+    t =    29.33s Find the "workshop-memory-13" Button
+    t =    29.42s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    29.45s Checking existence of `"workshop-panel-scroll" ScrollView`
+    t =    29.48s Find the "workshop-memory-13" Button
+    t =    29.51s Swipe up Target Application 'com.gavin0099.LifeCrossroads'
+    t =    29.51s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    29.51s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    29.54s     Check for interrupting elements affecting "人生岔路" Application
+    t =    29.62s     Synthesize event
+    t =    30.05s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    32.18s Find the "workshop-memory-13" Button
+    t =    32.22s Find the "workshop-memory-13" Button
+    t =    32.25s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    32.26s Find the "workshop-memory-13" Button
+    t =    32.29s Checking existence of `"workshop-panel-scroll" ScrollView`
+    t =    32.31s Find the "workshop-memory-13" Button
+    t =    32.36s Swipe down Target Application 'com.gavin0099.LifeCrossroads'
+    t =    32.36s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    32.37s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    32.41s     Check for interrupting elements affecting "人生岔路" Application
+    t =    32.46s     Synthesize event
+    t =    32.90s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    35.02s Find the "workshop-memory-13" Button
+    t =    35.10s Find the "workshop-memory-13" Button
+    t =    35.12s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    35.14s Checking existence of `"workshop-panel-scroll" ScrollView`
+    t =    35.17s Find the "workshop-memory-13" Button
+    t =    35.21s Swipe up Target Application 'com.gavin0099.LifeCrossroads'
+    t =    35.21s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    35.21s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    35.23s     Check for interrupting elements affecting "人生岔路" Application
+    t =    35.25s     Synthesize event
+    t =    35.68s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    37.78s Find the "workshop-memory-13" Button
+    t =    37.82s Find the "workshop-memory-13" Button
+    t =    37.84s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    37.86s Find the "workshop-memory-13" Button
+    t =    37.88s Checking existence of `"workshop-panel-scroll" ScrollView`
+    t =    37.90s Find the "workshop-memory-13" Button
+    t =    37.93s Swipe down Target Application 'com.gavin0099.LifeCrossroads'
+    t =    37.93s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    37.93s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    37.95s     Check for interrupting elements affecting "人生岔路" Application
+    t =    37.97s     Synthesize event
+    t =    38.39s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    40.50s Find the "workshop-memory-13" Button
+    t =    40.53s Find the "workshop-memory-13" Button
+    t =    40.55s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    40.57s Checking existence of `"workshop-panel-scroll" ScrollView`
+    t =    40.59s Find the "workshop-memory-13" Button
+    t =    40.61s Swipe up Target Application 'com.gavin0099.LifeCrossroads'
+    t =    40.61s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    40.62s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    40.63s     Check for interrupting elements affecting "人生岔路" Application
+    t =    40.65s     Synthesize event
+    t =    41.08s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    43.20s Find the "workshop-memory-13" Button
+    t =    43.23s Find the "workshop-memory-13" Button
+    t =    43.25s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    43.27s Find the "workshop-memory-13" Button
+    t =    43.29s Checking existence of `"workshop-panel-scroll" ScrollView`
+    t =    43.31s Find the "workshop-memory-13" Button
+    t =    43.33s Swipe down Target Application 'com.gavin0099.LifeCrossroads'
+    t =    43.33s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    43.33s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    43.35s     Check for interrupting elements affecting "人生岔路" Application
+    t =    43.37s     Synthesize event
+    t =    43.79s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    45.94s Find the "workshop-memory-13" Button
+    t =    46.03s Find the "workshop-memory-13" Button
+    t =    46.10s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    46.13s Checking existence of `"workshop-panel-scroll" ScrollView`
+    t =    46.15s Find the "workshop-memory-13" Button
+    t =    46.23s Swipe up Target Application 'com.gavin0099.LifeCrossroads'
+    t =    46.23s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    46.25s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    46.27s     Check for interrupting elements affecting "人生岔路" Application
+    t =    46.29s     Synthesize event
+    t =    46.74s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    48.85s Find the "workshop-memory-13" Button
+    t =    48.89s Find the "workshop-memory-13" Button
+    t =    48.91s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    48.93s Find the "workshop-memory-13" Button
+    t =    48.96s Checking existence of `"workshop-panel-scroll" ScrollView`
+    t =    48.98s Find the "workshop-memory-13" Button
+    t =    49.01s Swipe down Target Application 'com.gavin0099.LifeCrossroads'
+    t =    49.01s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    49.01s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    49.03s     Check for interrupting elements affecting "人生岔路" Application
+    t =    49.05s     Synthesize event
+    t =    49.47s     Wait for com.gavin0099.LifeCrossroads to idle
+/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/UITests/WorkshopGameplayTests.swift:27: error: -[LifeCrossroadsUITests.WorkshopGameplayTests testLargestTextCanBrowseActualPastAndReturnWithoutRewritingLife] : failed - Cannot reach workshop-memory-13
+    t =    52.06s Tear Down
+Test Case '-[LifeCrossroadsUITests.WorkshopGameplayTests testLargestTextCanBrowseActualPastAndReturnWithoutRewritingLife]' failed (52.399 seconds).
+Test Case '-[LifeCrossroadsUITests.WorkshopGameplayTests testLargestTextReducedMotionCanObserveCancelAndChoose]' started.
+    t =     0.00s Start Test at 2026-10-24 10:29:27.431
+    t =     0.02s Set Up
+    t =     0.03s Open com.gavin0099.LifeCrossroads
+    t =     0.03s     Launch com.gavin0099.LifeCrossroads
+    t =     0.03s         Terminate com.gavin0099.LifeCrossroads:93190
+2026-10-24 10:29:27.496 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 10:29:27.497 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 10:29:27.498 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+Resolve Package Graph
+
+2026-10-24 10:29:28.469 xcodebuild[92872:2297592] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 10:29:28.469 xcodebuild[92872:2297592] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 10:29:28.474 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     1.25s         Setting up automation session
+    t =     3.23s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =     4.81s Waiting 8.0s for "workshop-actions" Button to exist
+    t =     5.88s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-actions" Button`
+    t =     5.88s         Checking existence of `"workshop-actions" Button`
+    t =     5.93s Find the "workshop-actions" Button
+    t =     5.99s Checking existence of `"workshop-art-idle" Any`
+    t =     6.03s Find the "workshop-art-idle" Any
+    t =     6.07s Find the "workshop-art-idle" Other
+    t =     6.10s Find the "workshop-art-idle" Other
+    t =     6.14s Find the "workshop-actions" Button
+    t =     6.16s Waiting 8.0s for "workshop-age" StaticText to exist
+    t =     7.21s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-age" StaticText`
+    t =     7.21s         Checking existence of `"workshop-age" StaticText`
+    t =     7.23s Find the "workshop-age" StaticText
+    t =     7.30s Added attachment named 'sim-09-largest-entry'
+    t =     7.30s Waiting 8.0s for "workshop-actions" Button to exist
+    t =     8.34s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-actions" Button`
+    t =     8.34s         Checking existence of `"workshop-actions" Button`
+    t =     9.45s Checking `Expect predicate `exists == 1 AND hittable == 1` for object "workshop-actions" Button`
+    t =     9.45s     Checking existence of `"workshop-actions" Button`
+    t =     9.46s     Find the "workshop-actions" Button
+    t =     9.49s Tap "workshop-actions" Button
+    t =     9.49s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     9.49s     Find the "workshop-actions" Button
+    t =     9.51s     Check for interrupting elements affecting "workshop-actions" Button
+    t =     9.53s     Synthesize event
+    t =     9.82s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    10.27s Waiting 8.0s for "workshop-panel-close" Button to exist
+    t =    11.30s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-panel-close" Button`
+    t =    11.30s         Checking existence of `"workshop-panel-close" Button`
+    t =    11.34s Find the "workshop-panel-close" Button
+    t =    11.38s Tap "workshop-panel-close" Button
+    t =    11.38s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    11.38s     Find the "workshop-panel-close" Button
+    t =    11.41s     Check for interrupting elements affecting "workshop-panel-close" Button
+    t =    11.44s     Synthesize event
+    t =    11.73s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    11.78s Waiting 8.0s for "workshop-age" StaticText to exist
+    t =    12.82s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-age" StaticText`
+    t =    12.82s         Checking existence of `"workshop-age" StaticText`
+    t =    12.84s Find the "workshop-age" StaticText
+    t =    12.86s Waiting 8.0s for "workshop-actions" Button to exist
+    t =    13.88s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-actions" Button`
+    t =    13.88s         Checking existence of `"workshop-actions" Button`
+    t =    14.97s Checking `Expect predicate `exists == 1 AND hittable == 1` for object "workshop-actions" Button`
+    t =    14.97s     Checking existence of `"workshop-actions" Button`
+    t =    14.98s     Find the "workshop-actions" Button
+    t =    15.01s Tap "workshop-actions" Button
+    t =    15.01s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    15.01s     Find the "workshop-actions" Button
+    t =    15.03s     Check for interrupting elements affecting "workshop-actions" Button
+    t =    15.05s     Synthesize event
+    t =    15.34s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    15.68s Waiting 8.0s for "workshop-choice-help" Button to exist
+    t =    16.72s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-choice-help" Button`
+    t =    16.72s         Checking existence of `"workshop-choice-help" Button`
+    t =    16.75s Find the "workshop-choice-help" Button
+    t =    16.79s Find the "workshop-choice-help" Button
+    t =    16.82s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    16.83s Checking existence of `"workshop-panel-scroll" ScrollView`
+    t =    16.86s Find the "workshop-choice-help" Button
+    t =    17.00s Swipe up "workshop-panel-scroll" ScrollView
+    t =    17.00s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    17.00s     Find the "workshop-panel-scroll" ScrollView
+    t =    17.03s     Check for interrupting elements affecting "workshop-panel-scroll" ScrollView
+    t =    17.05s     Synthesize event
+    t =    17.49s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    18.12s Find the "workshop-choice-help" Button
+    t =    18.15s Find the "workshop-choice-help" Button
+    t =    18.18s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    18.20s Find the "workshop-choice-help" Button
+    t =    18.23s Tap "workshop-choice-help" Button
+    t =    18.23s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    18.23s     Find the "workshop-choice-help" Button
+    t =    18.26s     Check for interrupting elements affecting "workshop-choice-help" Button
+    t =    18.29s     Synthesize event
+    t =    18.58s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    18.68s Waiting 8.0s for "workshop-advance" Button to exist
+    t =    19.74s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-advance" Button`
+    t =    19.74s         Checking existence of `"workshop-advance" Button`
+    t =    20.81s Checking `Expect predicate `exists == 1 AND hittable == 1` for object "workshop-advance" Button`
+    t =    20.81s     Checking existence of `"workshop-advance" Button`
+    t =    20.83s     Find the "workshop-advance" Button
+    t =    20.86s Tap "workshop-advance" Button
+    t =    20.86s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    20.86s     Find the "workshop-advance" Button
+    t =    20.88s     Check for interrupting elements affecting "workshop-advance" Button
+    t =    20.90s     Synthesize event
+    t =    21.19s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    21.20s Waiting 8.0s for "workshop-actions" Button to exist
+    t =    22.25s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-actions" Button`
+    t =    22.25s         Checking existence of `"workshop-actions" Button`
+    t =    23.34s Checking `Expect predicate `exists == 1 AND hittable == 1` for object "workshop-actions" Button`
+    t =    23.34s     Checking existence of `"workshop-actions" Button`
+    t =    23.36s     Find the "workshop-actions" Button
+    t =    23.40s Tap "workshop-actions" Button
+    t =    23.40s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    23.40s     Find the "workshop-actions" Button
+    t =    23.43s     Check for interrupting elements affecting "workshop-actions" Button
+    t =    23.45s     Synthesize event
+    t =    23.74s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    24.15s Added attachment named 'sim-10-largest-opportunities'
+    t =    24.15s Waiting 8.0s for "workshop-choice-borrow" Button to exist
+    t =    25.20s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-choice-borrow" Button`
+    t =    25.20s         Checking existence of `"workshop-choice-borrow" Button`
+    t =    25.23s Find the "workshop-choice-borrow" Button
+    t =    25.27s Find the "workshop-choice-borrow" Button
+    t =    25.31s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    25.33s Find the "workshop-choice-borrow" Button
+    t =    25.37s Tap "workshop-choice-borrow" Button
+    t =    25.37s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    25.37s     Find the "workshop-choice-borrow" Button
+    t =    25.41s     Check for interrupting elements affecting "workshop-choice-borrow" Button
+    t =    25.44s     Synthesize event
+    t =    25.73s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    25.78s Waiting 8.0s for "workshop-age" StaticText to exist
+    t =    26.81s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-age" StaticText`
+    t =    26.81s         Checking existence of `"workshop-age" StaticText`
+    t =    26.84s Find the "workshop-age" StaticText
+    t =    26.86s Tear Down
+Test Case '-[LifeCrossroadsUITests.WorkshopGameplayTests testLargestTextReducedMotionCanObserveCancelAndChoose]' passed (27.106 seconds).
+Test Case '-[LifeCrossroadsUITests.WorkshopGameplayTests testObserveWithoutSpendingAndKeepSameWorkshopAfterChoice]' started.
+    t =     0.00s Start Test at 2026-10-24 10:29:54.537
+    t =     0.02s Set Up
+    t =     0.02s Open com.gavin0099.LifeCrossroads
+    t =     0.02s     Launch com.gavin0099.LifeCrossroads
+    t =     0.03s         Terminate com.gavin0099.LifeCrossroads:93339
+2026-10-24 10:29:54.579 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 10:29:54.579 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 10:29:54.580 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+Resolve Package Graph
+
+2026-10-24 10:29:55.636 xcodebuild[92872:2297592] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 10:29:55.636 xcodebuild[92872:2297592] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 10:29:55.641 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     1.31s         Setting up automation session
+    t =     3.33s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =     4.90s Waiting 8.0s for "workshop-age" StaticText to exist
+    t =     5.96s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-age" StaticText`
+    t =     5.96s         Checking existence of `"workshop-age" StaticText`
+    t =     6.02s Find the "workshop-age" StaticText
+    t =     6.08s Added attachment named 'sim-01-initial'
+    t =     6.08s Waiting 8.0s for "inspect-materials" Button to exist
+    t =     7.11s     Checking `Expect predicate `existsNoRetry == 1` for object "inspect-materials" Button`
+    t =     7.11s         Checking existence of `"inspect-materials" Button`
+    t =     7.14s Find the "inspect-materials" Button
+    t =     7.19s Find the "inspect-materials" Button
+    t =     7.21s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     7.23s Find the "inspect-materials" Button
+    t =     7.25s Tap "inspect-materials" Button
+    t =     7.25s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     7.25s     Find the "inspect-materials" Button
+    t =     7.27s     Check for interrupting elements affecting "inspect-materials" Button
+    t =     7.29s     Synthesize event
+    t =     7.58s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     8.01s Added attachment named 'sim-02-observe-materials'
+    t =     8.01s Waiting 8.0s for "workshop-panel-close" Button to exist
+    t =     9.09s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-panel-close" Button`
+    t =     9.09s         Checking existence of `"workshop-panel-close" Button`
+    t =     9.13s Find the "workshop-panel-close" Button
+    t =     9.16s Tap "workshop-panel-close" Button
+    t =     9.16s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     9.17s     Find the "workshop-panel-close" Button
+    t =     9.19s     Check for interrupting elements affecting "workshop-panel-close" Button
+    t =     9.21s     Synthesize event
+    t =     9.50s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     9.50s Waiting 8.0s for "inspect-people" Button to exist
+    t =    10.54s     Checking `Expect predicate `existsNoRetry == 1` for object "inspect-people" Button`
+    t =    10.55s         Checking existence of `"inspect-people" Button`
+    t =    10.58s Find the "inspect-people" Button
+    t =    10.60s Find the "inspect-people" Button
+    t =    10.62s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    10.64s Find the "inspect-people" Button
+    t =    10.66s Tap "inspect-people" Button
+    t =    10.66s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    10.66s     Find the "inspect-people" Button
+    t =    10.68s     Check for interrupting elements affecting "inspect-people" Button
+    t =    10.70s     Synthesize event
+    t =    11.00s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    11.00s Waiting 8.0s for "workshop-panel-close" Button to exist
+    t =    12.04s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-panel-close" Button`
+    t =    12.04s         Checking existence of `"workshop-panel-close" Button`
+    t =    12.07s Find the "workshop-panel-close" Button
+    t =    12.10s Tap "workshop-panel-close" Button
+    t =    12.10s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    12.10s     Find the "workshop-panel-close" Button
+    t =    12.12s     Check for interrupting elements affecting "workshop-panel-close" Button
+    t =    12.15s     Synthesize event
+    t =    12.43s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    12.44s Waiting 8.0s for "workshop-age" StaticText to exist
+    t =    13.46s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-age" StaticText`
+    t =    13.46s         Checking existence of `"workshop-age" StaticText`
+    t =    13.49s Find the "workshop-age" StaticText
+    t =    13.51s Waiting 8.0s for "workshop-actions" Button to exist
+    t =    14.55s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-actions" Button`
+    t =    14.55s         Checking existence of `"workshop-actions" Button`
+    t =    15.60s Checking `Expect predicate `exists == 1 AND hittable == 1` for object "workshop-actions" Button`
+    t =    15.60s     Checking existence of `"workshop-actions" Button`
+    t =    15.63s     Find the "workshop-actions" Button
+    t =    15.66s Tap "workshop-actions" Button
+    t =    15.66s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    15.66s     Find the "workshop-actions" Button
+    t =    15.68s     Check for interrupting elements affecting "workshop-actions" Button
+    t =    15.70s     Synthesize event
+    t =    15.99s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    16.39s Waiting 8.0s for "workshop-choice-team" Button to exist
+    t =    17.44s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-choice-team" Button`
+    t =    17.44s         Checking existence of `"workshop-choice-team" Button`
+    t =    17.47s Find the "workshop-choice-team" Button
+    t =    17.51s Find the "workshop-choice-team" Button
+    t =    17.54s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    17.56s Find the "workshop-choice-team" Button
+    t =    17.59s Tap "workshop-choice-team" Button
+    t =    17.59s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    17.59s     Find the "workshop-choice-team" Button
+    t =    17.62s     Check for interrupting elements affecting "workshop-choice-team" Button
+    t =    17.64s     Synthesize event
+    t =    17.93s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    18.30s Waiting 8.0s for "workshop-age" StaticText to exist
+    t =    19.34s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-age" StaticText`
+    t =    19.34s         Checking existence of `"workshop-age" StaticText`
+    t =    19.38s Find the "workshop-age" StaticText
+    t =    19.40s Waiting 8.0s for "workshop-age" StaticText to exist
+    t =    20.45s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-age" StaticText`
+    t =    20.45s         Checking existence of `"workshop-age" StaticText`
+    t =    20.48s Find the "workshop-age" StaticText
+    t =    20.50s Checking existence of `"workshop-art-team" Any`
+    t =    20.58s Added attachment named 'sim-03-team-world'
+    t =    20.59s Tear Down
+Test Case '-[LifeCrossroadsUITests.WorkshopGameplayTests testObserveWithoutSpendingAndKeepSameWorkshopAfterChoice]' passed (20.818 seconds).
+Test Case '-[LifeCrossroadsUITests.WorkshopGameplayTests testOpportunityCuesUseEachRoutesActualOrigin]' started.
+    t =     0.00s Start Test at 2026-10-24 10:30:15.356
+    t =     0.02s Set Up
+    t =     0.02s Open com.gavin0099.LifeCrossroads
+    t =     0.02s     Launch com.gavin0099.LifeCrossroads
+    t =     0.02s         Terminate com.gavin0099.LifeCrossroads:93390
+2026-10-24 10:30:15.396 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 10:30:15.396 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 10:30:15.397 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 10:30:16.420 xcodebuild[92872:2297592] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 10:30:16.420 xcodebuild[92872:2297592] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 10:30:16.423 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+Resolve Package Graph
+
+    t =     1.28s         Setting up automation session
+    t =     3.17s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =     4.64s Waiting 8.0s for "workshop-actions" Button to exist
+    t =     5.69s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-actions" Button`
+    t =     5.69s         Checking existence of `"workshop-actions" Button`
+    t =     6.79s Checking `Expect predicate `exists == 1 AND hittable == 1` for object "workshop-actions" Button`
+    t =     6.79s     Checking existence of `"workshop-actions" Button`
+    t =     6.82s     Find the "workshop-actions" Button
+    t =     6.86s Tap "workshop-actions" Button
+    t =     6.86s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     6.87s     Find the "workshop-actions" Button
+    t =     6.89s     Check for interrupting elements affecting "workshop-actions" Button
+    t =     6.90s     Synthesize event
+    t =     7.19s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     7.60s Waiting 8.0s for "workshop-choice-team" Button to exist
+    t =     8.62s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-choice-team" Button`
+    t =     8.62s         Checking existence of `"workshop-choice-team" Button`
+    t =     8.67s Find the "workshop-choice-team" Button
+    t =     8.70s Find the "workshop-choice-team" Button
+    t =     8.73s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     8.75s Find the "workshop-choice-team" Button
+    t =     8.77s Tap "workshop-choice-team" Button
+    t =     8.77s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     8.78s     Find the "workshop-choice-team" Button
+    t =     8.80s     Check for interrupting elements affecting "workshop-choice-team" Button
+    t =     8.83s     Synthesize event
+    t =     9.12s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     9.48s Waiting 8.0s for "workshop-advance" Button to exist
+    t =    10.54s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-advance" Button`
+    t =    10.54s         Checking existence of `"workshop-advance" Button`
+    t =    11.61s Checking `Expect predicate `exists == 1 AND hittable == 1` for object "workshop-advance" Button`
+    t =    11.61s     Checking existence of `"workshop-advance" Button`
+    t =    11.64s     Find the "workshop-advance" Button
+    t =    11.67s Tap "workshop-advance" Button
+    t =    11.67s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    11.67s     Find the "workshop-advance" Button
+    t =    11.69s     Check for interrupting elements affecting "workshop-advance" Button
+    t =    11.72s     Synthesize event
+    t =    12.01s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    12.02s Waiting 8.0s for "workshop-actions" Button to exist
+    t =    13.06s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-actions" Button`
+    t =    13.06s         Checking existence of `"workshop-actions" Button`
+    t =    14.12s Checking `Expect predicate `exists == 1 AND hittable == 1` for object "workshop-actions" Button`
+    t =    14.12s     Checking existence of `"workshop-actions" Button`
+    t =    14.16s     Find the "workshop-actions" Button
+    t =    14.19s Tap "workshop-actions" Button
+    t =    14.19s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    14.20s     Find the "workshop-actions" Button
+    t =    14.23s     Check for interrupting elements affecting "workshop-actions" Button
+    t =    14.26s     Synthesize event
+    t =    14.55s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    14.93s Waiting 8.0s for "workshop-opportunity-origin" Any to exist
+    t =    15.96s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-opportunity-origin" Any`
+    t =    15.96s         Checking existence of `"workshop-opportunity-origin" Any`
+    t =    16.06s Find the "workshop-opportunity-origin" Any
+    t =    16.14s Checking existence of `"workshop-choice-lead" Button`
+    t =    16.21s Added attachment named 'p2-04-origin-team'
+    t =    16.21s Waiting 8.0s for "workshop-panel-close" Button to exist
+    t =    17.25s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-panel-close" Button`
+    t =    17.25s         Checking existence of `"workshop-panel-close" Button`
+    t =    17.29s Find the "workshop-panel-close" Button
+    t =    17.34s Tap "workshop-panel-close" Button
+    t =    17.34s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    17.34s     Find the "workshop-panel-close" Button
+    t =    17.37s     Check for interrupting elements affecting "workshop-panel-close" Button
+    t =    17.41s     Synthesize event
+    t =    17.69s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    18.06s Terminate com.gavin0099.LifeCrossroads:93404
+2026-10-24 10:30:33.423 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 10:30:33.423 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 10:30:33.423 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    19.11s Open com.gavin0099.LifeCrossroads
+    t =    19.12s     Launch com.gavin0099.LifeCrossroads
+2026-10-24 10:30:34.473 xcodebuild[92872:2297592] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 10:30:34.473 xcodebuild[92872:2297592] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 10:30:34.479 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    19.33s         Setting up automation session
+    t =    21.68s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =    23.19s Waiting 8.0s for "workshop-actions" Button to exist
+    t =    24.22s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-actions" Button`
+    t =    24.22s         Checking existence of `"workshop-actions" Button`
+    t =    25.33s Checking `Expect predicate `exists == 1 AND hittable == 1` for object "workshop-actions" Button`
+    t =    25.33s     Checking existence of `"workshop-actions" Button`
+    t =    25.35s     Find the "workshop-actions" Button
+    t =    25.39s Tap "workshop-actions" Button
+    t =    25.39s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    25.39s     Find the "workshop-actions" Button
+    t =    25.41s     Check for interrupting elements affecting "workshop-actions" Button
+    t =    25.43s     Synthesize event
+    t =    25.72s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    26.15s Waiting 8.0s for "workshop-choice-help" Button to exist
+    t =    27.20s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-choice-help" Button`
+    t =    27.20s         Checking existence of `"workshop-choice-help" Button`
+    t =    27.24s Find the "workshop-choice-help" Button
+    t =    27.28s Find the "workshop-choice-help" Button
+    t =    27.31s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    27.33s Find the "workshop-choice-help" Button
+    t =    27.36s Tap "workshop-choice-help" Button
+    t =    27.36s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    27.37s     Find the "workshop-choice-help" Button
+    t =    27.40s     Check for interrupting elements affecting "workshop-choice-help" Button
+    t =    27.43s     Synthesize event
+    t =    27.72s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    28.08s Waiting 8.0s for "workshop-advance" Button to exist
+    t =    29.13s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-advance" Button`
+    t =    29.13s         Checking existence of `"workshop-advance" Button`
+    t =    30.21s Checking `Expect predicate `exists == 1 AND hittable == 1` for object "workshop-advance" Button`
+    t =    30.21s     Checking existence of `"workshop-advance" Button`
+    t =    30.24s     Find the "workshop-advance" Button
+    t =    30.28s Tap "workshop-advance" Button
+    t =    30.28s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    30.28s     Find the "workshop-advance" Button
+    t =    30.30s     Check for interrupting elements affecting "workshop-advance" Button
+    t =    30.33s     Synthesize event
+    t =    30.61s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    30.62s Waiting 8.0s for "workshop-actions" Button to exist
+    t =    31.67s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-actions" Button`
+    t =    31.67s         Checking existence of `"workshop-actions" Button`
+    t =    32.76s Checking `Expect predicate `exists == 1 AND hittable == 1` for object "workshop-actions" Button`
+    t =    32.76s     Checking existence of `"workshop-actions" Button`
+    t =    32.82s     Find the "workshop-actions" Button
+    t =    32.90s Tap "workshop-actions" Button
+    t =    32.91s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    32.91s     Find the "workshop-actions" Button
+    t =    33.00s     Check for interrupting elements affecting "workshop-actions" Button
+    t =    33.05s     Synthesize event
+    t =    33.36s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    33.79s Waiting 8.0s for "workshop-opportunity-origin" Any to exist
+    t =    34.83s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-opportunity-origin" Any`
+    t =    34.83s         Checking existence of `"workshop-opportunity-origin" Any`
+    t =    35.03s Find the "workshop-opportunity-origin" Any
+    t =    35.18s Checking existence of `"workshop-choice-borrow" Button`
+    t =    35.26s Added attachment named 'p2-04-origin-help'
+    t =    35.26s Waiting 8.0s for "workshop-panel-close" Button to exist
+    t =    36.30s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-panel-close" Button`
+    t =    36.30s         Checking existence of `"workshop-panel-close" Button`
+    t =    36.37s Find the "workshop-panel-close" Button
+    t =    36.43s Tap "workshop-panel-close" Button
+    t =    36.43s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    36.43s     Find the "workshop-panel-close" Button
+    t =    36.49s     Check for interrupting elements affecting "workshop-panel-close" Button
+    t =    36.53s     Synthesize event
+    t =    36.83s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    37.20s Terminate com.gavin0099.LifeCrossroads:93443
+2026-10-24 10:30:52.576 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 10:30:52.576 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 10:30:52.577 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    38.21s Tear Down
+Test Case '-[LifeCrossroadsUITests.WorkshopGameplayTests testOpportunityCuesUseEachRoutesActualOrigin]' passed (38.334 seconds).
+Test Case '-[LifeCrossroadsUITests.WorkshopGameplayTests testPaperAndPeopleInspectionStayInTheWorkshopWithoutSpending]' started.
+    t =     0.00s Start Test at 2026-10-24 10:30:53.691
+    t =     0.04s Set Up
+    t =     0.04s Open com.gavin0099.LifeCrossroads
+    t =     0.04s     Launch com.gavin0099.LifeCrossroads
+2026-10-24 10:30:53.732 xcodebuild[92872:2297592] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 10:30:53.732 xcodebuild[92872:2297592] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 10:30:53.737 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     0.26s         Setting up automation session
+Resolve Package Graph
+
+    t =     3.52s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =     5.26s Waiting 8.0s for "workshop-age" StaticText to exist
+    t =     6.32s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-age" StaticText`
+    t =     6.32s         Checking existence of `"workshop-age" StaticText`
+    t =     6.45s Find the "workshop-age" StaticText
+    t =     6.48s Waiting 8.0s for "inspect-materials" Button to exist
+    t =     7.55s     Checking `Expect predicate `existsNoRetry == 1` for object "inspect-materials" Button`
+    t =     7.55s         Checking existence of `"inspect-materials" Button`
+    t =     7.59s Find the "inspect-materials" Button
+    t =     7.68s Find the "inspect-materials" Button
+    t =     7.70s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     7.72s Find the "inspect-materials" Button
+    t =     7.76s Tap "inspect-materials" Button
+    t =     7.76s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     7.76s     Find the "inspect-materials" Button
+    t =     7.80s     Check for interrupting elements affecting "inspect-materials" Button
+    t =     7.83s     Synthesize event
+    t =     8.12s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     8.49s Checking existence of `"workshop-paper-study" Any`
+    t =     8.57s Checking existence of `"看看工作桌" NavigationBar`
+    t =     8.61s Waiting 8.0s for "workshop-fold-paper" Button to exist
+    t =     9.65s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-fold-paper" Button`
+    t =     9.65s         Checking existence of `"workshop-fold-paper" Button`
+    t =     9.70s Find the "workshop-fold-paper" Button
+    t =     9.77s Find the "workshop-fold-paper" Button
+    t =     9.81s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.84s Find the "workshop-fold-paper" Button
+    t =     9.87s Tap "workshop-fold-paper" Button
+    t =     9.87s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     9.88s     Find the "workshop-fold-paper" Button
+    t =     9.91s     Check for interrupting elements affecting "workshop-fold-paper" Button
+    t =     9.95s     Synthesize event
+    t =    10.25s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    10.25s Find the "workshop-paper-study" Any
+    t =    10.37s Added attachment named 'p2-01-native-paper-inspection'
+    t =    10.37s Waiting 8.0s for "workshop-age" StaticText to exist
+    t =    11.42s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-age" StaticText`
+    t =    11.42s         Checking existence of `"workshop-age" StaticText`
+    t =    11.51s Find the "workshop-age" StaticText
+    t =    11.57s Waiting 8.0s for "workshop-panel-close" Button to exist
+    t =    12.63s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-panel-close" Button`
+    t =    12.63s         Checking existence of `"workshop-panel-close" Button`
+    t =    12.67s Find the "workshop-panel-close" Button
+    t =    12.70s Tap "workshop-panel-close" Button
+    t =    12.70s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    12.71s     Find the "workshop-panel-close" Button
+    t =    12.74s     Check for interrupting elements affecting "workshop-panel-close" Button
+    t =    12.77s     Synthesize event
+    t =    13.07s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    13.07s Waiting 8.0s for "inspect-people" Button to exist
+    t =    14.10s     Checking `Expect predicate `existsNoRetry == 1` for object "inspect-people" Button`
+    t =    14.10s         Checking existence of `"inspect-people" Button`
+    t =    15.55s Find the "inspect-people" Button
+    t =    15.77s Find the "inspect-people" Button
+    t =    15.89s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    15.98s Find the "inspect-people" Button
+    t =    16.20s Tap "inspect-people" Button
+    t =    16.20s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    16.20s     Find the "inspect-people" Button
+    t =    16.31s     Check for interrupting elements affecting "inspect-people" Button
+    t =    16.38s     Synthesize event
+    t =    16.68s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    16.76s Added attachment named 'p2-02-native-relationships'
+    t =    16.76s Waiting 8.0s for "workshop-age" StaticText to exist
+    t =    17.79s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-age" StaticText`
+    t =    17.79s         Checking existence of `"workshop-age" StaticText`
+    t =    17.82s Find the "workshop-age" StaticText
+    t =    17.88s Waiting 8.0s for "workshop-panel-close" Button to exist
+    t =    18.92s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-panel-close" Button`
+    t =    18.92s         Checking existence of `"workshop-panel-close" Button`
+    t =    18.97s Find the "workshop-panel-close" Button
+    t =    19.03s Tap "workshop-panel-close" Button
+    t =    19.03s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    19.03s     Find the "workshop-panel-close" Button
+    t =    19.09s     Check for interrupting elements affecting "workshop-panel-close" Button
+    t =    19.14s     Synthesize event
+    t =    19.72s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    19.73s Waiting 8.0s for "workshop-actions" Button to exist
+    t =    20.79s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-actions" Button`
+    t =    20.79s         Checking existence of `"workshop-actions" Button`
+    t =    23.44s Checking `Expect predicate `exists == 1 AND hittable == 1` for object "workshop-actions" Button`
+    t =    23.44s     Checking existence of `"workshop-actions" Button`
+    t =    23.50s     Find the "workshop-actions" Button
+    t =    23.57s Tap "workshop-actions" Button
+    t =    23.57s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    23.57s     Find the "workshop-actions" Button
+    t =    23.61s     Check for interrupting elements affecting "workshop-actions" Button
+    t =    23.65s     Synthesize event
+    t =    23.97s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    24.21s Waiting 8.0s for "workshop-choice-team" Button to exist
+    t =    25.31s     Checking `Expect predicate `existsNoRetry == 1` for object "workshop-choice-team" Button`
+    t =    25.31s         Checking existence of `"workshop-choice-team" Button`
+    t =    26.91s Find the "workshop-choice-team" Button
+    t =    27.08s Find the "workshop-choice-team" Button
+    t =    27.18s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    27.22s Find the "workshop-choice-team" Button
+    t =    27.26s Tap "workshop-choice-team" Button
+    t =    27.26s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    27.27s     Find the "workshop-choice-team" Button
+    t =    27.33s     Check for interrupting elements affecting "workshop-choice-team" Button
+    t =    27.38s     Synthesize event
+    t =    27.72s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    28.19s Added attachment named 'p2-03-paper-facing-in-scene'
+    t =    28.19s Tear Down
+Test Case '-[LifeCrossroadsUITests.WorkshopGameplayTests testPaperAndPeopleInspectionStayInTheWorkshopWithoutSpending]' passed (29.562 seconds).
+Test Suite 'WorkshopGameplayTests' failed at 2026-10-24 10:31:23.254.
+	 Executed 5 tests, with 1 failure (0 unexpected) in 168.219 (168.235) seconds
+Test Suite 'LifeCrossroadsUITests.xctest' failed at 2026-10-24 10:31:23.254.
+	 Executed 5 tests, with 1 failure (0 unexpected) in 168.219 (168.236) seconds
+Test Suite 'Selected tests' failed at 2026-10-24 10:31:23.255.
+	 Executed 5 tests, with 1 failure (0 unexpected) in 168.219 (168.240) seconds
+2026-10-24 10:31:23.358 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 10:31:23.358 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 10:31:23.360 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 10:31:23.451 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 10:31:23.451 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 10:31:23.452 xcodebuild[92872:2297592] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 10:31:23.831 xcodebuild[92872:2297592] [MT] IDETestOperationsObserverDebug: 214.770 elapsed -- Testing started completed.
+2026-10-24 10:31:23.831 xcodebuild[92872:2297592] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-24 10:31:23.831 xcodebuild[92872:2297592] [MT] IDETestOperationsObserverDebug: 214.770 sec, +214.770 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/artifacts/ios/SIM-p2-focused-2-20261024T022741Z.xcresult
+
+Failing tests:
+	WorkshopGameplayTests.testLargestTextCanBrowseActualPastAndReturnWithoutRewritingLife()
+
+** TEST FAILED **
+
+Testing started

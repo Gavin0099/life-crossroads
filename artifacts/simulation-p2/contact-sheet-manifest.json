@@ -1,0 +1,42 @@
+{
+  "source": "Native SE3 screenshots, thumbnails only; no generated or edited character asset",
+  "inputs": [
+    {
+      "file": "screenshots/narrow-final/sim-01-initial.png",
+      "sha256": "4b756aaf39c41d8305a2cf1efb081d179f9404d34eef64dde5512b24215659c1"
+    },
+    {
+      "file": "screenshots/narrow-final/p2-03-paper-facing-in-scene.png",
+      "sha256": "4c492c347df7b96f1d5806a157a13b1c1fe6df82269694e5463ccff50c7ce382"
+    },
+    {
+      "file": "screenshots/narrow-final/p2-01-native-paper-inspection.png",
+      "sha256": "9b3dc56230454080125026705d00beee1442e7f8b544160792d466fce597a67f"
+    },
+    {
+      "file": "screenshots/narrow-final/p2-02-native-relationships.png",
+      "sha256": "40aeddd05d6bff6936a6e4a4ae485c637fbc085d730eaf19338177bc09be6bce"
+    },
+    {
+      "file": "screenshots/narrow-final/p2-04-origin-team.png",
+      "sha256": "6d8d0c71142db0cee1a10fd305850638219dcbffe8d35ce442c7b4c558ef6549"
+    },
+    {
+      "file": "screenshots/narrow-final/p2-04-origin-help.png",
+      "sha256": "b65c752051ee8863cb2ff4bd24a3c8c3ad1239891f66274a3d812735639534a2"
+    },
+    {
+      "file": "screenshots/narrow-final/p2-05-largest-past-scene.png",
+      "sha256": "9d1dd86bdb4d4af955dd138b06c67c1748a5df0df1f9e57a85b21cf74e1e879a"
+    },
+    {
+      "file": "screenshots/narrow-final/p2-06-largest-present-scene.png",
+      "sha256": "35674bc678704548d47005334171d0927c1803b100d554e1c11fbfc62621d5d9"
+    },
+    {
+      "file": "screenshots/narrow-final/sim-12-largest-last-action.png",
+      "sha256": "1c7a624e89a5f44d4c3c72266ee36c0a4b92c8b8f21cddaf411eed7b7f94ad57"
+    }
+  ],
+  "output_sha256": "1fe7c747f01ab5fb60d1decc7b824eceea83d40e288392337d0e5cde5b937c61"
+}

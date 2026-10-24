@@ -1,0 +1,67 @@
+[
+  {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "78581C2B-2E7D-49FA-B0D7-D20D2DEEB2A9",
+    "deviceName": "LC SIM p2-ax-final 20261024T024512Z",
+    "exportedFileName": "4336EFB1-1495-4A9E-B8E2-C4164F00A355.json",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "p2-memory-browsing-observations_0_B62E4B97-38D5-4F3F-88D3-B033165B2962.json",
+    "timestamp": 1792810022.787,
+    "testIdentifier": "WorkshopGameplayTests/testLargestTextCanBrowseActualPastAndReturnWithoutRewritingLife()",
+    "file": "p2-memory-browsing-observations.json",
+    "sha256": "929628a519d526afd9080f05944295d2a7b7dd9baf0c376384ca43b0335045f7",
+    "sourceBundle": "artifacts/ios/SIM-p2-ax-final-20261024T024512Z.xcresult"
+  },
+  {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "78581C2B-2E7D-49FA-B0D7-D20D2DEEB2A9",
+    "deviceName": "LC SIM p2-ax-final 20261024T024512Z",
+    "exportedFileName": "CA4AE9CC-BF24-4BE6-9EFE-9CB3BE15E011.png",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "p2-06-largest-present-scene_0_2CF61467-7797-40BC-8896-D3410545AB08.png",
+    "timestamp": 1792810022.785,
+    "testIdentifier": "WorkshopGameplayTests/testLargestTextCanBrowseActualPastAndReturnWithoutRewritingLife()",
+    "file": "p2-06-largest-present-scene.png",
+    "sha256": "ab0d1d25d4d6ef35497856cfaba7ecdfa9cb18725bb0c8dd27fac0a238cb77b2",
+    "sourceBundle": "artifacts/ios/SIM-p2-ax-final-20261024T024512Z.xcresult"
+  },
+  {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "78581C2B-2E7D-49FA-B0D7-D20D2DEEB2A9",
+    "deviceName": "LC SIM p2-ax-final 20261024T024512Z",
+    "exportedFileName": "36B9E071-78D6-4D00-BA9F-4F82710C2A30.png",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "p2-05-largest-past-scene_0_68507317-A872-4236-BA1F-AA498EE372D3.png",
+    "timestamp": 1792810018.658,
+    "testIdentifier": "WorkshopGameplayTests/testLargestTextCanBrowseActualPastAndReturnWithoutRewritingLife()",
+    "file": "p2-05-largest-past-scene.png",
+    "sha256": "a2f1e5f992389915ba05c94be725f7f8571ecadc5cfd4e2743240c3e586e40fd",
+    "sourceBundle": "artifacts/ios/SIM-p2-ax-final-20261024T024512Z.xcresult"
+  },
+  {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "78581C2B-2E7D-49FA-B0D7-D20D2DEEB2A9",
+    "deviceName": "LC SIM p2-ax-final 20261024T024512Z",
+    "exportedFileName": "1E9E73E9-4F26-4E6F-9D33-ECE0014C9890.png",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "sim-10-largest-opportunities_0_5485B59A-E3E3-4315-B9CF-ACDBD42E0085.png",
+    "timestamp": 1792810051.215,
+    "testIdentifier": "WorkshopGameplayTests/testLargestTextReducedMotionCanObserveCancelAndChoose()",
+    "file": "sim-10-largest-opportunities.png",
+    "sha256": "d17206e19f8689600f85c47c36091d010bda4fc49df80022f6609ddc8a3ef252",
+    "sourceBundle": "artifacts/ios/SIM-p2-ax-final-20261024T024512Z.xcresult"
+  },
+  {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "78581C2B-2E7D-49FA-B0D7-D20D2DEEB2A9",
+    "deviceName": "LC SIM p2-ax-final 20261024T024512Z",
+    "exportedFileName": "3EA72F48-89EE-465F-ABD1-885CE4C84305.png",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "sim-09-largest-entry_0_ED7ABDE0-4EB5-40AE-909F-6E9FFD7E0097.png",
+    "timestamp": 1792810032.798,
+    "testIdentifier": "WorkshopGameplayTests/testLargestTextReducedMotionCanObserveCancelAndChoose()",
+    "file": "sim-09-largest-entry.png",
+    "sha256": "070ee6b83652063e29f46e61821641e265efbc8bdbc9f89755531c2e0586f7ac",
+    "sourceBundle": "artifacts/ios/SIM-p2-ax-final-20261024T024512Z.xcresult"
+  }
+]

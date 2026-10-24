@@ -1,0 +1,24 @@
+Failed to get matching snapshot: No matches found for Elements matching predicate '"workshop-memory-choice" IN identifiers' from input {(
+    StaticText, label: '紙橋工坊',
+    StaticText, identifier: 'workshop-age', label: '阿澄 · 15 歲', value: {"jumps":[{"trigge...,
+    StaticText, label: '兩年後 · 仍是這間工坊',
+    StaticText, label: '經驗留在這裡，下一次還能再試',
+    StaticText, identifier: 'workshop-object', label: '桌上留下試作紀錄；紙橋仍可調整', value: {"phase":"ended","...,
+    StaticText, label: '15歲 · 和阿禾帶新夥伴試做一段紙橋',
+    StaticText, label: '時間 6 → 4　精力 6 → 4',
+    StaticText, label: '這次經驗會留在人際與作品紀錄中；沒有保證完成作品。',
+    StaticText, label: '玩法試玩：從13歲開始，未模擬前段童年。13→15歲之間沒有另行模擬年度事件；已有關係與經驗持續保留。資源數字是設計單位，沒有合成人生總分。',
+    StaticText, identifier: 'workshop-scene-year', label: '15歲 · 現在',
+    StaticText, label: '顯示插圖',
+    StaticText, label: '材料',
+    StaticText, label: '夥伴',
+    StaticText, label: '同一間工坊 · 已跨過兩年；中間年度未模擬'
+)}
+Possibly caused by runtime issues:
+Automation type mismatch: computed Other from legacy attributes vs StaticText from modern attribute. Input attributes and values: {
+    "XC_kAXXCAttributeAutomationType" = 48;
+    "XC_kAXXCAttributeElementBaseType" = UILabel;
+    "XC_kAXXCAttributeElementType" = UILabel;
+    "XC_kAXXCAttributeTraits" = 8590000128;
+}
+See test report attachments for more detail.

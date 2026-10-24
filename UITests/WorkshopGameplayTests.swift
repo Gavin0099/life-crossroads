@@ -8,15 +8,31 @@ import XCTest
     }
     private func tap(_ id: String,_ app: XCUIApplication) {
         let element=app.buttons[id]
+        XCTAssertTrue(element.waitForExistence(timeout:8),"Expected control \(id)")
         // Toolbar and safeAreaInset controls are fixed; scrolling cannot change their frame.
         // In particular, the SE dock has 12pt padding, so a 20pt scroll-content margin rejects a visible button.
-        let fixedControls=["workshop-catalog","workshop-panel-close","workshop-actions","workshop-advance","workshop-restart"]
-        if fixedControls.contains(id),element.isHittable { element.tap();return }
-        for _ in 0..<10 {
-            if element.isHittable && element.frame.maxY <= app.frame.maxY - 20 && element.frame.minY >= 60 { element.tap();return }
-            let sheet=app.scrollViews["workshop-panel-scroll"]
-            (sheet.exists ? sheet:app).swipeUp()
+        let fixedControls=["workshop-catalog","workshop-actions","workshop-advance","workshop-restart","workshop-memory-return"]
+        if fixedControls.contains(id) {
+            let ready=XCTNSPredicateExpectation(predicate:NSPredicate(format:"exists == true AND hittable == true"),object:element)
+            XCTAssertEqual(XCTWaiter.wait(for:[ready],timeout:8),.completed,"Fixed control must be ready: \(id)")
+            element.tap();return
         }
+        if id == "workshop-panel-close",element.isHittable { element.tap();return }
+        for _ in 0..<16 {
+            // XCUITest can call obscured scroll content hittable: exclude the actual fixed dock.
+            let dockTop=["workshop-actions","workshop-advance","workshop-restart","workshop-memory-return"].compactMap { key -> CGFloat? in
+                let button=app.buttons[key];return button.exists ? button.frame.minY:nil
+            }.min() ?? (app.frame.maxY-20)
+            let bottom=id.hasPrefix("workshop-choice-") ? app.frame.maxY-20:dockTop-8
+            if element.isHittable && element.frame.maxY <= bottom && element.frame.minY >= 60 { element.tap();return }
+            let upward=element.frame.minY >= 60
+            let overflow=upward ? element.frame.maxY-bottom:60-element.frame.minY
+            let distance=min(140,max(35,overflow+10))
+            let start=app.coordinate(withNormalizedOffset:CGVector(dx:0.5,dy:upward ? 0.7:0.3))
+            let finish=start.withOffset(CGVector(dx:0,dy:upward ? -distance:distance))
+            start.press(forDuration:0.05,thenDragTo:finish)
+        }
+        capture("unreachable-"+id)
         XCTFail("Cannot reach \(id)")
     }
     private func capture(_ name: String) {
@@ -156,5 +172,51 @@ import XCTest
             XCTAssertTrue(app.descendants(matching:.any)["workshop-art-"+art].firstMatch.waitForExistence(timeout:3))
         }
         capture("sim-11-acting-catalog")
+    }
+    func testPaperAndPeopleInspectionStayInTheWorkshopWithoutSpending() throws {
+        let app=launch(), original=try observation(app)
+        tap("inspect-materials",app)
+        XCTAssertTrue(app.descendants(matching:.any)["workshop-paper-study"].firstMatch.exists)
+        XCTAssertFalse(app.navigationBars["看看工作桌"].exists,"Inspection stays in the workshop rather than a report sheet")
+        tap("workshop-fold-paper",app)
+        XCTAssertTrue(app.descendants(matching:.any)["workshop-paper-study"].firstMatch.label.contains("連續摺線"))
+        capture("p2-01-native-paper-inspection")
+        XCTAssertEqual(try observation(app) as NSDictionary,original as NSDictionary)
+        tap("workshop-panel-close",app)
+        tap("inspect-people",app)
+        XCTAssertGreaterThanOrEqual(app.staticTexts["workshop-object"].frame.minY,app.otherElements["workshop-inspection"].frame.maxY,"Expanded inspection must not overlap world content")
+        capture("p2-02-native-relationships")
+        XCTAssertEqual(try observation(app) as NSDictionary,original as NSDictionary)
+        tap("workshop-panel-close",app)
+        choice("team",app);capture("p2-03-paper-facing-in-scene")
+    }
+    func testOpportunityCuesUseEachRoutesActualOrigin() throws {
+        for (first,next) in [("team","lead"),("help","borrow")] {
+            let app=launch();choice(first,app);tap("workshop-advance",app);tap("workshop-actions",app)
+            let cue=app.descendants(matching:.any)["workshop-opportunity-origin"].firstMatch
+            XCTAssertTrue(cue.waitForExistence(timeout:8))
+            XCTAssertEqual(cue.value as? String,"workshop-bridge|\(first)|13")
+            XCTAssertTrue(app.buttons["workshop-choice-"+next].exists)
+            capture("p2-04-origin-"+first)
+            tap("workshop-panel-close",app);app.terminate()
+        }
+    }
+    func testLargestTextCanBrowseActualPastAndReturnWithoutRewritingLife() throws {
+        let app=launch(["-UIPreferredContentSizeCategoryName","UICTContentSizeCategoryAccessibilityXXXL","-reduce-motion"])
+        choice("team",app);tap("workshop-advance",app)
+        tap("workshop-actions",app);tap("workshop-choice-lead",app)
+        let present=try observation(app)
+        tap("workshop-memory-13",app)
+        XCTAssertTrue(app.staticTexts["workshop-memory-choice"].waitForExistence(timeout:8))
+        XCTAssertTrue(app.staticTexts["workshop-memory-choice"].label.contains("和阿禾一起試做紙橋"))
+        XCTAssertTrue(app.buttons["workshop-memory-return"].isHittable)
+        XCTAssertFalse(app.buttons["workshop-actions"].exists)
+        XCTAssertEqual(try observation(app) as NSDictionary,present as NSDictionary)
+        capture("p2-05-largest-past-scene")
+        tap("workshop-memory-return",app)
+        XCTAssertEqual(try observation(app) as NSDictionary,present as NSDictionary)
+        XCTAssertTrue(app.buttons["workshop-advance"].exists)
+        capture("p2-06-largest-present-scene")
+        try attach("p2-memory-browsing-observations.json",present)
     }
 }

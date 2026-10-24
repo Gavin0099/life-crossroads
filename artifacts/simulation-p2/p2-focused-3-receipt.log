@@ -1,0 +1,32 @@
+{
+  "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+  "result_bundle": "artifacts/ios/SIM-p2-focused-3-20261024T024151Z.xcresult",
+  "started_utc": "20261024T024151Z",
+  "cleanup": "PASS",
+  "device_uuid": "909BDEEE-4AF3-492D-B724-8632AB29ABFA",
+  "command": [
+    "xcodebuild",
+    "-project",
+    "LifeCrossroads.xcodeproj",
+    "-scheme",
+    "LifeCrossroads",
+    "-destination",
+    "platform=iOS Simulator,id=909BDEEE-4AF3-492D-B724-8632AB29ABFA",
+    "-parallel-testing-enabled",
+    "NO",
+    "-collect-test-diagnostics",
+    "never",
+    "-derivedDataPath",
+    ".build/ios-app",
+    "-resultBundlePath",
+    "/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/artifacts/ios/SIM-p2-focused-3-20261024T024151Z.xcresult",
+    "CODE_SIGNING_ALLOWED=NO",
+    "-only-testing:LifeCrossroadsUITests/WorkshopGameplayTests/testPaperAndPeopleInspectionStayInTheWorkshopWithoutSpending",
+    "-only-testing:LifeCrossroadsUITests/WorkshopGameplayTests/testLargestTextCanBrowseActualPastAndReturnWithoutRewritingLife",
+    "test"
+  ],
+  "exit_code": 65,
+  "cleanup_stderr": "",
+  "owned_device_absent": true,
+  "ended_utc": "2026-10-24T02:41:56.942168+00:00"
+}

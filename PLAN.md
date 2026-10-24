@@ -27,6 +27,8 @@
 
 ## Current Phase
 
+2026-10-24使用者接續授權：在codex/sim-workshop-continuity修完三項P2（機會面板的表單感／缺前因、紙材辨識、觀察與時間延續過度文字化），不增加角色圖；以現有素材及原生場景元件修正，不改Domain/Data/存檔規則。完成雙機完整回歸及原生視覺覆核後推送供review，每次專用Simulator測後刪除。此輪不把「兩事件延續的呈現修正」擴張成整款逐年人生模擬或真人趣味驗收。
+
 2026-10-24使用者授權：GS-05收尾初始共同視線P1，停止擴充表情/角色圖；SIM-01～03轉向真正持續生活世界，優先使用已合併main@5701a36的Domain。獨立分支codex/sim-workshop-continuity。最小可玩切片為13歲紙橋→不同關係/準備經驗→15歲不同後續可操作機會；圖片關閉仍要成立。不重啟四小時美術Loop、不編造國家差異。
 
 驗收：共用DecisionResolver、StoryMemory、KeyedRandom、ConsequenceTrace；新內容排程/版本與正式完整人生隔離，預設15決策保持；同Seed重播、舊資料相容、損壞拒絕、小螢幕/大字/ReduceMotion及測後刪Simulator。SIM-04真人重玩動機需真實玩家證據，不能用AI或自動測試代替。交付供review，不合併或發布。

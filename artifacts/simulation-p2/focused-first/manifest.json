@@ -1,0 +1,54 @@
+[
+  {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "D729452E-03D1-4BE8-AA31-AFA3F18E70AA",
+    "deviceName": "LC SIM p2-focused 20261024T022314Z",
+    "exportedFileName": "F330E0AC-4D84-4742-9B6B-46E138F2D5A8.png",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "sim-10-largest-opportunities_0_D49B00AA-661A-46C1-882A-65B430B01FBF.png",
+    "timestamp": 1792808675.253,
+    "testIdentifier": "WorkshopGameplayTests/testLargestTextReducedMotionCanObserveCancelAndChoose()",
+    "file": "sim-10-largest-opportunities.png",
+    "sha256": "9db65eeea899bac4ef11c1318131401631396a76520ba5a840ac13eb4f0548e6",
+    "sourceBundle": "artifacts/ios/SIM-p2-focused-20261024T022314Z.xcresult"
+  },
+  {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "D729452E-03D1-4BE8-AA31-AFA3F18E70AA",
+    "deviceName": "LC SIM p2-focused 20261024T022314Z",
+    "exportedFileName": "76E637D1-B90A-4444-9AEB-C58AA9222A33.png",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "sim-09-largest-entry_0_C0FA9A0B-DD13-47B3-B904-142669CA8761.png",
+    "timestamp": 1792808669.031,
+    "testIdentifier": "WorkshopGameplayTests/testLargestTextReducedMotionCanObserveCancelAndChoose()",
+    "file": "sim-09-largest-entry.png",
+    "sha256": "1b65fe28c284d5d99890c174baae4752993a7e183f2923613235f72967f1b332",
+    "sourceBundle": "artifacts/ios/SIM-p2-focused-20261024T022314Z.xcresult"
+  },
+  {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "D729452E-03D1-4BE8-AA31-AFA3F18E70AA",
+    "deviceName": "LC SIM p2-focused 20261024T022314Z",
+    "exportedFileName": "846D56C4-1BC0-410A-9869-C3BC8332E577.png",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "sim-02-observe-materials_0_CD5A37E1-9F4A-48E1-B673-F1869BC11EC1.png",
+    "timestamp": 1792808699.063,
+    "testIdentifier": "WorkshopGameplayTests/testObserveWithoutSpendingAndKeepSameWorkshopAfterChoice()",
+    "file": "sim-02-observe-materials.png",
+    "sha256": "6c9293e71c7669833d30d382e796e559be39c40d5605d04073dfe7fd11c0e227",
+    "sourceBundle": "artifacts/ios/SIM-p2-focused-20261024T022314Z.xcresult"
+  },
+  {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "D729452E-03D1-4BE8-AA31-AFA3F18E70AA",
+    "deviceName": "LC SIM p2-focused 20261024T022314Z",
+    "exportedFileName": "0FB39226-2475-49BE-B780-D53F5862BDAC.png",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "sim-01-initial_0_E2E9B3CB-B2F2-4C1F-85A2-275614ADE670.png",
+    "timestamp": 1792808698.088,
+    "testIdentifier": "WorkshopGameplayTests/testObserveWithoutSpendingAndKeepSameWorkshopAfterChoice()",
+    "file": "sim-01-initial.png",
+    "sha256": "60a2970d63a055cc067299e3586d575c1a1c462549de77e2c68c828533bae9a2",
+    "sourceBundle": "artifacts/ios/SIM-p2-focused-20261024T022314Z.xcresult"
+  }
+]

@@ -1,0 +1,1426 @@
+{
+  "age13" : {
+    "jumps" : [
+      {
+        "assumptionID" : "life-stages",
+        "clampAdjustment" : {
+          "financial" : 0,
+          "health" : 0,
+          "relationships" : 0,
+          "skills" : 0
+        },
+        "fromAge" : 0,
+        "resourcesAfter" : {
+          "financial" : 35,
+          "health" : 66,
+          "relationships" : 65,
+          "skills" : 20
+        },
+        "resourcesBefore" : {
+          "financial" : 35,
+          "health" : 66,
+          "relationships" : 65,
+          "skills" : 20
+        },
+        "toAge" : 13,
+        "triggeredHooks" : [
+
+        ]
+      }
+    ],
+    "phase" : "reflecting",
+    "scheduledAges" : [
+      13,
+      15
+    ],
+    "selectionTraces" : [
+      {
+        "age" : 13,
+        "algorithm" : "fnv1a-splitmix64-v1+independent-exponential-race-v2",
+        "assumptionID" : "event-selection",
+        "candidates" : [
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : true,
+            "eventID" : "workshop-bridge",
+            "exclusions" : [
+
+            ],
+            "finalWeight" : 1,
+            "isFallback" : true,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "learning",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 13,
+              "minimumAge" : 13,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "raceScore" : 3.7031508934196475,
+            "randomKey" : "15:workshop-bridge|13|0|31:independent-exponential-race-v2",
+            "uniform" : 0.024645747873857093,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "workshop-return",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : true,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "learning",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 15,
+              "minimumAge" : 15,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "15:workshop-return|13|0|31:independent-exponential-race-v2",
+            "uniform" : 0.54327278482573094,
+            "weightSteps" : [
+
+            ]
+          }
+        ],
+        "draw" : 0.024645747873857093,
+        "eligibleEventIDs" : [
+          "workshop-bridge"
+        ],
+        "key" : "15:workshop-bridge|13|0|31:independent-exponential-race-v2",
+        "rules" : {
+          "continuityMultiplier" : 2,
+          "recentCategoryMultiplier" : 0.55000000000000004,
+          "recentCategoryWindow" : 1,
+          "relationshipMultiplier" : 1.1499999999999999,
+          "version" : "story-race-rules-1"
+        },
+        "seed" : 42,
+        "selectedEventID" : "workshop-bridge"
+      }
+    ],
+    "state" : {
+      "age" : 13,
+      "contentVersion" : "rng-v2-story-1+workshop-13-15-v1",
+      "countryCode" : "JPN",
+      "dataVersion" : "lc01-data-2",
+      "decisions" : [
+        {
+          "age" : 13,
+          "choiceID" : "team",
+          "eventID" : "workshop-bridge"
+        }
+      ],
+      "engineVersion" : "rng-v2-1",
+      "householdID" : "jpn-1",
+      "memories" : [
+
+      ],
+      "pendingHooks" : [
+
+      ],
+      "remainingEnergy" : 4,
+      "remainingMaterials" : 1,
+      "remainingTime" : 5,
+      "resources" : {
+        "financial" : 35,
+        "health" : 66,
+        "relationships" : 68,
+        "skills" : 24
+      },
+      "seed" : 42,
+      "story" : {
+        "events" : [
+          {
+            "age" : 13,
+            "category" : "learning",
+            "eventID" : "workshop-bridge"
+          }
+        ],
+        "flags" : [
+          {
+            "age" : 13,
+            "choiceID" : "team",
+            "eventID" : "workshop-bridge",
+            "key" : "workshop",
+            "value" : "prototype"
+          }
+        ],
+        "relationships" : [
+          {
+            "familiarity" : 2,
+            "interactions" : [
+              {
+                "age" : 13,
+                "choiceID" : "team",
+                "eventID" : "workshop-bridge",
+                "key" : "workshop",
+                "value" : "prototype"
+              }
+            ],
+            "personID" : "ahe"
+          }
+        ]
+      }
+    },
+    "traces" : [
+      {
+        "age" : 13,
+        "applied" : true,
+        "baseCost" : {
+          "energy" : 2,
+          "materials" : 1,
+          "time" : 3
+        },
+        "budgetAfter" : {
+          "energy" : 4,
+          "materials" : 1,
+          "time" : 5
+        },
+        "budgetBefore" : {
+          "energy" : 6,
+          "materials" : 2,
+          "time" : 6
+        },
+        "changedRelationships" : [
+          {
+            "familiarity" : 2,
+            "interactions" : [
+              {
+                "age" : 13,
+                "choiceID" : "team",
+                "eventID" : "workshop-bridge",
+                "key" : "workshop",
+                "value" : "prototype"
+              }
+            ],
+            "personID" : "ahe"
+          }
+        ],
+        "choiceID" : "team",
+        "choiceTitle" : "和阿禾一起試做紙橋",
+        "contentVersion" : "rng-v2-story-1+workshop-13-15-v1",
+        "control" : "personal",
+        "costSteps" : [
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 0
+            },
+            "assumptionIDs" : [
+              "learning-channels"
+            ],
+            "explanation" : "這次使用紙本或面對面學習；成本只依本次材料、交通與協助安排計算。",
+            "influence" : "modelRule",
+            "inputs" : {
+
+            },
+            "ruleID" : "learning.offline",
+            "sourceIDs" : [
+
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 0
+            },
+            "assumptionIDs" : [
+              "household-scenarios",
+              "agency"
+            ],
+            "explanation" : "交通安排多用 0 格時間；這回合由角色承擔的成人照顧安排為 0 格。",
+            "influence" : "family",
+            "inputs" : {
+              "adultCareCost" : 0,
+              "travelCost" : 0
+            },
+            "ruleID" : "family.schedule",
+            "sourceIDs" : [
+
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : -2
+            },
+            "assumptionIDs" : [
+              "support-network"
+            ],
+            "explanation" : "有人一起準備，幫你節省 2 格時間。",
+            "influence" : "otherPeople",
+            "inputs" : {
+              "support" : 2
+            },
+            "ruleID" : "support.shared-preparation",
+            "sourceIDs" : [
+
+            ]
+          }
+        ],
+        "countryCode" : "JPN",
+        "dataVersion" : "lc01-data-2",
+        "effectSteps" : [
+          {
+            "assumptionIDs" : [
+              "choice-effects",
+              "learning-channels",
+              "support-network",
+              "workshop-continuity"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 1,
+              "skills" : 3
+            },
+            "explanation" : "你選了「和阿禾一起試做紙橋」，付出 1 格時間和 2 格精力。",
+            "influence" : "playerChoice",
+            "ruleID" : "choice.learn"
+          },
+          {
+            "assumptionIDs" : [
+              "support-network"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 1,
+              "skills" : 1
+            },
+            "explanation" : "一起準備的人陪你練習，也成為這段故事裡的重要夥伴。",
+            "influence" : "otherPeople",
+            "ruleID" : "support.encouragement"
+          },
+          {
+            "assumptionIDs" : [
+              "luck-encouragement"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 1,
+              "skills" : 0
+            },
+            "explanation" : "這次意外收到別人的鼓勵。這是遊戲中的機會事件。",
+            "influence" : "randomness",
+            "ruleID" : "luck.encouragement"
+          },
+          {
+            "assumptionIDs" : [
+              "resource-bounds"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 0
+            },
+            "explanation" : "四項資源維持在 0～100，沒有合成人生總分。",
+            "influence" : "modelRule",
+            "ruleID" : "resource.clamp"
+          }
+        ],
+        "engineVersion" : "rng-v2-1",
+        "eventID" : "workshop-bridge",
+        "eventSelection" : {
+          "age" : 13,
+          "algorithm" : "fnv1a-splitmix64-v1+independent-exponential-race-v2",
+          "assumptionID" : "event-selection",
+          "candidates" : [
+            {
+              "baseWeight" : 1,
+              "conditions" : [
+
+              ],
+              "eligible" : true,
+              "eventID" : "workshop-bridge",
+              "exclusions" : [
+
+              ],
+              "finalWeight" : 1,
+              "isFallback" : true,
+              "policy" : {
+                "baseWeight" : 1,
+                "category" : "learning",
+                "continuityValues" : [
+
+                ],
+                "cooldownDecisions" : 1,
+                "maximumAge" : 13,
+                "minimumAge" : 13,
+                "repeatable" : false,
+                "resourceWeights" : [
+
+                ]
+              },
+              "raceScore" : 3.7031508934196475,
+              "randomKey" : "15:workshop-bridge|13|0|31:independent-exponential-race-v2",
+              "uniform" : 0.024645747873857093,
+              "weightSteps" : [
+
+              ]
+            },
+            {
+              "baseWeight" : 1,
+              "conditions" : [
+
+              ],
+              "eligible" : false,
+              "eventID" : "workshop-return",
+              "exclusions" : [
+                "age-window",
+                "milestone-slot"
+              ],
+              "finalWeight" : 1,
+              "isFallback" : true,
+              "policy" : {
+                "baseWeight" : 1,
+                "category" : "learning",
+                "continuityValues" : [
+
+                ],
+                "cooldownDecisions" : 1,
+                "maximumAge" : 15,
+                "minimumAge" : 15,
+                "repeatable" : false,
+                "resourceWeights" : [
+
+                ]
+              },
+              "randomKey" : "15:workshop-return|13|0|31:independent-exponential-race-v2",
+              "uniform" : 0.54327278482573094,
+              "weightSteps" : [
+
+              ]
+            }
+          ],
+          "draw" : 0.024645747873857093,
+          "eligibleEventIDs" : [
+            "workshop-bridge"
+          ],
+          "key" : "15:workshop-bridge|13|0|31:independent-exponential-race-v2",
+          "rules" : {
+            "continuityMultiplier" : 2,
+            "recentCategoryMultiplier" : 0.55000000000000004,
+            "recentCategoryWindow" : 1,
+            "relationshipMultiplier" : 1.1499999999999999,
+            "version" : "story-race-rules-1"
+          },
+          "seed" : 42,
+          "selectedEventID" : "workshop-bridge"
+        },
+        "eventTitle" : "紙橋又歪了一邊",
+        "finalCost" : {
+          "energy" : 2,
+          "materials" : 1,
+          "time" : 1
+        },
+        "householdID" : "jpn-1",
+        "observations" : [
+          {
+            "dataVersion" : "wdi-2023-snapshot-2026-10-23",
+            "indicator" : "IT.NET.USER.ZS",
+            "region" : "JPN",
+            "sourceID" : "wdi-internet-2023",
+            "unit" : "% of population",
+            "value" : 85.009902949999997,
+            "year" : 2023
+          },
+          {
+            "dataVersion" : "wdi-2023-snapshot-2026-10-23",
+            "indicator" : "EG.ELC.ACCS.ZS",
+            "region" : "JPN",
+            "sourceID" : "wdi-electricity-2023",
+            "unit" : "% of population",
+            "value" : 100,
+            "year" : 2023
+          }
+        ],
+        "randomTrial" : {
+          "algorithm" : "fnv1a-splitmix64-v1",
+          "assumptionID" : "luck-encouragement",
+          "draw" : 0.169008558060604,
+          "key" : "15:workshop-bridge|13|0|24:unexpected-encouragement",
+          "occurred" : true,
+          "threshold" : 0.25
+        },
+        "recordedStoryFacts" : [
+          {
+            "age" : 13,
+            "choiceID" : "team",
+            "eventID" : "workshop-bridge",
+            "key" : "workshop",
+            "value" : "prototype"
+          }
+        ],
+        "recurringPerson" : "阿禾與樹老師",
+        "resourcesAfter" : {
+          "financial" : 35,
+          "health" : 66,
+          "relationships" : 68,
+          "skills" : 24
+        },
+        "resourcesBefore" : {
+          "financial" : 35,
+          "health" : 66,
+          "relationships" : 65,
+          "skills" : 20
+        },
+        "scheduledHooks" : [
+
+        ],
+        "seed" : 42,
+        "unavailableReasons" : [
+
+        ]
+      }
+    ]
+  },
+  "age15" : {
+    "jumps" : [
+      {
+        "assumptionID" : "life-stages",
+        "clampAdjustment" : {
+          "financial" : 0,
+          "health" : 0,
+          "relationships" : 0,
+          "skills" : 0
+        },
+        "fromAge" : 0,
+        "resourcesAfter" : {
+          "financial" : 35,
+          "health" : 66,
+          "relationships" : 65,
+          "skills" : 20
+        },
+        "resourcesBefore" : {
+          "financial" : 35,
+          "health" : 66,
+          "relationships" : 65,
+          "skills" : 20
+        },
+        "toAge" : 13,
+        "triggeredHooks" : [
+
+        ]
+      },
+      {
+        "assumptionID" : "life-stages",
+        "clampAdjustment" : {
+          "financial" : 0,
+          "health" : 0,
+          "relationships" : 0,
+          "skills" : 0
+        },
+        "fromAge" : 13,
+        "resourcesAfter" : {
+          "financial" : 35,
+          "health" : 66,
+          "relationships" : 68,
+          "skills" : 24
+        },
+        "resourcesBefore" : {
+          "financial" : 35,
+          "health" : 66,
+          "relationships" : 68,
+          "skills" : 24
+        },
+        "toAge" : 15,
+        "triggeredHooks" : [
+
+        ]
+      }
+    ],
+    "phase" : "reflecting",
+    "scheduledAges" : [
+      13,
+      15
+    ],
+    "selectionTraces" : [
+      {
+        "age" : 13,
+        "algorithm" : "fnv1a-splitmix64-v1+independent-exponential-race-v2",
+        "assumptionID" : "event-selection",
+        "candidates" : [
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : true,
+            "eventID" : "workshop-bridge",
+            "exclusions" : [
+
+            ],
+            "finalWeight" : 1,
+            "isFallback" : true,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "learning",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 13,
+              "minimumAge" : 13,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "raceScore" : 3.7031508934196475,
+            "randomKey" : "15:workshop-bridge|13|0|31:independent-exponential-race-v2",
+            "uniform" : 0.024645747873857093,
+            "weightSteps" : [
+
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "workshop-return",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot"
+            ],
+            "finalWeight" : 1,
+            "isFallback" : true,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "learning",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 15,
+              "minimumAge" : 15,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "15:workshop-return|13|0|31:independent-exponential-race-v2",
+            "uniform" : 0.54327278482573094,
+            "weightSteps" : [
+
+            ]
+          }
+        ],
+        "draw" : 0.024645747873857093,
+        "eligibleEventIDs" : [
+          "workshop-bridge"
+        ],
+        "key" : "15:workshop-bridge|13|0|31:independent-exponential-race-v2",
+        "rules" : {
+          "continuityMultiplier" : 2,
+          "recentCategoryMultiplier" : 0.55000000000000004,
+          "recentCategoryWindow" : 1,
+          "relationshipMultiplier" : 1.1499999999999999,
+          "version" : "story-race-rules-1"
+        },
+        "seed" : 42,
+        "selectedEventID" : "workshop-bridge"
+      },
+      {
+        "age" : 15,
+        "algorithm" : "fnv1a-splitmix64-v1+independent-exponential-race-v2",
+        "assumptionID" : "event-selection",
+        "candidates" : [
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : false,
+            "eventID" : "workshop-bridge",
+            "exclusions" : [
+              "age-window",
+              "milestone-slot",
+              "one-shot",
+              "cooldown"
+            ],
+            "finalWeight" : 0.55000000000000004,
+            "isFallback" : true,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "learning",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 13,
+              "minimumAge" : 13,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "randomKey" : "15:workshop-bridge|15|0|31:independent-exponential-race-v2",
+            "uniform" : 0.91885270306281319,
+            "weightSteps" : [
+              {
+                "input" : "learning",
+                "multiplier" : 0.55000000000000004,
+                "ruleID" : "recent-category"
+              }
+            ]
+          },
+          {
+            "baseWeight" : 1,
+            "conditions" : [
+
+            ],
+            "eligible" : true,
+            "eventID" : "workshop-return",
+            "exclusions" : [
+
+            ],
+            "finalWeight" : 0.55000000000000004,
+            "isFallback" : true,
+            "policy" : {
+              "baseWeight" : 1,
+              "category" : "learning",
+              "continuityValues" : [
+
+              ],
+              "cooldownDecisions" : 1,
+              "maximumAge" : 15,
+              "minimumAge" : 15,
+              "repeatable" : false,
+              "resourceWeights" : [
+
+              ]
+            },
+            "raceScore" : 0.042853518679360991,
+            "randomKey" : "15:workshop-return|15|0|31:independent-exponential-race-v2",
+            "uniform" : 0.9767061544552047,
+            "weightSteps" : [
+              {
+                "input" : "learning",
+                "multiplier" : 0.55000000000000004,
+                "ruleID" : "recent-category"
+              }
+            ]
+          }
+        ],
+        "draw" : 0.9767061544552047,
+        "eligibleEventIDs" : [
+          "workshop-return"
+        ],
+        "key" : "15:workshop-return|15|0|31:independent-exponential-race-v2",
+        "rules" : {
+          "continuityMultiplier" : 2,
+          "recentCategoryMultiplier" : 0.55000000000000004,
+          "recentCategoryWindow" : 1,
+          "relationshipMultiplier" : 1.1499999999999999,
+          "version" : "story-race-rules-1"
+        },
+        "seed" : 42,
+        "selectedEventID" : "workshop-return"
+      }
+    ],
+    "state" : {
+      "age" : 15,
+      "contentVersion" : "rng-v2-story-1+workshop-13-15-v1",
+      "countryCode" : "JPN",
+      "dataVersion" : "lc01-data-2",
+      "decisions" : [
+        {
+          "age" : 13,
+          "choiceID" : "team",
+          "eventID" : "workshop-bridge"
+        },
+        {
+          "age" : 15,
+          "choiceID" : "lead",
+          "eventID" : "workshop-return"
+        }
+      ],
+      "engineVersion" : "rng-v2-1",
+      "householdID" : "jpn-1",
+      "memories" : [
+
+      ],
+      "pendingHooks" : [
+
+      ],
+      "remainingEnergy" : 4,
+      "remainingMaterials" : 1,
+      "remainingTime" : 4,
+      "resources" : {
+        "financial" : 35,
+        "health" : 66,
+        "relationships" : 71,
+        "skills" : 26
+      },
+      "seed" : 42,
+      "story" : {
+        "events" : [
+          {
+            "age" : 13,
+            "category" : "learning",
+            "eventID" : "workshop-bridge"
+          },
+          {
+            "age" : 15,
+            "category" : "learning",
+            "eventID" : "workshop-return"
+          }
+        ],
+        "flags" : [
+          {
+            "age" : 15,
+            "choiceID" : "lead",
+            "eventID" : "workshop-return",
+            "key" : "workshop",
+            "value" : "prototype"
+          }
+        ],
+        "relationships" : [
+          {
+            "familiarity" : 3,
+            "interactions" : [
+              {
+                "age" : 13,
+                "choiceID" : "team",
+                "eventID" : "workshop-bridge",
+                "key" : "workshop",
+                "value" : "prototype"
+              },
+              {
+                "age" : 15,
+                "choiceID" : "lead",
+                "eventID" : "workshop-return",
+                "key" : "workshop",
+                "value" : "prototype"
+              }
+            ],
+            "personID" : "ahe"
+          }
+        ]
+      }
+    },
+    "traces" : [
+      {
+        "age" : 13,
+        "applied" : true,
+        "baseCost" : {
+          "energy" : 2,
+          "materials" : 1,
+          "time" : 3
+        },
+        "budgetAfter" : {
+          "energy" : 4,
+          "materials" : 1,
+          "time" : 5
+        },
+        "budgetBefore" : {
+          "energy" : 6,
+          "materials" : 2,
+          "time" : 6
+        },
+        "changedRelationships" : [
+          {
+            "familiarity" : 2,
+            "interactions" : [
+              {
+                "age" : 13,
+                "choiceID" : "team",
+                "eventID" : "workshop-bridge",
+                "key" : "workshop",
+                "value" : "prototype"
+              }
+            ],
+            "personID" : "ahe"
+          }
+        ],
+        "choiceID" : "team",
+        "choiceTitle" : "和阿禾一起試做紙橋",
+        "contentVersion" : "rng-v2-story-1+workshop-13-15-v1",
+        "control" : "personal",
+        "costSteps" : [
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 0
+            },
+            "assumptionIDs" : [
+              "learning-channels"
+            ],
+            "explanation" : "這次使用紙本或面對面學習；成本只依本次材料、交通與協助安排計算。",
+            "influence" : "modelRule",
+            "inputs" : {
+
+            },
+            "ruleID" : "learning.offline",
+            "sourceIDs" : [
+
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : 0
+            },
+            "assumptionIDs" : [
+              "household-scenarios",
+              "agency"
+            ],
+            "explanation" : "交通安排多用 0 格時間；這回合由角色承擔的成人照顧安排為 0 格。",
+            "influence" : "family",
+            "inputs" : {
+              "adultCareCost" : 0,
+              "travelCost" : 0
+            },
+            "ruleID" : "family.schedule",
+            "sourceIDs" : [
+
+            ]
+          },
+          {
+            "adjustment" : {
+              "energy" : 0,
+              "materials" : 0,
+              "time" : -2
+            },
+            "assumptionIDs" : [
+              "support-network"
+            ],
+            "explanation" : "有人一起準備，幫你節省 2 格時間。",
+            "influence" : "otherPeople",
+            "inputs" : {
+              "support" : 2
+            },
+            "ruleID" : "support.shared-preparation",
+            "sourceIDs" : [
+
+            ]
+          }
+        ],
+        "countryCode" : "JPN",
+        "dataVersion" : "lc01-data-2",
+        "effectSteps" : [
+          {
+            "assumptionIDs" : [
+              "choice-effects",
+              "learning-channels",
+              "support-network",
+              "workshop-continuity"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 1,
+              "skills" : 3
+            },
+            "explanation" : "你選了「和阿禾一起試做紙橋」，付出 1 格時間和 2 格精力。",
+            "influence" : "playerChoice",
+            "ruleID" : "choice.learn"
+          },
+          {
+            "assumptionIDs" : [
+              "support-network"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 1,
+              "skills" : 1
+            },
+            "explanation" : "一起準備的人陪你練習，也成為這段故事裡的重要夥伴。",
+            "influence" : "otherPeople",
+            "ruleID" : "support.encouragement"
+          },
+          {
+            "assumptionIDs" : [
+              "luck-encouragement"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 1,
+              "skills" : 0
+            },
+            "explanation" : "這次意外收到別人的鼓勵。這是遊戲中的機會事件。",
+            "influence" : "randomness",
+            "ruleID" : "luck.encouragement"
+          },
+          {
+            "assumptionIDs" : [
+              "resource-bounds"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 0
+            },
+            "explanation" : "四項資源維持在 0～100，沒有合成人生總分。",
+            "influence" : "modelRule",
+            "ruleID" : "resource.clamp"
+          }
+        ],
+        "engineVersion" : "rng-v2-1",
+        "eventID" : "workshop-bridge",
+        "eventSelection" : {
+          "age" : 13,
+          "algorithm" : "fnv1a-splitmix64-v1+independent-exponential-race-v2",
+          "assumptionID" : "event-selection",
+          "candidates" : [
+            {
+              "baseWeight" : 1,
+              "conditions" : [
+
+              ],
+              "eligible" : true,
+              "eventID" : "workshop-bridge",
+              "exclusions" : [
+
+              ],
+              "finalWeight" : 1,
+              "isFallback" : true,
+              "policy" : {
+                "baseWeight" : 1,
+                "category" : "learning",
+                "continuityValues" : [
+
+                ],
+                "cooldownDecisions" : 1,
+                "maximumAge" : 13,
+                "minimumAge" : 13,
+                "repeatable" : false,
+                "resourceWeights" : [
+
+                ]
+              },
+              "raceScore" : 3.7031508934196475,
+              "randomKey" : "15:workshop-bridge|13|0|31:independent-exponential-race-v2",
+              "uniform" : 0.024645747873857093,
+              "weightSteps" : [
+
+              ]
+            },
+            {
+              "baseWeight" : 1,
+              "conditions" : [
+
+              ],
+              "eligible" : false,
+              "eventID" : "workshop-return",
+              "exclusions" : [
+                "age-window",
+                "milestone-slot"
+              ],
+              "finalWeight" : 1,
+              "isFallback" : true,
+              "policy" : {
+                "baseWeight" : 1,
+                "category" : "learning",
+                "continuityValues" : [
+
+                ],
+                "cooldownDecisions" : 1,
+                "maximumAge" : 15,
+                "minimumAge" : 15,
+                "repeatable" : false,
+                "resourceWeights" : [
+
+                ]
+              },
+              "randomKey" : "15:workshop-return|13|0|31:independent-exponential-race-v2",
+              "uniform" : 0.54327278482573094,
+              "weightSteps" : [
+
+              ]
+            }
+          ],
+          "draw" : 0.024645747873857093,
+          "eligibleEventIDs" : [
+            "workshop-bridge"
+          ],
+          "key" : "15:workshop-bridge|13|0|31:independent-exponential-race-v2",
+          "rules" : {
+            "continuityMultiplier" : 2,
+            "recentCategoryMultiplier" : 0.55000000000000004,
+            "recentCategoryWindow" : 1,
+            "relationshipMultiplier" : 1.1499999999999999,
+            "version" : "story-race-rules-1"
+          },
+          "seed" : 42,
+          "selectedEventID" : "workshop-bridge"
+        },
+        "eventTitle" : "紙橋又歪了一邊",
+        "finalCost" : {
+          "energy" : 2,
+          "materials" : 1,
+          "time" : 1
+        },
+        "householdID" : "jpn-1",
+        "observations" : [
+          {
+            "dataVersion" : "wdi-2023-snapshot-2026-10-23",
+            "indicator" : "IT.NET.USER.ZS",
+            "region" : "JPN",
+            "sourceID" : "wdi-internet-2023",
+            "unit" : "% of population",
+            "value" : 85.009902949999997,
+            "year" : 2023
+          },
+          {
+            "dataVersion" : "wdi-2023-snapshot-2026-10-23",
+            "indicator" : "EG.ELC.ACCS.ZS",
+            "region" : "JPN",
+            "sourceID" : "wdi-electricity-2023",
+            "unit" : "% of population",
+            "value" : 100,
+            "year" : 2023
+          }
+        ],
+        "randomTrial" : {
+          "algorithm" : "fnv1a-splitmix64-v1",
+          "assumptionID" : "luck-encouragement",
+          "draw" : 0.169008558060604,
+          "key" : "15:workshop-bridge|13|0|24:unexpected-encouragement",
+          "occurred" : true,
+          "threshold" : 0.25
+        },
+        "recordedStoryFacts" : [
+          {
+            "age" : 13,
+            "choiceID" : "team",
+            "eventID" : "workshop-bridge",
+            "key" : "workshop",
+            "value" : "prototype"
+          }
+        ],
+        "recurringPerson" : "阿禾與樹老師",
+        "resourcesAfter" : {
+          "financial" : 35,
+          "health" : 66,
+          "relationships" : 68,
+          "skills" : 24
+        },
+        "resourcesBefore" : {
+          "financial" : 35,
+          "health" : 66,
+          "relationships" : 65,
+          "skills" : 20
+        },
+        "scheduledHooks" : [
+
+        ],
+        "seed" : 42,
+        "unavailableReasons" : [
+
+        ]
+      },
+      {
+        "age" : 15,
+        "applied" : true,
+        "baseCost" : {
+          "energy" : 2,
+          "materials" : 1,
+          "time" : 2
+        },
+        "budgetAfter" : {
+          "energy" : 4,
+          "materials" : 1,
+          "time" : 4
+        },
+        "budgetBefore" : {
+          "energy" : 6,
+          "materials" : 2,
+          "time" : 6
+        },
+        "changedRelationships" : [
+          {
+            "familiarity" : 3,
+            "interactions" : [
+              {
+                "age" : 13,
+                "choiceID" : "team",
+                "eventID" : "workshop-bridge",
+                "key" : "workshop",
+                "value" : "prototype"
+              },
+              {
+                "age" : 15,
+                "choiceID" : "lead",
+                "eventID" : "workshop-return",
+                "key" : "workshop",
+                "value" : "prototype"
+              }
+            ],
+            "personID" : "ahe"
+          }
+        ],
+        "choiceID" : "lead",
+        "choiceTitle" : "和阿禾帶新夥伴試做一段紙橋",
+        "contentVersion" : "rng-v2-story-1+workshop-13-15-v1",
+        "control" : "personal",
+        "costSteps" : [
+
+        ],
+        "countryCode" : "JPN",
+        "dataVersion" : "lc01-data-2",
+        "effectSteps" : [
+          {
+            "assumptionIDs" : [
+              "choice-effects",
+              "story-branches",
+              "workshop-continuity"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 3,
+              "skills" : 2
+            },
+            "explanation" : "你選了「和阿禾帶新夥伴試做一段紙橋」，付出 2 格時間和 2 格精力。",
+            "influence" : "playerChoice",
+            "ruleID" : "choice.share"
+          },
+          {
+            "assumptionIDs" : [
+              "resource-bounds"
+            ],
+            "delta" : {
+              "financial" : 0,
+              "health" : 0,
+              "relationships" : 0,
+              "skills" : 0
+            },
+            "explanation" : "四項資源維持在 0～100，沒有合成人生總分。",
+            "influence" : "modelRule",
+            "ruleID" : "resource.clamp"
+          }
+        ],
+        "engineVersion" : "rng-v2-1",
+        "eventID" : "workshop-return",
+        "eventSelection" : {
+          "age" : 15,
+          "algorithm" : "fnv1a-splitmix64-v1+independent-exponential-race-v2",
+          "assumptionID" : "event-selection",
+          "candidates" : [
+            {
+              "baseWeight" : 1,
+              "conditions" : [
+
+              ],
+              "eligible" : false,
+              "eventID" : "workshop-bridge",
+              "exclusions" : [
+                "age-window",
+                "milestone-slot",
+                "one-shot",
+                "cooldown"
+              ],
+              "finalWeight" : 0.55000000000000004,
+              "isFallback" : true,
+              "policy" : {
+                "baseWeight" : 1,
+                "category" : "learning",
+                "continuityValues" : [
+
+                ],
+                "cooldownDecisions" : 1,
+                "maximumAge" : 13,
+                "minimumAge" : 13,
+                "repeatable" : false,
+                "resourceWeights" : [
+
+                ]
+              },
+              "randomKey" : "15:workshop-bridge|15|0|31:independent-exponential-race-v2",
+              "uniform" : 0.91885270306281319,
+              "weightSteps" : [
+                {
+                  "input" : "learning",
+                  "multiplier" : 0.55000000000000004,
+                  "ruleID" : "recent-category"
+                }
+              ]
+            },
+            {
+              "baseWeight" : 1,
+              "conditions" : [
+
+              ],
+              "eligible" : true,
+              "eventID" : "workshop-return",
+              "exclusions" : [
+
+              ],
+              "finalWeight" : 0.55000000000000004,
+              "isFallback" : true,
+              "policy" : {
+                "baseWeight" : 1,
+                "category" : "learning",
+                "continuityValues" : [
+
+                ],
+                "cooldownDecisions" : 1,
+                "maximumAge" : 15,
+                "minimumAge" : 15,
+                "repeatable" : false,
+                "resourceWeights" : [
+
+                ]
+              },
+              "raceScore" : 0.042853518679360991,
+              "randomKey" : "15:workshop-return|15|0|31:independent-exponential-race-v2",
+              "uniform" : 0.9767061544552047,
+              "weightSteps" : [
+                {
+                  "input" : "learning",
+                  "multiplier" : 0.55000000000000004,
+                  "ruleID" : "recent-category"
+                }
+              ]
+            }
+          ],
+          "draw" : 0.9767061544552047,
+          "eligibleEventIDs" : [
+            "workshop-return"
+          ],
+          "key" : "15:workshop-return|15|0|31:independent-exponential-race-v2",
+          "rules" : {
+            "continuityMultiplier" : 2,
+            "recentCategoryMultiplier" : 0.55000000000000004,
+            "recentCategoryWindow" : 1,
+            "relationshipMultiplier" : 1.1499999999999999,
+            "version" : "story-race-rules-1"
+          },
+          "seed" : 42,
+          "selectedEventID" : "workshop-return"
+        },
+        "eventTitle" : "阿禾帶回了那次試作的紀錄",
+        "finalCost" : {
+          "energy" : 2,
+          "materials" : 1,
+          "time" : 2
+        },
+        "householdID" : "jpn-1",
+        "observations" : [
+          {
+            "dataVersion" : "wdi-2023-snapshot-2026-10-23",
+            "indicator" : "IT.NET.USER.ZS",
+            "region" : "JPN",
+            "sourceID" : "wdi-internet-2023",
+            "unit" : "% of population",
+            "value" : 85.009902949999997,
+            "year" : 2023
+          },
+          {
+            "dataVersion" : "wdi-2023-snapshot-2026-10-23",
+            "indicator" : "EG.ELC.ACCS.ZS",
+            "region" : "JPN",
+            "sourceID" : "wdi-electricity-2023",
+            "unit" : "% of population",
+            "value" : 100,
+            "year" : 2023
+          }
+        ],
+        "recordedStoryFacts" : [
+          {
+            "age" : 15,
+            "choiceID" : "lead",
+            "eventID" : "workshop-return",
+            "key" : "workshop",
+            "value" : "prototype"
+          }
+        ],
+        "recurringPerson" : "阿禾",
+        "resourcesAfter" : {
+          "financial" : 35,
+          "health" : 66,
+          "relationships" : 71,
+          "skills" : 26
+        },
+        "resourcesBefore" : {
+          "financial" : 35,
+          "health" : 66,
+          "relationships" : 68,
+          "skills" : 24
+        },
+        "scheduledHooks" : [
+
+        ],
+        "seed" : 42,
+        "storyBranch" : {
+          "assumptionID" : "workshop-continuity",
+          "explanation" : "13歲的實際紀錄為「prototype」。試作經驗、技能至少24及與阿禾熟悉度至少2，開放陪同帶領。核對既有清單需要先前準備紀錄及與老師熟悉度至少2。開放練習、詢問與休息仍可選；不表示作品已完成或工具已借到。",
+          "flagKey" : "workshop",
+          "offeredChoiceIDs" : [
+            "lead",
+            "practice",
+            "ask",
+            "rest"
+          ],
+          "resourceChecks" : [
+            {
+              "met" : true,
+              "minimum" : 24,
+              "resource" : "skills",
+              "value" : 24
+            },
+            {
+              "met" : true,
+              "minimum" : 2,
+              "resource" : "relationship:ahe",
+              "value" : 2
+            },
+            {
+              "met" : false,
+              "minimum" : 2,
+              "resource" : "relationship:teacher",
+              "value" : 0
+            }
+          ],
+          "ruleID" : "story.workshop-continuity",
+          "sourceAge" : 13,
+          "sourceChoiceID" : "team",
+          "sourceEventID" : "workshop-bridge",
+          "variantID" : "workshop-return-prototype"
+        },
+        "storyVariantID" : "workshop-return-prototype",
+        "unavailableReasons" : [
+
+        ]
+      }
+    ]
+  }
+}

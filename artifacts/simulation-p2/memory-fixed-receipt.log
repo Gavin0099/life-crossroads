@@ -1,0 +1,31 @@
+{
+  "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+  "result_bundle": "artifacts/ios/SIM-p2-memory-fixed-20261024T023433Z.xcresult",
+  "started_utc": "20261024T023433Z",
+  "cleanup": "PASS",
+  "device_uuid": "760EDCEA-4FB2-4FC9-9272-EF33F69B1AF9",
+  "command": [
+    "xcodebuild",
+    "-project",
+    "LifeCrossroads.xcodeproj",
+    "-scheme",
+    "LifeCrossroads",
+    "-destination",
+    "platform=iOS Simulator,id=760EDCEA-4FB2-4FC9-9272-EF33F69B1AF9",
+    "-parallel-testing-enabled",
+    "NO",
+    "-collect-test-diagnostics",
+    "never",
+    "-derivedDataPath",
+    ".build/ios-app",
+    "-resultBundlePath",
+    "/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/artifacts/ios/SIM-p2-memory-fixed-20261024T023433Z.xcresult",
+    "CODE_SIGNING_ALLOWED=NO",
+    "-only-testing:LifeCrossroadsUITests/WorkshopGameplayTests/testLargestTextCanBrowseActualPastAndReturnWithoutRewritingLife",
+    "test"
+  ],
+  "exit_code": 65,
+  "cleanup_stderr": "",
+  "owned_device_absent": true,
+  "ended_utc": "2026-10-24T02:36:16.129492+00:00"
+}

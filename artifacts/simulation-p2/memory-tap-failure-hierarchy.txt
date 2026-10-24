@@ -1,0 +1,62 @@
+Application, 0x107c4af80, pid: 95128, label: '人生岔路' <App element pid: 95128>
+  Window (Main), 0x107c4b840, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 95128, elementOrHash.elementID: 4410704896.4>
+    Other, 0x107c48640, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 95128, elementOrHash.elementID: 4412246016.5>
+      Other, 0x107c4b5c0, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 95128, elementOrHash.elementID: 4455551360.6>
+        Other, 0x107c48c80, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 95128, elementOrHash.elementID: 4410703872.7>
+          Other, 0x107c4a440, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 95128, elementOrHash.elementID: 4458085376.8>
+            Other, 0x107c4a080, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 95128, elementOrHash.elementID: 4411464192.9>
+              NavigationBar, 0x107c4a580, {{0.0, 20.0}, {375.0, 54.0}}, identifier: '紙橋工坊' <AX element pid: 95128, elementOrHash.elementID: 4455340032.10>
+                Other, 0x107c4a800, {{20.0, 24.0}, {104.5, 36.0}} <AX element pid: 95128, elementOrHash.elementID: 4410725376.13>
+                  Other, 0x107c4a940, {{20.0, 24.0}, {104.5, 36.0}} <AX element pid: 95128, elementOrHash.elementID: 4458085696.18>
+                    Button, 0x107c4a1c0, {{20.0, 24.0}, {104.5, 36.0}}, identifier: 'workshop-close', label: '回到人生' <AX element pid: 95128, elementOrHash.elementID: 4458085536.21>
+                StaticText, 0x107c4ad00, {{147.0, 29.0}, {80.5, 26.0}}, label: '紙橋工坊' <AX element pid: 95128, elementOrHash.elementID: 4412280768.14>
+                Other, 0x107c4b200, {{316.5, 24.0}, {38.5, 36.0}} <AX element pid: 95128, elementOrHash.elementID: 4410727936.15>
+                  Other, 0x107c4ae40, {{316.5, 24.0}, {38.5, 36.0}} <AX element pid: 95128, elementOrHash.elementID: 4458085056.19>
+                    Button, 0x107c4b980, {{316.5, 24.0}, {38.5, 36.0}}, identifier: 'workshop-catalog', label: '角色演出圖錄' <AX element pid: 95128, elementOrHash.elementID: 4458083776.22>
+              Other, 0x107c4b700, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 95128, elementOrHash.elementID: 4411503744.11>
+                Other, 0x107c49a40, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 95128, elementOrHash.elementID: 4412281216.16>
+                  Other, 0x107c49040, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 95128, elementOrHash.elementID: 4458151936.20>
+                    Other, 0x107c48f00, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 95128, elementOrHash.elementID: 4849258080.23>
+                      ScrollView, 0x107c492c0, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 95128, elementOrHash.elementID: 4457447424.24>
+                        Other, 0x107c49400, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 95128, elementOrHash.elementID: 4412276736.26>
+                          Other, 0x107c49900, {{0.0, 0.0}, {375.0, 114.0}} <AX element pid: 95128, elementOrHash.elementID: 4412288384.32>
+                        Other, 0x107c49cc0, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 95128, elementOrHash.elementID: 4411505984.27>
+                        Other, 0x107c49e00, {{0.0, 74.0}, {375.0, 2879.0}} <AX element pid: 95128, elementOrHash.elementID: 4411472384.28>
+                          Other, 0x107c49b80, {{18.0, 94.4}, {339.0, 746.6}}, identifier: 'workshop-world', value: {"phase":"ended","... <AX element pid: 95128, elementOrHash.elementID: 4849255520.33>
+                            StaticText, 0x107c49f40, {{22.0, 94.4}, {273.0, 51.5}}, identifier: 'workshop-scene-year', label: '15歲 · 現在' <AX element pid: 95128, elementOrHash.elementID: 4458086016.44>
+                            Image, 0x107c4a300, {{22.0, 96.0}, {48.0, 48.0}}, identifier: 'workshop-scene-year', label: '調高亮度' <AX element pid: 95128, elementOrHash.elementID: 4458085856.45>
+                            Other, 0x107c4aa80, {{18.0, 148.0}, {339.0, 226.0}}, identifier: 'workshop-art-team', label: '一起試做，作品仍待調整' <AX element pid: 95128, elementOrHash.elementID: 4849254400.46>
+                              Image, 0x107c4b340, {{18.0, 148.0}, {339.0, 226.0}}, label: 'community-workshop' <AX element pid: 95128, elementOrHash.elementID: 4458086176.51>
+                              Image, 0x107c4b0c0, {{39.0, 162.0}, {297.0, 198.0}}, label: 'va-friend-worktable-v2' <AX element pid: 95128, elementOrHash.elementID: 4409946784.52>
+                              Other, 0x107c4bd40, {{39.0, 162.0}, {297.0, 198.0}} <AX element pid: 95128, elementOrHash.elementID: 4849266880.101>
+                            Button, 0x107c4be80, {{18.0, 376.0}, {147.0, 130.5}}, identifier: 'inspect-materials', label: '材料' <AX element pid: 95128, elementOrHash.elementID: 4849254880.47>
+                              StaticText, 0x107c4bc00, {{18.0, 376.0}, {147.0, 130.5}}, label: '材料' <AX element pid: 95128, elementOrHash.elementID: 4849254720.53>
+                              Image, 0x107c483c0, {{41.0, 388.0}, {46.5, 45.5}}, identifier: 'square.stack.3d.up', label: 'Hdr' <AX element pid: 95128, elementOrHash.elementID: 4849254560.54>
+                            Button, 0x107c48780, {{196.0, 376.0}, {161.0, 130.5}}, identifier: 'inspect-people', label: '夥伴' <AX element pid: 95128, elementOrHash.elementID: 4849255360.48>
+                              StaticText, 0x104e7f340, {{196.0, 376.0}, {161.0, 130.5}}, label: '夥伴' <AX element pid: 95128, elementOrHash.elementID: 4849255200.55>
+                              Image, 0x104e7f480, {{223.0, 394.5}, {55.5, 38.0}}, identifier: 'person.2', label: '兩人' <AX element pid: 95128, elementOrHash.elementID: 4849255040.56>
+                            Other, 0x104e7f700, {{18.0, 528.5}, {327.0, 312.5}}, identifier: 'workshop-continuity' <AX element pid: 95128, elementOrHash.elementID: 4849267680.100>
+                              Button, 0x104e7f840, {{18.0, 528.5}, {199.0, 58.5}}, identifier: 'workshop-memory-13', label: '13歲紀錄' <AX element pid: 95128, elementOrHash.elementID: 4849267200.102>
+                              Button, 0x104e7fac0, {{18.0, 611.0}, {198.5, 58.5}}, identifier: 'workshop-memory-now', label: '15歲現在' <AX element pid: 95128, elementOrHash.elementID: 4849267360.103>
+                              StaticText, 0x104e7fc00, {{18.0, 687.5}, {327.0, 153.5}}, label: '同一間工坊 · 已跨過兩年；中間年度未模擬' <AX element pid: 95128, elementOrHash.elementID: 4849267520.104>
+                          StaticText, 0x104e7f980, {{18.0, 857.0}, {282.0, 67.0}}, identifier: 'workshop-age', label: '阿澄 · 15 歲', value: {"jumps":[{"trigge... <AX element pid: 95128, elementOrHash.elementID: 4849255680.34>
+                          StaticText, 0x104e7d2c0, {{18.0, 929.0}, {321.5, 116.5}}, label: '兩年後 · 仍是這間工坊' <AX element pid: 95128, elementOrHash.elementID: 4849255840.35>
+                          StaticText, 0x104e7d400, {{18.0, 1061.5}, {338.5, 187.5}}, label: '經驗留在這裡，下一次還能再試' <AX element pid: 95128, elementOrHash.elementID: 4849256000.36>
+                          StaticText, 0x1080b0000, {{18.0, 1265.0}, {324.0, 174.5}}, identifier: 'workshop-object', label: '桌上留下試作紀錄；紙橋仍可調整', value: {"phase":"ended","... <AX element pid: 95128, elementOrHash.elementID: 4849256160.37>
+                          StaticText, 0x1080b0140, {{30.0, 1751.5}, {288.0, 174.5}}, label: '15歲 · 和阿禾帶新夥伴試做一段紙橋' <AX element pid: 95128, elementOrHash.elementID: 4849267840.97>
+                          StaticText, 0x1080b0280, {{30.0, 1932.0}, {248.0, 105.0}}, label: '時間 6 → 4　精力 6 → 4' <AX element pid: 95128, elementOrHash.elementID: 4849268000.98>
+                          StaticText, 0x1080b03c0, {{30.0, 2043.0}, {327.0, 204.5}}, label: '這次經驗會留在人際與作品紀錄中；沒有保證完成作品。' <AX element pid: 95128, elementOrHash.elementID: 4849268160.99>
+                          Button, 0x1080b0500, {{18.0, 2292.5}, {231.5, 58.5}}, identifier: 'workshop-people', label: '人物與關係' <AX element pid: 95128, elementOrHash.elementID: 4849256480.38>
+                          Button, 0x1080b0640, {{264.5, 2263.5}, {92.5, 116.5}}, identifier: 'workshop-history', label: '人生紀錄' <AX element pid: 95128, elementOrHash.elementID: 4849256640.39>
+                          Switch, 0x1080b0780, {{18.0, 2396.0}, {339.0, 63.5}}, identifier: 'workshop-images', label: '顯示插圖', value: 1 <AX element pid: 95128, elementOrHash.elementID: 4849257120.40>
+                            StaticText, 0x1080b08c0, {{18.0, 2396.0}, {200.5, 63.5}}, label: '顯示插圖' <AX element pid: 95128, elementOrHash.elementID: 4849256800.49>
+                            Switch, 0x1080b0a00, {{296.0, 2414.0}, {63.0, 28.0}}, value: 1 <AX element pid: 95128, elementOrHash.elementID: 4455559680.50>
+                          StaticText, 0x1080b0b40, {{18.0, 2475.5}, {327.0, 459.5}}, label: '玩法試玩：從13歲開始，未模擬前段童年。13→15歲之間沒有另行模擬年度事件；已有關係與經驗持續保留。資源數字是設計單位，沒有合成人生總分。' <AX element pid: 95128, elementOrHash.elementID: 4849257280.41>
+                          Other, 0x1080b0c80, {{0.0, 0.0}, {0.0, 0.0}} <AX element pid: 95128, elementOrHash.elementID: 4849256320.42>
+                        Other, 0x1080b0dc0, {{342.0, 74.0}, {30.0, 475.5}}, label: '垂直捲軸, 7頁', value: 0% <AX element pid: 95128, elementOrHash.elementID: 4455499776.29>
+                          Other, 0x1080b0f00, {{369.0, 77.0}, {3.0, 145.0}} <AX element pid: 95128, elementOrHash.elementID: 4412282560.43>
+                        Other, 0x1080b1040, {{342.0, 74.0}, {30.0, 475.5}}, label: '垂直捲軸, 7頁', value: 0% <AX element pid: 95128, elementOrHash.elementID: 4455499776.29>
+                          Other, 0x1080b1180, {{369.0, 77.0}, {3.0, 145.0}} <AX element pid: 95128, elementOrHash.elementID: 4412282560.43>
+                      Button, 0x1080b12c0, {{107.5, 561.5}, {160.5, 93.5}}, identifier: 'workshop-restart', label: '從同一起點，試試另一條路' <AX element pid: 95128, elementOrHash.elementID: 4892398112.165>
+              Toolbar, 0x1080b1400, {{0.0, 0.0}, {375.0, 667.0}}, identifier: 'Toolbar', label: '工具列' <AX element pid: 95128, elementOrHash.elementID: 4411466240.12>
+                Other, 0x1080b1540, {{0.0, 0.0}, {375.0, 667.0}} <AX element pid: 95128, elementOrHash.elementID: 4411466752.17>

@@ -1,0 +1,6 @@
+{
+  "local_raw_video": "artifacts/ios/p2-diagnostics/memory-scroll-failure.mp4",
+  "sha256": "321b071202e9176c21fd2b8ba0085b3757ba7428031c4e9ec219f49e2a6107f5",
+  "bytes": 41381978,
+  "git_inclusion": "No: original xcresult and raw video stay local; representative native frames memory-scroll-40.png and memory-scroll-46.png retained for review"
+}

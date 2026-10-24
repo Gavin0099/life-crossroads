@@ -1,5 +1,7 @@
 # GS-05／SIM-01～03 工坊切片驗收
 
+歷史驗收記錄：本頁的三項P2與14項測試屬於上一來源版本；[本輪P2修正驗收](p2/FINAL_REVIEW.md)另附原生證據。
+
 日期：2026-10-24。基底：main `5701a36f55ca09f1c0481c2830014db4f2611fa4`。候選分支：`codex/sim-workshop-continuity`。本文件只驗收13→15歲兩事件切片；P1八國、完整人生產品驗收及SIM-04真人動機仍未通過。
 
 最終來源快照：[61檔SHA-256](../../artifacts/simulation/native-source-final.json)，涵蓋Domain、Data、App、素材、Xcode project及測試。雙機型均與此快照一致；基底SHA不能代替被測來源。[交付commit綁定](../../artifacts/simulation/source-binding.json)記錄逐檔核對。

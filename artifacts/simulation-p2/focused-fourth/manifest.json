@@ -1,0 +1,67 @@
+[
+  {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "E5136EC7-816C-4365-B5FC-A2AEC252BAFE",
+    "deviceName": "LC SIM p2-focused-4 20261024T024203Z",
+    "exportedFileName": "11229888-9B91-42EB-BD66-694659DE8B43.json",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "p2-memory-browsing-observations_0_82374FD2-5941-442F-BFC7-9BCEBFA6FCFC.json",
+    "timestamp": 1792809820.196,
+    "testIdentifier": "WorkshopGameplayTests/testLargestTextCanBrowseActualPastAndReturnWithoutRewritingLife()",
+    "file": "p2-memory-browsing-observations.json",
+    "sha256": "929628a519d526afd9080f05944295d2a7b7dd9baf0c376384ca43b0335045f7",
+    "sourceBundle": "artifacts/ios/SIM-p2-focused-4-20261024T024203Z.xcresult"
+  },
+  {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "E5136EC7-816C-4365-B5FC-A2AEC252BAFE",
+    "deviceName": "LC SIM p2-focused-4 20261024T024203Z",
+    "exportedFileName": "F842CCB9-6D7A-475E-A294-9B0B2E106F94.png",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "p2-05-largest-past-scene_0_05FCEA82-9494-483B-A795-7D7E9A232D9A.png",
+    "timestamp": 1792809816.139,
+    "testIdentifier": "WorkshopGameplayTests/testLargestTextCanBrowseActualPastAndReturnWithoutRewritingLife()",
+    "file": "p2-05-largest-past-scene.png",
+    "sha256": "486015ed3e1df1169911958bb1cb5dad475370462c138b5935705de699157a94",
+    "sourceBundle": "artifacts/ios/SIM-p2-focused-4-20261024T024203Z.xcresult"
+  },
+  {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "E5136EC7-816C-4365-B5FC-A2AEC252BAFE",
+    "deviceName": "LC SIM p2-focused-4 20261024T024203Z",
+    "exportedFileName": "6A1177A2-C35D-4F6E-AF9B-B44930ABE33D.png",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "p2-03-paper-facing-in-scene_0_BAD55CA0-B946-4F22-8AA7-434E896A33F6.png",
+    "timestamp": 1792809843.889,
+    "testIdentifier": "WorkshopGameplayTests/testPaperAndPeopleInspectionStayInTheWorkshopWithoutSpending()",
+    "file": "p2-03-paper-facing-in-scene.png",
+    "sha256": "6db154680553c8b3218169047542c39fe2ce4b028c0ed13b15128cefdcff65cf",
+    "sourceBundle": "artifacts/ios/SIM-p2-focused-4-20261024T024203Z.xcresult"
+  },
+  {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "E5136EC7-816C-4365-B5FC-A2AEC252BAFE",
+    "deviceName": "LC SIM p2-focused-4 20261024T024203Z",
+    "exportedFileName": "5B50F6D8-7439-4604-BB71-A93967D49138.png",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "p2-02-native-relationships_0_B4BA197D-BE21-43AD-96E8-DA8B0D0A23EC.png",
+    "timestamp": 1792809836.008,
+    "testIdentifier": "WorkshopGameplayTests/testPaperAndPeopleInspectionStayInTheWorkshopWithoutSpending()",
+    "file": "p2-02-native-relationships.png",
+    "sha256": "9ec80d9137e48b43caffe48bcd25e47ec6525592e0b9f28f30028b6b6c90d660",
+    "sourceBundle": "artifacts/ios/SIM-p2-focused-4-20261024T024203Z.xcresult"
+  },
+  {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "E5136EC7-816C-4365-B5FC-A2AEC252BAFE",
+    "deviceName": "LC SIM p2-focused-4 20261024T024203Z",
+    "exportedFileName": "DBF5610B-33C1-48F9-B615-77E7352358E5.png",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "p2-01-native-paper-inspection_0_A96841BE-FDC8-424F-A38D-3217BD5FF67C.png",
+    "timestamp": 1792809831.745,
+    "testIdentifier": "WorkshopGameplayTests/testPaperAndPeopleInspectionStayInTheWorkshopWithoutSpending()",
+    "file": "p2-01-native-paper-inspection.png",
+    "sha256": "bd0b912280851f74ff1ddc1cac3a39e986ec1c1e6ecaae164469856d0d1c4a87",
+    "sourceBundle": "artifacts/ios/SIM-p2-focused-4-20261024T024203Z.xcresult"
+  }
+]

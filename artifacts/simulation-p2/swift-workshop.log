@@ -1,0 +1,38 @@
+Building for debugging...
+[Computing dependencies]
+[1 / 5]
+[3 / 4] LifeAnalysisTests-product
+Build complete! (6.79秒)
+Test Suite 'Selected tests' started at 2026-10-24 10:25:14.983.
+Test Suite 'LifeDomainTests.xctest' started at 2026-10-24 10:25:14.985.
+Test Suite 'WorkshopContinuityTests' started at 2026-10-24 10:25:14.985.
+Test Case '-[LifeDomainTests.WorkshopContinuityTests testBothRoutesHaveExecutableDifferentFutureActionsAndCanFinish]' started.
+Test Case '-[LifeDomainTests.WorkshopContinuityTests testBothRoutesHaveExecutableDifferentFutureActionsAndCanFinish]' passed (0.035 seconds).
+Test Case '-[LifeDomainTests.WorkshopContinuityTests testLowResourcesHaveFreeRecoveryAndAskingAcrossCountriesAndSeeds]' started.
+Test Case '-[LifeDomainTests.WorkshopContinuityTests testLowResourcesHaveFreeRecoveryAndAskingAcrossCountriesAndSeeds]' passed (1.276 seconds).
+Test Case '-[LifeDomainTests.WorkshopContinuityTests testRejectCorruptedVersionForgedFactsAndForgedTimeline]' started.
+Test Case '-[LifeDomainTests.WorkshopContinuityTests testRejectCorruptedVersionForgedFactsAndForgedTimeline]' passed (0.016 seconds).
+Test Case '-[LifeDomainTests.WorkshopContinuityTests testRejectInvalidTimelinesAndKeepDefaultCompleteLifeUnchanged]' started.
+Test Case '-[LifeDomainTests.WorkshopContinuityTests testRejectInvalidTimelinesAndKeepDefaultCompleteLifeUnchanged]' passed (0.014 seconds).
+Test Case '-[LifeDomainTests.WorkshopContinuityTests testRestDoesNotEraseEarnedExperienceOrRelationshipHistory]' started.
+Test Case '-[LifeDomainTests.WorkshopContinuityTests testRestDoesNotEraseEarnedExperienceOrRelationshipHistory]' passed (0.010 seconds).
+Test Case '-[LifeDomainTests.WorkshopContinuityTests testRestoreAndDeterministicReplayPreserveFullWorldAndOpportunities]' started.
+Test Case '-[LifeDomainTests.WorkshopContinuityTests testRestoreAndDeterministicReplayPreserveFullWorldAndOpportunities]' passed (0.044 seconds).
+Test Case '-[LifeDomainTests.WorkshopContinuityTests testSameStartingWorldLeadsToDifferentPlayableOpportunities]' started.
+Test Case '-[LifeDomainTests.WorkshopContinuityTests testSameStartingWorldLeadsToDifferentPlayableOpportunities]' passed (0.015 seconds).
+Test Case '-[LifeDomainTests.WorkshopContinuityTests testSkillThresholdUsesActualResourcesAndKeepsRecovery]' started.
+Test Case '-[LifeDomainTests.WorkshopContinuityTests testSkillThresholdUsesActualResourcesAndKeepsRecovery]' passed (0.009 seconds).
+Test Case '-[LifeDomainTests.WorkshopContinuityTests testUnavailableFutureChoiceCannotBeForgedAndDoesNotSpendAnything]' started.
+Test Case '-[LifeDomainTests.WorkshopContinuityTests testUnavailableFutureChoiceCannotBeForgedAndDoesNotSpendAnything]' passed (0.009 seconds).
+Test Suite 'WorkshopContinuityTests' passed at 2026-10-24 10:25:16.414.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 1.428 (1.428) seconds
+Test Suite 'LifeDomainTests.xctest' passed at 2026-10-24 10:25:16.414.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 1.428 (1.428) seconds
+Test Suite 'Selected tests' passed at 2026-10-24 10:25:16.414.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 1.428 (1.431) seconds
+Test Suite 'Selected tests' started at 2026-10-24 10:25:16.502.
+Test Suite 'LifeAnalysisTests.xctest' started at 2026-10-24 10:25:16.503.
+Test Suite 'LifeAnalysisTests.xctest' passed at 2026-10-24 10:25:16.503.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-24 10:25:16.503.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds

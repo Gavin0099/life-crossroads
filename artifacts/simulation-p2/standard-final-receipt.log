@@ -1,0 +1,30 @@
+{
+  "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+  "result_bundle": "artifacts/ios/SIM-standard-final-20261024T025949Z.xcresult",
+  "started_utc": "20261024T025949Z",
+  "cleanup": "PASS",
+  "device_uuid": "48777942-086C-4CFF-ACF2-B618AF36C322",
+  "command": [
+    "xcodebuild",
+    "-project",
+    "LifeCrossroads.xcodeproj",
+    "-scheme",
+    "LifeCrossroads",
+    "-destination",
+    "platform=iOS Simulator,id=48777942-086C-4CFF-ACF2-B618AF36C322",
+    "-parallel-testing-enabled",
+    "NO",
+    "-collect-test-diagnostics",
+    "never",
+    "-derivedDataPath",
+    ".build/ios-app",
+    "-resultBundlePath",
+    "/Users/macminim4/.codex/worktrees/sim-world-loop/life-crossroads/artifacts/ios/SIM-standard-final-20261024T025949Z.xcresult",
+    "CODE_SIGNING_ALLOWED=NO",
+    "test"
+  ],
+  "exit_code": 0,
+  "cleanup_stderr": "",
+  "owned_device_absent": true,
+  "ended_utc": "2026-10-24T03:08:54.305498+00:00"
+}

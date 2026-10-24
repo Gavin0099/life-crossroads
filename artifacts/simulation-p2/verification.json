@@ -1,0 +1,110 @@
+{
+  "at": "2026-10-24T03:09:21.858909+00:00",
+  "source_snapshot_sha256": "ee02306ea7f362783fe43e595b140fc031b2746957a3dca6dd98656a412e2a40",
+  "source_count": 61,
+  "all_sources_match": true,
+  "protected_count": 32,
+  "protected_all_match": true,
+  "asset_inventory_and_bytes_unchanged": true,
+  "asset_file_count": 22,
+  "original_tests_retained": true,
+  "original_test_count": 14,
+  "current_test_count": 17,
+  "native": {
+    "narrow-final": {
+      "passed": 17,
+      "failed": 0,
+      "total": 17,
+      "skipped": 0,
+      "expected_failures": 0,
+      "pass": true
+    },
+    "standard-final": {
+      "passed": 17,
+      "failed": 0,
+      "total": 17,
+      "skipped": 0,
+      "expected_failures": 0,
+      "pass": true
+    }
+  },
+  "attachments": {
+    "narrow-final": {
+      "count": 45,
+      "all_hashes_match": true
+    },
+    "standard-final": {
+      "count": 45,
+      "all_hashes_match": true
+    }
+  },
+  "route_fixtures_equal_baseline": {
+    "narrow-final/team-life-observations.json": true,
+    "narrow-final/help-graphics-off-observations.json": true,
+    "narrow-final/past_browsing_retained_current_world": true,
+    "standard-final/team-life-observations.json": true,
+    "standard-final/help-graphics-off-observations.json": true,
+    "standard-final/past_browsing_retained_current_world": true
+  },
+  "simulator_cleanup": [
+    {
+      "receipt": "artifacts/simulation-p2/narrow-final-run.json",
+      "uuid": "7BD7259F-B7CC-495A-83F4-91318F83527A",
+      "exit_code": 0,
+      "cleanup": "PASS",
+      "absent_now": true
+    },
+    {
+      "receipt": "artifacts/simulation-p2/p2-ax-final-run.json",
+      "uuid": "78581C2B-2E7D-49FA-B0D7-D20D2DEEB2A9",
+      "exit_code": 0,
+      "cleanup": "PASS",
+      "absent_now": true
+    },
+    {
+      "receipt": "artifacts/simulation-p2/p2-focused-2-run.json",
+      "uuid": "61D65BB0-24E0-45B2-9131-1023B6F572DA",
+      "exit_code": 65,
+      "cleanup": "PASS",
+      "absent_now": true
+    },
+    {
+      "receipt": "artifacts/simulation-p2/p2-focused-3-run.json",
+      "uuid": "909BDEEE-4AF3-492D-B724-8632AB29ABFA",
+      "exit_code": 65,
+      "cleanup": "PASS",
+      "absent_now": true
+    },
+    {
+      "receipt": "artifacts/simulation-p2/p2-focused-4-run.json",
+      "uuid": "E5136EC7-816C-4365-B5FC-A2AEC252BAFE",
+      "exit_code": 0,
+      "cleanup": "PASS",
+      "absent_now": true
+    },
+    {
+      "receipt": "artifacts/simulation-p2/p2-focused-run.json",
+      "uuid": "D729452E-03D1-4BE8-AA31-AFA3F18E70AA",
+      "exit_code": 65,
+      "cleanup": "PASS",
+      "absent_now": true
+    },
+    {
+      "receipt": "artifacts/simulation-p2/p2-memory-fixed-run.json",
+      "uuid": "760EDCEA-4FB2-4FC9-9272-EF33F69B1AF9",
+      "exit_code": 65,
+      "cleanup": "PASS",
+      "absent_now": true
+    },
+    {
+      "receipt": "artifacts/simulation-p2/standard-final-run.json",
+      "uuid": "48777942-086C-4CFF-ACF2-B618AF36C322",
+      "exit_code": 0,
+      "cleanup": "PASS",
+      "absent_now": true
+    }
+  ],
+  "all_owned_devices_deleted": true,
+  "boundary": "Presentation-only 13-to-15 workshop; no annual simulation, human fun, hardware or production art approval claim",
+  "pass": true
+}
