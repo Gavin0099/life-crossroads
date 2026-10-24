@@ -1,0 +1,49 @@
+{
+  "repo": "rossark0/rossark-motion-skill",
+  "commit": "9b20964e32f07f8ac7e2948cd175746fa4a7712f",
+  "read_only_audit": true,
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 rossark0",
+  "copied_source_files": [],
+  "installed_skill": false,
+  "imported_demo_assets": [],
+  "sources": [
+    {
+      "path": "SKILL.md",
+      "git_blob_sha": "b1d0dac4794814190297d12e64d1aee0393ca05c",
+      "url": "https://github.com/rossark0/rossark-motion-skill/blob/9b20964e32f07f8ac7e2948cd175746fa4a7712f/SKILL.md"
+    },
+    {
+      "path": "MOTION.md",
+      "git_blob_sha": "e540b1f1d2878d8958df12b2a10b52bc1f2b3a57",
+      "url": "https://github.com/rossark0/rossark-motion-skill/blob/9b20964e32f07f8ac7e2948cd175746fa4a7712f/MOTION.md"
+    },
+    {
+      "path": "templates/swiftui/Motion.swift",
+      "git_blob_sha": "83b14ae40c1a8614ba4560bf2577f3960f4bf364",
+      "url": "https://github.com/rossark0/rossark-motion-skill/blob/9b20964e32f07f8ac7e2948cd175746fa4a7712f/templates/swiftui/Motion.swift"
+    },
+    {
+      "path": "templates/swiftui/LiveFace.swift",
+      "git_blob_sha": "c30fa5ea897c221f90d647a3d39b303442b60a3f",
+      "url": "https://github.com/rossark0/rossark-motion-skill/blob/9b20964e32f07f8ac7e2948cd175746fa4a7712f/templates/swiftui/LiveFace.swift"
+    },
+    {
+      "path": "LICENSE",
+      "git_blob_sha": "f4b80ff65b129f3aa6293b730ca5f4149d97337c",
+      "url": "https://github.com/rossark0/rossark-motion-skill/blob/9b20964e32f07f8ac7e2948cd175746fa4a7712f/LICENSE"
+    }
+  ],
+  "adoption": [
+    "Small calm transform-only motion",
+    "One scene elapsed input from Gameplay",
+    "Frame-zero reduced-motion loops and committed one-shot final frame"
+  ],
+  "rejected": [
+    "Upstream LoopClock: paused resets t=0 and resume uses absolute start",
+    "LiveFace: no independent eye/head/hand/tail layers",
+    "Demo art, scripts, models, React Native dependencies"
+  ],
+  "dependency": "LL-01 compiled and published DTO contract SHA not found; no production adapter implemented",
+  "planning_baseline": "c823c820ceea027215df2d2f46c2c0ac4373c871"
+}

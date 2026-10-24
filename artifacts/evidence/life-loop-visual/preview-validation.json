@@ -1,0 +1,110 @@
+{
+  "checks" : [
+    {
+      "name" : "4000ms loop closes at the initial pose",
+      "passed" : true
+    },
+    {
+      "name" : "freeze retains supplied phase instead of resetting",
+      "passed" : true
+    },
+    {
+      "name" : "next supplied millisecond resumes continuously",
+      "passed" : true
+    },
+    {
+      "name" : "reduced-motion loop uses complete static first frame",
+      "passed" : true
+    },
+    {
+      "name" : "reduced committed outcome uses final frame",
+      "passed" : true
+    },
+    {
+      "name" : "uncommitted input cannot animate an outcome",
+      "passed" : true
+    },
+    {
+      "name" : "invalid time produces finite static values",
+      "passed" : true
+    }
+  ],
+  "externalCodeCopied" : false,
+  "frames" : [
+    {
+      "age" : 8,
+      "committedFixture" : false,
+      "elapsedMs" : 0,
+      "height" : 928,
+      "name" : "loop-0",
+      "reducedMotion" : false,
+      "width" : 828
+    },
+    {
+      "age" : 8,
+      "committedFixture" : false,
+      "elapsedMs" : 1000,
+      "height" : 928,
+      "name" : "loop-25",
+      "reducedMotion" : false,
+      "width" : 828
+    },
+    {
+      "age" : 8,
+      "committedFixture" : false,
+      "elapsedMs" : 2000,
+      "height" : 928,
+      "name" : "loop-50",
+      "reducedMotion" : false,
+      "width" : 828
+    },
+    {
+      "age" : 8,
+      "committedFixture" : false,
+      "elapsedMs" : 4000,
+      "height" : 928,
+      "name" : "loop-100",
+      "reducedMotion" : false,
+      "width" : 828
+    },
+    {
+      "age" : 13,
+      "committedFixture" : true,
+      "elapsedMs" : 1000,
+      "height" : 928,
+      "name" : "teen-outcome-start",
+      "reducedMotion" : false,
+      "width" : 828
+    },
+    {
+      "age" : 13,
+      "committedFixture" : true,
+      "elapsedMs" : 1000,
+      "height" : 928,
+      "name" : "teen-outcome-final",
+      "reducedMotion" : false,
+      "width" : 828
+    },
+    {
+      "age" : 13,
+      "committedFixture" : true,
+      "elapsedMs" : 1000,
+      "height" : 928,
+      "name" : "teen-reduced-final",
+      "reducedMotion" : true,
+      "width" : 828
+    },
+    {
+      "age" : 39,
+      "committedFixture" : false,
+      "elapsedMs" : 1000,
+      "height" : 928,
+      "name" : "adult",
+      "reducedMotion" : false,
+      "width" : 828
+    }
+  ],
+  "newRasterAssets" : false,
+  "productionDTO" : "NOT CONNECTED — waiting for LL-01 published contract",
+  "scope" : "Pure preview sampling and macOS SwiftUI ImageRenderer; not iOS Simulator, formal life data, or Gameplay clock validation"
+}

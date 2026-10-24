@@ -1,0 +1,17 @@
+{
+  "baseline": "c823c820ceea027215df2d2f46c2c0ac4373c871",
+  "observed_initial_worktree_head_time_utc": "2026-10-24T05:18:43.486686+00:00",
+  "recorded_at_utc": "2026-10-24T05:29:31.028004+00:00",
+  "tracked_wall_minutes": 10.79,
+  "visual_budget_agent_hours": 2,
+  "exact_total_agent_hours": null,
+  "timing_boundary": "Tracked branch interval only. Initial remote-source audit preceded branch creation and was not continuously metered; do not call this total team effort or reset remaining 2h. Prior WORLD-ART work belongs to superseded scope.",
+  "slice_status": {
+    "VW-01": "PARTIAL: source audit and isolated preview; LL-01 production DTO pending",
+    "VW-02": "NOT ACCEPTED: pure sampling PoC only",
+    "VW-03": "NOT STARTED with true trace input",
+    "VW-04": "NOT ACCEPTED: only offline fixture frames"
+  },
+  "simulators_created_in_this_branch": 0,
+  "integration_gates": "NOT RUN"
+}

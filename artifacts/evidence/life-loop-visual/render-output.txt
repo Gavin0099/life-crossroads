@@ -1,0 +1,1 @@
+7 pure sampling checks passed; 8 SwiftUI preview frames exported. Not integrated gameplay evidence.
