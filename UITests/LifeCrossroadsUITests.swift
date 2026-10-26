@@ -26,7 +26,7 @@ final class LifeCrossroadsUITests: XCTestCase {
         let rest = app.buttons["choice.rest"]; reveal(rest, in: app); rest.tap()
         app.buttons["continueLife"].tap()
         let receipt = app.staticTexts["lifeFocusReceipt"]; XCTAssertTrue(receipt.waitForExistence(timeout: 5))
-        XCTAssertTrue(receipt.label.contains("技能1"))
+        XCTAssertTrue(receipt.label.contains("技能 +1"))
         attachScreenshot("lx03-focus-arrival", app: app)
     }
 

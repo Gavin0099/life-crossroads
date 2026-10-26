@@ -1015,7 +1015,9 @@ private extension CrossroadsView {
                         .font(.caption).foregroundStyle(.secondary)
                 }
                 if let effect = session.jumps.last?.focusEffect {
-                    Text(effect.explanation).font(.caption).accessibilityIdentifier("lifeFocusReceipt")
+                    Text("上一段重心：\(effect.focus.title)・\(deltaText(effect.actual))")
+                        .font(.caption).accessibilityIdentifier("lifeFocusReceipt")
+                    DisclosureGroup("重心的計算紀錄") { Text(effect.explanation).font(.caption) }
                 }
                 if let experiment = store.experiment, !store.viewingOriginal, session.phase != .ended {
                     Text("另一條路 · 從\(experiment.snapshot.session.state.age)歲改選，原人生已保留")
@@ -1052,6 +1054,7 @@ private extension CrossroadsView {
                 archiveChecksum
             }.padding(18).frame(maxWidth: 620, alignment: .leading).frame(maxWidth: .infinity)
         }.accessibilityIdentifier("lifeOverview")
+            .id("life-overview-\(store.viewingOriginal)-\(session.state.age)-\(session.phase.rawValue)")
     }
 
     var focusSheet: some View {
