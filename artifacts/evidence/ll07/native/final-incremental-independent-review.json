@@ -1,0 +1,322 @@
+{
+  "reviewer": "Independent visual critic /root/simulation_visual_critic",
+  "scope": "Final bounded incremental LL07/08 native preview review. Exactly 11 new original screenshots viewed; unchanged routes and earlier normal/maximum flow use prior 30-image review by explicit reference.",
+  "verdict": "PASS_WITH_P2_FOR_BOUNDED_VISUAL_CANDIDATE — previous SE head-occlusion P1 and maximum-text final-question evidence gap closed. No new P0/P1 in these 11 inspected frames. Not all-product art/release approval.",
+  "viewed_count": 11,
+  "images_viewed": [
+    {
+      "path": "artifacts/evidence/ll07/native/se-caption-final/ll08-thirteen-invest.png",
+      "sha256": "715db78fbfd835d23937ecc36e03cfe7150d295f719507587fb12daf3ec1480b",
+      "actual_sha256": "715db78fbfd835d23937ecc36e03cfe7150d295f719507587fb12daf3ec1480b",
+      "viewed_original_with_view_image": true,
+      "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+      "native_attachment": {
+        "configurationName": "Test Scheme Action",
+        "deviceId": "B0F87C69-D8D1-498A-8A7D-5C98B1272AF6",
+        "deviceName": "LifeCrossroads Test 20261024T121030Z",
+        "exportedFileName": "753A262A-A057-4A54-88DD-E6151F508D2E.png",
+        "isAssociatedWithFailure": false,
+        "suggestedHumanReadableName": "ll08-thirteen-invest_0_545A2D22-65F1-4DCE-BF54-319E7D6D0B40.png",
+        "timestamp": 1792844003.16
+      }
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/se-caption-final/ll08-thirteen-offline.png",
+      "sha256": "d30b2daca59f9b883a1ff19ceaa6ffc6d15a3ba1eb5206cf6090f3a9fff6ad16",
+      "actual_sha256": "d30b2daca59f9b883a1ff19ceaa6ffc6d15a3ba1eb5206cf6090f3a9fff6ad16",
+      "viewed_original_with_view_image": true,
+      "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+      "native_attachment": {
+        "configurationName": "Test Scheme Action",
+        "deviceId": "B0F87C69-D8D1-498A-8A7D-5C98B1272AF6",
+        "deviceName": "LifeCrossroads Test 20261024T121030Z",
+        "exportedFileName": "E60377B9-AFD8-481B-93D3-107AA5751DD7.png",
+        "isAssociatedWithFailure": false,
+        "suggestedHumanReadableName": "ll08-thirteen-offline_0_C9CCEBF5-80B2-44F8-9423-C2D0969BF95D.png",
+        "timestamp": 1792844050.868
+      }
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/se-caption-final/ll08-thirteen-ask.png",
+      "sha256": "037b731897739421b313a913244224382959fdbb5bb8da16c41f82c21caf7052",
+      "actual_sha256": "037b731897739421b313a913244224382959fdbb5bb8da16c41f82c21caf7052",
+      "viewed_original_with_view_image": true,
+      "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+      "native_attachment": {
+        "configurationName": "Test Scheme Action",
+        "deviceId": "B0F87C69-D8D1-498A-8A7D-5C98B1272AF6",
+        "deviceName": "LifeCrossroads Test 20261024T121030Z",
+        "exportedFileName": "D2D2E2DD-C3B0-456D-94BA-C3A4CE68CBB7.png",
+        "isAssociatedWithFailure": false,
+        "suggestedHumanReadableName": "ll08-thirteen-ask_0_C18C6D07-47A5-4AD8-B975-3B9572726291.png",
+        "timestamp": 1792844101.284
+      }
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/se-caption-final/ll08-thirteen-rest.png",
+      "sha256": "5e19041c9b95eead4ebff27275404419d5ade72bcb35637ae90e75bc9b1eeb01",
+      "actual_sha256": "5e19041c9b95eead4ebff27275404419d5ade72bcb35637ae90e75bc9b1eeb01",
+      "viewed_original_with_view_image": true,
+      "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+      "native_attachment": {
+        "configurationName": "Test Scheme Action",
+        "deviceId": "B0F87C69-D8D1-498A-8A7D-5C98B1272AF6",
+        "deviceName": "LifeCrossroads Test 20261024T121030Z",
+        "exportedFileName": "E8FA7C44-3C8A-4B11-99B2-A9C0DB893DA0.png",
+        "isAssociatedWithFailure": false,
+        "suggestedHumanReadableName": "ll08-thirteen-rest_0_76E1CAFA-0632-4DA0-B989-007006C6416E.png",
+        "timestamp": 1792844153.729
+      }
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/se-caption-final/ll07-event-pinned-world.png",
+      "sha256": "9e7c8b9c54d99a8c5fa12f337c5257d64beb0f687cc80692963619ff1f46d25e",
+      "actual_sha256": "9e7c8b9c54d99a8c5fa12f337c5257d64beb0f687cc80692963619ff1f46d25e",
+      "viewed_original_with_view_image": true,
+      "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+      "native_attachment": {
+        "configurationName": "Test Scheme Action",
+        "deviceId": "B0F87C69-D8D1-498A-8A7D-5C98B1272AF6",
+        "deviceName": "LifeCrossroads Test 20261024T121030Z",
+        "exportedFileName": "40C37F7B-CD6D-466D-A45C-8795CFA4219E.png",
+        "isAssociatedWithFailure": false,
+        "suggestedHumanReadableName": "ll07-event-pinned-world_0_6E18749E-13FF-49F9-8289-A1EA812CA270.png",
+        "timestamp": 1792844268.039
+      }
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/se-caption-final/ll07-outcome-scrolled-world.png",
+      "sha256": "c80de509a9b7233711473c4eecad664bcebf8aa0497447be925edef7552bd044",
+      "actual_sha256": "c80de509a9b7233711473c4eecad664bcebf8aa0497447be925edef7552bd044",
+      "viewed_original_with_view_image": true,
+      "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+      "native_attachment": {
+        "configurationName": "Test Scheme Action",
+        "deviceId": "B0F87C69-D8D1-498A-8A7D-5C98B1272AF6",
+        "deviceName": "LifeCrossroads Test 20261024T121030Z",
+        "exportedFileName": "0B699109-0CA2-4DA8-88A4-C312BD8E81D5.png",
+        "isAssociatedWithFailure": false,
+        "suggestedHumanReadableName": "ll07-outcome-scrolled-world_0_751348CC-2EF3-40E7-948C-3F0334036C29.png",
+        "timestamp": 1792844282.562
+      }
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/se-reading-final/ll07-full-event-13-maximum.png",
+      "sha256": "0fde1aa57d725c0540c7a4059dbd89125f711659c9a9abd643f118fb23296896",
+      "actual_sha256": "0fde1aa57d725c0540c7a4059dbd89125f711659c9a9abd643f118fb23296896",
+      "viewed_original_with_view_image": true,
+      "productSourceCommit": "ce9f6a7e7f193c3dbe4a57fdd8e4d42b7c40e319",
+      "native_attachment": {
+        "configurationName": "Test Scheme Action",
+        "deviceId": "1BCA439C-F89D-459D-B254-1207485469FE",
+        "deviceName": "LifeCrossroads Test 20261024T122201Z",
+        "exportedFileName": "4E8FF937-A012-4D6F-AA4C-F74AA911742B.png",
+        "isAssociatedWithFailure": false,
+        "suggestedHumanReadableName": "ll07-full-event-13-maximum_0_C8802260-5AB1-4DBB-B7ED-7C78BC885F5F.png",
+        "timestamp": 1792844773.798
+      }
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/se-reading-final/ll07-full-event-8-maximum.png",
+      "sha256": "135f876536710290ccec9dfc8c6870098b4fe519c11226e4bf566f4585f8f3c0",
+      "actual_sha256": "135f876536710290ccec9dfc8c6870098b4fe519c11226e4bf566f4585f8f3c0",
+      "viewed_original_with_view_image": true,
+      "productSourceCommit": "ce9f6a7e7f193c3dbe4a57fdd8e4d42b7c40e319",
+      "native_attachment": {
+        "configurationName": "Test Scheme Action",
+        "deviceId": "1BCA439C-F89D-459D-B254-1207485469FE",
+        "deviceName": "LifeCrossroads Test 20261024T122201Z",
+        "exportedFileName": "CE654F25-3037-47E3-B58C-C6A3692D2F30.png",
+        "isAssociatedWithFailure": false,
+        "suggestedHumanReadableName": "ll07-full-event-8-maximum_0_1A87BFD2-CD52-4AEF-BFE0-BC59821A6F22.png",
+        "timestamp": 1792844673.379
+      }
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/standard-caption-final/ll08-thirteen-offline.png",
+      "sha256": "99b8fa800a4f68d7493d91dc15d74bc1ce63cc494def81dbc3bf225a371f0912",
+      "actual_sha256": "99b8fa800a4f68d7493d91dc15d74bc1ce63cc494def81dbc3bf225a371f0912",
+      "viewed_original_with_view_image": true,
+      "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+      "native_attachment": {
+        "configurationName": "Test Scheme Action",
+        "deviceId": "90432CB6-3DE4-46B5-9DE3-48845DCBB06B",
+        "deviceName": "LifeCrossroads Test 20261024T121030Z",
+        "exportedFileName": "A4EC40A4-7F52-4FBD-82F8-CF334393EFF4.png",
+        "isAssociatedWithFailure": false,
+        "suggestedHumanReadableName": "ll08-thirteen-offline_0_86FE7292-65A5-45A6-A986-F4553B7D8564.png",
+        "timestamp": 1792844054.329
+      }
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/standard-caption-final/ll07-event-pinned-world.png",
+      "sha256": "8e175f8601add88a8f330afe73fcbd94c0b0e604575d3f8ac51ab236fb0d035b",
+      "actual_sha256": "8e175f8601add88a8f330afe73fcbd94c0b0e604575d3f8ac51ab236fb0d035b",
+      "viewed_original_with_view_image": true,
+      "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+      "native_attachment": {
+        "configurationName": "Test Scheme Action",
+        "deviceId": "90432CB6-3DE4-46B5-9DE3-48845DCBB06B",
+        "deviceName": "LifeCrossroads Test 20261024T121030Z",
+        "exportedFileName": "9FC501CE-83C3-4E1D-846D-CE0C2C70B5DD.png",
+        "isAssociatedWithFailure": false,
+        "suggestedHumanReadableName": "ll07-event-pinned-world_0_58DF6616-9F56-476F-96EE-B80C1AF04DBA.png",
+        "timestamp": 1792844308.978
+      }
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/standard-caption-final/ll07-full-event-13-maximum.png",
+      "sha256": "64a2f8bee225c5edc07bfd04f6282ff72b67f0ef3bb232f37b1f4ba0299c89f5",
+      "actual_sha256": "64a2f8bee225c5edc07bfd04f6282ff72b67f0ef3bb232f37b1f4ba0299c89f5",
+      "viewed_original_with_view_image": true,
+      "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+      "native_attachment": {
+        "configurationName": "Test Scheme Action",
+        "deviceId": "90432CB6-3DE4-46B5-9DE3-48845DCBB06B",
+        "deviceName": "LifeCrossroads Test 20261024T121030Z",
+        "exportedFileName": "DBDE75AF-9ADB-4090-B38C-4CEBDF82B72A.png",
+        "isAssociatedWithFailure": false,
+        "suggestedHumanReadableName": "ll07-full-event-13-maximum_0_412FF685-11A7-4824-8902-0CEEDF1CF496.png",
+        "timestamp": 1792844292.451
+      }
+    }
+  ],
+  "manifest_integrity": [
+    {
+      "folder": "se-caption-final",
+      "manifest_count": 11,
+      "all_manifest_hashes_checked": true,
+      "all_manifest_hashes_match": true,
+      "manifest_sha256": "db6b151c42246c9991f4d39896a0e855609a23484a98945b802a8e33beccff9d",
+      "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+      "test_result": {
+        "passed": 3,
+        "failed": 1,
+        "total": 4,
+        "runtimeWarnings": []
+      }
+    },
+    {
+      "folder": "se-reading-final",
+      "manifest_count": 4,
+      "all_manifest_hashes_checked": true,
+      "all_manifest_hashes_match": true,
+      "manifest_sha256": "7690c770e41f708d35ea8d7afc7a9b06f719a92c2c5c669d9c7aea2ca6ba3155",
+      "productSourceCommit": "ce9f6a7e7f193c3dbe4a57fdd8e4d42b7c40e319",
+      "test_result": {
+        "passed": 1,
+        "failed": 0,
+        "total": 1,
+        "runtimeWarnings": []
+      }
+    },
+    {
+      "folder": "standard-caption-final",
+      "manifest_count": 15,
+      "all_manifest_hashes_checked": true,
+      "all_manifest_hashes_match": true,
+      "manifest_sha256": "4e74268f080e0c86a520be3733651d45f36fa625002d3224853cdf90f1da33fa",
+      "productSourceCommit": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+      "test_result": {
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "runtimeWarnings": []
+      }
+    }
+  ],
+  "source_verification": {
+    "appSource": "d518c3bf1d0e9fb14d59906a0b7359a6324354a4",
+    "readingTestSource": "ce9f6a7e7f193c3dbe4a57fdd8e4d42b7c40e319",
+    "app_tree_both_verified_via_git": "1712e9e0645f6f80868f54b65a31e36726c81840",
+    "scene_sha256_current_file_and_expected": "ced164aefaa15ec5fd93c49024dd4124209cc1e8cf261442a9c95dce4af313cb",
+    "source_boundary": "artifacts/evidence/ll07/source-boundary.json",
+    "preserved_git_objects_independently_checked": [
+      "LifeCrossroads/Domain",
+      "LifeCrossroads/Data",
+      "LifeCrossroads/Persistence",
+      "LifeCrossroads/Presentation",
+      "LifeCrossroads/App/LifeWorldMotion.swift"
+    ],
+    "wrapper_diff_checked": "overlay disclaimer changed to separate VStack row; LifeWorldScene .frame(height: height) unchanged; no non-evidence PNG or Scene changes from 27c to d518; d518→ce9 only UITests/LifeCrossroadsUITests.swift."
+  },
+  "P0": [],
+  "P1": [],
+  "resolved": [
+    {
+      "id": "SE-SOURCE-LABEL-HEAD-OCCLUSION",
+      "previous_severity": "P1",
+      "status": "CLOSED in inspected current candidate",
+      "evidence": [
+        "se-caption-final/ll08-thirteen-invest.png",
+        "se-caption-final/ll08-thirteen-offline.png",
+        "se-caption-final/ll08-thirteen-ask.png",
+        "se-caption-final/ll08-thirteen-rest.png",
+        "standard-caption-final/ll08-thirteen-offline.png"
+      ],
+      "observation": "Scene disclosure occupies its own row above artwork. Full head, upper forehead, ears, eyes and mouth are visible; no label overlap. Main actor size/frame height not reduced by wrapper diff."
+    },
+    {
+      "id": "AX-QUESTION-EVIDENCE",
+      "previous_severity": "P2 evidence gap",
+      "status": "CLOSED for current two-device question screenshots",
+      "evidence": [
+        "se-reading-final/ll07-full-event-13-maximum.png",
+        "se-reading-final/ll07-full-event-8-maximum.png",
+        "standard-caption-final/ll07-full-event-13-maximum.png"
+      ],
+      "observation": "13-year full final question 同樣投入，為什麼準備成本不同？ is now completely visible, including last line and punctuation, with bottom whitespace on both devices. 8-year maximum question completely visible on SE. Previous paragraph may be scrolled out under native navbar; this is expected, not truncation."
+    }
+  ],
+  "additional_observations": [
+    "SE and standard normal event first option title and 時間1/精力2/材料1 costs remain visible above fixed footer after moving disclosure. SE lower basic-impact line is partly below footer, while title/cost are intact; no claim that all options fit one screen.",
+    "SE outcome scrolled screenshot keeps world/actor/cue card visible above drawer; no face or note/table card clipping by footer.",
+    "SE four routes still distinguish online diagram, paper practice, asking/start question, and rest packed material. Asking does not show completed practice; rest does not show owl/helper.",
+    "Full-story exit 回到選擇 remains visible in inspected maximum-text sheets."
+  ],
+  "remaining_P2": [
+    {
+      "id": "AX-DENSITY",
+      "status": "retained from prior review, not re-shot in these 11",
+      "finding": "Maximum-text event title and full-story entry horizontal competition creates multi-line density, first-screen actions require scrolling. Prior evidence is not falsely rebranded current full regression."
+    },
+    {
+      "id": "NATIVE-ART-SEAM",
+      "status": "retained; also visible in new props",
+      "finding": "Flat table/box/diagram geometry still differs from textured illustrated world."
+    },
+    {
+      "id": "STATIC-ATTENTION",
+      "status": "retained; also visible in new 13-year routes",
+      "finding": "Character gaze/hand poses remain static and do not share the new table object focus; trace-prop clarity is not equivalent to new acting."
+    }
+  ],
+  "prior_review_refs": [
+    "/tmp/ll07-standard-followup-independent-review.json",
+    "/tmp/ll07-se-followup-independent-review.json",
+    "/tmp/ll07-current-native-review.json",
+    "/tmp/ll07-standard-native-independent-review.json"
+  ],
+  "test_claim_boundary": {
+    "current_standard_d518": "4/4 targeted, warnings []",
+    "current_SE_d518": "3 passed / 1 failed of 4; failure concerned reading viewport assertion, preserved",
+    "SE_ce9_reading_retest": "1/1, warnings []; same App subtree as d518",
+    "prior_followup": "3aa standard6/6 and27c SE6/6 remain historical targeted sources",
+    "earlier_full_run": "5ab standard20/20 andSE18/20 remain historical; not latest complete suites",
+    "not_claimed": "No latest-source complete21/21 per-device run."
+  },
+  "cleanup_receipt": {
+    "path": "artifacts/evidence/ll07/simulator-cleanup.json",
+    "ownedDeviceCount": 17,
+    "allDeleted": true,
+    "claim": "Read receipt; reviewer did not start or delete Simulator."
+  },
+  "limits": [
+    "11-image increment only; prior 30 images explicitly supply unchanged review coverage.",
+    "17-year actual echo was not reshot in latest targeted sets; use historical native evidence and unchanged Scene/Domain separately, not as current screenshots.",
+    "8-year outcome resourceChange remains current-outcome, not persistent StoryFact.",
+    "New 閱讀全文 improves discoverability of content already available in old DisclosureGroup; it did not repair a nonexistent full-story entry.",
+    "No physical-device/manual VoiceOver/child playtesting/replay appeal/commercial-asset/final human art approval/release claimed."
+  ],
+  "side_effects": "Only this /tmp JSON written. No repository, memory, code or assets edited; no Simulator or subagent started. Review stops at requested bound."
+}

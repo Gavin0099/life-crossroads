@@ -71,3 +71,4 @@ xcodebuild -project LifeCrossroads.xcodeproj -scheme LifeCrossroads \
   -collect-test-diagnostics "$LIFE_TEST_DIAGNOSTICS" \
   -derivedDataPath .build/ios-app -resultBundlePath "$LIFE_RESULT_PATH" \
   CODE_SIGNING_ALLOWED=NO "${LIFE_TEST_ARGUMENTS[@]}"
+python3 scripts/check-ios-runtime.py "$LIFE_RESULT_PATH"

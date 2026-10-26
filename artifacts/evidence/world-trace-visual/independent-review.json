@@ -1,0 +1,193 @@
+{
+  "reviewer": "/root/simulation_visual_critic",
+  "scope": "LL-08 Visual B; macOS ImageRenderer offline production-view candidate only; not iOS screenshot review",
+  "verdict": "OFFLINE_CANDIDATE_NO_BLOCKING_VISUAL_FINDING",
+  "product_art_completion": "NOT_CLAIMED",
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 2
+  },
+  "baseline_commit": "b896e058bf49f61ec8eafec2a4134a35edff6ddc",
+  "implementation_commit_reported": "129ca19",
+  "current_head_at_review": "023353573a4adef4796b413ac567b947e786ab9e",
+  "baseline_scene_sha256": "31b43ccf0a5485c41674594c02718dca3eae84d6bcd22ebaeff9a437e7ca6e75",
+  "candidate_scene_sha256": "ced164aefaa15ec5fd93c49024dd4124209cc1e8cf261442a9c95dce4af313cb",
+  "findings": [
+    {
+      "priority": "P2",
+      "id": "native_geometry_vs_painted_world",
+      "images": [
+        "8-invest.png",
+        "8-rest.png",
+        "13-offline.png",
+        "13-invest.png",
+        "17-invest.png"
+      ],
+      "finding": "桌面/桌腳、盒體與紙面具有非常平直的向量邊緣、均一色塊和簡化透視，與地面/人物的細緻筆觸仍有明顯差異。新增桌腳和陰影已消除原本只靠符號懸浮的感覺，但整體仍讀作插畫上的原生幾何舞台道具。",
+      "recommendation": "後續以現有原生幾何補薄紙邊、暖色細微明暗、接觸陰影與桌面透視，不需藉此擴大角色素材生成；不阻擋本輪來源呈現候選。"
+    },
+    {
+      "priority": "P2",
+      "id": "actors_do_not_attend_new_props",
+      "images": [
+        "8-invest.png",
+        "8-ask.png",
+        "13-invest.png",
+        "13-offline.png",
+        "13-ask.png",
+        "17-invest.png"
+      ],
+      "finding": "角色既有目光仍朝上/遠方，主角手持舊書、夥伴維持原PNG動作；新紙箱/圖解雖落在桌上，尚未成為角色共同觀察或接觸的焦點。可看懂留下不同痕跡，但不能說新增了製作、求助或分享演出。",
+      "recommendation": "保持本輪已揭露的靜態素材界線，正式整合先讓視覺道具與可玩後果成立；若未來要驗收共同活動，另以有界姿勢/視線設計處理，勿把本輪判定當acting完成。"
+    }
+  ],
+  "observations": [
+    {
+      "topic": "150pt face/note crop",
+      "images": [
+        "13-pending-large.png",
+        "17-echo-large.png",
+        "13-paper-large-reduced.png"
+      ],
+      "result": "主角/貓頭鷹臉部完整，線索/呼應紙箋改至左下後內容與旋轉邊緣保留在畫面內；紙本桌面掛牌與紙面亦未在底緣裁斷。150pt版夥伴顯得比主角大、上緣餘裕較少，但未見本組PNG的臉部裁切。不能據此推論正式iOS抽屜/頁尾也不遮擋。"
+    },
+    {
+      "topic": "props and occlusion",
+      "images": [
+        "8-invest.png",
+        "8-ask.png",
+        "13-invest.png",
+        "13-offline.png",
+        "13-paper-large-reduced.png"
+      ],
+      "result": "主要道具落在明確桌面上，桌腳與接地陰影提供承托；右側桌面在夥伴身前遮住部分下半身是可理解的前後關係，未遮住臉。呼應/未來紙箋屬UI紙箋，不誤稱物理手持物。"
+    },
+    {
+      "topic": "age8 non-fabrication",
+      "images": [
+        "8-before.png",
+        "8-ask.png",
+        "8-rest.png"
+      ],
+      "result": "決策前不出現成果道具。ask只有問號/正在找起點/8歲求助紀錄，未畫出借得工具或新增幫手。rest為收好紙箱，主角獨自存在。8歲只有本次已提交resourceChange，不將這組圖當作跨年StoryFact保存證據。"
+    },
+    {
+      "topic": "age13 memory vs age17 occurred echo",
+      "images": [
+        "13-invest.png",
+        "13-pending-large.png",
+        "17-invest.png",
+        "17-echo-large.png",
+        "17-rest.png"
+      ],
+      "result": "13歲活動桌牌保留來源年齡；未來紙箋明寫線索・尚未發生且用時鐘，17歲已觸發紙箋改17歲的呼應與箭頭。17歲rest保留13歲保留時間而無呼應紙箋。rest17的狐狸是投影給出的下一事件inviter，不將其解讀為休息換得幫手。"
+    },
+    {
+      "topic": "before/after",
+      "images": [
+        "8-ask.png",
+        "13-invest.png",
+        "13-paper-large-reduced.png",
+        "17-echo-large.png"
+      ],
+      "result": "代表性baseline多為底部獨立圖示，短場景甚至不見痕跡；候選加入來源年齡、活動道具與未來/已發生區分，觀察差異變得具體。"
+    }
+  ],
+  "integrity": {
+    "candidate_png_hashes": "14/14 independently match",
+    "baseline_png_hashes": "14/14 independently match",
+    "current_source_hashes": "27/27 independently match candidate manifest",
+    "current_scene_matches_reported_sha": true,
+    "baseline_scene_matches_git_baseline": true,
+    "paired_saves": "14/14 baseline/candidate same save SHA, actors and projected changes",
+    "saved_archive_bytes": "28/28 current baseline/candidate local archive hashes match manifests",
+    "guard_checks_are_not_xctest_counts": true,
+    "simulators_started_by_reviewer": 0
+  },
+  "viewed_candidate_images": [
+    {
+      "path": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/artifacts/evidence/world-trace-visual/candidate/8-before.png",
+      "sha256": "d7a0ef0547d02b9c18160f43537b57b60e17a1e0962987f025924d51895b87aa"
+    },
+    {
+      "path": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/artifacts/evidence/world-trace-visual/candidate/8-invest.png",
+      "sha256": "434d82c079cb5f1d80e93c3a26cb45b9e83d352adee59a79cc4110d25fa479e7"
+    },
+    {
+      "path": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/artifacts/evidence/world-trace-visual/candidate/8-ask.png",
+      "sha256": "96a9f594f3906254fe2d8b368445d987c1528fc839d5cfb291ef38989a342aa8"
+    },
+    {
+      "path": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/artifacts/evidence/world-trace-visual/candidate/8-rest.png",
+      "sha256": "67258bb08a5f15e019cabd38aad875227a695d790fd14eac40fbecf91e622bed"
+    },
+    {
+      "path": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/artifacts/evidence/world-trace-visual/candidate/13-before.png",
+      "sha256": "1c7aab91d6a7962ddb74bb602e1a8c9a1d3fe7508742208ccfcd7f7b17968137"
+    },
+    {
+      "path": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/artifacts/evidence/world-trace-visual/candidate/13-invest.png",
+      "sha256": "373d31219a85496286cd5c59ebb58c494ca982c0d88e9b7b30df348b092a01c2"
+    },
+    {
+      "path": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/artifacts/evidence/world-trace-visual/candidate/13-pending-large.png",
+      "sha256": "f4287d04415e3d6fa3ed0103c07b75c521937c3497adeb0a59059a32669c67d4"
+    },
+    {
+      "path": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/artifacts/evidence/world-trace-visual/candidate/17-invest.png",
+      "sha256": "e64612edae57b8fe266af17562ffa9ae8b6ef456a49bf51cb47f3c3371e9ce06"
+    },
+    {
+      "path": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/artifacts/evidence/world-trace-visual/candidate/17-echo-large.png",
+      "sha256": "c1fc966d2408517dd278849a2702458371ffbecff0e18b5ebbea9569210602b4"
+    },
+    {
+      "path": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/artifacts/evidence/world-trace-visual/candidate/13-offline.png",
+      "sha256": "017f182def94f61bd40cc900f8bb6ae668456f36c00db613327db9753e5d7b8a"
+    },
+    {
+      "path": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/artifacts/evidence/world-trace-visual/candidate/13-paper-large-reduced.png",
+      "sha256": "4a8d22b0225fae0b5deb1dd6e2031320d30c474c946f85c19daace26d7e5ca76"
+    },
+    {
+      "path": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/artifacts/evidence/world-trace-visual/candidate/13-ask.png",
+      "sha256": "b5393bba1f6506c64a324cd7cb285cffebcda75604d89d18dbf248a61cb5e751"
+    },
+    {
+      "path": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/artifacts/evidence/world-trace-visual/candidate/13-rest.png",
+      "sha256": "982014d615c155ffddae06df20535dbfc7f3be6809105e4f5e13a3933ab537c0"
+    },
+    {
+      "path": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/artifacts/evidence/world-trace-visual/candidate/17-rest.png",
+      "sha256": "23eedf90758ce5bbb26318b75e49928d8253dd1a4896f51fdae0e087a1611ac5"
+    }
+  ],
+  "viewed_baseline_images": [
+    {
+      "path": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/artifacts/evidence/world-trace-visual/baseline/8-ask.png",
+      "sha256": "1cdd3196f3f88f7101910df0c85bfab93502d5ed94f4787a1df31e25004ae017"
+    },
+    {
+      "path": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/artifacts/evidence/world-trace-visual/baseline/13-invest.png",
+      "sha256": "a3b77c02d65f7965ea8ecdb484ed4c9bc5794ba23f562ad7cd7c7c69320e201e"
+    },
+    {
+      "path": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/artifacts/evidence/world-trace-visual/baseline/17-echo-large.png",
+      "sha256": "468acf45520d12e10b0328722b975ad575677470d7853d178908a2cb7f466a39"
+    },
+    {
+      "path": "/Users/macminim4/.codex/worktrees/life-loop-visual-world-10h/life-crossroads/artifacts/evidence/world-trace-visual/baseline/13-paper-large-reduced.png",
+      "sha256": "f1f9cab3061705f19b72782f18286ab2b567f8623a135f305a54f72cccc4f856"
+    }
+  ],
+  "limits": [
+    "macOS ImageRenderer離線預覽，不是iOS Simulator或實機截圖。",
+    "沒有正式整合主流程/抽屜/頁尾/警告、雙機UI、人工VoiceOver、動畫時間序列或兒少真人遊戲性驗收。",
+    "74項是來源/狀態守衛斷言，不能宣稱74項新增XCTest。",
+    "人物PNG、背景與手部/視線沒有新增；不宣稱完整acting或人類選稿/商用素材批准。",
+    "8歲當次resourceChange無持久StoryFact；本輪不證明8→13→17全部道具跨年保存。",
+    "主產品美術完成、PR合併或App發布均未批准。"
+  ],
+  "next_native_review": "Gameplay A整合後，依實際同源iOS截圖重新檢查150pt大字/Reduce Motion、臉部/紙箋裁切、抽屜及頁尾遮擋、來源語意與兩年齡差異；本離線候選不能替代。"
+}

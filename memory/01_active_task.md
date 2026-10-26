@@ -59,3 +59,11 @@
 - LIFE-LOOP追加renderer凍結c445e5f，A正在SE3/iPhone17各完整18UI回歸，B不重複啟Sim；此前111Swift/24Python及候選5/5+1/1保留。PR10 Draft待雙機/清理/最終CI；共享B核時unknown，不新增預算、不合併。 <!-- memory_record_projection:active-task-summary:40708bea3549d39b8519f557f8b8c9af8430f1629776e92cd0347037e509c0f2 -->
 
 - LIFE-LOOP整套本機完成：c445 App兩機各18/18、111Swift/25Python、工具各1/1，root9台Simulator已刪。Reviewer0.966h未見新阻擋；B核時unknown及診斷介入/warning明列。PR10 Draft待最終HEAD CI，不合併；實機/VO/兒少未驗收。 <!-- memory_record_projection:active-task-summary:0e200820e6a33e8e26a8a978cc41e738960a064d9b2edcf2da829d3284427e12 -->
+
+- LL07/08凍結5ab3c97：重複nil發布三故障案例0warning，固定世界/52pt列/真實道具完成；111Swift/30Python/basic過。668標準7/9與SE中止保留，safe-area單項已修；5ab雙機各20執行中。Draft/HOLD，LL09真人未驗，不合併。 <!-- memory_record_projection:active-task-summary:fbd78f7c3fedf965c7b0e7d9d4d40cf3c400bd765c02ec4e1c0fd9981d47a3d2 -->
+
+- LL07/08本地工程及證據完成，最新雙機各6項定向通過、14台專用Simulator已delete；待獨立Draft推送與當前HEAD CI，不合併不發布；真人/正式美術仍缺。 <!-- memory_record_projection:active-task-summary:0ec99136d14212c716ea41606cc4a666b1f13cb5c3c663e8fc02eca8035227d1 -->
+
+- LL07/08本地完成：AppD518/測試ce9同App tree，標準4/4與SE三案例＋閱讀1/1分批通過；17台專用Simulator已delete。獨立11圖關閉遮頭P1及末行缺口，三P2與真人驗收保留。待Draft推送/當前HEAD CI，不合併發布。 <!-- memory_record_projection:active-task-summary:0ed45e747239ed23cebc62d5a1f5be7edf15ef7e9101c72b50efe76a4d4e6354 -->
+
+- LL09材料d737caf已完成：使用者安排iPhone／10～15歲玩家，主持步驟及個人／分齡空白表可帶測；未改App，尚無真人結果。PR11原95cd0fc的basic／Swift／audit成功、iOS取消，未全過；待文件交付及真人驗收，維持Draft。 <!-- memory_record_projection:active-task-summary:14ffd7c8d9c65f6bce9d38d5ff43f46e985f0c671478f3dedc84e3837067f538 -->

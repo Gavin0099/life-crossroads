@@ -137,6 +137,13 @@ final class GameStore: ObservableObject {
         } catch { errorMessage = "進度尚未寫入，這次操作沒有生效；原紀錄仍保留。\(error)"; return false }
     }
 
+    /// SwiftUI can write the alert binding again during its dismissal update.
+    /// The explicit acknowledgement has already cleared it; never publish that no-op.
+    func dismissError() {
+        guard errorMessage != nil else { return }
+        errorMessage = nil
+    }
+
     func resume() { viewingOriginal = false; showingHome = false; bindWorld(restoring: true) }
     func home() { playback.setSuspended(true, now: now); showingHome = true }
 

@@ -1,0 +1,32 @@
+[
+  {
+    "productSourceCommit": "5ab3c977ff035f6772edf0093e8f3325fe069939",
+    "test": "LifeCrossroadsUITests/testWorldActivityPropsOnlyFollowSavedChoicesAtEightAndThirteen()",
+    "path": "artifacts/evidence/ll07/history/5ab-se-ask-unrevealed.png",
+    "sha256": "da29dba1b99c3a9b31e22c1727bff2153f491f959fbfd0e6012ef4a61ee781ea",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "250CEEEE-2047-475F-A6FB-D2658297CDA9",
+      "deviceName": "LifeCrossroads Test 20261024T110326Z",
+      "exportedFileName": "4D7DD37A-06BA-41FF-9B05-999222D01A54.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "unrevealed-choice_0_3DA51AFF-9DA4-4AC5-803F-73813EF8E492.ask",
+      "timestamp": 1792841057.661
+    }
+  },
+  {
+    "productSourceCommit": "5ab3c977ff035f6772edf0093e8f3325fe069939",
+    "test": "LifeCrossroadsUITests/testWorldRestorePauseSheetsAndRestartCancelKeepTheStoredOutcome()",
+    "path": "artifacts/evidence/ll07/history/5ab-se-reason-unrevealed.png",
+    "sha256": "d87d6852ac6a66dc46addc95e34bde86491d4e62f807d49f5bcd6fcd33223dfc",
+    "attachment": {
+      "configurationName": "Test Scheme Action",
+      "deviceId": "250CEEEE-2047-475F-A6FB-D2658297CDA9",
+      "deviceName": "LifeCrossroads Test 20261024T110326Z",
+      "exportedFileName": "8A27BBB2-2604-43BD-BF0C-6735FB6C25EE.png",
+      "isAssociatedWithFailure": false,
+      "suggestedHumanReadableName": "unrevealed-whyResult_0_A5333F03-4F71-4E66-BAE1-C22357A96FDA.png",
+      "timestamp": 1792841801.38
+    }
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "devicesAndConfigurations": [
+    {
+      "device": {
+        "architecture": "arm64",
+        "deviceId": "B0F87C69-D8D1-498A-8A7D-5C98B1272AF6",
+        "deviceName": "LifeCrossroads Test 20261024T121030Z",
+        "modelName": "iPhone SE (3rd generation)",
+        "osBuildNumber": "24A434",
+        "osVersion": "27.0",
+        "platform": "iOS Simulator"
+      },
+      "expectedFailures": 0,
+      "failedTests": 1,
+      "passedTests": 3,
+      "skippedTests": 0,
+      "testPlanConfiguration": {
+        "configurationId": "1",
+        "configurationName": "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription": "LifeCrossroads · Built with macOS 27.0",
+  "expectedFailures": 0,
+  "failedTests": 1,
+  "finishTime": 1792844312.577,
+  "passedTests": 3,
+  "result": "Failed",
+  "runtimeWarnings": [],
+  "skippedTests": 0,
+  "startTime": 1792843878.659,
+  "statistics": [],
+  "testFailures": [
+    {
+      "failureText": "XCTAssertLessThanOrEqual failed: (\"647.0\") is greater than (\"635.0\") - The final question line must be visible",
+      "targetName": "LifeCrossroadsUITests",
+      "testIdentifier": 2,
+      "testIdentifierString": "LifeCrossroadsUITests/testWorldFullEventReadingPreservesTheDecisionAndArchiveAtNormalAndMaximumText()",
+      "testIdentifierURL": "test://com.apple.xcode/LifeCrossroads/LifeCrossroadsUITests/LifeCrossroadsUITests/testWorldFullEventReadingPreservesTheDecisionAndArchiveAtNormalAndMaximumText",
+      "testName": "testWorldFullEventReadingPreservesTheDecisionAndArchiveAtNormalAndMaximumText()"
+    }
+  ],
+  "title": "Test - LifeCrossroads",
+  "topInsights": [],
+  "totalTestCount": 4
+}

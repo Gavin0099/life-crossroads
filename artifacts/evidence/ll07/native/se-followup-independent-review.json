@@ -1,0 +1,178 @@
+{
+  "reviewer": "independent visual critic /root/simulation_visual_critic",
+  "review_method": "Viewed every listed original native PNG with view_image; read manifest and summary, independently recomputed all PNG SHA256; no Simulator started; no implementation/assets/memory changed.",
+  "scope": "Bounded LL07/08 native follow-up: 8/13-year event, full-story entry, saved-choice props and pinned world. Not final product art approval.",
+  "scene_sha256": "ced164aefaa15ec5fd93c49024dd4124209cc1e8cf261442a9c95dce4af313cb",
+  "app_tree": "f61e36003c7ddc44dfe2ff905809a5a77ac12827",
+  "historical_correction": "5ab3c9 already contained DisclosureGroup 完整故事與問題 after the options (CrossroadsView.swift:499–503 at that source). New 閱讀全文 beside the title improves discoverability, not restoration of absent content.",
+  "limits": [
+    "Each new device run is 6/6 targeted, not 20/20 full regression.",
+    "17-year occurred echo was not reshot in these follow-up manifests; historical 5ab native review and unchanged Scene are separate evidence, not current shots.",
+    "Screenshots do not prove physical-device behavior, human VoiceOver, child understanding, replay appeal, final commercial asset approval or full-product art completion.",
+    "8-year resourceChange is current-outcome presentation, not a persistent cross-year StoryFact."
+  ],
+  "P2": [
+    {
+      "id": "AX-DENSITY",
+      "finding": "Maximum text first screen keeps the world and a visible 閱讀全文 entry, but title and full-story button compete horizontally and wrap to 3/2 lines; no action visible on first screen. This is navigation/density friction, not proof actions are inaccessible.",
+      "evidence": [
+        "ll07-maximum-text-layout.png"
+      ]
+    },
+    {
+      "id": "AX-QUESTION-EVIDENCE",
+      "finding": "13-year maximum text sheet screenshot does not contain the complete final question: its last line is below the captured bottom edge. UITest checks exact full label plus isHittable, which can be true for partial visibility. Do not call this permanent truncation; capture at the true scroll end to prove full visual reading. 8-year maximum and both normal sheets show complete question.",
+      "evidence": [
+        "ll07-full-event-13-maximum.png",
+        "ll07-full-event-8-maximum.png"
+      ],
+      "code_evidence": "UITests/LifeCrossroadsUITests.swift:26–29; production fullEventStory has fixedSize vertical and ScrollView, no lineLimit."
+    },
+    {
+      "id": "NATIVE-ART-SEAM",
+      "finding": "Table, box, leaf and diagram remain flat native geometry against textured illustration; props explain route differences but material integration is unfinished.",
+      "evidence": [
+        "ll08-eight-invest.png",
+        "ll08-thirteen-offline.png"
+      ]
+    },
+    {
+      "id": "STATIC-ATTENTION",
+      "finding": "Existing portraits keep upward gaze and book/side-pocket pose rather than attending newly added table props. These are distinguishable trace props, not new coherent acting.",
+      "evidence": [
+        "ll08-thirteen-invest.png",
+        "ll08-thirteen-offline.png",
+        "ll08-thirteen-ask.png"
+      ]
+    }
+  ],
+  "positive_observations": [
+    "Pinned world stays large through event and outcome scrolling; footer does not overlap faces or table cue cards in inspected frames.",
+    "8-year ask shows a question/start card without tools or helper; rest shows closed box and no helper.",
+    "13-year online, paper, ask and rest use different visible props; rest has no owl, ask has no completed work object.",
+    "Normal full-story sheets show both paragraphs and complete question; top-right 回到選擇 is clearly visible.",
+    "13-year online pending clue uses clock and 尚未發生; no current follow-up 17-year frame is claimed."
+  ],
+  "device": "iPhone SE (3rd generation)",
+  "source_commit": "27c5084a83ddb07a540d2c517192da7b32bcb1b2",
+  "native_summary": {
+    "passed": 6,
+    "failed": 0,
+    "runtimeWarnings": [],
+    "claim": "targeted only"
+  },
+  "images_viewed": [
+    {
+      "path": "artifacts/evidence/ll07/native/se/ll08-thirteen-rest.png",
+      "sha256": "6421125c200735ff81b173fedd8f959babbaad3a583ebe0ab4629baeb43a3db3",
+      "actual_sha256": "6421125c200735ff81b173fedd8f959babbaad3a583ebe0ab4629baeb43a3db3",
+      "viewed_original": true
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/se/ll08-eight-rest.png",
+      "sha256": "23d78487bbc636b784ceef7865806f6eb984ed92ea62adc87a3fd8ed7529f7cb",
+      "actual_sha256": "23d78487bbc636b784ceef7865806f6eb984ed92ea62adc87a3fd8ed7529f7cb",
+      "viewed_original": true
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/se/ll08-thirteen-ask.png",
+      "sha256": "dba090ec146d49704281fa89a263ceed1915b5ae545898ca5dc573e05dc105ab",
+      "actual_sha256": "dba090ec146d49704281fa89a263ceed1915b5ae545898ca5dc573e05dc105ab",
+      "viewed_original": true
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/se/ll08-thirteen-offline.png",
+      "sha256": "5db71dde99ff778c05d42a91540c294f6441a23871481dba93c945bda9aadba2",
+      "actual_sha256": "5db71dde99ff778c05d42a91540c294f6441a23871481dba93c945bda9aadba2",
+      "viewed_original": true
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/se/ll08-eight-invest.png",
+      "sha256": "92d7f7fad6048b9f7c8ab4b91ee0b4e8e09046388d8b400572d5d8f258196959",
+      "actual_sha256": "92d7f7fad6048b9f7c8ab4b91ee0b4e8e09046388d8b400572d5d8f258196959",
+      "viewed_original": true
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/se/ll08-thirteen-invest.png",
+      "sha256": "a5584d0aefc65cbe81e262444e57b9bdccf678d7cec1f44e560f5db45e20e117",
+      "actual_sha256": "a5584d0aefc65cbe81e262444e57b9bdccf678d7cec1f44e560f5db45e20e117",
+      "viewed_original": true
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/se/ll08-eight-ask.png",
+      "sha256": "cb7fbaa34b3aa3d14238d0674d7c6d0cab6f171f60e9d9fc46a68b0f7c26020d",
+      "actual_sha256": "cb7fbaa34b3aa3d14238d0674d7c6d0cab6f171f60e9d9fc46a68b0f7c26020d",
+      "viewed_original": true
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/se/ll07-full-event-13-maximum.png",
+      "sha256": "5cb3ffc3a63c77ea283caab02d1c998b6635dd963a5dad477f144c56f5384d1c",
+      "actual_sha256": "5cb3ffc3a63c77ea283caab02d1c998b6635dd963a5dad477f144c56f5384d1c",
+      "viewed_original": true
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/se/ll07-full-event-8-maximum.png",
+      "sha256": "ff52aadb99ba12dc20fa6ce31f27e221af7c16267169dee06b2bac2ff51bdb43",
+      "actual_sha256": "ff52aadb99ba12dc20fa6ce31f27e221af7c16267169dee06b2bac2ff51bdb43",
+      "viewed_original": true
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/se/ll07-full-event-13-normal.png",
+      "sha256": "5850abc1c733c291f2ea642e9fc010adfc2e213b32f0058335483ea393ada460",
+      "actual_sha256": "5850abc1c733c291f2ea642e9fc010adfc2e213b32f0058335483ea393ada460",
+      "viewed_original": true
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/se/ll07-full-event-8-normal.png",
+      "sha256": "93eb53a3ca0f731d48f5148f027100e47bdc29f8bda14aa8a509634d8f12f2fe",
+      "actual_sha256": "93eb53a3ca0f731d48f5148f027100e47bdc29f8bda14aa8a509634d8f12f2fe",
+      "viewed_original": true
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/se/ll07-outcome-scrolled-world.png",
+      "sha256": "48241b0856ec1daf4259d4025b9bbe0e67b806661f4c77945a387a3be5701c53",
+      "actual_sha256": "48241b0856ec1daf4259d4025b9bbe0e67b806661f4c77945a387a3be5701c53",
+      "viewed_original": true
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/se/ll07-event-pinned-world.png",
+      "sha256": "69066b7918cd488f5bf0a070cafdd0b2ab07a56ab51f22fcfe0069832b4e3b44",
+      "actual_sha256": "69066b7918cd488f5bf0a070cafdd0b2ab07a56ab51f22fcfe0069832b4e3b44",
+      "viewed_original": true
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/se/world-workshop-maximum-text-outcome.png",
+      "sha256": "d889bdad984946c6f06d603b38071439769694737215f23e5b7d852535eb905e",
+      "actual_sha256": "d889bdad984946c6f06d603b38071439769694737215f23e5b7d852535eb905e",
+      "viewed_original": true
+    },
+    {
+      "path": "artifacts/evidence/ll07/native/se/ll07-maximum-text-layout.png",
+      "sha256": "571b88502c133ecff4412c07548f31c3f9e7560228aabf00cce90d704f34e86f",
+      "actual_sha256": "571b88502c133ecff4412c07548f31c3f9e7560228aabf00cce90d704f34e86f",
+      "viewed_original": true
+    }
+  ],
+  "P0": [],
+  "P1": [
+    {
+      "id": "SE-SOURCE-LABEL-HEAD-OCCLUSION",
+      "finding": "At normal text, the shared-scene disclaimer overlays the 13-year protagonist upper head/forehead and upper ear silhouette in all three left-standing routes. Eyes and mouth remain visible. This is an A worldStage overlay collision, not a Scene bitmap crop. Move label into safe independent space without shrinking the character.",
+      "evidence": [
+        "ll08-thirteen-invest.png",
+        "ll08-thirteen-offline.png",
+        "ll08-thirteen-ask.png"
+      ],
+      "image_region_pixels": {
+        "disclaimer": [
+          40,
+          180,
+          332,
+          222
+        ]
+      },
+      "severity_reason": "Confirmed repeated obstruction of the character silhouette violates the bounded no-head/face-overlay requirement; engineering 6/6 does not resolve it."
+    }
+  ],
+  "verdict": "PARTIAL — one confirmed P1 blocks SE visual candidate acceptance."
+}

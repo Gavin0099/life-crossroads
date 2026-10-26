@@ -14,6 +14,7 @@ class SimulatorCleanupTests(unittest.TestCase):
             root = Path(directory)
             (root / "scripts").mkdir()
             shutil.copyfile(Path(__file__).resolve().parents[1] / "scripts/ios-check.sh", root / "scripts/ios-check.sh")
+            shutil.copyfile(Path(__file__).resolve().parents[1] / "scripts/check-ios-runtime.py", root / "scripts/check-ios-runtime.py")
             binary = root / "bin"
             binary.mkdir()
             tool = '''#!/usr/bin/env python3
@@ -28,6 +29,9 @@ if args[:3] == ['simctl', 'list', 'devices']:
     print(json.dumps({'devices': {'com.apple.CoreSimulator.SimRuntime.iOS-27-0': [
         {'udid': 'existing-phone', 'isAvailable': True, 'name': 'Existing phone',
          'deviceTypeIdentifier': 'com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation'}]}}))
+elif args[:4] == ['xcresulttool', 'get', 'test-results', 'summary']:
+    warning = os.environ.get('LIFE_FAKE_RUNTIME_WARNING', '')
+    print(json.dumps({'result': 'Passed', 'passedTests': int(os.environ.get('LIFE_FAKE_RUNTIME_PASSED', '1')), 'runtimeWarnings': [{'message': warning}] if warning else []}))
 elif args[:2] == ['simctl', 'create']:
     print('owned-test-phone')
 elif args[:2] == ['simctl', 'bootstatus']:
@@ -44,7 +48,7 @@ elif args[:2] == ['simctl', 'delete']:
                                     env={**os.environ, "PATH": f"{binary}:{os.environ['PATH']}",
                                          "LIFE_SIMULATOR_ID": requested, "LIFE_FAKE_LOG": str(log),
                                          "LIFE_SIMULATOR_DEVICE_TYPE": "", "LIFE_SIMULATOR_RUNTIME": "",
-                                         "LIFE_TEST_DIAGNOSTICS": "",
+                                         "LIFE_TEST_DIAGNOSTICS": "", "LIFE_FAKE_RUNTIME_WARNING": "", "LIFE_FAKE_RUNTIME_PASSED": "1",
                                          "LIFE_FAKE_BUILD_STATUS": str(build_status),
                                          "LIFE_FAKE_DELETE_STATUS": str(delete_status), "LIFE_FAKE_BOOT_STATUS": str(boot_status), **(config or {})})
             calls = [json.loads(line) for line in log.read_text().splitlines()] if log.exists() else []
@@ -95,6 +99,20 @@ elif args[:2] == ['simctl', 'delete']:
         result, calls = self.run_wrapper(requested="unknown")
         self.assertNotEqual(result.returncode, 0)
         self.assertEqual(len(calls), 1)
+
+    def test_empty_runtime_summary_cannot_pass_and_still_cleans_up(self):
+        result, calls = self.run_wrapper(config={"LIFE_FAKE_RUNTIME_PASSED": "0"})
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("Expected a completed, passing XCTest summary", result.stderr)
+        self.assertEqual(calls[-1], ["xcrun", "simctl", "delete", "owned-test-phone"])
+
+    def test_publication_issue_fails_after_successful_build_and_still_deletes(self):
+        warning = "Publishing changes from within view updates is not allowed, this will cause undefined behavior."
+        result, calls = self.run_wrapper(config={"LIFE_FAKE_RUNTIME_WARNING": warning})
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("SwiftUI publication regression", result.stderr)
+        self.assertTrue(any(c[1:5] == ["xcresulttool", "get", "test-results", "summary"] for c in calls))
+        self.assertEqual(calls[-1], ["xcrun", "simctl", "delete", "owned-test-phone"])
 
     def test_verbose_diagnostics_are_opt_in_and_invalid_value_creates_no_device(self):
         for value, expected in [("", "never"), ("never", "never"), ("on-failure", "on-failure")]:

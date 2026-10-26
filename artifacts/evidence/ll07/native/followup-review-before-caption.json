@@ -1,0 +1,84 @@
+{
+  "scope": "Bounded LL07/08 native follow-up: 8/13-year event, full-story entry, saved-choice props and pinned world. Not final product art approval.",
+  "verdict": "PARTIAL / HOLD visual acceptance: standard follow-up has no P0/P1; SE has repeated source-label/head overlap P1.",
+  "counts": {
+    "standard": 15,
+    "se": 15,
+    "total_original_pngs_viewed": 30,
+    "sha256_matches": 30
+  },
+  "engineering": "6/6 targeted on each device; not new 20+20 full regression",
+  "P0": 0,
+  "P1": [
+    {
+      "id": "SE-SOURCE-LABEL-HEAD-OCCLUSION",
+      "finding": "At normal text, the shared-scene disclaimer overlays the 13-year protagonist upper head/forehead and upper ear silhouette in all three left-standing routes. Eyes and mouth remain visible. This is an A worldStage overlay collision, not a Scene bitmap crop. Move label into safe independent space without shrinking the character.",
+      "evidence": [
+        "ll08-thirteen-invest.png",
+        "ll08-thirteen-offline.png",
+        "ll08-thirteen-ask.png"
+      ],
+      "image_region_pixels": {
+        "disclaimer": [
+          40,
+          180,
+          332,
+          222
+        ]
+      },
+      "severity_reason": "Confirmed repeated obstruction of the character silhouette violates the bounded no-head/face-overlay requirement; engineering 6/6 does not resolve it."
+    }
+  ],
+  "P2": [
+    {
+      "id": "AX-DENSITY",
+      "finding": "Maximum text first screen keeps the world and a visible 閱讀全文 entry, but title and full-story button compete horizontally and wrap to 3/2 lines; no action visible on first screen. This is navigation/density friction, not proof actions are inaccessible.",
+      "evidence": [
+        "ll07-maximum-text-layout.png"
+      ]
+    },
+    {
+      "id": "AX-QUESTION-EVIDENCE",
+      "finding": "13-year maximum text sheet screenshot does not contain the complete final question: its last line is below the captured bottom edge. UITest checks exact full label plus isHittable, which can be true for partial visibility. Do not call this permanent truncation; capture at the true scroll end to prove full visual reading. 8-year maximum and both normal sheets show complete question.",
+      "evidence": [
+        "ll07-full-event-13-maximum.png",
+        "ll07-full-event-8-maximum.png"
+      ],
+      "code_evidence": "UITests/LifeCrossroadsUITests.swift:26–29; production fullEventStory has fixedSize vertical and ScrollView, no lineLimit."
+    },
+    {
+      "id": "NATIVE-ART-SEAM",
+      "finding": "Table, box, leaf and diagram remain flat native geometry against textured illustration; props explain route differences but material integration is unfinished.",
+      "evidence": [
+        "ll08-eight-invest.png",
+        "ll08-thirteen-offline.png"
+      ]
+    },
+    {
+      "id": "STATIC-ATTENTION",
+      "finding": "Existing portraits keep upward gaze and book/side-pocket pose rather than attending newly added table props. These are distinguishable trace props, not new coherent acting.",
+      "evidence": [
+        "ll08-thirteen-invest.png",
+        "ll08-thirteen-offline.png",
+        "ll08-thirteen-ask.png"
+      ]
+    }
+  ],
+  "reports": [
+    "/tmp/ll07-standard-followup-independent-review.json",
+    "/tmp/ll07-se-followup-independent-review.json"
+  ],
+  "source_commits": {
+    "standard-followup": "3aa85b56f5a02ba8a1fe99aa515c918c6f0013fb",
+    "se": "27c5084a83ddb07a540d2c517192da7b32bcb1b2"
+  },
+  "app_tree_same": "f61e36003c7ddc44dfe2ff905809a5a77ac12827",
+  "scene_sha256": "ced164aefaa15ec5fd93c49024dd4124209cc1e8cf261442a9c95dce4af313cb",
+  "limits": [
+    "Each new device run is 6/6 targeted, not 20/20 full regression.",
+    "17-year occurred echo was not reshot in these follow-up manifests; historical 5ab native review and unchanged Scene are separate evidence, not current shots.",
+    "Screenshots do not prove physical-device behavior, human VoiceOver, child understanding, replay appeal, final commercial asset approval or full-product art completion.",
+    "8-year resourceChange is current-outcome presentation, not a persistent cross-year StoryFact."
+  ],
+  "correction": "5ab3c9 already contained DisclosureGroup 完整故事與問題 after the options (CrossroadsView.swift:499–503 at that source). New 閱讀全文 beside the title improves discoverability, not restoration of absent content."
+}

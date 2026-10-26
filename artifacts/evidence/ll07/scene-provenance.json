@@ -1,0 +1,23 @@
+{
+  "kind": "Root recomputed offline provenance; not a native result",
+  "checkedUTC": "2026-10-24T11:17:03.450664+00:00",
+  "productFreeze": "ce9f6a7e7f193c3dbe4a57fdd8e4d42b7c40e319",
+  "authorImplementation": "129ca19",
+  "evidenceCompanion": "2beceb9",
+  "pairedFixtures": 14,
+  "distinctSavedBytes": 11,
+  "savedArchiveFiles": 14,
+  "PNGFilesVerified": 28,
+  "sourceFilesVerified": 27,
+  "actorsChangesAndArchivesPaired": true,
+  "sceneSHA256": "ced164aefaa15ec5fd93c49024dd4124209cc1e8cf261442a9c95dce4af313cb",
+  "sceneMatchesRoot": true,
+  "nativeTests": "Real source-specific batches in validation.json; latest App D518 equals ce9, with standard4/4 and SE3 plus corrected reader1/1",
+  "independentReview": "artifacts/evidence/world-trace-visual/independent-review.json",
+  "notClaimed": [
+    "14 distinct lives",
+    "74 XCTest cases",
+    "native acceptance or final art approval from offline images"
+  ],
+  "evidenceCountClarification": "b4d87805a2e2e9a7b21e77c7b09cab708d75ff6e"
+}
