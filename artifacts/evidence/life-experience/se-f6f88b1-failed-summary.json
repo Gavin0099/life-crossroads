@@ -1,0 +1,76 @@
+{
+  "devicesAndConfigurations" : [
+    {
+      "device" : {
+        "architecture" : "arm64",
+        "deviceId" : "863F07DB-EA41-4E44-AE31-E2F3D5A1F33F",
+        "deviceName" : "LifeCrossroads Test 20261026T123234Z",
+        "modelName" : "iPhone SE (3rd generation)",
+        "osBuildNumber" : "24A434",
+        "osVersion" : "27.0",
+        "platform" : "iOS Simulator"
+      },
+      "expectedFailures" : 0,
+      "failedTests" : 4,
+      "passedTests" : 2,
+      "skippedTests" : 0,
+      "testPlanConfiguration" : {
+        "configurationId" : "1",
+        "configurationName" : "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription" : "LifeCrossroads · Built with macOS 27.0",
+  "expectedFailures" : 0,
+  "failedTests" : 4,
+  "finishTime" : 1793018744.854,
+  "passedTests" : 2,
+  "result" : "Failed",
+  "runtimeWarnings" : [
+
+  ],
+  "skippedTests" : 0,
+  "startTime" : 1793017991.317,
+  "statistics" : [
+
+  ],
+  "testFailures" : [
+    {
+      "failureText" : "Failed to tap \"focusChoice.learning\" Button: No matches found for Elements matching predicate '\"focusChoice.learning\" IN identifiers' from input {(\n    Button, label: '回首頁，保留目前進度',\n    Button, label: '說明與資料',\n    Button, identifier: 'restartMenu', label: '重新開始這段人生',\n    Button, identifier: 'worldPause', label: '繼續播放',\n    Button, identifier: 'worldSpeed', label: '加速 3×',\n    Button, identifier: 'lifeResources', label: '身體、生活與能力',\n    Button, identifier: 'lifeFocus', label: '這段人生的重心、順其自然',\n    Button, identifier: 'lifeIllustration', label: '看看沐沐的生活場景',\n    Button, identifier: 'readFullEvent', label: '閱讀完整事件',\n    Button, identifier: 'choice.invest', label: '和大人把紙箱做成會動的玩具、時間1 · 精力2 · 材料1、基本影響：財務安全 -1 · 技能 +4',\n    Button, identifier: 'choice.ask', label: '請大人幫忙借安全工具和紙本圖解、時間0 · 精力1 · 材料0、基本影響：人際 +2 · 技能 +1',\n    Button, identifier: 'choice.rest', label: '先收好紙箱，留時間打球與休息、時間0 · 精力0 · 材料0、基本影響：健康 +2 · 人際 +1',\n    Button, identifier: 'compareChoice', label: '同一行動，換個環境？',\n    Button, label: '完整故事與問題',\n    Button, identifier: 'eventSelectionDetails', label: '怎麼遇到這件事？',\n    Button, label: '人物與近況',\n    Button\n)}\nPossibly caused by runtime issues:\nAutomation type mismatch: computed Button from legacy attributes vs DisclosureTriangle from modern attribute. Input attributes and values: {\n    \"XC_kAXXCAttributeAutomationType\" = 13;\n    \"XC_kAXXCAttributeElementBaseType\" = NSObject;\n    \"XC_kAXXCAttributeElementType\" = \"SwiftUI.AccessibilityNode\";\n    \"XC_kAXXCAttributeTraits\" = 8589934593;\n}\nAutomation type mismatch: computed Button from legacy attributes vs PopUpButton from modern attribute. Input attributes and values: {\n    \"XC_kAXXCAttributeAutomationType\" = 14;\n    \"XC_kAXXCAttributeElementBaseType\" = NSObject;\n    \"XC_kAXXCAttributeElementType\" = \"SwiftUI.AccessibilityNode\";\n    \"XC_kAXXCAttributeTraits\" = 1108101562369;\n}\nSee test report attachments for more detail.",
+      "targetName" : "LifeCrossroadsUITests",
+      "testIdentifier" : 1,
+      "testIdentifierString" : "LifeCrossroadsUITests/testLifeOverviewFocusPersistsWithoutRerollingTheVisibleEvent()",
+      "testIdentifierURL" : "test://com.apple.xcode/LifeCrossroads/LifeCrossroadsUITests/LifeCrossroadsUITests/testLifeOverviewFocusPersistsWithoutRerollingTheVisibleEvent",
+      "testName" : "testLifeOverviewFocusPersistsWithoutRerollingTheVisibleEvent()"
+    },
+    {
+      "failureText" : "Failed to tap \"focusChoice.recovery\" Button: No matches found for Elements matching predicate '\"focusChoice.recovery\" IN identifiers' from input {(\n    Button, label: '回首頁，保留目前進度',\n    Button, label: '說明與資料',\n    Button, identifier: 'restartMenu', label: '重新開始這段人生',\n    Button, identifier: 'lifeResources', label: '身體、生活與能力',\n    Button, identifier: 'lifeFocus', label: '這段人生的重心、順其自然',\n    Button, identifier: 'choice.invest', label: '和大人把紙箱做成會動的玩具、時間1 · 精力2 · 材料1、基本影響：財務安全 -1 · 技能 +4',\n    Button, identifier: 'choice.ask', label: '請大人幫忙借安全工具和紙本圖解、時間0 · 精力1 · 材料0、基本影響：人際 +2 · 技能 +1',\n    Button, identifier: 'choice.rest', label: '先收好紙箱，留時間打球與休息、時間0 · 精力0 · 材料0、基本影響：健康 +2 · 人際 +1',\n    Button, identifier: 'compareChoice', label: '同一行動，換個環境？',\n    Button, label: '完整故事與問題',\n    Button, identifier: 'eventSelectionDetails', label: '怎麼遇到這件事？',\n    Button, label: '人物與近況',\n    Button\n)}\nPossibly caused by runtime issues:\nAutomation type mismatch: computed Button from legacy attributes vs DisclosureTriangle from modern attribute. Input attributes and values: {\n    \"XC_kAXXCAttributeAutomationType\" = 13;\n    \"XC_kAXXCAttributeElementBaseType\" = NSObject;\n    \"XC_kAXXCAttributeElementType\" = \"SwiftUI.AccessibilityNode\";\n    \"XC_kAXXCAttributeTraits\" = 8589934593;\n}\nAutomation type mismatch: computed Button from legacy attributes vs PopUpButton from modern attribute. Input attributes and values: {\n    \"XC_kAXXCAttributeAutomationType\" = 14;\n    \"XC_kAXXCAttributeElementBaseType\" = NSObject;\n    \"XC_kAXXCAttributeElementType\" = \"SwiftUI.AccessibilityNode\";\n    \"XC_kAXXCAttributeTraits\" = 1108101562369;\n}\nSee test report attachments for more detail.",
+      "targetName" : "LifeCrossroadsUITests",
+      "testIdentifier" : 2,
+      "testIdentifierString" : "LifeCrossroadsUITests/testLifeOverviewFocusSaveFailureKeepsArchiveAndDirectionUntilRetry()",
+      "testIdentifierURL" : "test://com.apple.xcode/LifeCrossroads/LifeCrossroadsUITests/LifeCrossroadsUITests/testLifeOverviewFocusSaveFailureKeepsArchiveAndDirectionUntilRetry",
+      "testName" : "testLifeOverviewFocusSaveFailureKeepsArchiveAndDirectionUntilRetry()"
+    },
+    {
+      "failureText" : "Failed to tap \"focusChoice.learning\" Button: No matches found for Elements matching predicate '\"focusChoice.learning\" IN identifiers' from input {(\n    Button, label: '回首頁，保留目前進度',\n    Button, label: '說明與資料',\n    Button, identifier: 'restartMenu', label: '重新開始這段人生',\n    Button, identifier: 'lifeResources', label: '身體、生活與能力',\n    Button, identifier: 'lifeFocus', label: '這段人生的重心、順其自然',\n    Button, identifier: 'choice.invest', label: '和大人把紙箱做成會動的玩具、時間1 · 精力2 · 材料1、基本影響：財務安全 -1 · 技能 +4',\n    Button, identifier: 'choice.ask', label: '請大人幫忙借安全工具和紙本圖解、時間0 · 精力1 · 材料0、基本影響：人際 +2 · 技能 +1',\n    Button, identifier: 'choice.rest', label: '先收好紙箱，留時間打球與休息、時間0 · 精力0 · 材料0、基本影響：健康 +2 · 人際 +1',\n    Button, identifier: 'compareChoice', label: '同一行動，換個環境？',\n    Button, label: '完整故事與問題',\n    Button, identifier: 'eventSelectionDetails', label: '怎麼遇到這件事？',\n    Button, label: '人物與近況',\n    Button\n)}\nPossibly caused by runtime issues:\nAutomation type mismatch: computed Button from legacy attributes vs DisclosureTriangle from modern attribute. Input attributes and values: {\n    \"XC_kAXXCAttributeAutomationType\" = 13;\n    \"XC_kAXXCAttributeElementBaseType\" = NSObject;\n    \"XC_kAXXCAttributeElementType\" = \"SwiftUI.AccessibilityNode\";\n    \"XC_kAXXCAttributeTraits\" = 8589934593;\n}\nAutomation type mismatch: computed Button from legacy attributes vs PopUpButton from modern attribute. Input attributes and values: {\n    \"XC_kAXXCAttributeAutomationType\" = 14;\n    \"XC_kAXXCAttributeElementBaseType\" = NSObject;\n    \"XC_kAXXCAttributeElementType\" = \"SwiftUI.AccessibilityNode\";\n    \"XC_kAXXCAttributeTraits\" = 1108101562369;\n}\nSee test report attachments for more detail.",
+      "targetName" : "LifeCrossroadsUITests",
+      "testIdentifier" : 3,
+      "testIdentifierString" : "LifeCrossroadsUITests/testLifeOverviewFullForkPreservesOriginalAndComparesActualRemainder()",
+      "testIdentifierURL" : "test://com.apple.xcode/LifeCrossroads/LifeCrossroadsUITests/LifeCrossroadsUITests/testLifeOverviewFullForkPreservesOriginalAndComparesActualRemainder",
+      "testName" : "testLifeOverviewFullForkPreservesOriginalAndComparesActualRemainder()"
+    },
+    {
+      "failureText" : "Failed to get matching snapshot: No matches found for Elements matching predicate '\"readFullEvent\" IN identifiers' from input {(\n    Button, label: '回首頁，保留目前進度',\n    Button, label: '說明與資料',\n    Button, identifier: 'restartMenu', label: '重新開始這段人生',\n    Button, identifier: 'lifeResources', label: '身體、生活與能力',\n    Button, identifier: 'lifeFocus', label: '這段人生的重心、順其自然',\n    Button, identifier: 'choice.invest', label: '和大人把紙箱做成會動的玩具、時間1 · 精力2 · 材料1、基本影響：財務安全 -1 · 技能 +4',\n    Button, identifier: 'choice.ask', label: '請大人幫忙借安全工具和紙本圖解、時間0 · 精力1 · 材料0、基本影響：人際 +2 · 技能 +1',\n    Button, identifier: 'choice.rest', label: '先收好紙箱，留時間打球與休息、時間0 · 精力0 · 材料0、基本影響：健康 +2 · 人際 +1',\n    Button, identifier: 'compareChoice', label: '同一行動，換個環境？',\n    Button, label: '完整故事與問題',\n    Button, identifier: 'eventSelectionDetails', label: '怎麼遇到這件事？',\n    Button, label: '人物與近況',\n    Button\n)}\nPossibly caused by runtime issues:\nAutomation type mismatch: computed Button from legacy attributes vs DisclosureTriangle from modern attribute. Input attributes and values: {\n    \"XC_kAXXCAttributeAutomationType\" = 13;\n    \"XC_kAXXCAttributeElementBaseType\" = NSObject;\n    \"XC_kAXXCAttributeElementType\" = \"SwiftUI.AccessibilityNode\";\n    \"XC_kAXXCAttributeTraits\" = 8589934593;\n}\nAutomation type mismatch: computed Button from legacy attributes vs PopUpButton from modern attribute. Input attributes and values: {\n    \"XC_kAXXCAttributeAutomationType\" = 14;\n    \"XC_kAXXCAttributeElementBaseType\" = NSObject;\n    \"XC_kAXXCAttributeElementType\" = \"SwiftUI.AccessibilityNode\";\n    \"XC_kAXXCAttributeTraits\" = 1108101562369;\n}\nSee test report attachments for more detail.",
+      "targetName" : "LifeCrossroadsUITests",
+      "testIdentifier" : 4,
+      "testIdentifierString" : "LifeCrossroadsUITests/testLifeOverviewLargeTextReadingAndAllLifeStagesRemainReachable()",
+      "testIdentifierURL" : "test://com.apple.xcode/LifeCrossroads/LifeCrossroadsUITests/LifeCrossroadsUITests/testLifeOverviewLargeTextReadingAndAllLifeStagesRemainReachable",
+      "testName" : "testLifeOverviewLargeTextReadingAndAllLifeStagesRemainReachable()"
+    }
+  ],
+  "title" : "Test - LifeCrossroads",
+  "topInsights" : [
+
+  ],
+  "totalTestCount" : 6
+}

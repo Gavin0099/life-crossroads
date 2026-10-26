@@ -1,0 +1,17 @@
+{
+  "owned_created": [
+    "863F07DB-EA41-4E44-AE31-E2F3D5A1F33F",
+    "F34529A8-0924-4B4A-BD96-1D201E002B32",
+    "242AAFBC-45D0-499C-9E4B-39E4EC185B82"
+  ],
+  "owned_deleted": [
+    "863F07DB-EA41-4E44-AE31-E2F3D5A1F33F",
+    "F34529A8-0924-4B4A-BD96-1D201E002B32",
+    "242AAFBC-45D0-499C-9E4B-39E4EC185B82"
+  ],
+  "owned_absent_after": true,
+  "original_devices_still_present": true,
+  "shared_runtime_deleted": false,
+  "invalid_runtime_attempt": "iOS27.1/SE incompatible; no device created; actual failure retained",
+  "creation_failure_guard": "now exits before adopting error output as device ID; real shell positive/negative fixture executed"
+}
