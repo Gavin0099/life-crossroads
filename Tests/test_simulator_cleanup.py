@@ -9,7 +9,7 @@ import unittest
 
 
 class SimulatorCleanupTests(unittest.TestCase):
-    def run_wrapper(self, build_status=0, delete_status=0, requested="existing-phone", config=None, tests=(), boot_status=0):
+    def run_wrapper(self, build_status=0, delete_status=0, requested="existing-phone", config=None, tests=(), boot_status=0, create_status=0):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             (root / "scripts").mkdir()
@@ -33,7 +33,9 @@ elif args[:4] == ['xcresulttool', 'get', 'test-results', 'summary']:
     warning = os.environ.get('LIFE_FAKE_RUNTIME_WARNING', '')
     print(json.dumps({'result': 'Passed', 'passedTests': int(os.environ.get('LIFE_FAKE_RUNTIME_PASSED', '1')), 'runtimeWarnings': [{'message': warning}] if warning else []}))
 elif args[:2] == ['simctl', 'create']:
-    print('owned-test-phone')
+    status = int(os.environ.get('LIFE_FAKE_CREATE_STATUS', '0'))
+    print('creation-error-not-a-device' if status else 'owned-test-phone')
+    sys.exit(status)
 elif args[:2] == ['simctl', 'bootstatus']:
     sys.exit(int(os.environ.get('LIFE_FAKE_BOOT_STATUS', '0')))
 elif args[:2] == ['simctl', 'delete']:
@@ -50,7 +52,7 @@ elif args[:2] == ['simctl', 'delete']:
                                          "LIFE_SIMULATOR_DEVICE_TYPE": "", "LIFE_SIMULATOR_RUNTIME": "",
                                          "LIFE_TEST_DIAGNOSTICS": "", "LIFE_FAKE_RUNTIME_WARNING": "", "LIFE_FAKE_RUNTIME_PASSED": "1",
                                          "LIFE_FAKE_BUILD_STATUS": str(build_status),
-                                         "LIFE_FAKE_DELETE_STATUS": str(delete_status), "LIFE_FAKE_BOOT_STATUS": str(boot_status), **(config or {})})
+                                         "LIFE_FAKE_DELETE_STATUS": str(delete_status), "LIFE_FAKE_BOOT_STATUS": str(boot_status), "LIFE_FAKE_CREATE_STATUS": str(create_status), **(config or {})})
             calls = [json.loads(line) for line in log.read_text().splitlines()] if log.exists() else []
             return result, calls
 
@@ -89,6 +91,13 @@ elif args[:2] == ['simctl', 'delete']:
         build = next(c for c in calls if c[0] == "xcodebuild")
         self.assertIn("-only-testing:" + identifier, build)
         self.assertLess(next(i for i,c in enumerate(calls) if c[1:3] == ["simctl", "bootstatus"]), calls.index(build))
+
+    def test_creation_failure_never_uses_error_output_as_a_device_to_delete(self):
+        result, calls = self.run_wrapper(create_status=7)
+        self.assertEqual(result.returncode, 7)
+        self.assertIn("no device was acquired", result.stderr)
+        self.assertEqual(len(calls), 2)  # inventory and creation attempt only
+        self.assertFalse(any(c[0] == "xcodebuild" or c[1:3] in [["simctl", "delete"], ["simctl", "shutdown"], ["simctl", "boot"]] for c in calls))
 
     def test_cleanup_failure_is_visible_and_fails_an_otherwise_successful_run(self):
         result, _ = self.run_wrapper(delete_status=1)
