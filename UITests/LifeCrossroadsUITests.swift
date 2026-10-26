@@ -2,6 +2,68 @@ import XCTest
 
 @MainActor
 final class LifeCrossroadsUITests: XCTestCase {
+    func testLifeOverviewFocusPersistsWithoutRerollingTheVisibleEvent() throws {
+        let app = launch(seed: "0", world: true, overview: true)
+        start(app)
+        if app.buttons["worldPause"].label == "暫停播放" { app.buttons["worldPause"].tap() }
+        XCTAssertTrue(app.staticTexts["lifeBackground"].label.contains("日本"))
+        XCTAssertTrue(app.staticTexts["lifeSituation"].exists)
+        let event = app.staticTexts["eventTitle"].value as? String
+        let before = try archiveChecksum(in: app)
+        let focus = app.buttons["lifeFocus"]; reveal(focus, in: app); focus.tap()
+        XCTAssertFalse(app.buttons["focusChoice.stability"].exists, "Adult financial direction is not a child's responsibility")
+        app.buttons["focusChoice.learning"].tap()
+        XCTAssertTrue(app.buttons["lifeFocus"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["lifeFocus"].label.contains("留時間學習"))
+        XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, event)
+        let chosen = try archiveChecksum(in: app)
+        XCTAssertNotEqual(before, chosen)
+        attachScreenshot("lx01-life-overview", app: app)
+        app.terminate(); app.launchArguments.removeAll { $0 == "-reset-save" }; app.launch()
+        XCTAssertTrue(app.buttons["resumeLife"].waitForExistence(timeout: 8)); app.buttons["resumeLife"].tap()
+        XCTAssertEqual(try archiveChecksum(in: app), chosen)
+        XCTAssertTrue(app.buttons["lifeFocus"].label.contains("留時間學習"))
+        let rest = app.buttons["choice.rest"]; reveal(rest, in: app); rest.tap()
+        app.buttons["continueLife"].tap()
+        let receipt = app.staticTexts["lifeFocusReceipt"]; XCTAssertTrue(receipt.waitForExistence(timeout: 5))
+        XCTAssertTrue(receipt.label.contains("技能 +1"))
+        attachScreenshot("lx03-focus-arrival", app: app)
+    }
+
+    func testLifeOverviewFocusSaveFailureKeepsArchiveAndDirectionUntilRetry() throws {
+        let app = launch(seed: "0", failingSaves: "2", overview: true)
+        start(app)
+        let before = try archiveChecksum(in: app)
+        app.buttons["lifeFocus"].tap(); reveal(app.buttons["focusChoice.recovery"], in: app); app.buttons["focusChoice.recovery"].tap()
+        assertSaveFailure(in: app)
+        if app.buttons["closeFocus"].exists { app.buttons["closeFocus"].tap() }
+        XCTAssertEqual(try archiveChecksum(in: app), before)
+        XCTAssertTrue(app.buttons["lifeFocus"].label.contains("順其自然"))
+        app.buttons["lifeFocus"].tap(); reveal(app.buttons["focusChoice.recovery"], in: app); app.buttons["focusChoice.recovery"].tap()
+        XCTAssertTrue(app.buttons["lifeFocus"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["lifeFocus"].label.contains("照顧自己"))
+        XCTAssertNotEqual(try archiveChecksum(in: app), before)
+    }
+
+    func testLifeOverviewLargeTextReadingAndAllLifeStagesRemainReachable() throws {
+        let app = launch(seed: "0", largestText: true, overview: true)
+        start(app)
+        let read = app.buttons["readFullEvent"]; reveal(read, in: app); read.tap()
+        let question = app.staticTexts["eventStoryQuestion"]; reveal(question, in: app)
+        XCTAssertTrue(question.isHittable)
+        app.buttons["closeFullEvent"].tap()
+        attachScreenshot("lx01-largest-reading", app: app)
+        for index in 0..<15 {
+            XCTAssertTrue(app.staticTexts["eventTitle"].waitForExistence(timeout: 5), "Decision \(index)")
+            let rest = app.buttons["choice.rest"]; reveal(rest, in: app); rest.tap()
+            let next = app.buttons["continueLife"]; XCTAssertTrue(next.waitForExistence(timeout: 5)); next.tap()
+        }
+        XCTAssertTrue(app.staticTexts["journeyComplete"].waitForExistence(timeout: 5))
+        let fork = app.buttons["openForkPicker"]; reveal(fork, in: app)
+        XCTAssertTrue(fork.isHittable)
+        attachScreenshot("lx01-largest-review", app: app)
+    }
+
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
@@ -692,9 +754,21 @@ final class LifeCrossroadsUITests: XCTestCase {
         XCTAssertEqual(originalEvents.count, 15)
     }
 
+    func testLifeOverviewFullForkPreservesOriginalAndComparesActualRemainder() throws {
+        try exerciseFork(overview: true)
+    }
+
     func testForkPreservesOriginalResumesAfterRelaunchAndComparesFullRemainder() throws {
-        let app = launch(seed: "0")
+        try exerciseFork(overview: false)
+    }
+
+    private func exerciseFork(overview: Bool) throws {
+        let app = launch(seed: "0", overview: overview)
         start(app)
+        if overview {
+            let focus = app.buttons["lifeFocus"]; reveal(focus, in: app); focus.tap()
+            app.buttons["focusChoice.learning"].tap()
+        }
         var originalEvents: [String] = []
         var originalRecords: [Int: VisibleRecord] = [:]
         for index in 0..<15 {
@@ -858,10 +932,11 @@ final class LifeCrossroadsUITests: XCTestCase {
         alert.buttons["知道了"].tap()
     }
 
-    private func launch(seed: String, largestText: Bool = false, failingSaves: String? = nil, world: Bool = false) -> XCUIApplication {
+    private func launch(seed: String, largestText: Bool = false, failingSaves: String? = nil, world: Bool = false, overview: Bool = false) -> XCUIApplication {
         let app = XCUIApplication()
         app.launchArguments += ["-ui-testing", "-legacy-event-first", "-reset-save", "-life-seed", seed,
                                 "-AppleLanguages", "(zh-Hant)", "-AppleLocale", "zh_TW"]
+        if !overview { app.launchArguments += ["-legacy-life-overview"] }
         if largestText {
             app.launchArguments += ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
         }

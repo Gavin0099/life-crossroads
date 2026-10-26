@@ -117,6 +117,16 @@ final class GameStore: ObservableObject {
     var selectedHousehold: HouseholdProfile? {
         catalog?.households.first { $0.id == "\(countryCode.lowercased())-\(familyNumber)" }
     }
+    @discardableResult
+    func setFocus(_ focus: LifeFocus) -> Bool {
+        guard let catalog, var next = journey, !viewingOriginal else { return false }
+        do {
+            try next.chooseFocus(focus, catalog: catalog)
+            // Do not bind/reset the presentation clock or reselect an event.
+            return commit(next)
+        } catch { errorMessage = "這次重心沒有變更：\(error)"; return false }
+    }
+
     var currentEvent: DecisionSkeleton? {
         guard let catalog, let session, session.phase == .choosing else { return nil }
         return try? session.event(catalog: catalog)

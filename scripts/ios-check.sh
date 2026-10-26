@@ -53,7 +53,14 @@ cleanup() {
 trap cleanup EXIT
 trap 'exit 130' INT
 trap 'exit 143' TERM
-LIFE_TEST_DEVICE="$(xcrun simctl create "LifeCrossroads Test $(date -u +%Y%m%dT%H%M%SZ)" "$LIFE_DEVICE_TYPE" "$LIFE_DEVICE_RUNTIME")"
+if LIFE_TEST_CANDIDATE="$(xcrun simctl create "LifeCrossroads Test $(date -u +%Y%m%dT%H%M%SZ)" "$LIFE_DEVICE_TYPE" "$LIFE_DEVICE_RUNTIME")"; then
+  LIFE_TEST_DEVICE="$LIFE_TEST_CANDIDATE"
+else
+  LIFE_CREATE_STATUS=$?
+  printf '%s\n' "$LIFE_TEST_CANDIDATE" >&2
+  echo 'Could not create test Simulator; no device was acquired.' >&2
+  exit "$LIFE_CREATE_STATUS"
+fi
 echo "Created test Simulator: $LIFE_TEST_DEVICE"
 # Complete first boot before the UI runner starts its own bootstrap timeout.
 xcrun simctl boot "$LIFE_TEST_DEVICE"

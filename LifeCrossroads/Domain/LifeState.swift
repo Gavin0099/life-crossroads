@@ -109,10 +109,11 @@ public struct TimeJumpTrace: Codable, Equatable, Sendable {
     public let resourcesAfter: ResourceValues
     public let clampAdjustment: ResourceValues
     public let assumptionID: String
+    public var focusEffect: LifeFocusEffect? = nil
 }
 
 public enum SimulationEngine {
-    public static func advance(_ state: LifeState, to age: Int, catalog: ModelCatalog) throws -> (LifeState, TimeJumpTrace) {
+    public static func advance(_ state: LifeState, to age: Int, catalog: ModelCatalog, focus: LifeFocus? = nil) throws -> (LifeState, TimeJumpTrace) {
         try catalog.validate(); try state.validate(catalog: catalog)
         let stage = try LifeStage.at(age: age)
         guard age > state.age else { throw ModelError.invalid("non-forward time jump") }
@@ -121,7 +122,9 @@ public enum SimulationEngine {
             $0.dueAge == $1.dueAge ? $0.id < $1.id : $0.dueAge < $1.dueAge
         }
         let delta = hooks.reduce(ResourceValues.zero) { $0 + $1.effect }
-        let raw = state.resources + delta
+        if let focus, !LifeFocus.available(at: state.age).contains(focus) { throw ModelError.invalid("focus age") }
+        let beforeFocus = (state.resources + delta).clamped
+        let raw = state.resources + delta + (focus?.benefit ?? .zero)
         next.age = age; next.resources = raw.clamped
         next.remainingTime = stage.timeBudget; next.remainingEnergy = stage.energyBudget
         let context = try EnvironmentRules.context(catalog: catalog, countryCode: state.countryCode, householdID: state.householdID)
@@ -130,6 +133,8 @@ public enum SimulationEngine {
         try next.validate(catalog: catalog)
         return (next, .init(fromAge: state.age, toAge: age, triggeredHooks: hooks,
                             resourcesBefore: state.resources, resourcesAfter: next.resources,
-                            clampAdjustment: next.resources - raw, assumptionID: "life-stages"))
+                            clampAdjustment: next.resources - raw, assumptionID: "life-stages",
+                            focusEffect: focus.map { .init(version: LifeFocusSelection.currentVersion, focus: $0,
+                                requested: $0.benefit, actual: next.resources - beforeFocus) }))
     }
 }

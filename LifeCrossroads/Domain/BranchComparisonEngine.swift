@@ -20,8 +20,9 @@ public struct BranchComparison: Codable, Equatable, Sendable {
     public let originalFinal: ResourceValues
     public let alternativeFinal: ResourceValues
     public var laterDifferentActions: Int { rows.dropFirst().filter { !$0.sameAction }.count }
+    public var differentFocusIntervals: Int { rows.filter { $0.originalArrival.focusEffect?.focus != $0.alternativeArrival.focusEffect?.focus }.count }
     public var scopeExplanation: String {
-        "國家、家庭、岔路前歷史、版本與種子相同；共有機會沿用相同亂數鍵。改選後每一步由你親自選擇，沒有自動代選。後續有\(laterDifferentActions)個時點的事件或行動不同，因此不能把所有差異只歸因於最初那一步。這是模型內的另一種可能，不是現實因果證明，也沒有較成功的人生。"
+        "國家、家庭、岔路前歷史、版本與種子相同；共有機會沿用相同亂數鍵。改選後每一步由你親自選擇，沒有自動代選。後續有\(laterDifferentActions)個時點的事件或行動不同，另有\(differentFocusIntervals)段生活重心不同，因此不能把所有差異只歸因於最初那一步。這是模型內的另一種可能，不是現實因果證明，也沒有較成功的人生。"
     }
 }
 

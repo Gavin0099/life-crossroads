@@ -1,0 +1,74 @@
+{
+  "base": "4fbbaee9d3e6d4eb4844fda95eaf0c52d9f94c42",
+  "native_and_phone_app_source": "3dbdd195f7be42e93eca169fa84d950f19893d14",
+  "swift_source": "1ddec2702f8f6fb384702d878a767f178328615c",
+  "baseline_swift_cases": 111,
+  "swift_cases_passed": 118,
+  "python_tests_passed": 35,
+  "sample_lives": 1024,
+  "sample_scope": "8 countries x 2 family templates x 64 Seeds; feasible choices and available focuses cycle; 64 complete archive replays sampled",
+  "native_batches": [
+    {
+      "source": "f6f88b1b4a8ba7f643b95ff05dd0ff2dc9b4f02b",
+      "device": "SE3/iOS27.0",
+      "result": "Failed",
+      "passed": 2,
+      "failed": 4,
+      "scope": "Two legacy full-reading/full-branch cases passed; four new cases failed; retained as history"
+    },
+    {
+      "source": "3dbdd195f7be42e93eca169fa84d950f19893d14",
+      "device": "SE3/iOS27.0",
+      "result": "Passed",
+      "passed": 4,
+      "failed": 0,
+      "scope": "focus save/resume/no-reroll; real save-fault/retry; full original/alternative comparison; maximum-text age8 full reader and15 decision choices/ending/fork entry"
+    },
+    {
+      "source": "3dbdd195f7be42e93eca169fa84d950f19893d14",
+      "device": "iPhone16Pro/iOS27.0 Simulator",
+      "result": "Passed",
+      "passed": 1,
+      "failed": 0,
+      "scope": "Repeated focus save/resume/no-reroll case on standard dimensions; not a fifth distinct new case"
+    }
+  ],
+  "latest_source_full_25_case_suite_locally_run": false,
+  "recorded_runtime_warnings": [],
+  "ci_inventory": {
+    "declared_cases": 25,
+    "partition_counts": [
+      9,
+      8,
+      8
+    ],
+    "unique_complete_union": true,
+    "actual_execution_count_guard": "unit fixtures and real local4/1 xcresult summaries passed",
+    "remote_run": "Verify after push; not preclaimed"
+  },
+  "phone": {
+    "development_build": "passed",
+    "signature_verification": "passed",
+    "wifi_install": "success",
+    "launch": "not launched: device locked",
+    "source": "3dbdd195f7be42e93eca169fa84d950f19893d14",
+    "complete_physical_play": "not tested"
+  },
+  "history": [
+    "Pre-f6 compile failure: missing return, no native cases run",
+    "Pre-f6 byte equality used unsorted JSON; fixed sortedKeys and direct value equality; initial failure retained",
+    "iOS27.1 runtime supports only Duo on this host; SE attempt created no device; switched to installed27.0",
+    "f6 UI exposed unresponsive blank center of focus button and missing full-reader entry in manual overview; fixed actual touch target and entry",
+    "New focus archives use schema2 to prevent old app silently dropping focus; legacy no-focus archives remain schema1"
+  ],
+  "human_gaps": [
+    "initial five-second understanding",
+    "real10-15 minute pace",
+    "manual VoiceOver",
+    "child entertainment/understanding/self-initiated replay",
+    "focus balance and narrative appeal",
+    "formal art/acting approval"
+  ],
+  "merged": false,
+  "published": false
+}

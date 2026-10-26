@@ -1,0 +1,65 @@
+[
+  {
+    "file": "artifacts/evidence/life-experience/se/lx03-focus-arrival.png",
+    "sha256": "20da3c85404df1f9342d9de0efb194d8117bf4efd330387cf6c6b9b3d03b7679",
+    "test": "LifeCrossroadsUITests/testLifeOverviewFocusPersistsWithoutRerollingTheVisibleEvent()",
+    "source_commit": "3dbdd195f7be42e93eca169fa84d950f19893d14",
+    "device": "se"
+  },
+  {
+    "file": "artifacts/evidence/life-experience/se/lx01-life-overview.png",
+    "sha256": "e830d6af9f13d8806ff1baf52312e602c3b06f5ff55436c6c290096f6124b476",
+    "test": "LifeCrossroadsUITests/testLifeOverviewFocusPersistsWithoutRerollingTheVisibleEvent()",
+    "source_commit": "3dbdd195f7be42e93eca169fa84d950f19893d14",
+    "device": "se"
+  },
+  {
+    "file": "artifacts/evidence/life-experience/se/lc04-comparison-last-age.png",
+    "sha256": "74126eea12531163cca4304d541cd5f428aa9e713b84ab2422301e17e38bc2a4",
+    "test": "LifeCrossroadsUITests/testLifeOverviewFullForkPreservesOriginalAndComparesActualRemainder()",
+    "source_commit": "3dbdd195f7be42e93eca169fa84d950f19893d14",
+    "device": "se"
+  },
+  {
+    "file": "artifacts/evidence/life-experience/se/lc04-complete-comparison.png",
+    "sha256": "74126eea12531163cca4304d541cd5f428aa9e713b84ab2422301e17e38bc2a4",
+    "test": "LifeCrossroadsUITests/testLifeOverviewFullForkPreservesOriginalAndComparesActualRemainder()",
+    "source_commit": "3dbdd195f7be42e93eca169fa84d950f19893d14",
+    "device": "se"
+  },
+  {
+    "file": "artifacts/evidence/life-experience/se/lc04-fork-options.png",
+    "sha256": "db8ea34ee70265de3666627a86f542ddd3c63a9ccf276f0a641d7fbbb1defba8",
+    "test": "LifeCrossroadsUITests/testLifeOverviewFullForkPreservesOriginalAndComparesActualRemainder()",
+    "source_commit": "3dbdd195f7be42e93eca169fa84d950f19893d14",
+    "device": "se"
+  },
+  {
+    "file": "artifacts/evidence/life-experience/se/lx01-largest-review.png",
+    "sha256": "a1c317d728a995e3d2e81780deea221e4d31ac8d3f4de46ca471456bf4e3261a",
+    "test": "LifeCrossroadsUITests/testLifeOverviewLargeTextReadingAndAllLifeStagesRemainReachable()",
+    "source_commit": "3dbdd195f7be42e93eca169fa84d950f19893d14",
+    "device": "se"
+  },
+  {
+    "file": "artifacts/evidence/life-experience/se/lx01-largest-reading.png",
+    "sha256": "1ea7b9257b95693f456fd4e680a6a245c175b6cd2232cb9be240f021c4ce2c99",
+    "test": "LifeCrossroadsUITests/testLifeOverviewLargeTextReadingAndAllLifeStagesRemainReachable()",
+    "source_commit": "3dbdd195f7be42e93eca169fa84d950f19893d14",
+    "device": "se"
+  },
+  {
+    "file": "artifacts/evidence/life-experience/standard/lx03-focus-arrival.png",
+    "sha256": "9de6fa0dbedf11990056496603fea4a3a3bf28067099bba8325dd989a32a7004",
+    "test": "LifeCrossroadsUITests/testLifeOverviewFocusPersistsWithoutRerollingTheVisibleEvent()",
+    "source_commit": "3dbdd195f7be42e93eca169fa84d950f19893d14",
+    "device": "standard"
+  },
+  {
+    "file": "artifacts/evidence/life-experience/standard/lx01-life-overview.png",
+    "sha256": "ca2579c2b99878209e9bbbe7120752cfe37c5abe9b2972c4553bae13255c3c3b",
+    "test": "LifeCrossroadsUITests/testLifeOverviewFocusPersistsWithoutRerollingTheVisibleEvent()",
+    "source_commit": "3dbdd195f7be42e93eca169fa84d950f19893d14",
+    "device": "standard"
+  }
+]

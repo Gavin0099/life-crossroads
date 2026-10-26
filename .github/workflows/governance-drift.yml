@@ -11,18 +11,40 @@ permissions:
 
 jobs:
   ios-app:
+    needs: ios-simulator
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require every Simulator shard to succeed
+        env:
+          LIFE_UI_RESULT: ${{ needs.ios-simulator.result }}
+        run: test "$LIFE_UI_RESULT" = success
+
+  ios-simulator:
     needs: swift-engine
     runs-on: macos-15
     timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2]
     steps:
       - uses: actions/checkout@v4
       - name: Build and exercise a complete iPhone Simulator life
         run: |
           mkdir -p artifacts/ios
-          if ! bash scripts/ios-check.sh > artifacts/ios/build-and-test.log 2>&1; then
+          python3 scripts/ios-test-shards.py "${{ matrix.shard }}" 3 > artifacts/ios/selected-tests.txt
+          LIFE_UI_CASES=()
+          while IFS= read -r LIFE_UI_CASE; do
+            LIFE_UI_CASES+=("$LIFE_UI_CASE")
+          done < artifacts/ios/selected-tests.txt
+          if ! bash scripts/ios-check.sh "${LIFE_UI_CASES[@]}" > artifacts/ios/build-and-test.log 2>&1; then
             tail -100 artifacts/ios/build-and-test.log
             exit 1
           fi
+          LIFE_UI_SUMMARIES=(artifacts/ios/*.runtime-summary.json)
+          test "${#LIFE_UI_SUMMARIES[@]}" -eq 1
+          python3 scripts/ios-test-shards.py "${{ matrix.shard }}" 3 --summary "${LIFE_UI_SUMMARIES[0]}"
           python3 - <<'PY'
           from pathlib import Path
           for line in Path("artifacts/ios/build-and-test.log").read_text().splitlines():
@@ -33,7 +55,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: lc02-ios-evidence
+          name: lc02-ios-evidence-${{ matrix.shard }}
           path: artifacts/ios/
           if-no-files-found: warn
 

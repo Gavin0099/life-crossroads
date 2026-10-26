@@ -99,6 +99,11 @@ struct BranchComparisonView: View {
     private func route(_ label: String, prefix: String, trace: ConsequenceTrace, arrival: TimeJumpTrace) -> some View {
         VStack(alignment: .leading, spacing: 7) {
             Text(label).font(.headline)
+            if let focus = arrival.focusEffect {
+                Text("\(arrival.fromAge)～\(arrival.toAge)歲的生活重心：\(focus.focus.title)")
+                    .font(.subheadline)
+                Text(focus.explanation).font(.footnote)
+            }
             Text(trace.eventTitle).font(.headline)
                 .accessibilityIdentifier("\(prefix).event").accessibilityValue(trace.eventID)
             Text("和\(trace.recurringPerson) · \(trace.choiceTitle)")
