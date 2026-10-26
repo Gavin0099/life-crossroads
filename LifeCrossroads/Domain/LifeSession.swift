@@ -12,8 +12,14 @@ public struct LifeSession: Codable, Equatable, Sendable {
     public private(set) var jumps: [TimeJumpTrace]
     public private(set) var selectionTraces: [EventSelectionTrace]
     public var currentSelection: EventSelectionTrace? { phase == .ended ? nil : selectionTraces.last }
+    private var focusLog: [LifeFocusSelection]? = nil
+    public var focusSelections: [LifeFocusSelection] { focusLog ?? [] }
+    public var activeFocus: LifeFocus { focusSelections.last?.focus ?? .balanced }
+    public var canChooseFocus: Bool {
+        phase != .ended && (phase == .choosing ? traces.count : traces.count - 1) < plannedDecisionCount - 1
+    }
     private var needsReplayValidation: Bool
-    private enum CodingKeys: String, CodingKey { case state, phase, traces, jumps, selectionTraces }
+    private enum CodingKeys: String, CodingKey { case state, phase, traces, jumps, selectionTraces, focusLog }
 
     private init(state: LifeState, phase: SessionPhase, traces: [ConsequenceTrace], jumps: [TimeJumpTrace],
                  selectionTraces: [EventSelectionTrace]) {
@@ -29,12 +35,13 @@ public struct LifeSession: Codable, Equatable, Sendable {
         traces = try box.decode([ConsequenceTrace].self, forKey: .traces)
         jumps = try box.decode([TimeJumpTrace].self, forKey: .jumps)
         selectionTraces = try box.decode([EventSelectionTrace].self, forKey: .selectionTraces)
+        focusLog = try box.decodeIfPresent([LifeFocusSelection].self, forKey: .focusLog)
         needsReplayValidation = true
     }
 
     public static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.state == rhs.state && lhs.phase == rhs.phase && lhs.traces == rhs.traces
-            && lhs.jumps == rhs.jumps && lhs.selectionTraces == rhs.selectionTraces
+            && lhs.jumps == rhs.jumps && lhs.selectionTraces == rhs.selectionTraces && lhs.focusSelections == rhs.focusSelections
     }
 
     public static func start(catalog: ModelCatalog, countryCode: String, householdID: String, seed: UInt64) throws -> Self {
@@ -59,10 +66,13 @@ public struct LifeSession: Codable, Equatable, Sendable {
         guard traces.indices.contains(index) else { throw ModelError.invalid("decision checkpoint index") }
         var replay = try Self.start(catalog: catalog, countryCode: state.countryCode,
                                     householdID: state.householdID, seed: state.seed)
-        for trace in traces.prefix(index) {
+        for (slot, trace) in traces.prefix(index).enumerated() {
+            try replayFocus(on: &replay, at: slot, phase: .choosing, catalog: catalog)
             try replay.choose(trace.choiceID, catalog: catalog)
+            try replayFocus(on: &replay, at: slot, phase: .reflecting, catalog: catalog)
             try replay.continueLife(catalog: catalog)
         }
+        try replayFocus(on: &replay, at: index, phase: .choosing, catalog: catalog)
         return replay
     }
 
@@ -75,10 +85,31 @@ public struct LifeSession: Codable, Equatable, Sendable {
         var replay = try Self.start(catalog: catalog, countryCode: state.countryCode, householdID: state.householdID, seed: state.seed)
         for (index, trace) in traces.enumerated() {
             guard replay.phase == .choosing else { throw ModelError.invalid("session phase history") }
+            try replayFocus(on: &replay, at: index, phase: .choosing, catalog: catalog)
             try replay.choose(trace.choiceID, catalog: catalog)
+            try replayFocus(on: &replay, at: index, phase: .reflecting, catalog: catalog)
             if index + 1 < traces.count || phase != .reflecting { try replay.continueLife(catalog: catalog) }
         }
+        if phase == .choosing { try replayFocus(on: &replay, at: traces.count, phase: .choosing, catalog: catalog) }
         guard replay == self else { throw ModelError.invalid("session replay mismatch") }
+    }
+
+    /// Changing direction commits no resources and cannot reselect the revealed event.
+    public mutating func chooseFocus(_ focus: LifeFocus, catalog: ModelCatalog) throws {
+        if needsReplayValidation { try validate(catalog: catalog); needsReplayValidation = false }
+        guard canChooseFocus, LifeFocus.available(at: state.age).contains(focus) else { throw ModelError.unavailable("focus stage") }
+        let index = phase == .choosing ? traces.count : traces.count - 1
+        var records = focusSelections
+        records.removeAll { $0.decisionIndex == index && $0.phase == phase }
+        records.append(.init(index: index, phase: phase, focus: focus))
+        focusLog = records
+    }
+
+    private func replayFocus(on session: inout Self, at index: Int, phase: SessionPhase, catalog: ModelCatalog) throws {
+        for record in focusSelections where record.decisionIndex == index && record.phase == phase {
+            guard record.version == LifeFocusSelection.currentVersion else { throw ModelError.invalid("focus version") }
+            try session.chooseFocus(record.focus, catalog: catalog)
+        }
     }
 
     public func event(catalog: ModelCatalog) throws -> DecisionSkeleton {
@@ -121,7 +152,7 @@ public struct LifeSession: Codable, Equatable, Sendable {
         if traces.count == plannedDecisionCount {
             phase = .ended
         } else {
-            let (next, jump) = try SimulationEngine.advance(state, to: Self.decisionAges[traces.count], catalog: catalog)
+            let (next, jump) = try SimulationEngine.advance(state, to: Self.decisionAges[traces.count], catalog: catalog, focus: focusSelections.isEmpty ? nil : activeFocus)
             let selection = try EventSelector.select(state: next, catalog: catalog)
             state = next; jumps.append(jump); selectionTraces.append(selection); phase = .choosing
         }

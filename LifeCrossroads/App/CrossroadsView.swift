@@ -10,6 +10,8 @@ private let worldPaper = Color(red: 0.98, green: 0.95, blue: 0.88)
 struct CrossroadsView: View {
     @StateObject private var store = GameStore()
     @AppStorage("shortStoryText") private var shortText = false
+    private var showsLifeOverview: Bool { !ProcessInfo.processInfo.arguments.contains("-legacy-life-overview") }
+    @State private var showFocus = false
     @State private var showSources = false
     @State private var showTrace = false
     @State private var showEventStory = false
@@ -83,6 +85,7 @@ struct CrossroadsView: View {
                 }.accessibilityIdentifier("confirmRestart")
                 Button("取消", role: .cancel) { restartAction = nil }.accessibilityIdentifier("cancelRestart")
             } message: { _ in Text("回首頁或關閉 App 都能保留進度；只有建立新人生才取代原局與試走路線。") }
+            .sheet(isPresented: $showFocus) { focusSheet }
             .sheet(isPresented: $showSources) { sources }
             .sheet(isPresented: $showTrace) { traceSheet }
             .sheet(isPresented: $showEventStory) {
@@ -109,7 +112,9 @@ struct CrossroadsView: View {
     }
 
     @ViewBuilder private var rootContent: some View {
-        if store.worldPreviewEnabled, !store.viewingOriginal,
+        if showsLifeOverview, let session = store.session, let catalog = store.catalog {
+            lifeOverview(session, catalog: catalog)
+        } else if store.worldPreviewEnabled, !store.viewingOriginal,
            let session = store.session, session.phase != .ended, let world = store.world {
             worldLayout(world, session)
         } else {
@@ -166,11 +171,11 @@ struct CrossroadsView: View {
         switch session.phase {
         case .ended: ending(session)
         case .choosing:
-            progress(session)
+            if !showsLifeOverview { progress(session) }
             if let event = store.currentEvent { decision(event, session) }
             else { Text("目前無法取得下一件事，請回首頁重新開始。").accessibilityIdentifier("missingEvent") }
         case .reflecting:
-            progress(session)
+            if !showsLifeOverview { progress(session) }
             if let trace = session.traces.last { feedback(trace) }
             else { Text("目前沒有已執行的選擇紀錄。").accessibilityIdentifier("missingOutcome") }
         }
@@ -187,7 +192,7 @@ struct CrossroadsView: View {
 
     private var worldSuspended: Bool {
         scenePhase != .active || store.showingHome || store.viewingOriginal || !store.worldPreviewEnabled
-            || showSources || showTrace || showEventStory || showForkPicker || branchComparison != nil
+            || showSources || showTrace || showEventStory || showFocus || showForkPicker || branchComparison != nil
             || comparisonPresentation != nil || restartAction != nil || store.errorMessage != nil
     }
     private var worldTaskID: String {
@@ -442,7 +447,7 @@ struct CrossroadsView: View {
                         }
                     }
                 }
-                Text(shortStory(event)).font(store.worldPreviewEnabled ? .subheadline : .body).lineSpacing(3).lineLimit(store.worldPreviewEnabled ? 2 : nil)
+                Text(shortStory(event)).font(store.worldPreviewEnabled ? .subheadline : .body).lineSpacing(3).lineLimit(showsLifeOverview ? nil : (store.worldPreviewEnabled ? 2 : nil))
                     .fixedSize(horizontal: false, vertical: true)
                 if !store.worldPreviewEnabled { Text(event.storyQuestion).font(.subheadline.weight(.semibold)) }
                 if event.id == "teen-project" && !store.worldPreviewEnabled {
@@ -911,7 +916,10 @@ struct CrossroadsView: View {
     }
 
     private func storyText(_ event: DecisionSkeleton) -> String {
-        EventNarratives.texts[event.storyVariantID ?? event.id] ?? event.storyQuestion
+        if showsLifeOverview, let session = store.session {
+            return LifeNarrative.text(event: event, state: session.state)
+        }
+        return EventNarratives.texts[event.storyVariantID ?? event.id] ?? event.storyQuestion
     }
 
     private func storyFactText(_ fact: StoryFact) -> String {
@@ -950,11 +958,111 @@ struct CrossroadsView: View {
     }
 
     private func shortStory(_ event: DecisionSkeleton) -> String {
+        if showsLifeOverview { return String(storyText(event).split(separator: "\n").first ?? "") }
         if event.id == "teen-project" {
             return "樹老師備好創作圖解。你可以選線上、借紙本、先商量，也可以保留課後時間。"
         }
         let text = storyText(event)
         return String(text.split(separator: "\n").first ?? Substring(text))
+    }
+}
+
+private extension CrossroadsView {
+    func resourceStrip(_ values: ResourceValues) -> some View {
+        let columns = Array(repeating: GridItem(.flexible(), alignment: .leading), count: dynamicTypeSize.isAccessibilitySize ? 1 : 2)
+        return LazyVGrid(columns: columns, alignment: .leading, spacing: 12) {
+            ForEach(Array(zip(["健康", "財務安全", "人際關係", "技能與能力"], values.values)), id: \.0) { title, value in
+                HStack { Text(title); Spacer(); Text(String(value)).monospacedDigit() }
+                    .accessibilityElement(children: .combine)
+            }
+        }.padding(.top, 8)
+    }
+
+    func lifeOverview(_ session: LifeSession, catalog: ModelCatalog) -> some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 18) {
+                HStack(alignment: .firstTextBaseline) {
+                    Text("\(session.state.age)歲").font(.largeTitle.bold())
+                    Text(stageName(session.state.age)).font(.headline)
+                    Spacer(minLength: 0)
+                    Text(store.viewingOriginal ? "原人生" : (session.phase == .ended ? "回顧" : "生活中"))
+                        .font(.caption).foregroundStyle(.secondary)
+                }.accessibilityElement(children: .combine).accessibilityIdentifier("lifeIdentity")
+                Text("沐沐 · \(store.name(session.state.countryCode))")
+                    .font(.headline).accessibilityIdentifier("lifeBackground")
+                if let family = catalog.households.first(where: { $0.id == session.state.householdID }) {
+                    Text("成長背景：\(family.label)").font(.subheadline).accessibilityIdentifier("lifeSituation")
+                }
+                DisclosureGroup("身體、生活與能力") { resourceStrip(session.state.resources) }
+                    .font(.subheadline).accessibilityIdentifier("lifeResources")
+                if !store.viewingOriginal && session.canChooseFocus {
+                    Button { showFocus = true } label: {
+                        HStack {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text("這段人生的重心").font(.caption)
+                                Text(session.activeFocus.title).font(.headline)
+                            }
+                            Spacer(); Image(systemName: "chevron.right")
+                        }.frame(minHeight: 44)
+                    }.buttonStyle(.plain).accessibilityIdentifier("lifeFocus")
+                    Text("可以自己調整方向；下一段生活才生效，眼前的事不會重抽。")
+                        .font(.caption).foregroundStyle(.secondary)
+                }
+                if let effect = session.jumps.last?.focusEffect {
+                    Text(effect.explanation).font(.caption).accessibilityIdentifier("lifeFocusReceipt")
+                }
+                if store.worldPreviewEnabled, !store.viewingOriginal, let world = store.world {
+                    DisclosureGroup("看看沐沐的生活場景") { worldStage(world, height: 180) }
+                        .font(.subheadline).accessibilityIdentifier("lifeIllustration")
+                }
+                Divider()
+                if store.worldPreviewEnabled && !store.viewingOriginal && store.playback.phase == .living {
+                    living(session)
+                } else { sessionContent(session) }
+                if !session.traces.isEmpty && session.phase != .ended {
+                    Text("最近的人生紀錄").font(.headline).accessibilityAddTraits(.isHeader)
+                    ForEach(Array(session.traces.suffix(3).enumerated()), id: \.offset) { _, trace in
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("\(trace.age)歲 · \(trace.eventTitle)").font(.subheadline.bold())
+                            Text(trace.choiceTitle).font(.subheadline)
+                        }.accessibilityElement(children: .combine)
+                    }
+                }
+                Text("人生走到這裡").font(.headline)
+                ViewThatFits(in: .horizontal) {
+                    Text("童年 → 青少年 → 青年 → 中年 → 晚年").font(.caption)
+                    Text("童年 → 青少年 → 青年\n→ 中年 → 晚年").font(.caption)
+                }
+                Text("目前：\(stageName(session.state.age))；已留下\(session.traces.count)段選擇。尚未走過的階段不是已發生的故事。")
+                    .font(.caption).accessibilityIdentifier("lifeMap")
+                archiveChecksum
+            }.padding(18).frame(maxWidth: 620, alignment: .leading).frame(maxWidth: .infinity)
+        }.accessibilityIdentifier("lifeOverview")
+    }
+
+    var focusSheet: some View {
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 18) {
+                    Text("想把下一段時間，留給什麼？").font(.title2.bold())
+                    Text("這個方向會延續，直到你再調整。每段時間推進只算一次；多點、等待或加速都不會增加效果。這是遊戲假設，不是現實人生的保證。")
+                        .font(.subheadline)
+                    if let session = store.session {
+                        ForEach(LifeFocus.available(at: session.state.age), id: \.rawValue) { focus in
+                            Button {
+                                if store.setFocus(focus) { showFocus = false }
+                            } label: {
+                                VStack(alignment: .leading, spacing: 8) {
+                                    Text(focus.title + (session.activeFocus == focus ? " · 目前方向" : "")).font(.headline)
+                                    Text(focus.explanation).font(.subheadline)
+                                }.frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+                            }.buttonStyle(.bordered).accessibilityIdentifier("focusChoice.\(focus.rawValue)")
+                        }
+                    }
+                }.padding(20)
+            }.navigationTitle("這段人生的重心").navigationBarTitleDisplayMode(.inline)
+                .toolbar { Button("回到人生") { showFocus = false }.accessibilityIdentifier("closeFocus") }
+        }
     }
 }
 

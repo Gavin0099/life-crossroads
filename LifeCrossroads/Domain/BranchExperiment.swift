@@ -56,6 +56,10 @@ public struct BranchExperiment: Codable, Equatable, Sendable {
         guard before == snapshot.session else { throw ModelError.invalid("branch checkpoint mismatch") }
         try alternative.validate(catalog: catalog)
         let index = snapshot.decisionIndex
+        let preservedFocus = alternative.focusSelections.filter {
+            $0.decisionIndex < index || ($0.decisionIndex == index && $0.phase == .choosing)
+        }
+        guard preservedFocus == snapshot.session.focusSelections else { throw ModelError.invalid("branch focus prefix") }
         guard alternative.state.seed == original.state.seed,
               alternative.state.countryCode == original.state.countryCode,
               alternative.state.householdID == original.state.householdID,
@@ -74,6 +78,13 @@ public struct BranchExperiment: Codable, Equatable, Sendable {
         if needsValidation { try validate(catalog: catalog) }
         var next = alternative
         try next.choose(choiceID, catalog: catalog)
+        alternative = next; needsValidation = false
+    }
+
+    public mutating func chooseFocus(_ focus: LifeFocus, catalog: ModelCatalog) throws {
+        if needsValidation { try validate(catalog: catalog) }
+        var next = alternative
+        try next.chooseFocus(focus, catalog: catalog)
         alternative = next; needsValidation = false
     }
 
@@ -106,6 +117,12 @@ public enum LifeJourney: Codable, Equatable, Sendable {
         switch self {
         case .single(var life): try life.choose(choiceID, catalog: catalog); self = .single(life)
         case .branch(var experiment): try experiment.choose(choiceID, catalog: catalog); self = .branch(experiment)
+        }
+    }
+    public mutating func chooseFocus(_ focus: LifeFocus, catalog: ModelCatalog) throws {
+        switch self {
+        case .single(var life): try life.chooseFocus(focus, catalog: catalog); self = .single(life)
+        case .branch(var experiment): try experiment.chooseFocus(focus, catalog: catalog); self = .branch(experiment)
         }
     }
     public mutating func continueLife(catalog: ModelCatalog) throws {

@@ -4,6 +4,32 @@ import LifeData
 import LifePersistence
 
 final class SaveRepositoryTests: XCTestCase {
+    func testFocusDiskResumeAndPreFocusArchiveCompatibility() throws {
+        let catalog = try StatisticsRepository.bundled()
+        let folder = try directory()
+        let repository = SaveRepository(fileURL: folder.appendingPathComponent("journey.json"))
+        let root = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+        let fixture = root.appendingPathComponent("artifacts/evidence/world-trace-visual/saved-lives/13-before.json")
+        // Actual archive committed before this feature, not a newly generated lookalike.
+        let oldData = try Data(contentsOf: fixture)
+        try oldData.write(to: repository.fileURL)
+        let old = try XCTUnwrap(repository.load(catalog: catalog))
+        XCTAssertTrue(old.activeSession.focusSelections.isEmpty)
+        XCTAssertTrue(old.activeSession.jumps.allSatisfy { $0.focusEffect == nil })
+        var next = old
+        try next.chooseFocus(.learning, catalog: catalog)
+        XCTAssertEqual(next.activeSession.state, old.activeSession.state)
+        XCTAssertEqual(try Data(contentsOf: repository.fileURL), oldData, "Pending changes cannot rewrite the archive before save")
+        try repository.save(next, catalog: catalog)
+        XCTAssertEqual(try repository.load(catalog: catalog), next)
+        var resumed = try XCTUnwrap(repository.load(catalog: catalog))
+        try resumed.choose("rest", catalog: catalog); try resumed.continueLife(catalog: catalog)
+        try next.choose("rest", catalog: catalog); try next.continueLife(catalog: catalog)
+        XCTAssertEqual(resumed, next)
+        try repository.save(resumed, catalog: catalog)
+        XCTAssertEqual(try repository.load(catalog: catalog), resumed)
+    }
+
     private func directory() throws -> URL {
         let directory = FileManager.default.temporaryDirectory.appendingPathComponent("LC04-tests-" + UUID().uuidString)
         try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
