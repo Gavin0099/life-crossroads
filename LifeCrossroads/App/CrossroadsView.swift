@@ -428,7 +428,7 @@ struct CrossroadsView: View {
                 HStack(alignment: .center, spacing: 12) {
                     Text(event.title).font(store.worldPreviewEnabled ? .title3.bold() : .title2.bold()).accessibilityIdentifier("eventTitle")
                         .accessibilityValue(event.id).accessibilityAddTraits(.isHeader)
-                    if store.worldPreviewEnabled {
+                    if store.worldPreviewEnabled || showsLifeOverview {
                         Spacer(minLength: 0)
                         Button { showEventStory = true } label: {
                             Label("閱讀全文", systemImage: "text.alignleft").font(.caption)
@@ -437,7 +437,7 @@ struct CrossroadsView: View {
                         .accessibilityLabel("閱讀完整事件")
                         .accessibilityIdentifier("readFullEvent")
                     }
-                    if !store.worldPreviewEnabled && !dynamicTypeSize.isAccessibilitySize {
+                    if !store.worldPreviewEnabled && !showsLifeOverview && !dynamicTypeSize.isAccessibilitySize {
                         Spacer(minLength: 0)
                         if event.id == "teen-project" {
                             ProjectWorkshopView(moment: nil, compact: true).frame(width: 118, height: 88)
@@ -479,7 +479,7 @@ struct CrossroadsView: View {
                                 Text("家庭試算；部分環境成本未知，不能作跨國總成本比較。")
                                     .font(.caption).accessibilityIdentifier("choiceDataLimit.\(choice.id)")
                             }
-                            Text("基本影響：\(deltaText(choice.effect))").font(.caption).foregroundStyle(.secondary)
+                            if !showsLifeOverview { Text("基本影響：\(deltaText(choice.effect))").font(.caption).foregroundStyle(.secondary) }
                             if !preview.applied {
                                 Text(preview.unavailableReasons.joined(separator: "\n")).font(.footnote)
                             }
@@ -494,6 +494,14 @@ struct CrossroadsView: View {
                     .buttonStyle(.plain)
                     .foregroundStyle(preview.applied ? Color.primary : Color.secondary)
                     .disabled(!preview.applied).accessibilityIdentifier("choice.\(choice.id)")
+                }
+            }
+            if showsLifeOverview {
+                DisclosureGroup("查看各行動的基本影響") {
+                    ForEach(event.choices, id: \.id) { choice in
+                        Text("\(choice.title)：\(deltaText(choice.effect))").font(.caption)
+                    }
+                    Text("這是基本試算；支持、機會與上限會影響最後結果。").font(.caption)
                 }
             }
             if store.worldPreviewEnabled && !session.traces.isEmpty {
@@ -980,7 +988,7 @@ private extension CrossroadsView {
 
     func lifeOverview(_ session: LifeSession, catalog: ModelCatalog) -> some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 18) {
+            VStack(alignment: .leading, spacing: 12) {
                 HStack(alignment: .firstTextBaseline) {
                     Text("\(session.state.age)歲").font(.largeTitle.bold())
                     Text(stageName(session.state.age)).font(.headline)
@@ -991,10 +999,8 @@ private extension CrossroadsView {
                 Text("沐沐 · \(store.name(session.state.countryCode))")
                     .font(.headline).accessibilityIdentifier("lifeBackground")
                 if let family = catalog.households.first(where: { $0.id == session.state.householdID }) {
-                    Text("成長背景：\(family.label)").font(.subheadline).accessibilityIdentifier("lifeSituation")
+                    Text("成長背景：\(family.label.split(separator: "：").last.map(String.init) ?? family.label)").font(.subheadline).accessibilityIdentifier("lifeSituation")
                 }
-                DisclosureGroup("身體、生活與能力") { resourceStrip(session.state.resources) }
-                    .font(.subheadline).accessibilityIdentifier("lifeResources")
                 if !store.viewingOriginal && session.canChooseFocus {
                     Button { showFocus = true } label: {
                         HStack {
@@ -1003,22 +1009,30 @@ private extension CrossroadsView {
                                 Text(session.activeFocus.title).font(.headline)
                             }
                             Spacer(); Image(systemName: "chevron.right")
-                        }.frame(minHeight: 44)
+                        }.frame(minHeight: 44).contentShape(Rectangle())
                     }.buttonStyle(.plain).accessibilityIdentifier("lifeFocus")
-                    Text("可以自己調整方向；下一段生活才生效，眼前的事不會重抽。")
+                    Text("下一段開始生效，眼前的事不會重抽。")
                         .font(.caption).foregroundStyle(.secondary)
                 }
                 if let effect = session.jumps.last?.focusEffect {
                     Text(effect.explanation).font(.caption).accessibilityIdentifier("lifeFocusReceipt")
                 }
-                if store.worldPreviewEnabled, !store.viewingOriginal, let world = store.world {
-                    DisclosureGroup("看看沐沐的生活場景") { worldStage(world, height: 180) }
-                        .font(.subheadline).accessibilityIdentifier("lifeIllustration")
+                if let experiment = store.experiment, !store.viewingOriginal, session.phase != .ended {
+                    Text("另一條路 · 從\(experiment.snapshot.session.state.age)歲改選，原人生已保留")
+                        .font(.caption).accessibilityIdentifier("branchInProgress")
+                    Button("看看保留的原人生") { store.viewingOriginal = true }
+                        .accessibilityIdentifier("viewOriginal")
                 }
                 Divider()
                 if store.worldPreviewEnabled && !store.viewingOriginal && store.playback.phase == .living {
                     living(session)
                 } else { sessionContent(session) }
+                DisclosureGroup("身體、生活與能力") { resourceStrip(session.state.resources) }
+                    .font(.subheadline).accessibilityIdentifier("lifeResources")
+                if store.worldPreviewEnabled, !store.viewingOriginal, let world = store.world {
+                    DisclosureGroup("看看沐沐的生活場景") { worldStage(world, height: 180) }
+                        .font(.subheadline).accessibilityIdentifier("lifeIllustration")
+                }
                 if !session.traces.isEmpty && session.phase != .ended {
                     Text("最近的人生紀錄").font(.headline).accessibilityAddTraits(.isHeader)
                     ForEach(Array(session.traces.suffix(3).enumerated()), id: \.offset) { _, trace in

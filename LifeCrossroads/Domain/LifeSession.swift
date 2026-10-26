@@ -80,7 +80,8 @@ public struct LifeSession: Codable, Equatable, Sendable {
     /// Run at the restore boundary; trusted in-memory operations only check the current slot.
     public func validate(catalog: ModelCatalog) throws {
         try catalog.validate(); try state.validate(catalog: catalog)
-        guard traces.count <= plannedDecisionCount, selectionTraces.count <= plannedDecisionCount,
+        guard focusSelections.count <= 2 * (plannedDecisionCount - 1),
+              traces.count <= plannedDecisionCount, selectionTraces.count <= plannedDecisionCount,
               traces.count == state.decisions.count else { throw ModelError.invalid("session history length") }
         var replay = try Self.start(catalog: catalog, countryCode: state.countryCode, householdID: state.householdID, seed: state.seed)
         for (index, trace) in traces.enumerated() {
