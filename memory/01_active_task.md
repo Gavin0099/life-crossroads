@@ -71,3 +71,5 @@
 - LX01～03工程e81205d完成：人生總覽、真實敘事及可重播重心/schema2；118 Swift/35 Python、1024局、SE4/4＋標準1/1，三台Sim已delete。手機已Wi-Fi更新但鎖定未代開；待獨立Draft推送/HEAD CI與真人驗收，不合併發布。 <!-- memory_record_projection:active-task-summary:032b8a7489f174dd75e805587cdd1a91f211a21656cd0026700355dd1429beda -->
 
 - LX04已交付Draft PR13：隨機出生、常駐世界、完整平行故事；Seed／原局／存讀及雙尺寸測試通過。八國長期路線與真人驗收仍有缺口，CI待核對；維持HOLD不合併。 <!-- memory_record_projection:active-task-summary:7e91fe4c8e3e60b4383993cded931e38cd9520c6051ba359d70907ee695ffb58 -->
+
+- LX05工程f30439e完成，證據見opportunity-delivery；待Draft與CI，真人HOLD。 <!-- memory_record_projection:active-task-summary:76fc749cc039b44086d185b2fc9193f2fcda0ab8d8b6c83ab61f76f9b3920a0e -->
