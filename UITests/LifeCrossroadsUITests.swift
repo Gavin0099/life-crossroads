@@ -172,8 +172,7 @@ final class LifeCrossroadsUITests: XCTestCase {
 
     func testLifeOverviewFocusPersistsWithoutRerollingTheVisibleEvent() throws {
         let app = launch(seed: "0", world: true, overview: true)
-        start(app)
-        if app.buttons["worldPause"].label == "暫停播放" { app.buttons["worldPause"].tap() }
+        startWorldPaused(app)
         XCTAssertTrue(app.staticTexts["lifeBackground"].label.contains("日本"))
         XCTAssertTrue(app.buttons["lifeSituation"].exists)
         let event = app.staticTexts["eventTitle"].value as? String
@@ -190,12 +189,23 @@ final class LifeCrossroadsUITests: XCTestCase {
         app.terminate(); app.launchArguments.removeAll { $0 == "-reset-save" }; app.launch()
         XCTAssertTrue(app.buttons["resumeLife"].waitForExistence(timeout: 8)); app.buttons["resumeLife"].tap()
         XCTAssertEqual(try archiveChecksum(in: app), chosen)
+        // Pause is presentation state, intentionally not restored from the save. Freeze
+        // the cold-resumed world before inspecting or tapping within a moving outcome.
+        if app.buttons["worldPause"].label == "暫停播放" { app.buttons["worldPause"].tap() }
+        XCTAssertTrue((app.staticTexts["worldPlaybackState"].value as? String ?? "").contains("|true|"))
         XCTAssertTrue(app.buttons["lifeFocus"].label.contains("留時間學習"))
         let rest = app.buttons["choice.rest"]; reveal(rest, in: app); rest.tap()
-        app.buttons["continueLife"].tap()
+        XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+        app.buttons["continueLife"].tap(); skipWorldMontage(app)
+        XCTAssertEqual(app.staticTexts["eventTitle"].value as? String, "child-friend")
+        XCTAssertEqual(app.staticTexts["lifeIdentity"].label, "沐沐 · 10歲")
+        XCTAssertTrue(app.staticTexts["lifeMap"].label.contains("已留下1段選擇"))
+        let arrived = try archiveChecksum(in: app)
         let details = app.buttons["focusReceiptDetails"]; reveal(details, in: app); details.tap()
         let receipt = app.staticTexts["lifeFocusReceipt"]; XCTAssertTrue(receipt.waitForExistence(timeout: 5))
         XCTAssertTrue(receipt.label.contains("已留下生活安排"))
+        XCTAssertEqual(try archiveChecksum(in: app), arrived)
+        XCTAssertEqual(app.staticTexts["lifeIdentity"].label, "沐沐 · 10歲")
         attachScreenshot("lx03-focus-arrival", app: app)
     }
 

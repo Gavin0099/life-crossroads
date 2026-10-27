@@ -50,3 +50,11 @@ PR14基線CI #47（40467129913）不是全綠：Swift／basic／advisory成功�
 先自由玩完整一局，觀察是否自行開始第二局；之後才引導同家庭跨國比較及回到岔路。既有[主持步驟與空白表](opportunity-playtest.md)已補本版操作。不要先告知孩子預期答案，也不要用測試策略當成建議的正確人生。
 
 本版可以作為新的工程試玩候選；完整資料、正式美術、實機VoiceOver及兒少娛樂／啟發Gate仍開放。沒有上架或合併授權。
+
+## 遠端CI第一輪與測試同步修正
+
+PR15 `1b8f5b3` 的CI #48（40478935963）：引擎140、Python40、basic及advisory成功；原生29/30，一項讀取重心收據失敗。完整xcresult/AX顯示冷啟後播放未暫停，XCTest送點擊時跨過生活蒙太奇，已到12歲並有額外選擇；引擎tick沒有自行choose。獨立Reviewer支持先修測試同步，沒有把這次失敗判成存檔毀損或新增模型缺陷。
+
+修正僅在既有UI案例：重開後明確暫停、等待／略過蒙太奇，確認10歲、child-friend及恰一段選擇，再開同一收據，讀前後archive checksum不變；沒有刪除或放寬原斷言。測試SHA及原始失敗在[ci-sync/correction.json](../artifacts/evidence/p1-experience/ci-sync/correction.json)，定向標準機1/1與SE1/1分批通過，兩台當次Simulator均delete。這些本機使用iOS27，原CI使用iOS18.5，不能代替新HEAD CI。
+
+產品程式、資料及模型版本不變，原140／1024證據仍綁原已審來源；這次單一測試修改另綁SHA。這不是在未查原因下重跑後宣布全部通過；第一輪29/30與錯誤保留，最新遠端結果另核對。

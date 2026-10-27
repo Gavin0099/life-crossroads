@@ -262,7 +262,8 @@
       "scripts/verify-lc03-downloads.py": "cf253d520ab4e4be848439e9f472c1e886714303b0efbdfa249f8b6d2e455b8e",
       "scripts/summarize-experience.py": "837a91ca6f860bb2b7a604fd6e3842079a169a3bef5526ab526fc70152f9ca36",
       ".github/workflows/governance-drift.yml": "8059d9df1b2ac25cda8d04f5be832d5bc958ea59b65d60633f9c12e9f137338f"
-    }
+    },
+    "boundary": "Original 106-file implementation binding is to28aa189. Later UI-test-only correction is separately SHA-bound in uiSynchronizationCorrection; production sources unchanged."
   },
   "earlierAttempts": [
     "Final debug run intentionally stopped during CPU-active 1024-life regression; partial, not PASS. Full release suite above passed.",
@@ -281,5 +282,28 @@
     "missingFiles": 0,
     "mismatchedFiles": 0
   },
-  "implementationCommit": "28aa189e8c734d7d65aeadf5c34db5842b3bffdd"
+  "implementationCommit": "28aa189e8c734d7d65aeadf5c34db5842b3bffdd",
+  "uiSynchronizationCorrection": {
+    "previousHead": "1b8f5b3f574a8d7bf408d7874c868e8c5d7693e9",
+    "previousRun": 40478935963,
+    "previousUI": {
+      "passed": 29,
+      "failed": 1
+    },
+    "file": "UITests/LifeCrossroadsUITests.swift",
+    "sha256": "bf15d4d92527b8566404c8fbbe3879e402785e409da0df13310b1b3c6d0dad76",
+    "scope": "Test synchronization only; LifeCrossroads/, scripts/ and catalog unchanged from reviewed28aa189",
+    "evidence": "Cold restore resets presentation pause. Failure AX is age12 and two choices; XCTest tapped across automatic world transition. Pause and assert age10/one choice/unchanged archive before reading the same receipt. No weakened assertions.",
+    "standard": {
+      "passed": 1,
+      "skipped": 0,
+      "simulatorDeleted": "6C89FB4F-0B54-4E7B-812D-6D62E0134D7C"
+    },
+    "remaining": "New-head complete remote CI pending. Standard/SE targeted tests are local iOS27; failed CI ran iOS18.5. Original failed run preserved.",
+    "se": {
+      "passed": 1,
+      "skipped": 0,
+      "simulatorDeleted": "98C6889E-199B-4DBF-8179-D0A4746E95E1"
+    }
+  }
 }
