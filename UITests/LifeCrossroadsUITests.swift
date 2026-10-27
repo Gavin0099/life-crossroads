@@ -81,6 +81,9 @@ final class LifeCrossroadsUITests: XCTestCase {
         app.terminate(); app.launchArguments.removeAll { $0 == "-reset-save" || $0 == "-ui-fail-save-at" || $0 == "32" }; app.launch()
         app.buttons["resumeLife"].tap()
         XCTAssertEqual(try archiveChecksum(in: app), pairChecksum)
+        // Cold launch restores the decision, not the previous presentation pause preference.
+        // Freeze playback explicitly while reading/asserting each committed outcome.
+        if app.buttons["worldPause"].label == "暫停播放" { app.buttons["worldPause"].tap() }
         let original = app.buttons["viewOriginal"]; reveal(original, in: app); original.tap()
         try assertOriginalHistory(originals, in: app)
         XCTAssertEqual(try archiveChecksum(in: app), pairChecksum)
