@@ -1,0 +1,47 @@
+Building for production...
+[Using on-disk description]
+[1 / 1]
+[2 / 4] LifePersistenceTests-product
+[3 / 5] LifePersistenceTests-product
+[8 / 12] LifePersistenceTests-product
+[10 / 12] LifePersistenceTests-product
+Build complete! (3.34秒)
+Test Suite 'Selected tests' started at 2026-10-27 15:21:26.619.
+Test Suite 'LifePresentationTests.xctest' started at 2026-10-27 15:21:26.620.
+Test Suite 'LifePresentationTests.xctest' passed at 2026-10-27 15:21:26.620.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-27 15:21:26.620.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'Selected tests' started at 2026-10-27 15:21:26.683.
+Test Suite 'LifePersistenceTests.xctest' started at 2026-10-27 15:21:26.684.
+Test Suite 'OpportunityTests' started at 2026-10-27 15:21:26.684.
+Test Case '-[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportComparisonRetainsActualWorkshopInvitation]' started.
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifePersistenceTests/OpportunityTests.swift:108: error: -[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportComparisonRetainsActualWorkshopInvitation] : XCTAssertFalse failed
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifePersistenceTests/OpportunityTests.swift:109: error: -[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportComparisonRetainsActualWorkshopInvitation] : XCTAssertTrue failed
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifePersistenceTests/OpportunityTests.swift:110: error: -[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportComparisonRetainsActualWorkshopInvitation] : XCTAssertTrue failed
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifePersistenceTests/OpportunityTests.swift:108: error: -[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportComparisonRetainsActualWorkshopInvitation] : XCTAssertFalse failed
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifePersistenceTests/OpportunityTests.swift:109: error: -[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportComparisonRetainsActualWorkshopInvitation] : XCTAssertTrue failed
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifePersistenceTests/OpportunityTests.swift:110: error: -[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportComparisonRetainsActualWorkshopInvitation] : XCTAssertTrue failed
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifePersistenceTests/OpportunityTests.swift:111: error: -[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportComparisonRetainsActualWorkshopInvitation] : XCTAssertEqual failed: ("Optional("paused")") is not equal to ("nil")
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifePersistenceTests/OpportunityTests.swift:120: error: -[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportComparisonRetainsActualWorkshopInvitation] : XCTAssertTrue failed
+Test Case '-[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportComparisonRetainsActualWorkshopInvitation]' failed (0.092 seconds).
+Test Suite 'OpportunityTests' failed at 2026-10-27 15:21:26.776.
+	 Executed 1 test, with 8 failures (0 unexpected) in 0.092 (0.092) seconds
+Test Suite 'LifePersistenceTests.xctest' failed at 2026-10-27 15:21:26.776.
+	 Executed 1 test, with 8 failures (0 unexpected) in 0.092 (0.092) seconds
+Test Suite 'Selected tests' failed at 2026-10-27 15:21:26.776.
+	 Executed 1 test, with 8 failures (0 unexpected) in 0.092 (0.093) seconds
+Test Suite 'Selected tests' started at 2026-10-27 15:21:26.853.
+Test Suite 'LifeDomainTests.xctest' started at 2026-10-27 15:21:26.853.
+Test Suite 'LifeDomainTests.xctest' passed at 2026-10-27 15:21:26.853.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-27 15:21:26.853.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'Selected tests' started at 2026-10-27 15:21:26.930.
+Test Suite 'LifeAnalysisTests.xctest' started at 2026-10-27 15:21:26.930.
+Test Suite 'LifeAnalysisTests.xctest' passed at 2026-10-27 15:21:26.930.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-27 15:21:26.930.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Note: Some test targets reported failures:
+  - LifePersistenceTests (XCTest)

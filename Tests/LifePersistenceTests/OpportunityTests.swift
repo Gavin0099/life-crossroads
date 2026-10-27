@@ -94,6 +94,33 @@ final class OpportunityTests: XCTestCase {
         XCTAssertEqual(teen, before)
         for choice in ["offline", "ask", "rest"] { XCTAssertTrue(try teen.preview(choiceID: choice, catalog: c).applied) }
     }
+
+    func testZeroFamilyPreparationSupportComparisonRetainsActualWorkshopInvitation() throws {
+        let c = try zeroPreparationSupportCatalog()
+        let original = try at(17, code: "KEN", early: "invest", catalog: c)
+        for choice in ["leadWorkshop", "rest"] {
+            var life = original
+            try life.choose(choice, catalog: c)
+            let trace = try XCTUnwrap(life.traces.last)
+            let arrival = try XCTUnwrap(life.jumps.last)
+            let lines = LifeStoryComparison.consequences(trace, arrival: arrival)
+            XCTAssertTrue(arrival.triggeredHooks.contains { $0.text.contains("樹老師") })
+            XCTAssertFalse(lines.contains { $0.contains("沒有現成協作邀請") })
+            XCTAssertTrue(lines.contains { $0.contains("家庭沒有提供分段備料支持") })
+            XCTAssertTrue(lines.contains { $0.contains("仍有帶領紙本工作坊的選項") })
+            XCTAssertEqual(life.state.story.fact("creative")?.value == "collective", choice == "leadWorkshop",
+                           "Declining the workshop must not create a completed collaboration")
+            let restored = try LifeSession.restore(from: JSONEncoder().encode(life), catalog: c)
+            XCTAssertEqual(LifeStoryComparison.consequences(try XCTUnwrap(restored.traces.last),
+                                                          arrival: try XCTUnwrap(restored.jumps.last)), lines)
+        }
+        let lowCatalog = try zeroPreparationSupportCatalog(startingSkills: 0)
+        var low = try at(17, code: "KEN", catalog: lowCatalog)
+        try low.choose("rest", catalog: lowCatalog)
+        let lowLines = LifeStoryComparison.consequences(try XCTUnwrap(low.traces.last), arrival: try XCTUnwrap(low.jumps.last))
+        XCTAssertTrue(lowLines.contains { $0.contains("家庭沒有提供分段備料支持") })
+        XCTAssertFalse(lowLines.contains { $0.contains("仍有帶領紙本工作坊的選項") })
+    }
     func testSameWishAndHouseholdCreateDifferentExecutableOpportunitiesAndAdultRoutes() throws {
         let c = try StatisticsRepository.bundled()
         for (code, offer, adult, opposite) in [("JPN", "remoteStudio", "portfolio", "cooperate"), ("KEN", "mentorRelay", "cooperate", "portfolio")] {

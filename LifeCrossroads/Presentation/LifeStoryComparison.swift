@@ -28,6 +28,11 @@ public enum LifeStoryComparison {
             case "remote": channel = "出現了遠距協作的機會；是否接下來，仍由你決定。"
             case "relay", "collective": channel = "出現了和夥伴面對面共作的機會。"
             case "unknown": channel = "環境資料尚不足，不能推定特別的協作管道。"
+            case "seeking":
+                channel = "這個家庭沒有提供分段備料支持；"
+                    + (branch.offeredChoiceIDs.contains("leadWorkshop")
+                       ? "既有作品與技能符合條件，這次仍有帶領紙本工作坊的選項。"
+                       : "一般紙本工作坊另依作品與技能資格判斷，仍可練習、求助或休息。")
             default: channel = "目前沒有現成協作邀請，仍可學習、求助或休息。"
             }
             lines.append(origin + channel)
