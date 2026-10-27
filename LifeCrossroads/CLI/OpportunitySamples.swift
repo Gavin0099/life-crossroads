@@ -49,10 +49,10 @@ enum OpportunitySamples {
                 }
                 let restored = try LifeSession.restore(from: JSONEncoder().encode(life), catalog: catalog)
                 result.append(.init(engineVersion: life.state.engineVersion, dataVersion: life.state.dataVersion, contentVersion: life.state.contentVersion, country: family.countryCode, householdID: family.id, templateID: family.templateID,
-                    policy: policy, seed: 34, steps: life.traces.map {
-                        .init(age: $0.age, event: $0.eventID, title: $0.eventTitle, choice: $0.choiceID, action: $0.choiceTitle,
-                              cost: $0.finalCost, sourceAge: $0.storyBranch?.sourceAge, sourceChoice: $0.storyBranch?.sourceChoiceID,
-                              opportunity: $0.storyBranch?.opportunity, offered: $0.storyBranch?.offeredChoiceIDs ?? [], gaps: $0.environmentGaps)
+                    policy: policy, seed: 34, steps: life.traces.map { trace in
+                        .init(age: trace.age, event: trace.eventID, title: trace.eventTitle, choice: trace.choiceID, action: trace.choiceTitle,
+                              cost: trace.finalCost, sourceAge: trace.storyBranch?.sourceAge, sourceChoice: trace.storyBranch?.sourceChoiceID,
+                              opportunity: trace.storyBranch?.opportunity, offered: trace.storyBranch?.offeredChoiceIDs ?? catalog.decisions.first(where: { $0.id == trace.eventID })?.choices.map(\.id) ?? [], gaps: trace.environmentGaps)
                     }, replayMatches: restored == life))
             }
         }

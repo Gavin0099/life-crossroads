@@ -1658,6 +1658,12 @@
               "value": "paper",
               "personID": "teacher",
               "relationshipDelta": 1
+            },
+            {
+              "key": "creative",
+              "value": "collective",
+              "personID": "",
+              "relationshipDelta": 0
             }
           ]
         },

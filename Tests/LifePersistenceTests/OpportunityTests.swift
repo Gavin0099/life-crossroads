@@ -63,6 +63,13 @@ final class OpportunityTests: XCTestCase {
         let j = try at(17, project: "offline", catalog: c), k = try at(17, code: "KEN", project: "offline", catalog: c)
         XCTAssertEqual(try j.event(catalog: c), try k.event(catalog: c))
         XCTAssertEqual(try j.preview(choiceID: "offline", catalog: c).finalCost, try k.preview(choiceID: "offline", catalog: c).finalCost)
+        // The offline learning route also creates real cooperative experience, in every environment.
+        for code in ["JPN", "KEN", "TWN"] {
+            let paperAdult = try at(25, code: code, project: "offline", continuation: "offline", catalog: c)
+            XCTAssertTrue(try paperAdult.preview(choiceID: "cooperate", catalog: c).applied)
+            XCTAssertFalse(try paperAdult.preview(choiceID: "portfolio", catalog: c).applied)
+            XCTAssertEqual(try paperAdult.preview(choiceID: "cooperate", catalog: c).storyBranch?.sourceChoiceID, "offline")
+        }
         for option in ["ask", "rest"] {
             let recovery = try at(25, continuation: option, catalog: c)
             let event = try recovery.event(catalog: c)

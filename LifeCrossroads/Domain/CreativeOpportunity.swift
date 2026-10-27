@@ -84,11 +84,11 @@ public enum CreativeOpportunityRules {
                 event.title = "共同草稿成為一份試作的起點"
                 event.storyQuestion = "遠距夥伴帶來一份小型有酬試作的邀請。你們曾一起修改草稿；接下它仍要付出時間，也不代表從此工作穩定。"
                 explanation = "先前實際參與遠距共同草稿，這次才開放以該經驗參與有酬試作；一般進修、求助與休息仍保留。"
-            case "mentorRelay", "leadWorkshop":
+            case "mentorRelay", "leadWorkshop", "offline":
                 route = "collective"; add = "cooperate"
                 event.title = "共作夥伴想一起試辦製作桌"
                 event.storyQuestion = "以前一起製作的夥伴，想把共作桌開給附近的人。你可以分擔一小段工作，也可以先商量負擔；收入和關係不是必然雙贏。"
-                explanation = "先前實際參與共作或帶領工作坊，這次才開放在地製作桌；這不是某國比較擅長合作的假設。"
+                explanation = "先前實際參與共作、紙本共同練習或帶領工作坊，這次才開放在地製作桌；這不是某國比較擅長合作的假設。"
             default:
                 event.title = "替創作留一個重新開始的位置"
                 event.storyQuestion = "目前沒有那兩種協作經驗，沒有憑空出現接案邀請。你仍可以重新學習、找人商量安排，或繼續照顧自己的生活。"

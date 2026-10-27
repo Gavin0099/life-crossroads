@@ -20,6 +20,6 @@ def extend(catalog):
     add('adult-learning','invest','portfolio','用遠距協作草稿，參與一份有酬試作','work',True,3,effect(h=-1,f=3,s=2),'remote')
     add('adult-learning','offline','cooperate','和共作夥伴試辦一張在地製作桌','work',False,2,effect(h=-1,f=2,r=2),'collective')
     for c in by_id['teen-direction']['choices']:
-        if c['id']=='leadWorkshop': c['storyChanges'].append(dict(key='creative',value='collective',personID='teacher',relationshipDelta=1))
+        if c['id'] in ['leadWorkshop','offline']: c['storyChanges'].append(dict(key='creative',value='collective',personID='teacher' if c['id']=='leadWorkshop' else '',relationshipDelta=1 if c['id']=='leadWorkshop' else 0))
         if c['id'] in ['ask','rest']: c['storyChanges'].append(dict(key='creative',value='seeking' if c['id']=='ask' else 'paused',personID='',relationshipDelta=0))
     return catalog
