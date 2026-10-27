@@ -1,0 +1,149 @@
+{
+  "notes": [
+    "All failed attempts retained. Full passing-suite claim is not derived from partial pass counts.",
+    "Earlier candidates fixed accessibility identifiers, final-life test boundary, optional error-sheet dismissal, and constant original-view return navigation.",
+    "75e158e parallel test did not pause after cold launch; playback legitimately continued while XCTest read its outcome. e061c49 explicitly pauses through the user control before assertions.",
+    "PR12 attempt1 missed tap is a separate unresolved issue; these fixes do not claim its root cause resolved.",
+    "a34f5e5 standard run intentionally interrupted when final comparison header labels were added; no completion claim. Owning script deleted its device.",
+    "Final standard5155d40 run passed2/2; SE75e158e passed3/4 and e061c49 passed1/1. These are qualified batches, not a single full28-case run."
+  ],
+  "runs": [
+    {
+      "log": "artifacts/governance/birth-story/ui-se-smoke.log",
+      "source_commit": "exploratory working tree; not final-source evidence",
+      "passed": [],
+      "failed": [
+        "testBirthStoryRandomReceiptSurvivesFailureAndColdResume",
+        "testBirthStoryWorldAndContextRemainReadableAtMaximumType"
+      ],
+      "interrupted": false,
+      "owned_devices": [
+        "98F231AC-016D-4D7E-84F6-9A8BD1107EA0"
+      ],
+      "deleted": [
+        "98F231AC-016D-4D7E-84F6-9A8BD1107EA0"
+      ]
+    },
+    {
+      "log": "artifacts/governance/birth-story/ui-se-integration.log",
+      "source_commit": "exploratory working tree; not final-source evidence",
+      "passed": [],
+      "failed": [
+        "testBirthStoryParallelOriginalSaveFailureAndFullComparison",
+        "testBirthStoryRandomReceiptSurvivesFailureAndColdResume",
+        "testBirthStoryWorldAndContextRemainReadableAtMaximumType",
+        "testLifeOverviewFocusPersistsWithoutRerollingTheVisibleEvent",
+        "testLifeOverviewFocusSaveFailureKeepsArchiveAndDirectionUntilRetry"
+      ],
+      "interrupted": false,
+      "owned_devices": [
+        "F8AF8840-3072-457F-8120-3B74135A9478"
+      ],
+      "deleted": [
+        "F8AF8840-3072-457F-8120-3B74135A9478"
+      ]
+    },
+    {
+      "log": "artifacts/governance/birth-story/ui-se-final.log",
+      "source_commit": "exploratory working tree; not final-source evidence",
+      "passed": [
+        "testBirthStoryRandomReceiptSurvivesFailureAndColdResume",
+        "testBirthStoryWorldAndContextRemainReadableAtMaximumType",
+        "testLifeOverviewFocusPersistsWithoutRerollingTheVisibleEvent"
+      ],
+      "failed": [
+        "testBirthStoryParallelOriginalSaveFailureAndFullComparison",
+        "testLifeOverviewFocusSaveFailureKeepsArchiveAndDirectionUntilRetry",
+        "testLifeOverviewFullForkPreservesOriginalAndComparesActualRemainder"
+      ],
+      "interrupted": false,
+      "owned_devices": [
+        "FA46ECC6-11E4-47DA-87A9-31C74ED9897C"
+      ],
+      "deleted": [
+        "FA46ECC6-11E4-47DA-87A9-31C74ED9897C"
+      ]
+    },
+    {
+      "log": "artifacts/governance/birth-story/ui-se-pairs.log",
+      "source_commit": "exploratory working tree; not final-source evidence",
+      "passed": [
+        "testLifeOverviewFocusSaveFailureKeepsArchiveAndDirectionUntilRetry",
+        "testLifeOverviewFullForkPreservesOriginalAndComparesActualRemainder"
+      ],
+      "failed": [
+        "testBirthStoryParallelOriginalSaveFailureAndFullComparison"
+      ],
+      "interrupted": false,
+      "owned_devices": [
+        "7752CAC3-8D71-4C7B-B158-453F3601D725"
+      ],
+      "deleted": [
+        "7752CAC3-8D71-4C7B-B158-453F3601D725"
+      ]
+    },
+    {
+      "log": "artifacts/governance/birth-story/ui-se-release-candidate.log",
+      "source_commit": "75e158ec027f475a87b48feef63b4e2760fc3c63",
+      "passed": [
+        "testBirthStoryRandomReceiptSurvivesFailureAndColdResume",
+        "testBirthStoryWorldAndContextRemainReadableAtMaximumType",
+        "testLifeOverviewFullForkPreservesOriginalAndComparesActualRemainder"
+      ],
+      "failed": [
+        "testBirthStoryParallelOriginalSaveFailureAndFullComparison"
+      ],
+      "interrupted": false,
+      "owned_devices": [
+        "5D12C694-B5EB-4B5D-A1B0-AA853E158308"
+      ],
+      "deleted": [
+        "5D12C694-B5EB-4B5D-A1B0-AA853E158308"
+      ]
+    },
+    {
+      "log": "artifacts/governance/birth-story/ui-se-parallel-final.log",
+      "source_commit": "e061c49523260475a3ee71688b1dd61f20429845",
+      "passed": [
+        "testBirthStoryParallelOriginalSaveFailureAndFullComparison"
+      ],
+      "failed": [],
+      "interrupted": false,
+      "owned_devices": [
+        "0DB8265C-807C-4119-9E20-FE7F39AE1519"
+      ],
+      "deleted": [
+        "0DB8265C-807C-4119-9E20-FE7F39AE1519"
+      ]
+    },
+    {
+      "log": "artifacts/governance/birth-story/ui-standard-final.log",
+      "source_commit": "a34f5e5a1ffccb626b0d145f638d5b3142ba8f8b",
+      "passed": [],
+      "failed": [],
+      "interrupted": true,
+      "owned_devices": [
+        "A7EB7C31-AD2E-4CF4-BD97-AA67F4E61F73"
+      ],
+      "deleted": [
+        "A7EB7C31-AD2E-4CF4-BD97-AA67F4E61F73"
+      ]
+    },
+    {
+      "log": "artifacts/governance/birth-story/ui-standard-release.log",
+      "source_commit": "5155d407f36e498bfab9070d207885c015a67ee9",
+      "passed": [
+        "testBirthStoryParallelOriginalSaveFailureAndFullComparison",
+        "testBirthStoryRandomReceiptSurvivesFailureAndColdResume"
+      ],
+      "failed": [],
+      "interrupted": false,
+      "owned_devices": [
+        "B855DB36-C27D-45E3-BC91-72AE09B6A76B"
+      ],
+      "deleted": [
+        "B855DB36-C27D-45E3-BC91-72AE09B6A76B"
+      ]
+    }
+  ]
+}

@@ -23,7 +23,7 @@ let package = Package(
                           path: "LifeCrossroads/CLI"),
         .testTarget(name: "LifeDomainTests", dependencies: ["LifeDomain", "LifeData"],
                     path: "Tests/LifeDomainTests"),
-        .testTarget(name: "LifePersistenceTests", dependencies: ["LifePersistence", "LifeDomain", "LifeData"],
+        .testTarget(name: "LifePersistenceTests", dependencies: ["LifePersistence", "LifeDomain", "LifeData", "LifePresentation"],
                     path: "Tests/LifePersistenceTests"),
         .testTarget(name: "LifeAnalysisTests", dependencies: ["LifeAnalysis", "LifeDomain", "LifeData"],
                     path: "Tests/LifeAnalysisTests"),

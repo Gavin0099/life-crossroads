@@ -60,7 +60,8 @@ public struct BranchExperiment: Codable, Equatable, Sendable {
             $0.decisionIndex < index || ($0.decisionIndex == index && $0.phase == .choosing)
         }
         guard preservedFocus == snapshot.session.focusSelections else { throw ModelError.invalid("branch focus prefix") }
-        guard alternative.state.seed == original.state.seed,
+        guard alternative.birthDraw == original.birthDraw,
+              alternative.state.seed == original.state.seed,
               alternative.state.countryCode == original.state.countryCode,
               alternative.state.householdID == original.state.householdID,
               alternative.traces.count > index,
@@ -100,35 +101,44 @@ public struct BranchExperiment: Codable, Equatable, Sendable {
 public enum LifeJourney: Codable, Equatable, Sendable {
     case single(LifeSession)
     case branch(BranchExperiment)
+    case parallel(ParallelLifeExperiment)
 
     public var activeSession: LifeSession {
-        switch self { case .single(let life): life; case .branch(let experiment): experiment.alternative }
+        switch self { case .single(let life): life; case .branch(let experiment): experiment.alternative; case .parallel(let pair): pair.alternative }
     }
     public var experiment: BranchExperiment? {
         if case .branch(let experiment) = self { return experiment }; return nil
     }
+    public var parallelExperiment: ParallelLifeExperiment? {
+        if case .parallel(let pair) = self { return pair }; return nil
+    }
+    public var comparisonOriginal: LifeSession? { experiment?.original ?? parallelExperiment?.original }
     public func validate(catalog: ModelCatalog) throws {
         switch self {
         case .single(let life): try life.validate(catalog: catalog)
         case .branch(let experiment): try experiment.validate(catalog: catalog)
+        case .parallel(let pair): try pair.validate(catalog: catalog)
         }
     }
     public mutating func choose(_ choiceID: String, catalog: ModelCatalog) throws {
         switch self {
         case .single(var life): try life.choose(choiceID, catalog: catalog); self = .single(life)
         case .branch(var experiment): try experiment.choose(choiceID, catalog: catalog); self = .branch(experiment)
+        case .parallel(var pair): try pair.choose(choiceID, catalog: catalog); self = .parallel(pair)
         }
     }
     public mutating func chooseFocus(_ focus: LifeFocus, catalog: ModelCatalog) throws {
         switch self {
         case .single(var life): try life.chooseFocus(focus, catalog: catalog); self = .single(life)
         case .branch(var experiment): try experiment.chooseFocus(focus, catalog: catalog); self = .branch(experiment)
+        case .parallel(var pair): try pair.chooseFocus(focus, catalog: catalog); self = .parallel(pair)
         }
     }
     public mutating func continueLife(catalog: ModelCatalog) throws {
         switch self {
         case .single(var life): try life.continueLife(catalog: catalog); self = .single(life)
         case .branch(var experiment): try experiment.continueLife(catalog: catalog); self = .branch(experiment)
+        case .parallel(var pair): try pair.continueLife(catalog: catalog); self = .parallel(pair)
         }
     }
 }

@@ -69,3 +69,5 @@
 - LL09材料d737caf已完成：使用者安排iPhone／10～15歲玩家，主持步驟及個人／分齡空白表可帶測；未改App，尚無真人結果。PR11原95cd0fc的basic／Swift／audit成功、iOS取消，未全過；待文件交付及真人驗收，維持Draft。 <!-- memory_record_projection:active-task-summary:14ffd7c8d9c65f6bce9d38d5ff43f46e985f0c671478f3dedc84e3837067f538 -->
 
 - LX01～03工程e81205d完成：人生總覽、真實敘事及可重播重心/schema2；118 Swift/35 Python、1024局、SE4/4＋標準1/1，三台Sim已delete。手機已Wi-Fi更新但鎖定未代開；待獨立Draft推送/HEAD CI與真人驗收，不合併發布。 <!-- memory_record_projection:active-task-summary:032b8a7489f174dd75e805587cdd1a91f211a21656cd0026700355dd1429beda -->
+
+- LX04已交付Draft PR13：隨機出生、常駐世界、完整平行故事；Seed／原局／存讀及雙尺寸測試通過。八國長期路線與真人驗收仍有缺口，CI待核對；維持HOLD不合併。 <!-- memory_record_projection:active-task-summary:7e91fe4c8e3e60b4383993cded931e38cd9520c6051ba359d70907ee695ffb58 -->

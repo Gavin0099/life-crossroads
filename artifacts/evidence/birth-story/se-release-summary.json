@@ -1,0 +1,52 @@
+{
+  "devicesAndConfigurations" : [
+    {
+      "device" : {
+        "architecture" : "arm64",
+        "deviceId" : "5D12C694-B5EB-4B5D-A1B0-AA853E158308",
+        "deviceName" : "LifeCrossroads Test 20261027T032317Z",
+        "modelName" : "iPhone SE (3rd generation)",
+        "osBuildNumber" : "24A434",
+        "osVersion" : "27.0",
+        "platform" : "iOS Simulator"
+      },
+      "expectedFailures" : 0,
+      "failedTests" : 1,
+      "passedTests" : 3,
+      "skippedTests" : 0,
+      "testPlanConfiguration" : {
+        "configurationId" : "1",
+        "configurationName" : "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription" : "LifeCrossroads · Built with macOS 27.0",
+  "expectedFailures" : 0,
+  "failedTests" : 1,
+  "finishTime" : 1793072429.836,
+  "passedTests" : 3,
+  "result" : "Failed",
+  "runtimeWarnings" : [
+
+  ],
+  "skippedTests" : 0,
+  "startTime" : 1793071430.301,
+  "statistics" : [
+
+  ],
+  "testFailures" : [
+    {
+      "failureText" : "Failed to tap \"outcomeDetails\" Button: No matches found for Elements matching predicate '\"outcomeDetails\" IN identifiers' from input {(\n    Button, label: '回首頁，保留目前進度',\n    Button, label: '說明與資料',\n    Button, identifier: 'restartMenu', label: '重新開始這段人生',\n    Button, identifier: 'worldPause', label: '暫停播放',\n    Button, identifier: 'worldSpeed', label: '加速 3×',\n    Button, identifier: 'skipLiving', label: '跳至事件',\n    Button, identifier: 'viewOriginal', label: '看看保留的原人生',\n    Button, identifier: 'lifeSituation', label: '這個出身的生活安排',\n    Button, identifier: 'lifeFocus', label: '生活重心 · 順其自然',\n    Button, identifier: 'lifeResources', label: '身體、生活與能力'\n)}\nPossibly caused by runtime issues:\nAutomation type mismatch: computed Button from legacy attributes vs DisclosureTriangle from modern attribute. Input attributes and values: {\n    \"XC_kAXXCAttributeAutomationType\" = 13;\n    \"XC_kAXXCAttributeElementBaseType\" = NSObject;\n    \"XC_kAXXCAttributeElementType\" = \"SwiftUI.AccessibilityNode\";\n    \"XC_kAXXCAttributeTraits\" = 8589934593;\n}\nSee test report attachments for more detail.",
+      "targetName" : "LifeCrossroadsUITests",
+      "testIdentifier" : 1,
+      "testIdentifierString" : "LifeCrossroadsUITests/testBirthStoryParallelOriginalSaveFailureAndFullComparison()",
+      "testIdentifierURL" : "test://com.apple.xcode/LifeCrossroads/LifeCrossroadsUITests/LifeCrossroadsUITests/testBirthStoryParallelOriginalSaveFailureAndFullComparison",
+      "testName" : "testBirthStoryParallelOriginalSaveFailureAndFullComparison()"
+    }
+  ],
+  "title" : "Test - LifeCrossroads",
+  "topInsights" : [
+
+  ],
+  "totalTestCount" : 4
+}

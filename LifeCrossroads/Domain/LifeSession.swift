@@ -12,6 +12,7 @@ public struct LifeSession: Codable, Equatable, Sendable {
     public private(set) var jumps: [TimeJumpTrace]
     public private(set) var selectionTraces: [EventSelectionTrace]
     public var currentSelection: EventSelectionTrace? { phase == .ended ? nil : selectionTraces.last }
+    public private(set) var birthDraw: BirthDraw? = nil
     private var focusLog: [LifeFocusSelection]? = nil
     public var focusSelections: [LifeFocusSelection] { focusLog ?? [] }
     public var activeFocus: LifeFocus { focusSelections.last?.focus ?? .balanced }
@@ -19,7 +20,7 @@ public struct LifeSession: Codable, Equatable, Sendable {
         phase != .ended && (phase == .choosing ? traces.count : traces.count - 1) < plannedDecisionCount - 1
     }
     private var needsReplayValidation: Bool
-    private enum CodingKeys: String, CodingKey { case state, phase, traces, jumps, selectionTraces, focusLog }
+    private enum CodingKeys: String, CodingKey { case state, phase, traces, jumps, selectionTraces, focusLog, birthDraw }
 
     private init(state: LifeState, phase: SessionPhase, traces: [ConsequenceTrace], jumps: [TimeJumpTrace],
                  selectionTraces: [EventSelectionTrace]) {
@@ -36,12 +37,13 @@ public struct LifeSession: Codable, Equatable, Sendable {
         jumps = try box.decode([TimeJumpTrace].self, forKey: .jumps)
         selectionTraces = try box.decode([EventSelectionTrace].self, forKey: .selectionTraces)
         focusLog = try box.decodeIfPresent([LifeFocusSelection].self, forKey: .focusLog)
+        birthDraw = try box.decodeIfPresent(BirthDraw.self, forKey: .birthDraw)
         needsReplayValidation = true
     }
 
     public static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.state == rhs.state && lhs.phase == rhs.phase && lhs.traces == rhs.traces
-            && lhs.jumps == rhs.jumps && lhs.selectionTraces == rhs.selectionTraces && lhs.focusSelections == rhs.focusSelections
+            && lhs.jumps == rhs.jumps && lhs.selectionTraces == rhs.selectionTraces && lhs.focusSelections == rhs.focusSelections && lhs.birthDraw == rhs.birthDraw
     }
 
     public static func start(catalog: ModelCatalog, countryCode: String, householdID: String, seed: UInt64) throws -> Self {
@@ -50,6 +52,24 @@ public struct LifeSession: Codable, Equatable, Sendable {
         let (state, jump) = try SimulationEngine.advance(born, to: firstAge, catalog: catalog)
         let selection = try EventSelector.select(state: state, catalog: catalog)
         return .init(state: state, phase: .choosing, traces: [], jumps: [jump], selectionTraces: [selection])
+    }
+
+    public static func startRandom(catalog: ModelCatalog, seed: UInt64) throws -> Self {
+        let receipt = try BirthDraw.draw(catalog: catalog, seed: seed)
+        var life = try start(catalog: catalog, countryCode: receipt.countryCode, householdID: receipt.householdID, seed: seed)
+        life.birthDraw = receipt
+        return life
+    }
+
+    /// Recreate the birth through its original mode, validating its receipt instead of trusting saved metadata.
+    public func restarting(catalog: ModelCatalog) throws -> Self {
+        if let birthDraw {
+            let fresh = try Self.startRandom(catalog: catalog, seed: state.seed)
+            guard fresh.birthDraw == birthDraw, fresh.state.countryCode == state.countryCode,
+                  fresh.state.householdID == state.householdID else { throw ModelError.invalid("birth receipt mismatch") }
+            return fresh
+        }
+        return try Self.start(catalog: catalog, countryCode: state.countryCode, householdID: state.householdID, seed: state.seed)
     }
 
     public static func restore(from data: Data, catalog: ModelCatalog) throws -> Self {
@@ -64,8 +84,7 @@ public struct LifeSession: Codable, Equatable, Sendable {
     public func beforeDecision(at index: Int, catalog: ModelCatalog) throws -> Self {
         try validate(catalog: catalog)
         guard traces.indices.contains(index) else { throw ModelError.invalid("decision checkpoint index") }
-        var replay = try Self.start(catalog: catalog, countryCode: state.countryCode,
-                                    householdID: state.householdID, seed: state.seed)
+        var replay = try restarting(catalog: catalog)
         for (slot, trace) in traces.prefix(index).enumerated() {
             try replayFocus(on: &replay, at: slot, phase: .choosing, catalog: catalog)
             try replay.choose(trace.choiceID, catalog: catalog)
@@ -83,7 +102,7 @@ public struct LifeSession: Codable, Equatable, Sendable {
         guard focusSelections.count <= 2 * (plannedDecisionCount - 1),
               traces.count <= plannedDecisionCount, selectionTraces.count <= plannedDecisionCount,
               traces.count == state.decisions.count else { throw ModelError.invalid("session history length") }
-        var replay = try Self.start(catalog: catalog, countryCode: state.countryCode, householdID: state.householdID, seed: state.seed)
+        var replay = try restarting(catalog: catalog)
         for (index, trace) in traces.enumerated() {
             guard replay.phase == .choosing else { throw ModelError.invalid("session phase history") }
             try replayFocus(on: &replay, at: index, phase: .choosing, catalog: catalog)

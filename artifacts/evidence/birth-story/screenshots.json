@@ -1,0 +1,84 @@
+[
+  {
+    "path": "artifacts/evidence/birth-story/se/birth-reveal.png",
+    "sha256": "7fb67eb240d561cb3a7daf6659fd13eb3011869b2782540777101eb96db52098",
+    "source_commit": "75e158ec027f475a87b48feef63b4e2760fc3c63",
+    "test": "testBirthStoryRandomReceiptSurvivesFailureAndColdResume",
+    "source_result": "LC02-20261027T032338Z.xcresult",
+    "run_status": "3 of 4 passed; parallel test later failed because test omitted pause after cold restore",
+    "self_inspected": true
+  },
+  {
+    "path": "artifacts/evidence/birth-story/se/world-first.png",
+    "sha256": "041792be87643cbe57d0462de02d7c269be484dfd3aedf884c93035f8d8740a3",
+    "source_commit": "75e158ec027f475a87b48feef63b4e2760fc3c63",
+    "test": "testBirthStoryRandomReceiptSurvivesFailureAndColdResume",
+    "source_result": "LC02-20261027T032338Z.xcresult",
+    "run_status": "3 of 4 passed; parallel test later failed because test omitted pause after cold restore",
+    "self_inspected": true
+  },
+  {
+    "path": "artifacts/evidence/birth-story/se/maximum-reader.png",
+    "sha256": "090d55a652e8e321056aee1c4615060f3b6ecfbb19135e93404814180aa32cd1",
+    "source_commit": "75e158ec027f475a87b48feef63b4e2760fc3c63",
+    "test": "testBirthStoryWorldAndContextRemainReadableAtMaximumType",
+    "source_result": "LC02-20261027T032338Z.xcresult",
+    "run_status": "3 of 4 passed; parallel test later failed because test omitted pause after cold restore",
+    "self_inspected": true
+  },
+  {
+    "path": "artifacts/evidence/birth-story/se/parallel-stories.png",
+    "sha256": "0f5ce59bd0a3922b8010f4fff806436eec5bf20847c698a84a441491f7666293",
+    "source_commit": "e061c49523260475a3ee71688b1dd61f20429845",
+    "test": "testBirthStoryParallelOriginalSaveFailureAndFullComparison",
+    "source_result": "LC02-20261027T034152Z.xcresult",
+    "run_status": "1 of 1 passed",
+    "self_inspected": true,
+    "qualification": "SE source before actual background labels were added; final standard screenshot shows5155d40 header."
+  },
+  {
+    "path": "artifacts/evidence/birth-story/se/paper-memory.png",
+    "sha256": "95cd92f3bd1b0cdf6858530339ff1f4d534a8756ec897617d8a6f1bcd427486c",
+    "source_commit": "e061c49523260475a3ee71688b1dd61f20429845",
+    "test": "testBirthStoryParallelOriginalSaveFailureAndFullComparison",
+    "source_result": "LC02-20261027T034152Z.xcresult",
+    "run_status": "1 of 1 passed",
+    "self_inspected": true
+  },
+  {
+    "path": "artifacts/evidence/birth-story/standard/parallel-stories.png",
+    "sha256": "db59d7b4750dc599d477bd47fe84880b5b0a3fe6b67c6e0cb0c8b175dd8d9ea7",
+    "source_commit": "5155d407f36e498bfab9070d207885c015a67ee9",
+    "test": "testBirthStoryParallelOriginalSaveFailureAndFullComparison",
+    "source_result": "LC02-20261027T035728Z.xcresult",
+    "run_status": "2 of 2 passed",
+    "self_inspected": true
+  },
+  {
+    "path": "artifacts/evidence/birth-story/standard/paper-memory.png",
+    "sha256": "2004b30e0b3e9baa60f4c09020adabccbc0f416b3f1f7539088da10425900c9b",
+    "source_commit": "5155d407f36e498bfab9070d207885c015a67ee9",
+    "test": "testBirthStoryParallelOriginalSaveFailureAndFullComparison",
+    "source_result": "LC02-20261027T035728Z.xcresult",
+    "run_status": "2 of 2 passed",
+    "self_inspected": false
+  },
+  {
+    "path": "artifacts/evidence/birth-story/standard/world-first.png",
+    "sha256": "64c17e293676e3936967e89c4a1ce095eb5a3f3478f9f91276c7793dff9353c3",
+    "source_commit": "5155d407f36e498bfab9070d207885c015a67ee9",
+    "test": "testBirthStoryRandomReceiptSurvivesFailureAndColdResume",
+    "source_result": "LC02-20261027T035728Z.xcresult",
+    "run_status": "2 of 2 passed",
+    "self_inspected": true
+  },
+  {
+    "path": "artifacts/evidence/birth-story/standard/birth-reveal.png",
+    "sha256": "116911cc58197a794d838d43a17ded9e83f56a36fdb4ac68cea20be7b3f9f8bc",
+    "source_commit": "5155d407f36e498bfab9070d207885c015a67ee9",
+    "test": "testBirthStoryRandomReceiptSurvivesFailureAndColdResume",
+    "source_result": "LC02-20261027T035728Z.xcresult",
+    "run_status": "2 of 2 passed",
+    "self_inspected": false
+  }
+]

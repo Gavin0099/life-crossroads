@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-10-27T04:07:17Z",
+  "owned_device_count": 8,
+  "owned_ids": [
+    "98F231AC-016D-4D7E-84F6-9A8BD1107EA0",
+    "F8AF8840-3072-457F-8120-3B74135A9478",
+    "FA46ECC6-11E4-47DA-87A9-31C74ED9897C",
+    "7752CAC3-8D71-4C7B-B158-453F3601D725",
+    "5D12C694-B5EB-4B5D-A1B0-AA853E158308",
+    "0DB8265C-807C-4119-9E20-FE7F39AE1519",
+    "A7EB7C31-AD2E-4CF4-BD97-AA67F4E61F73",
+    "B855DB36-C27D-45E3-BC91-72AE09B6A76B"
+  ],
+  "all_delete_logged": true,
+  "all_absent_from_final_inventory": true,
+  "other_devices_or_shared_runtimes_deleted": false,
+  "scope": "Only script-created temporary devices. Also removed this task’s duplicate artifacts/ios/BirthStoryBuild DerivedData; required evidence retained."
+}
