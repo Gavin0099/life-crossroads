@@ -2,21 +2,22 @@ import Foundation
 import LifeDomain
 
 public struct JourneySave: Codable, Equatable, Sendable {
-    public static let currentVersion = 2
+    public static let currentVersion = 3
     public let schemaVersion: Int
     public let journey: LifeJourney
 
-    private var hasFocusHistory: Bool {
-        !journey.activeSession.focusSelections.isEmpty || !(journey.experiment?.original.focusSelections.isEmpty ?? true)
+    private static func requiredVersion(_ journey: LifeJourney) -> Int {
+        if journey.parallelExperiment != nil || journey.activeSession.birthDraw != nil || journey.comparisonOriginal?.birthDraw != nil { return 3 }
+        return !journey.activeSession.focusSelections.isEmpty || !(journey.comparisonOriginal?.focusSelections.isEmpty ?? true) ? 2 : 1
     }
 
     public init(journey: LifeJourney) {
         self.journey = journey
-        schemaVersion = !journey.activeSession.focusSelections.isEmpty || !(journey.experiment?.original.focusSelections.isEmpty ?? true) ? Self.currentVersion : 1
+        schemaVersion = Self.requiredVersion(journey)
     }
 
     public func validate(catalog: ModelCatalog) throws {
-        guard schemaVersion == (hasFocusHistory ? Self.currentVersion : 1) else { throw ModelError.invalid("save schema version") }
+        guard schemaVersion == Self.requiredVersion(journey) else { throw ModelError.invalid("save schema version") }
         try journey.validate(catalog: catalog)
     }
 }

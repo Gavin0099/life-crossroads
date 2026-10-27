@@ -1,5 +1,6 @@
 import SwiftUI
 import LifeDomain
+import LifePresentation
 
 struct BranchPickerView: View {
     let original: LifeSession
@@ -61,25 +62,51 @@ struct BranchPickerView: View {
 }
 
 struct BranchComparisonView: View {
-    let comparison: BranchComparison
+    let rows: [BranchComparisonRow]
+    let scope: String
+    let originalFinal: ResourceValues
+    let alternativeFinal: ResourceValues
+    let title: String
+    init(comparison: BranchComparison) {
+        self.init(rows: comparison.rows, scope: comparison.scopeExplanation, originalFinal: comparison.originalFinal,
+                  alternativeFinal: comparison.alternativeFinal, title: "如果當年選了另一條路")
+    }
+    init(rows: [BranchComparisonRow], scope: String, originalFinal: ResourceValues, alternativeFinal: ResourceValues, title: String) {
+        self.rows = rows; self.scope = scope; self.originalFinal = originalFinal; self.alternativeFinal = alternativeFinal; self.title = title
+    }
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
-                    Text("兩條路，都留下了故事").font(.title2.bold()).accessibilityIdentifier("branchComparisonTitle")
-                    Text(comparison.scopeExplanation).font(.subheadline).accessibilityIdentifier("branchComparisonScope")
-                    Text("從\(comparison.rows.first?.original.age ?? 0)歲到晚年，共\(comparison.rows.count)段對照")
-                        .accessibilityIdentifier("branchComparisonCount").accessibilityValue(String(comparison.rows.count))
-                    GroupBox("晚年四項資源") {
+                    Text(title).font(.title2.bold()).accessibilityIdentifier("branchComparisonTitle")
+                    DisclosureGroup {
+                        Text(scope).font(.subheadline).accessibilityIdentifier("branchComparisonScope")
+                    } label: { Text("比較方式與限制").accessibilityIdentifier("comparisonMethod") }
+                    Text("從\(rows.first?.original.age ?? 0)歲到晚年，共\(rows.count)段對照")
+                        .accessibilityIdentifier("branchComparisonCount").accessibilityValue(String(rows.count))
+                    Text("哪些選擇，留在了後來的日子？").font(.headline)
+                    ForEach(LifeStoryComparison.highlights(rows), id: \.decisionIndex) { row in
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("\(row.original.age)歲").font(.headline)
+                            story("原本的人生", trace: row.original, arrival: row.originalArrival)
+                            story("另一段人生", trace: row.alternative, arrival: row.alternativeArrival)
+                            if row.sameAction && !row.storyChanged {
+                                Text("這一頁遇見相同情境，也做了相同選擇；不同出身不一定讓每件事都不同。").font(.caption)
+                            }
+                        }.padding().background(StoryPalette.page, in: RoundedRectangle(cornerRadius: 16))
+                            .accessibilityIdentifier("storyHighlight.\(row.decisionIndex)")
+                    }
+                    DisclosureGroup("晚年處境的數值紀錄") {
                         VStack(alignment: .leading, spacing: 8) {
-                            Text("原來：\(resources(comparison.originalFinal))")
-                            Text("另一條路：\(resources(comparison.alternativeFinal))")
+                            Text("原來：\(resources(originalFinal))")
+                            Text("另一條路：\(resources(alternativeFinal))")
                             Text("資源描述處境，不是人生分數。").font(.footnote)
                         }.frame(maxWidth: .infinity, alignment: .leading)
                     }
-                    ForEach(comparison.rows, id: \.decisionIndex) { row in
+                    Text("完整人生紀錄").font(.title3.bold())
+                    ForEach(rows, id: \.decisionIndex) { row in
                         GroupBox("\(row.original.age)歲 · \(row.storyChanged ? "故事走向不同" : "遇見相同的故事情境")") {
                             VStack(alignment: .leading, spacing: 14) {
                                 route("原來的人生", prefix: "branch.\(row.decisionIndex).original", trace: row.original, arrival: row.originalArrival)
@@ -91,8 +118,18 @@ struct BranchComparisonView: View {
                     Text("回顧結束不代表這個年齡死亡。相同種子也不保證遇到相同事件，因為先前選擇會改變資格與權重。")
                         .font(.footnote).foregroundStyle(.secondary)
                 }.padding()
-            }.navigationTitle("完整後半生對照").navigationBarTitleDisplayMode(.inline)
+            }.navigationTitle("人生故事對照").navigationBarTitleDisplayMode(.inline)
                 .toolbar { Button("關閉") { dismiss() }.accessibilityIdentifier("closeBranchComparison") }
+        }
+    }
+
+    private func story(_ label: String, trace: ConsequenceTrace, arrival: TimeJumpTrace) -> some View {
+        VStack(alignment: .leading, spacing: 5) {
+            Text(label).font(.subheadline.bold())
+            Text(trace.choiceTitle).font(.body)
+            ForEach(Array(LifeStoryComparison.consequences(trace, arrival: arrival).enumerated()), id: \.offset) { _, text in
+                Text(text).font(.subheadline)
+            }
         }
     }
 
@@ -108,15 +145,15 @@ struct BranchComparisonView: View {
                 .accessibilityIdentifier("\(prefix).event").accessibilityValue(trace.eventID)
             Text("和\(trace.recurringPerson) · \(trace.choiceTitle)")
                 .accessibilityIdentifier("\(prefix).choice").accessibilityValue(trace.choiceID)
-            Text("選前：\(resources(trace.resourcesBefore))").font(.caption)
-                .accessibilityIdentifier("\(prefix).before")
-            Text("選後：\(resources(trace.resourcesAfter))").font(.caption)
-                .accessibilityIdentifier("\(prefix).after")
             ForEach(arrival.triggeredHooks, id: \.id) { hook in
                 Text("\(hook.originAge)歲留下的回聲：\(hook.text)").font(.subheadline)
             }
-            DisclosureGroup("這一頁的實際原因與線索") {
+            DisclosureGroup {
                 VStack(alignment: .leading, spacing: 8) {
+                    Text("選前：\(resources(trace.resourcesBefore))").font(.caption)
+                        .accessibilityIdentifier("\(prefix).before")
+                    Text("選後：\(resources(trace.resourcesAfter))").font(.caption)
+                        .accessibilityIdentifier("\(prefix).after")
                     Text(trace.influenceSummary)
                     ForEach(Array(trace.explanation.enumerated()), id: \.offset) { _, text in Text(text) }
                     Text(trace.eventSelection.summary)
@@ -124,7 +161,7 @@ struct BranchComparisonView: View {
                         Text("留下線索：預定\(hook.dueAge)歲後呼應 · \(hook.text)")
                     }
                 }.font(.footnote).padding(.top, 6)
-            }
+            } label: { Text("這一頁的實際原因與線索").accessibilityIdentifier("\(prefix).details") }
         }.frame(maxWidth: .infinity, alignment: .leading)
     }
 

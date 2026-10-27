@@ -57,9 +57,12 @@ final class GameStore: ObservableObject {
     private let saves: SaveRepository
     var session: LifeSession? {
         guard !showingHome else { return nil }
-        return viewingOriginal ? journey?.experiment?.original : journey?.activeSession
+        return viewingOriginal ? journey?.comparisonOriginal : journey?.activeSession
     }
     var experiment: BranchExperiment? { journey?.experiment }
+    var parallelExperiment: ParallelLifeExperiment? { journey?.parallelExperiment }
+    var comparisonOriginal: LifeSession? { journey?.comparisonOriginal }
+    @Published var showBirthReveal = false
     @Published var countryCode = "JPN"
     @Published var familyNumber = 1
     @Published var errorMessage: String?
@@ -157,7 +160,7 @@ final class GameStore: ObservableObject {
     func resume() { viewingOriginal = false; showingHome = false; bindWorld(restoring: true) }
     func home() { playback.setSuspended(true, now: now); showingHome = true }
 
-    func start(replay: Bool = false) {
+    func start(replay: Bool = false, randomBirth: Bool = false) {
         guard let catalog else { return }
         guard !invalidLaunchSeed else {
             errorMessage = "開發測試種子格式錯誤，請在-life-seed後提供一個非負整數。"
@@ -166,14 +169,13 @@ final class GameStore: ObservableObject {
         do {
             let next: LifeSession
             if replay, let old = journey?.activeSession {
-                next = try .start(catalog: catalog, countryCode: old.state.countryCode,
-                                  householdID: old.state.householdID, seed: old.state.seed)
+                next = try old.restarting(catalog: catalog)
             } else {
                 let seed: UInt64 = launchSeed ?? .random(in: .min ... .max)
-                next = try .start(catalog: catalog, countryCode: countryCode,
+                next = try randomBirth ? .startRandom(catalog: catalog, seed: seed) : .start(catalog: catalog, countryCode: countryCode,
                                   householdID: "\(countryCode.lowercased())-\(familyNumber)", seed: seed)
             }
-            if commit(.single(next)) { viewingOriginal = false; showingHome = false; bindWorld(reset: true) }
+            if commit(.single(next)) { viewingOriginal = false; showingHome = false; showBirthReveal = randomBirth; bindWorld(reset: true) }
         } catch { errorMessage = "暫時無法開始：\(error)" }
     }
 
@@ -199,11 +201,22 @@ final class GameStore: ObservableObject {
     }
     @discardableResult
     func startBranch(at index: Int, choiceID: String) -> Bool {
-        guard let catalog, let original = journey?.activeSession, experiment == nil else { return false }
+        guard let catalog, let original = journey?.activeSession, comparisonOriginal == nil else { return false }
         do {
             let next = try BranchExperiment.start(original: original, decisionIndex: index, choiceID: choiceID, catalog: catalog)
             if commit(.branch(next)) { viewingOriginal = false; showingHome = false; bindWorld(); return true }
         } catch { errorMessage = "這個岔路尚無法改選：\(error)" }
+        return false
+    }
+    @discardableResult
+    func startParallel(countryCode: String, householdID: String) -> Bool {
+        guard let catalog, let original = journey?.activeSession, comparisonOriginal == nil else { return false }
+        do {
+            let pair = try ParallelLifeExperiment.start(original: original, countryCode: countryCode, householdID: householdID, catalog: catalog)
+            if commit(.parallel(pair)) {
+                viewingOriginal = false; showingHome = false; bindWorld(reset: true); return true
+            }
+        } catch { errorMessage = "這個出身尚無法開始：\(error)" }
         return false
     }
     func preview(_ choiceID: String) -> ConsequenceTrace? {
