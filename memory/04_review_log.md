@@ -190,3 +190,14 @@
 - Validation boundary: artifacts/evidence/p1-experience/validation.json：完整release140Swift、40Python、basic6，最終SE2/2且當次Simulator已delete；summary.json與audit.json.gz為八國16家庭四策略1024局、52可達、完整存讀重播；independent-review.md SHA256 60ccaeae60d860e24eecb4bc4fcc23ef73a727d7fca6b322efb5985278fa7fd0：23定向、41不變式及16獨立證據重播，review-binding.json核對106檔無差異。早期失敗與debug中止已保留，不算PASS；新HEAD遠端CI待推送核對。
 - Next action: 同分支提交canonical companion並推送獨立Draft PR，核對當前HEAD CI；維持HOLD。依現有試玩表取得真人節奏、理解及自發重玩證據，資料/實機VoiceOver/正式美術缺口另列。
 - PLAN reconciliation: `updated`
+
+<!-- memory_record_projection:review-log:d1b85bdbb1e972185c3f54d78eeefdbecb04798090a6f82a8c2f019c75f65074 -->
+### Canonical memory checkpoint — 2026-10-27-p1-ci-sync
+
+- Writer: `governance_tools.memory_record`
+- Record identity: `d1b85bdbb1e972185c3f54d78eeefdbecb04798090a6f82a8c2f019c75f65074`
+- Commit binding: `3c01772` (bound)
+- Record: PR15首輪CI29/30；修正冷恢復後UI測試未暫停的同步問題，加入年齡、決策筆數與archive不變斷言，產品程式未改。
+- Validation boundary: artifacts/evidence/p1-experience/ci-sync/correction.json; artifacts/evidence/p1-experience/ci-sync/standard.json; artifacts/evidence/p1-experience/ci-sync/se.json; artifacts/governance/p1-completion/ci-sync-shards.log; artifacts/governance/p1-completion/ci-sync-basic.log
+- Next action: 完成有界獨立覆核與證據companion，更新Draft PR15並核對新HEAD完整CI；不合併不發布。
+- PLAN reconciliation: `updated`

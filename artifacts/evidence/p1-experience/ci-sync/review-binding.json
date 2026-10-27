@@ -1,0 +1,17 @@
+{
+  "commit": "3c01772169aeb294d4254325ea38e8ef44ca9f79",
+  "publicChecksumsVerified": 20,
+  "publicChecksumMismatches": [],
+  "originalManifestFiles": 106,
+  "differencesFromOriginalManifest": [
+    {
+      "path": "UITests/LifeCrossroadsUITests.swift",
+      "originalSHA256": "ccdece094d8e10418e78bd07b4033386b331de867db998906c4a21be653733fd",
+      "commitSHA256": "bf15d4d92527b8566404c8fbbe3879e402785e409da0df13310b1b3c6d0dad76"
+    }
+  ],
+  "testCorrectionSHA256": "bf15d4d92527b8566404c8fbbe3879e402785e409da0df13310b1b3c6d0dad76",
+  "coreSourceDiff": [],
+  "standardLogSHA256": "ddf43adc63043094b80865396e1c125b397efeaa38841150c5df1e5851258bb2",
+  "seLogSHA256": "16d080a3517c7d4b73d7498568c0b6a2b9f54f3a84152abbac0c3077a34c908c"
+}
