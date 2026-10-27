@@ -77,3 +77,5 @@
 - PR14獨立審查：1項無支持敘事P2待修，詳04_review_log；不合併。 <!-- memory_record_projection:active-task-summary:909082945c970119eb3ae26f457e4db01d8ee0f303bd05a1f0d9ed51ae942865 -->
 
 - PR14 P2修正7f3cf5c：備料與既有老師分開，零支持高低技能回歸及130Swift通過；64局不變，四國1024局完成。機制方向符合、真人未驗；待push當前CI與獨立覆審，Draft/HOLD。 <!-- memory_record_projection:active-task-summary:cf10f58d9388c9c2f37773997fdd563e94bdb5c775d5a19aa89845e24b44398f -->
+
+- PR14覆審抓到共用摘要仍誤稱無邀請，已窄修1cb8265並補接受/婉拒/低技能回歸；131Swift通過、64局不變。待新HEAD覆審與CI，Draft/HOLD。 <!-- memory_record_projection:active-task-summary:3e2fd26f860e436bd591ce26fd28eaaae22131165adc3dd01e2e86cdb8f7ce97 -->
