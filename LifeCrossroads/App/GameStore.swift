@@ -110,7 +110,7 @@ final class GameStore: ObservableObject {
         catch { catalog = nil; errorMessage = "離線資料無法載入：\(error)" }
         if let catalog {
             do { journey = try saves.load(catalog: catalog) }
-            catch { restoreFailed = true; errorMessage = "存檔無法讀取或版本不相容，原檔仍保留。請稍後重試，或明確選擇建立新人生取代紀錄。\(error)" }
+            catch { restoreFailed = true; errorMessage = "存檔無法讀取或版本不相容，原檔仍保留。若為舊版人生，本版創作機會規則已不同，可在原版本續玩；或明確選擇建立新人生取代紀錄。\(error)" }
         }
     }
 
@@ -209,10 +209,10 @@ final class GameStore: ObservableObject {
         return false
     }
     @discardableResult
-    func startParallel(countryCode: String, householdID: String) -> Bool {
+    func startParallel(countryCode: String, householdID: String, sameTemplateOnly: Bool = true) -> Bool {
         guard let catalog, let original = journey?.activeSession, comparisonOriginal == nil else { return false }
         do {
-            let pair = try ParallelLifeExperiment.start(original: original, countryCode: countryCode, householdID: householdID, catalog: catalog)
+            let pair = try ParallelLifeExperiment.start(original: original, countryCode: countryCode, householdID: householdID, catalog: catalog, sameTemplateOnly: sameTemplateOnly)
             if commit(.parallel(pair)) {
                 viewingOriginal = false; showingHome = false; bindWorld(reset: true); return true
             }

@@ -142,7 +142,7 @@ public struct LifeSession: Codable, Equatable, Sendable {
               let selected = catalog.decisions.first(where: { $0.id == selection.selectedEventID && $0.selection.includes(state.age) }) else {
             throw ModelError.invalid("not choosing a valid selected event")
         }
-        return StoryBranchEngine.project(event: selected, state: state).event
+        return try StoryBranchEngine.project(event: selected, state: state, catalog: catalog).event
     }
 
     public func preview(choiceID: String, catalog: ModelCatalog) throws -> ConsequenceTrace {

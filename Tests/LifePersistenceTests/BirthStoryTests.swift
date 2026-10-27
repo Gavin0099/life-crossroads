@@ -68,7 +68,7 @@ final class BirthStoryTests: XCTestCase {
         XCTAssertEqual(rows.count, 15); XCTAssertEqual(rows.first?.alternative.age, 8); XCTAssertEqual(rows.last?.alternative.age, 80)
         XCTAssertEqual(rows.map(\.original), old.traces)
         XCTAssertEqual(rows.map(\.alternative), live.activeSession.traces)
-        XCTAssertTrue(LifeStoryComparison.highlights(rows).contains { $0.original.age == 13 })
+        XCTAssertLessThanOrEqual(LifeStoryComparison.highlights(rows).count, 3)
         XCTAssertTrue(LifeStoryComparison.highlights(rows).contains { $0.original.age == 17 })
         XCTAssertNotEqual(rows[3].original.recordedStoryFacts, rows[3].alternative.recordedStoryFacts)
         XCTAssertFalse(LifeStoryComparison.consequences(rows[4].original, arrival: rows[4].originalArrival).contains { $0.contains("紙本創作") }, "An unselected continuation must not be narrated as an invitation")
@@ -102,7 +102,8 @@ final class BirthStoryTests: XCTestCase {
                 let event = try life.event(catalog: c)
                 if action == "invest" || action == "offline" {
                     XCTAssertEqual(event.id, "teen-direction", "Seed 34 is a disclosed actual continuation witness")
-                    XCTAssertTrue(LifeNarrative.text(event: event, state: life.state).contains(action == "invest" ? "13歲留下的線上" : "13歲留下的紙本"))
+                    if action == "offline" { XCTAssertTrue(LifeNarrative.text(event: event, state: life.state).contains("13歲留下的紙本")) }
+                    else { XCTAssertNotNil(try life.preview(choiceID: "ask", catalog: c).storyBranch?.opportunity) }
                 }
                 XCTAssertEqual(life.state.story.fact("learning")?.choiceID, action)
                 XCTAssertEqual(try LifeSession.restore(from: data(life), catalog: c), life)

@@ -29,6 +29,11 @@ struct DemoEvidence: Codable {
 do {
     let mode = try DemoCLIArguments.parse(Array(CommandLine.arguments.dropFirst()))
     let catalog = try StatisticsRepository.bundled()
+    if mode == .opportunitySamples {
+        let report = try OpportunitySamples.run(catalog: catalog)
+        let encoder = JSONEncoder(); encoder.outputFormatting = [.sortedKeys, .withoutEscapingSlashes]
+        print(String(decoding: try encoder.encode(report), as: UTF8.self)); exit(0)
+    }
     if mode == .birthStorySamples {
         let report = try BirthStorySamples.run(catalog: catalog)
         let encoder = JSONEncoder(); encoder.outputFormatting = [.sortedKeys, .withoutEscapingSlashes]

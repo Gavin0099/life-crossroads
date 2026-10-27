@@ -91,6 +91,7 @@ public enum EventSelector {
             default: nil
             }
         }
+        let appointment = CreativeOpportunityRules.appointment(state)
         let rules = catalog.selectionRules
         let candidates = catalog.decisions.sorted { $0.id < $1.id }.map { event -> EventCandidateEvaluation in
             let policy = event.selection
@@ -119,6 +120,9 @@ public enum EventSelector {
                 return .init(condition: condition, actualValue: actualValue, actualChoiceID: actualChoiceID, matched: matched)
             }
             var exclusions: [String] = []
+            if let appointment, event.id != appointment.event {
+                exclusions.append("creative-opportunities-1:followup:\(appointment.origin.eventID)@\(appointment.origin.age):\(appointment.origin.choiceID)")
+            }
             if !policy.includes(state.age) { exclusions.append("age-window") }
             if let milestone = EventSchedule.milestones[state.age], event.id != milestone { exclusions.append("milestone-slot") }
             if let last = state.story.events.lastIndex(where: { $0.eventID == event.id }) {
@@ -164,6 +168,6 @@ public enum EventSelector {
         }) else { throw ModelError.missing("eligible event with recovery choice") }
         return .init(rules: rules, algorithm: KeyedRandom.version + "+" + version, seed: state.seed, age: state.age,
                      key: winner.randomKey, draw: winner.uniform, candidates: candidates,
-                     eligibleEventIDs: eligible.map(\.eventID), selectedEventID: winner.eventID, assumptionID: "event-selection")
+                     eligibleEventIDs: eligible.map(\.eventID), selectedEventID: winner.eventID, assumptionID: appointment == nil ? "event-selection" : "creative-opportunities")
     }
 }

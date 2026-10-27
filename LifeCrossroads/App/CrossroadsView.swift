@@ -90,8 +90,8 @@ struct CrossroadsView: View {
                 if store.parallelExperiment != nil { store.showBirthReveal = true }
             }) {
                 if let original = store.session, let catalog = store.catalog {
-                    ParallelBirthPicker(original: original, catalog: catalog) { country, household in
-                        if store.startParallel(countryCode: country, householdID: household) {
+                    ParallelBirthPicker(original: original, catalog: catalog) { country, household, sameTemplateOnly in
+                        if store.startParallel(countryCode: country, householdID: household, sameTemplateOnly: sameTemplateOnly) {
                             store.showBirthReveal = false; showParallelPicker = false; return true
                         }
                         return false
@@ -574,7 +574,7 @@ struct CrossroadsView: View {
                         .accessibilityIdentifier("compare.\(choice.id)")
                 }
             } label: {
-                Label("同一行動，換個環境？", systemImage: "arrow.triangle.branch")
+                Label("單一事件快比：同一行動，換個環境？", systemImage: "arrow.triangle.branch")
                     .font(.subheadline.weight(.semibold)).frame(minHeight: 44)
             }.accessibilityIdentifier("compareChoice")
             if event.id == "teen-project" {
@@ -610,7 +610,9 @@ struct CrossroadsView: View {
             VStack(alignment: .leading, spacing: 10) {
                 Text(selection.summary).font(.subheadline).accessibilityIdentifier("eventSelectionSummary")
                 if let selected = selection.candidates.first(where: { $0.eventID == selection.selectedEventID }) {
-                    if selected.conditions.isEmpty {
+                    if selection.assumptionID == "creative-opportunities" {
+                        Text("這次是先前創作選擇留下的後續商量；其他候選的排除原因列有來源事件。邀請不代表已完成作品或得到工作。")
+                    } else if selected.conditions.isEmpty {
                         Text("這個情境沒有額外的家庭、資源或先前選擇門檻。")
                             .font(.subheadline)
                     } else {
@@ -1030,11 +1032,11 @@ struct CrossroadsView: View {
 
     private func storyFactText(_ fact: StoryFact) -> String {
         let names = ["friendship": "朋友約定", "learning": "作品經驗", "care": "共同照顧安排",
-                     "repair": "修理經驗", "kitchen": "共煮經驗", "garden": "花圃經驗", "nature": "自然觀察"]
+                     "repair": "修理經驗", "kitchen": "共煮經驗", "garden": "花圃經驗", "nature": "自然觀察", "creative": "創作協作經驗"]
         let values = ["online": "線上創作", "paper": "紙本創作", "none": "暫未製作",
                       "shared": "已共同安排", "seeking": "正在尋找協助，尚未保證獲得支持",
                       "paused": "暫緩安排", "connected": "保留聯絡", "practiced": "已練習",
-                      "tending": "已參與照料", "observing": "已參與觀察"]
+                      "tending": "已參與照料", "observing": "已參與觀察", "remote": "已參與遠距共同草稿", "collective": "已參與面對面共作"]
         return "試算會留下的故事記錄：\(names[fact.key] ?? fact.key)・\(values[fact.value] ?? fact.value)。未來邀請仍有條件與機會限制。"
     }
 

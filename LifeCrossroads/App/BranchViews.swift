@@ -90,7 +90,8 @@ struct BranchComparisonView: View {
                     } label: { Text("比較方式與限制").accessibilityIdentifier("comparisonMethod") }
                     Text("從\(rows.first?.original.age ?? 0)歲到晚年，共\(rows.count)段對照")
                         .accessibilityIdentifier("branchComparisonCount").accessibilityValue(String(rows.count))
-                    Text("哪些選擇，留在了後來的日子？").font(.headline)
+                    Text("先看重要的兩三個轉折").font(.headline)
+                    if LifeStoryComparison.highlights(rows).isEmpty { Text("這次記錄沒有不同的故事或選擇；不為比較而編造差異。") }
                     ForEach(LifeStoryComparison.highlights(rows), id: \.decisionIndex) { row in
                         VStack(alignment: .leading, spacing: 10) {
                             Text("\(row.original.age)歲").font(.headline)
@@ -109,7 +110,7 @@ struct BranchComparisonView: View {
                             Text("資源描述處境，不是人生分數。").font(.footnote)
                         }.frame(maxWidth: .infinity, alignment: .leading)
                     }
-                    Text("完整人生紀錄").font(.title3.bold())
+                    DisclosureGroup {
                     ForEach(rows, id: \.decisionIndex) { row in
                         GroupBox("\(row.original.age)歲 · \(row.storyChanged ? "故事走向不同" : "遇見相同的故事情境")") {
                             VStack(alignment: .leading, spacing: 14) {
@@ -119,6 +120,7 @@ struct BranchComparisonView: View {
                             }
                         }.accessibilityIdentifier("branchRow.\(row.decisionIndex)")
                     }
+                    } label: { Text("展開完整人生紀錄").accessibilityIdentifier("fullLifeTimeline") }
                     Text("回顧結束不代表這個年齡死亡。相同種子也不保證遇到相同事件，因為先前選擇會改變資格與權重。")
                         .font(.footnote).foregroundStyle(.secondary)
                 }.padding()
@@ -130,6 +132,7 @@ struct BranchComparisonView: View {
     private func story(_ label: String, trace: ConsequenceTrace, arrival: TimeJumpTrace) -> some View {
         VStack(alignment: .leading, spacing: 5) {
             Text(label).font(.subheadline.bold())
+            Text(trace.eventTitle).font(.headline)
             Text(trace.choiceTitle).font(.body)
             ForEach(Array(LifeStoryComparison.consequences(trace, arrival: arrival).enumerated()), id: \.offset) { _, text in
                 Text(text).font(.subheadline)

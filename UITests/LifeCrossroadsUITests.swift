@@ -2,6 +2,39 @@ import XCTest
 
 @MainActor
 final class LifeCrossroadsUITests: XCTestCase {
+    func testOpportunityChainAndQuickComparisonUseActualRecords() throws {
+        for (code, offer, adult) in [("JPN", "remoteStudio", "portfolio"), ("KEN", "mentorRelay", "cooperate")] {
+            let app = launch(seed: "34", world: true, overview: true)
+            let country = app.buttons["country.\(code)"]; reveal(country, in: app); country.tap()
+            startWorldPaused(app)
+            for index in 0..<7 {
+                if index == 3 {
+                    let before = try archiveChecksum(in: app)
+                    openComparison("invest", in: app)
+                    attachScreenshot("lx05-\(code)-quick-comparison", app: app)
+                    app.buttons["closeComparison"].tap()
+                    XCTAssertEqual(try archiveChecksum(in: app), before)
+                }
+                let id = index == 3 ? "invest" : index == 4 ? offer : index == 6 ? adult : "rest"
+                let choice = app.buttons["choice.\(id)"]; reveal(choice, in: app)
+                XCTAssertTrue(choice.isEnabled)
+                if [4, 6].contains(index) { attachScreenshot("lx05-\(code)-age-\(index == 4 ? 17 : 25)", app: app) }
+                choice.tap()
+                XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+                if index == 4 {
+                    let checksum = try archiveChecksum(in: app)
+                    app.terminate(); app.launchArguments.removeAll { $0 == "-reset-save" }; app.launch()
+                    app.buttons["resumeLife"].tap()
+                    if app.buttons["worldPause"].label == "暫停播放" { app.buttons["worldPause"].tap() }
+                    XCTAssertEqual(try archiveChecksum(in: app), checksum)
+                    let outcome = try recordOutcome(in: app); XCTAssertEqual(outcome.choiceID, offer)
+                }
+                app.buttons["continueLife"].tap(); skipWorldMontage(app)
+            }
+            app.terminate()
+        }
+    }
+
     func testBirthStoryRandomReceiptSurvivesFailureAndColdResume() throws {
         let app = launch(seed: "34", failingSaves: "1", world: true, overview: true, randomBirth: true)
         let draw = app.buttons["randomBirth"]; reveal(draw, in: app); draw.tap()
@@ -13,7 +46,7 @@ final class LifeCrossroadsUITests: XCTestCase {
         let country = try XCTUnwrap(app.staticTexts["birthCountry"].value as? String)
         let household = try XCTUnwrap(app.staticTexts["birthHousehold"].value as? String)
         attachScreenshot("lx04-birth-reveal", app: app)
-        let enter = app.buttons["enterChildhood"]; reveal(enter, in: app); enter.tap()
+        let enter = app.buttons["enterChildhood"]; XCTAssertTrue(enter.isHittable); enter.tap()
         if app.buttons["worldPause"].label == "暫停播放" { app.buttons["worldPause"].tap() }
         skipWorldMontage(app)
         let checksum = try archiveChecksum(in: app)
@@ -34,7 +67,7 @@ final class LifeCrossroadsUITests: XCTestCase {
         let app = launch(seed: "34", largestText: true, world: true, overview: true, randomBirth: true)
         let draw = app.buttons["randomBirth"]; reveal(draw, in: app); draw.tap()
         XCTAssertTrue(app.staticTexts["birthReveal"].waitForExistence(timeout: 8))
-        let enter = app.buttons["enterChildhood"]; reveal(enter, in: app); enter.tap()
+        let enter = app.buttons["enterChildhood"]; XCTAssertTrue(enter.isHittable); enter.tap()
         if app.buttons["worldPause"].label == "暫停播放" { app.buttons["worldPause"].tap() }
         skipWorldMontage(app)
         let scene = app.otherElements["lifeWorldScene"]
@@ -64,7 +97,9 @@ final class LifeCrossroadsUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["journeyComplete"].waitForExistence(timeout: 8))
         let checksum = try archiveChecksum(in: app)
         let picker = app.buttons["openParallelPicker"]; reveal(picker, in: app); picker.tap()
-        let family = app.buttons["parallelHousehold.ken-2"]; reveal(family, in: app); family.tap()
+        XCTAssertFalse(app.buttons["parallelHousehold.ken-2"].exists)
+        XCTAssertTrue(app.staticTexts["parallelControl"].label.contains("固定同一家庭"))
+        let family = app.buttons["parallelHousehold.ken-1"]; reveal(family, in: app); family.tap()
         let begin = app.buttons["beginParallel"]; reveal(begin, in: app); begin.tap()
         assertSaveFailure(in: app)
         XCTAssertFalse(app.staticTexts["birthReveal"].exists)
@@ -74,7 +109,7 @@ final class LifeCrossroadsUITests: XCTestCase {
         picker.tap(); reveal(family, in: app); family.tap(); reveal(begin, in: app); begin.tap()
         XCTAssertTrue(app.staticTexts["birthReveal"].waitForExistence(timeout: 8))
         XCTAssertEqual(app.staticTexts["birthCountry"].value as? String, "KEN")
-        let enter = app.buttons["enterChildhood"]; reveal(enter, in: app); enter.tap()
+        let enter = app.buttons["enterChildhood"]; XCTAssertTrue(enter.isHittable); enter.tap()
         if app.buttons["worldPause"].label == "暫停播放" { app.buttons["worldPause"].tap() }
         skipWorldMontage(app)
         let pairChecksum = try archiveChecksum(in: app)
@@ -1023,6 +1058,9 @@ final class LifeCrossroadsUITests: XCTestCase {
 
     private func assertComparison(_ record: VisibleRecord, prefix: String, in app: XCUIApplication) throws {
         let event = app.staticTexts["\(prefix).event"]
+        if !event.exists {
+            let full = app.buttons["fullLifeTimeline"]; reveal(full, in: app); full.tap()
+        }
         reveal(event, in: app)
         XCTAssertEqual(event.label, record.event)
         XCTAssertEqual(event.value as? String, record.eventID)
@@ -1110,7 +1148,7 @@ final class LifeCrossroadsUITests: XCTestCase {
 
     private func reveal(_ element: XCUIElement, in app: XCUIApplication) {
         for _ in 0..<32 {
-            if ["lifeWorldScene", "resumeBranch"].contains(element.identifier), element.exists, element.isHittable { return }
+            if ["lifeWorldScene", "resumeBranch", "enterChildhood"].contains(element.identifier), element.exists, element.isHittable { return }
             let sheet = ["closeTrace", "closeComparison", "closeBranchComparison", "closeForkPicker", "closeFullEvent", "cancelParallel", "enterChildhood"].contains { app.buttons[$0].exists }
             let footer = app.buttons["continueLife"].exists && !sheet
             let worldFooter = app.descendants(matching: .any).matching(identifier: "worldPlaybackControls").firstMatch

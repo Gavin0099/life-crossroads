@@ -117,7 +117,7 @@ final class RNGV2Tests: XCTestCase {
             let denied = try DecisionResolver.resolve(state: fresh, eventID: outcome, choiceID: "lead", catalog: c)
             XCTAssertFalse(denied.trace.applied) // Skills cannot manufacture the missing story.
             XCTAssertEqual(denied.state, fresh)
-            let projected = StoryBranchEngine.project(event: try XCTUnwrap(c.decisions.first { $0.id == outcome }), state: fresh)
+            let projected = try StoryBranchEngine.project(event: try XCTUnwrap(c.decisions.first { $0.id == outcome }), state: fresh, catalog: c)
             XCTAssertTrue(projected.event.choices.contains { $0.id == "rest" })
             XCTAssertTrue(projected.event.choices.contains { $0.kind == .askSupport })
         }
@@ -149,7 +149,7 @@ final class RNGV2Tests: XCTestCase {
         let selection = try EventSelector.select(state: current, catalog: c)
         let reunion = try XCTUnwrap(selection.candidates.first { $0.eventID == "later-reconnect" })
         XCTAssertTrue(reunion.weightSteps.contains { $0.ruleID == "story-continuity" })
-        let event = StoryBranchEngine.project(event: try XCTUnwrap(c.decisions.first { $0.id == "later-reconnect" }), state: current)
+        let event = try StoryBranchEngine.project(event: try XCTUnwrap(c.decisions.first { $0.id == "later-reconnect" }), state: current, catalog: c)
         XCTAssertEqual(event.event.recurringPerson, "阿禾")
         XCTAssertEqual(event.evaluation?.sourceEventID, "middle-friend-letter")
         XCTAssertEqual(event.evaluation?.sourceAge, 45)
