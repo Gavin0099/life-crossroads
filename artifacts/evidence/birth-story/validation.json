@@ -1,0 +1,64 @@
+{
+  "task": "LX-04 different upbringing / full parallel story",
+  "base": "3f6cbfbea5e757612f5f9d192b25a94d1a84a028",
+  "app_and_ui_test_commit": "5155d407f36e498bfab9070d207885c015a67ee9",
+  "core_source": "221f97e; Domain/Data/Persistence/Presentation/Tests unchanged through final code",
+  "pr": "https://github.com/Gavin0099/life-crossroads/pull/13",
+  "status": "local bounded engineering checks passed; Draft/HOLD",
+  "swift": {
+    "passed": 122,
+    "failed": 0,
+    "evidence": "swift-tests.txt",
+    "includes": "512 birth seeds; fixed-seed replay; 1024-life regression; disk save/restore, schema1/2/3 and immutable original"
+  },
+  "python": {
+    "passed": 35,
+    "failed": 0,
+    "evidence": "python-tests.txt"
+  },
+  "data_generation_check": "PASS; scripts/build-data.py --check",
+  "basic": "PASS; basic-checks.txt",
+  "native": {
+    "se_first_batch": {
+      "passed": 3,
+      "failed": 1,
+      "evidence": "se-release-summary.json",
+      "qualification": "Parallel test omitted explicit pause after cold restore; other three passed"
+    },
+    "se_parallel_followup": {
+      "passed": 1,
+      "failed": 0,
+      "evidence": "se-parallel-summary.json"
+    },
+    "standard_final": {
+      "passed": 2,
+      "failed": 0,
+      "evidence": "standard-summary.json"
+    },
+    "local_full_28_case_suite_claimed": false,
+    "runtime_publication_warnings": "No matching issues reported in passing SE parallel and final standard runs",
+    "history": "native-attempts.json"
+  },
+  "model_witness": {
+    "full_lives": 32,
+    "seed": 34,
+    "selection": "Disclosed first actual JPN paper/online continuation in0..<64, not an unbiased gameplay sample",
+    "all_replayed": true,
+    "evidence": "samples.json",
+    "limits": "Online costs differ; same-action age17 story same across these eight-country examples. Taiwan missing comparability retained."
+  },
+  "screenshots": "screenshots.json",
+  "source_hashes": "source-boundary.json",
+  "cleanup": "simulator-cleanup.json",
+  "remote_ci": {
+    "success_claimed": false,
+    "reason": "Final documentary/memory push triggers separate CI; inspect current PR HEAD. Local checks are not remote CI."
+  },
+  "not_claimed": [
+    "Eight distinct long-term national story routes",
+    "New narrative consequences of life focus",
+    "PR12 first-attempt missed-tap root cause resolved",
+    "Physical iPhone full-play, human VoiceOver, child comprehension/replay interest",
+    "Formal art, P1 completion, merge or release"
+  ]
+}

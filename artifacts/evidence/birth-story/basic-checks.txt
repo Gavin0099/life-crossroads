@@ -1,0 +1,7 @@
+framework-pin: PASS
+version-compatibility: PASS
+drift: PASS
+config-syntax: PASS
+shell-syntax: PASS
+python-syntax: PASS
+Evidence: <repo>/artifacts/governance/basic/checks.json

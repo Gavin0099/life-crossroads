@@ -11,6 +11,8 @@ P1 目標為 **8 國、16 種家庭情境、50～70 個事件**，每局 10～15
 完整版本與試玩邊界見 [P1 Integrated Preview 0.1 說明](docs/p1-integrated-preview-20261024.md)。
 產品計畫與待決定事項見 [PLAN.md](PLAN.md)。
 
+本分支另含 **LX-04 不同出生、不同人生**（[Draft PR #13](https://github.com/Gavin0099/life-crossroads/pull/13)）：從示範情境隨機出生，角色場景常駐；完成後保留原局，換個出身親玩另一段完整人生，以故事及可展開的計算紀錄對照。手選保留於探索模式。這不是全球出生機率，也未證明八國的長期故事已足夠不同；見[交付與試玩方式](docs/birth-story-delivery.md)。
+
 ## 執行引擎
 
 需要 Swift 6 / Xcode 16 以上；部署目標 iOS 17，日常測試在 macOS 執行。
@@ -19,6 +21,7 @@ P1 目標為 **8 國、16 種家庭情境、50～70 個事件**，每局 10～15
 swift test
 swift run life-demo
 swift run life-demo --json
+swift run -c release life-demo --birth-story-samples
 swift run -c release life-demo --story-samples
 swift run -c release life-demo --batch-report --seed-count 32 > batch-report.json
 python3 scripts/render-batch-report.py batch-report.json batch-report.md
@@ -36,7 +39,7 @@ python3 scripts/build-data.py --check
 `LIFE_SIMULATOR_ID` 僅指定參考裝置的硬體／runtime 設定，不會操作或刪除該原有裝置；也可同時指定 `LIFE_SIMULATOR_DEVICE_TYPE` 和 `LIFE_SIMULATOR_RUNTIME`。
 Xcode Launch Arguments 可加入 `-life-seed 0` 重現指定故事；App 的「同種子重新開始」保留背景與 Seed，「換個運氣」保留背景並更換 Seed。完整重現還需要相同選擇與版本。
 實機執行需在 Xcode 設定自己的開發團隊並連接 iPhone；Simulator 通過不等於實機 Gate 通過。
-目前 App 以一組本機 JSON 原子存檔保留人生及最多一條改選後的路線；關閉 App 可續玩，建立新人生會詢問是否取代。SwiftData、多人生收藏與跨版本存檔遷移仍屬後續範圍。
+目前 App 以一組本機 JSON 原子存檔保留人生，以及最多另一條同出身改選或不同出身的人生；兩種比較不疊加，原局保留。關閉 App 可續玩，建立新人生會詢問是否取代。SwiftData、多人生收藏與跨版本存檔遷移仍屬後續範圍。
 
 ## 開始工作
 
