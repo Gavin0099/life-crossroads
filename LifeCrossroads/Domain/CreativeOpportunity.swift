@@ -18,7 +18,7 @@ public struct CreativeOpportunity: Codable, Equatable, Sendable {
     public let route: String
     public let observations: [IndicatorObservation]
     public let preparation: Cost?
-    public let mentorSupport: Int
+    public let mentorSupport: Int?
     public let assumptionIDs: [String]
     public let explanation: String
 }
@@ -107,8 +107,10 @@ public enum CreativeOpportunityRules {
             return .init(event: event, evaluation: base.evaluation)
         }
         let receipt = CreativeOpportunity(ruleVersion: CreativeOpportunity.version, route: route, observations: observations,
-            preparation: preparation, mentorSupport: context.household.mentorSupport,
-            assumptionIDs: ["creative-opportunities", "macro-friction", "household-scenarios", "support-network"],
+            preparation: preparation, mentorSupport: ["relay", "seeking"].contains(route) ? context.household.mentorSupport : nil,
+            assumptionIDs: ["creative-opportunities"] + (observations.isEmpty ? [] : ["macro-friction"])
+                + (["relay", "seeking"].contains(route) ? ["household-scenarios", "support-network"] : [])
+                + (route == "unknown" ? ["partial-environment"] : []),
             explanation: explanation + " 這是遊戲情境規則，不能推論真實國家或個人的機會。")
         let evaluation = StoryBranchEvaluation(ruleID: "story.creative-opportunity", sourceEventID: source?.eventID ?? "",
             sourceChoiceID: source?.choiceID, sourceAge: source?.age, flagKey: "creative",

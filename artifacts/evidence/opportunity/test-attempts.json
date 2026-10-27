@@ -1,0 +1,91 @@
+[
+  {
+    "log": "artifacts/governance/opportunity/baseline-swift.log",
+    "kind": "baseline",
+    "failedCases": [],
+    "targetSummaries": [
+      "Executed 15 tests, with 0 failures (0 unexpected) in 35.821 (35.824) seconds",
+      "Executed 10 tests, with 0 failures (0 unexpected) in 35.759 (35.761) seconds",
+      "Executed 91 tests, with 0 failures (0 unexpected) in 580.693 (580.699) seconds",
+      "Executed 6 tests, with 0 failures (0 unexpected) in 35.819 (35.820) seconds"
+    ],
+    "sha256": "cc5f1d8058c6d3ac5a853ae9ea037f02cba4fca9d356c0a6b1b419e8a29cdb65"
+  },
+  {
+    "log": "artifacts/governance/opportunity/compile.log",
+    "kind": "initial-fixture-check",
+    "failedCases": [
+      "-[LifePersistenceTests.OpportunityTests testMissingInputsNoSupportAndOfflineDoNotInventRoutes]"
+    ],
+    "targetSummaries": [],
+    "sha256": "e405892610809c6dd208479fc4f043dd8ffc63b77a6330e1302be2b19f07c587"
+  },
+  {
+    "log": "artifacts/governance/opportunity/focused-swift.log",
+    "kind": "focused",
+    "failedCases": [
+      "-[LifeDomainTests.StoryBranchTests testAllCountryFamiliesCanFinishWithDiverseChoicesAndBranchNarratives]"
+    ],
+    "targetSummaries": [],
+    "sha256": "0113045ddae64d7c5cc631464a9bd47f2d18d4761bb87dd3f6bd818fcb55b5d4"
+  },
+  {
+    "log": "artifacts/governance/opportunity/final-swift.log",
+    "kind": "superseded-debug-regression",
+    "failedCases": [
+      "-[LifePresentationTests.WorldPersistenceTests testPlaybackReproducesFrozenPreImplementationTracesAndSaveBytes]",
+      "-[LifePersistenceTests.SaveRepositoryTests testFocusDiskResumeAndPreFocusArchiveCompatibility]",
+      "-[LifeDomainTests.LifeExperienceTests testContextualNarrativeUsesActualHistoryIncludingSeekingAndRecovery]",
+      "-[LifeDomainTests.StoryBranchTests testAllCountryFamiliesCanFinishWithDiverseChoicesAndBranchNarratives]"
+    ],
+    "targetSummaries": [
+      "Executed 15 tests, with 7 failures (1 unexpected) in 33.959 (33.961) seconds",
+      "Executed 15 tests, with 2 failures (2 unexpected) in 95.481 (95.485) seconds",
+      "Executed 91 tests, with 2 failures (0 unexpected) in 671.212 (671.220) seconds",
+      "Executed 6 tests, with 0 failures (0 unexpected) in 38.181 (38.183) seconds"
+    ],
+    "sha256": "d9643b70537bed1561b6de3a6ff0b94f392b6bd07c8e29bc8053673104e2b7d7"
+  },
+  {
+    "log": "artifacts/governance/opportunity/final-swift-release.log",
+    "kind": "intermediate-release-pass",
+    "failedCases": [],
+    "targetSummaries": [
+      "Executed 15 tests, with 0 failures (0 unexpected) in 6.615 (6.616) seconds",
+      "Executed 16 tests, with 0 failures (0 unexpected) in 8.365 (8.366) seconds",
+      "Executed 91 tests, with 0 failures (0 unexpected) in 69.169 (69.175) seconds",
+      "Executed 6 tests, with 0 failures (0 unexpected) in 4.609 (4.610) seconds"
+    ],
+    "sha256": "6fc926908e3ff71af99b7019adf85eccafab554aee2d2b38adf6600bfbe6031b"
+  },
+  {
+    "log": "artifacts/governance/opportunity/final-swift-release-v3.log",
+    "kind": "offline-route-regression",
+    "failedCases": [],
+    "targetSummaries": [
+      "Executed 15 tests, with 0 failures (0 unexpected) in 6.374 (6.376) seconds",
+      "Executed 16 tests, with 0 failures (0 unexpected) in 8.119 (8.121) seconds",
+      "Executed 91 tests, with 0 failures (0 unexpected) in 63.982 (63.987) seconds",
+      "Executed 6 tests, with 0 failures (0 unexpected) in 4.430 (4.431) seconds"
+    ],
+    "sha256": "ed897f19e4ff2c99c295639ae9db8f1d9c95856aa734fa259becb397907063ca"
+  },
+  {
+    "log": "artifacts/governance/opportunity/final-swift-release-v4.log",
+    "kind": "final-release",
+    "failedCases": [],
+    "targetSummaries": [
+      "Executed 15 tests, with 0 failures (0 unexpected) in 6.388 (6.389) seconds",
+      "Executed 16 tests, with 0 failures (0 unexpected) in 8.201 (8.203) seconds",
+      "Executed 91 tests, with 0 failures (0 unexpected) in 63.917 (63.923) seconds",
+      "Executed 6 tests, with 0 failures (0 unexpected) in 4.444 (4.445) seconds"
+    ],
+    "sha256": "e4c536603473ea46023a02f19976ca13ca99921164b49c020c812bc0f20e6c89"
+  },
+  {
+    "log": "artifacts/governance/opportunity/final-swift-v2.log",
+    "kind": "cancelled-queued-debug",
+    "result": "CANCELLED",
+    "explanation": "Own queued debug rerun cancelled before tests; replaced with full release regression. No test pass claim."
+  }
+]

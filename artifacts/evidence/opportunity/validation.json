@@ -1,0 +1,125 @@
+{
+  "result": "PASS_WITH_DECLARED_SCOPE",
+  "swift": {
+    "command": "swift test -c release",
+    "count": 128,
+    "log": "artifacts/governance/opportunity/final-swift-release-v4.log",
+    "sha256": "e4c536603473ea46023a02f19976ca13ca99921164b49c020c812bc0f20e6c89"
+  },
+  "python": {
+    "command": "python -m unittest discover -s Tests -p test_*.py",
+    "count": 35,
+    "log": "artifacts/governance/opportunity/python-final.log",
+    "sha256": "37e16ce729398696603f1de07446ef8fcf646bbafb920f87071c78556c15be0d"
+  },
+  "basic": {
+    "command": "bash scripts/governance-check.sh --profile basic",
+    "result": "PASS",
+    "log": "artifacts/governance/opportunity/basic-final.log",
+    "sha256": "ec6004f8c9a799759a0ca0fe3103c3b0cc8021eea3f3ddbae1c9908bc659b317"
+  },
+  "nativeRuns": [
+    {
+      "log": "artifacts/governance/opportunity/native-se.log",
+      "sha256": "b45dae6189e6303ee3d0ce77a922cbd53bcc37e781117c84a20032fa864d50db",
+      "xcresult": "artifacts/ios/LC02-20261027T055332Z.xcresult",
+      "result": "PASS",
+      "tests": 3,
+      "appSourceCommit": "74ecdcf",
+      "simulatorUUID": "45AB6562-A64A-4B13-A37A-859515D320C5",
+      "deleted": true,
+      "matchingPublicationWarnings": 0
+    },
+    {
+      "log": "artifacts/governance/opportunity/native-standard.log",
+      "sha256": "37f2975ea4a5b784270be0351e030336aec30614543896af5974c705bb997714",
+      "xcresult": "artifacts/ios/LC02-20261027T060057Z.xcresult",
+      "result": "PASS",
+      "tests": 1,
+      "appSourceCommit": "74ecdcf",
+      "simulatorUUID": "D27FE905-03AB-46CB-A0F7-7FD852819B71",
+      "deleted": true,
+      "matchingPublicationWarnings": 0
+    },
+    {
+      "log": "artifacts/governance/opportunity/native-se-final.log",
+      "sha256": "4dd4d0638a9f142af4aab34b453bc11d0ee9aa9ecb24dbf2f22db36495c3c8c3",
+      "xcresult": "artifacts/ios/LC02-20261027T061107Z.xcresult",
+      "result": "PASS",
+      "tests": 1,
+      "appSourceCommit": "74f8af1",
+      "simulatorUUID": "9F784D2F-485F-4EB1-B975-70333A9F4307",
+      "deleted": true,
+      "matchingPublicationWarnings": 0
+    }
+  ],
+  "uniqueNativeTestCases": 4,
+  "nativeTestExecutions": 5,
+  "allCreatedSimulatorsDeleted": true,
+  "images": [
+    {
+      "path": "artifacts/evidence/opportunity/se/lx04-birth-reveal.png",
+      "sha256": "86c0fe59e7e9513a7202cb1a027f88f0e02e01807523fd11ea19f645aea6816b",
+      "appSourceCommit": "74ecdcf"
+    },
+    {
+      "path": "artifacts/evidence/opportunity/se/lx04-maximum-reader.png",
+      "sha256": "5ae2b4daf8bdc308e64ece768b90440345a31764edcb52301e267a0cb03a3aaf",
+      "appSourceCommit": "74ecdcf"
+    },
+    {
+      "path": "artifacts/evidence/opportunity/se/lx04-world-first.png",
+      "sha256": "de9c02f02ed2a36366db76e4d43ff0fdc0671cc5711b44ae46f0aead05df6973",
+      "appSourceCommit": "74ecdcf"
+    },
+    {
+      "path": "artifacts/evidence/opportunity/se/lx05-JPN-age-17.png",
+      "sha256": "7748f154e871f002f182f1a4b39768a012a8dbc1ed45112a6e1c7c33c7069ce5",
+      "appSourceCommit": "74f8af1"
+    },
+    {
+      "path": "artifacts/evidence/opportunity/se/lx05-JPN-age-25.png",
+      "sha256": "88cb8dd2d875b71e574c34add4f6744b07fcd160a8fc65b756fda95c98f7e056",
+      "appSourceCommit": "74f8af1"
+    },
+    {
+      "path": "artifacts/evidence/opportunity/se/lx05-JPN-quick-comparison.png",
+      "sha256": "82926ed2c52828b8c4fbfc1be32bd3836bc27ec43a7e7aff34dc46f255a3296f",
+      "appSourceCommit": "74f8af1"
+    },
+    {
+      "path": "artifacts/evidence/opportunity/se/lx05-KEN-age-17.png",
+      "sha256": "31ce868d763a486010939b1f0a4fa65894759542be28b5b0d667c6adb83ca57a",
+      "appSourceCommit": "74f8af1"
+    },
+    {
+      "path": "artifacts/evidence/opportunity/se/lx05-KEN-age-25.png",
+      "sha256": "1ede05fc919e051d075e889988c42949bc15cc60d9e71d36373c7a9556c068a6",
+      "appSourceCommit": "74f8af1"
+    },
+    {
+      "path": "artifacts/evidence/opportunity/se/lx05-KEN-quick-comparison.png",
+      "sha256": "bad42546fe1cf2a68108fb52b0021a9f0e2059b09397762e1e1ffd02c9ccdc43",
+      "appSourceCommit": "74f8af1"
+    },
+    {
+      "path": "artifacts/evidence/opportunity/standard/lx04-paper-memory.png",
+      "sha256": "d2bad4e14094c5f7976e850ffd754e5dc206da8e0874ffdfd8eebb034bbb6f77",
+      "appSourceCommit": "74ecdcf"
+    },
+    {
+      "path": "artifacts/evidence/opportunity/standard/lx04-parallel-stories.png",
+      "sha256": "2bd672655c430b8aa8c57e3354c18121cc33cfbdfdbcdcfaa683b9b637fed787",
+      "appSourceCommit": "74ecdcf"
+    }
+  ],
+  "sourceBoundary": "Native evidence is source-qualified: 74ecdcf covers birth/dynamic type and full two-life comparison; 74f8af1 covers online/relay opportunity chain. Later offline-to-adult and executed-only receipt metadata corrections are covered by final pure Swift tests, not a rerun of all 29 native cases. Remote current HEAD CI remains to be checked after push.",
+  "notClaimed": [
+    "full native suite at final HEAD locally",
+    "real iPhone acceptance",
+    "manual VoiceOver",
+    "child understanding or replay intent",
+    "country representative life opportunities",
+    "old-engine archive compatibility"
+  ]
+}
