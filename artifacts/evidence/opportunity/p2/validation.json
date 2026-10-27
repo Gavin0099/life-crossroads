@@ -1,0 +1,49 @@
+{
+  "baselineCommit": "79686ee7ac793b49ae2b795687074a260e4961b8",
+  "date": "2026-10-27",
+  "scope": "P2 household preparation support vs recorded teacher relationship; no production eligibility/cost/schema/RNG/data change",
+  "sourceSHA256": {
+    "LifeCrossroads/Domain/CreativeOpportunity.swift": "0eb3a695d3bf3f1460aaf653f737945739fe5eb7ec267731c3cfa2335854b260",
+    "Tests/LifePersistenceTests/OpportunityTests.swift": "ed5cb772b23a81f1ebcbb062d14c098ceeb3eaf89cfbe8e5bf591262d2b08251",
+    "LifeCrossroads/Analysis/BatchAnalyzer.swift": "ff1705b58685fd14734c83a6efc93c05677c545bc055a47834960df1e0ecfe0a",
+    "LifeCrossroads/Analysis/BatchMetrics.swift": "39f8827739f31b15f8d126e528ea9be905a5959b6f7c08dd41d724fa64ed4dc7"
+  },
+  "regressionBefore": {
+    "cases": 2,
+    "assertionFailures": 7,
+    "exitCode": 1,
+    "log": "before.log"
+  },
+  "after": {
+    "swiftTests": 130,
+    "pythonTests": 35,
+    "basicChecks": 6,
+    "status": "PASS",
+    "logs": [
+      "swift-after.log",
+      "python.log",
+      "basic.log"
+    ]
+  },
+  "official64Samples": {
+    "before": "artifacts/evidence/opportunity/samples.json",
+    "afterCommand": ".build/release/life-demo --opportunity-samples",
+    "byteEqual": true,
+    "SHA256": "814bdcadb3b798295fd4dcfe8811c63abf834faf82d434c8f1839c6463df7a7d"
+  },
+  "batch": "batch-summary.json",
+  "localSimulatorCreated": 0,
+  "currentHeadCI": "Check after push; not claimed by this local evidence",
+  "independentRereview": "Pending after push",
+  "notClaimed": [
+    "eight-country 1024-run batch",
+    "complete support/recovery story metric",
+    "real-device acceptance",
+    "VoiceOver acceptance",
+    "child playtest",
+    "cross-engine save migration",
+    "custom zero-support old catalog compatibility",
+    "merge",
+    "release"
+  ]
+}

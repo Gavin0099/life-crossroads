@@ -6,15 +6,93 @@ import LifePresentation
 
 final class OpportunityTests: XCTestCase {
     private func at(_ age: Int, code: String = "JPN", household: Int = 1, project: String = "invest",
-                    continuation: String? = nil, seed: UInt64 = 34, catalog c: ModelCatalog) throws -> LifeSession {
+                    continuation: String? = nil, early: String = "rest", seed: UInt64 = 34, catalog c: ModelCatalog) throws -> LifeSession {
         var life = try LifeSession.start(catalog: c, countryCode: code, householdID: "\(code.lowercased())-\(household)", seed: seed)
         while life.state.age < age {
             let event = try life.event(catalog: c)
-            let preferred = life.state.age == 13 ? project : (life.state.age == 17 ? (continuation ?? "rest") : "rest")
+            let preferred = life.state.age == 13 ? project : (life.state.age == 17 ? (continuation ?? "rest") : early)
             let choice = try event.choices.contains { $0.id == preferred } && life.preview(choiceID: preferred, catalog: c).applied ? preferred : "rest"
             try life.choose(choice, catalog: c); try life.continueLife(catalog: c)
         }
         return life
+    }
+    private func zeroPreparationSupportCatalog(startingSkills: Int? = nil) throws -> ModelCatalog {
+        var c = try StatisticsRepository.bundled()
+        // Reviewer counterexample: household conditions change uniformly; action costs/rules stay intact.
+        for i in c.households.indices where c.households[i].templateID == "shared-equipment-near-support" {
+            c.households[i].mentorSupport = 0
+            c.households[i].deviceAccess = .own
+            c.households[i].travelCost = 0
+            if let startingSkills { c.households[i].initialResources.skills = startingSkills }
+        }
+        return c
+    }
+
+    func testZeroFamilyPreparationSupportKeepsEarnedTeacherWorkshopAndAdultRoute() throws {
+        let c = try zeroPreparationSupportCatalog()
+        var teen = try at(17, code: "KEN", early: "invest", catalog: c)
+        XCTAssertGreaterThanOrEqual(teen.state.resources.skills, 28)
+        let contact = try XCTUnwrap(teen.state.story.relationships.first { $0.personID == "teacher" }?.interactions.first {
+            $0.eventID == "teen-project" && $0.choiceID == "invest" && $0.age == 13
+        })
+        let before = teen
+        let event = try teen.event(catalog: c)
+        let lead = try teen.preview(choiceID: "leadWorkshop", catalog: c)
+        XCTAssertTrue(lead.applied)
+        XCTAssertEqual(lead.storyBranch?.opportunity?.mentorSupport, 0)
+        XCTAssertEqual(lead.storyBranch?.opportunity?.route, "seeking")
+        XCTAssertTrue(event.storyQuestion.contains("家裡這次無法幫忙分段準備圖解"))
+        XCTAssertTrue(event.storyQuestion.contains("先前的交流仍在"))
+        XCTAssertFalse(event.storyQuestion.contains("沒有已安排好的指導者"))
+        XCTAssertTrue(lead.storyBranch?.explanation.contains("13歲") == true)
+        XCTAssertTrue(lead.storyBranch?.explanation.contains("不會抹去") == true)
+        XCTAssertEqual(lead.storyBranch?.sourceAge, contact.age)
+        XCTAssertEqual(lead.storyBranch?.sourceChoiceID, contact.choiceID)
+        XCTAssertTrue(lead.storyBranch?.opportunity?.assumptionIDs.contains("story-branches") == true)
+        XCTAssertFalse(try teen.preview(choiceID: "mentorRelay", catalog: c).applied)
+        XCTAssertThrowsError(try teen.choose("mentorRelay", catalog: c))
+        XCTAssertEqual(teen, before)
+        XCTAssertNil(teen.state.story.fact("creative")) // An available workshop is not a completed workshop.
+
+        let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        defer { try? FileManager.default.removeItem(at: directory) }
+        let repo = SaveRepository(fileURL: directory.appendingPathComponent("life.json"))
+        try repo.save(.single(teen), catalog: c)
+        XCTAssertEqual(try repo.load(catalog: c), .single(teen))
+        try teen.choose("leadWorkshop", catalog: c)
+        XCTAssertEqual(teen.state.story.fact("creative")?.value, "collective")
+        XCTAssertTrue(try WorldMomentProjector.project(session: teen, catalog: c).worldChanges.contains {
+            $0.kind == .relationship && $0.caption.contains("樹老師")
+        })
+        try repo.save(.single(teen), catalog: c)
+        teen = try XCTUnwrap(repo.load(catalog: c)).activeSession
+        try teen.continueLife(catalog: c)
+        while teen.state.age < 25 { try teen.choose("rest", catalog: c); try teen.continueLife(catalog: c) }
+        let adult = try teen.preview(choiceID: "cooperate", catalog: c)
+        XCTAssertTrue(adult.applied)
+        XCTAssertEqual(adult.storyBranch?.sourceAge, 17)
+        XCTAssertEqual(adult.storyBranch?.sourceChoiceID, "leadWorkshop")
+        XCTAssertNil(adult.storyBranch?.opportunity?.mentorSupport)
+        try teen.choose("cooperate", catalog: c); try teen.continueLife(catalog: c)
+        while teen.phase != .ended { try teen.choose("rest", catalog: c); try teen.continueLife(catalog: c) }
+        try repo.save(.single(teen), catalog: c)
+        XCTAssertEqual(try repo.load(catalog: c), .single(teen))
+        XCTAssertEqual(try LifeSession.restore(from: JSONEncoder().encode(teen), catalog: c), teen)
+    }
+
+    func testZeroFamilyPreparationSupportDoesNotBypassWorkshopSkillRequirement() throws {
+        let c = try zeroPreparationSupportCatalog(startingSkills: 0)
+        var teen = try at(17, code: "KEN", catalog: c)
+        XCTAssertLessThan(teen.state.resources.skills, 28)
+        XCTAssertTrue(teen.state.story.relationships.contains { $0.personID == "teacher" && !$0.interactions.isEmpty })
+        let event = try teen.event(catalog: c)
+        XCTAssertTrue(event.storyQuestion.contains("先前的交流仍在"))
+        XCTAssertFalse(event.choices.contains { $0.id == "leadWorkshop" })
+        let before = teen
+        XCTAssertThrowsError(try teen.choose("leadWorkshop", catalog: c))
+        XCTAssertThrowsError(try teen.choose("mentorRelay", catalog: c))
+        XCTAssertEqual(teen, before)
+        for choice in ["offline", "ask", "rest"] { XCTAssertTrue(try teen.preview(choiceID: choice, catalog: c).applied) }
     }
     func testSameWishAndHouseholdCreateDifferentExecutableOpportunitiesAndAdultRoutes() throws {
         let c = try StatisticsRepository.bundled()
@@ -54,7 +132,7 @@ final class OpportunityTests: XCTestCase {
         XCTAssertFalse(try missing.preview(choiceID: "mentorRelay", catalog: c).applied)
         var noSupport = c
         for i in noSupport.households.indices where noSupport.households[i].templateID == "shared-equipment-near-support" { noSupport.households[i].mentorSupport = 0 }
-        // A reviewed 13-year decision fixture with no earlier consumption; the route must not fabricate a teacher.
+        // A reviewed 13-year decision fixture: absent household preparation cannot fabricate a relay offer.
         let born = try LifeState.born(catalog: noSupport, countryCode: "KEN", householdID: "ken-1", seed: 34)
         let s = try SimulationEngine.advance(born, to: 13, catalog: noSupport).0
         // Time budget is bounded: use a lower-base-cost fixture to make the earlier action affordable.

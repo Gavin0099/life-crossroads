@@ -18,6 +18,7 @@ public struct CreativeOpportunity: Codable, Equatable, Sendable {
     public let route: String
     public let observations: [IndicatorObservation]
     public let preparation: Cost?
+    /// Household preparation support used for the relay offer, not the existence of a teacher relationship.
     public let mentorSupport: Int?
     public let assumptionIDs: [String]
     public let explanation: String
@@ -55,9 +56,21 @@ public enum CreativeOpportunityRules {
                             event.storyQuestion = "樹老師提議分段準備圖解，再一起製作；不用每次都守著連線。你想接續這個安排，還是換個方法？"
                             explanation = "先前選了線上創作；本次模型的數位準備負擔較多，且這個家庭情境有指導支持，因此出現分段備料、面對面共作的邀請。"
                         } else {
-                            event.title = "先替作品找到能用的支持"
-                            event.storyQuestion = "目前沒有已安排好的指導者。你可以先詢問協助、改用紙本，或保留時間；還沒有共作成功的紀錄。"
-                            explanation = "先前選了線上創作；本次模型準備負擔較多，但家庭情境未提供指導支持，不能假定有人已替你備好材料。"
+                            event.title = "家裡這次無法幫忙備料"
+                            event.storyQuestion = "家裡這次無法幫忙分段準備圖解。"
+                            explanation = "先前選了線上創作；本次模型準備負擔較多，但家庭備料支持為0，因此沒有分段備料邀請。"
+                            // Existing teacher contact is a recorded interaction, independent of household support.
+                            let teacherContact = state.story.relationships.first { $0.personID == "teacher" }?.interactions.last {
+                                $0.eventID == source?.eventID && $0.choiceID == source?.choiceID && $0.age == source?.age
+                            }
+                            if let teacherContact {
+                                event.storyQuestion += "你和樹老師先前的交流仍在；"
+                                explanation += "家庭備料限制不會抹去\(teacherContact.age)歲與樹老師已記錄的交流。"
+                            }
+                            event.storyQuestion += event.choices.contains { $0.id == "leadWorkshop" }
+                                ? "可以一起帶領紙本工作坊，也能先練習、求助或休息。"
+                                : "可以先做紙本練習、詢問協助，或留時間休息。"
+                            explanation += "一般紙本工作坊仍依既有作品經驗及技能門檻判斷；開放選項不代表已經完成工作坊。"
                         }
                     } else {
                         route = "remote"; add = "remoteStudio"
@@ -110,6 +123,7 @@ public enum CreativeOpportunityRules {
             preparation: preparation, mentorSupport: ["relay", "seeking"].contains(route) ? context.household.mentorSupport : nil,
             assumptionIDs: ["creative-opportunities"] + (observations.isEmpty ? [] : ["macro-friction"])
                 + (["relay", "seeking"].contains(route) ? ["household-scenarios", "support-network"] : [])
+                + (route == "seeking" ? ["story-branches"] : [])
                 + (route == "unknown" ? ["partial-environment"] : []),
             explanation: explanation + " 這是遊戲情境規則，不能推論真實國家或個人的機會。")
         let evaluation = StoryBranchEvaluation(ruleID: "story.creative-opportunity", sourceEventID: source?.eventID ?? "",
