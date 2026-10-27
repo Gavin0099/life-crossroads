@@ -18,25 +18,27 @@ final class LifeExperienceTests: XCTestCase {
         var control = try LifeSession.start(catalog: c, countryCode: "JPN", householdID: "jpn-1", seed: 0)
         try control.choose("rest", catalog: c); try control.continueLife(catalog: c)
         try s.choose("rest", catalog: c); try s.continueLife(catalog: c)
-        XCTAssertEqual(s.state.resources.skills, control.state.resources.skills + 1)
-        XCTAssertEqual(s.jumps.last?.focusEffect?.requested, .init(skills: 1))
-        XCTAssertEqual(s.jumps.last?.focusEffect?.actual, .init(skills: 1))
+        XCTAssertEqual(s.state.resources.skills, control.state.resources.skills)
+        XCTAssertEqual(s.jumps.last?.focusEffect?.requested, .zero)
+        XCTAssertEqual(s.jumps.last?.focusEffect?.actual, .zero)
         try s.validate(catalog: c)
     }
 
-    func testFocusHasOneBoundedEffectAcrossLongIntervalsAndReportsClamping() throws {
+    func testFocusCreatesReadinessWithoutHiddenPointsAcrossShortAndLongIntervals() throws {
         let c = try StatisticsRepository.bundled()
         var state = try LifeState.born(catalog: c, countryCode: "JPN", householdID: "jpn-1", seed: 3)
         state.age = 23; state.resources.skills = 100
         let (capped, receipt) = try SimulationEngine.advance(state, to: 40, catalog: c, focus: .learning)
         XCTAssertEqual(capped.resources.skills, 100)
         XCTAssertEqual(receipt.focusEffect?.actual, .zero)
-        XCTAssertEqual(receipt.focusEffect?.requested, .init(skills: 1))
+        XCTAssertEqual(receipt.focusEffect?.requested, .zero)
         state.resources.skills = 40
         let (long, _) = try SimulationEngine.advance(state, to: 60, catalog: c, focus: .learning)
         let (short, _) = try SimulationEngine.advance(state, to: 24, catalog: c, focus: .learning)
-        XCTAssertEqual(long.resources.skills, 41)
-        XCTAssertEqual(short.resources.skills, 41)
+        XCTAssertEqual(long.resources.skills, 40)
+        XCTAssertEqual(short.resources.skills, 40)
+        XCTAssertEqual(long.focusHistory.last?.focus, .learning)
+        XCTAssertEqual(short.focusHistory.last?.toAge, 24)
     }
 
     func testReplayRejectsUnknownVersionsDuplicateAndFutureFocusRecords() throws {

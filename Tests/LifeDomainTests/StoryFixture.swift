@@ -2,7 +2,7 @@ import LifeData
 import LifeDomain
 
 /// Isolate the three reviewed narrative contracts from opportunity sampling.
-/// The production 40-event pool is exercised separately by EventSelectionTests and RNGV2Tests.
+/// The production 52-event pool is exercised separately by EventSelectionTests and RNGV2Tests.
 func legacyStoryFixture() throws -> ModelCatalog {
     var catalog = try StatisticsRepository.bundled()
     catalog.decisions.removeAll { !$0.isFallback }

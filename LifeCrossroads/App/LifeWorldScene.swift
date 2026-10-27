@@ -53,7 +53,7 @@ struct LifeWorldScene: View {
     }
 
     enum ActivityProp: String {
-        case cardboardPractice, storedBox, requestNote, onlineGuide, paperGuide, pausedWork
+        case cardboardPractice, storedBox, requestNote, onlineGuide, paperGuide, pausedWork, supportCalendar, restCalendar, pacedCard, returnedCalendar, careChecklist, toolBox, poweredTools, portableTools
 
         var title: String {
             switch self {
@@ -63,6 +63,14 @@ struct LifeWorldScene: View {
             case .onlineGuide: "線上圖解"
             case .paperGuide: "紙本練習"
             case .pausedWork: "保留時間"
+            case .supportCalendar: "協助約定"
+            case .restCalendar: "留下休息空白"
+            case .pacedCard: "試過短時參與"
+            case .returnedCalendar: "依步調再參與"
+            case .careChecklist: "預備清單"
+            case .toolBox: "工具經驗"
+            case .poweredTools: "現場工具桌"
+            case .portableTools: "手動攜帶箱"
             }
         }
     }
@@ -87,6 +95,19 @@ struct LifeWorldScene: View {
             default: prop = nil
             }
             return prop.map { .init(prop: $0, source: source) }
+        }
+        if let source = frame.worldChanges.filter({ $0.isOccurred && $0.kind == .memory &&
+            ["support", "recovery", "careAccess", "tools"].contains($0.factKey ?? "") }).max(by: { $0.sourceAge < $1.sourceAge }), source.sourceAge > 13 {
+            let prop: ActivityProp
+            switch source.factKey {
+            case "support": prop = source.factValue == "requested" ? .requestNote : .supportCalendar
+            case "recovery": prop = source.factValue == "paced" ? .pacedCard : source.factValue == "returned" ? .returnedCalendar : .restCalendar
+            case "careAccess": prop = source.factValue == "seeking" ? .requestNote : .careChecklist
+            default:
+                prop = source.factValue == "powered" || source.sourceChoiceID == "benchWork" ? .poweredTools
+                    : source.factValue == "portable" || source.sourceChoiceID == "mobileRepair" ? .portableTools : .toolBox
+            }
+            return .init(prop: prop, source: source)
         }
         guard frame.age >= 13, let source = frame.worldChanges.last(where: {
             $0.isOccurred && $0.kind == .memory && $0.sourceEventID == "teen-project" && $0.sourceAge == 13
@@ -178,6 +199,20 @@ struct LifeWorldScene: View {
 
     @ViewBuilder private func activityDrawing(_ prop: ActivityProp) -> some View {
         switch prop {
+        case .poweredTools, .portableTools:
+            ZStack(alignment: .top) {
+                RoundedRectangle(cornerRadius: prop == .portableTools ? 7 : 2)
+                    .fill(Color(red: 0.69, green: 0.42, blue: 0.24)).padding(.top, 10)
+                if prop == .portableTools {
+                    RoundedRectangle(cornerRadius: 4).stroke(.brown, lineWidth: 4).frame(width: 23, height: 13)
+                }
+                Image(systemName: prop == .poweredTools ? "powerplug" : "wrench.and.screwdriver")
+                    .font(.system(size: 24)).foregroundStyle(.white.opacity(0.9)).padding(.top, 15)
+            }.padding(.horizontal, 10)
+        case .supportCalendar, .restCalendar, .pacedCard, .returnedCalendar, .careChecklist, .toolBox:
+            storyNote(title: prop.title,
+                      symbol: prop == .toolBox ? "wrench.and.screwdriver" : prop == .careChecklist ? "list.clipboard" : prop == .restCalendar ? "leaf" : prop == .pacedCard ? "clock" : "calendar.badge.clock",
+                      sealed: false)
         case .cardboardPractice, .storedBox:
             GeometryReader { g in
                 let w = g.size.width, h = g.size.height
@@ -330,6 +365,7 @@ struct LifeWorldScene: View {
         case .relationship: return current ? 1 : 4
         case .occurredChance: return 2
         case .delayedConsequence: return 4
+        case .livedFocus: return 2
         case .pendingClue: return 5
         case .resourceChange: return 6
         }
@@ -371,6 +407,7 @@ struct LifeWorldScene: View {
         case .occurredChance: return "sparkle"
         case .resourceChange: return "list.bullet.rectangle"
         case .delayedConsequence: return "arrow.turn.down.right"
+        case .livedFocus: return "calendar"
         case .memory:
             // These are selected activity tokens. Neither a laptop nor notebook asserts completion,
             // access ownership, a reward or a future invitation. Unknown memories stay neutral.

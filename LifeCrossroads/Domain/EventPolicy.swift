@@ -24,6 +24,7 @@ public struct EventPolicy: Codable, Equatable, Sendable {
     public var continuityValues: [String]
     public var relationshipID: String?
     public var resourceWeights: [EventResourceWeight]
+    public var focusAffinity: LifeFocus? = nil
     public func includes(_ age: Int) -> Bool { (minimumAge...maximumAge).contains(age) }
 }
 
@@ -51,6 +52,9 @@ extension ModelCatalog {
                       weight.multiplier.isFinite, (0.25...4).contains(weight.multiplier) else { throw ModelError.invalid("resource weight") }
             }
             for choice in event.choices {
+                if choice.requiresElectricTools == true {
+                    guard !choice.requiresDigitalAccess, assumptions.contains(where: { $0.id == "environment-opportunities" }) else { throw ModelError.invalid("offline tools contract") }
+                }
                 guard Set(choice.storyChanges.map(\.key)).count == choice.storyChanges.count else { throw ModelError.invalid("duplicate choice story key") }
                 for change in choice.storyChanges {
                     guard StoryMemory.values[change.key]?.contains(change.value) == true,
@@ -67,6 +71,17 @@ extension ModelCatalog {
                       Set(continuation.unlockedChoices).count == continuation.unlockedChoices.count,
                       continuation.unlockedChoices.allSatisfy({ id in event.choices.contains { $0.id == id && $0.kind != .rest } }),
                       !continuation.activeTitle.isEmpty, !continuation.recoveryTitle.isEmpty else { throw ModelError.invalid("story continuation") }
+            }
+            if let focus = p.focusAffinity {
+                guard focus != .balanced, event.focusContinuation?.focus == focus else { throw ModelError.invalid("focus affinity") }
+            }
+            if let route = event.focusContinuation {
+                guard event.continuation == nil, route.focus != .balanced, p.focusAffinity == route.focus, (1...3).contains(route.minimumIntervals),
+                      event.choices.contains(where: { $0.id == route.unlockedChoiceID && $0.kind != .rest }),
+                      !route.activeTitle.isEmpty, !route.firstTitle.isEmpty,
+                      assumptions.contains(where: { $0.id == "life-focus-story" }) else {
+                    throw ModelError.invalid("focus continuation")
+                }
             }
         }
         // Each slot retains an unused, unconditional recovery-bearing candidate. These are candidates, not forced outcomes.

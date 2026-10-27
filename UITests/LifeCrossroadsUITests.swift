@@ -2,6 +2,33 @@ import XCTest
 
 @MainActor
 final class LifeCrossroadsUITests: XCTestCase {
+    func testCompletedRecoveryFocusBecomesAnActionAndPersistentWorldMemory() throws {
+        let app = launch(seed: "0", world: true, overview: true)
+        startWorldPaused(app)
+        let focus = app.buttons["lifeFocus"]; reveal(focus, in: app); focus.tap()
+        app.buttons["focusChoice.recovery"].tap()
+        for _ in 0..<7 {
+            let rest = app.buttons["choice.rest"]; reveal(rest, in: app); rest.tap()
+            XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+            app.buttons["continueLife"].tap(); skipWorldMontage(app)
+        }
+        let paced = app.buttons["choice.pacedRole"]; reveal(paced, in: app)
+        XCTAssertTrue(paced.exists); XCTAssertTrue(paced.isEnabled)
+        let scene = app.otherElements["lifeWorldScene"]
+        XCTAssertTrue((scene.value as? String ?? "").contains("照顧自己"))
+        attachScreenshot("experience-recovery-opportunity", app: app)
+        paced.tap()
+        XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
+        XCTAssertTrue((scene.value as? String ?? "").contains("試過短時段參與"))
+        attachScreenshot("experience-recovery-committed", app: app)
+        let saved = try archiveChecksum(in: app)
+        app.terminate(); app.launchArguments.removeAll { $0 == "-reset-save" }; app.launch()
+        XCTAssertTrue(app.buttons["resumeLife"].waitForExistence(timeout: 8)); app.buttons["resumeLife"].tap()
+        if app.buttons["worldPause"].label == "暫停播放" { app.buttons["worldPause"].tap() }
+        XCTAssertEqual(try archiveChecksum(in: app), saved)
+        XCTAssertTrue((app.otherElements["lifeWorldScene"].value as? String ?? "").contains("試過短時段參與"))
+    }
+
     func testOpportunityChainAndQuickComparisonUseActualRecords() throws {
         for (code, offer, adult) in [("JPN", "remoteStudio", "portfolio"), ("KEN", "mentorRelay", "cooperate")] {
             let app = launch(seed: "34", world: true, overview: true)
@@ -168,7 +195,7 @@ final class LifeCrossroadsUITests: XCTestCase {
         app.buttons["continueLife"].tap()
         let details = app.buttons["focusReceiptDetails"]; reveal(details, in: app); details.tap()
         let receipt = app.staticTexts["lifeFocusReceipt"]; XCTAssertTrue(receipt.waitForExistence(timeout: 5))
-        XCTAssertTrue(receipt.label.contains("技能 +1"))
+        XCTAssertTrue(receipt.label.contains("已留下生活安排"))
         attachScreenshot("lx03-focus-arrival", app: app)
     }
 

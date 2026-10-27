@@ -21,7 +21,13 @@ final class WorldPersistenceTests: XCTestCase {
             var opening = try XCTUnwrap(JSONSerialization.jsonObject(with: encoder.encode(frozenOpening)) as? [String: Any])
             opening["engineVersion"] = LifeState.engineVersion; opening["contentVersion"] = c.contentVersion
             let reviewed = try JSONDecoder().decode(ConsequenceTrace.self, from: JSONSerialization.data(withJSONObject: opening))
-            XCTAssertEqual(direct.traces.first, reviewed)
+            // The new catalog adds candidates, but must not alter existing opening candidates or outcomes.
+            var actual = try XCTUnwrap(JSONSerialization.jsonObject(with: encoder.encode(XCTUnwrap(direct.traces.first))) as? [String: Any])
+            var selection = try XCTUnwrap(actual["eventSelection"] as? [String: Any])
+            let baselineIDs = Set(reviewed.eventSelection.candidates.map(\.eventID))
+            selection["candidates"] = (selection["candidates"] as? [[String: Any]])?.filter { baselineIDs.contains($0["eventID"] as? String ?? "") }
+            actual["eventSelection"] = selection
+            XCTAssertEqual(try JSONDecoder().decode(ConsequenceTrace.self, from: JSONSerialization.data(withJSONObject: actual)), reviewed)
             try direct.continueLife(catalog: c)
             while direct.phase != .ended {
                 let event = try direct.event(catalog: c)

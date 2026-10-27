@@ -51,8 +51,22 @@ public enum EventNarratives {
         "later-shared-recipes": "小澄想留下一本共煮食譜，有人記得做法，有人記得一起吃飯的笑聲。整理經驗需要時間；今天只煮一道菜、慢慢相聚，也有意義。",
         "later-path-map": "阿禾拿出一張空白步道圖。平緩的路、陰影和休息處，對不同的人都很重要。以前的觀察或今天短短的試走，都可以留下新的記錄。"
     ]
+    private static let experience: [String: String] = [
+        "child-lending-notebook": "圖書角留了一本練習簿，樹老師想聽大家怎樣修改作品。分享不必等到完美；還沒準備好，也可以借一頁圖解從頭學。你想把這次的空閒留給什麼？",
+        "teen-friend-return": "阿禾把日曆推過來，空白的地方和你的不太一樣。見面值得期待，卻也需要安排。一起做件小事、先寄近況卡，或今天先不答應，都能說清楚自己的需要。",
+        "adult-boundary-calendar": "新的活動碰上想休息的日子。小澄說可以一起商量，不必一口氣答應所有工作。你在意這次相聚，也想保留自己的步調，哪一小段才適合現在的生活？",
+        "adult-buffer-envelope": "共用工具的購買單放在桌上。一次買齊方便，卻會佔去日常支出；分段準備需要再協調。你可以帶著預算商量，也可以先借用，記得承擔歸還與保養。",
+        "teen-asking-again": "你想把需要帶來詢問樹老師。對方還沒有答應，這週也只有短短的空檔。把要做的事說清楚、再問一個方便的時間，或今天先休息，都比勉強全部完成更合適。",
+        "adult-support-revisit": "合作桌需要有人接手十分鐘。有舊約定可以再核對，沒有也能先問清楚。互助不是欠債；你可以自願分擔，也能坦白說出自己今天的負擔。",
+        "middle-return-slowly": "邀請又寄來了。你不必照以前忙碌的方式參加，可以先留一段空白，再商量短時段的工作。重回活動或繼續休息，都不需要向別人證明自己。",
+        "later-rest-circle-invite": "名單上多了一欄參與方式：有人坐著整理，有人只陪伴一小段。小澄請大家說說適合自己的步調。你可以用試過的安排，也可以先當訪客看看。",
+        "adult-care-map": "看診行事曆和工作日撞在一起。交通、預備支出和其他生活都需要照顧；先詢問費用與協助，也是一個起點。這不是一次選擇就能解決的所有事情。",
+        "middle-care-followup": "生活安排需要重新核對。有清單可以一起打開，還沒有，就先問清楚需要。調整時間與負擔不代表身體已經康復，也不應把責任全放在一個人身上。",
+        "young-power-table": "修理桌這次只做現場練習，不需要上網。電動工具和手動工具各有準備方式；安全檢查永遠排在前面。你可以學一整套，也能只借一件，慢慢找到自己的方法。",
+        "adult-tools-coop": "修理夥伴想試做一份小工作。相應的練習能成為合作起點，還沒有也能先學。接下工作要付出時間，不代表從此收入穩定；今天不接也能保留往後的可能。"
+    ]
     public static let texts: [String: String] = {
-        var result = original.merging(additions) { _, new in new }
+        var result = original.merging(additions) { _, new in new }.merging(experience) { _, new in new }
         for id in ["teen-river-survey", "adult-repair-coop", "adult-meal-circle", "adult-local-trail", "middle-seed-exchange", "later-tool-stories", "later-shared-recipes", "later-path-map"] {
             result[id + "-continuation"] = additions[id]
             result[id + "-recovery"] = additions[id]

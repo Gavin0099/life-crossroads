@@ -7,30 +7,33 @@ P1 目標為 **8 國、16 種家庭情境、50～70 個事件**，每局 10～15
 首個可玩交付為四國、童年到晚年回顧的完整人生，之後擴至八國。
 候選為台灣、日本、美國、德國、印度、巴西、越南、肯亞；資料與內容尚待逐國驗證。
 
-本分支為 **P1 Integrated Preview 0.1（整合測試版）**：以 LC-04 已合併主線為基礎，加入 LC-03 的八國／16 組虛構家庭、40 事件、七故事線、Event-first、完整人生分岔與原子 JSON 存讀。**並非正式發布版；LC-03 PR #6 仍為 Draft／HOLD。** 台灣部分跨國成本缺同口徑資料，僅能使用明示家庭試算；比較頁保留缺口，不得當作0。正式圖片 WIP 尚未合入。
-完整版本與試玩邊界見 [P1 Integrated Preview 0.1 說明](docs/p1-integrated-preview-20261024.md)。
-產品計畫與待決定事項見 [PLAN.md](PLAN.md)。
+本分支為 **P1 人生體驗補強候選（Draft／HOLD）**，以PR14為基底：八國／16組虛構家庭、52事件、完整人生與分岔、原子JSON存讀、生活場景，以及創作／照顧／工具的可追溯後續。生活重心透過完成的時間區間影響機會，不再每段自動加點。隨機出生只涵蓋示範情境，不是全球新生兒機率。
 
-本分支另含 **LX-04 不同出生、不同人生**（[Draft PR #13](https://github.com/Gavin0099/life-crossroads/pull/13)）：從示範情境隨機出生，角色場景常駐；完成後保留原局，換個出身親玩另一段完整人生，以故事及可展開的計算紀錄對照。手選保留於探索模式。這不是全球出生機率，也未證明八國的長期故事已足夠不同；見[交付與試玩方式](docs/birth-story-delivery.md)。
+**尚非正式發布版，也未宣稱完成90～95%。** 台灣部分可比輸入仍未知；兒少10～15分鐘節奏、娛樂／自發重玩、實機VoiceOver及正式美術待驗。舊引擎存檔會保留但不能用新規則直接載入，沒有自動遷移。
+
+[本版交付與目標對照](docs/p1-experience-delivery.md) · [1024局量測](artifacts/evidence/p1-experience/comparison.md) · [試玩步驟／空白表](docs/opportunity-playtest.md) · [PLAN](PLAN.md)。先前整合預覽與LX-04／05的文件保留作歷史證據，不代表本版所有驗收已通過。
 
 ## 執行引擎
 
 需要 Swift 6 / Xcode 16 以上；部署目標 iOS 17，日常測試在 macOS 執行。
 
 ```bash
-swift test
+swift test -c release
 swift run life-demo
 swift run life-demo --json
 swift run -c release life-demo --birth-story-samples
 swift run -c release life-demo --story-samples
 swift run -c release life-demo --batch-report --seed-count 32 > batch-report.json
 python3 scripts/render-batch-report.py batch-report.json batch-report.md
+swift run -c release life-demo --experience-audit --seed-count 16 > experience-audit.json
+python3 scripts/summarize-experience.py experience-audit.json experience-summary.json --catalog LifeCrossroads/Data/Resources/catalog.json
 python3 scripts/build-data.py --check
 ```
 
 `life-demo` 比較四國相同決策，並執行五階段、15 個決策的完整人生骨架。
 `--story-samples` 輸出同日本／家庭一、Seed 0／1／2 的完整故事與選取依據，並核驗相同 Seed／選擇重播及中途 JSON 存讀；任何核驗失敗都以非零狀態結束。
 `--batch-report` 量測四國兩家庭與四種明示策略，預設 Seed 0～31 共1,024局，輸出事件覆蓋、配對人生差異、故事與資源飽和。`--seed-count` 範圍2～128，只用於批次模式；報表分母及限制見 [量測契約](docs/lc05-measurement.md)。
+`--experience-audit`改用八國16家庭、四種明示生活重心／行動策略，Seed0～15共1,024局，分開可行延續與真正接受，附環境完整trace與固定版本存讀檢查；不和舊七鏈指標混作同一量測。
 這些是工程與故事路線證據，不代表 10～15 分鐘遊玩、實機或教育效果已驗收。
 資料、假設、缺口及 LC-02 開工判斷見 [LC-01 交付](docs/lc01-delivery.md)。
 

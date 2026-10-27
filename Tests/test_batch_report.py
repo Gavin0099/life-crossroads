@@ -29,6 +29,7 @@ import Foundation
     static func main() {
         do {
             switch try DemoCLIArguments.parse(Array(CommandLine.arguments.dropFirst())) {
+            case .experienceAudit(let count): print("experience-audit:\(count)")
             case .opportunitySamples: print("opportunity-samples")
             case .birthStorySamples: print("birth-story-samples")
             case .environmentSamples: print("environment-samples")

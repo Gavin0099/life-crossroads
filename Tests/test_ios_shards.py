@@ -40,3 +40,13 @@ class IOSShardTests(unittest.TestCase):
                 shards.verify_execution({**valid, **delta}, ["testA", "testB"])
         with self.assertRaises(ValueError):
             shards.verify_execution(valid, [])
+
+    def test_ci_matrix_executes_current_inventory_exactly_once(self):
+        root = Path(__file__).resolve().parents[1]
+        workflow = (root / ".github/workflows/governance-drift.yml").read_text()
+        self.assertIn("shard: [0, 1, 2, 3, 4, 5]", workflow)
+        self.assertEqual(workflow.count('scripts/ios-test-shards.py "${{ matrix.shard }}" 6'), 2)
+        names = shards.declared_tests((root / "UITests/LifeCrossroadsUITests.swift").read_text())
+        actual = sum([shards.partition(names, i, 6) for i in range(6)], [])
+        self.assertCountEqual(actual, names)
+        self.assertEqual(len(actual), len(set(actual)))
