@@ -1108,11 +1108,12 @@ final class LifeCrossroadsUITests: XCTestCase {
     private func reveal(_ element: XCUIElement, in app: XCUIApplication) {
         for _ in 0..<32 {
             if ["lifeWorldScene", "resumeBranch"].contains(element.identifier), element.exists, element.isHittable { return }
-            let footer = app.buttons["continueLife"].exists && !app.buttons["closeTrace"].exists && !app.buttons["closeComparison"].exists && !app.buttons["closeFullEvent"].exists
+            let sheet = ["closeTrace", "closeComparison", "closeBranchComparison", "closeForkPicker", "closeFullEvent", "cancelParallel", "enterChildhood"].contains { app.buttons[$0].exists }
+            let footer = app.buttons["continueLife"].exists && !sheet
             let worldFooter = app.descendants(matching: .any).matching(identifier: "worldPlaybackControls").firstMatch
-            let sheet = app.buttons["closeTrace"].exists || app.buttons["closeComparison"].exists || app.buttons["closeFullEvent"].exists
             let pinnedDrawer = app.scrollViews["worldDecisionDrawer"]
-            let scroll = app.scrollViews["eventStoryScroll"].exists ? app.scrollViews["eventStoryScroll"] : pinnedDrawer.exists && !sheet ? pinnedDrawer : app.scrollViews.firstMatch
+            let comparisonScroll = app.scrollViews.containing(.staticText, identifier: "branchComparisonTitle").firstMatch
+            let scroll = comparisonScroll.exists ? comparisonScroll : app.scrollViews["eventStoryScroll"].exists ? app.scrollViews["eventStoryScroll"] : pinnedDrawer.exists && !sheet ? pinnedDrawer : app.scrollViews.firstMatch
             let scrollTop = max(app.frame.minY + 90, scroll.exists ? scroll.frame.minY + 8 : 100)
             let footerTop = worldFooter.exists && !sheet ? worldFooter.frame.minY - 8 : app.frame.maxY - (footer ? 110 : 24)
             let bottom = min(footerTop, scroll.exists ? scroll.frame.maxY - 8 : footerTop)
