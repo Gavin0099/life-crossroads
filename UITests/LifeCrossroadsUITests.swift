@@ -1108,7 +1108,7 @@ final class LifeCrossroadsUITests: XCTestCase {
             let bottom = min(footerTop, scroll.exists ? scroll.frame.maxY - 8 : footerTop)
             if element.exists && element.isHittable && element.frame.midY > scrollTop && element.frame.midY < bottom {
                 if pinnedDrawer.exists && !sheet {
-                    print("LL07_REVEALED \(element.identifier): target=\(element.frame), visible=\(scrollTop)...\(bottom), controls=\(worldFooter.frame)")
+                    print("LL07_REVEALED \(element.identifier): target=\(element.frame), visible=\(scrollTop)...\(bottom), controls=\(worldFooter.exists ? worldFooter.frame : .zero)")
                 }
                 return
             }
