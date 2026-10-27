@@ -68,7 +68,8 @@ final class LifeCrossroadsUITests: XCTestCase {
         let begin = app.buttons["beginParallel"]; reveal(begin, in: app); begin.tap()
         assertSaveFailure(in: app)
         XCTAssertFalse(app.staticTexts["birthReveal"].exists)
-        app.buttons["cancelParallel"].tap()
+        if app.buttons["cancelParallel"].exists { app.buttons["cancelParallel"].tap() }
+        XCTAssertTrue(app.staticTexts["journeyComplete"].exists)
         XCTAssertEqual(try archiveChecksum(in: app), checksum)
         picker.tap(); reveal(family, in: app); family.tap(); reveal(begin, in: app); begin.tap()
         XCTAssertTrue(app.staticTexts["birthReveal"].waitForExistence(timeout: 8))
