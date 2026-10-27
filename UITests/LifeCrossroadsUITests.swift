@@ -59,7 +59,7 @@ final class LifeCrossroadsUITests: XCTestCase {
             XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
             if [0, 3, 4, 7, 14].contains(index) { originals[index] = try recordOutcome(in: app) }
             if index == 3 { attachScreenshot("lx04-paper-memory", app: app) }
-            app.buttons["continueLife"].tap(); skipWorldMontage(app)
+            app.buttons["continueLife"].tap(); if index < 14 { skipWorldMontage(app) }
         }
         XCTAssertTrue(app.staticTexts["journeyComplete"].waitForExistence(timeout: 8))
         let checksum = try archiveChecksum(in: app)
@@ -90,7 +90,7 @@ final class LifeCrossroadsUITests: XCTestCase {
             reveal(choice, in: app); choice.tap()
             XCTAssertTrue(app.buttons["continueLife"].waitForExistence(timeout: 5))
             if [0, 3, 4, 14].contains(index) { alternatives[index] = try recordOutcome(in: app) }
-            app.buttons["continueLife"].tap(); skipWorldMontage(app)
+            app.buttons["continueLife"].tap(); if index < 14 { skipWorldMontage(app) }
         }
         let compare = app.buttons["compareParallel"]; reveal(compare, in: app); compare.tap()
         XCTAssertEqual(app.staticTexts["branchComparisonCount"].value as? String, "15")
