@@ -76,8 +76,8 @@ final class LC03Tests: XCTestCase {
         let organized = try DecisionResolver.resolve(state: state(c), eventID: "adult-care", choiceID: "invest", catalog: c).state
         let seeking = try DecisionResolver.resolve(state: indiaBefore, eventID: "adult-care", choiceID: "ask", catalog: c).state
         let future = try XCTUnwrap(c.decisions.first { $0.id == "middle-support" })
-        let continued = StoryBranchEngine.project(event: future, state: try SimulationEngine.advance(organized, to: 52, catalog: c).0)
-        let recovery = StoryBranchEngine.project(event: future, state: try SimulationEngine.advance(seeking, to: 52, catalog: c).0)
+        let continued = try StoryBranchEngine.project(event: future, state: try SimulationEngine.advance(organized, to: 52, catalog: c).0, catalog: c)
+        let recovery = try StoryBranchEngine.project(event: future, state: try SimulationEngine.advance(seeking, to: 52, catalog: c).0, catalog: c)
         XCTAssertEqual(continued.event.storyVariantID, "middle-support-reciprocal")
         XCTAssertEqual(recovery.event.storyVariantID, "middle-support-first-request")
         XCTAssertTrue(continued.event.choices.contains { $0.id == "shareShift" })

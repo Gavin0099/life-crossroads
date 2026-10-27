@@ -19,6 +19,7 @@ public struct StoryBranchEvaluation: Codable, Equatable, Sendable {
     public let offeredChoiceIDs: [String]
     public let explanation: String
     public let assumptionID: String
+    public var opportunity: CreativeOpportunity? = nil
 }
 
 public struct StoryProjection: Equatable, Sendable {
@@ -28,7 +29,13 @@ public struct StoryProjection: Equatable, Sendable {
 
 /// Pure projections of actual decision history and current resources. Country names never select a route.
 public enum StoryBranchEngine {
-    public static func project(event original: DecisionSkeleton, state: LifeState) -> StoryProjection {
+    public static func project(event original: DecisionSkeleton, state: LifeState, catalog: ModelCatalog) throws -> StoryProjection {
+        var standard = original
+        standard.choices.removeAll { ["remoteStudio", "mentorRelay", "portfolio", "cooperate"].contains($0.id) }
+        return try CreativeOpportunityRules.project(legacyProject(event: standard, state: state), state: state, catalog: catalog)
+    }
+
+    private static func legacyProject(event original: DecisionSkeleton, state: LifeState) -> StoryProjection {
         var event = original
         event.age = state.age
         var sourceEventID: String

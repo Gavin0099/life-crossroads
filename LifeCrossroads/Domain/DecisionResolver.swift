@@ -31,7 +31,7 @@ public enum DecisionResolver {
         let selection = try EventSelector.select(state: state, catalog: catalog)
         guard let original = catalog.decisions.first(where: { $0.id == eventID }),
               let originalChoice = original.choices.first(where: { $0.id == choiceID }) else { throw ModelError.missing("decision/choice") }
-        let projection = StoryBranchEngine.project(event: original, state: state)
+        let projection = try StoryBranchEngine.project(event: original, state: state, catalog: catalog)
         let event = projection.event
         let availableChoice = event.choices.first(where: { $0.id == choiceID })
         let choice = availableChoice ?? originalChoice
@@ -52,11 +52,10 @@ public enum DecisionResolver {
         }
         if choice.requiresDigitalAccess {
             // National rates are contextual indices, not household probabilities. This mapping is a design assumption.
-            if let internetObservation = context.observation("IT.NET.USER.ZS"),
-               let electricityObservation = context.observation("EG.ELC.ACCS.ZS"),
-               let internet = internetObservation.value, let electricity = electricityObservation.value {
-                let informationFriction = internet >= 90 ? 0 : (internet >= 60 ? 1 : 2)
-                let materialFriction = electricity >= 95 ? 0 : 1
+            if let digital = DigitalPreparation.evaluate(context) {
+                let internetObservation = digital.observations[0], electricityObservation = digital.observations[1]
+                let internet = internetObservation.value!, electricity = electricityObservation.value!
+                let informationFriction = digital.time, materialFriction = digital.materials
                 adjust("context.digital", .socialEnvironment,
                        .init(time: informationFriction, materials: materialFriction),
                        ["internetPct": internet, "electricityPct": electricity],

@@ -91,6 +91,8 @@ jobs:
         run: |
           swift run -c release life-demo --environment-samples > artifacts/lc01/environment-samples.json
           python3 scripts/render-environment-report.py artifacts/lc01/environment-samples.json artifacts/lc01/environment-report.md
+      - name: Preserve creative opportunity witnesses across eight countries
+        run: swift run -c release life-demo --opportunity-samples > artifacts/lc01/opportunity-samples.json
       - name: Measure all backgrounds and policies with a bounded Seed sample
         run: |
           swift run -c release life-demo --batch-report --seed-count 4 > artifacts/lc01/batch-report.json

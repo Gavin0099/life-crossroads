@@ -32,6 +32,7 @@ public struct StoryMemory: Codable, Equatable, Sendable {
     public func fact(_ key: String) -> StoryFact? { flags.first { $0.key == key } }
     public static let values: [String: Set<String>] = [
         "friendship": ["connected", "paused"], "learning": ["online", "paper", "none"],
+        "creative": ["remote", "collective", "seeking", "paused"],
         "care": ["shared", "seeking", "paused"], "repair": ["practiced", "seeking"],
         "kitchen": ["shared", "seeking"], "garden": ["tending", "seeking"],
         "nature": ["observing", "seeking"]

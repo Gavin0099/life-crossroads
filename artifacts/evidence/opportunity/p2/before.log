@@ -1,0 +1,48 @@
+Building for production...
+[Using on-disk description]
+[1 / 1]
+[2 / 4] LifePersistenceTests-product
+[3 / 5] LifePersistenceTests-product
+[8 / 12] LifePersistenceTests-product
+[10 / 12] LifePersistenceTests-product
+Build complete! (3.15秒)
+Test Suite 'Selected tests' started at 2026-10-27 15:02:20.697.
+Test Suite 'LifePresentationTests.xctest' started at 2026-10-27 15:02:20.698.
+Test Suite 'LifePresentationTests.xctest' passed at 2026-10-27 15:02:20.698.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-27 15:02:20.698.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'Selected tests' started at 2026-10-27 15:02:20.760.
+Test Suite 'LifePersistenceTests.xctest' started at 2026-10-27 15:02:20.761.
+Test Suite 'OpportunityTests' started at 2026-10-27 15:02:20.761.
+Test Case '-[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportDoesNotBypassWorkshopSkillRequirement]' started.
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifePersistenceTests/OpportunityTests.swift:89: error: -[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportDoesNotBypassWorkshopSkillRequirement] : XCTAssertTrue failed
+Test Case '-[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportDoesNotBypassWorkshopSkillRequirement]' failed (0.081 seconds).
+Test Case '-[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportKeepsEarnedTeacherWorkshopAndAdultRoute]' started.
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifePersistenceTests/OpportunityTests.swift:44: error: -[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportKeepsEarnedTeacherWorkshopAndAdultRoute] : XCTAssertTrue failed
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifePersistenceTests/OpportunityTests.swift:45: error: -[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportKeepsEarnedTeacherWorkshopAndAdultRoute] : XCTAssertTrue failed
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifePersistenceTests/OpportunityTests.swift:46: error: -[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportKeepsEarnedTeacherWorkshopAndAdultRoute] : XCTAssertFalse failed
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifePersistenceTests/OpportunityTests.swift:47: error: -[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportKeepsEarnedTeacherWorkshopAndAdultRoute] : XCTAssertTrue failed
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifePersistenceTests/OpportunityTests.swift:48: error: -[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportKeepsEarnedTeacherWorkshopAndAdultRoute] : XCTAssertTrue failed
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifePersistenceTests/OpportunityTests.swift:51: error: -[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportKeepsEarnedTeacherWorkshopAndAdultRoute] : XCTAssertTrue failed
+Test Case '-[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportKeepsEarnedTeacherWorkshopAndAdultRoute]' failed (0.104 seconds).
+Test Suite 'OpportunityTests' failed at 2026-10-27 15:02:20.946.
+	 Executed 2 tests, with 7 failures (0 unexpected) in 0.185 (0.185) seconds
+Test Suite 'LifePersistenceTests.xctest' failed at 2026-10-27 15:02:20.946.
+	 Executed 2 tests, with 7 failures (0 unexpected) in 0.185 (0.185) seconds
+Test Suite 'Selected tests' failed at 2026-10-27 15:02:20.946.
+	 Executed 2 tests, with 7 failures (0 unexpected) in 0.185 (0.186) seconds
+Test Suite 'Selected tests' started at 2026-10-27 15:02:21.023.
+Test Suite 'LifeDomainTests.xctest' started at 2026-10-27 15:02:21.024.
+Test Suite 'LifeDomainTests.xctest' passed at 2026-10-27 15:02:21.024.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-27 15:02:21.024.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'Selected tests' started at 2026-10-27 15:02:21.100.
+Test Suite 'LifeAnalysisTests.xctest' started at 2026-10-27 15:02:21.101.
+Test Suite 'LifeAnalysisTests.xctest' passed at 2026-10-27 15:02:21.101.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-27 15:02:21.101.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Note: Some test targets reported failures:
+  - LifePersistenceTests (XCTest)

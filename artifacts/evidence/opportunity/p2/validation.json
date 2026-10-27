@@ -1,0 +1,66 @@
+{
+  "baselineCommit": "79686ee7ac793b49ae2b795687074a260e4961b8",
+  "date": "2026-10-27",
+  "scope": "P2 household preparation support vs recorded teacher relationship; no production eligibility/cost/schema/RNG/data change",
+  "sourceSHA256": {
+    "LifeCrossroads/Domain/CreativeOpportunity.swift": "0eb3a695d3bf3f1460aaf653f737945739fe5eb7ec267731c3cfa2335854b260",
+    "Tests/LifePersistenceTests/OpportunityTests.swift": "5642a471dbc9c6dd3b473e043401c39c864acc6246263467f1eb8923bcd7883a",
+    "LifeCrossroads/Analysis/BatchAnalyzer.swift": "ff1705b58685fd14734c83a6efc93c05677c545bc055a47834960df1e0ecfe0a",
+    "LifeCrossroads/Analysis/BatchMetrics.swift": "39f8827739f31b15f8d126e528ea9be905a5959b6f7c08dd41d724fa64ed4dc7",
+    "LifeCrossroads/Presentation/LifeStoryComparison.swift": "cafd23ed2c91d2cd71e525b2b6564c2c50261939f4808ef30dae1eb710c3cf51"
+  },
+  "regressionBefore": {
+    "cases": 2,
+    "assertionFailures": 7,
+    "exitCode": 1,
+    "log": "before.log"
+  },
+  "after": {
+    "swiftTests": 131,
+    "pythonTests": 35,
+    "basicChecks": 6,
+    "status": "PASS",
+    "logs": [
+      "swift-final-corrected.log",
+      "python.log",
+      "basic.log"
+    ],
+    "pythonAndBasicScope": "Run before presentation-only follow-up; Python/tooling sources unchanged"
+  },
+  "official64Samples": {
+    "before": "artifacts/evidence/opportunity/samples.json",
+    "afterCommand": ".build/release/life-demo --opportunity-samples",
+    "byteEqual": true,
+    "SHA256": "814bdcadb3b798295fd4dcfe8811c63abf834faf82d434c8f1839c6463df7a7d",
+    "finalByteEqual": true
+  },
+  "batch": "batch-summary.json",
+  "localSimulatorCreated": 0,
+  "currentHeadCI": "Check after push; not claimed by this local evidence",
+  "independentRereview": "Pending after push",
+  "notClaimed": [
+    "eight-country 1024-run batch",
+    "complete support/recovery story metric",
+    "real-device acceptance",
+    "VoiceOver acceptance",
+    "child playtest",
+    "cross-engine save migration",
+    "custom zero-support old catalog compatibility",
+    "merge",
+    "release"
+  ],
+  "finalCorrectionBaseline": "48eee52efd4814af31981852491db1981f5cf312",
+  "comparisonRegression": {
+    "newCases": 1,
+    "beforeLog": "comparison-before.log",
+    "beforeFailures": 8,
+    "beforeFailureClassification": "7 narrative assertions reproduce P2; 1 test incorrectly expected no creative fact after rest rather than no collective completion",
+    "intermediateFullLog": "swift-final.log",
+    "intermediateFailures": 3,
+    "intermediateClassification": "2 overly specific phrase mismatches plus the rest fixture expectation; final assertions require no collective completion after declining",
+    "finalLog": "swift-final-corrected.log",
+    "finalExitCode": 0,
+    "verified": "actual workshop acceptance and refusal, low-skill offer absence, same rendered consequences after replay"
+  },
+  "batchSourceCommit": "7f3cf5c; later change is seeking presentation only; batch engine, content, metrics and official household values unchanged"
+}

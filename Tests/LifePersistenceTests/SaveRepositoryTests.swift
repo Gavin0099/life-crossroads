@@ -4,7 +4,7 @@ import LifeData
 import LifePersistence
 
 final class SaveRepositoryTests: XCTestCase {
-    func testFocusDiskResumeAndPreFocusArchiveCompatibility() throws {
+    func testFocusDiskResumeAndOldEngineArchivePreservation() throws {
         let catalog = try StatisticsRepository.bundled()
         let folder = try directory()
         let repository = SaveRepository(fileURL: folder.appendingPathComponent("journey.json"))
@@ -13,7 +13,9 @@ final class SaveRepositoryTests: XCTestCase {
         // Actual archive committed before this feature, not a newly generated lookalike.
         let oldData = try Data(contentsOf: fixture)
         try oldData.write(to: repository.fileURL)
-        let old = try XCTUnwrap(repository.load(catalog: catalog))
+        XCTAssertThrowsError(try repository.load(catalog: catalog), "An old engine is not silently replayed under new story rules")
+        XCTAssertEqual(try Data(contentsOf: repository.fileURL), oldData)
+        let old = LifeJourney.single(try .start(catalog: catalog, countryCode: "JPN", householdID: "jpn-1", seed: 0))
         XCTAssertEqual(JourneySave(journey: old).schemaVersion, 1)
         XCTAssertTrue(old.activeSession.focusSelections.isEmpty)
         XCTAssertTrue(old.activeSession.jumps.allSatisfy { $0.focusEffect == nil })

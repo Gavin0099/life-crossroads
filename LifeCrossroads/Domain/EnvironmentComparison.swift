@@ -18,7 +18,7 @@ public enum EnvironmentComparisonEngine {
                                catalog: ModelCatalog) throws -> EnvironmentComparison {
         let result = try DecisionResolver.resolve(state: state, eventID: eventID, choiceID: choiceID, catalog: catalog)
         guard let original = catalog.decisions.first(where: { $0.id == eventID }) else { throw ModelError.missing("comparison event") }
-        let event = StoryBranchEngine.project(event: original, state: state).event
+        let event = try StoryBranchEngine.project(event: original, state: state, catalog: catalog).event
         let alternatives = try event.choices.filter { $0.id != choiceID }.compactMap { choice -> AvailableAction? in
             let trace = try DecisionResolver.resolve(state: state, eventID: eventID, choiceID: choice.id, catalog: catalog).trace
             guard trace.applied else { return nil }

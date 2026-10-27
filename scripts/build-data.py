@@ -259,8 +259,9 @@ def build(refresh=False):
     from rng_v2_content import extend
     extend(decisions, assumptions)
     from lc03_data import extend as extend_country_data
-    return extend_country_data(dict(schemaVersion=4, selectionRules=dict(version="story-race-rules-1", continuityMultiplier=2.0, relationshipMultiplier=1.15, recentCategoryMultiplier=0.55, recentCategoryWindow=1), dataVersion=DATA_VERSION, contentVersion="rng-v2-story-1", referenceYear=2023,
-                sources=sources, assumptions=assumptions, countries=countries, households=households, decisions=decisions), RESOURCES)
+    from opportunity_content import extend as extend_opportunities
+    return extend_opportunities(extend_country_data(dict(schemaVersion=4, selectionRules=dict(version="story-race-rules-1", continuityMultiplier=2.0, relationshipMultiplier=1.15, recentCategoryMultiplier=0.55, recentCategoryWindow=1), dataVersion=DATA_VERSION, contentVersion="rng-v2-story-1", referenceYear=2023,
+                sources=sources, assumptions=assumptions, countries=countries, households=households, decisions=decisions), RESOURCES))
 
 
 if __name__ == "__main__":

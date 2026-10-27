@@ -8,7 +8,7 @@
     "recentCategoryWindow": 1
   },
   "dataVersion": "lc03-data-1",
-  "contentVersion": "lc03-environment-story-1",
+  "contentVersion": "lx05-opportunity-story-1",
   "referenceYear": 2023,
   "sources": [
     {
@@ -231,6 +231,12 @@
       "version": "1",
       "statement": "有限資料情境仍可完整遊玩；缺少可比規則輸入時只執行已知家庭及行動成本，trace明示未估算項。比較頁不顯示該部分情境的總成本/可行性結論。",
       "limitation": "未知不是零、不可比較不是國家資源不足，也不表示各國成本相同；補齊合格來源並升資料/引擎版本後才解除限制。"
+    },
+    {
+      "id": "creative-opportunities",
+      "version": "1",
+      "statement": "13歲投入、紙本、求助後在17歲保留一次後續機會；17歲選擇接續後在25歲再商量。線上創作的後續：macro-friction多用至少2格時間或1格材料時，有家庭指導支持才提供分段下載後面對面共作；負擔較低提供遠距協作。缺可比資料不推定管道。17歲實際遠距／共作經驗分別解鎖25歲遠距試作／在地合作桌。求助、休息及重新入門保留。",
+      "limitation": "所有邀請、能力與機會映射為虛構設計，不是國家教育資源、家庭連線品質、就業機率或現實因果。沒有國家成功倍率，未取得資料不代表沒有機會。"
     }
   ],
   "countries": [
@@ -1500,6 +1506,70 @@
       "storyQuestion": "學習會留下什麼可能？",
       "choices": [
         {
+          "id": "mentorRelay",
+          "title": "請樹老師分段備好圖解，在共作桌逐步製作",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 2,
+          "materialCost": 1,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 2
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "creative-opportunities",
+            "choice-effects",
+            "agency",
+            "support-network"
+          ],
+          "storyChanges": [
+            {
+              "key": "creative",
+              "value": "collective",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ]
+        },
+        {
+          "id": "remoteStudio",
+          "title": "和遠方夥伴連線，把作品整理成共同草稿",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 1,
+          "effect": {
+            "health": 0,
+            "financial": -1,
+            "relationships": 1,
+            "skills": 3
+          },
+          "requiresDigitalAccess": true,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "creative-opportunities",
+            "choice-effects",
+            "agency",
+            "support-network"
+          ],
+          "storyChanges": [
+            {
+              "key": "creative",
+              "value": "remote",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ]
+        },
+        {
           "id": "leadWorkshop",
           "title": "和樹老師一起帶領紙本小工作坊",
           "kind": "share",
@@ -1520,7 +1590,14 @@
             "choice-effects",
             "story-branches"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "creative",
+              "value": "collective",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ]
         },
         {
           "id": "invest",
@@ -1581,6 +1658,12 @@
               "value": "paper",
               "personID": "teacher",
               "relationshipDelta": 1
+            },
+            {
+              "key": "creative",
+              "value": "collective",
+              "personID": "",
+              "relationshipDelta": 0
             }
           ]
         },
@@ -1605,7 +1688,14 @@
             "choice-effects",
             "support-network"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "creative",
+              "value": "seeking",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         },
         {
           "id": "rest",
@@ -1627,7 +1717,14 @@
           "assumptionIDs": [
             "choice-effects"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "creative",
+              "value": "paused",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         }
       ],
       "isFallback": true,
@@ -1751,6 +1848,70 @@
       "recurringPerson": "工作夥伴",
       "storyQuestion": "收入、時間與學習怎麼取捨？",
       "choices": [
+        {
+          "id": "cooperate",
+          "title": "和共作夥伴試辦一張在地製作桌",
+          "kind": "work",
+          "control": "adultResponsibility",
+          "minimumAge": 23,
+          "timeCost": 2,
+          "energyCost": 2,
+          "materialCost": 1,
+          "effect": {
+            "health": -1,
+            "financial": 2,
+            "relationships": 2,
+            "skills": 0
+          },
+          "requiresDigitalAccess": false,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "creative-opportunities",
+            "choice-effects",
+            "agency",
+            "support-network"
+          ],
+          "storyChanges": [
+            {
+              "key": "creative",
+              "value": "collective",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ]
+        },
+        {
+          "id": "portfolio",
+          "title": "用遠距協作草稿，參與一份有酬試作",
+          "kind": "work",
+          "control": "adultResponsibility",
+          "minimumAge": 23,
+          "timeCost": 3,
+          "energyCost": 2,
+          "materialCost": 1,
+          "effect": {
+            "health": -1,
+            "financial": 3,
+            "relationships": 0,
+            "skills": 2
+          },
+          "requiresDigitalAccess": true,
+          "delayedHook": null,
+          "assumptionIDs": [
+            "creative-opportunities",
+            "choice-effects",
+            "agency",
+            "support-network"
+          ],
+          "storyChanges": [
+            {
+              "key": "creative",
+              "value": "remote",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ]
+        },
         {
           "id": "invest",
           "title": "投入線上進修課程",

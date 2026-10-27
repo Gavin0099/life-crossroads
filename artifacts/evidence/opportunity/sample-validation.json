@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "lives": 64,
+  "decisions": 960,
+  "replayMatches": 64,
+  "byteIdenticalRepeat": true,
+  "paperContinuationMatches": 16,
+  "allChosenActionsOffered": true,
+  "seed": 34,
+  "sha256": "814bdcadb3b798295fd4dcfe8811c63abf834faf82d434c8f1839c6463df7a7d",
+  "engineVersion": "lx05-opportunity-1",
+  "contentVersion": "lx05-opportunity-story-1",
+  "dataVersion": "lc03-data-1",
+  "claimBoundary": "Predetermined mechanism witnesses, not a population sample or child playtesting."
+}

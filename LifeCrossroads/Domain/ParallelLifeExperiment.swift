@@ -10,9 +10,19 @@ public struct ParallelLifeExperiment: Codable, Equatable, Sendable {
     private enum CodingKeys: String, CodingKey { case version, original, alternative }
     public static let wish = "嘗試做出自己的第一件作品"
 
+    public static func matchingHouseholds(original: LifeSession, catalog: ModelCatalog) -> [HouseholdProfile] {
+        guard let family = catalog.households.first(where: { $0.id == original.state.householdID }) else { return [] }
+        return catalog.households.filter { candidate in candidate.countryCode != family.countryCode && candidate.hasSameConditions(as: family)
+            && catalog.countries.first(where: { $0.code == candidate.countryCode })?.dataStatus != .blocked }
+            .sorted { $0.id < $1.id }
+    }
+
     public static func start(original: LifeSession, countryCode: String, householdID: String,
-                             catalog: ModelCatalog) throws -> Self {
+                             catalog: ModelCatalog, sameTemplateOnly: Bool = false) throws -> Self {
         try original.validate(catalog: catalog)
+        if sameTemplateOnly && !matchingHouseholds(original: original, catalog: catalog).contains(where: { $0.id == householdID }) {
+            throw ModelError.invalid("parallel comparison requires identical household conditions")
+        }
         guard original.phase == .ended, householdID != original.state.householdID else {
             throw ModelError.invalid("parallel life needs a completed original and another upbringing")
         }

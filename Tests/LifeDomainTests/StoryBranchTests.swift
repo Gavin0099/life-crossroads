@@ -136,7 +136,9 @@ final class StoryBranchTests: XCTestCase {
                     let event = try play.event(catalog: catalog)
                     if let variant = event.storyVariantID {
                         seenVariants.insert(variant)
-                        XCTAssertNotNil(EventNarratives.texts[variant])
+                        if variant.contains("-opportunity-") {
+                            XCTAssertGreaterThan(LifeNarrative.text(event: event, state: play.state).count, 30)
+                        } else { XCTAssertNotNil(EventNarratives.texts[variant]) }
                     }
                     let preferred = event.choices[Int(seed % UInt64(event.choices.count))].id
                     let preview = try play.preview(choiceID: preferred, catalog: catalog)
@@ -149,7 +151,8 @@ final class StoryBranchTests: XCTestCase {
                 try play.state.validate(catalog: catalog)
             }
         }
-        XCTAssertEqual(seenVariants, ["teen-direction-paper", "teen-direction-online", "teen-direction-first-steps",
+        XCTAssertEqual(seenVariants, ["teen-direction-paper", "teen-direction-opportunity-remote", "teen-direction-opportunity-relay", "teen-direction-first-steps",
+                                     "adult-learning-opportunity-remote", "adult-learning-opportunity-collective", "adult-learning-opportunity-recovery",
                                      "middle-support-reciprocal", "middle-support-first-request",
                                      "later-reconnect-old-friend", "later-reconnect-new-neighbor"])
     }
