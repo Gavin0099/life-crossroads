@@ -1103,7 +1103,7 @@ final class LifeCrossroadsUITests: XCTestCase {
 
     private func reveal(_ element: XCUIElement, in app: XCUIApplication) {
         for _ in 0..<32 {
-            if element.identifier == "lifeWorldScene", element.exists, element.isHittable { return }
+            if ["lifeWorldScene", "resumeBranch"].contains(element.identifier), element.exists, element.isHittable { return }
             let footer = app.buttons["continueLife"].exists && !app.buttons["closeTrace"].exists && !app.buttons["closeComparison"].exists && !app.buttons["closeFullEvent"].exists
             let worldFooter = app.descendants(matching: .any).matching(identifier: "worldPlaybackControls").firstMatch
             let sheet = app.buttons["closeTrace"].exists || app.buttons["closeComparison"].exists || app.buttons["closeFullEvent"].exists

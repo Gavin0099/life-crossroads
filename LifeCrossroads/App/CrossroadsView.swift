@@ -39,7 +39,10 @@ struct CrossroadsView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    if store.session != nil {
+                    if store.viewingOriginal {
+                        Button("返回另一段", systemImage: "arrow.uturn.backward") { store.viewingOriginal = false }
+                            .accessibilityIdentifier("resumeBranch")
+                    } else if store.session != nil {
                         Button("首頁", systemImage: "house") { store.home() }
                             .accessibilityLabel("回首頁，保留目前進度")
                     }
@@ -832,8 +835,7 @@ struct CrossroadsView: View {
             Text(store.viewingOriginal ? "這是保留的原人生，紀錄不會因改選而改寫。" : "這是你親自走完的另一條路，原人生仍在。")
                 .font(.headline).accessibilityIdentifier("preservedOriginalStatus")
             if store.viewingOriginal {
-                Button(experiment.alternative.phase == .ended ? "回到改選後的人生" : "繼續試走另一條路") { store.viewingOriginal = false }
-                    .buttonStyle(JourneyButtonStyle()).accessibilityIdentifier("resumeBranch")
+                Text("隨時可用左上角返回另一段人生。").font(.caption)
             } else {
                 Button("看看保留的原人生") { store.viewingOriginal = true }
                     .buttonStyle(.bordered).accessibilityIdentifier("viewOriginal")
@@ -848,8 +850,10 @@ struct CrossroadsView: View {
         } else if let pair = store.parallelExperiment {
             Text("原人生完整保留；另一個出身的每一步仍由你選。").font(.headline)
                 .accessibilityIdentifier("preservedOriginalStatus")
-            Button(store.viewingOriginal ? "繼續另一個出身的人生" : "看看保留的原人生") { store.viewingOriginal.toggle() }
-                .buttonStyle(.bordered).accessibilityIdentifier(store.viewingOriginal ? "resumeBranch" : "viewOriginal")
+            if !store.viewingOriginal {
+                Button("看看保留的原人生") { store.viewingOriginal = true }
+                    .buttonStyle(.bordered).accessibilityIdentifier("viewOriginal")
+            }
             if pair.alternative.phase == .ended {
                 Button("看看兩段人生留下的故事") {
                     guard let catalog = store.catalog else { return }
