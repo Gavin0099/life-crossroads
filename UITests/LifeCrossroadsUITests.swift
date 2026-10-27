@@ -1028,6 +1028,7 @@ final class LifeCrossroadsUITests: XCTestCase {
         XCTAssertEqual(beforeAndAfter.count, 2)
         XCTAssertEqual(app.staticTexts["\(prefix).before"].label, beforeAndAfter.first)
         XCTAssertEqual(app.staticTexts["\(prefix).after"].label, beforeAndAfter.last)
+        reveal(details, in: app); details.tap()
     }
 
     private func archiveChecksum(in app: XCUIApplication) throws -> String {
