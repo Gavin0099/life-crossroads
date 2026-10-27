@@ -98,6 +98,9 @@ final class LifeCrossroadsUITests: XCTestCase {
         }
         let compare = app.buttons["compareParallel"]; reveal(compare, in: app); compare.tap()
         XCTAssertEqual(app.staticTexts["branchComparisonCount"].value as? String, "15")
+        XCTAssertTrue(app.staticTexts["parallelBackgrounds"].label.contains("日本"))
+        XCTAssertTrue(app.staticTexts["parallelBackgrounds"].label.contains("肯亞"))
+        XCTAssertTrue(app.staticTexts["parallelBackgrounds"].label.contains("虛構家庭"))
         attachScreenshot("lx04-parallel-stories", app: app)
         for index in [3, 4, 14] {
             try assertComparison(XCTUnwrap(originals[index]), prefix: "branch.\(index).original", in: app)

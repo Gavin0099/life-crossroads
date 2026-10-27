@@ -67,12 +67,13 @@ struct BranchComparisonView: View {
     let originalFinal: ResourceValues
     let alternativeFinal: ResourceValues
     let title: String
+    let backgrounds: String?
     init(comparison: BranchComparison) {
         self.init(rows: comparison.rows, scope: comparison.scopeExplanation, originalFinal: comparison.originalFinal,
                   alternativeFinal: comparison.alternativeFinal, title: "如果當年選了另一條路")
     }
-    init(rows: [BranchComparisonRow], scope: String, originalFinal: ResourceValues, alternativeFinal: ResourceValues, title: String) {
-        self.rows = rows; self.scope = scope; self.originalFinal = originalFinal; self.alternativeFinal = alternativeFinal; self.title = title
+    init(rows: [BranchComparisonRow], scope: String, originalFinal: ResourceValues, alternativeFinal: ResourceValues, title: String, backgrounds: String? = nil) {
+        self.rows = rows; self.scope = scope; self.originalFinal = originalFinal; self.alternativeFinal = alternativeFinal; self.title = title; self.backgrounds = backgrounds
     }
     @Environment(\.dismiss) private var dismiss
 
@@ -81,6 +82,9 @@ struct BranchComparisonView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
                     Text(title).font(.title2.bold()).accessibilityIdentifier("branchComparisonTitle")
+                    if let backgrounds {
+                        Text(backgrounds).font(.subheadline).accessibilityIdentifier("parallelBackgrounds")
+                    }
                     DisclosureGroup {
                         Text(scope).font(.subheadline).accessibilityIdentifier("branchComparisonScope")
                     } label: { Text("比較方式與限制").accessibilityIdentifier("comparisonMethod") }
@@ -111,7 +115,7 @@ struct BranchComparisonView: View {
                             VStack(alignment: .leading, spacing: 14) {
                                 route("原來的人生", prefix: "branch.\(row.decisionIndex).original", trace: row.original, arrival: row.originalArrival)
                                 Divider()
-                                route("改選後的人生", prefix: "branch.\(row.decisionIndex).alternative", trace: row.alternative, arrival: row.alternativeArrival)
+                                route("另一段人生", prefix: "branch.\(row.decisionIndex).alternative", trace: row.alternative, arrival: row.alternativeArrival)
                             }
                         }.accessibilityIdentifier("branchRow.\(row.decisionIndex)")
                     }

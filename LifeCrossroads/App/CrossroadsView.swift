@@ -103,7 +103,8 @@ struct CrossroadsView: View {
                     BranchComparisonView(rows: rows,
                         scope: "同一個願望：\(ParallelLifeExperiment.wish)。原來出生於\(store.name(pair.original.state.countryCode))，另一段出生於\(store.name(pair.alternative.state.countryCode))。家庭安排與後續選擇可能都不同；同種子僅配對共有機會的亂數。差異來自這兩段實際人生，不代表國家排名或現實因果。",
                         originalFinal: pair.original.state.resources, alternativeFinal: pair.alternative.state.resources,
-                        title: "同一個願望，不同的出身")
+                        title: "同一個願望，不同的出身",
+                        backgrounds: "原本：\(store.catalog?.households.first { $0.id == pair.original.state.householdID }?.label ?? store.name(pair.original.state.countryCode))\n另一段：\(store.catalog?.households.first { $0.id == pair.alternative.state.householdID }?.label ?? store.name(pair.alternative.state.countryCode))")
                 }
             }
             .confirmationDialog("建立新人生會取代本機的這組人生紀錄", isPresented: Binding(get: { restartAction != nil }, set: { if !$0 { restartAction = nil } }), titleVisibility: .visible, presenting: restartAction) { action in
