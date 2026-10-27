@@ -35,7 +35,12 @@ public struct StoryMemory: Codable, Equatable, Sendable {
         "creative": ["remote", "collective", "seeking", "paused"],
         "care": ["shared", "seeking", "paused"], "repair": ["practiced", "seeking"],
         "kitchen": ["shared", "seeking"], "garden": ["tending", "seeking"],
-        "nature": ["observing", "seeking"]
+        "nature": ["observing", "seeking"],
+        "support": ["requested", "arranged", "reciprocal"],
+        "recovery": ["protected", "paced", "returned"],
+        "careAccess": ["reserved", "shared", "seeking", "followed"],
+        "budget": ["staged"],
+        "tools": ["powered", "portable", "manual", "seeking", "cooperating"]
     ]
     public static let people: Set<String> = ["ahe", "teacher", "cheng"]
 
@@ -51,7 +56,12 @@ public struct StoryMemory: Codable, Equatable, Sendable {
                 let fact = StoryFact(key: change.key, value: change.value, eventID: event.id, choiceID: choice.id, age: record.age)
                 // Asking for help does not erase previously acquired experience or an existing agreement.
                 let activeValues: Set<String> = ["practiced", "shared", "tending", "observing"]
-                if change.value != "seeking" || !activeValues.contains(memory.fact(change.key)?.value ?? "") {
+                let existing = memory.fact(change.key)?.value ?? ""
+                // Current requests/rest remain in the immutable decision ledger. They must not erase
+                // an earlier confirmed arrangement or tried participation pace, including its source.
+                let preservesSupport = change.key == "support" && change.value == "requested" && ["arranged", "reciprocal"].contains(existing)
+                let preservesPace = change.key == "recovery" && change.value == "protected" && ["paced", "returned"].contains(existing)
+                if !preservesSupport && !preservesPace && (change.value != "seeking" || !activeValues.contains(existing)) {
                     memory.flags.removeAll { $0.key == change.key }; memory.flags.append(fact)
                 }
                 if !change.personID.isEmpty {

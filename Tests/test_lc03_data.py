@@ -68,6 +68,6 @@ class LC03DataTests(unittest.TestCase):
         c=build.build()
         for event in c['decisions']:
             for choice in event['choices']:
-                self.assertEqual(choice.get('requiresCareFinancing',False),event['id'] in ['adult-care','middle-support'] and choice['kind']=='care')
+                self.assertEqual(choice.get('requiresCareFinancing',False),(event['id'] in ['adult-care','middle-support'] and choice['kind']=='care') or (event['id']=='adult-care-map' and choice['id']=='reserveVisit'))
 
 if __name__=='__main__':unittest.main()

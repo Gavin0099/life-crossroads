@@ -48,7 +48,7 @@ final class RNGV2Tests: XCTestCase {
         }
         let winner = try XCTUnwrap(trace.candidates.first { $0.eventID == trace.selectedEventID })
         XCTAssertTrue(trace.candidates.compactMap(\.raceScore).allSatisfy { $0 >= winner.raceScore! })
-        XCTAssertEqual(Set(trace.candidates.map(\.randomKey)).count, 40)
+        XCTAssertEqual(Set(trace.candidates.map(\.randomKey)).count, 52)
     }
     func testPolicyValidationRejectsNonfiniteZeroNegativeAndUnknownFields() throws {
         let c = try StatisticsRepository.bundled()

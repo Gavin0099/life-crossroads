@@ -1,0 +1,26 @@
+[
+  {
+    "path": "artifacts/evidence/p1-experience/se/experience-recovery-committed.png",
+    "test": "LifeCrossroadsUITests/testCompletedRecoveryFocusBecomesAnActionAndPersistentWorldMemory()",
+    "xcresult": "LC02-20261027T083556Z.xcresult",
+    "sha256": "4d130bb9fc9a07712116ad03f7696991a7b36a5eda2f4dfe83ddec72236abd3d"
+  },
+  {
+    "path": "artifacts/evidence/p1-experience/se/experience-recovery-opportunity.png",
+    "test": "LifeCrossroadsUITests/testCompletedRecoveryFocusBecomesAnActionAndPersistentWorldMemory()",
+    "xcresult": "LC02-20261027T083556Z.xcresult",
+    "sha256": "9005f06a33d08f508a2377b2d333f637d0cda6ae89db165f55b10f76656bd799"
+  },
+  {
+    "path": "artifacts/evidence/p1-experience/se/lx03-focus-arrival.png",
+    "test": "LifeCrossroadsUITests/testLifeOverviewFocusPersistsWithoutRerollingTheVisibleEvent()",
+    "xcresult": "LC02-20261027T083556Z.xcresult",
+    "sha256": "6441cbf6bd9ebcc53e14ebcf48f8de775702af8005513433d4871dd16b5a1754"
+  },
+  {
+    "path": "artifacts/evidence/p1-experience/se/lx01-life-overview.png",
+    "test": "LifeCrossroadsUITests/testLifeOverviewFocusPersistsWithoutRerollingTheVisibleEvent()",
+    "xcresult": "LC02-20261027T083556Z.xcresult",
+    "sha256": "c78af1bc00135b3680bd129911fa264c31ea74d9033bb97bcb687de21dc8a4bc"
+  }
+]

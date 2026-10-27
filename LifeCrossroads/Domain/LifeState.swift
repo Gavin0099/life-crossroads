@@ -19,7 +19,7 @@ public struct DecisionRecord: Codable, Equatable, Sendable {
 }
 
 public struct LifeState: Codable, Equatable, Sendable {
-    public static let engineVersion = "lx05-opportunity-1"
+    public static let engineVersion = "p1-experience-1"
     public var engineVersion: String
     public var dataVersion: String
     public var contentVersion: String
@@ -35,6 +35,8 @@ public struct LifeState: Codable, Equatable, Sendable {
     public var pendingHooks: [StoryHook]
     public var memories: [StoryHook]
     public var story: StoryMemory
+    public var focusMemories: [LifeFocusMemory]? = nil
+    public var focusHistory: [LifeFocusMemory] { focusMemories ?? [] }
 
     public static func born(catalog: ModelCatalog, countryCode: String, householdID: String, seed: UInt64) throws -> Self {
         try catalog.validate()
@@ -68,6 +70,16 @@ public struct LifeState: Codable, Equatable, Sendable {
             previousAge = record.age
         }
         guard story == (try StoryMemory.rebuild(decisions, catalog: catalog)) else { throw ModelError.invalid("forged story memory") }
+        var previousFocusEnd = -1
+        guard focusHistory.count <= 100 else { throw ModelError.invalid("focus memory count") }
+        for memory in focusHistory {
+            guard memory.version == LifeFocusMemory.currentVersion, memory.focus != .balanced,
+                  memory.fromAge >= previousFocusEnd, memory.fromAge < memory.toAge, memory.toAge <= age,
+                  memory.fromAge >= 0, LifeFocus.available(at: memory.fromAge).contains(memory.focus) else {
+                throw ModelError.invalid("focus memory interval")
+            }
+            previousFocusEnd = memory.toAge
+        }
         for event in catalog.decisions where !event.selection.repeatable {
             guard decisions.filter({ $0.eventID == event.id }).count <= 1 else { throw ModelError.invalid("one-shot history") }
         }
@@ -130,6 +142,9 @@ public enum SimulationEngine {
         let context = try EnvironmentRules.context(catalog: catalog, countryCode: state.countryCode, householdID: state.householdID)
         next.remainingMaterials = context.household.materialBudget
         next.pendingHooks.removeAll { $0.dueAge <= age }; next.memories.append(contentsOf: hooks)
+        if let focus, focus != .balanced {
+            next.focusMemories = state.focusHistory + [.init(focus: focus, fromAge: state.age, toAge: age)]
+        }
         try next.validate(catalog: catalog)
         return (next, .init(fromAge: state.age, toAge: age, triggeredHooks: hooks,
                             resourcesBefore: state.resources, resourcesAfter: next.resources,

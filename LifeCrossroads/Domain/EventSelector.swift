@@ -140,6 +140,9 @@ public enum EventSelector {
             if let key = policy.continuityFlag, let fact = state.story.fact(key), policy.continuityValues.contains(fact.value) {
                 multiply("story-continuity", "\(key)=\(fact.value)@\(fact.eventID):\(fact.age)", rules.continuityMultiplier)
             }
+            if let focus = policy.focusAffinity, let memory = state.focusHistory.last(where: { $0.focus == focus }) {
+                multiply("completed-life-focus", "\(focus.rawValue)@\(memory.fromAge)-\(memory.toAge)", rules.continuityMultiplier)
+            }
             if let person = policy.relationshipID,
                let relationship = state.story.relationships.first(where: { $0.personID == person }), relationship.familiarity > 0 {
                 multiply("known-person", "\(person)=\(relationship.familiarity)", rules.relationshipMultiplier)

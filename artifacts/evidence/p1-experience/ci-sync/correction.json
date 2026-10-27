@@ -1,0 +1,29 @@
+{
+  "previousHead": "1b8f5b3f574a8d7bf408d7874c868e8c5d7693e9",
+  "previousRun": 40478935963,
+  "previousUI": {
+    "passed": 29,
+    "failed": 1
+  },
+  "file": "UITests/LifeCrossroadsUITests.swift",
+  "sha256": "bf15d4d92527b8566404c8fbbe3879e402785e409da0df13310b1b3c6d0dad76",
+  "scope": "Test synchronization only; LifeCrossroads/, scripts/ and catalog unchanged from reviewed28aa189",
+  "evidence": "Cold restore resets presentation pause. Failure AX is age12 and two choices; XCTest tapped across automatic world transition. Pause and assert age10/one choice/unchanged archive before reading the same receipt. No weakened assertions.",
+  "standard": {
+    "passed": 1,
+    "skipped": 0,
+    "simulatorDeleted": "6C89FB4F-0B54-4E7B-812D-6D62E0134D7C"
+  },
+  "remaining": "New-head complete remote CI pending. Standard/SE targeted tests are local iOS27; failed CI ran iOS18.5. Original failed run preserved.",
+  "se": {
+    "passed": 1,
+    "skipped": 0,
+    "simulatorDeleted": "98C6889E-199B-4DBF-8179-D0A4746E95E1"
+  },
+  "implementationCommit": "3c01772169aeb294d4254325ea38e8ef44ca9f79",
+  "independentReview": {
+    "verdict": "APPROVED within UI sync correction; product HOLD",
+    "path": "ci-sync/independent-review.md",
+    "sha256": "c45b5dd0f67cce07c458f759588e844e19c1a7b490bd9a6c8cbadf5792f97bf6"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "devicesAndConfigurations": [
+    {
+      "device": {
+        "architecture": "arm64",
+        "deviceId": "6C89FB4F-0B54-4E7B-812D-6D62E0134D7C",
+        "deviceName": "LifeCrossroads Test 20261027T095701Z",
+        "modelName": "iPhone 17",
+        "osBuildNumber": "24A434",
+        "osVersion": "27.0",
+        "platform": "iOS Simulator"
+      },
+      "expectedFailures": 0,
+      "failedTests": 0,
+      "passedTests": 1,
+      "skippedTests": 0,
+      "testPlanConfiguration": {
+        "configurationId": "1",
+        "configurationName": "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription": "LifeCrossroads · Built with macOS 27.0",
+  "expectedFailures": 0,
+  "failedTests": 0,
+  "finishTime": 1793095164.724,
+  "passedTests": 1,
+  "result": "Passed",
+  "runtimeWarnings": [],
+  "skippedTests": 0,
+  "startTime": 1793095071.855,
+  "statistics": [],
+  "testFailures": [],
+  "title": "Test - LifeCrossroads",
+  "topInsights": [],
+  "totalTestCount": 1
+}

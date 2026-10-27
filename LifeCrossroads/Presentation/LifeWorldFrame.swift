@@ -7,13 +7,15 @@ public struct WorldActorProjection: Equatable, Sendable {
     public let evidenceEventID: String?
 }
 public struct WorldChangeProjection: Equatable, Sendable {
-    public enum Kind: String, Sendable { case resourceChange, relationship, memory, occurredChance, pendingClue, delayedConsequence }
+    public enum Kind: String, Sendable { case resourceChange, relationship, memory, occurredChance, pendingClue, delayedConsequence, livedFocus }
     public let kind: Kind
     public let caption: String
     public let sourceEventID: String
     public let sourceChoiceID: String
     public let sourceAge: Int
     public let isOccurred: Bool
+    public var factKey: String? = nil
+    public var factValue: String? = nil
 }
 public struct LifeWorldFrame: Equatable, Sendable {
     public let stage: LifeStage
@@ -76,7 +78,12 @@ public enum WorldMomentProjector {
         // Persistent objects are backed by retained facts, including rest/recovery facts.
         for fact in state.story.flags {
             changes.append(.init(kind: .memory, caption: "故事記憶：\(memoryCaption(fact))（\(fact.age)歲）",
-                sourceEventID: fact.eventID, sourceChoiceID: fact.choiceID, sourceAge: fact.age, isOccurred: true))
+                sourceEventID: fact.eventID, sourceChoiceID: fact.choiceID, sourceAge: fact.age, isOccurred: true,
+                factKey: fact.key, factValue: fact.value))
+        }
+        if let focus = state.focusHistory.last {
+            changes.append(.init(kind: .livedFocus, caption: focus.caption, sourceEventID: "", sourceChoiceID: "",
+                                 sourceAge: focus.fromAge, isOccurred: true))
         }
         for hook in state.pendingHooks {
             changes.append(.init(kind: .pendingClue, caption: "留下線索，尚未實現：\(hook.text)",
@@ -91,7 +98,7 @@ public enum WorldMomentProjector {
             sceneID: scene, actors: actors, worldChanges: changes, moment: moment, eventID: eventID, environmentGaps: gaps)
     }
 
-    private static func memoryCaption(_ fact: StoryFact) -> String {
+    public static func memoryCaption(_ fact: StoryFact) -> String {
         switch (fact.key, fact.value) {
         case ("learning", "online"): "留下線上創作經驗"
         case ("learning", "paper"): "留下紙本創作經驗"
@@ -100,6 +107,20 @@ public enum WorldMomentProjector {
         case ("friendship", "paused"): "暫緩聯絡，仍可建立新連結"
         case ("care", "shared"): "建立共同照顧安排"
         case ("care", "paused"): "先為照顧責任留出休息"
+        case ("budget", "staged"): "整理預算，約定分段添購工具"
+        case ("support", "requested"): "已提出求助，尚未確認協助安排"
+        case ("support", "arranged"): "和夥伴確認了一段協助時間"
+        case ("support", "reciprocal"): "自願和曾經互助的夥伴分擔一小段工作"
+        case ("recovery", "protected"): "留下一段休息空白，沒有答應額外負擔"
+        case ("recovery", "paced"): "試過短時段參與，找到自己的步調"
+        case ("recovery", "returned"): "把適合自己的步調帶回共同活動"
+        case ("careAccess", "reserved"): "預留看診時間與材料，尚未代表治療結果"
+        case ("careAccess", "shared"): "列好共同預備清單，尚未完成預約"
+        case ("careAccess", "followed"): "重新核對了先前的生活與看診安排"
+        case ("tools", "powered"): "在現場練過電動工具的安全檢查"
+        case ("tools", "portable"): "備好手動攜帶箱，練過分段修理"
+        case ("tools", "manual"): "用手動工具練過基本檢查"
+        case ("tools", "cooperating"): "用實際練過的方法參與一份修理合作"
         case (_, "seeking"): "已說出需要，正在尋找協助"
         case ("repair", "practiced"): "留下修理練習"
         case ("kitchen", "shared"): "參與共食安排"

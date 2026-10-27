@@ -20,6 +20,8 @@ public struct StoryBranchEvaluation: Codable, Equatable, Sendable {
     public let explanation: String
     public let assumptionID: String
     public var opportunity: CreativeOpportunity? = nil
+    public var focusSource: LifeFocusMemory? = nil
+    public var environmentOpportunity: EnvironmentOpportunity? = nil
 }
 
 public struct StoryProjection: Equatable, Sendable {
@@ -32,7 +34,8 @@ public enum StoryBranchEngine {
     public static func project(event original: DecisionSkeleton, state: LifeState, catalog: ModelCatalog) throws -> StoryProjection {
         var standard = original
         standard.choices.removeAll { ["remoteStudio", "mentorRelay", "portfolio", "cooperate"].contains($0.id) }
-        return try CreativeOpportunityRules.project(legacyProject(event: standard, state: state), state: state, catalog: catalog)
+        return try EnvironmentOpportunityRules.project(LifeFocusStoryRules.project(try CreativeOpportunityRules.project(
+            legacyProject(event: standard, state: state), state: state, catalog: catalog), state: state), state: state, catalog: catalog)
     }
 
     private static func legacyProject(event original: DecisionSkeleton, state: LifeState) -> StoryProjection {
@@ -147,7 +150,11 @@ public enum StoryBranchEngine {
             } else {
                 explanation = "目前沒有這條故事的先前參與記錄；這次可以從求助或小規模嘗試重新開始。"
             }
-            explanation += connected && skilled ? "已有經驗及技能讓你可以接下帶領的工作，也可以選擇休息。" : "帶領選項需要先前參與和技能至少\(route.minimumSkills)；本次保留入門、求助與休息。"
+            if route.minimumSkills == 0 {
+                explanation += connected ? "先前的行動讓你可以接續這份安排；也可以重新詢問或休息，沒有必須回報誰的義務。" : "尚無這份安排，保留重新詢問與休息；不能把需要協助當成已獲支持。"
+            } else {
+                explanation += connected && skilled ? "已有經驗及技能讓你可以接下帶領的工作，也可以選擇休息。" : "帶領選項需要先前參與和技能至少\(route.minimumSkills)；本次保留入門、求助與休息。"
+            }
         }
         if event.choices.contains(where: { $0.requiresCareFinancing == true }) {
             event.storyQuestion += " 這次也要安排看診交通與預備支出；可以先詢問費用和可用協助。"

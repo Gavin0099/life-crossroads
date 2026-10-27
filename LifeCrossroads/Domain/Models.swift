@@ -152,6 +152,7 @@ public struct ChoiceDefinition: Codable, Equatable, Sendable {
     public var effect: ResourceValues
     public var requiresDigitalAccess: Bool
     public var requiresCareFinancing: Bool? = nil
+    public var requiresElectricTools: Bool? = nil
     public var storyChanges: [StoryChange]
     public var delayedHook: String?
     public var assumptionIDs: [String]
@@ -166,6 +167,7 @@ public struct DecisionSkeleton: Codable, Equatable, Sendable {
     public var choices: [ChoiceDefinition]
     public var selection: EventPolicy
     public var continuation: StoryContinuation?
+    public var focusContinuation: FocusContinuation? = nil
     public var storyVariantID: String? = nil
     public var isFallback: Bool = true
     public var eligibility: [EventCondition] = []

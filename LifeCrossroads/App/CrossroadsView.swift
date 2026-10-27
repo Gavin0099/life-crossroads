@@ -1128,10 +1128,10 @@ private extension CrossroadsView {
                         }
                         if let effect = session.jumps.last?.focusEffect {
                             DisclosureGroup {
-                                Text("上一段重心：\(effect.focus.title)・\(deltaText(effect.actual))")
+                                Text("上一段重心：\(effect.focus.title)・已留下生活安排")
                                     .accessibilityIdentifier("lifeFocusReceipt")
                                 Text(effect.explanation)
-                            } label: { Text("上一段重心的計算紀錄").accessibilityIdentifier("focusReceiptDetails") }
+                            } label: { Text("上一段生活安排").accessibilityIdentifier("focusReceiptDetails") }
                             .font(.caption)
                         }
                         DisclosureGroup("身體、生活與能力") { resourceStrip(session.state.resources) }

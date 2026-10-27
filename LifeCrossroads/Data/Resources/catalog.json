@@ -8,7 +8,7 @@
     "recentCategoryWindow": 1
   },
   "dataVersion": "lc03-data-1",
-  "contentVersion": "lx05-opportunity-story-1",
+  "contentVersion": "p1-experience-story-1",
   "referenceYear": 2023,
   "sources": [
     {
@@ -216,8 +216,8 @@
     },
     {
       "id": "event-selection",
-      "version": "2.0.0",
-      "statement": "15個時點、5個里程碑；年齡範圍、故事事實、資源與家庭資格篩選。候選各有獨立亂數鍵，以加權指數競賽抽選；權重、一次性、冷卻與互斥皆記錄於trace。",
+      "version": "3.0.0",
+      "statement": "15個時點、5個里程碑；年齡範圍、故事事實、資源與家庭資格篩選。候選各有獨立亂數鍵，以加權指數競賽抽選；權重、一次性、冷卻與互斥皆記錄於trace。完成的生活重心依life-focus-story設定，提高相關候選活動權重；不改獨立亂數鍵。",
       "limitation": "所有權重和門檻都是遊戲假設，不是現實機率；已遇見的同一情境用於跨國成本比較。"
     },
     {
@@ -237,6 +237,24 @@
       "version": "1",
       "statement": "13歲投入、紙本、求助後在17歲保留一次後續機會；17歲選擇接續後在25歲再商量。線上創作的後續：macro-friction多用至少2格時間或1格材料時，有家庭指導支持才提供分段下載後面對面共作；負擔較低提供遠距協作。缺可比資料不推定管道。17歲實際遠距／共作經驗分別解鎖25歲遠距試作／在地合作桌。求助、休息及重新入門保留。",
       "limitation": "所有邀請、能力與機會映射為虛構設計，不是國家教育資源、家庭連線品質、就業機率或現實因果。沒有國家成功倍率，未取得資料不代表沒有機會。"
+    },
+    {
+      "id": "life-focus-story",
+      "version": "1",
+      "statement": "完成的生活重心區間留下記錄。重心不直接額外加資源，資源變化由實際事件產生。四種重心提高相關活動權重2倍，且至少一段準備才開放各活動的延續行動。重心不保證抽中、接受邀請或成功。",
+      "limitation": "虛構遊戲規則；非現實機率。只在已完成時間推進後生效，不重抽眼前事件。"
+    },
+    {
+      "id": "environment-opportunities",
+      "version": "1",
+      "statement": "醫療直接自付背景依既有1/2/3格準備成本，加行動材料後與家庭本回合材料預算相比；可負擔提供預約安排，否則先商量共同預備。離線工具活動：電力取得率95%以上準備0格，否則多1格時間及材料；多準備且有家庭支持時提供手動攜帶箱。後續只接續實際採取的行動。",
+      "limitation": "門檻、家庭與機會皆為虛構模型，不是個人醫療費用、供電穩定性、治療品質、就業率或國家優劣；缺值不估計。"
+    },
+    {
+      "id": "support-recovery-story",
+      "version": "1",
+      "statement": "提出求助只記為請求；再次確認安排才記為支持。為休息留空白只記為界線；之後可自願調整參與方式，不自動產生友誼或工作。",
+      "limitation": "求助與休息不是失敗，也不保證他人一定有空。人物與機會均為原創虛構情境。"
     }
   ],
   "countries": [
@@ -1099,9 +1117,17 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "support-network"
+            "support-network",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         },
         {
           "id": "rest",
@@ -1121,9 +1147,17 @@
           "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
-            "choice-effects"
+            "choice-effects",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         }
       ],
       "isFallback": true,
@@ -1200,7 +1234,8 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "support-network"
+            "support-network",
+            "support-recovery-story"
           ],
           "storyChanges": [
             {
@@ -1208,6 +1243,12 @@
               "value": "connected",
               "personID": "ahe",
               "relationshipDelta": 1
+            },
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
             }
           ]
         },
@@ -1229,12 +1270,19 @@
           "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
-            "choice-effects"
+            "choice-effects",
+            "support-recovery-story"
           ],
           "storyChanges": [
             {
               "key": "friendship",
               "value": "paused",
+              "personID": "",
+              "relationshipDelta": 0
+            },
+            {
+              "key": "recovery",
+              "value": "protected",
               "personID": "",
               "relationshipDelta": 0
             }
@@ -1308,9 +1356,17 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "support-network"
+            "support-network",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         },
         {
           "id": "rest",
@@ -1330,9 +1386,17 @@
           "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
-            "choice-effects"
+            "choice-effects",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         }
       ],
       "isFallback": true,
@@ -1440,7 +1504,8 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "support-network"
+            "support-network",
+            "support-recovery-story"
           ],
           "storyChanges": [
             {
@@ -1448,6 +1513,12 @@
               "value": "none",
               "personID": "teacher",
               "relationshipDelta": 1
+            },
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
             }
           ]
         },
@@ -1469,12 +1540,19 @@
           "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
-            "choice-effects"
+            "choice-effects",
+            "support-recovery-story"
           ],
           "storyChanges": [
             {
               "key": "learning",
               "value": "none",
+              "personID": "",
+              "relationshipDelta": 0
+            },
+            {
+              "key": "recovery",
+              "value": "protected",
               "personID": "",
               "relationshipDelta": 0
             }
@@ -1686,12 +1764,19 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "support-network"
+            "support-network",
+            "support-recovery-story"
           ],
           "storyChanges": [
             {
               "key": "creative",
               "value": "seeking",
+              "personID": "",
+              "relationshipDelta": 0
+            },
+            {
+              "key": "support",
+              "value": "requested",
               "personID": "",
               "relationshipDelta": 0
             }
@@ -1715,12 +1800,19 @@
           "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
-            "choice-effects"
+            "choice-effects",
+            "support-recovery-story"
           ],
           "storyChanges": [
             {
               "key": "creative",
               "value": "paused",
+              "personID": "",
+              "relationshipDelta": 0
+            },
+            {
+              "key": "recovery",
+              "value": "protected",
               "personID": "",
               "relationshipDelta": 0
             }
@@ -1797,9 +1889,17 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "support-network"
+            "support-network",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         },
         {
           "id": "rest",
@@ -1819,9 +1919,17 @@
           "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
-            "choice-effects"
+            "choice-effects",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         }
       ],
       "isFallback": true,
@@ -1979,9 +2087,17 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "support-network"
+            "support-network",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         },
         {
           "id": "rest",
@@ -2001,9 +2117,17 @@
           "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
-            "choice-effects"
+            "choice-effects",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         }
       ],
       "isFallback": true,
@@ -2073,9 +2197,17 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "support-network"
+            "support-network",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         },
         {
           "id": "rest",
@@ -2095,9 +2227,17 @@
           "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
-            "choice-effects"
+            "choice-effects",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         }
       ],
       "isFallback": true,
@@ -2176,7 +2316,8 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network",
-            "care-financing"
+            "care-financing",
+            "support-recovery-story"
           ],
           "storyChanges": [
             {
@@ -2184,6 +2325,12 @@
               "value": "seeking",
               "personID": "cheng",
               "relationshipDelta": 1
+            },
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
             }
           ],
           "requiresCareFinancing": false
@@ -2206,12 +2353,19 @@
           "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
-            "choice-effects"
+            "choice-effects",
+            "support-recovery-story"
           ],
           "storyChanges": [
             {
               "key": "care",
               "value": "paused",
+              "personID": "",
+              "relationshipDelta": 0
+            },
+            {
+              "key": "recovery",
+              "value": "protected",
               "personID": "",
               "relationshipDelta": 0
             }
@@ -2310,9 +2464,17 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "support-network"
+            "support-network",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         },
         {
           "id": "rest",
@@ -2332,9 +2494,17 @@
           "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
-            "choice-effects"
+            "choice-effects",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         }
       ],
       "isFallback": true,
@@ -2445,7 +2615,8 @@
           "assumptionIDs": [
             "choice-effects",
             "support-network",
-            "care-financing"
+            "care-financing",
+            "support-recovery-story"
           ],
           "storyChanges": [
             {
@@ -2453,6 +2624,12 @@
               "value": "seeking",
               "personID": "cheng",
               "relationshipDelta": 1
+            },
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
             }
           ],
           "requiresCareFinancing": false
@@ -2475,9 +2652,17 @@
           "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
-            "choice-effects"
+            "choice-effects",
+            "support-recovery-story"
           ],
-          "storyChanges": [],
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
           "requiresCareFinancing": false
         }
       ],
@@ -2550,9 +2735,17 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "support-network"
+            "support-network",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         },
         {
           "id": "rest",
@@ -2572,9 +2765,17 @@
           "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
-            "choice-effects"
+            "choice-effects",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         }
       ],
       "isFallback": true,
@@ -2644,9 +2845,17 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "support-network"
+            "support-network",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         },
         {
           "id": "rest",
@@ -2666,9 +2875,17 @@
           "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
-            "choice-effects"
+            "choice-effects",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         }
       ],
       "isFallback": true,
@@ -2738,9 +2955,17 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "support-network"
+            "support-network",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         },
         {
           "id": "rest",
@@ -2760,9 +2985,17 @@
           "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
-            "choice-effects"
+            "choice-effects",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         }
       ],
       "isFallback": true,
@@ -2834,9 +3067,17 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "support-network"
+            "support-network",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         },
         {
           "id": "rest",
@@ -2856,9 +3097,17 @@
           "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
-            "choice-effects"
+            "choice-effects",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         }
       ],
       "isFallback": true,
@@ -2928,9 +3177,17 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "support-network"
+            "support-network",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         },
         {
           "id": "rest",
@@ -2950,9 +3207,17 @@
           "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
-            "choice-effects"
+            "choice-effects",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         }
       ],
       "isFallback": false,
@@ -3030,9 +3295,17 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "support-network"
+            "support-network",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         },
         {
           "id": "rest",
@@ -3052,9 +3325,17 @@
           "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
-            "choice-effects"
+            "choice-effects",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         }
       ],
       "isFallback": false,
@@ -3143,7 +3424,8 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "support-network"
+            "support-network",
+            "support-recovery-story"
           ],
           "storyChanges": [
             {
@@ -3151,6 +3433,12 @@
               "value": "seeking",
               "personID": "teacher",
               "relationshipDelta": 1
+            },
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
             }
           ]
         },
@@ -3172,9 +3460,17 @@
           "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
-            "choice-effects"
+            "choice-effects",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         }
       ],
       "isFallback": false,
@@ -3272,7 +3568,8 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "support-network"
+            "support-network",
+            "support-recovery-story"
           ],
           "storyChanges": [
             {
@@ -3280,6 +3577,12 @@
               "value": "seeking",
               "personID": "cheng",
               "relationshipDelta": 1
+            },
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
             }
           ]
         },
@@ -3301,9 +3604,17 @@
           "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
-            "choice-effects"
+            "choice-effects",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         }
       ],
       "isFallback": false,
@@ -3388,9 +3699,17 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "support-network"
+            "support-network",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         },
         {
           "id": "rest",
@@ -3410,9 +3729,17 @@
           "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
-            "choice-effects"
+            "choice-effects",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         }
       ],
       "isFallback": false,
@@ -3504,7 +3831,8 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "support-network"
+            "support-network",
+            "support-recovery-story"
           ],
           "storyChanges": [
             {
@@ -3512,6 +3840,12 @@
               "value": "seeking",
               "personID": "cheng",
               "relationshipDelta": 1
+            },
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
             }
           ]
         },
@@ -3533,9 +3867,17 @@
           "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
-            "choice-effects"
+            "choice-effects",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         }
       ],
       "isFallback": false,
@@ -3613,9 +3955,17 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "support-network"
+            "support-network",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         },
         {
           "id": "rest",
@@ -3635,9 +3985,17 @@
           "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
-            "choice-effects"
+            "choice-effects",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         }
       ],
       "isFallback": false,
@@ -3719,9 +4077,17 @@
           "delayedHook": null,
           "assumptionIDs": [
             "choice-effects",
-            "support-network"
+            "support-network",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         },
         {
           "id": "rest",
@@ -3741,9 +4107,17 @@
           "requiresDigitalAccess": false,
           "delayedHook": null,
           "assumptionIDs": [
-            "choice-effects"
+            "choice-effects",
+            "support-recovery-story"
           ],
-          "storyChanges": []
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ]
         }
       ],
       "isFallback": false,
@@ -3839,12 +4213,19 @@
               "value": "seeking",
               "personID": "ahe",
               "relationshipDelta": 1
+            },
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
             }
           ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         },
         {
@@ -3864,11 +4245,19 @@
           },
           "requiresDigitalAccess": false,
           "delayedHook": null,
-          "storyChanges": [],
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         }
       ],
@@ -3975,11 +4364,19 @@
           },
           "requiresDigitalAccess": false,
           "delayedHook": null,
-          "storyChanges": [],
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         }
       ],
@@ -4061,12 +4458,19 @@
               "value": "seeking",
               "personID": "teacher",
               "relationshipDelta": 1
+            },
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
             }
           ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         },
         {
@@ -4086,11 +4490,19 @@
           },
           "requiresDigitalAccess": false,
           "delayedHook": null,
-          "storyChanges": [],
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         }
       ],
@@ -4203,12 +4615,19 @@
               "value": "seeking",
               "personID": "ahe",
               "relationshipDelta": 1
+            },
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
             }
           ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         },
         {
@@ -4228,11 +4647,19 @@
           },
           "requiresDigitalAccess": false,
           "delayedHook": null,
-          "storyChanges": [],
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         }
       ],
@@ -4345,11 +4772,19 @@
           },
           "requiresDigitalAccess": false,
           "delayedHook": null,
-          "storyChanges": [],
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         }
       ],
@@ -4462,12 +4897,19 @@
               "value": "seeking",
               "personID": "teacher",
               "relationshipDelta": 1
+            },
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
             }
           ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         },
         {
@@ -4487,11 +4929,19 @@
           },
           "requiresDigitalAccess": false,
           "delayedHook": null,
-          "storyChanges": [],
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         }
       ],
@@ -4617,12 +5067,19 @@
               "value": "seeking",
               "personID": "cheng",
               "relationshipDelta": 1
+            },
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
             }
           ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         },
         {
@@ -4642,11 +5099,19 @@
           },
           "requiresDigitalAccess": false,
           "delayedHook": null,
-          "storyChanges": [],
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         }
       ],
@@ -4772,12 +5237,19 @@
               "value": "seeking",
               "personID": "ahe",
               "relationshipDelta": 1
+            },
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
             }
           ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         },
         {
@@ -4797,11 +5269,19 @@
           },
           "requiresDigitalAccess": false,
           "delayedHook": null,
-          "storyChanges": [],
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         }
       ],
@@ -4907,11 +5387,19 @@
           },
           "requiresDigitalAccess": false,
           "delayedHook": null,
-          "storyChanges": [],
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         }
       ],
@@ -4993,12 +5481,19 @@
               "value": "seeking",
               "personID": "teacher",
               "relationshipDelta": 1
+            },
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
             }
           ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         },
         {
@@ -5018,11 +5513,19 @@
           },
           "requiresDigitalAccess": false,
           "delayedHook": null,
-          "storyChanges": [],
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         }
       ],
@@ -5141,12 +5644,19 @@
               "value": "seeking",
               "personID": "cheng",
               "relationshipDelta": 1
+            },
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
             }
           ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         },
         {
@@ -5166,11 +5676,19 @@
           },
           "requiresDigitalAccess": false,
           "delayedHook": null,
-          "storyChanges": [],
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         }
       ],
@@ -5265,12 +5783,19 @@
               "value": "connected",
               "personID": "ahe",
               "relationshipDelta": 1
+            },
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
             }
           ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         },
         {
@@ -5290,11 +5815,19 @@
           },
           "requiresDigitalAccess": false,
           "delayedHook": null,
-          "storyChanges": [],
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         }
       ],
@@ -5394,11 +5927,19 @@
           },
           "requiresDigitalAccess": false,
           "delayedHook": null,
-          "storyChanges": [],
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         }
       ],
@@ -5449,12 +5990,19 @@
               "value": "shared",
               "personID": "cheng",
               "relationshipDelta": 1
+            },
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
             }
           ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         },
         {
@@ -5498,11 +6046,19 @@
           },
           "requiresDigitalAccess": false,
           "delayedHook": null,
-          "storyChanges": [],
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         }
       ],
@@ -5608,11 +6164,19 @@
           },
           "requiresDigitalAccess": false,
           "delayedHook": null,
-          "storyChanges": [],
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         },
         {
@@ -5632,11 +6196,19 @@
           },
           "requiresDigitalAccess": false,
           "delayedHook": null,
-          "storyChanges": [],
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         }
       ],
@@ -5749,11 +6321,19 @@
           },
           "requiresDigitalAccess": false,
           "delayedHook": null,
-          "storyChanges": [],
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         },
         {
@@ -5773,11 +6353,19 @@
           },
           "requiresDigitalAccess": false,
           "delayedHook": null,
-          "storyChanges": [],
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         }
       ],
@@ -5890,11 +6478,19 @@
           },
           "requiresDigitalAccess": false,
           "delayedHook": null,
-          "storyChanges": [],
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         },
         {
@@ -5914,11 +6510,19 @@
           },
           "requiresDigitalAccess": false,
           "delayedHook": null,
-          "storyChanges": [],
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
           "assumptionIDs": [
             "choice-effects",
             "story-branches",
-            "agency"
+            "agency",
+            "support-recovery-story"
           ]
         }
       ],
@@ -5951,6 +6555,1836 @@
         "activeTitle": "觀察本成了社區步道圖的起點",
         "recoveryTitle": "一張空白地圖也能慢慢畫起"
       }
+    },
+    {
+      "id": "child-lending-notebook",
+      "age": 12,
+      "title": "桌上留著一本空白練習簿",
+      "recurringPerson": "樹老師",
+      "storyQuestion": "圖書角要交換練習方法。拿出未完成的草稿會有點緊張；從頭學也需要時間。",
+      "choices": [
+        {
+          "id": "shareDraft",
+          "title": "帶著平時練習的草稿，和老師交換修改方法",
+          "kind": "learn",
+          "control": "sharedWithAdult",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 3
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "learning",
+              "value": "paper",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "firstPage",
+          "title": "先借一頁圖解，從頭試一次",
+          "kind": "learn",
+          "control": "sharedWithAdult",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 2
+          },
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先說出自己的需要，詢問可用的協助",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天先不接新安排，留時間休息",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 12,
+        "maximumAge": 32,
+        "category": "learning",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": [],
+        "focusAffinity": "learning"
+      },
+      "continuation": null,
+      "focusContinuation": {
+        "focus": "learning",
+        "minimumIntervals": 1,
+        "unlockedChoiceID": "shareDraft",
+        "activeTitle": "平時留下的練習有了交流的位置",
+        "firstTitle": "桌上留著一本空白練習簿"
+      }
+    },
+    {
+      "id": "teen-friend-return",
+      "age": 21,
+      "title": "阿禾的日曆還有一個空格",
+      "recurringPerson": "阿禾",
+      "storyQuestion": "你們的空閒並不相同。約一個短時段、一起做件事，或今天先不答應？",
+      "choices": [
+        {
+          "id": "makeTime",
+          "title": "接續平時的問候，約好一小段一起做事的時間",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": -1,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "friendship",
+              "value": "connected",
+              "personID": "ahe",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "sendCard",
+          "title": "先送一張近況卡，等彼此方便再約",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "friendship",
+              "value": "connected",
+              "personID": "ahe",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先說出自己的需要，詢問可用的協助",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天先不接新安排，留時間休息",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 17,
+        "maximumAge": 45,
+        "category": "friendship",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": [],
+        "focusAffinity": "relationships"
+      },
+      "continuation": null,
+      "focusContinuation": {
+        "focus": "relationships",
+        "minimumIntervals": 1,
+        "unlockedChoiceID": "makeTime",
+        "activeTitle": "平時的問候接成一次短短的相聚",
+        "firstTitle": "阿禾的日曆還有一個空格"
+      }
+    },
+    {
+      "id": "adult-boundary-calendar",
+      "age": 32,
+      "title": "新活動碰上原本的休息日",
+      "recurringPerson": "小澄",
+      "storyQuestion": "夥伴想多開一天活動。答應全部會很累；你也可以提出只做一小段。",
+      "choices": [
+        {
+          "id": "pacedRole",
+          "title": "拿出保留下來的空閒，商量只參與一小段",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 1
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "paced",
+              "personID": "cheng",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "setBoundary",
+          "title": "這次先說清楚界線，暫不接工作",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先說出自己的需要，詢問可用的協助",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天先不接新安排，留時間休息",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 25,
+        "maximumAge": 65,
+        "category": "recovery",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": [],
+        "focusAffinity": "recovery"
+      },
+      "continuation": null,
+      "focusContinuation": {
+        "focus": "recovery",
+        "minimumIntervals": 1,
+        "unlockedChoiceID": "pacedRole",
+        "activeTitle": "把練習過的休息界線帶進新的安排",
+        "firstTitle": "新活動碰上原本的休息日"
+      }
+    },
+    {
+      "id": "adult-buffer-envelope",
+      "age": 32,
+      "title": "共用工具的購買單寄來了",
+      "recurringPerson": "小澄",
+      "storyQuestion": "一次買齊會很方便，也會壓縮日常支出。分段準備需要和夥伴再談一次。",
+      "choices": [
+        {
+          "id": "stagedPlan",
+          "title": "帶著整理過的預算，約定分段添購",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 1,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": 1,
+            "relationships": 0,
+            "skills": 1
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "budget",
+              "value": "staged",
+              "personID": "cheng",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "borrowFirst",
+          "title": "暫時借用，承擔歸還與保養的時間",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": -1,
+            "relationships": 1,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先說出自己的需要，詢問可用的協助",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天先不接新安排，留時間休息",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 25,
+        "maximumAge": 59,
+        "category": "work",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": [],
+        "focusAffinity": "stability"
+      },
+      "continuation": null,
+      "focusContinuation": {
+        "focus": "stability",
+        "minimumIntervals": 1,
+        "unlockedChoiceID": "stagedPlan",
+        "activeTitle": "以前留出的預算讓你能提出分段安排",
+        "firstTitle": "共用工具的購買單寄來了"
+      }
+    },
+    {
+      "id": "teen-asking-again",
+      "age": 21,
+      "title": "求助後，還有一件事要說清楚",
+      "recurringPerson": "樹老師",
+      "storyQuestion": "你想把現在的需要，帶來詢問樹老師。對方還沒有答應；老師這週只有一小段空檔，你想怎樣安排？",
+      "choices": [
+        {
+          "id": "confirmHelp",
+          "title": "把先前說過的需要列成清單，確認一次短時段協助",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 1
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "arranged",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先問老師哪個時間方便，再決定自己的安排",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天先不接新安排，留時間休息",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 17,
+        "maximumAge": 32,
+        "category": "learning",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": "support",
+        "continuityValues": [
+          "requested"
+        ],
+        "relationshipID": null,
+        "resourceWeights": [],
+        "focusAffinity": null
+      },
+      "continuation": {
+        "flag": "support",
+        "activeValues": [
+          "requested"
+        ],
+        "unlockedChoices": [
+          "confirmHelp"
+        ],
+        "minimumSkills": 0,
+        "activeTitle": "先前的求助來到了確認時間",
+        "recoveryTitle": "第一次把需要說清楚"
+      }
+    },
+    {
+      "id": "adult-support-revisit",
+      "age": 45,
+      "title": "合作桌需要有人接手十分鐘",
+      "recurringPerson": "樹老師",
+      "storyQuestion": "有舊的協助約定可以再核對；沒有，也可以從詢問需要開始。你能坦白說今天沒有空，互助不是欠債。",
+      "choices": [
+        {
+          "id": "returnHelp",
+          "title": "和曾安排協助的夥伴核對空檔，自願接一小段",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": -1,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "reciprocal",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "說明自己的負擔，請大家另找合適安排",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天先不接新安排，留時間休息",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 32,
+        "maximumAge": 65,
+        "category": "community",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": "support",
+        "continuityValues": [
+          "arranged",
+          "reciprocal"
+        ],
+        "relationshipID": null,
+        "resourceWeights": [],
+        "focusAffinity": null
+      },
+      "continuation": {
+        "flag": "support",
+        "activeValues": [
+          "arranged",
+          "reciprocal"
+        ],
+        "unlockedChoices": [
+          "returnHelp"
+        ],
+        "minimumSkills": 0,
+        "activeTitle": "曾經一起安排協助的人又來商量",
+        "recoveryTitle": "沒有舊約定，也能從認識需要開始"
+      }
+    },
+    {
+      "id": "middle-return-slowly",
+      "age": 52,
+      "title": "一份可以重新商量的邀請",
+      "recurringPerson": "小澄",
+      "storyQuestion": "你想回到熟悉的活動，但不必回到以前忙碌的方式。先試短時段，還是繼續休息？",
+      "choices": [
+        {
+          "id": "shortReturn",
+          "title": "照著自己留下的界線，試一次短時段參與",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 1,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "paced",
+              "personID": "cheng",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "先保留空白，說明這次還不能答應",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先說出自己的需要，詢問可用的協助",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 45,
+        "maximumAge": 72,
+        "category": "recovery",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": "recovery",
+        "continuityValues": [
+          "protected",
+          "paced"
+        ],
+        "relationshipID": null,
+        "resourceWeights": [],
+        "focusAffinity": null
+      },
+      "continuation": {
+        "flag": "recovery",
+        "activeValues": [
+          "protected",
+          "paced"
+        ],
+        "unlockedChoices": [
+          "shortReturn"
+        ],
+        "minimumSkills": 0,
+        "activeTitle": "以前留給自己的空白成了新的步調",
+        "recoveryTitle": "先辨認自己需要多少休息"
+      }
+    },
+    {
+      "id": "later-rest-circle-invite",
+      "age": 65,
+      "title": "活動名單旁多了一欄參與方式",
+      "recurringPerson": "小澄",
+      "storyQuestion": "有人坐著整理，有人短暫陪伴。你可以把試過的步調說出來，也可以只來看看。",
+      "choices": [
+        {
+          "id": "adaptedPlace",
+          "title": "沿用試過的短時段安排，和夥伴分配適合的工作",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "returned",
+              "personID": "cheng",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "visit",
+          "title": "先當訪客，找一個舒服的位置",
+          "kind": "share",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 1,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天先不接新安排，留時間休息",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 59,
+        "maximumAge": 72,
+        "category": "community",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": "recovery",
+        "continuityValues": [
+          "paced",
+          "returned"
+        ],
+        "relationshipID": null,
+        "resourceWeights": [],
+        "focusAffinity": null
+      },
+      "continuation": {
+        "flag": "recovery",
+        "activeValues": [
+          "paced",
+          "returned"
+        ],
+        "unlockedChoices": [
+          "adaptedPlace"
+        ],
+        "minimumSkills": 0,
+        "activeTitle": "試過的步調，這次被寫進共同安排",
+        "recoveryTitle": "第一次找適合自己的參與方式"
+      }
+    },
+    {
+      "id": "adult-care-map",
+      "age": 32,
+      "title": "看診行事曆和工作日撞在一起",
+      "recurringPerson": "小澄",
+      "storyQuestion": "需要預留交通與支出，卻還想保留其他生活安排。先確認、一起準備，或改天再商量？",
+      "choices": [
+        {
+          "id": "reserveVisit",
+          "title": "預留這次看診的時間與材料，再確認預約",
+          "kind": "care",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 1,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 1,
+            "financial": -1,
+            "relationships": 0,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "careAccess",
+              "value": "reserved",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ],
+          "requiresCareFinancing": true
+        },
+        {
+          "id": "sharedPlan",
+          "title": "先和夥伴列共同預備清單，尚未完成預約",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "careAccess",
+              "value": "shared",
+              "personID": "cheng",
+              "relationshipDelta": 1
+            },
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "askFees",
+          "title": "先詢問費用與可用協助，尚未決定看診安排",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "careAccess",
+              "value": "seeking",
+              "personID": "",
+              "relationshipDelta": 0
+            },
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天先不接新安排，留時間休息",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 25,
+        "maximumAge": 59,
+        "category": "care",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": [],
+        "focusAffinity": null
+      },
+      "continuation": null
+    },
+    {
+      "id": "middle-care-followup",
+      "age": 52,
+      "title": "生活安排需要再對一次",
+      "recurringPerson": "小澄",
+      "storyQuestion": "如果有先前的清單，今天可以重新核對；還沒有，就先詢問需要。安排時間與負擔，不代表身體已經康復。",
+      "choices": [
+        {
+          "id": "reviewVisit",
+          "title": "核對先前預留的看診與工作時間",
+          "kind": "care",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 1
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "careAccess",
+              "value": "followed",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "reviewShared",
+          "title": "接續共同清單，確認誰能協助哪一小段",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 2,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "careAccess",
+              "value": "followed",
+              "personID": "cheng",
+              "relationshipDelta": 1
+            },
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先說出自己的需要，詢問可用的協助",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天先不接新安排，留時間休息",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 45,
+        "maximumAge": 72,
+        "category": "care",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": "careAccess",
+        "continuityValues": [
+          "reserved",
+          "shared"
+        ],
+        "relationshipID": null,
+        "resourceWeights": [],
+        "focusAffinity": null
+      },
+      "continuation": null
+    },
+    {
+      "id": "young-power-table",
+      "age": 25,
+      "title": "修理桌要選一套準備方式",
+      "recurringPerson": "樹老師",
+      "storyQuestion": "這次只在現場做事，不需要上網。電動工具省下一部分動手時間，手動攜帶箱則需要不同的練習。",
+      "choices": [
+        {
+          "id": "poweredBench",
+          "title": "在現場準備電動工具，先學安全檢查",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 1,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": -1,
+            "relationships": 0,
+            "skills": 3
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "tools",
+              "value": "powered",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ],
+          "requiresElectricTools": true
+        },
+        {
+          "id": "portableKit",
+          "title": "和家人備妥手動攜帶箱，練習分段修理",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 2
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "tools",
+              "value": "portable",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "manualPractice",
+          "title": "先借一件手動工具，從基本檢查學起",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 2
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "tools",
+              "value": "manual",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先說出自己的需要，詢問可用的協助",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天先不接新安排，留時間休息",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 21,
+        "maximumAge": 45,
+        "category": "learning",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": null,
+        "continuityValues": [],
+        "relationshipID": null,
+        "resourceWeights": [],
+        "focusAffinity": null
+      },
+      "continuation": null
+    },
+    {
+      "id": "adult-tools-coop",
+      "age": 45,
+      "title": "修理夥伴想一起做一份小工作",
+      "recurringPerson": "樹老師",
+      "storyQuestion": "如果有相應的工具經驗，可以試著合作；還沒有，就從練習開始。接下來仍要留出時間，也可以先不接。",
+      "choices": [
+        {
+          "id": "benchWork",
+          "title": "沿用電動工作桌的經驗，接一份桌邊修理工作",
+          "kind": "work",
+          "control": "adultResponsibility",
+          "minimumAge": 23,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 1,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": -1,
+            "financial": 3,
+            "relationships": 0,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "tools",
+              "value": "cooperating",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ],
+          "requiresElectricTools": true
+        },
+        {
+          "id": "mobileRepair",
+          "title": "帶手動攜帶箱到活動現場，接一段分站修理",
+          "kind": "work",
+          "control": "adultResponsibility",
+          "minimumAge": 23,
+          "timeCost": 3,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": -1,
+            "financial": 2,
+            "relationships": 1,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "tools",
+              "value": "cooperating",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "learnManual",
+          "title": "先練一件手動修理，這次不接案",
+          "kind": "learn",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 2,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": -1,
+            "relationships": 0,
+            "skills": 2
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "tools",
+              "value": "manual",
+              "personID": "teacher",
+              "relationshipDelta": 1
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "ask",
+          "title": "先說出自己的需要，詢問可用的協助",
+          "kind": "askSupport",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 1,
+          "energyCost": 1,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 0,
+            "financial": 0,
+            "relationships": 1,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "support",
+              "value": "requested",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        },
+        {
+          "id": "rest",
+          "title": "今天先不接新安排，留時間休息",
+          "kind": "rest",
+          "control": "personal",
+          "minimumAge": 0,
+          "timeCost": 0,
+          "energyCost": 0,
+          "materialCost": 0,
+          "requiresDigitalAccess": false,
+          "effect": {
+            "health": 2,
+            "financial": 0,
+            "relationships": 0,
+            "skills": 0
+          },
+          "delayedHook": null,
+          "storyChanges": [
+            {
+              "key": "recovery",
+              "value": "protected",
+              "personID": "",
+              "relationshipDelta": 0
+            }
+          ],
+          "assumptionIDs": [
+            "choice-effects",
+            "agency",
+            "support-recovery-story"
+          ]
+        }
+      ],
+      "isFallback": false,
+      "eligibility": [],
+      "selection": {
+        "minimumAge": 32,
+        "maximumAge": 65,
+        "category": "work",
+        "baseWeight": 1,
+        "repeatable": false,
+        "cooldownDecisions": 1,
+        "exclusiveGroup": null,
+        "continuityFlag": "tools",
+        "continuityValues": [
+          "powered",
+          "portable"
+        ],
+        "relationshipID": null,
+        "resourceWeights": [],
+        "focusAffinity": null
+      },
+      "continuation": null
     }
   ]
 }

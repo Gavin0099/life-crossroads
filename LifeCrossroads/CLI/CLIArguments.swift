@@ -1,5 +1,5 @@
 enum DemoMode: Equatable {
-    case opportunitySamples, birthStorySamples, environmentSamples, demo, json, storySamples, branchSample, batchReport(seedCount: Int)
+    case experienceAudit(seedCount: Int), opportunitySamples, birthStorySamples, environmentSamples, demo, json, storySamples, branchSample, batchReport(seedCount: Int)
 }
 
 enum DemoArgumentError: Error, CustomStringConvertible {
@@ -7,7 +7,7 @@ enum DemoArgumentError: Error, CustomStringConvertible {
     var description: String {
         switch self {
         case .invalid(let reason):
-            "\(reason)\nUsage: life-demo [--opportunity-samples | --birth-story-samples | --environment-samples | --json | --story-samples | --branch-sample | --batch-report [--seed-count N]]; N: 2...128 (default 32)"
+            "\(reason)\nUsage: life-demo [--experience-audit [--seed-count N] | --opportunity-samples | --birth-story-samples | --environment-samples | --json | --story-samples | --branch-sample | --batch-report [--seed-count N]]; N: 2...128 (default 32)"
         }
     }
 }
@@ -21,7 +21,7 @@ enum DemoCLIArguments {
         while index < arguments.count {
             let flag = arguments[index]
             switch flag {
-            case "--opportunity-samples", "--birth-story-samples", "--environment-samples", "--json", "--story-samples", "--branch-sample", "--batch-report":
+            case "--experience-audit", "--opportunity-samples", "--birth-story-samples", "--environment-samples", "--json", "--story-samples", "--branch-sample", "--batch-report":
                 guard mode == nil else { throw DemoArgumentError.invalid("Duplicate or conflicting mode: \(flag)") }
                 mode = flag
             case "--seed-count":
@@ -39,6 +39,7 @@ enum DemoCLIArguments {
             }
             index += 1
         }
+        if mode == "--experience-audit" { return .experienceAudit(seedCount: seedCount ?? 16) }
         if mode == "--batch-report" { return .batchReport(seedCount: seedCount ?? 32) }
         guard seedCount == nil else { throw DemoArgumentError.invalid("--seed-count requires --batch-report") }
         switch mode {

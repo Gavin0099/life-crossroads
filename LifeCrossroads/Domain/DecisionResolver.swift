@@ -83,9 +83,19 @@ public enum DecisionResolver {
                    ["support": Double(h.mentorSupport)], [], ["support-network"],
                    "有人一起準備，幫你節省 \(h.mentorSupport) 格時間。")
         }
+        if choice.requiresElectricTools == true {
+            if let power = PowerPreparation.evaluate(context) {
+                adjust("context.offline-tools", .socialEnvironment, .init(time: power.extra, materials: power.extra),
+                       ["electricityPct": power.observation.value!], [power.observation.sourceID], ["environment-opportunities"],
+                       "現場工具準備額外使用\(power.extra)格時間與材料；這是電力背景的遊戲映射，不代表個人停電機率。")
+            } else {
+                environmentGaps.append("缺少可比電力輸入；尚未估計現場工具的環境準備成本。")
+                adjust("context.offline-tools.unestimated", .modelRule, .init(), [:], [], ["partial-environment"], environmentGaps.last!)
+            }
+        }
         if choice.requiresCareFinancing == true {
-            if let observation = context.observation("SH.XPD.OOPC.CH.ZS"), let value = observation.value {
-                let materials = value < 20 ? 1 : (value < 40 ? 2 : 3)
+            if let care = CarePreparation.evaluate(context) {
+                let observation = care.observation, value = observation.value!, materials = care.materials
                 adjust("context.care-financing", .socialEnvironment, .init(materials: materials),
                        ["oopShareOfCHE": value], [observation.sourceID], ["care-financing"],
                        "這個醫療安排情境預留 \(materials) 格材料。全國直接自付份額只是情境背景，門檻為遊戲假設，不是個人帳單或治療效果。")
