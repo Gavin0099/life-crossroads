@@ -698,18 +698,17 @@ struct CrossroadsView: View {
             }
             Text(trace.eventTitle).font(.subheadline).foregroundStyle(.secondary)
                 .accessibilityIdentifier("outcomeEvent").accessibilityValue(trace.eventID)
-            if let moment { ProjectWorkshopView(moment: moment, showArtwork: !store.worldPreviewEnabled) }
-            VStack(alignment: .leading, spacing: 13) {
-                Label("已發生的變化", systemImage: "checkmark.circle").font(.headline)
-                Text(deltaText(moment?.actualChange ?? (trace.resourcesAfter - trace.resourcesBefore))).font(.headline)
-                    .accessibilityIdentifier("outcomeResources")
-                    .accessibilityValue(historyResources(trace))
-                Text("這一段日子，沐沐用了\(trace.finalCost.time)格時間，有\(trace.budgetAfter.time)格沒有用在這個行動上。")
-                    .lineSpacing(3).accessibilityIdentifier("roundTimeFeedback")
-                if trace.eventID != "teen-project" && trace.randomTrial?.occurred == true {
-                    Label("這次，也意外收到別人的鼓勵。", systemImage: "sparkle")
+            if let moment { ProjectWorkshopView(moment: moment, showArtwork: !store.worldPreviewEnabled, showMetrics: !showsLifeOverview) }
+            if showsLifeOverview {
+                if moment == nil, let arrival = store.session?.jumps.last {
+                    ForEach(Array(LifeStoryComparison.consequences(trace, arrival: arrival).enumerated()), id: \.offset) { _, text in
+                        Text(text).font(.subheadline)
+                    }
                 }
-            }.card()
+                DisclosureGroup {
+                    outcomeCalculation(trace, moment: moment)
+                } label: { Text("這次用掉的準備與實際變化").accessibilityIdentifier("outcomeDetails") }
+            } else { outcomeCalculation(trace, moment: moment) }
             Button("為什麼會這樣？", systemImage: "questionmark.circle") { showTrace = true }
                 .buttonStyle(.bordered).controlSize(.large).accessibilityIdentifier("whyResult")
             Button("比較剛才的行動", systemImage: "arrow.triangle.branch") { presentComparison(trace.choiceID) }
@@ -717,8 +716,13 @@ struct CrossroadsView: View {
             if let branch = trace.storyBranch {
                 VStack(alignment: .leading, spacing: 10) {
                     StoryEyebrow(title: "過去的選擇，如何走到這一頁", icon: "arrow.triangle.branch")
-                    Text(branch.explanation).font(.subheadline).lineSpacing(4)
-                        .accessibilityIdentifier("storyBranchExplanation")
+                    if showsLifeOverview {
+                        DisclosureGroup("展開故事接續的規則") {
+                            Text(branch.explanation).font(.subheadline).accessibilityIdentifier("storyBranchExplanation")
+                        }
+                    } else {
+                        Text(branch.explanation).font(.subheadline).lineSpacing(4).accessibilityIdentifier("storyBranchExplanation")
+                    }
                 }.card()
             }
             if !trace.recordedStoryFacts.isEmpty {
@@ -741,6 +745,20 @@ struct CrossroadsView: View {
             Text("健康、財務安全、人際與技能會延續；選擇也會留下紀錄。沒有唯一正確的答案，下一段仍能調整或求助。")
                 .font(.footnote).foregroundStyle(.secondary)
         }
+    }
+
+    private func outcomeCalculation(_ trace: ConsequenceTrace, moment: ProjectMoment?) -> some View {
+        VStack(alignment: .leading, spacing: 13) {
+                Label("已發生的變化", systemImage: "checkmark.circle").font(.headline)
+                Text(deltaText(moment?.actualChange ?? (trace.resourcesAfter - trace.resourcesBefore))).font(.headline)
+                    .accessibilityIdentifier("outcomeResources")
+                    .accessibilityValue(historyResources(trace))
+                Text("這一段日子，沐沐用了\(trace.finalCost.time)格時間，有\(trace.budgetAfter.time)格沒有用在這個行動上。")
+                    .lineSpacing(3).accessibilityIdentifier("roundTimeFeedback")
+                if trace.eventID != "teen-project" && trace.randomTrial?.occurred == true {
+                    Label("這次，也意外收到別人的鼓勵。", systemImage: "sparkle")
+                }
+        }.card()
     }
 
     private func ending(_ session: LifeSession) -> some View {

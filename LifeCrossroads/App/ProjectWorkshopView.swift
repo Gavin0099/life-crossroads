@@ -7,6 +7,7 @@ struct ProjectWorkshopView: View {
     let moment: ProjectMoment?
     var compact = false
     var showArtwork = true
+    var showMetrics = true
     @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var entered = false
@@ -26,9 +27,11 @@ struct ProjectWorkshopView: View {
                     .font(.subheadline.weight(.medium)).fixedSize(horizontal: false, vertical: true)
                     .accessibilityIdentifier("projectSceneCaption")
                 if let moment {
+                    if showMetrics {
                     Text("時間 \(moment.cost.time) · 精力 \(moment.cost.energy) · 材料 \(moment.cost.materials)")
                         .font(.caption.weight(.semibold)).monospacedDigit()
                         .accessibilityIdentifier("projectSpent")
+                    }
                     if let person = moment.person {
                         Label("與\(person)留下互動紀錄", systemImage: "person.2")
                             .font(.caption).accessibilityIdentifier("projectPerson")

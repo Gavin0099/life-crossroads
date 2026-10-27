@@ -989,10 +989,15 @@ final class LifeCrossroadsUITests: XCTestCase {
         let event = app.staticTexts["outcomeEvent"]
         let choice = app.staticTexts["chosenAction"]
         let resources = app.staticTexts["outcomeResources"]
+        let details = app.buttons["outcomeDetails"]
+        let opened = !resources.exists && details.exists
+        if opened { reveal(details, in: app); details.tap() }
         XCTAssertTrue(resources.waitForExistence(timeout: 5))
-        return try VisibleRecord(event: event.label, eventID: XCTUnwrap(event.value as? String),
+        let record = try VisibleRecord(event: event.label, eventID: XCTUnwrap(event.value as? String),
             choice: choice.label, choiceID: XCTUnwrap(choice.value as? String),
             resources: XCTUnwrap(resources.value as? String))
+        if opened { reveal(details, in: app); details.tap() }
+        return record
     }
 
     private func assertOriginalHistory(_ records: [Int: VisibleRecord], in app: XCUIApplication) throws {
