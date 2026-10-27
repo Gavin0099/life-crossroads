@@ -5,7 +5,12 @@ public enum LifeNarrative {
     public static let version = "life-narrative-1"
 
     public static func text(event: DecisionSkeleton, state: LifeState) -> String {
-        if event.storyVariantID?.contains("-opportunity-") == true { return event.storyQuestion }
+        if event.storyVariantID?.contains("-opportunity-") == true {
+            if event.id == "teen-direction", let origin = state.decisions.last(where: { $0.eventID == "teen-project" && $0.choiceID == "invest" }) {
+                return "你\(origin.age)歲留下的線上創作紀錄仍在。" + event.storyQuestion
+            }
+            return event.storyQuestion
+        }
         if event.id == "teen-project" {
             return "樹老師把線上圖解與紙本放在創作桌上。你看著還沒動起來的模型，想試試自己的點子；課後的時間卻只有這麼多。\n線上需要安排設備與連線，紙本也要準備材料。你可以選一條路開始、先說出需要，或把這段時間留給自己。桌上的邀請，不必今天就變成完成的作品。"
         }

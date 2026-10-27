@@ -2,6 +2,9 @@ import Foundation
 import LifeDomain
 
 struct OpportunitySample: Codable {
+    let engineVersion: String
+    let dataVersion: String
+    let contentVersion: String
     let country: String
     let householdID: String
     let templateID: String
@@ -45,7 +48,7 @@ enum OpportunitySamples {
                     try life.choose(choice, catalog: catalog); try life.continueLife(catalog: catalog)
                 }
                 let restored = try LifeSession.restore(from: JSONEncoder().encode(life), catalog: catalog)
-                result.append(.init(country: family.countryCode, householdID: family.id, templateID: family.templateID,
+                result.append(.init(engineVersion: life.state.engineVersion, dataVersion: life.state.dataVersion, contentVersion: life.state.contentVersion, country: family.countryCode, householdID: family.id, templateID: family.templateID,
                     policy: policy, seed: 34, steps: life.traces.map {
                         .init(age: $0.age, event: $0.eventID, title: $0.eventTitle, choice: $0.choiceID, action: $0.choiceTitle,
                               cost: $0.finalCost, sourceAge: $0.storyBranch?.sourceAge, sourceChoice: $0.storyBranch?.sourceChoiceID,

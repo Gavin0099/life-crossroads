@@ -168,7 +168,8 @@ enum StorySampleRunner {
                 throw ModelError.invalid("story sample must progress through exactly 15 decision slots")
             }
             let event = try session.event(catalog: catalog)
-            guard let narrative = EventNarratives.texts[event.storyVariantID ?? event.id], !narrative.isEmpty else {
+            let narrative = LifeNarrative.text(event: event, state: session.state)
+            guard !narrative.isEmpty else {
                 throw ModelError.missing("story sample narrative: \(event.storyVariantID ?? event.id)")
             }
             guard let selection = session.currentSelection, selection.selectedEventID == event.id else {
