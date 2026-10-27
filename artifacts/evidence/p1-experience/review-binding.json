@@ -1,0 +1,27 @@
+{
+  "implementationCommit": "28aa189e8c734d7d65aeadf5c34db5842b3bffdd",
+  "reviewedFiles": 106,
+  "missing": [],
+  "mismatches": [],
+  "publicSourceBindingFiles": 106,
+  "publicSourceMismatches": [],
+  "publicChecksums": 10,
+  "publicChecksumMismatches": [],
+  "coreDigest": "3328ecc383d45b0cf5a533dc31c05f6acaec2dc925fa737a004f2e9704712661",
+  "ciSourceDigest": "fabac1ee15a2e7710779532c96493de8902fd97b931042c3b140518086559523",
+  "publicBindingMatchesReview": true,
+  "swiftReceipt": {
+    "status": "PASS",
+    "configuration": "release",
+    "passed": 140,
+    "failed": 0,
+    "targets": {
+      "LifePresentationTests": 15,
+      "LifePersistenceTests": 27,
+      "LifeDomainTests": 91,
+      "LifeAnalysisTests": 7
+    },
+    "logSHA256": "c5d9e20c992e94d5abc42687393dc5700c645948c13c105f74540d3c84987416",
+    "log": "artifacts/governance/p1-completion/final-release-swift.log"
+  }
+}

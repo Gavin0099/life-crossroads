@@ -79,3 +79,7 @@
 - PR14 P2修正7f3cf5c：備料與既有老師分開，零支持高低技能回歸及130Swift通過；64局不變，四國1024局完成。機制方向符合、真人未驗；待push當前CI與獨立覆審，Draft/HOLD。 <!-- memory_record_projection:active-task-summary:cf10f58d9388c9c2f37773997fdd563e94bdb5c775d5a19aa89845e24b44398f -->
 
 - PR14覆審抓到共用摘要仍誤稱無邀請，已窄修1cb8265並補接受/婉拒/低技能回歸；131Swift通過、64局不變。待新HEAD覆審與CI，Draft/HOLD。 <!-- memory_record_projection:active-task-summary:3e2fd26f860e436bd591ce26fd28eaaae22131165adc3dd01e2e86cdb8f7ce97 -->
+
+- PR14 @3177946最終獨立覆審APPROVED限P2窄修，阻擋0；15定向/38斷言過。機制方向符合、真人與資料仍未驗；CI另報，Draft/HOLD不合併。 <!-- memory_record_projection:active-task-summary:ed1bf752f7d4bd7c27963b1371dfd2bafd7846ca2889b99d25e70e977fa7064f -->
+
+- P1體驗28aa189：52事件、重心故事與照顧/工具後續；140Swift/40Python/basic6、最終SE2及1024局重播通過，Simulator已刪。獨立核心覆審APPROVED、106檔綁定無差異。待Draft推送及HEAD CI；兒少尚未試玩，資料/實機/美術未完成，不宣稱90–95%、不合併。 <!-- memory_record_projection:active-task-summary:88763e2ed58b98a8886397cad685b1ff46bbd4cea09dcd1acb1a82c90a6958c1 -->

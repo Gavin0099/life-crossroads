@@ -33,7 +33,7 @@
 
 精確日誌、原生測試批次及來源綁定見[validation.json](../artifacts/evidence/p1-experience/validation.json)；量測方法、策略與不利結果見[新舊量測](../artifacts/evidence/p1-experience/comparison.md)。最終完整release Swift 140項、Python 40項、basic 6項通過；最新focus2 SE為2/2，零skip及publication警告。先前debug中止與過時+1預期失敗保留，不冒稱通過。遠端CI在推送後核對當前HEAD。
 
-獨立Agent曾找出無前因敘事、購買計畫誤當老師支持、後續求助／休息覆蓋已確認記憶三類P2，均修正並補反例。最終核心覆審沒有未解P1/P2；獨立驗證含23定向測試與41不變式斷言。這是核心工程接受，沒有解除產品HOLD。
+[獨立覆審全文](../artifacts/evidence/p1-experience/independent-review.md)已綁定實作`28aa189`的106個來源檔，沒有缺少或不符。獨立Agent曾找出無前因敘事、購買計畫誤當老師支持、後續求助／休息覆蓋已確認記憶三類P2，均修正並補反例。最終核心覆審沒有未解P1/P2；獨立驗證含23定向測試與41不變式斷言。這是核心工程接受，沒有解除產品HOLD。
 
 本輪所有本機Simulator均由`ios-check.sh`建立專用裝置、保留結果後`simctl delete`；沒有刪除其他任務裝置或共用runtime。原生證據區分各版本分批結果，不把不同輪次相加冒稱單輪全過。
 

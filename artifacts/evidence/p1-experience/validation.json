@@ -275,6 +275,11 @@
     "independentAssertions": 41,
     "independentEvidenceReplays": 16,
     "sourceDigest": "3328ecc383d45b0cf5a533dc31c05f6acaec2dc925fa737a004f2e9704712661",
-    "pending": "implementation commit SHA binding in companion receipt"
-  }
+    "implementationCommit": "28aa189e8c734d7d65aeadf5c34db5842b3bffdd",
+    "report": "artifacts/evidence/p1-experience/independent-review.md",
+    "reportSHA256": "60ccaeae60d860e24eecb4bc4fcc23ef73a727d7fca6b322efb5985278fa7fd0",
+    "missingFiles": 0,
+    "mismatchedFiles": 0
+  },
+  "implementationCommit": "28aa189e8c734d7d65aeadf5c34db5842b3bffdd"
 }
