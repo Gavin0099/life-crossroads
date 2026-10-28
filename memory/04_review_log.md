@@ -234,3 +234,14 @@
 - Validation boundary: 163 Swift(R2)+final5／48 Python；R3雙機各3/3、26狀態、8實際時點；90保護檔不變；Basic既有91d>90d FAIL。docs/final-polish-loop/VALIDATION.md、artifacts/evidence/final-polish-loop/commit-binding.json。
 - Next action: 推送Draft並核對HEAD CI；再Owner實機與10–15歲試玩，不自動下一Loop。
 - PLAN reconciliation: `updated`
+
+<!-- memory_record_projection:review-log:e9b82e73c1667f710b8aaea2c27a8d701d875319b7a3ed9193d0adbfad549941 -->
+### Canonical memory checkpoint — 2026-10-28-03
+
+- Writer: `governance_tools.memory_record`
+- Record identity: `e9b82e73c1667f710b8aaea2c27a8d701d875319b7a3ed9193d0adbfad549941`
+- Commit binding: `6ec388da5f15eb789d92f1eb6828fc186b0dd4d0` (bound)
+- Record: PR21 CI54發現AX標籤前綴回歸，6ec388d移除；原測試保留，雙尺寸重新綁定原生證據。
+- Validation boundary: 原平行人生/world-fork2/2；round3-ax雙機各3/3、21狀態8clock、64來源綁定；9台本機Sim已delete。CI54原26/30 UI之4FAIL全同前綴；新HEAD CI待核對，Basic91d>90d仍FAIL。docs/final-polish-loop/CI_CORRECTION.md。
+- Next action: 核對新HEAD CI快照後依4 Agent-hours停止；Draft/HOLD，不開新Loop；Owner實機及10–15歲試玩。
+- PLAN reconciliation: `updated`

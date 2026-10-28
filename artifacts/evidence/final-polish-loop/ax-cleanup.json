@@ -1,0 +1,17 @@
+{
+  "local_task_devices": [
+    "7B082A3B-7BCD-42A8-8CAC-EDE28696A9E1",
+    "F3B0844F-2652-4807-B8D5-799841DEDE69",
+    "0C9F33F0-1B9D-4172-884C-49DA278B2F8D",
+    "88035B1E-F3DA-49C0-A6B5-0A416412E7FE",
+    "4E8EC611-3E96-4092-B727-68020AE9A5DB",
+    "9C0F8B3B-5979-4270-AADC-94F41E15022A",
+    "6EA17190-FF88-4C72-8E33-91FD4C72103B",
+    "27B2202F-B73D-407D-851F-F4C9A7FC3159",
+    "F7FC82FF-0504-4054-92A5-C9E3F3AE2E93"
+  ],
+  "all_nine_deleted": true,
+  "removed_recreated_task_build_bytes": 239481920,
+  "removed_downloaded_ci_zip_bytes": 333140900,
+  "other_devices_and_runtime": "unchanged"
+}

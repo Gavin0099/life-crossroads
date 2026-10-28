@@ -2,6 +2,12 @@
 
 固定基底：PR20 `325b69896553fb6c479e415c0c0991e76ef78a26`。分支 `codex/final-polish-loop`，Draft base `codex/interaction-memory-loop`。不合併、不發布、不上 TestFlight；三輪結束後停在 Owner 試玩。
 
+## CI 發現的標籤回歸與最終重驗
+
+`c74fadf` CI54：163 Swift／48 Python PASS，原30 UI為26 PASS／4 FAIL。四個失敗皆因新增的chosenAction無障礙前綴與原人生正式選項名稱不同；已移除該一行，未改或弱化原測試。原完整平行人生與world-fork定向回歸2/2通過。新HEAD全套CI另見PR，不能拿先前163或舊截圖宣稱新HEAD全部通過。詳[原因、原始失敗及修正](CI_CORRECTION.md)。
+
+`round3-ax`是最後同源重驗，七個核心場景各正常／最大字級／Reduced Motion；歷史Round3仍以c74fadf綁定。之前的commit-binding.json是dace252時點的歷史來源綁定，不是AX修正後的檔案雜湊。新版verify-evidence同時核對歷史commit及最新bytes。工程結論以補記及PR新HEAD CI為準。
+
 ## 實際改變
 
 - 13 歲求助的筆記本不再消失；32 歲維持坐姿、凳子、紙張與側包。只局部編修兩個聆聽端點，其他圖格不採用。
@@ -43,7 +49,7 @@ bash scripts/governance-check.sh --profile basic
 bash tools/final-polish-loop/capture.sh owner-check iPhone-SE-3rd-generation normal,large,reduced '13-ask,17-remote,17-collective,32-ask,32-participating,72-ahe,72-neighbor' all
 ```
 
-capture使用專用暫存Simulator；成功、失敗、INT/TERM皆shutdown後delete。不要重用已存在的label覆寫原證據。正常App不編入capture ingress。若要重跑證據verifier，`round3`是本輪凍結最終批次，不能拿新label冒充同一來源。
+capture使用專用暫存Simulator；成功、失敗、INT/TERM皆shutdown後delete。不要重用已存在的label覆寫原證據。正常App不編入capture ingress。若要重跑證據verifier，`round3-ax`是AX修正後凍結批次，不能拿新label冒充同一來源。
 
 ## 尚未驗收／停止界線
 
@@ -62,3 +68,9 @@ capture使用專用暫存Simulator；成功、失敗、INT/TERM皆shutdown後del
 | Product Verdict | **適合 Owner 帶領試玩** | 不是兒少理解、娛樂性、正式美術或發布批准。 |
 
 本輪已確認P1為0；保留PARTIAL而不開第四輪。兩個edited原始圖、七組原生對照、失敗中間幀、source/PNG SHA及獨立報告均可審查。另已清理247,133,312 bytes本輪專用build cache；其他工作與runtime未動。
+
+## AX修正後最終本機來源
+
+`6ec388d`的64個產品／capture／fixture來源與`round3-ax`精準一致，見`ax-commit-binding.json`。SE3與iPhone17各3/3、52PNG、21狀態、8真實clock時點、零warnings；原五粗年齡檢視仍以歷史Round3為據。本輪九台本機裝置均已delete；重新產生的專用build cache亦移除，見`ax-cleanup.json`。
+
+最終遠端CI未被計入本機ACCEPT。若達4 Agent-hours上限而新CI仍運行，保留Draft/HOLD與待驗證狀態，不因預算停止而宣稱全數通過。

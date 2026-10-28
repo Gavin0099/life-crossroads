@@ -10,8 +10,10 @@ from pathlib import Path
 
 ROOT = Path('artifacts/evidence/final-polish-loop')
 BASE = '325b69896553fb6c479e415c0c0991e76ef78a26'
+FINAL_ROUND = 'round3-ax'
+ARCHIVED_ROUNDS = {'round3': 'c74fadfaf6d6a063bf4e57260ba16cb1827c2118'}
 devices = subprocess.check_output(['xcrun', 'simctl', 'list', 'devices', '-j'], text=True)
-report = {'base': BASE, 'captures': [], 'failures': []}
+report = {'base': BASE, 'final_round': FINAL_ROUND, 'captures': [], 'failures': []}
 requests = {}
 archives = {}
 for source in sorted(ROOT.glob('round*/iPhone*/source.json')):
@@ -36,11 +38,13 @@ for source in sorted(ROOT.glob('round*/iPhone*/source.json')):
                                 'artifacts/evidence/interaction-memory-loop/interaction-fixtures/')):
                 content = subprocess.check_output(['git', 'show', BASE + ':' + path])
                 check(hashlib.sha256(content).hexdigest() == sha, 'baseline drift: ' + path)
-    if folder.parent.name == 'round3':
+    if folder.parent.name == FINAL_ROUND or folder.parent.name in ARCHIVED_ROUNDS:
         for path, sha in data['sourceHashes'].items():
             if path.startswith(('LifeCrossroads/App/', 'LifeCrossroads/Presentation/', 'UITests/',
                                 'artifacts/evidence/interaction-memory-loop/interaction-fixtures/')) or path == 'LifeCrossroads.xcodeproj/project.pbxproj':
-                check(hashlib.sha256(Path(path).read_bytes()).hexdigest() == sha, 'final source drift: ' + path)
+                content = (subprocess.check_output(['git', 'show', ARCHIVED_ROUNDS[folder.parent.name] + ':' + path])
+                           if folder.parent.name in ARCHIVED_ROUNDS else Path(path).read_bytes())
+                check(hashlib.sha256(content).hexdigest() == sha, 'capture source drift: ' + path)
     matrix = re.findall(r'VISUAL_CAPTURE (\S+) (\S+) archive=([a-f0-9]{64})', log)
     controls = re.findall(r'VISUAL_CONTROL (\S+) (\S+) \S+ hittable=true', log)
     names = set(data['filter'].split(','))
@@ -54,7 +58,7 @@ for source in sorted(ROOT.glob('round*/iPhone*/source.json')):
     for name, variant, sha in matrix:
         archives.setdefault(name, set()).add(sha)
     beats = re.findall(r'VISUAL_REQUEST (13|32) (\S+) archive=([a-f0-9]{64}) phaseMs=(\d+) pause=actual-clock', log)
-    beat_names = ['expressing', 'transition', 'handoff', 'listening'] if folder.parent.name == 'round3' else ['expressing', 'handoff', 'listening']
+    beat_names = ['expressing', 'transition', 'handoff', 'listening'] if folder.parent.name.startswith('round3') else ['expressing', 'handoff', 'listening']
     expected_beats = {(age, beat) for age in ['13', '32'] for beat in beat_names}
     check(len(beats) == len(expected_beats) and {(age, beat) for age, beat, _, _ in beats} == expected_beats,
           'missing or duplicate request timing sample')
@@ -71,6 +75,9 @@ for source in sorted(ROOT.glob('round*/iPhone*/source.json')):
                                'simulator': data['device'], 'deleted': data['device'] not in devices})
 for name, hashes in {**archives, **requests}.items():
     if len(hashes) != 1: report['failures'].append('presentation changed persisted archive: ' + name)
+final_devices = {row['path'].split('/')[1] for row in report['captures'] if row['path'].startswith(FINAL_ROUND + '/')}
+if final_devices != {'iPhone-SE-3rd-generation', 'iPhone-17'}:
+    report['failures'].append('final source requires both native device captures')
 report['stableArchiveHashes'] = {name: sorted(hashes) for name, hashes in archives.items()}
 report['requestArchiveHashes'] = {age: sorted(hashes) for age, hashes in requests.items()}
 report['result'] = 'PASS' if report['captures'] and not report['failures'] else 'FAIL'

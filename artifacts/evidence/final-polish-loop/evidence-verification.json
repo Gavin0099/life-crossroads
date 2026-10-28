@@ -1,5 +1,6 @@
 {
   "base": "325b69896553fb6c479e415c0c0991e76ef78a26",
+  "final_round": "round3-ax",
   "captures": [
     {
       "path": "round1/iPhone-17",
@@ -53,6 +54,24 @@
       "matrixStates": 26,
       "requestSamples": 8,
       "simulator": "9C0F8B3B-5979-4270-AADC-94F41E15022A",
+      "deleted": true
+    },
+    {
+      "path": "round3-ax/iPhone-17",
+      "tests": 3,
+      "screenshots": 52,
+      "matrixStates": 21,
+      "requestSamples": 8,
+      "simulator": "6EA17190-FF88-4C72-8E33-91FD4C72103B",
+      "deleted": true
+    },
+    {
+      "path": "round3-ax/iPhone-SE-3rd-generation",
+      "tests": 3,
+      "screenshots": 52,
+      "matrixStates": 21,
+      "requestSamples": 8,
+      "simulator": "27B2202F-B73D-407D-851F-F4C9A7FC3159",
       "deleted": true
     }
   ],
