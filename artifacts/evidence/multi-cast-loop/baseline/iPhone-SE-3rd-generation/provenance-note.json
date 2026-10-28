@@ -1,0 +1,3 @@
+{
+  "note": "Fixture archives are byte-identical. Fixturemanifest gained sourceSHA metadata after source snapshot; native screenshots use the same16validatedarchives. Export parser initially omitted two hyphenated names; re-exported all32attachments without another Simulator."
+}

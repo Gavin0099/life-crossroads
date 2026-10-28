@@ -51,8 +51,8 @@ public enum WorldMomentProjector {
             let event = try session.event(catalog: catalog)
             eventID = event.id; moment = .eventPaused
             // An inviter can be present without having helped the player yet.
-            if !event.recurringPerson.isEmpty {
-                actors.append(.init(personID: event.recurringPerson, role: "inviter", evidenceEventID: event.id))
+            if let person = personID(event.recurringPerson) {
+                actors.append(.init(personID: person, role: "inviter", evidenceEventID: event.id))
             }
         case .reflecting:
             guard let trace = session.traces.last, trace.applied else { throw ModelError.invalid("missing committed outcome") }
@@ -68,6 +68,18 @@ public enum WorldMomentProjector {
                 actors.append(.init(personID: relation.personID, role: "interacted", evidenceEventID: trace.eventID))
                 changes.append(.init(kind: .relationship, caption: "與\(personName(relation.personID))留下互動紀錄。",
                     sourceEventID: trace.eventID, sourceChoiceID: trace.choiceID, sourceAge: trace.age, isOccurred: true))
+            }
+            // These saved choices name the recipient/participant in their actual resolved
+            // story even when no relationship delta was applied. Presence is not support.
+            if trace.age == 32, trace.eventID == "adult-boundary-calendar", trace.choiceID == "ask",
+               personID(trace.recurringPerson) == "cheng" {
+                actors.append(.init(personID: "cheng", role: "recipient", evidenceEventID: trace.eventID))
+            }
+            if trace.age == 72, trace.eventID == "later-reconnect", ["invest", "ask"].contains(trace.choiceID),
+               let person = personID(trace.recurringPerson),
+               (person == "ahe" && trace.storyVariantID == "later-reconnect-old-friend") ||
+               (person == "cheng" && trace.storyVariantID == "later-reconnect-new-neighbor") {
+                actors.append(.init(personID: person, role: "participant", evidenceEventID: trace.eventID))
             }
             if trace.randomTrial?.occurred == true {
                 for step in trace.effectSteps where step.influence == .randomness && step.delta != .zero {
@@ -133,6 +145,16 @@ public enum WorldMomentProjector {
         }
     }
 
+    /// Known display names and stable IDs only; generic partners cannot become invented people.
+    public static func personID(_ name: String) -> String? {
+        switch name {
+        case "mumu", "沐沐": "mumu"
+        case "ahe", "阿禾": "ahe"
+        case "teacher", "樹老師": "teacher"
+        case "cheng", "小澄": "cheng"
+        default: nil
+        }
+    }
     public static func personName(_ id: String) -> String {
         switch id { case "mumu": "沐沐"; case "ahe": "阿禾"; case "teacher": "樹老師"; case "cheng": "小澄"; default: id }
     }

@@ -27,11 +27,13 @@
 
 ## Current Phase
 
-P1 / VISUAL-LOOP-02 / Issue #16 視覺體驗重製。依使用者2026-10-28指令，精確基底PR15 `81371e0`，3～4 Agent-hours 有界預算；主流程整合、素材製作與獨立Critic。只讀實際frame/trace，Domain、Data、Persistence、Seed、schema不改；既有30 UI範圍保留。獨立Draft/HOLD、不合併或發布。驗收以遮字原生場景辨識為核心，不能以圖片數或CI代替。
+P1 / MULTI-CAST-LOOP / Issue #18。依使用者2026-10-28指令，以PR17 `30d6000`為精確基底，在3～4 Agent-hours上限內盤點四位正式人物、補姿勢與年齡、整合真實互動並做三輪原生Critic。只改Presentation／App與素材驗證；Domain、Data、Persistence、Seed及存檔schema不改。貓狗五階段僅候選預覽；獨立Draft/HOLD，不合併、不發布。
 
 ## Current Sprint
 
-VISUAL-LOOP-02本機整合／三輪capture-critic修正完成：3背景＋6圖集，13/17/25/32讀真實紀錄；145Swift、41Python、兩尺寸60狀態／可行控制／checksum及來源一致。獨立AI Critic四對Go，小窗最大字級越界已修；年齡精確辨識與正式美術／真人仍未過。11台拍攝Simulator及210MiB本輪build cache已刪。basic因既有框架過渡欄位逾90日FAIL（5項PASS），沒有關Gate或改框架。已推獨立Draft PR17；首輪CI引擎145／Python41成功，UI最大字級120pt斷言遭2 ULP誤差觸發，最小精度修正與獨立覆審另見CI_PRECISION_REVIEW；修正HEAD原30UI與CI待驗。見[逐項驗收](docs/visual-loop-02/VISUAL_REVIEW.md)、[八組Before/After](docs/visual-loop-02/BEFORE_AFTER.md)。素材35m40s、Critic15m38s；主流程觀測區間另列，預算為上限不是必須耗滿。
+MULTI-CAST本機整合完成：四位正式人物依真實event／actor／保存trace呈現10／13／17／25／32／72歲互動；貓狗五齡透明圖僅未核准Preview。152 Swift／44 Python、第三輪兩尺寸62狀態與保存失敗各1/1通過，11台專用Simulator已刪。獨立工程P2（觀察經驗被稱入門）已回歸修復；三輪原生Critic及8組Before/After留證，部分年齡／精準無字行為、真人與正式美術仍HOLD。詳[驗收](docs/multi-cast-loop/VALIDATION.md)。獨立Draft待推送／當前HEAD CI；basic既有治理期限FAIL不關Gate，沒有改Domain／Data／Persistence或原30UI，不合併發布。
+
+前輪PR17最新30d6000已核對145 Swift／41 Python／原30 UI成功；basic僅既有session_envelope逾90日期限FAIL，沒有關Gate或更新框架。前輪完整證據見docs/visual-loop-02。
 
 以下為前輪記錄：
 

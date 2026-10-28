@@ -1,0 +1,9 @@
+[
+  {
+    "file": "test.log",
+    "completeLog": "artifacts/governance/multi-cast-loop/round1-iPhone-17-raw/test.log",
+    "completeSHA256": "a15c0797fea86e4d98fcbbf248c3761800fb7c5c5e9a4608667ca49689adb364",
+    "publishedSHA256": "a0f2d3a276a14cef9c4bca75e86ced8eeeae438f2975ae0a095663ac010039bb",
+    "projection": "test/capture verdict lines; complete log retained locally"
+  }
+]

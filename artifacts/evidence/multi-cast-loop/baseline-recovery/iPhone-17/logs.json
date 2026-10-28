@@ -1,0 +1,9 @@
+[
+  {
+    "file": "test.log",
+    "completeLog": "artifacts/governance/multi-cast-loop/baseline-recovery-iPhone-17-raw/test.log",
+    "completeSHA256": "fc732cfcb1788aa480638131efcfe838b759f878cc2b7f11cc93250015a6e580",
+    "publishedSHA256": "d505a78e5a4e7599d1501246a1816b9d2b25a853ac10353c22b0060078a80f36",
+    "projection": "test/capture verdict lines; complete log retained locally"
+  }
+]

@@ -1,0 +1,634 @@
+{
+  "swift": {
+    "count": 152,
+    "failed": 0,
+    "cases": [
+      {
+        "name": "LifePresentationTests.LifeWorldFrameTests testChoosingNeverProjectsAnUnmadeChoiceOrFutureSuccess",
+        "seconds": 0.011
+      },
+      {
+        "name": "LifePresentationTests.LifeWorldFrameTests testFactsPendingHooksTriggeredHooksAndTaiwanGapsHaveSources",
+        "seconds": 0.059
+      },
+      {
+        "name": "LifePresentationTests.LifeWorldFrameTests testRestAndUnknownEventDoNotInventSupport",
+        "seconds": 0.004
+      },
+      {
+        "name": "LifePresentationTests.ProjectMomentTests testActualClampedDeltasAndMissingEnvironmentSurviveProjection",
+        "seconds": 0.015
+      },
+      {
+        "name": "LifePresentationTests.ProjectMomentTests testChanceBadgeRequiresAnOccurredNonzeroEffectAndNoNewDraw",
+        "seconds": 0.151
+      },
+      {
+        "name": "LifePresentationTests.ProjectMomentTests testCodableRestoreAndFixedSeedReplayProduceIdenticalPresentation",
+        "seconds": 0.044
+      },
+      {
+        "name": "LifePresentationTests.ProjectMomentTests testForkUsesItsOwnReactionWithoutRewritingOriginalAndRestoresBoth",
+        "seconds": 0.164
+      },
+      {
+        "name": "LifePresentationTests.ProjectMomentTests testFourActualChoicesHaveDistinctPropsMemoryAndOnlyRecordedPeople",
+        "seconds": 0.041
+      },
+      {
+        "name": "LifePresentationTests.ProjectMomentTests testUnknownAndUnappliedEventsNeverProduceACommittedReaction",
+        "seconds": 0.024
+      },
+      {
+        "name": "LifePresentationTests.WorldActivityTests testCountryGapsAndResourceSaturationCannotSelectOrEraseActivity",
+        "seconds": 0.016
+      },
+      {
+        "name": "LifePresentationTests.WorldActivityTests testPendingInvitationsAndUnknownAgesCannotBecomeCompletedWork",
+        "seconds": 0.19
+      },
+      {
+        "name": "LifePresentationTests.WorldActivityTests testRestPreparationRequiresCompletedFocusNotPendingClue",
+        "seconds": 0.043
+      },
+      {
+        "name": "LifePresentationTests.WorldActivityTests testReviewedRealRoutesRenderDifferentActionsWithoutChangingArchives",
+        "seconds": 0.618
+      },
+      {
+        "name": "LifePresentationTests.WorldActivityTests testUnmadeChoicesKeepASettingButNeverBorrowWorkingPoses",
+        "seconds": 0.082
+      },
+      {
+        "name": "LifePresentationTests.WorldCastTests testCastingRestoresReplaysAndNeverRewritesOriginalBytes",
+        "seconds": 1.172
+      },
+      {
+        "name": "LifePresentationTests.WorldCastTests testInvitationIsNotParticipationAndRestDoesNotMakeHelpers",
+        "seconds": 0.298
+      },
+      {
+        "name": "LifePresentationTests.WorldCastTests testNatureContinuationDoesNotInventFirstTimeExperience",
+        "seconds": 0.048
+      },
+      {
+        "name": "LifePresentationTests.WorldCastTests testOldFriendAndNewNeighborFollowSameSeedActualHistory",
+        "seconds": 0.531
+      },
+      {
+        "name": "LifePresentationTests.WorldCastTests testRealSavedRolesAndActivitiesMatchReviewedStoryMatrix",
+        "seconds": 0.398
+      },
+      {
+        "name": "LifePresentationTests.WorldCastTests testRequestWithoutConfirmedHelpUsesRecipientNotSharedWork",
+        "seconds": 0.061
+      },
+      {
+        "name": "LifePresentationTests.WorldCastTests testUnknownAndCandidateIdentitiesNeverBecomeStoryCast",
+        "seconds": 0.018
+      },
+      {
+        "name": "LifePresentationTests.WorldPersistenceTests testForkOriginalBytesSurvivePresentationAndMidBranchDiskRestore",
+        "seconds": 5.839
+      },
+      {
+        "name": "LifePresentationTests.WorldPersistenceTests testPlaybackIsIndependentOfClockAndKeepsReviewedOpeningFixture",
+        "seconds": 7.702
+      },
+      {
+        "name": "LifePresentationTests.WorldPlaybackTests testAccumulatedClockPauseSpeedAndBackgroundDoNotJump",
+        "seconds": 0.007
+      },
+      {
+        "name": "LifePresentationTests.WorldPlaybackTests testExactlyOnceStaleGenerationFailureRetryAndRestore",
+        "seconds": 0.009
+      },
+      {
+        "name": "LifePresentationTests.WorldPlaybackTests testNormalFastAndSkipAreIdenticalForEightCountriesAndRestore",
+        "seconds": 6.167
+      },
+      {
+        "name": "LifePresentationTests.WorldPlaybackTests testOffscreenFreezesClockButExplicitContinueAndPausedRestoreRemainReadable",
+        "seconds": 0.015
+      },
+      {
+        "name": "LifePersistenceTests.BirthStoryTests testBirthDrawOrderingCoverageAndReceiptBinding",
+        "seconds": 0.474
+      },
+      {
+        "name": "LifePersistenceTests.BirthStoryTests testCompleteParallelDiskReplayAndOriginalBytesAllPhases",
+        "seconds": 6.597
+      },
+      {
+        "name": "LifePersistenceTests.BirthStoryTests testParallelRejectsInvalidPairAndSaveDowngrade",
+        "seconds": 0.122
+      },
+      {
+        "name": "LifePersistenceTests.BirthStoryTests testRealCreationConstraintsAndConditionalContinuationWithoutCountryScripts",
+        "seconds": 0.196
+      },
+      {
+        "name": "LifePersistenceTests.ExperienceCompletionTests testCareBoundaryUsesSameMaterialBudgetAndKeepsUnknownDistinct",
+        "seconds": 0.004
+      },
+      {
+        "name": "LifePersistenceTests.ExperienceCompletionTests testFourCompletedFocusIntervalsUnlockDistinctActionsWithoutPromisingParticipation",
+        "seconds": 0.005
+      },
+      {
+        "name": "LifePersistenceTests.ExperienceCompletionTests testFullFocusSaveReplayBranchKeepsOriginalAndRejectsForgedMemories",
+        "seconds": 8.389
+      },
+      {
+        "name": "LifePersistenceTests.ExperienceCompletionTests testLaterRequestsAndRestKeepConfirmedSupportAndPracticedPace",
+        "seconds": 0.377
+      },
+      {
+        "name": "LifePersistenceTests.ExperienceCompletionTests testNoHistoryCannotFabricateSupportRecoveryOrEnvironmentContinuation",
+        "seconds": 0.013
+      },
+      {
+        "name": "LifePersistenceTests.ExperienceCompletionTests testPowerBoundaryIsOfflineAndMissingSupportDoesNotInventKit",
+        "seconds": 0.008
+      },
+      {
+        "name": "LifePersistenceTests.ExperienceCompletionTests testRecordedSupportAndRestUnlockDifferentVoluntaryContinuations",
+        "seconds": 0.012
+      },
+      {
+        "name": "LifePersistenceTests.ExperienceCompletionTests testReviewerNoHistoryAndBudgetCounterexamplesDoNotInventOldSupport",
+        "seconds": 0.107
+      },
+      {
+        "name": "LifePersistenceTests.OpportunityTests testCompletePairReplayDiskAndIncompatibleFilePreservation",
+        "seconds": 6.299
+      },
+      {
+        "name": "LifePersistenceTests.OpportunityTests testLateRememberedRelationshipOutranksAnEarlyCosmeticDifference",
+        "seconds": 0.031
+      },
+      {
+        "name": "LifePersistenceTests.OpportunityTests testMissingInputsNoSupportAndOfflineDoNotInventRoutes",
+        "seconds": 0.158
+      },
+      {
+        "name": "LifePersistenceTests.OpportunityTests testSameTemplateDefaultAndExplicitMixedFamilyExploration",
+        "seconds": 0.13
+      },
+      {
+        "name": "LifePersistenceTests.OpportunityTests testSameWishAndHouseholdCreateDifferentExecutableOpportunitiesAndAdultRoutes",
+        "seconds": 0.067
+      },
+      {
+        "name": "LifePersistenceTests.OpportunityTests testThresholdsNamesAndCandidateOrderAreIndependent",
+        "seconds": 0.067
+      },
+      {
+        "name": "LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportComparisonRetainsActualWorkshopInvitation",
+        "seconds": 0.099
+      },
+      {
+        "name": "LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportDoesNotBypassWorkshopSkillRequirement",
+        "seconds": 0.031
+      },
+      {
+        "name": "LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportKeepsEarnedTeacherWorkshopAndAdultRoute",
+        "seconds": 0.33
+      },
+      {
+        "name": "LifePersistenceTests.SaveRepositoryTests testCorruptAndUnknownVersionFilesThrowAndRetainOriginalBytes",
+        "seconds": 0.15
+      },
+      {
+        "name": "LifePersistenceTests.SaveRepositoryTests testFilesystemFailureDoesNotAlterJourneyOrReplaceOtherPath",
+        "seconds": 0.11
+      },
+      {
+        "name": "LifePersistenceTests.SaveRepositoryTests testFocusDiskResumeAndOldEngineArchivePreservation",
+        "seconds": 0.031
+      },
+      {
+        "name": "LifePersistenceTests.SaveRepositoryTests testInvalidSnapshotCannotOverwriteAnExistingValidSave",
+        "seconds": 0.361
+      },
+      {
+        "name": "LifePersistenceTests.SaveRepositoryTests testRealDiskRoundTripEveryPhaseKeepsOriginalAndReplaysRemainingLife",
+        "seconds": 7.97
+      },
+      {
+        "name": "LifePersistenceTests.SaveRepositoryTests testSingleLifeSaveResumesWithoutChangingLegacySessionResults",
+        "seconds": 0.017
+      },
+      {
+        "name": "LifeDomainTests.BranchExperimentTests testAllCheckpointsPreserveExactPrefixAndOriginalIncludingFirstAndLast",
+        "seconds": 3.328
+      },
+      {
+        "name": "LifeDomainTests.BranchExperimentTests testChangedChoiceRebuildsFutureHooksAndPreservesEarlierPendingHooksExactlyOnce",
+        "seconds": 0.208
+      },
+      {
+        "name": "LifeDomainTests.BranchExperimentTests testDecodedForgedMetadataSnapshotsAndAlternativeCannotResumeOrCompare",
+        "seconds": 1.56
+      },
+      {
+        "name": "LifeDomainTests.BranchExperimentTests testFourCountryTwoFamilyBranchMatrixCompletesAndKeepsOriginal",
+        "seconds": 7.492
+      },
+      {
+        "name": "LifeDomainTests.BranchExperimentTests testIndividuallyValidAlternativeFromDifferentSeedOrBackgroundIsRejected",
+        "seconds": 0.492
+      },
+      {
+        "name": "LifeDomainTests.BranchExperimentTests testInvalidForkAndPhaseFailuresDoNotMutateOriginalOrAlternative",
+        "seconds": 0.424
+      },
+      {
+        "name": "LifeDomainTests.BranchExperimentTests testPairedCandidateDrawsRemainEqualEvenWhenWeightsOrEligibilityChange",
+        "seconds": 0.214
+      },
+      {
+        "name": "LifeDomainTests.BranchExperimentTests testReplayingUnchangedChoicesFromCheckpointExactlyReproducesOriginal",
+        "seconds": 0.314
+      },
+      {
+        "name": "LifeDomainTests.BranchExperimentTests testSameSeedChoicesAndCodableAtEveryPhaseReproduceCompleteAlternative",
+        "seconds": 10.832
+      },
+      {
+        "name": "LifeDomainTests.BranchExperimentTests testSingleChangedChoiceActuallyChangesLaterPersonAndLearningRoute",
+        "seconds": 0.13
+      },
+      {
+        "name": "LifeDomainTests.BranchExperimentTests testUnaffordableAlternateRejectedUsingItsOriginalPreChoiceBudget",
+        "seconds": 0.062
+      },
+      {
+        "name": "LifeDomainTests.EventSelectionTests testCatalogOrderCannotChangeSelectedEventsOrTraces",
+        "seconds": 0.073
+      },
+      {
+        "name": "LifeDomainTests.EventSelectionTests testCatalogRejectsMissingFallbackAndInvalidConditionContract",
+        "seconds": 0.004
+      },
+      {
+        "name": "LifeDomainTests.EventSelectionTests testComparisonKeepsActualEncounterAndSelectionFixed",
+        "seconds": 0.008
+      },
+      {
+        "name": "LifeDomainTests.EventSelectionTests testConditionsShowActualInputsAndIneligibleEventsCannotBeForced",
+        "seconds": 0.004
+      },
+      {
+        "name": "LifeDomainTests.EventSelectionTests testEligibleButUnselectedEventCannotBeExecutedDirectly",
+        "seconds": 0.003
+      },
+      {
+        "name": "LifeDomainTests.EventSelectionTests testLastContinueCannotFinishAgainstAnotherContentVersion",
+        "seconds": 0.019
+      },
+      {
+        "name": "LifeDomainTests.EventSelectionTests testOneThousandLivesHaveFifteenSlotsNoDeadlocksAndPreserveStoryAnchors",
+        "seconds": 30.7
+      },
+      {
+        "name": "LifeDomainTests.EventSelectionTests testPreselectedSeedsProduceDifferentActualEventsWithSameBackgroundAndPolicy",
+        "seconds": 0.095
+      },
+      {
+        "name": "LifeDomainTests.EventSelectionTests testPublicSelectorRejectsInvalidStateAndCatalogBeforeProducingTrace",
+        "seconds": 0.003
+      },
+      {
+        "name": "LifeDomainTests.EventSelectionTests testRestoreReplaysAndRejectsForgedSelectionOrPastConsequencesBeforeContinuation",
+        "seconds": 0.099
+      },
+      {
+        "name": "LifeDomainTests.EventSelectionTests testSameSeedAndPolicyReproduceEveryEventConditionAndOutcome",
+        "seconds": 0.145
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testAgeCostsAndResourceInputsFailBeforeArithmetic",
+        "seconds": 0.005
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testBadIndicatorRangesAndSourceReferencesAreRejected",
+        "seconds": 0.022
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testCatalogAndStateAndTraceCodableRoundTrip",
+        "seconds": 0.008
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testChildAgencyDoesNotTransferAdultCareResponsibility",
+        "seconds": 0.004
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testChoiceChangeCreatesActualDelayedStoryDifference",
+        "seconds": 0.007
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testCorruptJSONAndUnknownSchemaFailExplicitly",
+        "seconds": 0.003
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testCountryNamesAndCodesCannotSetSuccessMultipliers",
+        "seconds": 0.005
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testDigitalLearningOffersAnIndependentOfflineRoute",
+        "seconds": 0.004
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testDigitalThresholdBoundaries",
+        "seconds": 0.015
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testEightCountriesSixteenFamiliesAndHonestReadiness",
+        "seconds": 0.003
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testEnvironmentCanChangeFeasibilityWithoutConsumingUnavailableChoice",
+        "seconds": 0.004
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testFifteenSkeletonDecisionsCoverEveryStageAndThreeCallbacks",
+        "seconds": 0.003
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testFiveStageBoundaries",
+        "seconds": 0.0
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testForgedOrDuplicateStoryHooksCannotGrantResources",
+        "seconds": 0.003
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testHouseholdTemplatesStayComparableWhenArraysMove",
+        "seconds": 0.003
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testInvalidTimeDuplicateDecisionAndVersionAreRejected",
+        "seconds": 0.004
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testKeyedRandomHasStableGoldenVectorAndNoSharedStream",
+        "seconds": 0.0
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testManySeededSkeletonLivesStayValidAndCanAlwaysAdvance",
+        "seconds": 5.828
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testMissingValueCannotBecomeVerifiedZero",
+        "seconds": 0.007
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testOfflineChildActivityNeverUsesNationalDigitalRates",
+        "seconds": 0.005
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testOfflineLearningIgnoresDigitalThresholdsAndHasSupport",
+        "seconds": 0.004
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testPinnedRealStatisticsHaveIndependentExpectedValues",
+        "seconds": 0.003
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testRepositoryRejectsAbsentAndTamperedEvidence",
+        "seconds": 0.012
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testRepositoryRejectsAlteredObservationEvenWithIntactSourceHash",
+        "seconds": 0.01
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testResourceClampingIsVisibleAndCostsCannotGoNegative",
+        "seconds": 0.005
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testSameChoiceAcrossCountriesHasExplainableCosts",
+        "seconds": 0.006
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testSameCountryFamiliesHaveDifferentTradeoffsAndSupport",
+        "seconds": 0.004
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testSameSeedAndSerializedResumeProduceIdenticalTrace",
+        "seconds": 0.004
+      },
+      {
+        "name": "LifeDomainTests.LC01Tests testTraceExactlyReconcilesCostEffectsAndProvenance",
+        "seconds": 0.004
+      },
+      {
+        "name": "LifeDomainTests.LC03Tests testCareFinancingThresholdsHaveIndependentExpectedBudgetsAndNoEffectsWhenRejected",
+        "seconds": 0.005
+      },
+      {
+        "name": "LifeDomainTests.LC03Tests testCountryNamesAndOrderingNeverChangeCostsOrSupport",
+        "seconds": 0.005
+      },
+      {
+        "name": "LifeDomainTests.LC03Tests testEightCountriesCompleteRestoreAndReplay",
+        "seconds": 1.488
+      },
+      {
+        "name": "LifeDomainTests.LC03Tests testHouseholdSnapshotComparisonKeepsPastAndShowsWithinCountryDifference",
+        "seconds": 0.012
+      },
+      {
+        "name": "LifeDomainTests.LC03Tests testSameChoiceHasDifferentCostsSupportAndRealFutureRouteConditions",
+        "seconds": 0.006
+      },
+      {
+        "name": "LifeDomainTests.LC03Tests testTaiwanFullBranchPreservesOriginalAndBothCompletedRemaindersOnRestore",
+        "seconds": 0.163
+      },
+      {
+        "name": "LifeDomainTests.LC03Tests testTaiwanNativeDefinitionsAndLicensesRemainDistinct",
+        "seconds": 0.005
+      },
+      {
+        "name": "LifeDomainTests.LC03Tests testUnknownCostIsRecordedAndCannotBecomeAComparableZero",
+        "seconds": 0.007
+      },
+      {
+        "name": "LifeDomainTests.LC03Tests testUnknownLicenseForgedExtractionColumnAndNationalValueAreRejected",
+        "seconds": 0.022
+      },
+      {
+        "name": "LifeDomainTests.LifeExperienceTests test1024LivesAcrossEightCountriesFamiliesSeedsAndFocusPoliciesHaveNoDeadEnds",
+        "seconds": 43.954
+      },
+      {
+        "name": "LifeDomainTests.LifeExperienceTests testCompleteFocusReplayBranchAndPreservedOriginal",
+        "seconds": 0.113
+      },
+      {
+        "name": "LifeDomainTests.LifeExperienceTests testContextualNarrativeUsesActualHistoryIncludingSeekingAndRecovery",
+        "seconds": 0.01
+      },
+      {
+        "name": "LifeDomainTests.LifeExperienceTests testFocusCreatesReadinessWithoutHiddenPointsAcrossShortAndLongIntervals",
+        "seconds": 0.003
+      },
+      {
+        "name": "LifeDomainTests.LifeExperienceTests testFocusDoesNotRerollRevealedEventOrApplyBeforeTimeAdvances",
+        "seconds": 0.006
+      },
+      {
+        "name": "LifeDomainTests.LifeExperienceTests testReplayRejectsUnknownVersionsDuplicateAndFutureFocusRecords",
+        "seconds": 0.008
+      },
+      {
+        "name": "LifeDomainTests.LifeSessionTests testComparisonHoldsChoiceSeedAndPastResourcesFixed",
+        "seconds": 0.004
+      },
+      {
+        "name": "LifeDomainTests.LifeSessionTests testComparisonUsesSelectedChoiceAndStableTemplateAfterFamilyReordering",
+        "seconds": 0.004
+      },
+      {
+        "name": "LifeDomainTests.LifeSessionTests testDecodedCorruptSessionCannotIndexBeyondCatalog",
+        "seconds": 0.013
+      },
+      {
+        "name": "LifeDomainTests.LifeSessionTests testEveryDecisionHasOriginalStoryText",
+        "seconds": 0.003
+      },
+      {
+        "name": "LifeDomainTests.LifeSessionTests testFourCountryEightFamilyPlaythroughsReachReviewAndCannotRepeat",
+        "seconds": 0.367
+      },
+      {
+        "name": "LifeDomainTests.LifeSessionTests testRestExplanationIncludesOnlyExecutedContribution",
+        "seconds": 0.004
+      },
+      {
+        "name": "LifeDomainTests.LifeSessionTests testRoundAllowancesResetWhileResourcesAndChoicesContinue",
+        "seconds": 0.005
+      },
+      {
+        "name": "LifeDomainTests.LifeSessionTests testSameBackgroundReplayUsesSameTraceAndSessionCodableResumes",
+        "seconds": 0.007
+      },
+      {
+        "name": "LifeDomainTests.LifeSessionTests testUnavailableChoiceDoesNotAdvanceSessionAndRestRemainsPossible",
+        "seconds": 0.005
+      },
+      {
+        "name": "LifeDomainTests.LifeSessionTests testUnsuccessfulRandomTrialIsNotListedAsContribution",
+        "seconds": 0.003
+      },
+      {
+        "name": "LifeDomainTests.RNGV2Tests testCandidateKeysSurviveReorderingAndAdditionAndRemainPairedAcrossCountries",
+        "seconds": 0.004
+      },
+      {
+        "name": "LifeDomainTests.RNGV2Tests testDynamicWindowsExecuteAtActualAgeAndTraceContinuityWithoutCountryMultipliers",
+        "seconds": 0.005
+      },
+      {
+        "name": "LifeDomainTests.RNGV2Tests testFourNewStoryLinesChangeOptionsAndPreserveSourceDecision",
+        "seconds": 0.025
+      },
+      {
+        "name": "LifeDomainTests.RNGV2Tests testHelpDoesNotEraseExperienceAndFactsCannotBeForged",
+        "seconds": 0.006
+      },
+      {
+        "name": "LifeDomainTests.RNGV2Tests testOneShotCooldownAndMutualExclusionHaveObservableReasons",
+        "seconds": 0.008
+      },
+      {
+        "name": "LifeDomainTests.RNGV2Tests testPolicyValidationRejectsNonfiniteZeroNegativeAndUnknownFields",
+        "seconds": 0.003
+      },
+      {
+        "name": "LifeDomainTests.RNGV2Tests testRaceUsesRecordedWeightsAndIndependentSamples",
+        "seconds": 0.003
+      },
+      {
+        "name": "LifeDomainTests.StoryBranchTests testAllCountryFamiliesCanFinishWithDiverseChoicesAndBranchNarratives",
+        "seconds": 1.872
+      },
+      {
+        "name": "LifeDomainTests.StoryBranchTests testCareBranchRequiresHistoryAndHealthAndCannotBeBypassedThroughResolver",
+        "seconds": 0.018
+      },
+      {
+        "name": "LifeDomainTests.StoryBranchTests testChildhoodFriendshipChangesWhoAppearsAtSeventyTwo",
+        "seconds": 0.02
+      },
+      {
+        "name": "LifeDomainTests.StoryBranchTests testLearningBranchTraceRecordsActualHistoryAndBothSidesOfResourceThreshold",
+        "seconds": 0.007
+      },
+      {
+        "name": "LifeDomainTests.StoryBranchTests testLearningRouteChangesMentorSceneAndWorkshopOpportunity",
+        "seconds": 0.015
+      },
+      {
+        "name": "LifeDomainTests.StoryBranchTests testPreviewExecutionAndCodableReplayKeepActualVariantAndChoiceSnapshots",
+        "seconds": 0.024
+      },
+      {
+        "name": "LifeDomainTests.StoryBranchTests testSharedCareArrangementUnlocksReciprocalSupport",
+        "seconds": 0.017
+      },
+      {
+        "name": "LifeDomainTests.StoryBranchTests testZeroNationalCostIsObservationAndOnlyOccurredLuckContributes",
+        "seconds": 0.083
+      },
+      {
+        "name": "LifeAnalysisTests.BatchAnalysisTests testClampUsesNetGainAndSeparatesPartialFullAndLowerBound",
+        "seconds": 0.001
+      },
+      {
+        "name": "LifeAnalysisTests.BatchAnalysisTests testHammingIncludesZeroAndSeparatesStoryVariantFromEventID",
+        "seconds": 0.001
+      },
+      {
+        "name": "LifeAnalysisTests.BatchAnalysisTests testInvalidBatchInputsFailInsteadOfDroppingSamples",
+        "seconds": 0.006
+      },
+      {
+        "name": "LifeAnalysisTests.BatchAnalysisTests testMultiHookLossIsOneAggregateAndNeverAllocatedToEachHook",
+        "seconds": 0.0
+      },
+      {
+        "name": "LifeAnalysisTests.BatchAnalysisTests testPoliciesExecuteDifferentChoicesAndSampleOrderDoesNotChangeReport",
+        "seconds": 6.083
+      },
+      {
+        "name": "LifeAnalysisTests.BatchAnalysisTests testRatesDistinguishNoOpportunityFromObservedZero",
+        "seconds": 0.0
+      },
+      {
+        "name": "LifeAnalysisTests.ExperienceAuditTests testRecoveryIsAnAvailableStoryNotAClaimOfAcceptedHelp",
+        "seconds": 0.06
+      }
+    ],
+    "rawSHA256": "9efe0bfa062a135bc9a90abed3225fe16320d1ec5a4407340e139a93ad44e6fc"
+  },
+  "python": {
+    "count": 44,
+    "failed": 0,
+    "rawSHA256": "259fd08b217a7ac3852c18b294bd75a6fdef18a0794699caf358af4f938bef53"
+  },
+  "regression": {
+    "case": "testNatureContinuationDoesNotInventFirstTimeExperience",
+    "before": "FAIL reproduced1",
+    "after": "PASS in fresh152suite"
+  },
+  "basic": {
+    "status": "FAIL",
+    "checksPass": 5,
+    "reason": "session_envelope transitionalkey admitted2026-07-29 age91d exceedsmax90d",
+    "frameworkUnchanged": true
+  },
+  "boundary": "Local tests; final remote CI separately checked for exact pushed HEAD. No child/physicaldevice/VoiceOver acceptance."
+}

@@ -1,0 +1,55 @@
+{
+  "base": "30d60007ca43431a740c093f17c75a5e75dc0fb6",
+  "renderSourceDigest": "102249591cf1f29a6f0b08fd3691bd3ce6234eb80b39b8fea0b4ed7a4654bf8b",
+  "native": [
+    {
+      "device": "iPhone-SE-3rd-generation",
+      "states": 31,
+      "controlReachability": true,
+      "archiveChecksumsMatch": true,
+      "sourceHashesMatch": true,
+      "warnings": []
+    },
+    {
+      "device": "iPhone-17",
+      "states": 31,
+      "controlReachability": true,
+      "archiveChecksumsMatch": true,
+      "sourceHashesMatch": true,
+      "warnings": []
+    }
+  ],
+  "unchangedEngineDataPersistenceAndOriginal30UITests": true,
+  "deletedSimulators": [
+    "1E05D07E-DF82-4ADC-A710-4A027F0CDB4D",
+    "2373088D-7725-4DE8-8E6A-B02370425E1F",
+    "3AD7B8C6-42FC-4BF4-93D1-DEB2C249DE11",
+    "64F10F8C-77DB-4332-8D28-4594EEB22D3D",
+    "69886FAA-28AE-4D11-A0A4-9B051A58AB4B",
+    "77BDA91E-7618-4F09-990D-1F5ACC1EBDC8",
+    "98F8A83C-B3BB-4CE3-B631-48BEB89113D9",
+    "9AC96E6C-EA91-4F77-84F4-23351FE117B4",
+    "D6BABA7D-4A36-42FD-AB09-E00654B46B48",
+    "DC35EDA7-4D3E-45B4-B3A6-EB913BACACA6",
+    "E90EB38A-AE22-4CA1-AD05-1C125D66F8B4"
+  ],
+  "claimBoundary": [
+    "Native automated evidence, not human child comprehension or physical iPhone acceptance",
+    "Basic governance known91daytransitionalkeyfailure remains separate",
+    "Original capture failures retained in baseline/iPhone-17/failure.json and CRITIC.md"
+  ],
+  "nativeSaveFailure": {
+    "devices": [
+      "iPhone-SE-3rd-generation",
+      "iPhone-17"
+    ],
+    "cases": 2,
+    "result": "PASS",
+    "invariants": [
+      "Original archive checksum unchanged on failure",
+      "Invitation pose unchanged on failure",
+      "No committed action published before save",
+      "Retry saves actual friendship interaction"
+    ]
+  }
+}

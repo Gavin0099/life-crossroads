@@ -1,0 +1,40 @@
+Building for production...
+[Using on-disk description]
+[1 / 1]
+[2 / 5] LifePresentationTests-product
+[3 / 6] LifePresentationTests-product
+[8 / 12] LifePresentationTests-product
+[10 / 12] LifePresentationTests-product
+Build complete! (3.64秒)
+Test Suite 'Selected tests' started at 2026-10-28 14:42:33.291.
+Test Suite 'LifePresentationTests.xctest' started at 2026-10-28 14:42:33.292.
+Test Suite 'WorldCastTests' started at 2026-10-28 14:42:33.292.
+Test Case '-[LifePresentationTests.WorldCastTests testNatureContinuationDoesNotInventFirstTimeExperience]' started.
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/LifePresentationTests/WorldCastTests.swift:120: error: -[LifePresentationTests.WorldCastTests testNatureContinuationDoesNotInventFirstTimeExperience] : XCTAssertFalse failed - A pose cannot infer that observation happened for the first time
+Test Case '-[LifePresentationTests.WorldCastTests testNatureContinuationDoesNotInventFirstTimeExperience]' failed (0.100 seconds).
+Test Suite 'WorldCastTests' failed at 2026-10-28 14:42:33.393.
+	 Executed 1 test, with 1 failure (0 unexpected) in 0.100 (0.101) seconds
+Test Suite 'LifePresentationTests.xctest' failed at 2026-10-28 14:42:33.393.
+	 Executed 1 test, with 1 failure (0 unexpected) in 0.100 (0.101) seconds
+Test Suite 'Selected tests' failed at 2026-10-28 14:42:33.393.
+	 Executed 1 test, with 1 failure (0 unexpected) in 0.100 (0.103) seconds
+Test Suite 'Selected tests' started at 2026-10-28 14:42:33.489.
+Test Suite 'LifePersistenceTests.xctest' started at 2026-10-28 14:42:33.489.
+Test Suite 'LifePersistenceTests.xctest' passed at 2026-10-28 14:42:33.489.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-28 14:42:33.489.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'Selected tests' started at 2026-10-28 14:42:33.572.
+Test Suite 'LifeDomainTests.xctest' started at 2026-10-28 14:42:33.572.
+Test Suite 'LifeDomainTests.xctest' passed at 2026-10-28 14:42:33.572.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-28 14:42:33.572.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'Selected tests' started at 2026-10-28 14:42:33.654.
+Test Suite 'LifeAnalysisTests.xctest' started at 2026-10-28 14:42:33.654.
+Test Suite 'LifeAnalysisTests.xctest' passed at 2026-10-28 14:42:33.654.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-28 14:42:33.654.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Note: Some test targets reported failures:
+  - LifePresentationTests (XCTest)
