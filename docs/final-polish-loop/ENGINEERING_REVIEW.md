@@ -2,7 +2,7 @@
 
 Reviewer: `/root/final_polish_engineering`. Only this report is written by the reviewer; no product/test changes, Simulator, commit, push, merge or release.
 
-**Latest local Engineering Verdict: ACCEPT for the reviewed presentation delta. FP-E1 is CLOSED.** Final source/evidence binding and limitations are in the final section below; initial observations remain as history. This is not an approval of an unseen remote CI run, merge, release or product completion.
+**Latest local Engineering Verdict: ACCEPT — FP-E2's narrow repair is verified by two original regression cases and refreshed iPhone 17 evidence. FP-E1 remains CLOSED.** Final repaired-HEAD remote CI and SE recapture were not yet available to this reviewer; they remain separate pending checks. The FP-E2 follow-up below supersedes the intermediate conditional finding without erasing the failed CI history. This is not merge, release or product approval.
 
 ## Initial review — 2026-10-28
 
@@ -136,3 +136,30 @@ Independent Visual Critic retains FP-V4 large-text reading comfort and FP-V5 tra
 Physical iPhone operation, manual VoiceOver, target-age recognition, enjoyment, spontaneous replay and environment/choice comprehension remain untested. Do not infer 90–95% product completion, formal art approval, an all-green CI, or release readiness from this report. Stop this bounded Loop for owner playtesting; no additional Loop is authorized by the review.
 
 Final active follow-up charged conservatively **11:55:30–12:00:00 UTC (4 min 30 s)**, including context restoration and source/evidence review. Combined with the first turn: **10 min 02 s of the 20-minute reviewer cap**. Only this report was written; all other verification was read-only.
+
+## Remote CI correction — FP-E2, 2026-10-28
+
+The parent supplied the failed CI evidence for HEAD `c74fadf`, run `40685824136`. Reviewer independently read the retained raw log `artifacts/governance/final-polish-loop/remote-ci/ui-0-artifact/build-and-test.log`, the original UI test and the one-line repair. This is new adverse evidence; the preceding local ACCEPT must not be presented as proof that the original UI suite passed.
+
+- **Finding:** FP-E2, introduced P2 accessible-label compatibility regression; **status: repair implemented, verification pending**. Current-decision impact is **yes** for a clean engineering handoff/CI claim. Draft/HOLD remains.
+- **Failure:** the original `testBirthStoryParallelOriginalSaveFailureAndFullComparison` fails at `UITests/LifeCrossroadsUITests.swift:1093`: stored history exposes `先收好紙箱，留時間打球與休息`, while the captured outcome exposes `這次選擇之後，先收好紙箱，留時間打球與休息`. The raw case failed after 292.106 seconds. It is a confirmed new failure, distinct from the old governance expiry.
+- **Cause:** `visibleRecord` records the actual `chosenAction.label`, while `assertOriginalHistory` deliberately requires the exact same choice label for first/middle/last original history. Adding `.accessibilityLabel("這次選擇之後，" + trace.choiceTitle)` changed this observable contract although the visible `Text(trace.choiceTitle)` and stored choice ID did not change. The assertion is meaningful original-history consistency coverage and must not be weakened to accept the new prefix.
+- **Narrow repair reviewed:** remove only the explicit prefixed accessibility label from `CrossroadsView.feedback`; retain `Text(trace.choiceTitle)`, identifier `chosenAction`, accessibility value `trace.choiceID`, Dynamic Type font behavior and all story/save logic. SwiftUI's Text label now derives from the original choice title again. The source correction directly addresses the mismatch; it does not change Domain, archive bytes or test expectations. The original UI test is still byte-identical to the fixed PR20 base.
+- **Evidence limit:** this failure proves a UI semantic mismatch, not that original saved history was mutated. Conversely, source inspection alone does not prove the repaired App passes the full history/comparison path. Require the unchanged failing original case, relevant save/retry/comparison cases and source-bound final native recapture; then independently bind the repaired pushed HEAD and CI. No unseen local test or CI is counted as passed.
+- **Prior-review lesson:** the previous report explicitly disclosed that the local capture tests were not the original full-30 UI run, but source review did not catch this label dependency. Preserve the failed CI evidence and original regression test, not merely the subsequent successful rerun.
+
+This is a bounded regression correction, not a fourth visual Loop. No asset/Domain/test changes were requested or made by the reviewer. Source-only follow-up began **12:48:32 UTC**; final execution-evidence follow-up remains pending within the extra four-minute review allowance.
+
+### FP-E2 execution follow-up — local correction verified
+
+At **14:10 UTC**, reviewer independently inspected `artifacts/governance/final-polish-loop/remote-ci/local-ax-regression.log` and refreshed `artifacts/evidence/final-polish-loop/round3-ax/iPhone-17/` evidence.
+
+- The unchanged original `testBirthStoryParallelOriginalSaveFailureAndFullComparison` **passed in 475.437 s**. The unchanged original `testWorldFullLifeForkPreservesOriginalAndComparesRemainder` **passed in 432.846 s**. This is one local **2/2** run, zero failures, preserving exact-label assertions and original/alternate-history comparison. Its task device `F7FC82FF-0504-4054-92A5-C9E3F3AE2E93` was logged deleted and independently absent from the current device inventory.
+- Read the other retained remote failure logs: shard 1's `testForkPreservesOriginalResumesAfterRelaunchAndComparesFullRemainder` and shard 5's overview/world fork cases also fail on the same line 1093 prefix mismatch. This corroborates a common observable-label cause. It does **not** count those two additional paths as locally rerun or passed.
+- The refreshed iPhone 17 capture passes **3/3**, zero failures/skips/runtime warnings. Its **64** rendering/test/project/fixture hashes independently match current bytes, including repaired `CrossroadsView.swift` SHA-256 `2c6691e3944495527f6250b7f25e8fbab54d2bb03cc5b2e670ed2dd5bc240fd5`. All **52** PNG hashes match. This narrowed recapture contains **21** core matrix states, eight actual-clock samples and failure/retry pictures; do not relabel it the earlier 26-state set.
+- Refreshed in-transition observations are **734 ms at 13** and **742 ms at 32**, inside 700–820 ms; all four samples per age keep the previously reviewed archive SHA. Task device `6EA17190-FF88-4C72-8E33-91FD4C72103B` is independently absent after deletion.
+- `UITests/LifeCrossroadsUITests.swift` remains byte-identical to PR20. The correction removes only the prefixed label; it does not weaken tests or modify save/state/branch semantics. Therefore **FP-E2 is CLOSED for the locally verified repair**, and the local engineering verdict returns to **ACCEPT** for this corrected source.
+
+**Outstanding evidence boundary:** the repaired SE recapture was still running (no final runtime summary yet) when reviewed. The prior SE screenshots bind the earlier label implementation and are not silently promoted to final-current evidence. The new pushed HEAD's remote CI remains pending/unreviewed here. No claim that all original 30 UI cases now pass, no CI-all-green claim, and no independent SE-final approval is made. Parent must report those remaining results separately with the exact HEAD. Existing governance expiry and visual/real-player gaps remain unchanged.
+
+Additional correction review budget: source review **12:48:32–12:49:46 UTC**, charged 1m20; execution follow-up charged conservatively **14:10:44–14:13:00 UTC**, 2m16. Combined correction charge **3m36 of the extra 4m**, total reviewer charge **13m38**, below the original 20-minute cap. No Simulator, product/test mutation or new visual Loop was performed by this reviewer.

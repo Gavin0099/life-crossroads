@@ -697,7 +697,7 @@ struct CrossroadsView: View {
             }
             HStack(spacing: 12) {
                 Text(trace.choiceTitle).font(dynamicTypeSize.isAccessibilitySize ? .headline : .title2.bold())
-                    .accessibilityLabel("這次選擇之後，" + trace.choiceTitle).accessibilityIdentifier("chosenAction")
+                    .accessibilityIdentifier("chosenAction")
                     .accessibilityValue(trace.choiceID)
                 if !store.worldPreviewEnabled && trace.eventID != "teen-project" && !dynamicTypeSize.isAccessibilitySize {
                     Spacer(minLength: 0)

@@ -1,0 +1,24 @@
+    t =   212.93s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =   213.05s Find the "history.8.event" StaticText
+    t =   213.17s Find the "history.8.event" StaticText
+    t =   213.31s Checking existence of `"worldPlaybackControls" Any`
+LL07_REVEALED history.8.event: target=(84.0, 579.994506835937, 118.0, 20.333333333333258), visible=140.66666666666663...850.0, controls=(0.0, 0.0, 0.0, 0.0)
+    t =   214.16s Find the "history.8.event" StaticText
+    t =   214.34s Find the "history.8.event" StaticText
+    t =   214.49s Find the "history.8.choice" StaticText
+/Users/runner/work/life-crossroads/life-crossroads/UITests/LifeCrossroadsUITests.swift:1093: error: -[LifeCrossroadsUITests.LifeCrossroadsUITests testLifeOverviewFullForkPreservesOriginalAndComparesActualRemainder] : XCTAssertEqual failed: ("和大人把紙箱做成會動的玩具") is not equal to ("這次選擇之後，和大人把紙箱做成會動的玩具")
+    t =   216.49s Tear Down
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testLifeOverviewFullForkPreservesOriginalAndComparesActualRemainder]' failed (216.782 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testRestAfterChoiceComparisonKeepsThePreChoiceState]' started.
+    t =   169.96s Checking existence of `"history.8.event" StaticText`
+    t =   170.05s Find the "history.8.event" StaticText
+    t =   170.22s Find the "history.8.event" StaticText
+    t =   170.32s Find the "history.8.event" StaticText
+    t =   170.41s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =   170.52s Find the "history.8.event" StaticText
+    t =   170.62s Find the "history.8.event" StaticText
+    t =   170.73s Find the "history.8.choice" StaticText
+/Users/runner/work/life-crossroads/life-crossroads/UITests/LifeCrossroadsUITests.swift:1093: error: -[LifeCrossroadsUITests.LifeCrossroadsUITests testWorldFullLifeForkPreservesOriginalAndComparesRemainder] : XCTAssertEqual failed: ("和大人把紙箱做成會動的玩具") is not equal to ("這次選擇之後，和大人把紙箱做成會動的玩具")
+    t =   170.87s Tear Down
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testWorldFullLifeForkPreservesOriginalAndComparesRemainder]' failed (171.248 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testWorldSaveFailuresDoNotPublishReactionsOrAdvanceAndRetryWorks]' started.

@@ -1,0 +1,12 @@
+    t =   288.59s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =   288.71s Find the "history.8.event" StaticText
+    t =   288.83s Find the "history.8.event" StaticText
+    t =   288.99s Checking existence of `"worldPlaybackControls" Any`
+LL07_REVEALED history.8.event: target=(84.0, 670.3278401692703, 118.0, 20.333333333333258), visible=140.66666666666666...850.0, controls=(0.0, 0.0, 0.0, 0.0)
+    t =   289.83s Find the "history.8.event" StaticText
+    t =   289.97s Find the "history.8.event" StaticText
+    t =   290.11s Find the "history.8.choice" StaticText
+/Users/runner/work/life-crossroads/life-crossroads/UITests/LifeCrossroadsUITests.swift:1093: error: -[LifeCrossroadsUITests.LifeCrossroadsUITests testBirthStoryParallelOriginalSaveFailureAndFullComparison] : XCTAssertEqual failed: ("先收好紙箱，留時間打球與休息") is not equal to ("這次選擇之後，先收好紙箱，留時間打球與休息")
+    t =   291.72s Tear Down
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testBirthStoryParallelOriginalSaveFailureAndFullComparison]' failed (292.106 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testEightCountriesAndTaiwanComparisonLimitsAreVisible]' started.

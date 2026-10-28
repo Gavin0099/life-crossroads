@@ -1,0 +1,38 @@
+{
+  "head": "c74fadfaf6d6a063bf4e57260ba16cb1827c2118",
+  "run_id": 40685824136,
+  "finding": "FP-E2",
+  "cause": "Added accessibilityLabel prefix differs from the actual choice title shown in preserved history. Original test assertion is correct.",
+  "fix": "Remove only the extra accessibilityLabel; retain default trace.choiceTitle, identifier and choice ID.",
+  "corrected_crossroads_sha256": "2c6691e3944495527f6250b7f25e8fbab54d2bb03cc5b2e670ed2dd5bc240fd5",
+  "failures": [
+    {
+      "shard": 0,
+      "artifact_id": 12816408862,
+      "zip_sha256": "500caee7c4db2c813d6697dcc95b75380e3622a359a8135d43e89a93883c5c69",
+      "log_sha256": "62f09d4157b8a8b57cf4f898fc87ceaf00268f3b1feedccd30a9c5be27887a20",
+      "assertions": [
+        "/Users/runner/work/life-crossroads/life-crossroads/UITests/LifeCrossroadsUITests.swift:1093: error: -[LifeCrossroadsUITests.LifeCrossroadsUITests testBirthStoryParallelOriginalSaveFailureAndFullComparison] : XCTAssertEqual failed: (\"先收好紙箱，留時間打球與休息\") is not equal to (\"這次選擇之後，先收好紙箱，留時間打球與休息\")"
+      ]
+    },
+    {
+      "shard": 1,
+      "artifact_id": 12817475715,
+      "zip_sha256": "92575803eaa7f8884a05f8439a858f9fe3b3d1f0aebeb051a7eaefec236e31b4",
+      "log_sha256": "b013e4276b03c5526e4e0f1a075c9b69cc2ba32a84b2bd8e6d70d560dd2d0127",
+      "assertions": [
+        "/Users/runner/work/life-crossroads/life-crossroads/UITests/LifeCrossroadsUITests.swift:1093: error: -[LifeCrossroadsUITests.LifeCrossroadsUITests testForkPreservesOriginalResumesAfterRelaunchAndComparesFullRemainder] : XCTAssertEqual failed: (\"和大人把紙箱做成會動的玩具\") is not equal to (\"這次選擇之後，和大人把紙箱做成會動的玩具\")"
+      ]
+    },
+    {
+      "shard": 5,
+      "artifact_id": 12817158442,
+      "zip_sha256": "38a46db36b8cdbccd7738f324fcb4bcec92f9b9ce4bad6ce4b3a97d20bb4cf2b",
+      "log_sha256": "3e7d7c0650ee34096771622685b2342c21ff5f4bb5df941e605b314dab4df935",
+      "assertions": [
+        "/Users/runner/work/life-crossroads/life-crossroads/UITests/LifeCrossroadsUITests.swift:1093: error: -[LifeCrossroadsUITests.LifeCrossroadsUITests testLifeOverviewFullForkPreservesOriginalAndComparesActualRemainder] : XCTAssertEqual failed: (\"和大人把紙箱做成會動的玩具\") is not equal to (\"這次選擇之後，和大人把紙箱做成會動的玩具\")",
+        "/Users/runner/work/life-crossroads/life-crossroads/UITests/LifeCrossroadsUITests.swift:1093: error: -[LifeCrossroadsUITests.LifeCrossroadsUITests testWorldFullLifeForkPreservesOriginalAndComparesRemainder] : XCTAssertEqual failed: (\"和大人把紙箱做成會動的玩具\") is not equal to (\"這次選擇之後，和大人把紙箱做成會動的玩具\")"
+      ]
+    }
+  ]
+}
