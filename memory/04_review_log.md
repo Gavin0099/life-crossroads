@@ -212,3 +212,14 @@
 - Validation boundary: 152 Swift、44 Python通過；第三輪兩機62狀態來源與checksum核對；保存失敗重試兩機各1/1；11本機Simulator已delete。basic FAIL保留既有session_envelope期限問題；原30UI最新遠端CI尚待推送核對。詳docs/multi-cast-loop/VALIDATION.md。
 - Next action: 推送獨立Draft並核對最新CI；Owner與真人驗收及年齡辨識限制維持HOLD，不合併。
 - PLAN reconciliation: `updated`
+
+<!-- memory_record_projection:review-log:f167878e21194b7c2e5bc837a96d4813d484bb7470516da5e0ee04b9ecbff684 -->
+### Canonical memory checkpoint — 2026-10-28-interaction-memory-loop
+
+- Writer: `governance_tools.memory_record`
+- Record identity: `f167878e21194b7c2e5bc837a96d4813d484bb7470516da5e0ee04b9ecbff684`
+- Commit binding: `c706b215566828ecb14baa97e6a4004d5f3e8605` (bound)
+- Record: 互動與關係記憶有界Loop完成：真實求助兩時點、10→72保存歷史、三中間階段中立姿勢；修正現在事件誤寫童年選擇與大字裁切。Domain/Data/Persistence及原30UI/CI未改；獨立工程及視覺本片阻擋0。
+- Validation boundary: artifacts/evidence/interaction-memory-loop/verification.json與local-tests.json：初版全157Swift、最後6定向及獨立6、最後45Python；final3雙尺寸各19狀態，final2精準沿用真時序及保存失敗重試；8台任務Simulator已刪。Basic既有session_envelope91日超90日FAIL；新HEAD遠端CI待核。
+- Next action: 推送獨立Draft並核對最新HEAD CI，保持HOLD；真人/正式美術/連續自然動畫未驗收。active-task達壓力門檻，後續擴功能前另安排有界memory整理，本輪僅收束交付。
+- PLAN reconciliation: `updated`
