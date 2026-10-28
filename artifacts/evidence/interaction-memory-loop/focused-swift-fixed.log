@@ -1,0 +1,44 @@
+Building for debugging...
+[Using on-disk description]
+[1 / 27]
+[2 / 13] LifePresentationTests-product
+[4 / 15] LifePresentationTests-product
+[10 / 14] LifePresentationTests-product
+Build complete! (1.16秒)
+Test Suite 'Selected tests' started at 2026-10-28 16:33:34.227.
+Test Suite 'LifePresentationTests.xctest' started at 2026-10-28 16:33:34.227.
+Test Suite 'WorldRelationshipMemoryTests' started at 2026-10-28 16:33:34.227.
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testMismatchedBranchSourcesAndActorsCannotCreateMemory]' started.
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testMismatchedBranchSourcesAndActorsCannotCreateMemory]' passed (1.740 seconds).
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testNoMemoryForInvitationsRestOrRequests]' started.
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testNoMemoryForInvitationsRestOrRequests]' passed (1.074 seconds).
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testPairedHistoryUsesExactPastAndPresentReceipts]' started.
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testPairedHistoryUsesExactPastAndPresentReceipts]' passed (0.278 seconds).
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testReplayRestoreAndOriginalBytesRemainIdentical]' started.
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testReplayRestoreAndOriginalBytesRemainIdentical]' passed (1.085 seconds).
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testRequestBeatsNeverPromoteToAgreementOrParticipation]' started.
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testRequestBeatsNeverPromoteToAgreementOrParticipation]' passed (0.493 seconds).
+Test Suite 'WorldRelationshipMemoryTests' passed at 2026-10-28 16:33:38.898.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 4.671 (4.671) seconds
+Test Suite 'LifePresentationTests.xctest' passed at 2026-10-28 16:33:38.898.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 4.671 (4.671) seconds
+Test Suite 'Selected tests' passed at 2026-10-28 16:33:38.898.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 4.671 (4.672) seconds
+Test Suite 'Selected tests' started at 2026-10-28 16:33:38.985.
+Test Suite 'LifePersistenceTests.xctest' started at 2026-10-28 16:33:38.985.
+Test Suite 'LifePersistenceTests.xctest' passed at 2026-10-28 16:33:38.985.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-28 16:33:38.985.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'Selected tests' started at 2026-10-28 16:33:39.070.
+Test Suite 'LifeDomainTests.xctest' started at 2026-10-28 16:33:39.071.
+Test Suite 'LifeDomainTests.xctest' passed at 2026-10-28 16:33:39.071.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-28 16:33:39.071.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'Selected tests' started at 2026-10-28 16:33:39.157.
+Test Suite 'LifeAnalysisTests.xctest' started at 2026-10-28 16:33:39.157.
+Test Suite 'LifeAnalysisTests.xctest' passed at 2026-10-28 16:33:39.157.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-28 16:33:39.157.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds

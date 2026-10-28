@@ -1,0 +1,148 @@
+Created visual Simulator: D50C928E-A598-4EE0-AE07-7CD044CD409E runtime=com.apple.CoreSimulator.SimRuntime.iOS-27-0
+Monitoring boot status for IM-round1-iPhone-SE-3rd-generation (D50C928E-A598-4EE0-AE07-7CD044CD409E).
+[2026-10-28 08:34:15 +0000] Status=1, isTerminal=NO, Elapsed=00:01.
+	Waiting on BackBoard
+
+[2026-10-28 08:34:15 +0000] Status=2, isTerminal=NO, Elapsed=00:01.
+	Waiting on Data Migration
+		Reason:(null)
+		Migration Elapsed:00:00 seconds
+
+[2026-10-28 08:34:16 +0000] Status=2, isTerminal=NO, Elapsed=00:02.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.MobileContainerManager.ContainerMigrator (ContainerMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:00 seconds
+
+[2026-10-28 08:34:17 +0000] Status=2, isTerminal=NO, Elapsed=00:03.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:01 seconds
+
+[2026-10-28 08:34:18 +0000] Status=2, isTerminal=NO, Elapsed=00:04.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:02 seconds
+
+[2026-10-28 08:34:19 +0000] Status=2, isTerminal=NO, Elapsed=00:05.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:03 seconds
+
+[2026-10-28 08:34:20 +0000] Status=2, isTerminal=NO, Elapsed=00:06.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:04 seconds
+
+[2026-10-28 08:34:21 +0000] Status=2, isTerminal=NO, Elapsed=00:07.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:05 seconds
+
+[2026-10-28 08:34:22 +0000] Status=2, isTerminal=NO, Elapsed=00:08.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:06 seconds
+
+[2026-10-28 08:34:23 +0000] Status=2, isTerminal=NO, Elapsed=00:09.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:07 seconds
+
+[2026-10-28 08:34:24 +0000] Status=2, isTerminal=NO, Elapsed=00:10.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:08 seconds
+
+[2026-10-28 08:34:25 +0000] Status=2, isTerminal=NO, Elapsed=00:11.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:09 seconds
+
+[2026-10-28 08:34:27 +0000] Status=2, isTerminal=NO, Elapsed=00:13.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:10 seconds
+
+[2026-10-28 08:34:27 +0000] Status=2, isTerminal=NO, Elapsed=00:14.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:11 seconds
+
+[2026-10-28 08:34:29 +0000] Status=2, isTerminal=NO, Elapsed=00:15.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:12 seconds
+
+[2026-10-28 08:34:31 +0000] Status=2, isTerminal=NO, Elapsed=00:17.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:14 seconds
+
+[2026-10-28 08:34:32 +0000] Status=2, isTerminal=NO, Elapsed=00:19.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.managedconfiguration.migrator (MCProfile.migrator, user-agnostic) (Concurrent: Running plugin com.apple.appleaccount.migrator (AppleAccountMigrator.migrator, concurrent after com.apple.appleaccount.mergebuddyprovisioningresponse.migrator))
+		Migration Elapsed:00:16 seconds
+
+[2026-10-28 08:34:33 +0000] Status=2, isTerminal=NO, Elapsed=00:20.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.managedconfiguration.migrator (MCProfile.migrator, user-agnostic) (Concurrent: Running plugin com.apple.appleaccount.migrator (AppleAccountMigrator.migrator, concurrent after com.apple.appleaccount.mergebuddyprovisioningresponse.migrator))
+		Migration Elapsed:00:17 seconds
+
+[2026-10-28 08:34:34 +0000] Status=2, isTerminal=NO, Elapsed=00:20.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.managedconfiguration.migrator (MCProfile.migrator, user-agnostic)
+		Migration Elapsed:00:18 seconds
+
+[2026-10-28 08:34:34 +0000] Status=2, isTerminal=NO, Elapsed=00:21.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.managedconfiguration.migrator (MCProfile.migrator, user-agnostic)
+		Migration Elapsed:00:18 seconds
+
+[2026-10-28 08:34:35 +0000] Status=2, isTerminal=NO, Elapsed=00:21.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.managedconfiguration.migrator (MCProfile.migrator, user-agnostic)
+		Migration Elapsed:00:19 seconds
+
+[2026-10-28 08:34:36 +0000] Status=2, isTerminal=NO, Elapsed=00:22.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.managedconfiguration.migrator (MCProfile.migrator, user-agnostic)
+		Migration Elapsed:00:20 seconds
+
+[2026-10-28 08:34:41 +0000] Status=2, isTerminal=NO, Elapsed=00:27.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.managedconfiguration.migrator (MCProfile.migrator, user-agnostic)
+		Migration Elapsed:00:21 seconds
+
+[2026-10-28 08:34:41 +0000] Status=2, isTerminal=NO, Elapsed=00:27.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.WebBookmarks.migrator (WebBookmarks.migrator)
+		Migration Elapsed:00:25 seconds
+
+[2026-10-28 08:34:42 +0000] Status=2, isTerminal=NO, Elapsed=00:28.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.MobileSafari.migrator (MobileSafari.migrator)
+		Migration Elapsed:00:26 seconds
+
+[2026-10-28 08:34:45 +0000] Status=4294967295, isTerminal=YES, Elapsed=00:31.
+	Finished
+
+SwiftUI publication regression: no matching runtime issue reported
+Exported 14 attachments for: InteractionCaptureTests/testReplayValidatedNativeScenes():
+File: 72E61E40-EDFC-471B-84D9-A72885DF66FA.png, suggested name: "72-neighbor-normal-scene_0_641BD2D8-A8AC-4EEA-A2E5-D5DCAECB9B94.png"
+File: A5ECF304-0631-424C-A91E-D88F842FDA1E.png, suggested name: "72-neighbor-normal-screen_0_CA959C23-5E80-455C-A861-6BE0FDBE70EB.png"
+File: 60EF4803-AD37-4450-81B7-496F6E1B5C91.png, suggested name: "72-ahe-normal-scene_0_3D3C874F-ED50-4368-9F6D-1406D456931C.png"
+File: C317D6B5-7B78-4F62-BC92-AAE6F68CB194.png, suggested name: "72-ahe-normal-screen_0_94310639-B57D-4719-9158-0507F7B58986.png"
+File: 189DC67B-1D48-4FD4-AF82-A8574DB17702.png, suggested name: "32-ask-normal-scene_0_87434593-B62D-4506-A430-D782F556F72D.png"
+File: 1CF6E086-BDAB-4F5C-A368-BAC22A12D1E4.png, suggested name: "32-ask-normal-screen_0_380AC762-4F7C-4033-AE90-359B7F3AAB86.png"
+File: 0F008964-03A7-42E6-9D30-99F601D103C6.png, suggested name: "13-ask-normal-scene_0_DB2A9ED0-8FF0-4F0F-898F-3636A25A2A8E.png"
+File: 9F5FA2D2-FDB0-48B6-BE50-DD447CB0B004.png, suggested name: "13-ask-normal-screen_0_9C8669DB-0A35-44C5-97AE-A5392A669DD6.png"
+File: 4299506D-C8BF-4129-8184-3E488EA74601.png, suggested name: "13-before-normal-scene_0_20F6C8FE-27F2-4E3D-947A-0F5062572226.png"
+File: 19B36448-CEBD-495D-A829-7FDB3FEE8B61.png, suggested name: "13-before-normal-screen_0_EE90930D-6226-4621-AAC8-84ADDE6C87F0.png"
+File: 449E61DE-4DDF-47E6-A6D5-BBCA3799AC36.png, suggested name: "25-neutral-normal-scene_0_76B28E90-E2C5-4B61-BA8F-3C66D47AE969.png"
+File: C1667808-E169-4A94-9E7B-8F96DC0AE76E.png, suggested name: "25-neutral-normal-screen_0_29BFB8A8-AE5E-4364-9638-E87D0D20D9D0.png"
+File: 3ABACA88-15EF-42BE-920C-B6644CE71498.png, suggested name: "45-neutral-normal-scene_0_9B84CE65-C201-4D19-90C6-8F90570A2654.png"
+File: D6ED058D-5694-43F9-BEC5-7252E8FC5CC3.png, suggested name: "45-neutral-normal-screen_0_DF19DF8A-BF41-4E1E-A491-988F0FA1E9DC.png"
+
+Generated manifest file with attachment details: /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/governance/interaction-memory-loop/round1-iPhone-SE-3rd-generation-attachments/manifest.json
+Exported 14 native screenshots to artifacts/evidence/interaction-memory-loop/round1/iPhone-SE-3rd-generation
+Deleted visual Simulator: D50C928E-A598-4EE0-AE07-7CD044CD409E

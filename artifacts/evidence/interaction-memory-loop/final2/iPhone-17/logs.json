@@ -1,0 +1,16 @@
+[
+  {
+    "file": "build.log",
+    "completeLog": "artifacts/governance/interaction-memory-loop/final2-iPhone-17-raw/build.log",
+    "completeSHA256": "82640062d2adb082a4177f4f8cbc35ad877a5313de2f7bf2d36417264eeb33fe",
+    "publishedSHA256": "bdaf09e511f9da525ae5b38b871d7debd57ce7cbcbdcf22a2a47d330064c03b9",
+    "projection": "test/capture verdict lines; complete log retained locally"
+  },
+  {
+    "file": "test.log",
+    "completeLog": "artifacts/governance/interaction-memory-loop/final2-iPhone-17-raw/test.log",
+    "completeSHA256": "92104cb028a4df389a29eba0bcd1d69f3d29ae2e7d87a654885756ee00261755",
+    "publishedSHA256": "f4c7929a6c2f1b40e1b8ad18dc87ef888baa88a0420b4a1498469621cdd8cf6f",
+    "projection": "test/capture verdict lines; complete log retained locally"
+  }
+]

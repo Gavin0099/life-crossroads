@@ -1,0 +1,29 @@
+{
+  "allPass": true,
+  "checks": {
+    "protectedDiffEmpty": true,
+    "iPhone-SE-3rd-generationSourceMatches": true,
+    "iPhone-SE-3rd-generationImageHashes": true,
+    "iPhone-SE-3rd-generationMatrix": true,
+    "iPhone-SE-3rd-generationSupplementImageHashes": true,
+    "iPhone-SE-3rd-generationNoRuntimeWarnings": true,
+    "iPhone-SE-3rd-generationSupplementScope": true,
+    "iPhone-SE-3rd-generationRequestClock": true,
+    "iPhone-SE-3rd-generationRequestSaveInvariant": true,
+    "iPhone-SE-3rd-generationFailureRetry": true,
+    "iPhone-SE-3rd-generationTestsPass": true,
+    "iPhone-17SourceMatches": true,
+    "iPhone-17ImageHashes": true,
+    "iPhone-17Matrix": true,
+    "iPhone-17SupplementImageHashes": true,
+    "iPhone-17NoRuntimeWarnings": true,
+    "iPhone-17SupplementScope": true,
+    "iPhone-17RequestClock": true,
+    "iPhone-17RequestSaveInvariant": true,
+    "iPhone-17FailureRetry": true,
+    "iPhone-17TestsPass": true,
+    "dedicatedSimulatorsDeleted": true,
+    "eightDedicatedDevices": true
+  },
+  "devices": 8
+}

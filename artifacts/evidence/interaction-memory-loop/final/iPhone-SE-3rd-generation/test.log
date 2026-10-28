@@ -1,0 +1,26 @@
+Test Case '-[LifeCrossroadsUITests.InteractionCaptureTests testActualSavedRequestHasTwoVisibleBeats]' started.
+VISUAL_REQUEST 13 expressing archive=8d85eb25d6f21ac085fa4fafec47c110567a6513133614c2ab49c8336a65f1b4 phaseMs=235 pause=actual-clock
+VISUAL_REQUEST 13 listening archive=8d85eb25d6f21ac085fa4fafec47c110567a6513133614c2ab49c8336a65f1b4 phaseMs=1435 pause=actual-clock
+VISUAL_REQUEST 32 expressing archive=942b8c7bf91ec42b4e135db52654af9c2dc2da07b6978921bf2c5499fe00f03a phaseMs=247 pause=actual-clock
+VISUAL_REQUEST 32 listening archive=942b8c7bf91ec42b4e135db52654af9c2dc2da07b6978921bf2c5499fe00f03a phaseMs=1414 pause=actual-clock
+Test Case '-[LifeCrossroadsUITests.InteractionCaptureTests testActualSavedRequestHasTwoVisibleBeats]' passed (59.673 seconds).
+Test Case '-[LifeCrossroadsUITests.InteractionCaptureTests testCastSaveFailureKeepsOriginalInvitation]' started.
+CAST_SAVE_FAILURE oldFileAndInvitationUnchanged=true retrySaved=true
+Test Case '-[LifeCrossroadsUITests.InteractionCaptureTests testCastSaveFailureKeepsOriginalInvitation]' passed (11.814 seconds).
+Test Case '-[LifeCrossroadsUITests.InteractionCaptureTests testReplayValidatedNativeScenes]' started.
+VISUAL_CAPTURE 10-before normal archive=b274ec6b7a5e8a0e03b1204413b77db5e5c7bb7e71e250295f57ce89363e5515 rect=(0.0, 125.0, 375.0, 176.0) scene=10歲，沐沐與阿禾面向彼此，正在聽這次邀請，尚未決定或開始合作。跨國共用的虛構舞台，不是當地實景。 value=故事記憶：留下一段休息空白，沒有答應額外負擔（8歲）
+VISUAL_CONTROL 10-before normal choice.invest hittable=true eventPaused|true|10|1|1:eventPaused|sceneHeight=175.89000000000001|reduceMotion=false|largeType=false|phaseMs=0
+VISUAL_CAPTURE 45-neutral normal archive=7c9c3e6916eb2fd2883071d61c661ca1ffbd7c3e19d08b7ed7ef35e772b1bced rect=(0.0, 125.0, 375.0, 176.0) scene=45歲，沐沐、阿禾在想像河畔。跨國共用的虛構舞台，不是當地實景。 value=故事記憶：先為照顧責任留出休息（39歲）。故事記憶：留下這次行動的記錄（17歲）。故事記憶：暫緩聯絡，仍可建立新連結（10歲）。故事記憶：留下線上創作經驗（13歲）。故事記憶：留下一段休息空白，沒有答應額外負擔（39歲）。39～45歲，你為「照顧自己」留了一段時間。。場景物件：39歲的留下休息空白。
+VISUAL_CONTROL 45-neutral normal choice.sendCard hittable=true eventPaused|true|45|9|1:eventPaused|sceneHeight=175.89000000000001|reduceMotion=false|largeType=false|phaseMs=0
+VISUAL_CAPTURE 25-neutral normal archive=5770a17c473a1ca134f104fb4e5a933360b7ad3cff11faf618b6da09e010fbdb rect=(0.0, 125.0, 375.0, 176.0) scene=25歲，沐沐、樹老師在想像河畔。跨國共用的虛構舞台，不是當地實景。 value=故事記憶：留下這次行動的記錄（17歲）。故事記憶：暫緩聯絡，仍可建立新連結（10歲）。故事記憶：留下線上創作經驗（13歲）。故事記憶：留下一段休息空白，沒有答應額外負擔（21歲）。場景物件：21歲的留下休息空白。
+VISUAL_CONTROL 25-neutral normal choice.repairTogether hittable=true eventPaused|true|25|6|1:eventPaused|sceneHeight=175.89000000000001|reduceMotion=false|largeType=false|phaseMs=0
+VISUAL_CAPTURE 13-before normal archive=c1074e81fb937ec13928efbf9b8012bab9fbcbe0938b1f2cc99f53df90411ebd rect=(0.0, 125.0, 375.0, 176.0) scene=13歲，沐沐與樹老師面向彼此，正在聽這次邀請，尚未決定或開始合作。跨國共用的虛構舞台，不是當地實景。 value=故事記憶：暫緩聯絡，仍可建立新連結（10歲）。故事記憶：留下一段休息空白，沒有答應額外負擔（12歲）
+VISUAL_CONTROL 13-before normal choice.invest hittable=true eventPaused|true|13|3|1:eventPaused|sceneHeight=175.89000000000001|reduceMotion=false|largeType=false|phaseMs=0
+VISUAL_CAPTURE 13-ask normal archive=8d85eb25d6f21ac085fa4fafec47c110567a6513133614c2ab49c8336a65f1b4 rect=(0.0, 125.0, 375.0, 176.0) scene=13歲，沐沐向樹老師說出需要；畫面呈現聆聽，尚未確認協助安排。跨國共用的虛構舞台，不是當地實景。 value=本次實際變化：健康0、財務0、人際+2、技能+1。與樹老師留下互動紀錄。。故事記憶：暫緩聯絡，仍可建立新連結（10歲）。故事記憶：這次未建立作品，仍可重新尋找起點（13歲）。故事記憶：留下一段休息空白，沒有答應額外負擔（12歲）。故事記憶：已提出求助，尚未確認協助安排（13歲）。場景物件：13歲的求助紀錄。
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/UITests/InteractionCaptureTests.swift:165: error: -[LifeCrossroadsUITests.InteractionCaptureTests testReplayValidatedNativeScenes] : failed - Could not reveal an unobscured tap target: continueLife; exists=true
+Test Case '-[LifeCrossroadsUITests.InteractionCaptureTests testReplayValidatedNativeScenes]' failed (129.943 seconds).
+	 Executed 3 tests, with 1 failure (0 unexpected) in 201.431 (201.436) seconds
+	 Executed 3 tests, with 1 failure (0 unexpected) in 201.431 (201.437) seconds
+	 Executed 3 tests, with 1 failure (0 unexpected) in 201.431 (201.438) seconds
+Failing tests:
+** TEST EXECUTE FAILED **

@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "task": "INTERACTION-MEMORY-LOOP",
+  "base_commit": "a79f667528b5b4cbeb2e543b6d9ca33a12d680f1",
+  "created_utc": "2026-10-28T08:30:03.459726+00:00",
+  "agent": "/root/interaction_age_art",
+  "generator": {
+    "tool": "image_gen.imagegen",
+    "model": "not_returned_by_tool",
+    "generation_count": 1,
+    "targeted_correction_count": 1,
+    "fallback_used": false
+  },
+  "provenance": {
+    "references": [
+      {
+        "path": "LifeCrossroads/App/Assets.xcassets/StoryCast.imageset/story-cast.png",
+        "sha256": "663bb1b1ce8a0af2ed99be72827a6e4bc69978eb00708df62f7b27cd85e068d8",
+        "bytes": 1581693,
+        "dimensions_px": {
+          "width": 1774,
+          "height": 887
+        },
+        "png_bit_depth": 8,
+        "png_color_type": 6,
+        "role": "identity and five-stage wardrobe",
+        "source_commit": "a79f667528b5b4cbeb2e543b6d9ca33a12d680f1"
+      },
+      {
+        "path": "LifeCrossroads/App/Assets.xcassets/MCMumu.imageset/MCMumu.png",
+        "sha256": "3fc4e1e79cbcbd921bd3dd79c87db999848326d5e3ed83d3eb6322c57107989c",
+        "bytes": 1260187,
+        "dimensions_px": {
+          "width": 1254,
+          "height": 1254
+        },
+        "png_bit_depth": 8,
+        "png_color_type": 6,
+        "role": "rendering style and level gaze",
+        "source_commit": "a79f667528b5b4cbeb2e543b6d9ca33a12d680f1"
+      },
+      {
+        "path": "LifeCrossroads/App/Assets.xcassets/VL2Neutral.imageset/VL2Neutral.png",
+        "sha256": "51df06e77d4fb8604ff64f5c54154072ccd573116b1af551df0f4388a8f1b8fc",
+        "bytes": 1146512,
+        "dimensions_px": {
+          "width": 1254,
+          "height": 1254
+        },
+        "png_bit_depth": 8,
+        "png_color_type": 6,
+        "role": "neutral stance; age ambiguity is a defect to improve",
+        "source_commit": "a79f667528b5b4cbeb2e543b6d9ca33a12d680f1"
+      }
+    ],
+    "external_art_inputs": [],
+    "originals_retained": true,
+    "copy_policy": "All PNG copies retain generator original bytes. Read-only PNG parsing only; runtime source rectangle cropping permitted."
+  },
+  "approval": {
+    "formal_art_approval": false,
+    "human_visual_review": false,
+    "legal_review_complete": false,
+    "rights_note": "Original AI generation using existing project-owned recorded AI reference assets only; no imported external artwork or asserted CC license. User authorizes Draft integration, not final legal/art release approval."
+  },
+  "assets": [
+    {
+      "path": "LifeCrossroads/App/Assets.xcassets/IMNeutralStages.imageset/IMNeutralStages.png",
+      "sha256": "f8d2148d0f5023d7bbcdd64cee21e44d6de804f9661cb0d432f5c9be9ef36b93",
+      "bytes": 1175690,
+      "dimensions_px": {
+        "width": 2172,
+        "height": 724
+      },
+      "png_bit_depth": 8,
+      "png_color_type": 6,
+      "name": "IMNeutralStages",
+      "kind": "formalCharacterAtlas",
+      "formal_character_id": "mumu",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18199-0a02-7590-a381-b304fffd26e7/exec-9512ee47-05bd-4479-9ded-f76c4097ce69.png",
+      "retained_original": "assets/interaction-memory-loop/originals/IMNeutralStages-v2-gaze.png",
+      "grid": {
+        "columns": 3,
+        "rows": 1,
+        "uniform": true,
+        "x_edges_px": [
+          0,
+          724,
+          1448,
+          2172
+        ],
+        "y_edges_px": [
+          0,
+          724
+        ]
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "adolescenceNeutral",
+          "stage_id": "adolescence",
+          "existing_ui_age_range_inclusive": [
+            13,
+            22
+          ],
+          "source_rect_px": {
+            "x": 0,
+            "y": 0,
+            "width": 724,
+            "height": 724
+          },
+          "visible_alpha_bbox_px": {
+            "x": 117,
+            "y": 95,
+            "width": 447,
+            "height": 606
+          },
+          "intended_semantics": "neutral attentive standing; no confirmed action or success"
+        },
+        {
+          "index": 1,
+          "id": "youngAdultNeutral",
+          "stage_id": "youngAdult",
+          "existing_ui_age_range_inclusive": [
+            23,
+            40
+          ],
+          "source_rect_px": {
+            "x": 724,
+            "y": 0,
+            "width": 724,
+            "height": 724
+          },
+          "visible_alpha_bbox_px": {
+            "x": 814,
+            "y": 35,
+            "width": 446,
+            "height": 671
+          },
+          "intended_semantics": "neutral attentive standing; no confirmed action or success"
+        },
+        {
+          "index": 2,
+          "id": "middleAgeNeutral",
+          "stage_id": "middleAge",
+          "existing_ui_age_range_inclusive": [
+            41,
+            60
+          ],
+          "source_rect_px": {
+            "x": 1448,
+            "y": 0,
+            "width": 724,
+            "height": 724
+          },
+          "visible_alpha_bbox_px": {
+            "x": 1504,
+            "y": 24,
+            "width": 478,
+            "height": 686
+          },
+          "intended_semantics": "neutral attentive standing; no confirmed action or success"
+        }
+      ],
+      "has_alpha_channel": true,
+      "fully_transparent_fraction": 0.674486559221839,
+      "byte_identical_to_original": true,
+      "approved_for_app": false,
+      "draft_integration_allowed": true,
+      "approval_scope": "Neutral protagonist in Draft only; does not replace actual activity poses or grant formal art acceptance",
+      "prompt_file": "assets/interaction-memory-loop/prompts/im-neutral-stages-v2-gaze.txt"
+    }
+  ],
+  "iterations": [
+    {
+      "path": "assets/interaction-memory-loop/originals/IMNeutralStages-v1.png",
+      "sha256": "2610cd48b4300d8b8d8b448bb61761d7504db10d76a4dd76e4f8cb495065994e",
+      "bytes": 1219186,
+      "dimensions_px": {
+        "width": 2172,
+        "height": 724
+      },
+      "png_bit_depth": 8,
+      "png_color_type": 6,
+      "version": "v1",
+      "prompt_file": "assets/interaction-memory-loop/prompts/im-neutral-stages-v1.txt",
+      "selected_for_draft": false,
+      "reason": "Age cues improved but heads and pupils still tilted upward; retained without runtime adoption."
+    },
+    {
+      "path": "assets/interaction-memory-loop/originals/IMNeutralStages-v2-gaze.png",
+      "sha256": "f8d2148d0f5023d7bbcdd64cee21e44d6de804f9661cb0d432f5c9be9ef36b93",
+      "bytes": 1175690,
+      "dimensions_px": {
+        "width": 2172,
+        "height": 724
+      },
+      "png_bit_depth": 8,
+      "png_color_type": 6,
+      "version": "v2-gaze",
+      "prompt_file": "assets/interaction-memory-loop/prompts/im-neutral-stages-v2-gaze.txt",
+      "selected_for_draft": true,
+      "reason": "One targeted gaze correction brings heads/pupils nearer horizontal; keeps body and wardrobe age cues. Coarse-age readability remains pending native blind critique."
+    }
+  ],
+  "technical_audit": {
+    "alpha_threshold": 12,
+    "has_alpha_channel": true,
+    "fully_transparent_fraction": 0.674486559221839,
+    "cutline_nontransparent_pixels": {
+      "724": 0,
+      "1448": 0
+    },
+    "byte_identical_to_retained_original": true,
+    "byte_identical_to_generator_original": true,
+    "source_rects_nonoverlapping_and_complete": true,
+    "checked_utc": "2026-10-28T08:30:03.457993+00:00",
+    "method": "Read-only RGBA parser reused from Tests/test_multicast_assets.py; no resampling, drawing, compositing, alpha repair or image conversion."
+  },
+  "visual_self_assessment": {
+    "identity": "ACCEPT for draft: brown otter, round ears, cream muzzle, amber scarf and teal wardrobe retained",
+    "age_stages": "PARTIAL pending native blind-read; middle age now has cardigan, broader torso and limited grey temples; teen/adult difference still needs small-screen confirmation",
+    "gaze": "ACCEPT for source atlas only: corrected to near-horizontal right gaze",
+    "interaction": "Not claimed; neutral standing has no activity or outcome semantics",
+    "exact_age": "Not claimed; 13/17 use the same stage and 25/32 use the same stage"
+  },
+  "untouched_boundaries": [
+    "existing assets and manifests",
+    "Domain",
+    "Data",
+    "Persistence",
+    "Seed",
+    "RNG",
+    "save schema",
+    "renderer",
+    "candidate cat and dog",
+    "formal cast roster"
+  ],
+  "handoff": "Root owns runtime mapping, native captures, independent Critic and final validation; child created no Simulator and no commits."
+}

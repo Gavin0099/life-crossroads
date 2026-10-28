@@ -29,11 +29,13 @@ public struct LifeWorldFrame: Equatable, Sendable {
     public let environmentGaps: [String]
     /// Present only for an applied, saved trace. Rendering cannot infer an action from resources.
     public var committedChoiceID: String? = nil
+    public var relationshipMemory: WorldRelationshipMemory? = nil
 
     /// Only presentation may override the moment; authoritative age and evidence stay unchanged.
     public func presenting(_ moment: LifeWorldMomentKind) -> Self {
         .init(stage: stage, age: age, visualFromAge: visualFromAge, sceneID: sceneID,
-              actors: actors, worldChanges: worldChanges, moment: moment, eventID: eventID, environmentGaps: environmentGaps, committedChoiceID: committedChoiceID)
+              actors: actors, worldChanges: worldChanges, moment: moment, eventID: eventID, environmentGaps: environmentGaps, committedChoiceID: committedChoiceID,
+              relationshipMemory: moment == .committedOutcome ? relationshipMemory : nil)
     }
 }
 
@@ -110,7 +112,8 @@ public enum WorldMomentProjector {
         let scene = state.age == 13 && eventID == "teen-project" ? "workshop" : stage == .childhood ? "river" : "community"
         return .init(stage: stage, age: state.age, visualFromAge: session.jumps.last?.fromAge,
             sceneID: scene, actors: actors, worldChanges: changes, moment: moment, eventID: eventID, environmentGaps: gaps,
-            committedChoiceID: session.phase == .reflecting ? session.traces.last?.choiceID : nil)
+            committedChoiceID: session.phase == .reflecting ? session.traces.last?.choiceID : nil,
+            relationshipMemory: WorldRelationshipMemory.project(session: session))
     }
 
     public static func memoryCaption(_ fact: StoryFact) -> String {

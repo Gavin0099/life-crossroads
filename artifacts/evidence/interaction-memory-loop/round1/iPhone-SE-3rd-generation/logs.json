@@ -1,0 +1,16 @@
+[
+  {
+    "file": "build.log",
+    "completeLog": "artifacts/governance/interaction-memory-loop/round1-iPhone-SE-3rd-generation-raw/build.log",
+    "completeSHA256": "ee702c7245e29c9282b672110eee23102eda0c48fb60355509f1a311edc271c7",
+    "publishedSHA256": "efabefe7c5d05116461f240eaa0a832349345e15a6f081d1712037c52e74ab63",
+    "projection": "test/capture verdict lines; complete log retained locally"
+  },
+  {
+    "file": "test.log",
+    "completeLog": "artifacts/governance/interaction-memory-loop/round1-iPhone-SE-3rd-generation-raw/test.log",
+    "completeSHA256": "fa7bebf57458f1c719aa02ae4f5fbfc952ecde8a6ebb832fe7fd410c095cd079",
+    "publishedSHA256": "981a78b46ecfc2b9aacd7d3688ea0dd84c8fc013481c81efb70e45d705f50963",
+    "projection": "test/capture verdict lines; complete log retained locally"
+  }
+]

@@ -27,11 +27,13 @@
 
 ## Current Phase
 
-P1 / MULTI-CAST-LOOP / Issue #18。依使用者2026-10-28指令，以PR17 `30d6000`為精確基底，在3～4 Agent-hours上限內盤點四位正式人物、補姿勢與年齡、整合真實互動並做三輪原生Critic。只改Presentation／App與素材驗證；Domain、Data、Persistence、Seed及存檔schema不改。貓狗五階段僅候選預覽；獨立Draft/HOLD，不合併、不發布。
+P1 / INTERACTION-MEMORY-LOOP。使用者2026-10-28授權有界Loop，以PR19 a79f667為基底，優先改善求助／聆聽／合作的可見差異及10→72歲關係記憶；必要時補三個易混淆中間年齡的中立姿勢。只改Presentation、App、素材及驗證，不改Domain、Data、Persistence、Seed或schema。獨立Draft/HOLD，不合併發布。
 
 ## Current Sprint
 
-MULTI-CAST本機整合完成：四位正式人物依真實event／actor／保存trace呈現10／13／17／25／32／72歲互動；貓狗五齡透明圖僅未核准Preview。152 Swift／44 Python、第三輪兩尺寸62狀態與保存失敗各1/1通過，11台專用Simulator已刪。獨立工程P2（觀察經驗被稱入門）已回歸修復；三輪原生Critic及8組Before/After留證，部分年齡／精準無字行為、真人與正式美術仍HOLD。詳[驗收](docs/multi-cast-loop/VALIDATION.md)。獨立Draft待推送／當前HEAD CI；basic既有治理期限FAIL不關Gate，沒有改Domain／Data／Persistence或原30UI，不合併發布。
+本輪本機整合與驗證已完成：求助兩pose讀共同clock、10→72真實關係記憶、三個中立年齡造型；獨立Loop抓到並修正前因錯置、頭尾裁切及大字標籤佈局。初版157 Swift、最後6定向、45 Python通過；最後雙機各19場景，兩機各4真時點與保存失敗重試，8台專用Simulator均delete。原核心及30UI未改；詳[驗收](docs/interaction-memory-loop/VALIDATION.md)。獨立工程與視覺覆審已無未解確認阻擋，待獨立Draft推送及最新HEAD CI；既有治理期限FAIL保留，真人與正式美術仍HOLD，不宣稱90–95%。
+
+前輪MULTI-CAST PR19 a79f667已推送Draft。CI run40648422339的152 Swift／44 Python／30 UI通過，整體因既有session_envelope期限FAIL；沒有關Gate。11台專用Simulator已刪。四位正式人物已接實際紀錄，貓狗五齡只候選；三輪視覺Critic保留年齡／互動及真人驗收缺口。詳docs/multi-cast-loop/VALIDATION.md與PR19最終CI補註。
 
 前輪PR17最新30d6000已核對145 Swift／41 Python／原30 UI成功；basic僅既有session_envelope逾90日期限FAIL，沒有關Gate或更新框架。前輪完整證據見docs/visual-loop-02。
 

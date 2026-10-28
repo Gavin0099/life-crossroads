@@ -1,0 +1,57 @@
+Building for debugging...
+[Constructing description]
+[Planning deferred tasks]
+[11 / 62] LifePresentation
+[13 / 68]
+[14 / 69] LifeDomain
+[16 / 70] LifeDomain
+[22 / 90] LifePersistence
+[34 / 93] LifePersistence-product
+[42 / 79] LifeAnalysis
+[49 / 72] LifePresentation
+[56 / 75] LifePersistenceTests-product
+[67 / 86] LifePresentationTests-product
+[73 / 82] LifePresentationTests-product
+[77 / 82] LifePresentationTests-product
+Build complete! (3.83秒)
+Test Suite 'Selected tests' started at 2026-10-28 16:30:53.936.
+Test Suite 'LifePresentationTests.xctest' started at 2026-10-28 16:30:53.937.
+Test Suite 'WorldCastTests' started at 2026-10-28 16:30:53.937.
+Test Case '-[LifePresentationTests.WorldCastTests testCastingRestoresReplaysAndNeverRewritesOriginalBytes]' started.
+Test Case '-[LifePresentationTests.WorldCastTests testCastingRestoresReplaysAndNeverRewritesOriginalBytes]' passed (2.689 seconds).
+Test Case '-[LifePresentationTests.WorldCastTests testInvitationIsNotParticipationAndRestDoesNotMakeHelpers]' started.
+Test Case '-[LifePresentationTests.WorldCastTests testInvitationIsNotParticipationAndRestDoesNotMakeHelpers]' passed (0.817 seconds).
+Test Case '-[LifePresentationTests.WorldCastTests testNatureContinuationDoesNotInventFirstTimeExperience]' started.
+Test Case '-[LifePresentationTests.WorldCastTests testNatureContinuationDoesNotInventFirstTimeExperience]' passed (0.148 seconds).
+Test Case '-[LifePresentationTests.WorldCastTests testOldFriendAndNewNeighborFollowSameSeedActualHistory]' started.
+Test Case '-[LifePresentationTests.WorldCastTests testOldFriendAndNewNeighborFollowSameSeedActualHistory]' passed (1.618 seconds).
+Test Case '-[LifePresentationTests.WorldCastTests testRealSavedRolesAndActivitiesMatchReviewedStoryMatrix]' started.
+Test Case '-[LifePresentationTests.WorldCastTests testRealSavedRolesAndActivitiesMatchReviewedStoryMatrix]' passed (0.817 seconds).
+Test Case '-[LifePresentationTests.WorldCastTests testRequestWithoutConfirmedHelpUsesRecipientNotSharedWork]' started.
+Test Case '-[LifePresentationTests.WorldCastTests testRequestWithoutConfirmedHelpUsesRecipientNotSharedWork]' passed (0.159 seconds).
+Test Case '-[LifePresentationTests.WorldCastTests testUnknownAndCandidateIdentitiesNeverBecomeStoryCast]' started.
+Test Case '-[LifePresentationTests.WorldCastTests testUnknownAndCandidateIdentitiesNeverBecomeStoryCast]' passed (0.035 seconds).
+Test Suite 'WorldCastTests' passed at 2026-10-28 16:31:00.220.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 6.282 (6.283) seconds
+Test Suite 'LifePresentationTests.xctest' passed at 2026-10-28 16:31:00.220.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 6.282 (6.283) seconds
+Test Suite 'Selected tests' passed at 2026-10-28 16:31:00.220.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 6.282 (6.285) seconds
+Test Suite 'Selected tests' started at 2026-10-28 16:31:00.303.
+Test Suite 'LifePersistenceTests.xctest' started at 2026-10-28 16:31:00.304.
+Test Suite 'LifePersistenceTests.xctest' passed at 2026-10-28 16:31:00.304.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-28 16:31:00.304.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'Selected tests' started at 2026-10-28 16:31:00.387.
+Test Suite 'LifeDomainTests.xctest' started at 2026-10-28 16:31:00.388.
+Test Suite 'LifeDomainTests.xctest' passed at 2026-10-28 16:31:00.388.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-28 16:31:00.388.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'Selected tests' started at 2026-10-28 16:31:00.470.
+Test Suite 'LifeAnalysisTests.xctest' started at 2026-10-28 16:31:00.471.
+Test Suite 'LifeAnalysisTests.xctest' passed at 2026-10-28 16:31:00.471.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-28 16:31:00.471.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds

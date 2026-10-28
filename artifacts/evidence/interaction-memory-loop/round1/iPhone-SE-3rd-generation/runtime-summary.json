@@ -1,0 +1,37 @@
+{
+  "devicesAndConfigurations": [
+    {
+      "device": {
+        "architecture": "arm64",
+        "deviceId": "D50C928E-A598-4EE0-AE07-7CD044CD409E",
+        "deviceName": "IM-round1-iPhone-SE-3rd-generation",
+        "modelName": "iPhone SE (3rd generation)",
+        "osBuildNumber": "24A434",
+        "osVersion": "27.0",
+        "platform": "iOS Simulator"
+      },
+      "expectedFailures": 0,
+      "failedTests": 0,
+      "passedTests": 1,
+      "skippedTests": 0,
+      "testPlanConfiguration": {
+        "configurationId": "1",
+        "configurationName": "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription": "LifeCrossroads · Built with macOS 27.0",
+  "expectedFailures": 0,
+  "failedTests": 0,
+  "finishTime": 1793176625.698,
+  "passedTests": 1,
+  "result": "Passed",
+  "runtimeWarnings": [],
+  "skippedTests": 0,
+  "startTime": 1793176550.082,
+  "statistics": [],
+  "testFailures": [],
+  "title": "Test - LifeCrossroads",
+  "topInsights": [],
+  "totalTestCount": 1
+}

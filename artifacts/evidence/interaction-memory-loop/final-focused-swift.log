@@ -1,0 +1,52 @@
+Another instance of SwiftPM (PID: 42234) is already running using '/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/.build', waiting until that process has finished execution...Building for debugging...
+[Computing dependencies]
+[1 / 1]
+[2 / 18] LifePresentation
+[4 / 20] LifePresentation
+[9 / 23] LifePresentation
+[12 / 18] LifePresentationTests-product
+[14 / 20] LifePersistenceTests-product
+[16 / 21] LifePersistenceTests-product
+[16 / 21] LifePresentationTests-product
+[20 / 23] LifePresentationTests-product
+[22 / 26] LifePresentationTests-product
+Build complete! (4.04秒)
+Test Suite 'Selected tests' started at 2026-10-28 16:55:59.505.
+Test Suite 'LifePresentationTests.xctest' started at 2026-10-28 16:55:59.508.
+Test Suite 'WorldRelationshipMemoryTests' started at 2026-10-28 16:55:59.508.
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testCurrentEventTitleCannotBecomeThePastChoice]' started.
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testCurrentEventTitleCannotBecomeThePastChoice]' passed (1.270 seconds).
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testMismatchedBranchSourcesAndActorsCannotCreateMemory]' started.
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testMismatchedBranchSourcesAndActorsCannotCreateMemory]' passed (3.996 seconds).
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testNoMemoryForInvitationsRestOrRequests]' started.
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testNoMemoryForInvitationsRestOrRequests]' passed (2.499 seconds).
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testPairedHistoryUsesExactPastAndPresentReceipts]' started.
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testPairedHistoryUsesExactPastAndPresentReceipts]' passed (0.807 seconds).
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testReplayRestoreAndOriginalBytesRemainIdentical]' started.
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testReplayRestoreAndOriginalBytesRemainIdentical]' passed (2.870 seconds).
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testRequestBeatsNeverPromoteToAgreementOrParticipation]' started.
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testRequestBeatsNeverPromoteToAgreementOrParticipation]' passed (1.479 seconds).
+Test Suite 'WorldRelationshipMemoryTests' passed at 2026-10-28 16:56:12.431.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 12.921 (12.923) seconds
+Test Suite 'LifePresentationTests.xctest' passed at 2026-10-28 16:56:12.431.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 12.921 (12.924) seconds
+Test Suite 'Selected tests' passed at 2026-10-28 16:56:12.431.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 12.921 (12.926) seconds
+Test Suite 'Selected tests' started at 2026-10-28 16:56:12.637.
+Test Suite 'LifePersistenceTests.xctest' started at 2026-10-28 16:56:12.639.
+Test Suite 'LifePersistenceTests.xctest' passed at 2026-10-28 16:56:12.639.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-28 16:56:12.639.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.002) seconds
+Test Suite 'Selected tests' started at 2026-10-28 16:56:12.852.
+Test Suite 'LifeDomainTests.xctest' started at 2026-10-28 16:56:12.853.
+Test Suite 'LifeDomainTests.xctest' passed at 2026-10-28 16:56:12.853.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-28 16:56:12.853.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'Selected tests' started at 2026-10-28 16:56:13.088.
+Test Suite 'LifeAnalysisTests.xctest' started at 2026-10-28 16:56:13.089.
+Test Suite 'LifeAnalysisTests.xctest' passed at 2026-10-28 16:56:13.089.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-28 16:56:13.089.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds

@@ -1,0 +1,7 @@
+framework-pin: PASS
+version-compatibility: PASS
+drift: WARN
+config-syntax: PASS
+shell-syntax: PASS
+python-syntax: PASS
+Evidence: /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/governance/basic/checks.json
