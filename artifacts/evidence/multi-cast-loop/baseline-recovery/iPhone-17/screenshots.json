@@ -1,0 +1,86 @@
+{
+  "xcresult": "artifacts/ios/MC-baseline-recovery-iPhone-17.xcresult",
+  "kind": "native iOS App, real replay-validated archives; scene is native element crop",
+  "images": [
+    {
+      "file": "72-neighbor-normal-scene.png",
+      "sha256": "8bca07cc145ff1d4cccc0ace4063b80959c60c7596bafe3ab392c6641d4e71b2",
+      "sourceAttachment": "CFD21CAB-844F-4744-9656-EE80D9CDEAA2.png"
+    },
+    {
+      "file": "72-neighbor-normal-screen.png",
+      "sha256": "51d01a4656df392883a5582624ac53b1cbd67896c1f2fd15dcaa4d58d14ffa57",
+      "sourceAttachment": "328D98D0-56EB-4493-BB74-8F67EB3F96B7.png"
+    },
+    {
+      "file": "72-ahe-normal-scene.png",
+      "sha256": "8bca07cc145ff1d4cccc0ace4063b80959c60c7596bafe3ab392c6641d4e71b2",
+      "sourceAttachment": "9770F1EB-9CE8-4264-AD5E-42AD8F095DB3.png"
+    },
+    {
+      "file": "72-ahe-normal-screen.png",
+      "sha256": "316841b7fa17e60ceea380f7748c1d55a6c699a62d65b3bd69aeadebec989843",
+      "sourceAttachment": "E15E2535-3F5F-416F-85E8-DD32C68120FE.png"
+    },
+    {
+      "file": "32-participating-normal-scene.png",
+      "sha256": "d556ee48c841cd465971ba66c56a9a237d246585dbdec54623927ffe4ce2d678",
+      "sourceAttachment": "9CB98A57-05F6-4A49-84CD-87BC808FA38F.png"
+    },
+    {
+      "file": "32-participating-normal-screen.png",
+      "sha256": "c2b04890c168d6f6ce57c3b0e1fa7ca616881192c6d87da1c46b4543e5cef114",
+      "sourceAttachment": "1B72C4A6-CB9B-49AC-8254-B2A784283BCD.png"
+    },
+    {
+      "file": "25-collective-normal-scene.png",
+      "sha256": "2c5770c4b364026471721f64f98a6cb34b224dcf87592e05bcf2087b3a126efe",
+      "sourceAttachment": "0B744089-869F-49C5-A6E7-22CBE632AF00.png"
+    },
+    {
+      "file": "25-collective-normal-screen.png",
+      "sha256": "5f0ed76db299529173b6ace1aac7b1a3bb148919ef9aed4f509f1691b3adb1fb",
+      "sourceAttachment": "C002AF76-2F95-4111-B232-A62836621AC7.png"
+    },
+    {
+      "file": "17-collective-normal-scene.png",
+      "sha256": "5b0a955788f9eaaa3f0682a671d5ca066f0ccb3dbbd847df6c1059599bf272dd",
+      "sourceAttachment": "B899D18F-1F5B-45D3-B228-DC6A2EF6DB5C.png"
+    },
+    {
+      "file": "17-collective-normal-screen.png",
+      "sha256": "6d3b7aef212a86270e510f4f4b77bd835541a5ce65abf8f30847e7ff0a1673dd",
+      "sourceAttachment": "5527968E-0406-47FF-B74A-3B8BC1F18EDA.png"
+    },
+    {
+      "file": "17-remote-normal-scene.png",
+      "sha256": "2a1c56f57d46eab2a21dc5ebfd49335400a18e900c0a00709f42b3cfdd68ef79",
+      "sourceAttachment": "C4F0B2B4-1A1E-492B-8DFA-E33AB79D4AA4.png"
+    },
+    {
+      "file": "17-remote-normal-screen.png",
+      "sha256": "d4ce910777a92d0ae41b36c7c9df31143ab57f2b07a3f349b5ffdd2d80753e4d",
+      "sourceAttachment": "E5EEB89A-79D4-4FF4-BDAC-3D7344197B42.png"
+    },
+    {
+      "file": "13-ask-normal-scene.png",
+      "sha256": "a1b399d70840cda6f128438f8b372e34074bf7b3a00142edf493ddea174bac04",
+      "sourceAttachment": "CD79232D-FAD5-4BD7-AE19-7CB170F89F90.png"
+    },
+    {
+      "file": "13-ask-normal-screen.png",
+      "sha256": "1508f3937c8dd30d30eb99fca7cfb4d6375465fdbf64758b0a4aada0d224574b",
+      "sourceAttachment": "347CC72B-4C2F-42C9-9C86-35B2521ABA4E.png"
+    },
+    {
+      "file": "10-friend-normal-scene.png",
+      "sha256": "751f86b438ce11e95b3ac6d763a89d2a797cd945da0db7de50f55615aa46aa7e",
+      "sourceAttachment": "D7AEBEDF-F5D6-4DC5-918F-470658B0DFBC.png"
+    },
+    {
+      "file": "10-friend-normal-screen.png",
+      "sha256": "0b774a2bdf75511ecc8665d7e1c62b2c1bb99debfa3e8771772416ed1d929599",
+      "sourceAttachment": "6849A559-4409-4F80-B13C-898BF4E7FD71.png"
+    }
+  ]
+}

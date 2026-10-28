@@ -20,7 +20,9 @@ struct LifeWorldScene: View {
         GeometryReader { geometry in
             let size = geometry.size
             ZStack {
-                if let activity = WorldActivity.project(frame) {
+                if let cast = WorldCastScene.project(frame) {
+                    castScene(cast, size: size)
+                } else if let activity = WorldActivity.project(frame) {
                     illustratedActivity(activity, size: size)
                 } else if let setting = WorldActivity.neutralSetting(frame) {
                     neutralScene(background: setting.background, cell: setting.cell, size: size)
@@ -58,6 +60,63 @@ struct LifeWorldScene: View {
         .transaction { $0.animation = nil }
     }
 
+    /// Separate people are selected from actual event evidence. Their contacted paper/tools
+    /// remain inside each pose cell; changing a pose never changes a saved story fact.
+    @ViewBuilder private func castScene(_ cast: WorldCastScene, size: CGSize) -> some View {
+        if cast.kind == .remoteExchange, let activity = WorldActivity.project(frame) {
+            illustratedActivity(activity, size: size)
+        } else {
+            ZStack {
+                if let scene = WorldSceneBitmaps.scene(cast.background, size: size) {
+                    Image(decorative: scene, scale: 1).resizable().frame(width: size.width, height: size.height)
+                }
+                let main = castMainPose(cast)
+                let other = castCompanionPose(cast)
+                let working = [.explaining, .sharedMaking, .pacedParticipation].contains(cast.kind)
+                if let companion = WorldSceneBitmaps.cell(other.atlas, index: other.cell, columns: other.columns, rows: other.rows) {
+                    grounded(companion, width: size.width * (working ? 0.33 : 0.40), height: size.height * 0.90,
+                             x: size.width * (working ? 0.79 : 0.72), floor: size.height * 0.98)
+                }
+                if let protagonist = WorldSceneBitmaps.cell(main.atlas, index: main.cell, columns: main.columns, rows: main.rows) {
+                    grounded(protagonist, width: size.width * (working ? 0.65 : 0.43), height: size.height * 0.94,
+                             x: size.width * (working ? 0.39 : 0.29), floor: size.height * 0.98)
+                }
+            }
+        }
+    }
+
+    private typealias CastPose = (atlas: String, cell: Int, columns: Int, rows: Int)
+    private func castMainPose(_ cast: WorldCastScene) -> CastPose {
+        if cast.kind == .invitation {
+            if cast.age == 10 { return ("StoryCast", 0, 4, 2) }
+            if cast.age == 72 { return ("StoryCast", 4, 4, 2) }
+            if cast.age == 32, WorldActivity.project(frame)?.kind == .protectedRest { return ("VL2Recovery32", 0, 2, 1) }
+            return ("VL2Neutral", cast.age == 13 ? 0 : cast.age == 17 ? 1 : cast.age == 25 ? 2 : 3, 2, 2)
+        }
+        switch cast.kind {
+        case .requesting where cast.age == 13: return ("VL2Teen13", 2, 2, 2)
+        case .explaining: return ("VL2Teen13", 1, 2, 2)
+        case .sharedMaking: return (cast.age == 17 ? "VL2Teen17" : "VL2Adult25", 1, 2, 1)
+        case .pacedParticipation: return ("VL2Recovery32", 1, 2, 1)
+        case .reunion, .newConnection: return ("MCMumu", 3, 2, 2)
+        case .planning: return ("StoryCast", 4, 4, 2)
+        default: return ("MCMumu", cast.age == 10 ? 0 : cast.age < 23 ? 1 : 2, 2, 2)
+        }
+    }
+    private func castCompanionPose(_ cast: WorldCastScene) -> CastPose {
+        switch cast.personID {
+        case "ahe":
+            let cell = cast.age < 13 ? (cast.kind == .conversation ? 1 : 0) : cast.age < 61 ? 3 : cast.kind == .reunion ? 5 : 4
+            return ("MCAhe", cell, 3, 2)
+        case "teacher":
+            let cell = cast.kind == .explaining ? 1 : cast.kind == .sharedMaking ? 2 : 0
+            return ("MCTeacher", cell, 2, 2)
+        default:
+            let cell = cast.age == 72 ? (cast.kind == .newConnection ? 5 : 4) : cast.kind == .pacedParticipation ? 3 : cast.kind == .requesting ? 0 : 1
+            return ("MCCheng", cell, 3, 2)
+        }
+    }
+
     private func neutralScene(background: String, cell: Int, size: CGSize) -> some View {
         ZStack {
             if let scene = WorldSceneBitmaps.scene(background, size: size) {
@@ -90,14 +149,14 @@ struct LifeWorldScene: View {
             }
             if hasCompanion && remote,
                let actor = WorldSceneBitmaps.cell(activity.atlas, index: activity.cell, columns: 2, rows: activity.rows),
-               let companion = WorldSceneBitmaps.cell("VL2Companions", index: 0, columns: 2, rows: 2) {
+               let companion = WorldSceneBitmaps.cell("MCTeacher", index: 0, columns: 2, rows: 2) {
                 // Bind the call inset to the monitor within the scaled actor bitmap, not viewport
                 // percentages: the world is shorter with Dynamic Type on a small phone.
                 let scale = min(size.width * 0.69 / CGFloat(actor.width), foregroundHeight / CGFloat(actor.height))
                 let actorWidth = CGFloat(actor.width) * scale
                 let actorHeight = CGFloat(actor.height) * scale
                 let portrait = companion.cropping(to: CGRect(x: 0, y: 0, width: companion.width, height: Int(Double(companion.height) * 0.64))) ?? companion
-                fitted(portrait, width: actorWidth * 0.13, height: actorHeight * 0.20)
+                fitted(portrait, width: actorWidth * 0.20, height: actorHeight * 0.26)
                     .padding(1).background(Color(red: 0.93, green: 0.92, blue: 0.82))
                     .overlay(RoundedRectangle(cornerRadius: 3).stroke(StoryPalette.forest, lineWidth: 1.5))
                     .clipShape(RoundedRectangle(cornerRadius: 3))
@@ -512,6 +571,9 @@ struct LifeWorldScene: View {
     }
 
     private var spokenScene: String {
+        if let cast = WorldCastScene.project(frame) {
+            return "\(frame.age)歲，\(cast.description)跨國共用的虛構舞台，不是當地實景。"
+        }
         let people = frame.actors.map { WorldMomentProjector.personName($0.personID) }.joined(separator: "、")
         let activity = WorldActivity.project(frame)
         let background = activity?.background ?? WorldActivity.neutralSetting(frame)?.background
@@ -557,8 +619,17 @@ struct LifeWorldScene: View {
         let key = "\(name)-\(index)"
         if let image = cellCache[key] { return image }
         guard let image = atlas(name), index >= 0, index < columns * rows else { return nil }
-        let width = image.width / columns, height = image.height / rows
-        guard let cropped = image.cropping(to: CGRect(x: index % columns * width, y: index / columns * height,
+        let cuts: [Int]? = name == "MCCatCandidate" ? [0,399,766,1201,1653,2011] : name == "MCDogCandidate" ? [0,406,797,1185,1609,1983] : nil
+        let column = index % columns
+        let x = cuts.map { $0[column] } ?? column * (image.width / columns)
+        let width = cuts.map { $0[column + 1] - $0[column] } ?? image.width / columns
+        // Reviewed transparent gutters in the original atlases are not necessarily at 50%.
+        // These pixel boundaries are checked against the asset provenance manifest.
+        let split = ["MCAhe": 484, "MCTeacher": 642, "MCCheng": 493, "MCMumu": 627][name]
+        let row = index / columns
+        let y = split.map { row == 0 ? 0 : $0 } ?? row * (image.height / rows)
+        let height = split.map { row == 0 ? $0 : image.height - $0 } ?? image.height / rows
+        guard let cropped = image.cropping(to: CGRect(x: x, y: y,
                                                        width: width, height: height)) else { return nil }
         // Trim only transparent atlas padding at render time; original generated PNG stays intact.
         var pixels = [UInt8](repeating: 0, count: width * height * 4)
@@ -585,3 +656,31 @@ struct LifeWorldScene: View {
         #endif
     }
 }
+
+#if DEBUG
+/// Candidate library only. This view is never selected by LifeWorldScene or the story engine.
+private struct CandidateCastPreview: View {
+    private let stages = ["童年", "青少年", "青年", "中年", "晚年"]
+    var body: some View {
+        ScrollView {
+            VStack(spacing: 16) {
+                Text("貓咪／狗狗候選・尚未核准").font(.headline)
+                Text("未加入正式人生，沒有故事姓名或出場事件。")
+                ForEach(0..<5) { age in
+                    VStack {
+                        Text(stages[age])
+                        HStack {
+                            ForEach(["MCCatCandidate", "MCDogCandidate"], id: \.self) { name in
+                                if let cell = WorldSceneBitmaps.cell(name, index: age, columns: 5, rows: 1) {
+                                    Image(decorative: cell, scale: 1).resizable().scaledToFit().frame(width: 130, height: 190)
+                                }
+                            }
+                        }
+                    }
+                }
+            }.padding()
+        }.background(StoryPalette.page)
+    }
+}
+#Preview("未核准候選・五階段貓狗") { CandidateCastPreview() }
+#endif

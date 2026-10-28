@@ -218,3 +218,9 @@ struct LifeWorldScene: View {
 完成區間的`.livedFocus`補上`factKey=lifeFocus`與實際`factValue`，直接來自focusHistory而不是猜caption。32歲保留空間可引用這段已完成記憶；只有已保存pacedRole才演出本次短時參與。`WorldActivity.neutralSetting`僅給未選之前的空手觀察姿勢與共用場景，不畫未接受機會。
 
 `WorldActivity`是純Swift的顯示指令，圖集/格位不表示國家真實設備或成效；同伴須有本事件的interacted actor。`LifeWorldScene`只負責CGImage快取、等格與透明邊界裁切、同一motion frame的光影及原生accessibility label。所有PNG原檔保留；既有StoryCast維持未涵蓋年齡/事件。`VISUAL_LOOP_CAPTURE`是測試專用編譯入口，正式App與原30個UI CI案例不編入。
+
+## MULTI-CAST-LOOP：正式人物與參與方式（2026-10-28）
+
+`WorldCastScene`延續ADR0005的唯讀呈現邊界；只選繪圖姿勢，不修改Domain或存檔。已知中文人名在projector轉成canonical ID，未知工作夥伴不能自動替換成動物。`inviter`只表示當前事件邀請；`interacted`保留當次關係紀錄。32歲已保存ask以`recipient`表示提出需要的對象，不表示答應支持。72歲invest／ask以保存trace的明確人物與resolved storyVariant投影`participant`：共同做風車或討論，各自用不同姿勢；rest不帶參與者。不能僅憑舊friendship記憶在無關事件畫出重逢。
+
+圖片選擇同時要求年齡、事件、已保存選項與對應actor證據。Animation／Reduced Motion不改casting，未保存前維持原frame。貓狗僅Debug SwiftUI Preview資產，不加入personID正規化或正式Scene。精確sourceRects是美術裁切邊界，不是人生資料欄位。

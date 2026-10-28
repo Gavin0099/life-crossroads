@@ -1,0 +1,6 @@
+{
+  "status": "SETUP_FAILURE",
+  "reason": "Capture shell edited during execution caused EOF after successful baseline build and before test; no product assertion ran.",
+  "cleanup": "Simulator69886FAA-28AE-4D11-A0A4-9B051A58AB4B deleted",
+  "recovery": "../baseline-recovery/iPhone-17 uses identical compiled baseline App"
+}

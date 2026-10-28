@@ -1,0 +1,17 @@
+...............................F............
+======================================================================
+FAIL: test_cat_and_dog_are_five_age_unapproved_candidates (test_multicast_assets.MultiCastAssetTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/test_multicast_assets.py", line 83, in test_cat_and_dog_are_five_age_unapproved_candidates
+    self.assertEqual(a['kind'],'candidateCharacterAtlas')
+AssertionError: 'candidateAtlas' != 'candidateCharacterAtlas'
+- candidateAtlas
++ candidateCharacterAtlas
+?          +++++++++
+
+
+----------------------------------------------------------------------
+Ran 44 tests in 23.276s
+
+FAILED (failures=1)

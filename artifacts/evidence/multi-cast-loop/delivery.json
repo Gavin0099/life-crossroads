@@ -1,0 +1,68 @@
+{
+  "mode": "VALIDATION",
+  "mode_source": "validation_command",
+  "task": "Issue18 MULTI-CAST-LOOP",
+  "task_authority": "user_request",
+  "scope": [
+    "LifeCrossroads/Presentation",
+    "LifeCrossroads/App/LifeWorldScene.swift",
+    "LifeCrossroads/Resources/Assets.xcassets/MC*",
+    "Tests",
+    "UITests/MultiCastCaptureTests.swift",
+    "tools/multi-cast-loop",
+    "docs/multi-cast-loop",
+    "artifacts/evidence/multi-cast-loop",
+    "PLAN.md",
+    "docs/life-loop-10h/CONTRACT.md",
+    "memory"
+  ],
+  "implementation_commit": "d6bf5fd5e4ea13a5004721f80188cf912bbeaa5f",
+  "base_commit": "30d60007ca43431a740c093f17c75a5e75dc0fb6",
+  "done": [
+    "四正式角色依實際保存trace及人物角色呈現互動",
+    "貓狗五階段透明候選與Debug Preview；沒有正式故事身份",
+    "三輪原生拍攝及獨立Critic；工程P2先失敗後修正",
+    "152 Swift、44 Python、62最終原生狀態及兩機保存失敗重試通過；11專用Simulator已刪",
+    "canonical memory writer及guard執行，沒有當前阻擋項"
+  ],
+  "claim_ceiling": [
+    "工程與本機原生驗證已完成；視覺PARTIAL",
+    "待推送獨立Draft與最新HEAD CI核對"
+  ],
+  "not_claimed": [
+    "90–95%產品完成",
+    "正式美術批准",
+    "真人兒少娛樂/啟發/重玩意願",
+    "實機VoiceOver驗收",
+    "CI全綠",
+    "合併或發布"
+  ],
+  "evidence_refs": [
+    {
+      "artifact": "artifacts/evidence/multi-cast-loop/validation/local-tests.json",
+      "result": "PASS"
+    },
+    {
+      "artifact": "artifacts/evidence/multi-cast-loop/verification.json",
+      "result": "PASS"
+    },
+    {
+      "artifact": "docs/multi-cast-loop/ENGINEERING_REVIEW.md",
+      "result": "PASS"
+    },
+    {
+      "artifact": "docs/multi-cast-loop/critics/round3.md",
+      "result": "NOT CLAIMED"
+    },
+    {
+      "artifact": "artifacts/evidence/multi-cast-loop/validation/basic-drift.log",
+      "result": "FAIL"
+    }
+  ],
+  "risk": [
+    "既有session_envelope過渡鍵期限使basic失敗；未關Gate",
+    "部分年齡、求助與歷史關係僅看圖仍有歧義；五齡動畫未完成",
+    "完整遠端30 UI尚待本分支CI，不以capture替代"
+  ],
+  "next_action": "推送獨立Draft，核對最新HEAD完整CI後供Owner review；保持HOLD不合併。"
+}

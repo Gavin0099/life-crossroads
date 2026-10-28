@@ -201,3 +201,14 @@
 - Validation boundary: artifacts/evidence/p1-experience/ci-sync/correction.json; artifacts/evidence/p1-experience/ci-sync/standard.json; artifacts/evidence/p1-experience/ci-sync/se.json; artifacts/governance/p1-completion/ci-sync-shards.log; artifacts/governance/p1-completion/ci-sync-basic.log
 - Next action: 完成有界獨立覆核與證據companion，更新Draft PR15並核對新HEAD完整CI；不合併不發布。
 - PLAN reconciliation: `updated`
+
+<!-- memory_record_projection:review-log:fc9b6ccef57fef99dfca0be977ffb464d8de1cf94ba5e6b4bca7e5954d87fc8d -->
+### Canonical memory checkpoint — 2026-10-28-multi-cast-loop
+
+- Writer: `governance_tools.memory_record`
+- Record identity: `fc9b6ccef57fef99dfca0be977ffb464d8de1cf94ba5e6b4bca7e5954d87fc8d`
+- Commit binding: `d6bf5fd` (bound)
+- Record: Issue18以PR17 30d6000實作四正式角色的真實紀錄互動、貓狗五齡候選Preview及三輪原生視覺覆審；工程P2已回歸修正。視覺最終PARTIAL，未合併發布。
+- Validation boundary: 152 Swift、44 Python通過；第三輪兩機62狀態來源與checksum核對；保存失敗重試兩機各1/1；11本機Simulator已delete。basic FAIL保留既有session_envelope期限問題；原30UI最新遠端CI尚待推送核對。詳docs/multi-cast-loop/VALIDATION.md。
+- Next action: 推送獨立Draft並核對最新CI；Owner與真人驗收及年齡辨識限制維持HOLD，不合併。
+- PLAN reconciliation: `updated`

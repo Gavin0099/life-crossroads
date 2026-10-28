@@ -1,0 +1,16 @@
+{
+  "xcresult": "artifacts/ios/MC-save-failure-iPhone-SE-3rd-generation-20261028T065613Z.xcresult",
+  "kind": "native iOS App, real replay-validated archives; scene is native element crop",
+  "images": [
+    {
+      "file": "10-retry-normal-scene.png",
+      "sha256": "450ae3567de6bfef97842baf64d8e99838c8b780a64ee5706d3cfb9f24bf8f77",
+      "sourceAttachment": "93E6E2ED-5729-4F6E-810E-3589489AA601.png"
+    },
+    {
+      "file": "10-savefailure-normal-scene.png",
+      "sha256": "8c47e9ff4bc0e2c3866396e29a29ff6981dccd3d568d4297ac3ee7e5d0233089",
+      "sourceAttachment": "BBC9A032-F223-4968-ABF0-2E52FD73C709.png"
+    }
+  ]
+}

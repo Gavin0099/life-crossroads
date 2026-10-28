@@ -1,0 +1,7 @@
+Test Case '-[LifeCrossroadsUITests.MultiCastCaptureTests testCastSaveFailureKeepsOriginalInvitation]' started.
+CAST_SAVE_FAILURE oldFileAndInvitationUnchanged=true retrySaved=true
+Test Case '-[LifeCrossroadsUITests.MultiCastCaptureTests testCastSaveFailureKeepsOriginalInvitation]' passed (15.177 seconds).
+	 Executed 1 test, with 0 failures (0 unexpected) in 15.177 (15.183) seconds
+	 Executed 1 test, with 0 failures (0 unexpected) in 15.177 (15.183) seconds
+	 Executed 1 test, with 0 failures (0 unexpected) in 15.177 (15.184) seconds
+** TEST EXECUTE SUCCEEDED **

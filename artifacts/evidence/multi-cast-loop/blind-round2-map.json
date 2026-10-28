@@ -1,0 +1,67 @@
+[
+  {
+    "blind": "A.png",
+    "source": "artifacts/evidence/multi-cast-loop/round2/iPhone-SE-3rd-generation/72-ahe-normal-scene.png",
+    "sha256": "40429b0109d376623dfca39af5bb5753f40b896f7951df4f9b958b8fea3f7286"
+  },
+  {
+    "blind": "B.png",
+    "source": "artifacts/evidence/multi-cast-loop/round2/iPhone-SE-3rd-generation/13-paper-normal-scene.png",
+    "sha256": "db29db4d0a762ebe226b78e0bd98504f012b6e06997d92b05094676fbd61540b"
+  },
+  {
+    "blind": "C.png",
+    "source": "artifacts/evidence/multi-cast-loop/round2/iPhone-SE-3rd-generation/10-friend-normal-scene.png",
+    "sha256": "450ae3567de6bfef97842baf64d8e99838c8b780a64ee5706d3cfb9f24bf8f77"
+  },
+  {
+    "blind": "D.png",
+    "source": "artifacts/evidence/multi-cast-loop/round2/iPhone-SE-3rd-generation/32-participating-normal-scene.png",
+    "sha256": "a4b6c7bb3da8f39790dbf98fce343aca3a8a7f5410bb58df5801791d2a0edcc0"
+  },
+  {
+    "blind": "E.png",
+    "source": "artifacts/evidence/multi-cast-loop/round2/iPhone-SE-3rd-generation/17-remote-normal-scene.png",
+    "sha256": "eb7fa67c8964fad1d8bfa30dd44b6558543dde6137dc7d8938891300e51ee8cd"
+  },
+  {
+    "blind": "F.png",
+    "source": "artifacts/evidence/multi-cast-loop/round2/iPhone-SE-3rd-generation/72-neighbor-normal-scene.png",
+    "sha256": "a9eb005f062068f60122612ac26beeb98b8c2860e125aa73966f01272a870f44"
+  },
+  {
+    "blind": "G.png",
+    "source": "artifacts/evidence/multi-cast-loop/round2/iPhone-SE-3rd-generation/13-ask-normal-scene.png",
+    "sha256": "0528a6c3316695fedd7dda425c3d5cb53fa0db596e6c57b09a65958ff852138d"
+  },
+  {
+    "blind": "H.png",
+    "source": "artifacts/evidence/multi-cast-loop/round2/iPhone-SE-3rd-generation/25-collective-normal-scene.png",
+    "sha256": "0922fbdc2f825c2608b43bb9cf93f7255133ca3ceaadb2f9eef981d01c888cf0"
+  },
+  {
+    "blind": "I.png",
+    "source": "artifacts/evidence/multi-cast-loop/round2/iPhone-SE-3rd-generation/17-collective-normal-scene.png",
+    "sha256": "3d5f51e735068d1b774ffa1db948664f5d73ee56529311ddc0ab3f3fc91488cc"
+  },
+  {
+    "blind": "J.png",
+    "source": "artifacts/evidence/multi-cast-loop/round2/iPhone-SE-3rd-generation/32-ask-normal-scene.png",
+    "sha256": "cce99c31f2d51bf4b06c67cfa05fb506d59d1fb759f318d239217b97e227cb76"
+  },
+  {
+    "blind": "K.png",
+    "source": "artifacts/evidence/multi-cast-loop/round2/iPhone-SE-3rd-generation/32-ahe-trail-normal-scene.png",
+    "sha256": "f151d3dbfe8268b35cb15ad64f6101192ee0f9e6fe504b56dc6387cf4a42b3d5"
+  },
+  {
+    "blind": "L.png",
+    "source": "artifacts/evidence/multi-cast-loop/round2/iPhone-SE-3rd-generation/13-rest-normal-scene.png",
+    "sha256": "14405de812e1f3e8b9f8667561e51f445af951425980eaf0771c2140f1c4af20"
+  },
+  {
+    "blind": "M.png",
+    "source": "artifacts/evidence/multi-cast-loop/round2/iPhone-SE-3rd-generation/72-ahe-large-scene.png",
+    "sha256": "e1ef368394e4fcaa7b6fbb449d2d4ccefdef7c5ec5fe99d3993f7c4bb103d30f"
+  }
+]

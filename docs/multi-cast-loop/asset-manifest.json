@@ -1,0 +1,887 @@
+{
+  "schema_version": 1,
+  "task": "MULTI-CAST-LOOP",
+  "issue": 18,
+  "base_commit": "30d60007ca43431a740c093f17c75a5e75dc0fb6",
+  "created_utc": "2026-10-28",
+  "agent": "/root/multicast_assets",
+  "started_utc": "2026-10-28T06:01:42Z",
+  "completed_utc": "2026-10-28T06:30:57Z",
+  "observed_elapsed_seconds": 1701,
+  "observed_work_intervals": [
+    {
+      "start": "2026-10-28T06:01:42Z",
+      "end": "2026-10-28T06:24:31Z",
+      "seconds": 1369
+    },
+    {
+      "start": "2026-10-28T06:25:25Z",
+      "end": "2026-10-28T06:30:57Z",
+      "seconds": 332
+    }
+  ],
+  "generator": {
+    "tool": "image_gen.imagegen",
+    "model": "not_returned_by_tool",
+    "generation_count": 10,
+    "fallback_used": false
+  },
+  "approval": {
+    "formal_art_approval": false,
+    "human_visual_review": false,
+    "legal_review_complete": false
+  },
+  "provenance": {
+    "identity_references": [
+      "LifeCrossroads/App/Assets.xcassets/StoryCast.imageset/story-cast.png",
+      "LifeCrossroads/App/Assets.xcassets/VL2Companions.imageset/VL2Companions.png"
+    ],
+    "external_art_inputs": [],
+    "originals_retained": true,
+    "copy_policy": "All PNG files are byte-identical copies of tool output. PIL was used ONLY for read-only alpha/dimension inspection. Runtime may crop source rectangles."
+  },
+  "assets": [
+    {
+      "name": "MCAhe",
+      "kind": "formalCharacterAtlas",
+      "path": "LifeCrossroads/App/Assets.xcassets/MCAhe.imageset/MCAhe.png",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18119-81ba-7390-ae24-1e14e677b6ee/exec-0a90d334-6f08-4c2a-9ac6-8890ace5dfcd.png",
+      "sha256": "9e88d52e5915d72505a9a74a209c885a2ff0bf699dfb72b7108d9407573de2f4",
+      "bytes": 2230071,
+      "dimensions_px": {
+        "width": 1536,
+        "height": 1024
+      },
+      "png_color_type": 6,
+      "has_alpha_channel": true,
+      "fully_transparent_fraction": 0.6637172698974609,
+      "byte_identical_to_original": true,
+      "grid": {
+        "columns": 3,
+        "rows": 2,
+        "uniform": false,
+        "x_edges_px": [
+          0,
+          512,
+          1024,
+          1536
+        ],
+        "y_edges_px": [
+          0,
+          484,
+          1024
+        ]
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "childConversation",
+          "source_rect_px": {
+            "x": 0,
+            "y": 0,
+            "width": 512,
+            "height": 484
+          },
+          "visible_alpha_bbox_px": {
+            "x": 104,
+            "y": 31,
+            "width": 353,
+            "height": 433
+          }
+        },
+        {
+          "index": 1,
+          "id": "childHappy",
+          "source_rect_px": {
+            "x": 512,
+            "y": 0,
+            "width": 512,
+            "height": 484
+          },
+          "visible_alpha_bbox_px": {
+            "x": 609,
+            "y": 31,
+            "width": 363,
+            "height": 433
+          }
+        },
+        {
+          "index": 2,
+          "id": "childDisappointed",
+          "source_rect_px": {
+            "x": 1024,
+            "y": 0,
+            "width": 512,
+            "height": 484
+          },
+          "visible_alpha_bbox_px": {
+            "x": 1170,
+            "y": 31,
+            "width": 284,
+            "height": 433
+          }
+        },
+        {
+          "index": 3,
+          "id": "adultConversation",
+          "source_rect_px": {
+            "x": 0,
+            "y": 484,
+            "width": 512,
+            "height": 540
+          },
+          "visible_alpha_bbox_px": {
+            "x": 80,
+            "y": 503,
+            "width": 404,
+            "height": 477
+          }
+        },
+        {
+          "index": 4,
+          "id": "elderListening",
+          "source_rect_px": {
+            "x": 512,
+            "y": 484,
+            "width": 512,
+            "height": 540
+          },
+          "visible_alpha_bbox_px": {
+            "x": 670,
+            "y": 506,
+            "width": 307,
+            "height": 473
+          }
+        },
+        {
+          "index": 5,
+          "id": "elderPinwheelReunion",
+          "source_rect_px": {
+            "x": 1024,
+            "y": 484,
+            "width": 512,
+            "height": 540
+          },
+          "visible_alpha_bbox_px": {
+            "x": 1095,
+            "y": 506,
+            "width": 408,
+            "height": 474
+          }
+        }
+      ],
+      "cut_boundary_alpha_above_12": {
+        "vertical": [
+          0,
+          0
+        ],
+        "horizontal": [
+          0
+        ]
+      },
+      "prompt_ids": [
+        "MCAhe",
+        "MCAhe_spacing"
+      ],
+      "approved_for_app": false,
+      "approval_scope": "Authorized Draft integration candidate; formal art approval pending",
+      "runtime_note": "Use explicit source_rect_px, never infer equal cells. No pixel editing. Only actual projected events and saved interactions may select a formal story pose.",
+      "legal_status": "AI-generated original derivative of repository-recorded AI candidates; external inputs none; legal/content-similarity review not complete; no independent license asserted."
+    },
+    {
+      "name": "MCTeacher",
+      "kind": "formalCharacterAtlas",
+      "path": "LifeCrossroads/App/Assets.xcassets/MCTeacher.imageset/MCTeacher.png",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18119-81ba-7390-ae24-1e14e677b6ee/exec-6bd232d8-f3b3-4893-9f16-1d14d658403e.png",
+      "sha256": "126d520d352c0e51f6c16e73f452fc390e4cd9d444d7d4cae2c35cad36c880df",
+      "bytes": 1669213,
+      "dimensions_px": {
+        "width": 1254,
+        "height": 1254
+      },
+      "png_color_type": 6,
+      "has_alpha_channel": true,
+      "fully_transparent_fraction": 0.5823266663105494,
+      "byte_identical_to_original": true,
+      "grid": {
+        "columns": 2,
+        "rows": 2,
+        "uniform": false,
+        "x_edges_px": [
+          0,
+          627,
+          1254
+        ],
+        "y_edges_px": [
+          0,
+          642,
+          1254
+        ]
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "listening",
+          "source_rect_px": {
+            "x": 0,
+            "y": 0,
+            "width": 627,
+            "height": 642
+          },
+          "visible_alpha_bbox_px": {
+            "x": 87,
+            "y": 63,
+            "width": 487,
+            "height": 565
+          }
+        },
+        {
+          "index": 1,
+          "id": "explaining",
+          "source_rect_px": {
+            "x": 627,
+            "y": 0,
+            "width": 627,
+            "height": 642
+          },
+          "visible_alpha_bbox_px": {
+            "x": 683,
+            "y": 91,
+            "width": 514,
+            "height": 547
+          }
+        },
+        {
+          "index": 2,
+          "id": "sharedMaking",
+          "source_rect_px": {
+            "x": 0,
+            "y": 642,
+            "width": 627,
+            "height": 612
+          },
+          "visible_alpha_bbox_px": {
+            "x": 128,
+            "y": 650,
+            "width": 479,
+            "height": 534
+          }
+        },
+        {
+          "index": 3,
+          "id": "encouraging",
+          "source_rect_px": {
+            "x": 627,
+            "y": 642,
+            "width": 627,
+            "height": 612
+          },
+          "visible_alpha_bbox_px": {
+            "x": 672,
+            "y": 646,
+            "width": 531,
+            "height": 541
+          }
+        }
+      ],
+      "cut_boundary_alpha_above_12": {
+        "vertical": [
+          0
+        ],
+        "horizontal": [
+          0
+        ]
+      },
+      "prompt_ids": [
+        "MCTeacher"
+      ],
+      "approved_for_app": false,
+      "approval_scope": "Authorized Draft integration candidate; formal art approval pending",
+      "runtime_note": "Use explicit source_rect_px, never infer equal cells. No pixel editing. Only actual projected events and saved interactions may select a formal story pose.",
+      "legal_status": "AI-generated original derivative of repository-recorded AI candidates; external inputs none; legal/content-similarity review not complete; no independent license asserted."
+    },
+    {
+      "name": "MCCheng",
+      "kind": "formalCharacterAtlas",
+      "path": "LifeCrossroads/App/Assets.xcassets/MCCheng.imageset/MCCheng.png",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18119-81ba-7390-ae24-1e14e677b6ee/exec-b7c06250-66d1-4ff5-b858-e040e7856b1c.png",
+      "sha256": "208e25a6951e730625ea254f494cebfbcffae4066083dcb85e4af4b3d8dfe869",
+      "bytes": 2307479,
+      "dimensions_px": {
+        "width": 1536,
+        "height": 1024
+      },
+      "png_color_type": 6,
+      "has_alpha_channel": true,
+      "fully_transparent_fraction": 0.6131636301676432,
+      "byte_identical_to_original": true,
+      "grid": {
+        "columns": 3,
+        "rows": 2,
+        "uniform": false,
+        "x_edges_px": [
+          0,
+          512,
+          1024,
+          1536
+        ],
+        "y_edges_px": [
+          0,
+          493,
+          1024
+        ]
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "asking",
+          "source_rect_px": {
+            "x": 0,
+            "y": 0,
+            "width": 512,
+            "height": 493
+          },
+          "visible_alpha_bbox_px": {
+            "x": 110,
+            "y": 14,
+            "width": 371,
+            "height": 478
+          }
+        },
+        {
+          "index": 1,
+          "id": "planning",
+          "source_rect_px": {
+            "x": 512,
+            "y": 0,
+            "width": 512,
+            "height": 493
+          },
+          "visible_alpha_bbox_px": {
+            "x": 630,
+            "y": 15,
+            "width": 322,
+            "height": 475
+          }
+        },
+        {
+          "index": 2,
+          "id": "dividingTask",
+          "source_rect_px": {
+            "x": 1024,
+            "y": 0,
+            "width": 512,
+            "height": 493
+          },
+          "visible_alpha_bbox_px": {
+            "x": 1031,
+            "y": 16,
+            "width": 402,
+            "height": 473
+          }
+        },
+        {
+          "index": 3,
+          "id": "rejoining",
+          "source_rect_px": {
+            "x": 0,
+            "y": 493,
+            "width": 512,
+            "height": 531
+          },
+          "visible_alpha_bbox_px": {
+            "x": 60,
+            "y": 499,
+            "width": 407,
+            "height": 491
+          }
+        },
+        {
+          "index": 4,
+          "id": "matureListening",
+          "source_rect_px": {
+            "x": 512,
+            "y": 493,
+            "width": 512,
+            "height": 531
+          },
+          "visible_alpha_bbox_px": {
+            "x": 633,
+            "y": 496,
+            "width": 312,
+            "height": 508
+          }
+        },
+        {
+          "index": 5,
+          "id": "maturePinwheelMaking",
+          "source_rect_px": {
+            "x": 1024,
+            "y": 493,
+            "width": 512,
+            "height": 531
+          },
+          "visible_alpha_bbox_px": {
+            "x": 1078,
+            "y": 495,
+            "width": 378,
+            "height": 510
+          }
+        }
+      ],
+      "cut_boundary_alpha_above_12": {
+        "vertical": [
+          0,
+          0
+        ],
+        "horizontal": [
+          0
+        ]
+      },
+      "prompt_ids": [
+        "MCCheng"
+      ],
+      "approved_for_app": false,
+      "approval_scope": "Authorized Draft integration candidate; formal art approval pending",
+      "runtime_note": "Use explicit source_rect_px, never infer equal cells. No pixel editing. Only actual projected events and saved interactions may select a formal story pose.",
+      "legal_status": "AI-generated original derivative of repository-recorded AI candidates; external inputs none; legal/content-similarity review not complete; no independent license asserted."
+    },
+    {
+      "name": "MCMumu",
+      "kind": "formalCharacterAtlas",
+      "path": "LifeCrossroads/App/Assets.xcassets/MCMumu.imageset/MCMumu.png",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18119-81ba-7390-ae24-1e14e677b6ee/exec-4a0cb38b-1b3f-4daa-9678-acd1dc6e6347.png",
+      "sha256": "3fc4e1e79cbcbd921bd3dd79c87db999848326d5e3ed83d3eb6322c57107989c",
+      "bytes": 1260187,
+      "dimensions_px": {
+        "width": 1254,
+        "height": 1254
+      },
+      "png_color_type": 6,
+      "has_alpha_channel": true,
+      "fully_transparent_fraction": 0.6799447509596087,
+      "byte_identical_to_original": true,
+      "grid": {
+        "columns": 2,
+        "rows": 2,
+        "uniform": false,
+        "x_edges_px": [
+          0,
+          627,
+          1254
+        ],
+        "y_edges_px": [
+          0,
+          627,
+          1254
+        ]
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "childConversation",
+          "source_rect_px": {
+            "x": 0,
+            "y": 0,
+            "width": 627,
+            "height": 627
+          },
+          "visible_alpha_bbox_px": {
+            "x": 116,
+            "y": 128,
+            "width": 392,
+            "height": 446
+          }
+        },
+        {
+          "index": 1,
+          "id": "teenListening",
+          "source_rect_px": {
+            "x": 627,
+            "y": 0,
+            "width": 627,
+            "height": 627
+          },
+          "visible_alpha_bbox_px": {
+            "x": 765,
+            "y": 63,
+            "width": 355,
+            "height": 523
+          }
+        },
+        {
+          "index": 2,
+          "id": "adultPlanning",
+          "source_rect_px": {
+            "x": 0,
+            "y": 627,
+            "width": 627,
+            "height": 627
+          },
+          "visible_alpha_bbox_px": {
+            "x": 83,
+            "y": 660,
+            "width": 504,
+            "height": 555
+          }
+        },
+        {
+          "index": 3,
+          "id": "elderReunion",
+          "source_rect_px": {
+            "x": 627,
+            "y": 627,
+            "width": 627,
+            "height": 627
+          },
+          "visible_alpha_bbox_px": {
+            "x": 743,
+            "y": 661,
+            "width": 461,
+            "height": 554
+          }
+        }
+      ],
+      "cut_boundary_alpha_above_12": {
+        "vertical": [
+          0
+        ],
+        "horizontal": [
+          0
+        ]
+      },
+      "prompt_ids": [
+        "MCMumu",
+        "MCMumu_gaze"
+      ],
+      "approved_for_app": false,
+      "approval_scope": "Authorized Draft integration candidate; formal art approval pending",
+      "runtime_note": "Use explicit source_rect_px, never infer equal cells. No pixel editing. Only actual projected events and saved interactions may select a formal story pose.",
+      "legal_status": "AI-generated original derivative of repository-recorded AI candidates; external inputs none; legal/content-similarity review not complete; no independent license asserted."
+    },
+    {
+      "name": "MCCatCandidate",
+      "kind": "candidateAtlas",
+      "path": "LifeCrossroads/App/Assets.xcassets/MCCatCandidate.imageset/MCCatCandidate.png",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18119-81ba-7390-ae24-1e14e677b6ee/exec-dbd6fd53-c6f3-4c3a-8816-5bbb0f78b4aa.png",
+      "sha256": "82a10fa744d2dba00ac4f9c92f790694b541cdf5c02e8c3d85742313bfbfe9a1",
+      "bytes": 1828059,
+      "dimensions_px": {
+        "width": 2011,
+        "height": 782
+      },
+      "png_color_type": 6,
+      "has_alpha_channel": true,
+      "fully_transparent_fraction": 0.5126745355786143,
+      "byte_identical_to_original": true,
+      "grid": {
+        "columns": 5,
+        "rows": 1,
+        "uniform": false,
+        "x_edges_px": [
+          0,
+          399,
+          766,
+          1201,
+          1653,
+          2011
+        ],
+        "y_edges_px": [
+          0,
+          782
+        ]
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "child",
+          "source_rect_px": {
+            "x": 0,
+            "y": 0,
+            "width": 399,
+            "height": 782
+          },
+          "visible_alpha_bbox_px": {
+            "x": 52,
+            "y": 211,
+            "width": 342,
+            "height": 552
+          }
+        },
+        {
+          "index": 1,
+          "id": "teen",
+          "source_rect_px": {
+            "x": 399,
+            "y": 0,
+            "width": 367,
+            "height": 782
+          },
+          "visible_alpha_bbox_px": {
+            "x": 406,
+            "y": 74,
+            "width": 350,
+            "height": 687
+          }
+        },
+        {
+          "index": 2,
+          "id": "youngAdult",
+          "source_rect_px": {
+            "x": 766,
+            "y": 0,
+            "width": 435,
+            "height": 782
+          },
+          "visible_alpha_bbox_px": {
+            "x": 777,
+            "y": 9,
+            "width": 410,
+            "height": 766
+          }
+        },
+        {
+          "index": 3,
+          "id": "middleAge",
+          "source_rect_px": {
+            "x": 1201,
+            "y": 0,
+            "width": 452,
+            "height": 782
+          },
+          "visible_alpha_bbox_px": {
+            "x": 1217,
+            "y": 13,
+            "width": 415,
+            "height": 763
+          }
+        },
+        {
+          "index": 4,
+          "id": "elder",
+          "source_rect_px": {
+            "x": 1653,
+            "y": 0,
+            "width": 358,
+            "height": 782
+          },
+          "visible_alpha_bbox_px": {
+            "x": 1676,
+            "y": 53,
+            "width": 329,
+            "height": 721
+          }
+        }
+      ],
+      "cut_boundary_alpha_above_12": {
+        "vertical": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "horizontal": []
+      },
+      "prompt_ids": [
+        "MCCatCandidate",
+        "MCCatCandidate_spacing"
+      ],
+      "approved_for_app": false,
+      "approval_scope": "Preview only; no formal story identity or event source",
+      "runtime_note": "Use explicit source_rect_px, never infer equal cells. No pixel editing. Only actual projected events and saved interactions may select a formal story pose.",
+      "legal_status": "AI-generated original derivative of repository-recorded AI candidates; external inputs none; legal/content-similarity review not complete; no independent license asserted."
+    },
+    {
+      "name": "MCDogCandidate",
+      "kind": "candidateAtlas",
+      "path": "LifeCrossroads/App/Assets.xcassets/MCDogCandidate.imageset/MCDogCandidate.png",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18119-81ba-7390-ae24-1e14e677b6ee/exec-743acff6-aab4-4c91-8f8b-17d0dc46ee38.png",
+      "sha256": "5d483a6da6479a87df7f9f464105c6cda4e9ffb77e097c51ef130f467d19dc57",
+      "bytes": 1747457,
+      "dimensions_px": {
+        "width": 1983,
+        "height": 793
+      },
+      "png_color_type": 6,
+      "has_alpha_channel": true,
+      "fully_transparent_fraction": 0.532650479898812,
+      "byte_identical_to_original": true,
+      "grid": {
+        "columns": 5,
+        "rows": 1,
+        "uniform": false,
+        "x_edges_px": [
+          0,
+          406,
+          797,
+          1185,
+          1609,
+          1983
+        ],
+        "y_edges_px": [
+          0,
+          793
+        ]
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "child",
+          "source_rect_px": {
+            "x": 0,
+            "y": 0,
+            "width": 406,
+            "height": 793
+          },
+          "visible_alpha_bbox_px": {
+            "x": 59,
+            "y": 177,
+            "width": 327,
+            "height": 574
+          }
+        },
+        {
+          "index": 1,
+          "id": "teen",
+          "source_rect_px": {
+            "x": 406,
+            "y": 0,
+            "width": 391,
+            "height": 793
+          },
+          "visible_alpha_bbox_px": {
+            "x": 428,
+            "y": 37,
+            "width": 336,
+            "height": 724
+          }
+        },
+        {
+          "index": 2,
+          "id": "youngAdult",
+          "source_rect_px": {
+            "x": 797,
+            "y": 0,
+            "width": 388,
+            "height": 793
+          },
+          "visible_alpha_bbox_px": {
+            "x": 832,
+            "y": 18,
+            "width": 343,
+            "height": 750
+          }
+        },
+        {
+          "index": 3,
+          "id": "middleAge",
+          "source_rect_px": {
+            "x": 1185,
+            "y": 0,
+            "width": 424,
+            "height": 793
+          },
+          "visible_alpha_bbox_px": {
+            "x": 1196,
+            "y": 18,
+            "width": 404,
+            "height": 747
+          }
+        },
+        {
+          "index": 4,
+          "id": "elder",
+          "source_rect_px": {
+            "x": 1609,
+            "y": 0,
+            "width": 374,
+            "height": 793
+          },
+          "visible_alpha_bbox_px": {
+            "x": 1619,
+            "y": 21,
+            "width": 351,
+            "height": 745
+          }
+        }
+      ],
+      "cut_boundary_alpha_above_12": {
+        "vertical": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "horizontal": []
+      },
+      "prompt_ids": [
+        "MCDogCandidate"
+      ],
+      "approved_for_app": false,
+      "approval_scope": "Preview only; no formal story identity or event source",
+      "runtime_note": "Use explicit source_rect_px, never infer equal cells. No pixel editing. Only actual projected events and saved interactions may select a formal story pose.",
+      "legal_status": "AI-generated original derivative of repository-recorded AI candidates; external inputs none; legal/content-similarity review not complete; no independent license asserted."
+    }
+  ],
+  "historical_references": [
+    {
+      "path": "assets/multi-cast-loop/references/cat-five-stages.png",
+      "source_branch": "origin/codex/lc-visual-design",
+      "source_commit": "2b62a192ad43e23c806d029b353d49da61576ae2",
+      "sha256": "0cb976e7689b9c429c9574e5c65a16abe4d0b1ee190b5344e676f8887befada2",
+      "approval": "unapproved historical concept; not a formal story actor"
+    },
+    {
+      "path": "assets/multi-cast-loop/references/characters.md",
+      "source_branch": "origin/codex/lc-visual-design",
+      "source_commit": "2b62a192ad43e23c806d029b353d49da61576ae2",
+      "sha256": "bd5b9de9cd98048986d27ca5fb162e597fc2f766d2775c68e9441c71dc99700d",
+      "approval": "unapproved historical concept; not a formal story actor"
+    },
+    {
+      "path": "assets/multi-cast-loop/references/dog-five-stages.png",
+      "source_branch": "origin/codex/lc-visual-design",
+      "source_commit": "2b62a192ad43e23c806d029b353d49da61576ae2",
+      "sha256": "d789898c8970fa00e3557299795d227205362543bc264c2e0dd4b6492da9e768",
+      "approval": "unapproved historical concept; not a formal story actor"
+    },
+    {
+      "path": "assets/multi-cast-loop/references/hare-five-stages.png",
+      "source_branch": "origin/codex/lc-visual-design",
+      "source_commit": "2b62a192ad43e23c806d029b353d49da61576ae2",
+      "sha256": "59d9cc4d5871026814c7eb36843ab9e0ef0dbd654f761c10c8a4f4e04ba1576d",
+      "approval": "unapproved historical concept; not a formal story actor"
+    }
+  ],
+  "rejected_attempts": [
+    {
+      "path": "assets/multi-cast-loop/rejected/MCAhe-v1-cross-row.png",
+      "sha256": "e11fad8832654116662731d7c585963cbcf368f84ec382c3c3aa0f652048cdf9",
+      "reason": "No empty horizontal boundary between top feet and bottom ears at alpha>12.",
+      "used_in_app": false
+    },
+    {
+      "path": "assets/multi-cast-loop/rejected/MCAhe-v3-cross-column.png",
+      "sha256": "52fc83f5e27ae383719834f313accb41a1cb423c4b9060cc39416b2189c79643",
+      "reason": "Square re-layout fixed row spacing but brought adult tail across equal column boundary; final uses v2 explicit rectangles.",
+      "used_in_app": false
+    },
+    {
+      "path": "assets/multi-cast-loop/rejected/MCCatCandidate-v1-overlapping-tail.png",
+      "sha256": "52f384f623c6ba3351c4ff8cbd3110f0a18162ffc495ce2f51a0ce5cc0e70cbf",
+      "reason": "Teen tail extended into adjacent young-adult region; revised compact vertical tails.",
+      "used_in_app": false
+    },
+    {
+      "path": "assets/multi-cast-loop/rejected/MCMumu-r1-upward-gaze.png",
+      "sha256": "1963d0f2639846359e616db3a6ee653202e1b162e3a8cf198ba1f7827a288e83",
+      "reason": "Round1 independent Critic found upward gaze prevented eye contact. One bounded imagegen face/head correction; body poses retained.",
+      "used_in_app": false
+    }
+  ],
+  "known_limitations": [
+    "Candidate cat ear-notch and dog anatomical ear-side anchors require independent/Owner confirmation; not identity-lock approved.",
+    "Cheng mature visual variant is not an assertion of a documented birth year.",
+    "Source-asset inspection does not prove native composition, accessibility or child comprehension."
+  ]
+}
