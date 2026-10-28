@@ -89,3 +89,5 @@
 - VISUAL-LOOP-02本機完成：13/17/25/32活動圖層接真實紀錄，三輪Critic核心Go；145 Swift/41 Python與60原生狀態PASS，11台Simulator已刪。獨立Draft待push/CI；basic既有框架期限FAIL、精確年齡/真人/正式美術HOLD，不合併發布。 <!-- memory_record_projection:active-task-summary:115a2d3d38944184f19c56add8e948e4715b715774da0568b0cd61c1cd2422e6 -->
 
 - PR17視覺三輪已推；CI精度窄修41f093c保留120pt與30案例，SE/標準各1/1、獨立覆審PASS，本機共13台Simulator已刪。App仍同8e404a7。待新HEAD CI；basic既有期限FAIL、精確年齡/真人HOLD，不合併發布。 <!-- memory_record_projection:active-task-summary:74252cd7a8b5ef9b06917c5febf5f1ae703a0f2841b40c92996e6d9de4d64e97 -->
+
+- MULTI-CAST整合與三輪覆審留證；詳docs/multi-cast-loop/VALIDATION.md。Draft/HOLD。 <!-- memory_record_projection:active-task-summary:fc9b6ccef57fef99dfca0be977ffb464d8de1cf94ba5e6b4bca7e5954d87fc8d -->
