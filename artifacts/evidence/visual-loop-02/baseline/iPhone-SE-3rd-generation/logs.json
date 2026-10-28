@@ -1,0 +1,16 @@
+[
+  {
+    "file": "build.log",
+    "completeLog": "artifacts/governance/visual-loop-02/baseline-iPhone-SE-3rd-generation-raw/build.log",
+    "completeSHA256": "cc3c72e2fe903ca0d194ed9e6b2a2b4299f17db5ae1108a0c71c8a427e6b2adf",
+    "publishedSHA256": "e66238a217f36821dbe9bcea786636792c73c3c50c4b1144bacd0c4da5a6aca9",
+    "projection": "test/capture verdict lines; complete log retained locally"
+  },
+  {
+    "file": "test.log",
+    "completeLog": "artifacts/governance/visual-loop-02/baseline-iPhone-SE-3rd-generation-raw/test.log",
+    "completeSHA256": "1e0e610510b1a84feffacd53c10d8b2bbcb96a478ded50a280e2a570f33345e9",
+    "publishedSHA256": "ebea6a9a4c9ebe8b3d9be203f1424806790706d9600c48a49f11e3e11f23be59",
+    "projection": "test/capture verdict lines; complete log retained locally"
+  }
+]

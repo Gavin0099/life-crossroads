@@ -1,0 +1,52 @@
+{
+  "A": {
+    "fixture": "25-collective",
+    "source": "artifacts/evidence/visual-loop-02/round2/iPhone-SE-3rd-generation/25-collective-normal-scene.png",
+    "sha256": "a1b4e44713d07cbf3ef62549965490c936a81f5038897ee7a31a8d1bb88cfccd"
+  },
+  "B": {
+    "fixture": "17-remote",
+    "source": "artifacts/evidence/visual-loop-02/round2/iPhone-SE-3rd-generation/17-remote-normal-scene.png",
+    "sha256": "0d5317d99200c9e17042ab498242c089fba3ba51335c5b285f9deb819f0e959d"
+  },
+  "C": {
+    "fixture": "13-ask",
+    "source": "artifacts/evidence/visual-loop-02/round2/iPhone-SE-3rd-generation/13-ask-normal-scene.png",
+    "sha256": "37de7ec2a70a4d13e27e84635651fb8553676ab98e167f1399e0f403d5d51798"
+  },
+  "D": {
+    "fixture": "32-participating",
+    "source": "artifacts/evidence/visual-loop-02/round2/iPhone-SE-3rd-generation/32-participating-normal-scene.png",
+    "sha256": "0fc5390f263a6d8abe83426528cfd8fb18c7d61f76ff668f441d984f60778f14"
+  },
+  "E": {
+    "fixture": "13-online",
+    "source": "artifacts/evidence/visual-loop-02/round2/iPhone-SE-3rd-generation/13-online-normal-scene.png",
+    "sha256": "c289a1ab5c1c3f0aebf99ceaac68783513363aebe5c67a2c97e6e6412067887b"
+  },
+  "F": {
+    "fixture": "25-remote",
+    "source": "artifacts/evidence/visual-loop-02/round2/iPhone-SE-3rd-generation/25-remote-normal-scene.png",
+    "sha256": "57db136f257ecf5d0510dd309b32d4d00ee21ff9c619cf56ab036ffe86b437fa"
+  },
+  "G": {
+    "fixture": "32-prepared",
+    "source": "artifacts/evidence/visual-loop-02/round2/iPhone-SE-3rd-generation/32-prepared-normal-scene.png",
+    "sha256": "f79956a56b0b05d0611ed28853b1fbcc944646217c453b635e33d32b6d3f288e"
+  },
+  "H": {
+    "fixture": "17-collective",
+    "source": "artifacts/evidence/visual-loop-02/round2/iPhone-SE-3rd-generation/17-collective-normal-scene.png",
+    "sha256": "8997d0574e84acfb5a705190264deebe69a6052b9cf54c95060a00ef3b70b474"
+  },
+  "I": {
+    "fixture": "13-paper",
+    "source": "artifacts/evidence/visual-loop-02/round2/iPhone-SE-3rd-generation/13-paper-normal-scene.png",
+    "sha256": "ada5191d86c54e40269236c00ec9c1d1b3a55b37c6ff023dd15b39913e45f341"
+  },
+  "J": {
+    "fixture": "13-before",
+    "source": "artifacts/evidence/visual-loop-02/round2/iPhone-SE-3rd-generation/13-before-normal-scene.png",
+    "sha256": "65ba4224a6040db7beaa9d3c6b1a60492f16509cd1884e85e37b26ca783898bf"
+  }
+}

@@ -1,0 +1,9 @@
+Created test Simulator: 9FA145CF-AAD3-43A1-BD82-6CD67DEBB8C7
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testBirthStoryWorldAndContextRemainReadableAtMaximumType]' started.
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testBirthStoryWorldAndContextRemainReadableAtMaximumType]' passed (46.866 seconds).
+	 Executed 1 test, with 0 failures (0 unexpected) in 46.866 (46.871) seconds
+	 Executed 1 test, with 0 failures (0 unexpected) in 46.866 (46.871) seconds
+	 Executed 1 test, with 0 failures (0 unexpected) in 46.866 (46.872) seconds
+** TEST SUCCEEDED **
+SwiftUI publication regression: no matching runtime issue reported
+Deleted test Simulator: 9FA145CF-AAD3-43A1-BD82-6CD67DEBB8C7

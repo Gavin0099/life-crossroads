@@ -27,11 +27,13 @@ public struct LifeWorldFrame: Equatable, Sendable {
     public let moment: LifeWorldMomentKind
     public let eventID: String?
     public let environmentGaps: [String]
+    /// Present only for an applied, saved trace. Rendering cannot infer an action from resources.
+    public var committedChoiceID: String? = nil
 
     /// Only presentation may override the moment; authoritative age and evidence stay unchanged.
     public func presenting(_ moment: LifeWorldMomentKind) -> Self {
         .init(stage: stage, age: age, visualFromAge: visualFromAge, sceneID: sceneID,
-              actors: actors, worldChanges: worldChanges, moment: moment, eventID: eventID, environmentGaps: environmentGaps)
+              actors: actors, worldChanges: worldChanges, moment: moment, eventID: eventID, environmentGaps: environmentGaps, committedChoiceID: committedChoiceID)
     }
 }
 
@@ -83,7 +85,7 @@ public enum WorldMomentProjector {
         }
         if let focus = state.focusHistory.last {
             changes.append(.init(kind: .livedFocus, caption: focus.caption, sourceEventID: "", sourceChoiceID: "",
-                                 sourceAge: focus.fromAge, isOccurred: true))
+                                 sourceAge: focus.fromAge, isOccurred: true, factKey: "lifeFocus", factValue: focus.focus.rawValue))
         }
         for hook in state.pendingHooks {
             changes.append(.init(kind: .pendingClue, caption: "留下線索，尚未實現：\(hook.text)",
@@ -95,7 +97,8 @@ public enum WorldMomentProjector {
         }
         let scene = state.age == 13 && eventID == "teen-project" ? "workshop" : stage == .childhood ? "river" : "community"
         return .init(stage: stage, age: state.age, visualFromAge: session.jumps.last?.fromAge,
-            sceneID: scene, actors: actors, worldChanges: changes, moment: moment, eventID: eventID, environmentGaps: gaps)
+            sceneID: scene, actors: actors, worldChanges: changes, moment: moment, eventID: eventID, environmentGaps: gaps,
+            committedChoiceID: session.phase == .reflecting ? session.traces.last?.choiceID : nil)
     }
 
     public static func memoryCaption(_ fact: StoryFact) -> String {

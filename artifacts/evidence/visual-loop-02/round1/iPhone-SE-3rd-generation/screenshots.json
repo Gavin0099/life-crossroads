@@ -1,0 +1,146 @@
+{
+  "xcresult": "artifacts/ios/VL2-round1-iPhone-SE-3rd-generation-20261028T023618Z.xcresult",
+  "kind": "native iOS App, real replay-validated archives; scene is native element crop",
+  "images": [
+    {
+      "file": "80-arrival-normal-scene.png",
+      "sha256": "f82c54019b93da71bc05127841e35564977f73084459f673bb3d1cd172011ccb",
+      "sourceAttachment": "CEBC211E-D53A-4FDC-870A-4D66FB903700.png"
+    },
+    {
+      "file": "80-arrival-normal-screen.png",
+      "sha256": "5918de5897f44f2b425103a41aaa660b3be6e19560a236c003199991427c03b7",
+      "sourceAttachment": "3B87922E-600C-4D8F-BCB6-AC5292463A8C.png"
+    },
+    {
+      "file": "65-arrival-normal-scene.png",
+      "sha256": "c06e88c0e36df539047c14119665595dc41190f023a7feda1a48dc2a3c772b2a",
+      "sourceAttachment": "10EA3811-EA22-48B6-8B74-3A98D0B95C29.png"
+    },
+    {
+      "file": "65-arrival-normal-screen.png",
+      "sha256": "ca03fe8d8d1085ee56fbc4061517bd3fa45ded0f160297c10b4f3f23a6f5b81d",
+      "sourceAttachment": "9E25B86F-C147-4315-AE0B-A5ECD6F07AED.png"
+    },
+    {
+      "file": "32-participating-normal-scene.png",
+      "sha256": "0593bdc3c453d9c1f98194e90903af55ea8b819ed3325e0dcbda5dbbb1c9307f",
+      "sourceAttachment": "E2FA4127-D9B8-4CB9-B6A6-4655869447F8.png"
+    },
+    {
+      "file": "32-participating-normal-screen.png",
+      "sha256": "5d05130b1f1ab99d48f009fdc1639219fcb84ae20ce447d6ac9df9e32e853618",
+      "sourceAttachment": "6E323E2C-5F16-4108-B5AD-C6AE0CC85B9D.png"
+    },
+    {
+      "file": "32-prepared-normal-scene.png",
+      "sha256": "4be0cec0d64b11b6622a8904a4862eab916825df8958f0b70d2313cd0d368543",
+      "sourceAttachment": "FF00A4E5-E1D0-4EFF-935B-A37F45D9AB2F.png"
+    },
+    {
+      "file": "32-prepared-normal-screen.png",
+      "sha256": "28de46ebb48967c20456df7d2ac7fc7a3d6dedefea9ce52f40ddd93d896df9ee",
+      "sourceAttachment": "ACB358BC-2FAA-41ED-899E-97624E9496C9.png"
+    },
+    {
+      "file": "25-collective-normal-scene.png",
+      "sha256": "71843bd45f5102b7d9141b8389815c4e6691c91f07a717f7c256f4e7b5cb799b",
+      "sourceAttachment": "FFF3EC14-0168-470D-8CA1-B4C32F5DA964.png"
+    },
+    {
+      "file": "25-collective-normal-screen.png",
+      "sha256": "c02cc0b751aa96a04a91fe339aedffa375ee82df1073d948dab5a20735f09375",
+      "sourceAttachment": "705345EA-16EE-4888-86CD-A1997138A593.png"
+    },
+    {
+      "file": "17-collective-normal-scene.png",
+      "sha256": "ce72855da38c71f61c7eaa6a0940e3e6a30a1416f0fe5e47190d3990c3ebe46e",
+      "sourceAttachment": "BA31A959-E21F-4D2D-AE98-BADD1C17B97E.png"
+    },
+    {
+      "file": "17-collective-normal-screen.png",
+      "sha256": "1bd7140382d1fbfb85d6e8a3a900b5f327e3be585423d39c68062ee5b31fc02d",
+      "sourceAttachment": "977C93B3-DB18-40EC-8775-8E7F1E7191D2.png"
+    },
+    {
+      "file": "25-remote-normal-scene.png",
+      "sha256": "34a9d704875931751ab5a88e68797102c48327639e2e57c1616ce78fabfa591e",
+      "sourceAttachment": "BCE0B610-B900-4B8F-8461-D1193333D878.png"
+    },
+    {
+      "file": "25-remote-normal-screen.png",
+      "sha256": "a37aa2f6297242fb707b30090c88f40ec2cec4dea6079fff22f8b1ab077f2957",
+      "sourceAttachment": "27573B73-B7B1-4590-90A3-C6E4389ED96E.png"
+    },
+    {
+      "file": "17-remote-normal-scene.png",
+      "sha256": "3d72343b688bcdc3471df072832af2244e769d685a05df603db56c3280c0d20b",
+      "sourceAttachment": "595BE555-4633-4F8E-9B34-A9DEFC0210BA.png"
+    },
+    {
+      "file": "17-remote-normal-screen.png",
+      "sha256": "7ed08b8df45e385fc21dc8e2a3cbf2854364c131ea04e243627513654ba442dc",
+      "sourceAttachment": "753BA2D3-B88D-424D-86E2-4D7F8BDB19F1.png"
+    },
+    {
+      "file": "13-rest-normal-scene.png",
+      "sha256": "9f1b19b8b4c6c263d7445683f780ef3c7e2c0fbdbc709679461dc594130ac58d",
+      "sourceAttachment": "AF635A22-9B68-44E7-8B29-9B34961F88F6.png"
+    },
+    {
+      "file": "13-rest-normal-screen.png",
+      "sha256": "cca7c6013a17b307eec72081931421be6b055a4ce7f89f25189b3743732e59f1",
+      "sourceAttachment": "E8293B07-D927-48AC-8822-063F82CB9903.png"
+    },
+    {
+      "file": "13-ask-normal-scene.png",
+      "sha256": "39a15e9a945c5efd2723c2620b62c4c70be60a2eafacd3c3697cf1a51da1688c",
+      "sourceAttachment": "1F219102-F1DC-4100-BE1D-4CF557CB5476.png"
+    },
+    {
+      "file": "13-ask-normal-screen.png",
+      "sha256": "7d8ec96a83ee81cc228945d629755bb9a2637d852e80c0f11d96e24194ce245d",
+      "sourceAttachment": "343D745A-F35E-4DA9-B894-F67559314514.png"
+    },
+    {
+      "file": "13-paper-normal-scene.png",
+      "sha256": "439b25591b3931b045b89587eedb7b148b81fe777ec56007ff1b623db502b789",
+      "sourceAttachment": "6A4AAE79-B6AA-4D16-821F-5CA5ECD307C9.png"
+    },
+    {
+      "file": "13-paper-normal-screen.png",
+      "sha256": "7012c19b7a9caed2fdd45c0946ebf9edf470f0a272c08ede23bad1bb390a7e5c",
+      "sourceAttachment": "323A06C4-87F6-4E8D-A18F-13EBE89230D7.png"
+    },
+    {
+      "file": "13-online-normal-scene.png",
+      "sha256": "3ecf5593f641a947da08fbd2581a3ae16d75981abfa0c3b5b12502891f039532",
+      "sourceAttachment": "B0906C86-8CBC-4000-BD13-9DABC3B1295E.png"
+    },
+    {
+      "file": "13-online-normal-screen.png",
+      "sha256": "835b1b97cd798d693e30f2bc1a047f9735e952ba2048e583f10670accdb3525a",
+      "sourceAttachment": "B245B339-CBB0-44EE-A7D2-A3745738500A.png"
+    },
+    {
+      "file": "13-before-normal-scene.png",
+      "sha256": "0847acf0709acc84260064f15b3d9e2ad9b108add0d1ade527198137e11a07c9",
+      "sourceAttachment": "67A49EB5-12E0-4BEB-9D9A-991B2F9EE2D2.png"
+    },
+    {
+      "file": "13-before-normal-screen.png",
+      "sha256": "8704ffaf696382fd31ebc9e65befea0d943f9605ce8f94bcd4150c80fb3685c8",
+      "sourceAttachment": "B86BBFA5-8B73-47E7-8D41-98B1C103CDCA.png"
+    },
+    {
+      "file": "08-arrival-normal-scene.png",
+      "sha256": "42b444925b778bdef9f32a7dd13a269cbe72d53731b459c9859cc58f51bceb18",
+      "sourceAttachment": "28DF5988-DBC3-41BC-8027-2D60403DCD97.png"
+    },
+    {
+      "file": "08-arrival-normal-screen.png",
+      "sha256": "7f00364de42f4b395c3a5331cfcbfa078990cf11de6f545b7a85e5f61f31267e",
+      "sourceAttachment": "4C0472D6-064B-4737-A10A-ED2DD688D9A1.png"
+    }
+  ]
+}

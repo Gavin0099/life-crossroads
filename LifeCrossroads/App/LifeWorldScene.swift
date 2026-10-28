@@ -7,7 +7,7 @@ import AppKit
 #endif
 
 /// Render-only world. Gameplay supplies a committed projection and its single accumulated clock.
-/// Existing atlas characters remain whole PNGs: no invented eyes, hands, head or tail rig.
+/// Activity atlases contain explicit poses; no independent clock or outcome inference.
 struct LifeWorldScene: View {
     let frame: LifeWorldFrame
     let motion: PresentationMotionFrame
@@ -20,6 +20,11 @@ struct LifeWorldScene: View {
         GeometryReader { geometry in
             let size = geometry.size
             ZStack {
+                if let activity = WorldActivity.project(frame) {
+                    illustratedActivity(activity, size: size)
+                } else if let setting = WorldActivity.neutralSetting(frame) {
+                    neutralScene(background: setting.background, cell: setting.cell, size: size)
+                } else {
                 if let background = croppedBackground(size: size) {
                     Image(decorative: background, scale: 1).resizable()
                         .frame(width: size.width, height: size.height)
@@ -39,6 +44,7 @@ struct LifeWorldScene: View {
                 if !typeSize.isAccessibilitySize && !visibleTokens.isEmpty {
                     tokenShelf(size: size)
                 }
+                }
             }
             .frame(width: size.width, height: size.height)
             .clipped()
@@ -50,6 +56,77 @@ struct LifeWorldScene: View {
         .accessibilityIdentifier("lifeWorldScene")
         // No implicit/repeating animation can continue after Gameplay freezes its supplied time.
         .transaction { $0.animation = nil }
+    }
+
+    private func neutralScene(background: String, cell: Int, size: CGSize) -> some View {
+        ZStack {
+            if let scene = WorldSceneBitmaps.scene(background, size: size) {
+                Image(decorative: scene, scale: 1).resizable().frame(width: size.width, height: size.height)
+            }
+            if let actor = WorldSceneBitmaps.cell("VL2Neutral", index: cell, columns: 2, rows: 2) {
+                grounded(actor, width: size.width * 0.46, height: size.height * 0.91,
+                         x: size.width * 0.48, floor: size.height * 0.98)
+            }
+        }
+    }
+
+    /// The foreground is an actual pose with its contacted tools. Companions remain independent
+    /// layers so an invitation, failed choice or missing relationship cannot paint a helper.
+    @ViewBuilder private func illustratedActivity(_ activity: WorldActivity, size: CGSize) -> some View {
+        ZStack {
+            if let background = WorldSceneBitmaps.scene(activity.background, size: size) {
+                Image(decorative: background, scale: 1).resizable().frame(width: size.width, height: size.height)
+            }
+            let hasCompanion = activity.companionID != nil && ![.onlinePractice, .paperPractice, .trialWork].contains(activity.kind)
+            let remote = activity.kind == .remoteCollaboration
+            let foregroundHeight = size.height * 0.94
+            if hasCompanion && !remote, let companion = WorldSceneBitmaps.cell("VL2Companions", index: companionCell(activity), columns: 2, rows: 2) {
+                grounded(companion, width: size.width * 0.34, height: size.height * 0.96,
+                         x: size.width * 0.79, floor: size.height * 0.98)
+            }
+            if let actor = WorldSceneBitmaps.cell(activity.atlas, index: activity.cell, columns: 2, rows: activity.rows) {
+                fitted(actor, width: size.width * (hasCompanion ? 0.69 : 0.82), height: foregroundHeight)
+                    .position(x: size.width * (hasCompanion ? 0.43 : 0.50), y: size.height * 0.52)
+            }
+            if hasCompanion && remote,
+               let actor = WorldSceneBitmaps.cell(activity.atlas, index: activity.cell, columns: 2, rows: activity.rows),
+               let companion = WorldSceneBitmaps.cell("VL2Companions", index: 0, columns: 2, rows: 2) {
+                // Bind the call inset to the monitor within the scaled actor bitmap, not viewport
+                // percentages: the world is shorter with Dynamic Type on a small phone.
+                let scale = min(size.width * 0.69 / CGFloat(actor.width), foregroundHeight / CGFloat(actor.height))
+                let actorWidth = CGFloat(actor.width) * scale
+                let actorHeight = CGFloat(actor.height) * scale
+                let portrait = companion.cropping(to: CGRect(x: 0, y: 0, width: companion.width, height: Int(Double(companion.height) * 0.64))) ?? companion
+                fitted(portrait, width: actorWidth * 0.13, height: actorHeight * 0.20)
+                    .padding(1).background(Color(red: 0.93, green: 0.92, blue: 0.82))
+                    .overlay(RoundedRectangle(cornerRadius: 3).stroke(StoryPalette.forest, lineWidth: 1.5))
+                    .clipShape(RoundedRectangle(cornerRadius: 3))
+                    .position(x: size.width * 0.43 + actorWidth * 0.365,
+                              y: size.height * 0.52 - actorHeight * 0.18)
+            }
+            // Shared accumulated time controls only light, not poses, choices or state.
+            if !reduced {
+                Color.white.opacity(0.012 + 0.006 * LifeWorldMotion.pose(elapsedMs: motion.elapsedMs, reduceMotion: false).rippleHorizontal)
+                    .blendMode(.softLight).allowsHitTesting(false)
+            }
+        }.frame(width: size.width, height: size.height).clipped()
+    }
+
+    private func companionCell(_ activity: WorldActivity) -> Int {
+        if activity.companionID == "cheng" { return activity.kind == .asking ? 2 : 3 }
+        return activity.kind == .asking ? 0 : 1
+    }
+
+    private func grounded(_ image: CGImage, width: CGFloat, height: CGFloat, x: CGFloat, floor: CGFloat) -> some View {
+        let scale = min(width / CGFloat(image.width), height / CGFloat(image.height))
+        return fitted(image, width: width, height: height)
+            .position(x: x, y: floor - CGFloat(image.height) * scale / 2)
+    }
+
+    private func fitted(_ image: CGImage, width: CGFloat, height: CGFloat) -> some View {
+        let scale = min(width / CGFloat(image.width), height / CGFloat(image.height))
+        return Image(decorative: image, scale: 1).resizable()
+            .frame(width: CGFloat(image.width) * scale, height: CGFloat(image.height) * scale)
     }
 
     enum ActivityProp: String {
@@ -436,8 +513,18 @@ struct LifeWorldScene: View {
 
     private var spokenScene: String {
         let people = frame.actors.map { WorldMomentProjector.personName($0.personID) }.joined(separator: "、")
-        let place = frame.sceneID == "workshop" ? "想像工作室" : "想像河畔"
-        return "\(frame.age)歲，\(people)在\(place)。跨國共用的虛構舞台，不是當地實景。"
+        let activity = WorldActivity.project(frame)
+        let background = activity?.background ?? WorldActivity.neutralSetting(frame)?.background
+        let place = background == "VL2Garden" ? "想像庭院" : background != nil || frame.sceneID == "workshop" ? "想像工作室" : "想像河畔"
+        let presence: String
+        if let activity {
+            let shown = activity.companionID != nil && ![.onlinePractice, .paperPractice, .trialWork].contains(activity.kind)
+            if shown && activity.kind == .remoteCollaboration { presence = "沐沐在\(place)，同伴透過螢幕參與" }
+            else if shown, let person = activity.companionID { presence = "沐沐與\(WorldMomentProjector.personName(person))在\(place)" }
+            else { presence = "沐沐在\(place)" }
+        } else if WorldActivity.neutralSetting(frame) != nil { presence = "沐沐在\(place)等待下一個選擇" }
+        else { presence = "\(people)在\(place)" }
+        return "\(frame.age)歲，\(presence)。\(activity?.description ?? "")跨國共用的虛構舞台，不是當地實景。"
     }
 
     private var spokenChanges: String {
@@ -452,6 +539,44 @@ struct LifeWorldScene: View {
 @MainActor private enum WorldSceneBitmaps {
     static let background = load("RiverCrossroads")
     static let cast = load("StoryCast")
+    private static var atlasCache: [String: CGImage] = [:]
+    private static var cellCache: [String: CGImage] = [:]
+    private static func atlas(_ name: String) -> CGImage? {
+        if let image = atlasCache[name] { return image }
+        let image = load(name); atlasCache[name] = image; return image
+    }
+    static func scene(_ name: String, size: CGSize) -> CGImage? {
+        guard let image = atlas(name), size.width > 0, size.height > 0 else { return nil }
+        let width = CGFloat(image.width), height = CGFloat(image.height)
+        let cropHeight = min(height, width * size.height / size.width)
+        let cropWidth = min(width, height * size.width / size.height)
+        return image.cropping(to: CGRect(x: (width - cropWidth) / 2, y: (height - cropHeight) * 0.18,
+                                        width: cropWidth, height: cropHeight).integral)
+    }
+    static func cell(_ name: String, index: Int, columns: Int, rows: Int) -> CGImage? {
+        let key = "\(name)-\(index)"
+        if let image = cellCache[key] { return image }
+        guard let image = atlas(name), index >= 0, index < columns * rows else { return nil }
+        let width = image.width / columns, height = image.height / rows
+        guard let cropped = image.cropping(to: CGRect(x: index % columns * width, y: index / columns * height,
+                                                       width: width, height: height)) else { return nil }
+        // Trim only transparent atlas padding at render time; original generated PNG stays intact.
+        var pixels = [UInt8](repeating: 0, count: width * height * 4)
+        let bounds: CGRect? = pixels.withUnsafeMutableBytes { bytes in
+            guard let context = CGContext(data: bytes.baseAddress, width: width, height: height,
+                bitsPerComponent: 8, bytesPerRow: width * 4, space: CGColorSpaceCreateDeviceRGB(),
+                bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue | CGBitmapInfo.byteOrder32Big.rawValue) else { return nil }
+            context.draw(cropped, in: CGRect(x: 0, y: 0, width: width, height: height))
+            var x0 = width, y0 = height, x1 = 0, y1 = 0
+            for y in 0..<height { for x in 0..<width where bytes[(y * width + x) * 4 + 3] > 12 {
+                x0 = min(x0, x); x1 = max(x1, x); y0 = min(y0, y); y1 = max(y1, y)
+            } }
+            guard x1 >= x0, y1 >= y0 else { return nil }
+            return CGRect(x: x0, y: y0, width: x1 - x0 + 1, height: y1 - y0 + 1)
+        }
+        let result = bounds.flatMap { cropped.cropping(to: $0) } ?? cropped
+        cellCache[key] = result; return result
+    }
     private static func load(_ name: String) -> CGImage? {
         #if canImport(UIKit)
         UIImage(named: name)?.cgImage

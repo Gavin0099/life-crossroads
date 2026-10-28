@@ -1,0 +1,26 @@
+{
+  "rows": [
+    {
+      "hardware": "se",
+      "rawLogSHA256": "42ba4865eda433eb3ccb6356d76f8a4a9701c728468615da8b37a60c553a5dc0",
+      "bundle": "LC02-20261028T040551Z",
+      "simulatorDeleted": "9FA145CF-AAD3-43A1-BD82-6CD67DEBB8C7",
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "hardware": "standard",
+      "rawLogSHA256": "6ba6ddb0227ce14438e72771b244db804dc0c1f8b075160dcb22652ccf864789",
+      "bundle": "LC02-20261028T040836Z",
+      "simulatorDeleted": "4AB8E05F-5D9E-4984-9739-FD6FA683EB20",
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    }
+  ],
+  "applicationUnchangedFrom": "8e404a7afa33af1a4bccfd7df1afe659338a8404",
+  "testSourceSHA256": "34601237b99c4805d2a4236d36b68261b2cc6a7ccae3ce88f500530be77d8cd8",
+  "captureSourceCommit": "bc89f88a42d20acc59f6e91ab4aec62ae154b80f",
+  "boundary": "Two separate targeted native runs; not a complete 30-case local suite. Captured application images remain unchanged; one UI assertion has a 1e-6 point precision correction."
+}
