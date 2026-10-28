@@ -80,18 +80,22 @@ struct LifeWorldScene: View {
                     grounded(companion, width: size.width * (working ? 0.33 : 0.40), height: size.height * 0.90,
                              x: size.width * (working ? 0.79 : 0.72), floor: size.height * 0.98)
                 }
-                if let protagonist = WorldSceneBitmaps.cell(main.atlas, index: main.cell, columns: main.columns, rows: main.rows) {
+                if cast.kind == .requesting,
+                   let asking = WorldSceneBitmaps.requestPose(age: cast.age, listening: false),
+                   let listening = WorldSceneBitmaps.requestPose(age: cast.age, listening: true) {
+                    let blend = reduced ? 0 : WorldRequestTransition.listeningOpacity(frame: frame, motion: motion)
+                    // Both poses use one reviewed crop, scale and floor. No independent
+                    // alpha trim, timer or implicit animation may move the held objects.
+                    ZStack {
+                        grounded(asking, width: size.width * 0.43, height: size.height * 0.94,
+                                 x: size.width * 0.29, floor: size.height * 0.98).opacity(1 - blend)
+                        grounded(listening, width: size.width * 0.43, height: size.height * 0.94,
+                                 x: size.width * 0.29, floor: size.height * 0.98)
+                            .opacity(blend).blendMode(.plusLighter)
+                    }.compositingGroup()
+                } else if let protagonist = WorldSceneBitmaps.cell(main.atlas, index: main.cell, columns: main.columns, rows: main.rows) {
                     grounded(protagonist, width: size.width * (working ? 0.65 : 0.43), height: size.height * 0.94,
                              x: size.width * (working ? 0.39 : 0.29), floor: size.height * 0.98)
-                }
-                if cast.kind == .requesting {
-                    let listening = !reduced && WorldRequestBeat.project(frame: frame, motion: motion) == .listening
-                    Image(systemName: listening ? "ear" : "questionmark.bubble")
-                        .font(.system(size: min(23, size.height * 0.13), weight: .medium))
-                        .foregroundStyle(StoryPalette.forest)
-                        .padding(8).background(StoryPalette.page.opacity(0.92), in: Circle())
-                        .position(x: size.width * 0.50, y: size.height * 0.23)
-                        .accessibilityHidden(true)
                 }
             }
         }
@@ -105,8 +109,6 @@ struct LifeWorldScene: View {
             if cast.age == 32, WorldActivity.project(frame)?.kind == .protectedRest { return ("VL2Recovery32", 0, 2, 1) }
             return neutralPose
         }
-        if cast.kind == .requesting, !reduced,
-           WorldRequestBeat.project(frame: frame, motion: motion) == .listening { return neutralPose }
         switch cast.kind {
         case .requesting where cast.age == 13: return ("VL2Teen13", 2, 2, 2)
         case .explaining: return ("VL2Teen13", 1, 2, 2)
@@ -151,14 +153,16 @@ struct LifeWorldScene: View {
                 Color(red: 0.93, green: 0.85, blue: 0.64).opacity(0.25)
                 let w = size.width * 0.32
                 if let mumu = WorldSceneBitmaps.cell(memory.keptFriendship ? "MCMumu" : "StoryCast", index: 0, columns: memory.keptFriendship ? 2 : 4, rows: 2) {
-                    grounded(mumu, width: w * (memory.keptFriendship ? 0.54 : 0.78), height: size.height * 0.66,
+                    // A shared childhood height cap makes the two histories comparable;
+                    // the solo route stays solo instead of inventing a childhood companion.
+                    grounded(mumu, width: w * 0.54, height: size.height * 0.42,
                              x: w * (memory.keptFriendship ? 0.30 : 0.5), floor: size.height * 0.91)
                 }
                 if memory.keptFriendship, let ahe = WorldSceneBitmaps.cell("MCAhe", index: 1, columns: 3, rows: 2) {
-                    grounded(ahe, width: w * 0.47, height: size.height * 0.67, x: w * 0.74, floor: size.height * 0.91)
+                    grounded(ahe, width: w * 0.47, height: size.height * 0.42, x: w * 0.74, floor: size.height * 0.91)
                 }
                 Text("10歲 · 那時").font(.system(size: 11, weight: .bold, design: .rounded)).lineLimit(1).padding(5)
-                    .background(StoryPalette.page.opacity(0.9), in: RoundedRectangle(cornerRadius: 7)).padding(4)
+                    .background(StoryPalette.illustratedPaper.opacity(0.94), in: RoundedRectangle(cornerRadius: 7)).padding(4)
             }.frame(width: size.width * 0.32, height: size.height).clipped()
             ZStack(alignment: .topLeading) {
                 // Reserve a real caption band. Its compact labels duplicate the full spoken
@@ -166,9 +170,9 @@ struct LifeWorldScene: View {
                 castScene(cast, size: CGSize(width: size.width * 0.68 - 3, height: size.height - 26))
                     .frame(width: size.width * 0.68 - 3, height: size.height - 26).offset(y: 26)
                 Text("72歲 · 現在").font(.system(size: 11, weight: .bold, design: .rounded)).lineLimit(1).padding(5)
-                    .background(StoryPalette.page.opacity(0.9), in: RoundedRectangle(cornerRadius: 7)).padding(4)
+                    .background(StoryPalette.illustratedPaper.opacity(0.94), in: RoundedRectangle(cornerRadius: 7)).padding(4)
             }.frame(width: size.width * 0.68 - 3, height: size.height, alignment: .topLeading).clipped()
-        }.background(StoryPalette.forest.opacity(0.5))
+        }.background(StoryPalette.illustratedPaper)
     }
 
     private func neutralScene(background: String, cell: Int, size: CGSize) -> some View {
@@ -664,6 +668,20 @@ struct LifeWorldScene: View {
     private static func atlas(_ name: String) -> CGImage? {
         if let image = atlasCache[name] { return image }
         let image = load(name); atlasCache[name] = image; return image
+    }
+    /// Alpha unions measured from the source and edited index-2 cells, retained
+    /// in assets/final-polish-loop/alpha-audit.json. Never trim endpoints separately.
+    static func requestPose(age: Int, listening: Bool) -> CGImage? {
+        guard age == 13 || age == 32 else { return nil }
+        let name = age == 13 ? (listening ? "FPListening13" : "VL2Teen13")
+                             : (listening ? "FPListening32" : "MCMumu")
+        let key = "request-\(name)"
+        if let cached = cellCache[key] { return cached }
+        let rect = age == 13 ? CGRect(x: 114, y: 686, width: 434, height: 501)
+                             : CGRect(x: 83, y: 656, width: 505, height: 561)
+        guard let image = atlas(name), let crop = image.cropping(to: rect) else { return nil }
+        cellCache[key] = crop
+        return crop
     }
     static func scene(_ name: String, size: CGSize) -> CGImage? {
         guard let image = atlas(name), size.width > 0, size.height > 0 else { return nil }

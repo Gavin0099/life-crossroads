@@ -5,7 +5,7 @@ import LifeData
 import LifePresentation
 
 private let accent = StoryPalette.forest
-private let worldPaper = Color(red: 0.98, green: 0.95, blue: 0.88)
+private let worldPaper = StoryPalette.illustratedPaper
 
 struct CrossroadsView: View {
     @StateObject private var store = GameStore()
@@ -692,9 +692,12 @@ struct CrossroadsView: View {
     private func feedback(_ trace: ConsequenceTrace) -> some View {
         let moment = ProjectMoment(trace: trace)
         return VStack(alignment: .leading, spacing: 16) {
-            StoryEyebrow(title: "這次選擇之後", icon: "bookmark")
+            if !dynamicTypeSize.isAccessibilitySize {
+                StoryEyebrow(title: "這次選擇之後", icon: "bookmark")
+            }
             HStack(spacing: 12) {
-                Text(trace.choiceTitle).font(.title2.bold()).accessibilityIdentifier("chosenAction")
+                Text(trace.choiceTitle).font(dynamicTypeSize.isAccessibilitySize ? .headline : .title2.bold())
+                    .accessibilityLabel("這次選擇之後，" + trace.choiceTitle).accessibilityIdentifier("chosenAction")
                     .accessibilityValue(trace.choiceID)
                 if !store.worldPreviewEnabled && trace.eventID != "teen-project" && !dynamicTypeSize.isAccessibilitySize {
                     Spacer(minLength: 0)

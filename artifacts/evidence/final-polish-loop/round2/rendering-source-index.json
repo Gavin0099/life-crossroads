@@ -1,0 +1,25 @@
+{
+  "note": "Uncommitted Round2 rendering recovered by reversing the documented final small delta; each byte hash exactly matches the capture-time source manifest. Unchanged source resolves at base325. Not a separate Git commit.",
+  "files": [
+    {
+      "path": "LifeCrossroads/App/CrossroadsView.swift",
+      "sha256": "c5d906795d82210948d3ad05766dcc4789b39a63df3c96fe08d0510c147d557e",
+      "snapshot": "artifacts/evidence/final-polish-loop/round2/rendering-source/LifeCrossroads/App/CrossroadsView.swift"
+    },
+    {
+      "path": "LifeCrossroads/App/LifeWorldScene.swift",
+      "sha256": "730af7ef1a5101b22f11e527cdbeda165a8d1460fbf16104e876eec9ff25a0cb",
+      "snapshot": "artifacts/evidence/final-polish-loop/round2/rendering-source/LifeCrossroads/App/LifeWorldScene.swift"
+    },
+    {
+      "path": "LifeCrossroads/App/ProjectWorkshopView.swift",
+      "sha256": "cba308400fb8dc858d16a780cd4316cea92844a255d9db13ac7465e834d204f2",
+      "snapshot": "artifacts/evidence/final-polish-loop/round2/rendering-source/LifeCrossroads/App/ProjectWorkshopView.swift"
+    },
+    {
+      "path": "LifeCrossroads/Presentation/WorldRequestTransition.swift",
+      "sha256": "96c13f993157601cbd5efed202804452751dceb95179d3ce900533f78fd9c0d2",
+      "snapshot": "artifacts/evidence/final-polish-loop/round2/rendering-source/LifeCrossroads/Presentation/WorldRequestTransition.swift"
+    }
+  ]
+}

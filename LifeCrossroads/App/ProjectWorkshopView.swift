@@ -66,7 +66,8 @@ struct ProjectWorkshopView: View {
                     .font(.caption2).foregroundStyle(.secondary)
             }
             .padding(14)
-            .background(Color(.secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 22))
+            .background(StoryPalette.illustratedPaper, in: RoundedRectangle(cornerRadius: 16))
+            .overlay(RoundedRectangle(cornerRadius: 16).stroke(StoryPalette.forest.opacity(0.16), lineWidth: 1))
         }
     }
 

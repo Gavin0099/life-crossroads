@@ -1,0 +1,49 @@
+Building for production...
+[Computing dependencies]
+[1 / 2]
+[2 / 3] LifePresentation
+[3 / 4] LifePresentation
+[8 / 9] LifePresentationTests-product
+[9 / 10] LifePresentationTests-product
+[13 / 17] LifePresentationTests-product
+[15 / 17] LifePresentationTests-product
+[17 / 17] LifePersistenceTests-product
+[19 / 21] LifePersistenceTests-product
+Build complete! (10.66秒)
+Test Suite 'Selected tests' started at 2026-10-28 19:38:09.070.
+Test Suite 'LifePresentationTests.xctest' started at 2026-10-28 19:38:09.073.
+Test Suite 'WorldRequestTransitionTests' started at 2026-10-28 19:38:09.073.
+Test Case '-[LifePresentationTests.WorldRequestTransitionTests testInvitationsRestParticipationAndWrongPhaseCannotPlayRequestHandover]' started.
+Test Case '-[LifePresentationTests.WorldRequestTransitionTests testInvitationsRestParticipationAndWrongPhaseCannotPlayRequestHandover]' passed (0.206 seconds).
+Test Case '-[LifePresentationTests.WorldRequestTransitionTests testPauseResumeAndTotalClockDoNotRestartThePose]' started.
+Test Case '-[LifePresentationTests.WorldRequestTransitionTests testPauseResumeAndTotalClockDoNotRestartThePose]' passed (0.022 seconds).
+Test Case '-[LifePresentationTests.WorldRequestTransitionTests testPresentationSamplingCannotChangeSavedStoryOrRestoredProjection]' started.
+Test Case '-[LifePresentationTests.WorldRequestTransitionTests testPresentationSamplingCannotChangeSavedStoryOrRestoredProjection]' passed (0.223 seconds).
+Test Case '-[LifePresentationTests.WorldRequestTransitionTests testReducedMotionAndInvalidTimeKeepTheHonestStaticRequest]' started.
+Test Case '-[LifePresentationTests.WorldRequestTransitionTests testReducedMotionAndInvalidTimeKeepTheHonestStaticRequest]' passed (0.041 seconds).
+Test Case '-[LifePresentationTests.WorldRequestTransitionTests testReviewedHandoverTimingAndEndpoints]' started.
+Test Case '-[LifePresentationTests.WorldRequestTransitionTests testReviewedHandoverTimingAndEndpoints]' passed (0.066 seconds).
+Test Suite 'WorldRequestTransitionTests' passed at 2026-10-28 19:38:09.631.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.558 (0.559) seconds
+Test Suite 'LifePresentationTests.xctest' passed at 2026-10-28 19:38:09.631.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.558 (0.559) seconds
+Test Suite 'Selected tests' passed at 2026-10-28 19:38:09.631.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.558 (0.561) seconds
+Test Suite 'Selected tests' started at 2026-10-28 19:38:09.812.
+Test Suite 'LifePersistenceTests.xctest' started at 2026-10-28 19:38:09.814.
+Test Suite 'LifePersistenceTests.xctest' passed at 2026-10-28 19:38:09.814.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-28 19:38:09.814.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.002) seconds
+Test Suite 'Selected tests' started at 2026-10-28 19:38:09.994.
+Test Suite 'LifeDomainTests.xctest' started at 2026-10-28 19:38:09.996.
+Test Suite 'LifeDomainTests.xctest' passed at 2026-10-28 19:38:09.996.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-28 19:38:09.996.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.002) seconds
+Test Suite 'Selected tests' started at 2026-10-28 19:38:10.148.
+Test Suite 'LifeAnalysisTests.xctest' started at 2026-10-28 19:38:10.149.
+Test Suite 'LifeAnalysisTests.xctest' passed at 2026-10-28 19:38:10.149.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-28 19:38:10.149.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.002) seconds

@@ -1,0 +1,25 @@
+{
+  "task": "FINAL-POLISH-LOOP",
+  "maximum_agent_seconds": 14400,
+  "accounting": "Conservative wall time: root includes tool and CI waits; children sum active turns, idle waits excluded. Not a measured CPU/token cost.",
+  "root_start_utc": "2026-10-28T11:00:00Z",
+  "checkpoint_utc": "2026-10-28T12:02:08.515063+00:00",
+  "root_pending": "Draft push and current-HEAD CI verification still to run; final elapsed in PR delivery report.",
+  "children": [
+    {
+      "agent": "final_polish_pose_edits",
+      "conservative_seconds": 503
+    },
+    {
+      "agent": "final_polish_critic",
+      "conservative_seconds": 840
+    },
+    {
+      "agent": "final_polish_engineering",
+      "conservative_seconds": 602
+    }
+  ],
+  "subagent_total_seconds": 1945,
+  "rounds": 3,
+  "new_loop_authorized": false
+}

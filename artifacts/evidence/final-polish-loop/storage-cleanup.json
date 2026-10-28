@@ -1,0 +1,16 @@
+{
+  "utc": "2026-10-28T11:58:16.223810+00:00",
+  "taskDevices": [
+    "9C0F8B3B-5979-4270-AADC-94F41E15022A",
+    "4E8EC611-3E96-4092-B727-68020AE9A5DB",
+    "88035B1E-F3DA-49C0-A6B5-0A416412E7FE",
+    "0C9F33F0-1B9D-4172-884C-49DA278B2F8D",
+    "F3B0844F-2652-4807-B8D5-799841DEDE69",
+    "7B082A3B-7BCD-42A8-8CAC-EDE28696A9E1"
+  ],
+  "stillPresent": [],
+  "taskCachePath": ".build/final-polish-loop",
+  "cacheLogicalBytesRemoved": 247133312,
+  "cacheAbsent": true,
+  "preserved": "Other devices, shared runtime, shared .build, xcresult and required native evidence retained."
+}

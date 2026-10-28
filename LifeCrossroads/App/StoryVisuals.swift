@@ -5,6 +5,7 @@ enum StoryPalette {
     static let forest = Color(red: 0.15, green: 0.36, blue: 0.29)
     static let amber = Color(red: 0.87, green: 0.63, blue: 0.27)
     static let page = Color(.systemGroupedBackground)
+    static let illustratedPaper = Color(red: 0.98, green: 0.95, blue: 0.88)
 }
 
 /// The same fictional cast accompanies every country. Species never encode nationality.

@@ -27,11 +27,13 @@
 
 ## Current Phase
 
-P1 / INTERACTION-MEMORY-LOOP。使用者2026-10-28授權有界Loop，以PR19 a79f667為基底，優先改善求助／聆聽／合作的可見差異及10→72歲關係記憶；必要時補三個易混淆中間年齡的中立姿勢。只改Presentation、App、素材及驗證，不改Domain、Data、Persistence、Seed或schema。獨立Draft/HOLD，不合併發布。
+P1 / FINAL-POLISH-LOOP。Owner2026-10-28固定PR20 `325b698`，只做正式試玩前的角色一致性、自然互動、畫面層級及雙尺寸品質收尾。最多三輪、4 Agent-hours；獨立Draft基底codex/interaction-memory-loop，HOLD不合併發布。無新內容／Domain／Data／Persistence／Seed／schema改動。
 
 ## Current Sprint
 
-本輪本機整合與驗證已完成：求助兩pose讀共同clock、10→72真實關係記憶、三個中立年齡造型；獨立Loop抓到並修正前因錯置、頭尾裁切及大字標籤佈局。初版157 Swift、最後6定向、45 Python通過；最後雙機各19場景，兩機各4真時點與保存失敗重試，8台專用Simulator均delete。原核心及30UI未改；詳[驗收](docs/interaction-memory-loop/VALIDATION.md)。獨立工程與視覺覆審已無未解確認阻擋，待獨立Draft推送及最新HEAD CI；既有治理期限FAIL保留，真人與正式美術仍HOLD，不宣稱90–95%。
+先以相同真實存檔拍SE3／iPhone17基準，由獨立Critic列可觀察問題後局部修正；驗收與預算見[FINAL-POLISH](docs/final-polish-loop/PLAN.md)。原158Swift／45Python／30UI保留；既有治理期限FAIL留證。完成後停在Owner及10～15歲試玩，不自行開下一Loop。
+
+前輪PR20 `325b698`已推送，CI #53完整158Swift／45Python／30UI通過，整體因既有期限FAIL。8台本機及6台CI Simulator已delete；工程及有界視覺覆審阻擋0，正式美術、連續自然動畫及真人理解仍待驗收。
 
 前輪MULTI-CAST PR19 a79f667已推送Draft。CI run40648422339的152 Swift／44 Python／30 UI通過，整體因既有session_envelope期限FAIL；沒有關Gate。11台專用Simulator已刪。四位正式人物已接實際紀錄，貓狗五齡只候選；三輪視覺Critic保留年齡／互動及真人驗收缺口。詳docs/multi-cast-loop/VALIDATION.md與PR19最終CI補註。
 
