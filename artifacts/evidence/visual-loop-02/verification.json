@@ -9,7 +9,7 @@
       "captures": 30,
       "archiveEquality": true,
       "controlsReachable": 30,
-      "capturedSourceMatchesWorkingTree": true,
+      "capturedSourceMatches": "bc89f88a42d20acc59f6e91ab4aec62ae154b80f",
       "source": "artifacts/evidence/visual-loop-02/round3/iPhone-SE-3rd-generation/source.json",
       "nativeImages": "artifacts/evidence/visual-loop-02/round3/iPhone-SE-3rd-generation/screenshots.json"
     },
@@ -18,7 +18,7 @@
       "captures": 30,
       "archiveEquality": true,
       "controlsReachable": 30,
-      "capturedSourceMatchesWorkingTree": true,
+      "capturedSourceMatches": "bc89f88a42d20acc59f6e91ab4aec62ae154b80f",
       "source": "artifacts/evidence/visual-loop-02/round3/iPhone-17/source.json",
       "nativeImages": "artifacts/evidence/visual-loop-02/round3/iPhone-17/screenshots.json"
     }

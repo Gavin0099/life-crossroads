@@ -99,7 +99,10 @@ final class LifeCrossroadsUITests: XCTestCase {
         skipWorldMontage(app)
         let scene = app.otherElements["lifeWorldScene"]
         if !scene.exists { print("LX04_SCENE_TREE\n\(app.debugDescription)") }
-        XCTAssertTrue(scene.exists); XCTAssertGreaterThanOrEqual(scene.frame.height, 120)
+        XCTAssertTrue(scene.exists)
+        // AX coordinate subtraction can report 120 pt as 119.99999999999997.
+        // Allow only subpixel floating-point noise; the 120 pt layout floor stays intact.
+        XCTAssertGreaterThanOrEqual(scene.frame.height + 0.000_001, 120)
         let read = app.buttons["readFullEvent"]; reveal(read, in: app); read.tap()
         let question = app.staticTexts["eventStoryQuestion"]; reveal(question, in: app)
         XCTAssertTrue(question.isHittable)

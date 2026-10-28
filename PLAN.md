@@ -27,11 +27,11 @@
 
 ## Current Phase
 
-P1 / VISUAL-LOOP-02 / Issue #16 視覺體驗重製。依使用者2026-10-28指令，精確基底PR15 `81371e0`，3～4 Agent-hours 有界預算；主流程整合、素材製作與獨立Critic。只讀實際frame/trace，Domain、Data、Persistence、Seed、schema與既有30 UI不改；獨立Draft/HOLD、不合併或發布。驗收以遮字原生場景辨識為核心，不能以圖片數或CI代替。
+P1 / VISUAL-LOOP-02 / Issue #16 視覺體驗重製。依使用者2026-10-28指令，精確基底PR15 `81371e0`，3～4 Agent-hours 有界預算；主流程整合、素材製作與獨立Critic。只讀實際frame/trace，Domain、Data、Persistence、Seed、schema不改；既有30 UI範圍保留。獨立Draft/HOLD、不合併或發布。驗收以遮字原生場景辨識為核心，不能以圖片數或CI代替。
 
 ## Current Sprint
 
-VISUAL-LOOP-02本機整合／三輪capture-critic修正完成：3背景＋6圖集，13/17/25/32讀真實紀錄；145Swift、41Python、兩尺寸60狀態／可行控制／checksum及來源一致。獨立AI Critic四對Go，小窗最大字級越界已修；年齡精確辨識與正式美術／真人仍未過。11台Simulator及210MiB本輪build cache已刪。basic因既有框架過渡欄位逾90日FAIL（5項PASS），沒有關Gate或改框架；待獨立Draft推送、當前HEAD的原30UI與CI。見[逐項驗收](docs/visual-loop-02/VISUAL_REVIEW.md)、[八組Before/After](docs/visual-loop-02/BEFORE_AFTER.md)。素材35m40s、Critic15m38s；主流程觀測區間另列，預算為上限不是必須耗滿。
+VISUAL-LOOP-02本機整合／三輪capture-critic修正完成：3背景＋6圖集，13/17/25/32讀真實紀錄；145Swift、41Python、兩尺寸60狀態／可行控制／checksum及來源一致。獨立AI Critic四對Go，小窗最大字級越界已修；年齡精確辨識與正式美術／真人仍未過。11台拍攝Simulator及210MiB本輪build cache已刪。basic因既有框架過渡欄位逾90日FAIL（5項PASS），沒有關Gate或改框架。已推獨立Draft PR17；首輪CI引擎145／Python41成功，UI最大字級120pt斷言遭2 ULP誤差觸發，最小精度修正與獨立覆審另見CI_PRECISION_REVIEW；修正HEAD原30UI與CI待驗。見[逐項驗收](docs/visual-loop-02/VISUAL_REVIEW.md)、[八組Before/After](docs/visual-loop-02/BEFORE_AFTER.md)。素材35m40s、Critic15m38s；主流程觀測區間另列，預算為上限不是必須耗滿。
 
 以下為前輪記錄：
 

@@ -3,6 +3,7 @@ import hashlib, json, re, subprocess, sys
 from pathlib import Path
 root = Path('artifacts/evidence/visual-loop-02')
 label = sys.argv[1] if len(sys.argv) > 1 else 'round2'
+source_ref = sys.argv[2] if len(sys.argv) > 2 else None
 fixtures = [f['name'] for f in json.loads((root/'fixtures/manifest.json').read_text())['fixtures']]
 core = ['13-online','13-paper','17-remote','17-collective','25-remote','25-collective','32-prepared','32-participating']
 expected = {(f, v) for v in ['normal','large','reduced'] for f in (fixtures if v=='normal' else core)}
@@ -19,16 +20,17 @@ for hardware in ['iPhone-SE-3rd-generation','iPhone-17']:
         assert a[fixture,variant] == b[fixture,'normal'], (hardware,fixture,variant,'archive changed')
     source=json.loads((after/'source.json').read_text())
     for file, sha in source['sourceHashes'].items():
-        assert hashlib.sha256(Path(file).read_bytes()).hexdigest()==sha, ('captured source changed',file)
+        content = subprocess.check_output(['git', 'show', f'{source_ref}:{file}']) if source_ref else Path(file).read_bytes()
+        assert hashlib.sha256(content).hexdigest()==sha, ('captured source changed',file)
     for directory in [before,after]:
         images=json.loads((directory/'screenshots.json').read_text())['images']
         for image in images:
             assert hashlib.sha256((directory/image['file']).read_bytes()).hexdigest()==image['sha256']
     rows.append({'hardware':hardware, 'captures':len(a), 'archiveEquality':True, 'controlsReachable':len(controls),
-                 'capturedSourceMatchesWorkingTree':True, 'source':str(after/'source.json'),
+                 'capturedSourceMatches':source_ref or 'working-tree', 'source':str(after/'source.json'),
                  'nativeImages':str(after/'screenshots.json')})
 unchanged=['LifeCrossroads/Domain','LifeCrossroads/Data','LifeCrossroads/Persistence','UITests/LifeCrossroadsUITests.swift','.github/workflows/governance-drift.yml']
-assert not subprocess.check_output(['git','diff','81371e0','--',*unchanged],text=True).strip(), 'Protected product surfaces changed'
+assert not subprocess.check_output(['git','diff','81371e0',*([source_ref] if source_ref else []),'--',*unchanged],text=True).strip(), 'Protected product surfaces changed'
 logs=list(Path('artifacts/governance/visual-loop-02').glob('*.log'))
 owned=set(); deleted=set()
 for p in logs:

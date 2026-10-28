@@ -1,6 +1,6 @@
 # VISUAL-LOOP-02 — 驗收與限制
 
-獨立 Draft／HOLD；以PR15 `81371e0`為基底。這輪改的是正式 App 的活動圖層與場景呈現，沒有更動 Domain、Data、Persistence、Seed、存檔schema或原30個UI案例。正式美術與玩家驗收不是自動化測試可替代。
+獨立 Draft／HOLD；以PR15 `81371e0`為基底。這輪改的是正式 App 的活動圖層與場景呈現，沒有更動 Domain、Data、Persistence、Seed、存檔schema。原30個UI案例範圍保留，後續高度斷言精度修正見下方CI補記。正式美術與玩家驗收不是自動化測試可替代。
 
 ## 已執行循環
 
@@ -26,7 +26,7 @@ PASS只表示本欄明訂的可觀測條件成立，沒有把AI辨圖擴張成�
 | 無國名設備映射、缺值不畫斷電斷網 | PASS | Presentation只讀實際action／focus；國家與家戶規則未變 |
 | 固定Seed／原人生／存讀 | PASS（工程） | 完整145Swift含原回歸；逐次native拍攝前後checksum及跨版本同存檔校驗另見verification.json |
 | 兩機型normal／large／reduced矩陣 | PASS（工程） | 最終60狀態、60可行控制、跨基準checksum及source hash全部一致；見verification.json，並非60個正式UI案例 |
-| 原30UI與當前HEAD遠端CI | PENDING PUSH | 未減少案例、分片或Gate；以獨立PR當前HEAD檢查為準 |
+| 原30UI與當前HEAD遠端CI | 首輪FAIL／修正待驗 | PR17首輪120pt高度讀為119.99999999999997，保留原失敗並補1e-6pt容差；未減少案例、分片或Gate；見CI_PRECISION_REVIEW.md |
 | basic治理檢查 | FAIL（既有框架時限） | pinned framework的session_envelope過渡鍵於10/28超過90天；5項PASS、drift WARN導致required basic失敗。沒有升級框架或關閉檢查 |
 | 13與17精確年齡只看圖可靠區分 | FAIL／仍不足 | Critic只能粗分幼態、青少年、成人及長者；不能宣稱所有年齡辨識已達標 |
 | 至少3種姿勢與4種表情，不以微晃冒充手臉動畫 | PASS（素材及AI目視） | 坐姿鍵盤、低頭紙筆、攤掌詢問、閉眼休息與站姿工作；專注、疑問、放鬆、交談。是姿態切換＋共用光影，仍沒有逐格／骨架手臉動畫 |
@@ -46,3 +46,11 @@ PASS只表示本欄明訂的可觀測條件成立，沒有把AI辨圖擴張成�
 獨立AI Critic最終四對Go，指定原生範圍無剩餘阻擋P1/P2；required basic時限失敗仍保留，遠端CI另核對。
 
 核心對照先看「做了什麼不同活動」，不從圖推論所得、技能高低、被錄取或現實國家的因果。正式美術、兒少體驗與發布繼續HOLD；不宣稱90～95%完成，不合併、不發布。
+
+## CI 精度補記
+
+PR17首輪CI #50的ui2實際4過1失敗。原始xcresult與log確認唯一斷言差2 ULP；只修正不可見的座標誤差，不改App布局、120pt規格或30個案例。119.99pt仍失敗。獨立覆審與原失敗artifact見[CI_PRECISION_REVIEW](CI_PRECISION_REVIEW.md)、[機讀紀錄](../../artifacts/evidence/visual-loop-02/ci-precision/failure.json)。最新完整CI以PR描述的指定HEAD為準。
+
+本文件原生Round3仍綁實作bc89f88；後續CI測試精度改動不等於重新拍攝。歷史來源核對使用明確capture revision，不將最新測試檔冒稱當時來源。
+
+精度修正後SE3／iPhone17各1/1定向測試通過、0 failed／0 skipped，兩台均delete，見[定向原生證據](../../artifacts/evidence/visual-loop-02/ci-precision/local-validation.json)。本輪本機合計13台專用Simulator已刪；這兩次並非本機完整30項UI。全部30項的新HEAD遠端結果仍需獨立核對。

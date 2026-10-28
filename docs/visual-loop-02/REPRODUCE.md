@@ -9,7 +9,7 @@
 5. `scene.png` 是 XCTest 原生元素截圖，沒有以影像工具塗改；`screen.png` 是原生完整畫面。基準舊場景的65歲內含文案，故沒有當成純盲測。
 6. `source.json` 記錄當時 HEAD、overlay說明與所有實際來源SHA；`screenshots.json` 記錄圖檔SHA、原附件及xcresult；`runtime-summary.json` 保留測試數與警告。未提交來源以SHA綁定，不把HEAD名義值當成畫面唯一來源。
 7. 完整build/XCTest log保留在忽略的 `artifacts/governance/visual-loop-02/`，公開log是判定與capture紀錄投影，`logs.json`保留兩者SHA。三次基準工具失敗及一次第三輪shell啟動失敗單列 `capture-failures.json`，不計成功。
-8. `python3 tools/visual-loop-02/verify-evidence.py round3` 核對兩台全矩陣、來源、圖檔、同一原存檔校驗與可行控制；並核對本次全部裝置建立／delete紀錄及simctl inventory。trap在成功、失敗與中止均刪本次裝置，不刪其他裝置或runtime。
+8. `python3 tools/visual-loop-02/verify-evidence.py round3 bc89f88a42d20acc59f6e91ab4aec62ae154b80f` 核對兩台全矩陣、已提交拍攝來源、圖檔、同一原存檔校驗與可行控制；不冒稱後續UI精度修正也被拍攝。並核對本次拍攝裝置建立／delete紀錄及simctl inventory。trap在成功、失敗與中止均刪本次裝置，不刪其他裝置或runtime。
 
 畫面中的紙板、草稿、工具是明確活動的原創插畫詮釋，不是家庭實際財物、國家實景、收入或完成作品的統計證據。只顯示被保存的行動；尚未選擇使用獨立中立姿勢。32歲的休息空間來自已完成的生活重心記錄，與本次實選短時參與分開。
 

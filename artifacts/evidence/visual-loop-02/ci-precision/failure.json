@@ -1,0 +1,36 @@
+{
+  "run": 40627433827,
+  "head": "8e404a7afa33af1a4bccfd7df1afe659338a8404",
+  "job": 122619156161,
+  "artifact": 12790882500,
+  "artifactSHA256": "17ed571dce862fe1bcbb45a3a984d3985ce2078dae81b4332a2a80074bf9c8f6",
+  "rawLogSHA256": "c3ee9f3d5fe668af76a720eddbad84a5034323c3c62856706daa01599dce38bb",
+  "failure": [
+    "/Users/runner/work/life-crossroads/life-crossroads/UITests/LifeCrossroadsUITests.swift:102: error: -[LifeCrossroadsUITests.LifeCrossroadsUITests testBirthStoryWorldAndContextRemainReadableAtMaximumType] : XCTAssertGreaterThanOrEqual failed: (\"119.99999999999997\") is less than (\"120.0\")"
+  ],
+  "minimumHeightPoints": 120,
+  "tolerancePoints": 1e-06,
+  "boundaryCases": [
+    {
+      "height": 119.99,
+      "expectedPass": false
+    },
+    {
+      "height": 119.999,
+      "expectedPass": false
+    },
+    {
+      "height": 119.99999999999997,
+      "expectedPass": true
+    },
+    {
+      "height": 120,
+      "expectedPass": true
+    },
+    {
+      "height": 120.1,
+      "expectedPass": true
+    }
+  ],
+  "scope": "Coordinate precision in one assertion only; all 30 test methods and application source unchanged from 8e404a7."
+}
