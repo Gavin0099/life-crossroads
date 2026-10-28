@@ -38,6 +38,11 @@ final class GameStore: ObservableObject {
             // Project once from the saved/restored session, never from presentation ticks.
             projectedWorld = try? WorldMomentProjector.project(session: session, catalog: catalog)
             playback.bind(session, now: now, restoring: restoring, reset: reset)
+#if VISUAL_LOOP_CAPTURE && targetEnvironment(simulator)
+            if ProcessInfo.processInfo.arguments.contains("-visual-loop-capture") {
+                playback.setPaused(true, now: now)
+            }
+#endif
         }
     }
     private func advanceWorld(_ ticket: WorldAdvanceTicket) {
@@ -109,6 +114,19 @@ final class GameStore: ObservableObject {
         do { catalog = try StatisticsRepository.bundled() }
         catch { catalog = nil; errorMessage = "離線資料無法載入：\(error)" }
         if let catalog {
+#if VISUAL_LOOP_CAPTURE && targetEnvironment(simulator)
+            // Capture builds only: load a real, replay-validated archive into the isolated UI-test file.
+            // Normal CI, devices and production builds do not compile this fixture ingress.
+            if arguments.contains("-ui-testing"), arguments.contains("-visual-loop-capture"),
+               let path = ProcessInfo.processInfo.environment["LIFE_VISUAL_ARCHIVE_PATH"] {
+                do {
+                    let data = try Data(contentsOf: URL(fileURLWithPath: path))
+                    let fixture = try JSONDecoder().decode(JourneySave.self, from: data)
+                    try fixture.validate(catalog: catalog)
+                    try saves.save(fixture.journey, catalog: catalog)
+                } catch { errorMessage = "視覺取證存檔無效：\(error)"; return }
+            }
+#endif
             do { journey = try saves.load(catalog: catalog) }
             catch { restoreFailed = true; errorMessage = "存檔無法讀取或版本不相容，原檔仍保留。若為舊版人生，本版創作機會規則已不同，可在原版本續玩；或明確選擇建立新人生取代紀錄。\(error)" }
         }

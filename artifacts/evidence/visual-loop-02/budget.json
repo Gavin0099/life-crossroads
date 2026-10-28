@@ -1,0 +1,14 @@
+{
+  "budgetAgentHours": [
+    3,
+    4
+  ],
+  "budgetType": "upper work allowance, not a promise to spend all time",
+  "assetActiveSeconds": 2140,
+  "criticActiveSeconds": 938,
+  "mainObservedStartApproxUTC": "2026-10-28T02:06:00Z",
+  "mainImplementationEvidenceCompleteUTC": "2026-10-28T03:26:31.998891+00:00",
+  "mainActiveSeconds": "not independently metered; observed interval includes native-tool waits",
+  "ciWait": "not counted as implementation effort",
+  "formalArtOrPlayerCompletionPercent": "not claimed"
+}

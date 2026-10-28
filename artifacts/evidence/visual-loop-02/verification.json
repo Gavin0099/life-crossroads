@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "scope": "Native capture/source/archive checks; not full UI suite, human playtest or formal art acceptance",
+  "base": "81371e0aa257233fadd0355faf36ba8e0edcdc64",
+  "label": "round3",
+  "matrix": [
+    {
+      "hardware": "iPhone-SE-3rd-generation",
+      "captures": 30,
+      "archiveEquality": true,
+      "controlsReachable": 30,
+      "capturedSourceMatchesWorkingTree": true,
+      "source": "artifacts/evidence/visual-loop-02/round3/iPhone-SE-3rd-generation/source.json",
+      "nativeImages": "artifacts/evidence/visual-loop-02/round3/iPhone-SE-3rd-generation/screenshots.json"
+    },
+    {
+      "hardware": "iPhone-17",
+      "captures": 30,
+      "archiveEquality": true,
+      "controlsReachable": 30,
+      "capturedSourceMatchesWorkingTree": true,
+      "source": "artifacts/evidence/visual-loop-02/round3/iPhone-17/source.json",
+      "nativeImages": "artifacts/evidence/visual-loop-02/round3/iPhone-17/screenshots.json"
+    }
+  ],
+  "unchangedPaths": [
+    "LifeCrossroads/Domain",
+    "LifeCrossroads/Data",
+    "LifeCrossroads/Persistence",
+    "UITests/LifeCrossroadsUITests.swift",
+    ".github/workflows/governance-drift.yml"
+  ],
+  "deletedOwnedSimulators": [
+    "0695B3E9-0D86-4FBC-BE54-BC03BC7D006D",
+    "461223EA-DEED-44F7-AFC0-93C29E63900C",
+    "65B4C05A-64E6-4F20-A68F-B01ABD7F0AD2",
+    "6E22944E-9369-4500-94BC-912C0A24A821",
+    "78945FA8-D249-4ED8-9DC7-48C5D34A879B",
+    "7F17BC8C-E315-45CA-B466-68DC6416926B",
+    "B10F5ADE-328F-4777-AFCD-4817AECF9416",
+    "B8BA66C9-8911-4D41-9B34-727395C7ECD3",
+    "CEA043CC-B991-49A1-8CB6-4B1A643249C0",
+    "E2F048F6-64B4-4933-8015-9027171E8256",
+    "E3335E46-DB6F-481E-AB7B-E16E57A6D73B"
+  ],
+  "excludedFailures": [
+    "baseline create with unsupported runtime",
+    "baseline harness initially executed zero tests",
+    "baseline archive exceeded launch argument limit",
+    "round3 shell changed during execution; retried with frozen script"
+  ]
+}

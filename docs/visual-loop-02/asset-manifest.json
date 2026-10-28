@@ -1,0 +1,1663 @@
+{
+  "schema_version": 1,
+  "task": "VISUAL-LOOP-02",
+  "issue": 16,
+  "base_commit": "81371e0aa257233fadd0355faf36ba8e0edcdc64",
+  "created_utc": "2026-10-28",
+  "agent": "/root/visual_loop_assets",
+  "started_utc": "2026-10-28T02:10:32Z",
+  "generator": {
+    "tool": "image_gen.imagegen",
+    "model": "not_returned_by_tool",
+    "image_editing_method": "Built-in imagegen only; no CLI or pixel editing fallback",
+    "generation_count": 18
+  },
+  "approval": {
+    "ai_generated": true,
+    "formal_art_approval": false,
+    "human_visual_review": false,
+    "legal_review_complete": false,
+    "scope": "Original candidate assets authorized for the Draft integration preview; not a production release approval"
+  },
+  "provenance": {
+    "identity_reference": "LifeCrossroads/App/Assets.xcassets/StoryCast.imageset/story-cast.png",
+    "external_art_inputs": [],
+    "prompt_log": "docs/visual-loop-02/prompts.md",
+    "originals_retained": true,
+    "copy_policy": "Asset PNGs are byte-for-byte copies of final generated original. No cropping, recompression, resizing or pixel edits were applied.",
+    "identity_reference_sha256": "663bb1b1ce8a0af2ed99be72827a6e4bc69978eb00708df62f7b27cd85e068d8"
+  },
+  "runtime_contract": {
+    "atlas_order": "row-major, top-left origin",
+    "crop": "equal rectangular cells at display time; source PNG unchanged",
+    "country_selection": "Forbidden: selecting scene/equipment by country name or interpreting missing data as real possessions",
+    "companions": "Independent layers; never add owl/rabbit because the action merely asks for support",
+    "outcomes": "Unfinished work and visible action only; no implied success, award, income or accepted invitation",
+    "small_screen_claim": "Native screenshots and independent visual Critic still required; source-image inspection alone is insufficient"
+  },
+  "assets": [
+    {
+      "name": "VL2Studio",
+      "kind": "background",
+      "path": "LifeCrossroads/App/Assets.xcassets/VL2Studio.imageset/VL2Studio.png",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-0a38a32b-93a2-4c74-b0f1-b5a5b3a2ff89.png",
+      "prompt_ids": [
+        "VL2Studio"
+      ],
+      "prompt": "Use case: illustration-story. Asset: VL2Studio, an original background layer for an iPhone interactive storybook game. A quiet welcoming learning studio, hand-painted with matte gouache and colored pencil on warm textured paper. Broad simplified shapes, flat 2D shading, dry dark-brown outlines, warm cream walls, muted forest/blue-green accents, terracotta pots, honey wood. A large soft window at upper left, low shelves with plain unlettered sketchbooks and paper rolls at rear, distant supplies. The LOWER HALF and broad CENTER are EMPTY honey-colored floor for separate character-and-desk sprites; no foreground table, no chairs occupying center. Eye-level stage perspective, horizon about midway. Wide 3:2 composition, readable on a small phone, sparse large details. No characters, people, animals, faces, text, labels, signs, UI, logos, flags or national architecture. Not photoreal, not 3D, not glossy, no imitation of any artist or game. Entire edge-to-edge rectangular background; no vignette border. This fictional workshop is shared across countries and makes no claim about anyone's real possessions.",
+      "grid": {
+        "columns": 1,
+        "rows": 1
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "sharedLearningStudio",
+          "source_rect_px": {
+            "x": 0,
+            "y": 0,
+            "width": 1536,
+            "height": 1024
+          },
+          "source_rect_normalized": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1.0,
+            "height": 1.0
+          }
+        }
+      ],
+      "runtime_note": "Learning setting; keep foreground clear for separate activity/character layers.",
+      "visual_inspection": "AI source-image inspection complete; composition and story claims reviewed. Native integration review pending.",
+      "sha256": "e614de70f920f0c7d2a575e49fa8586cc515574ae77002a3bb2b6f8c0eb7d3b6",
+      "bytes": 2608204,
+      "dimensions_px": {
+        "width": 1536,
+        "height": 1024
+      },
+      "png_color_type": 2,
+      "has_alpha_channel": false,
+      "byte_identical_to_original": true
+    },
+    {
+      "name": "VL2Workshop",
+      "kind": "background",
+      "path": "LifeCrossroads/App/Assets.xcassets/VL2Workshop.imageset/VL2Workshop.png",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-e45960b7-57f7-4963-b2a2-c94409f96329.png",
+      "prompt_ids": [
+        "VL2Workshop"
+      ],
+      "prompt": "Use case: illustration-story. Asset: VL2Workshop reusable adult maker-studio BACKGROUND layer. Use the attached studio only as palette/2D matte gouache-and-colored-pencil style reference; create a DISTINCT more mature working environment. Broad paper-textured shapes, no photoreal fur or glossy 3D. Adult community maker space: high timber beam ceiling, wide open double doors to daylight at upper right, a pegboard of SIMPLE unbranded hand tools far on the back wall, neatly rolled plain plans, material cubbies, muted dark teal cabinets. Eye-level stage perspective, wide 3:2 rectangle. Lower HALF and broad center EMPTY honey-ochre floor, to insert separate otter/desk/long-table activity sprites later; NO foreground workbench, table or chair. Strong clean silhouette architecture different from the learning studio, slightly cooler sage daylight. Warm cream/teal/terracotta palette. No people, animals, characters, faces, signs, writing, labels, UI, flags, national landmarks, coins, trophies or logos. Not any real country's typical home. Edge to edge, no decorative border.",
+      "grid": {
+        "columns": 1,
+        "rows": 1
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "adultMakerWorkshop",
+          "source_rect_px": {
+            "x": 0,
+            "y": 0,
+            "width": 1536,
+            "height": 1024
+          },
+          "source_rect_normalized": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1.0,
+            "height": 1.0
+          }
+        }
+      ],
+      "runtime_note": "Adult maker setting; selection follows recorded activity, never nationality.",
+      "visual_inspection": "AI source-image inspection complete; composition and story claims reviewed. Native integration review pending.",
+      "sha256": "a87b639d5808b509bcafc8c21754fad42f473dc46d66cc4b130bb34073d0ba2d",
+      "bytes": 2602921,
+      "dimensions_px": {
+        "width": 1536,
+        "height": 1024
+      },
+      "png_color_type": 2,
+      "has_alpha_channel": false,
+      "byte_identical_to_original": true
+    },
+    {
+      "name": "VL2Garden",
+      "kind": "background",
+      "path": "LifeCrossroads/App/Assets.xcassets/VL2Garden.imageset/VL2Garden.png",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-5878a9e2-6b86-458a-9b2a-54cdf442439b.png",
+      "prompt_ids": [
+        "VL2Garden"
+      ],
+      "prompt": "Use case: illustration-story. Asset: VL2Garden, reusable quiet courtyard BACKGROUND only for an original 2D interactive storybook. Preserve the matte gouache/colored-pencil paper texture, simple broad flat shapes and warm cream/teal/terracotta palette from the reference, but make an entirely distinct OUTDOOR intimate courtyard. A shade tree spreads a soft canopy across upper left; low garden wall and plain planters at back, a simple pergola along right, a few broad-leaved plants and herbs, calm afternoon dappled light. LOWER HALF is a wide EMPTY pale earthen paving terrace for separate sprites sitting or doing a small shared task; no foreground furniture. Eye-level stage perspective, wide 3:2 rectangle. Plenty of quiet negative space, no river, no village panorama. No characters, faces, people, animals, signs, lettering, icons, UI, national landmarks, flags, awards or logos. Avoid glossy 3D, photorealism, excessive tiny detail, borders. A fictional shared setting, never a claimed country-specific scene.",
+      "grid": {
+        "columns": 1,
+        "rows": 1
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "quietCourtyard",
+          "source_rect_px": {
+            "x": 0,
+            "y": 0,
+            "width": 1536,
+            "height": 1024
+          },
+          "source_rect_normalized": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1.0,
+            "height": 1.0
+          }
+        }
+      ],
+      "runtime_note": "Rest/recovery setting with clear lower terrace.",
+      "visual_inspection": "AI source-image inspection complete; composition and story claims reviewed. Native integration review pending.",
+      "sha256": "0aea7c40a9e78218ba79affaef9f38c671ec7f929786a1748be758ad7f8a4b5b",
+      "bytes": 2893247,
+      "dimensions_px": {
+        "width": 1536,
+        "height": 1024
+      },
+      "png_color_type": 2,
+      "has_alpha_channel": false,
+      "byte_identical_to_original": true
+    },
+    {
+      "name": "VL2Teen13",
+      "kind": "activity_atlas",
+      "path": "LifeCrossroads/App/Assets.xcassets/VL2Teen13.imageset/VL2Teen13.png",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-b958363d-1c05-4310-a166-471eb73cfda3.png",
+      "prompt_ids": [
+        "VL2Teen13",
+        "VL2Teen13_padding",
+        "VL2Teen13_screen",
+        "VL2Teen13_gaze_r2"
+      ],
+      "prompt": "Very local sprite-atlas correction. Keep the exact 2x2 transparent atlas, its size, four cell positions, all clothing, bodies, hands, props and furniture. Preserve top-left computer, top-right paper, bottom-right resting sprites exactly. Change ONLY the eyes and head tilt of the bottom-left asking otter (cell2): he currently looks upward right into empty air. His conversation partner is immediately to the RIGHT and LOWER, at about his own chest height. Lower his chin slightly, rotate the face a little toward camera-right and downward, and direct both pupils RIGHT and DOWN toward that nearby lower partner. Eyes open attentively, questioning slightly open mouth stays. Do NOT close eyes, do not add partner, do not change raised open paw gesture or sketchbook, outfit, body posture or facial identity. Do not add successful help, gift, symbols or any new objects. Same brown otter with broad cream muzzle and ochre scarf. Keep every other part of all four sprites as unchanged as possible. True alpha background, same equal-grid positions and existing transparent gutters. No shape crosses midlines. Matte pencil/gouache consistency.",
+      "grid": {
+        "columns": 2,
+        "rows": 2
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "online",
+          "source_rect_px": {
+            "x": 0,
+            "y": 0,
+            "width": 627,
+            "height": 627
+          },
+          "source_rect_normalized": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.5,
+            "height": 0.5
+          },
+          "visible_bbox_in_cell_alpha_gt32": {
+            "x": 78,
+            "y": 107,
+            "width": 528,
+            "height": 452
+          },
+          "clear_border_px_alpha_gt32": {
+            "left": 78,
+            "top": 107,
+            "right": 21,
+            "bottom": 68
+          }
+        },
+        {
+          "index": 1,
+          "id": "paper",
+          "source_rect_px": {
+            "x": 627,
+            "y": 0,
+            "width": 627,
+            "height": 627
+          },
+          "source_rect_normalized": {
+            "x": 0.5,
+            "y": 0.0,
+            "width": 0.5,
+            "height": 0.5
+          },
+          "visible_bbox_in_cell_alpha_gt32": {
+            "x": 52,
+            "y": 105,
+            "width": 529,
+            "height": 479
+          },
+          "clear_border_px_alpha_gt32": {
+            "left": 52,
+            "top": 105,
+            "right": 46,
+            "bottom": 43
+          }
+        },
+        {
+          "index": 2,
+          "id": "ask",
+          "source_rect_px": {
+            "x": 0,
+            "y": 627,
+            "width": 627,
+            "height": 627
+          },
+          "source_rect_normalized": {
+            "x": 0.0,
+            "y": 0.5,
+            "width": 0.5,
+            "height": 0.5
+          },
+          "visible_bbox_in_cell_alpha_gt32": {
+            "x": 115,
+            "y": 62,
+            "width": 433,
+            "height": 495
+          },
+          "clear_border_px_alpha_gt32": {
+            "left": 115,
+            "top": 62,
+            "right": 79,
+            "bottom": 70
+          }
+        },
+        {
+          "index": 3,
+          "id": "rest",
+          "source_rect_px": {
+            "x": 627,
+            "y": 627,
+            "width": 627,
+            "height": 627
+          },
+          "source_rect_normalized": {
+            "x": 0.5,
+            "y": 0.5,
+            "width": 0.5,
+            "height": 0.5
+          },
+          "visible_bbox_in_cell_alpha_gt32": {
+            "x": 79,
+            "y": 81,
+            "width": 487,
+            "height": 469
+          },
+          "clear_border_px_alpha_gt32": {
+            "left": 79,
+            "top": 81,
+            "right": 61,
+            "bottom": 77
+          }
+        }
+      ],
+      "runtime_note": "0 actual computer work; 1 paper making; 2 request only, not support received; 3 calm rest. No companions embedded.",
+      "visual_inspection": "AI source inspection R2: targeted gaze or material-contact correction accepted; original identity/layout retained by visual comparison, not a claim of pixel-identical untouched cells. Native R2 review remains separate.",
+      "sha256": "8fe89c37ad30a35f9fa0dbdfffdb52466b374c11ce9c3ecf75989576b0adf13f",
+      "bytes": 1207776,
+      "dimensions_px": {
+        "width": 1254,
+        "height": 1254
+      },
+      "png_color_type": 6,
+      "has_alpha_channel": true,
+      "byte_identical_to_original": true,
+      "alpha_audit": {
+        "threshold": 32,
+        "vertical_cell_boundaries_visible_pixel_counts": [
+          0
+        ],
+        "horizontal_cell_boundaries_visible_pixel_counts": [
+          0
+        ],
+        "outer_border_alpha_sum": 5,
+        "equal_cell_boundary_pass": true,
+        "actual_transparent_pixels": 1008243
+      },
+      "previous_versions": [
+        {
+          "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-7f36a32c-916d-4b42-a4ff-e54c4457cc47.png",
+          "sha256": "019be9f95a6040f7997fb1da425439dde793f3fcaf338e2c1a06ec314d07b048",
+          "dimensions_px": {
+            "width": 1254,
+            "height": 1254
+          },
+          "prompt_ids": [
+            "VL2Teen13",
+            "VL2Teen13_padding",
+            "VL2Teen13_screen",
+            "VL2Teen13_gaze_r2"
+          ],
+          "cells": [
+            {
+              "index": 0,
+              "id": "online",
+              "source_rect_px": {
+                "x": 0,
+                "y": 0,
+                "width": 627,
+                "height": 627
+              },
+              "source_rect_normalized": {
+                "x": 0.0,
+                "y": 0.0,
+                "width": 0.5,
+                "height": 0.5
+              },
+              "visible_bbox_in_cell_alpha_gt32": {
+                "x": 78,
+                "y": 107,
+                "width": 528,
+                "height": 452
+              },
+              "clear_border_px_alpha_gt32": {
+                "left": 78,
+                "top": 107,
+                "right": 21,
+                "bottom": 68
+              }
+            },
+            {
+              "index": 1,
+              "id": "paper",
+              "source_rect_px": {
+                "x": 627,
+                "y": 0,
+                "width": 627,
+                "height": 627
+              },
+              "source_rect_normalized": {
+                "x": 0.5,
+                "y": 0.0,
+                "width": 0.5,
+                "height": 0.5
+              },
+              "visible_bbox_in_cell_alpha_gt32": {
+                "x": 52,
+                "y": 105,
+                "width": 529,
+                "height": 479
+              },
+              "clear_border_px_alpha_gt32": {
+                "left": 52,
+                "top": 105,
+                "right": 46,
+                "bottom": 43
+              }
+            },
+            {
+              "index": 2,
+              "id": "ask",
+              "source_rect_px": {
+                "x": 0,
+                "y": 627,
+                "width": 627,
+                "height": 627
+              },
+              "source_rect_normalized": {
+                "x": 0.0,
+                "y": 0.5,
+                "width": 0.5,
+                "height": 0.5
+              },
+              "visible_bbox_in_cell_alpha_gt32": {
+                "x": 115,
+                "y": 62,
+                "width": 433,
+                "height": 495
+              },
+              "clear_border_px_alpha_gt32": {
+                "left": 115,
+                "top": 62,
+                "right": 79,
+                "bottom": 70
+              }
+            },
+            {
+              "index": 3,
+              "id": "rest",
+              "source_rect_px": {
+                "x": 627,
+                "y": 627,
+                "width": 627,
+                "height": 627
+              },
+              "source_rect_normalized": {
+                "x": 0.5,
+                "y": 0.5,
+                "width": 0.5,
+                "height": 0.5
+              },
+              "visible_bbox_in_cell_alpha_gt32": {
+                "x": 79,
+                "y": 81,
+                "width": 487,
+                "height": 469
+              },
+              "clear_border_px_alpha_gt32": {
+                "left": 79,
+                "top": 81,
+                "right": 61,
+                "bottom": 77
+              }
+            }
+          ],
+          "evidence_round": "R1"
+        }
+      ]
+    },
+    {
+      "name": "VL2Teen17",
+      "kind": "activity_atlas",
+      "path": "LifeCrossroads/App/Assets.xcassets/VL2Teen17.imageset/VL2Teen17.png",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-2dfca2a2-e7ab-4d7d-9e32-e6f71d9b8a5b.png",
+      "prompt_ids": [
+        "VL2Teen17",
+        "VL2Teen17_screen_padding"
+      ],
+      "prompt": "Correct this 2-column transparent game atlas, preserving its two activities and same teenage otter identity. EXACT two equal square cells. Shrink BOTH complete groups so each fits inside the central 68% WIDTH and 76% HEIGHT of its own half, centered at x=25% and x=75%; add wide fully transparent middle gutter and outer margins. NO pixel, tail or furniture crosses vertical centerline. All feet/furniture visible, no background.\nLEFT cell: replace the physically incorrect laptop with a plain compact DESKTOP monitor and keyboard. Same older 17-year-old Mumu wears headset and teal vest/cream rolled sleeves/ochre scarf, seated at LEFT of small desk in BACK THREE-QUARTER PROFILE. We see his back, a side cream cheek and eye looking RIGHT at actual display. Monitor is on RIGHT side of desk and its visible SCREEN faces toward Mumu AND viewer, with thin dark bezel and one unfinished geometric line draft. One paw points at the displayed shared draft, other rests on keyboard; slightly open mouth in discussion, no face on screen, no trophy or success signal. Mature teen body more slender and limbs longer than a child. No illustration on back of a screen, no laptop.\nRIGHT cell: preserve the forward leaning material assembly pose and wide plain table, paw gluing a fold of cardboard, other paw holding it, open workspace at right, NO extra character. Slightly narrow cheek and smaller eyes relative to face, keep him same 17-year-old as left. Clear brush-to-cardboard contact.\nMatte gouache/pencil with warm paper grain. Maintain all clothes/identity, transparent margins, no text, numbers, icons or panels.",
+      "grid": {
+        "columns": 2,
+        "rows": 1
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "remote",
+          "source_rect_px": {
+            "x": 0,
+            "y": 0,
+            "width": 887,
+            "height": 887
+          },
+          "source_rect_normalized": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.5,
+            "height": 1.0
+          },
+          "visible_bbox_in_cell_alpha_gt32": {
+            "x": 40,
+            "y": 162,
+            "width": 783,
+            "height": 636
+          },
+          "clear_border_px_alpha_gt32": {
+            "left": 40,
+            "top": 162,
+            "right": 64,
+            "bottom": 89
+          }
+        },
+        {
+          "index": 1,
+          "id": "collective",
+          "source_rect_px": {
+            "x": 887,
+            "y": 0,
+            "width": 887,
+            "height": 887
+          },
+          "source_rect_normalized": {
+            "x": 0.5,
+            "y": 0.0,
+            "width": 0.5,
+            "height": 1.0
+          },
+          "visible_bbox_in_cell_alpha_gt32": {
+            "x": 24,
+            "y": 161,
+            "width": 845,
+            "height": 640
+          },
+          "clear_border_px_alpha_gt32": {
+            "left": 24,
+            "top": 161,
+            "right": 18,
+            "bottom": 86
+          }
+        }
+      ],
+      "runtime_note": "0 shared draft/headset; remote companion must be separately gated in video frame. 1 work-in-progress cardboard with separate companion.",
+      "visual_inspection": "AI source-image inspection complete; composition and story claims reviewed. Native integration review pending.",
+      "sha256": "83eeedd667ff31b77ea00f569c798bea433f6887fbe9e61866f5321a63f59ece",
+      "bytes": 1236784,
+      "dimensions_px": {
+        "width": 1774,
+        "height": 887
+      },
+      "png_color_type": 6,
+      "has_alpha_channel": true,
+      "byte_identical_to_original": true,
+      "alpha_audit": {
+        "threshold": 32,
+        "vertical_cell_boundaries_visible_pixel_counts": [
+          0
+        ],
+        "horizontal_cell_boundaries_visible_pixel_counts": [],
+        "outer_border_alpha_sum": 0,
+        "equal_cell_boundary_pass": true,
+        "actual_transparent_pixels": 1028923
+      }
+    },
+    {
+      "name": "VL2Adult25",
+      "kind": "activity_atlas",
+      "path": "LifeCrossroads/App/Assets.xcassets/VL2Adult25.imageset/VL2Adult25.png",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-003b9d3a-8235-4987-b0c5-df8dab21c5e4.png",
+      "prompt_ids": [
+        "VL2Adult25",
+        "VL2Adult25_padding",
+        "VL2Adult25_gutter",
+        "VL2Adult25_gaze_r2"
+      ],
+      "prompt": "Very local sprite-atlas correction. Preserve this 2-column transparent atlas, size, equal cells, transparent gutter, clothing, entire bodies, hands, workbenches, materials and layout. LEFT solo-work sprite remains unchanged. In RIGHT community-work sprite ONLY change otter's gaze/head angle: he currently looks above and to the right into empty air. His partner is sitting immediately to his RIGHT across the table, with eyes LOWER than his own face, roughly near the height of his chest. Lower his chin and turn his face slightly down-right; both pupils should look toward that nearby lower partner, not the ceiling or sky. Maintain small friendly open mouth, identity, adult teal jacket/cream shirt/ochre scarf, seated body and hand extending an unfinished cardboard piece. Do NOT draw the partner or new item. Preserve the exact hand contacts, table/stool, folded tail and all other props. No help-success symbol, completed prize, money or text. Keep full transparency and clear equal-cell boundaries, no objects across centerline. Avoid changing rendering style, maturity or anatomy.",
+      "grid": {
+        "columns": 2,
+        "rows": 1
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "trial",
+          "source_rect_px": {
+            "x": 0,
+            "y": 0,
+            "width": 887,
+            "height": 887
+          },
+          "source_rect_normalized": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.5,
+            "height": 1.0
+          },
+          "visible_bbox_in_cell_alpha_gt32": {
+            "x": 95,
+            "y": 192,
+            "width": 572,
+            "height": 565
+          },
+          "clear_border_px_alpha_gt32": {
+            "left": 95,
+            "top": 192,
+            "right": 220,
+            "bottom": 130
+          }
+        },
+        {
+          "index": 1,
+          "id": "community",
+          "source_rect_px": {
+            "x": 887,
+            "y": 0,
+            "width": 887,
+            "height": 887
+          },
+          "source_rect_normalized": {
+            "x": 0.5,
+            "y": 0.0,
+            "width": 0.5,
+            "height": 1.0
+          },
+          "visible_bbox_in_cell_alpha_gt32": {
+            "x": 206,
+            "y": 283,
+            "width": 622,
+            "height": 465
+          },
+          "clear_border_px_alpha_gt32": {
+            "left": 206,
+            "top": 283,
+            "right": 59,
+            "bottom": 139
+          }
+        }
+      ],
+      "runtime_note": "0 solo measuring unfinished wooden prototype, no income/success claim. 1 low shared materials table with one empty partner seat.",
+      "visual_inspection": "AI source inspection R2: targeted gaze or material-contact correction accepted; original identity/layout retained by visual comparison, not a claim of pixel-identical untouched cells. Native R2 review remains separate.",
+      "sha256": "66435ab18e347b44891bfb120253a438adf5eaeb577712b77356bb68d9e3a340",
+      "bytes": 865278,
+      "dimensions_px": {
+        "width": 1774,
+        "height": 887
+      },
+      "png_color_type": 6,
+      "has_alpha_channel": true,
+      "byte_identical_to_original": true,
+      "alpha_audit": {
+        "threshold": 32,
+        "vertical_cell_boundaries_visible_pixel_counts": [
+          0
+        ],
+        "horizontal_cell_boundaries_visible_pixel_counts": [],
+        "outer_border_alpha_sum": 4,
+        "equal_cell_boundary_pass": true,
+        "actual_transparent_pixels": 1181403
+      },
+      "previous_versions": [
+        {
+          "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-c57f3b62-c56f-4c1a-83f6-0e25103ef1e6.png",
+          "sha256": "f1c4eef09b910caab4cddca99c54cde614b73b274028c50be695b1e4ced7db0d",
+          "dimensions_px": {
+            "width": 1774,
+            "height": 887
+          },
+          "prompt_ids": [
+            "VL2Adult25",
+            "VL2Adult25_padding",
+            "VL2Adult25_gutter",
+            "VL2Adult25_gaze_r2"
+          ],
+          "cells": [
+            {
+              "index": 0,
+              "id": "trial",
+              "source_rect_px": {
+                "x": 0,
+                "y": 0,
+                "width": 887,
+                "height": 887
+              },
+              "source_rect_normalized": {
+                "x": 0.0,
+                "y": 0.0,
+                "width": 0.5,
+                "height": 1.0
+              },
+              "visible_bbox_in_cell_alpha_gt32": {
+                "x": 95,
+                "y": 192,
+                "width": 572,
+                "height": 565
+              },
+              "clear_border_px_alpha_gt32": {
+                "left": 95,
+                "top": 192,
+                "right": 220,
+                "bottom": 130
+              }
+            },
+            {
+              "index": 1,
+              "id": "community",
+              "source_rect_px": {
+                "x": 887,
+                "y": 0,
+                "width": 887,
+                "height": 887
+              },
+              "source_rect_normalized": {
+                "x": 0.5,
+                "y": 0.0,
+                "width": 0.5,
+                "height": 1.0
+              },
+              "visible_bbox_in_cell_alpha_gt32": {
+                "x": 206,
+                "y": 283,
+                "width": 622,
+                "height": 465
+              },
+              "clear_border_px_alpha_gt32": {
+                "left": 206,
+                "top": 283,
+                "right": 59,
+                "bottom": 139
+              }
+            }
+          ],
+          "evidence_round": "R1"
+        }
+      ]
+    },
+    {
+      "name": "VL2Recovery32",
+      "kind": "activity_atlas",
+      "path": "LifeCrossroads/App/Assets.xcassets/VL2Recovery32.imageset/VL2Recovery32.png",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-b9731a5d-ce27-4d7d-bf87-bf29a0a071a7.png",
+      "prompt_ids": [
+        "VL2Recovery32",
+        "VL2Recovery32_padding"
+      ],
+      "prompt": "Minor layout repair only. Keep these two original 32-year-old otter activity drawings and same order/identity. Output transparent 2:1 sprite atlas with exactly two equal square cells. LEFT resting bench currently touches its cell's right edge. Shrink/recompose LEFT entire bench-and-otter group by 18%, move slightly toward the left quarter center, make bench a little narrower yet retaining one clear empty place at its right. All armrests, feet and tail must have at least 8% of a cell width of transparent margin from the central divider and outer edges. Keep Mumu sitting relaxed with closed eyes, empty right bench place and closed folder underneath, no new activity. RIGHT small-task group remains essentially unchanged: adult gluing one unfinished piece at small folding table, same gaze, exact hand contacts and proportions. Large fully transparent vertical central gutter, no pixel of either sprite may touch midline. No background, ground plane, text, frame, numbers, grids, new character, money or reward. True alpha transparency, same matte pencil and gouache appearance.",
+      "grid": {
+        "columns": 2,
+        "rows": 1
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "preparedRest",
+          "source_rect_px": {
+            "x": 0,
+            "y": 0,
+            "width": 887,
+            "height": 887
+          },
+          "source_rect_normalized": {
+            "x": 0.0,
+            "y": 0,
+            "width": 0.5,
+            "height": 1
+          },
+          "visible_bbox_in_cell_alpha_gt32": {
+            "x": 99,
+            "y": 140,
+            "width": 678,
+            "height": 608
+          },
+          "clear_border_px_alpha_gt32": {
+            "left": 99,
+            "top": 140,
+            "right": 110,
+            "bottom": 139
+          }
+        },
+        {
+          "index": 1,
+          "id": "pacedParticipation",
+          "source_rect_px": {
+            "x": 887,
+            "y": 0,
+            "width": 887,
+            "height": 887
+          },
+          "source_rect_normalized": {
+            "x": 0.5,
+            "y": 0,
+            "width": 0.5,
+            "height": 1
+          },
+          "visible_bbox_in_cell_alpha_gt32": {
+            "x": 116,
+            "y": 136,
+            "width": 735,
+            "height": 653
+          },
+          "clear_border_px_alpha_gt32": {
+            "left": 116,
+            "top": 136,
+            "right": 36,
+            "bottom": 98
+          }
+        }
+      ],
+      "runtime_note": "0 resting with an empty bench position, not completed participation. 1 one small actual task only after committed participation.",
+      "visual_inspection": "AI source-image inspection complete; composition and story claims reviewed. Native integration review pending.",
+      "sha256": "6d72f8ee1f4c0220c24c39bf8da8ca3ce1ace1036a8a2f2f93e7dec464cdbaa7",
+      "bytes": 1107518,
+      "dimensions_px": {
+        "width": 1774,
+        "height": 887
+      },
+      "png_color_type": 6,
+      "has_alpha_channel": true,
+      "byte_identical_to_original": true,
+      "alpha_audit": {
+        "threshold": 32,
+        "vertical_cell_boundaries_visible_pixel_counts": [
+          0
+        ],
+        "horizontal_cell_boundaries_visible_pixel_counts": [],
+        "outer_border_alpha_sum": 0,
+        "equal_cell_boundary_pass": true,
+        "actual_transparent_pixels": 1097100
+      }
+    },
+    {
+      "name": "VL2Companions",
+      "kind": "companion_atlas",
+      "path": "LifeCrossroads/App/Assets.xcassets/VL2Companions.imageset/VL2Companions.png",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-122f5bc5-ecc7-410b-ba08-9c82605f294b.png",
+      "prompt_ids": [
+        "VL2Companions",
+        "VL2Companions_work_r2"
+      ],
+      "prompt": "Very local sprite edit to this four-companion 2x2 transparent atlas. Preserve positions, size, equal cells, character identity, style, clothes, faces, other three sprites and all transparent gutters. Change ONLY TOP RIGHT cell1 owlWorking: same mature beige owl with round thin glasses, cream shirt and olive vest. Keep his torso leaning forward toward LEFT and gaze DOWN LEFT. Both wings must now visibly GRIP/SUPPORT one simple broad flat UNFINISHED tan cardboard piece at waist height, with one bent unfinished crease, no drawing or writing, no glued finished box. Left wingtip rests on top edge and other wingtip supports underside, natural contact; paper tilts slightly toward LEFT to be set onto a shared table at runtime. This shows active preparing/shared work that has already occurred, not a result or prize. Keep entire sheet inside cell1 with generous transparent margins, no intrusion into centerlines. Do NOT add a table, other character, tools, completed craft, reward, badge or text. TOP LEFT listening owl retains empty relaxed wings and has no material. BOTH bottom rabbit sprites stay as they were. No background or floor. True alpha transparent PNG, matte gouache/colored-pencil style matching original atlas.",
+      "grid": {
+        "columns": 2,
+        "rows": 2
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "owlListening",
+          "source_rect_px": {
+            "x": 0,
+            "y": 0,
+            "width": 627,
+            "height": 627
+          },
+          "source_rect_normalized": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.5,
+            "height": 0.5
+          },
+          "visible_bbox_in_cell_alpha_gt32": {
+            "x": 180,
+            "y": 81,
+            "width": 339,
+            "height": 520
+          },
+          "clear_border_px_alpha_gt32": {
+            "left": 180,
+            "top": 81,
+            "right": 108,
+            "bottom": 26
+          }
+        },
+        {
+          "index": 1,
+          "id": "owlWorking",
+          "source_rect_px": {
+            "x": 627,
+            "y": 0,
+            "width": 627,
+            "height": 627
+          },
+          "source_rect_normalized": {
+            "x": 0.5,
+            "y": 0.0,
+            "width": 0.5,
+            "height": 0.5
+          },
+          "visible_bbox_in_cell_alpha_gt32": {
+            "x": 45,
+            "y": 121,
+            "width": 496,
+            "height": 475
+          },
+          "clear_border_px_alpha_gt32": {
+            "left": 45,
+            "top": 121,
+            "right": 86,
+            "bottom": 31
+          }
+        },
+        {
+          "index": 2,
+          "id": "rabbitListening",
+          "source_rect_px": {
+            "x": 0,
+            "y": 627,
+            "width": 627,
+            "height": 627
+          },
+          "source_rect_normalized": {
+            "x": 0.0,
+            "y": 0.5,
+            "width": 0.5,
+            "height": 0.5
+          },
+          "visible_bbox_in_cell_alpha_gt32": {
+            "x": 180,
+            "y": 21,
+            "width": 328,
+            "height": 559
+          },
+          "clear_border_px_alpha_gt32": {
+            "left": 180,
+            "top": 21,
+            "right": 119,
+            "bottom": 47
+          }
+        },
+        {
+          "index": 3,
+          "id": "rabbitWorking",
+          "source_rect_px": {
+            "x": 627,
+            "y": 627,
+            "width": 627,
+            "height": 627
+          },
+          "source_rect_normalized": {
+            "x": 0.5,
+            "y": 0.5,
+            "width": 0.5,
+            "height": 0.5
+          },
+          "visible_bbox_in_cell_alpha_gt32": {
+            "x": 178,
+            "y": 27,
+            "width": 310,
+            "height": 551
+          },
+          "clear_border_px_alpha_gt32": {
+            "left": 178,
+            "top": 27,
+            "right": 139,
+            "bottom": 49
+          }
+        }
+      ],
+      "runtime_note": "Runtime separately gates presence from actual view-state/trace. Cell2 faces right; may horizontally mirror at display time when seated to Mumu's right. All others face left.",
+      "visual_inspection": "AI source inspection R2: targeted gaze or material-contact correction accepted; original identity/layout retained by visual comparison, not a claim of pixel-identical untouched cells. Native R2 review remains separate.",
+      "sha256": "f4a001acaad287d80c06a5c326defdbce78bdf9769c8e6dbdfd54cff19cf153e",
+      "bytes": 1215569,
+      "dimensions_px": {
+        "width": 1254,
+        "height": 1254
+      },
+      "png_color_type": 6,
+      "has_alpha_channel": true,
+      "byte_identical_to_original": true,
+      "alpha_audit": {
+        "threshold": 32,
+        "vertical_cell_boundaries_visible_pixel_counts": [
+          0
+        ],
+        "horizontal_cell_boundaries_visible_pixel_counts": [
+          0
+        ],
+        "outer_border_alpha_sum": 45,
+        "equal_cell_boundary_pass": true,
+        "actual_transparent_pixels": 1090699
+      },
+      "previous_versions": [
+        {
+          "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-b08bdb77-ea52-4641-abbe-9057b4707347.png",
+          "sha256": "b05b7fd8b4d0e523c10e5fe2a556154769cbad0519a7cc8796ce15430bb79362",
+          "dimensions_px": {
+            "width": 1254,
+            "height": 1254
+          },
+          "prompt_ids": [
+            "VL2Companions",
+            "VL2Companions_work_r2"
+          ],
+          "cells": [
+            {
+              "index": 0,
+              "id": "owlListening",
+              "source_rect_px": {
+                "x": 0,
+                "y": 0,
+                "width": 627,
+                "height": 627
+              },
+              "source_rect_normalized": {
+                "x": 0.0,
+                "y": 0.0,
+                "width": 0.5,
+                "height": 0.5
+              },
+              "visible_bbox_in_cell_alpha_gt32": {
+                "x": 180,
+                "y": 81,
+                "width": 339,
+                "height": 520
+              },
+              "clear_border_px_alpha_gt32": {
+                "left": 180,
+                "top": 81,
+                "right": 108,
+                "bottom": 26
+              }
+            },
+            {
+              "index": 1,
+              "id": "owlWorking",
+              "source_rect_px": {
+                "x": 627,
+                "y": 0,
+                "width": 627,
+                "height": 627
+              },
+              "source_rect_normalized": {
+                "x": 0.5,
+                "y": 0.0,
+                "width": 0.5,
+                "height": 0.5
+              },
+              "visible_bbox_in_cell_alpha_gt32": {
+                "x": 45,
+                "y": 121,
+                "width": 496,
+                "height": 475
+              },
+              "clear_border_px_alpha_gt32": {
+                "left": 45,
+                "top": 121,
+                "right": 86,
+                "bottom": 31
+              }
+            },
+            {
+              "index": 2,
+              "id": "rabbitListening",
+              "source_rect_px": {
+                "x": 0,
+                "y": 627,
+                "width": 627,
+                "height": 627
+              },
+              "source_rect_normalized": {
+                "x": 0.0,
+                "y": 0.5,
+                "width": 0.5,
+                "height": 0.5
+              },
+              "visible_bbox_in_cell_alpha_gt32": {
+                "x": 180,
+                "y": 21,
+                "width": 328,
+                "height": 559
+              },
+              "clear_border_px_alpha_gt32": {
+                "left": 180,
+                "top": 21,
+                "right": 119,
+                "bottom": 47
+              }
+            },
+            {
+              "index": 3,
+              "id": "rabbitWorking",
+              "source_rect_px": {
+                "x": 627,
+                "y": 627,
+                "width": 627,
+                "height": 627
+              },
+              "source_rect_normalized": {
+                "x": 0.5,
+                "y": 0.5,
+                "width": 0.5,
+                "height": 0.5
+              },
+              "visible_bbox_in_cell_alpha_gt32": {
+                "x": 178,
+                "y": 27,
+                "width": 310,
+                "height": 551
+              },
+              "clear_border_px_alpha_gt32": {
+                "left": 178,
+                "top": 27,
+                "right": 139,
+                "bottom": 49
+              }
+            }
+          ],
+          "evidence_round": "R1"
+        }
+      ]
+    },
+    {
+      "name": "VL2Neutral",
+      "kind": "neutral_atlas",
+      "path": "LifeCrossroads/App/Assets.xcassets/VL2Neutral.imageset/VL2Neutral.png",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-83b76b44-713e-4ab8-a084-da086613918c.png",
+      "prompt_ids": [
+        "VL2Neutral"
+      ],
+      "prompt": "Use case: layered original storybook game character atlas. Asset VL2Neutral. Create ONE SQUARE true transparent PNG, exactly FOUR whole-body neutral Mumu otter sprites arranged equal 2 columns x 2 rows. One independently centered sprite per equal square cell, read left-right/top-bottom. All ears/feet/tails fully visible and inside central 72% WIDTH and 80% HEIGHT of own cell, large entirely transparent gutters, no parts crossing grid midlines. No grid, borders, labels, background, floor, props or text.\n\nFour references establish SAME Mumu otter identity across ages13,17,25,32 in that order. Use the corrected matte gouache/pencil original art style and colors, preserve face and silhouette: brown river otter, rounded small ears, short broad cream muzzle, brown nose, thick curved tail, expressive dark eyes, cream shirt, muted teal clothes, ochre scarf. Avoid overly glossy 3D fur. These four poses are for BEFORE A DECISION and show ONLY waiting/observing, never an action already chosen.\n\nTOP LEFT cell0 age13: small early adolescent proportion, slightly larger round head than older self, shorter torso and limbs, teal vest over cream shirt with rolled sleeves, ochre scarf, cropped brown trousers. Standing still, both paws naturally at sides, shoulders level, curious but neutral closed mouth, eyes looking gently to the RIGHT at mid-height. No reaching, talking, requesting or making.\nTOP RIGHT cell1 age17: SAME face slightly slimmer and noticeably taller/slender late teen body with longer legs, teal open vest, cream rolled sleeves, ochre scarf, longer brown trousers. Neutral standing weight evenly planted, one paw relaxed near side seam and the other loose, attentive neutral face looking three-quarter RIGHT. No tool or task.\nBOTTOM LEFT cell2 age25: SAME mature young-adult face, smaller eyes relative to head, longer torso, wider practical teal JACKET over cream shirt, ochre scarf, full brown trousers. Adult body taller than teen, standing quietly with arms lowered, thoughtful closed mouth and level gaze to RIGHT. No apron, equipment, job award or work props.\nBOTTOM RIGHT cell3 age32: SAME adult identity and teal jacket/cream shirt/scarf palette, proportion consistent with25 with slightly more settled broad shoulders, full brown trousers. Standing naturally and observing, hands relaxed low, calm open eyes and a neutral almost-smile, three-quarter RIGHT gaze. Do not draw sitting, sleeping or reclining; this is NOT a rest decision.\n\nKeep identical garment details and face identity with activity atlases so transitions do not replace character with a different animal. Natural quiet idle stance only. No laptop, paper, book, furniture, trophies, coins, symbols, text, extra animals or scenery. All negative space true alpha transparency.",
+      "grid": {
+        "columns": 2,
+        "rows": 2
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "neutral13",
+          "source_rect_px": {
+            "x": 0,
+            "y": 0,
+            "width": 627,
+            "height": 627
+          },
+          "source_rect_normalized": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.5,
+            "height": 0.5
+          },
+          "visible_bbox_in_cell_alpha_gt32": {
+            "x": 158,
+            "y": 119,
+            "width": 339,
+            "height": 476
+          },
+          "clear_border_px_alpha_gt32": {
+            "left": 158,
+            "top": 119,
+            "right": 130,
+            "bottom": 32
+          }
+        },
+        {
+          "index": 1,
+          "id": "neutral17",
+          "source_rect_px": {
+            "x": 627,
+            "y": 0,
+            "width": 627,
+            "height": 627
+          },
+          "source_rect_normalized": {
+            "x": 0.5,
+            "y": 0.0,
+            "width": 0.5,
+            "height": 0.5
+          },
+          "visible_bbox_in_cell_alpha_gt32": {
+            "x": 84,
+            "y": 53,
+            "width": 360,
+            "height": 542
+          },
+          "clear_border_px_alpha_gt32": {
+            "left": 84,
+            "top": 53,
+            "right": 183,
+            "bottom": 32
+          }
+        },
+        {
+          "index": 2,
+          "id": "neutral25",
+          "source_rect_px": {
+            "x": 0,
+            "y": 627,
+            "width": 627,
+            "height": 627
+          },
+          "source_rect_normalized": {
+            "x": 0.0,
+            "y": 0.5,
+            "width": 0.5,
+            "height": 0.5
+          },
+          "visible_bbox_in_cell_alpha_gt32": {
+            "x": 132,
+            "y": 13,
+            "width": 394,
+            "height": 571
+          },
+          "clear_border_px_alpha_gt32": {
+            "left": 132,
+            "top": 13,
+            "right": 101,
+            "bottom": 43
+          }
+        },
+        {
+          "index": 3,
+          "id": "neutral32",
+          "source_rect_px": {
+            "x": 627,
+            "y": 627,
+            "width": 627,
+            "height": 627
+          },
+          "source_rect_normalized": {
+            "x": 0.5,
+            "y": 0.5,
+            "width": 0.5,
+            "height": 0.5
+          },
+          "visible_bbox_in_cell_alpha_gt32": {
+            "x": 78,
+            "y": 7,
+            "width": 414,
+            "height": 582
+          },
+          "clear_border_px_alpha_gt32": {
+            "left": 78,
+            "top": 7,
+            "right": 135,
+            "bottom": 38
+          }
+        }
+      ],
+      "runtime_note": "Before-choice neutral standing/observing only; all gazes point right. No work, asking, resting or outcome props. Uses new activity identity instead of reverting to old StoryCast sprite.",
+      "visual_inspection": "AI source-image inspection: 13 shorter,17 taller teen vest,25/32 adult jacket and proportions; no action implied. Exact age readability at native size remains unverified.",
+      "alpha_audit": {
+        "threshold": 32,
+        "vertical_cell_boundaries_visible_pixel_counts": [
+          0
+        ],
+        "horizontal_cell_boundaries_visible_pixel_counts": [
+          0
+        ],
+        "outer_border_alpha_sum": 6,
+        "equal_cell_boundary_pass": true,
+        "actual_transparent_pixels": 1084581
+      },
+      "sha256": "51df06e77d4fb8604ff64f5c54154072ccd573116b1af551df0f4388a8f1b8fc",
+      "bytes": 1146512,
+      "dimensions_px": {
+        "width": 1254,
+        "height": 1254
+      },
+      "png_color_type": 6,
+      "has_alpha_channel": true,
+      "byte_identical_to_original": true
+    }
+  ],
+  "generations": [
+    {
+      "id": "VL2Studio",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-0a38a32b-93a2-4c74-b0f1-b5a5b3a2ff89.png",
+      "prompt_reference": "docs/visual-loop-02/prompts.md#vl2studio",
+      "sha256": "e614de70f920f0c7d2a575e49fa8586cc515574ae77002a3bb2b6f8c0eb7d3b6",
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "adopted": true,
+      "reference_inputs": []
+    },
+    {
+      "id": "VL2Workshop",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-e45960b7-57f7-4963-b2a2-c94409f96329.png",
+      "prompt_reference": "docs/visual-loop-02/prompts.md#vl2workshop",
+      "sha256": "a87b639d5808b509bcafc8c21754fad42f473dc46d66cc4b130bb34073d0ba2d",
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "adopted": true,
+      "reference_inputs": [
+        {
+          "id": "VL2Studio",
+          "path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-0a38a32b-93a2-4c74-b0f1-b5a5b3a2ff89.png"
+        }
+      ]
+    },
+    {
+      "id": "VL2Garden",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-5878a9e2-6b86-458a-9b2a-54cdf442439b.png",
+      "prompt_reference": "docs/visual-loop-02/prompts.md#vl2garden",
+      "sha256": "0aea7c40a9e78218ba79affaef9f38c671ec7f929786a1748be758ad7f8a4b5b",
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "adopted": true,
+      "reference_inputs": [
+        {
+          "id": "VL2Studio",
+          "path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-0a38a32b-93a2-4c74-b0f1-b5a5b3a2ff89.png"
+        }
+      ]
+    },
+    {
+      "id": "VL2Teen13",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-ac63b81e-c789-440b-8271-c7be5d1ed8a1.png",
+      "prompt_reference": "docs/visual-loop-02/prompts.md#vl2teen13",
+      "sha256": "2ce71e203e01b20f9b6b825771e59b98ebc3f40cc807eb7ec70c498e24a2f811",
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "adopted": false,
+      "reference_inputs": [
+        {
+          "id": "StoryCast",
+          "path": "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/LifeCrossroads/App/Assets.xcassets/StoryCast.imageset/story-cast.png"
+        },
+        {
+          "id": "VL2Studio",
+          "path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-0a38a32b-93a2-4c74-b0f1-b5a5b3a2ff89.png"
+        }
+      ]
+    },
+    {
+      "id": "VL2Teen13_padding",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-5fb3df8e-0344-47fc-a2bc-d043f91f7919.png",
+      "prompt_reference": "docs/visual-loop-02/prompts.md#vl2teen13_padding",
+      "sha256": "9742750036fcc44692a2f491220b716712b51bb55f30532d94b063d6e0e8308f",
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "adopted": false,
+      "reference_inputs": [
+        {
+          "id": "VL2Teen13",
+          "path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-ac63b81e-c789-440b-8271-c7be5d1ed8a1.png"
+        }
+      ]
+    },
+    {
+      "id": "VL2Teen17",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-ed4370b0-04db-4d11-85f8-d87fed72f390.png",
+      "prompt_reference": "docs/visual-loop-02/prompts.md#vl2teen17",
+      "sha256": "5f09aca729bd7297194788cc8315fc82f4d70947007e195e897eec8635186af2",
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "adopted": false,
+      "reference_inputs": [
+        {
+          "id": "VL2Teen13_padding",
+          "path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-5fb3df8e-0344-47fc-a2bc-d043f91f7919.png"
+        },
+        {
+          "id": "StoryCast",
+          "path": "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/LifeCrossroads/App/Assets.xcassets/StoryCast.imageset/story-cast.png"
+        }
+      ]
+    },
+    {
+      "id": "VL2Adult25",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-417b7f16-5309-417a-bb6c-fd584f93a91a.png",
+      "prompt_reference": "docs/visual-loop-02/prompts.md#vl2adult25",
+      "sha256": "4145395f782354c3c493d8f9715c0af7ecbde5c0527bbae94a2480ce0ad7c47f",
+      "dimensions_px": [
+        1950,
+        807
+      ],
+      "adopted": false,
+      "reference_inputs": [
+        {
+          "id": "StoryCast",
+          "path": "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/LifeCrossroads/App/Assets.xcassets/StoryCast.imageset/story-cast.png"
+        },
+        {
+          "id": "VL2Teen13_padding",
+          "path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-5fb3df8e-0344-47fc-a2bc-d043f91f7919.png"
+        }
+      ]
+    },
+    {
+      "id": "VL2Recovery32",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-5c7d4f06-b3d4-445e-8fab-bdcd72aa33f6.png",
+      "prompt_reference": "docs/visual-loop-02/prompts.md#vl2recovery32",
+      "sha256": "da7d743845a8f918544b170c64d98553406394b5a59e5dd95762a8dbb1fdaace",
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "adopted": false,
+      "reference_inputs": [
+        {
+          "id": "VL2Adult25",
+          "path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-417b7f16-5309-417a-bb6c-fd584f93a91a.png"
+        },
+        {
+          "id": "StoryCast",
+          "path": "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/LifeCrossroads/App/Assets.xcassets/StoryCast.imageset/story-cast.png"
+        }
+      ]
+    },
+    {
+      "id": "VL2Companions",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-b08bdb77-ea52-4641-abbe-9057b4707347.png",
+      "prompt_reference": "docs/visual-loop-02/prompts.md#vl2companions",
+      "sha256": "b05b7fd8b4d0e523c10e5fe2a556154769cbad0519a7cc8796ce15430bb79362",
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "adopted": false,
+      "reference_inputs": [
+        {
+          "id": "StoryCast",
+          "path": "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/LifeCrossroads/App/Assets.xcassets/StoryCast.imageset/story-cast.png"
+        },
+        {
+          "id": "VL2Teen13_padding",
+          "path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-5fb3df8e-0344-47fc-a2bc-d043f91f7919.png"
+        }
+      ]
+    },
+    {
+      "id": "VL2Teen13_screen",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-7f36a32c-916d-4b42-a4ff-e54c4457cc47.png",
+      "prompt_reference": "docs/visual-loop-02/prompts.md#vl2teen13_screen",
+      "sha256": "019be9f95a6040f7997fb1da425439dde793f3fcaf338e2c1a06ec314d07b048",
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "adopted": false,
+      "reference_inputs": [
+        {
+          "id": "VL2Teen13_padding",
+          "path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-5fb3df8e-0344-47fc-a2bc-d043f91f7919.png"
+        }
+      ]
+    },
+    {
+      "id": "VL2Teen17_screen_padding",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-2dfca2a2-e7ab-4d7d-9e32-e6f71d9b8a5b.png",
+      "prompt_reference": "docs/visual-loop-02/prompts.md#vl2teen17_screen_padding",
+      "sha256": "83eeedd667ff31b77ea00f569c798bea433f6887fbe9e61866f5321a63f59ece",
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "adopted": true,
+      "reference_inputs": [
+        {
+          "id": "VL2Teen17",
+          "path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-ed4370b0-04db-4d11-85f8-d87fed72f390.png"
+        },
+        {
+          "id": "VL2Teen13_screen",
+          "path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-7f36a32c-916d-4b42-a4ff-e54c4457cc47.png"
+        }
+      ]
+    },
+    {
+      "id": "VL2Adult25_padding",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-0be19180-f73c-4136-b292-23eb728c092a.png",
+      "prompt_reference": "docs/visual-loop-02/prompts.md#vl2adult25_padding",
+      "sha256": "a797fdd7d858ed3417622f3a1c9567cc5e8bdb76417dde4a931e572fe0865041",
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "adopted": false,
+      "reference_inputs": [
+        {
+          "id": "VL2Adult25",
+          "path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-417b7f16-5309-417a-bb6c-fd584f93a91a.png"
+        }
+      ]
+    },
+    {
+      "id": "VL2Adult25_gutter",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-c57f3b62-c56f-4c1a-83f6-0e25103ef1e6.png",
+      "prompt_reference": "docs/visual-loop-02/prompts.md#vl2adult25_gutter",
+      "sha256": "f1c4eef09b910caab4cddca99c54cde614b73b274028c50be695b1e4ced7db0d",
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "adopted": false,
+      "reference_inputs": [
+        {
+          "id": "VL2Adult25_padding",
+          "path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-0be19180-f73c-4136-b292-23eb728c092a.png"
+        }
+      ]
+    },
+    {
+      "id": "VL2Recovery32_padding",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-b9731a5d-ce27-4d7d-bf87-bf29a0a071a7.png",
+      "prompt_reference": "docs/visual-loop-02/prompts.md#vl2recovery32_padding",
+      "reference_inputs": [
+        {
+          "id": "VL2Recovery32",
+          "path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-5c7d4f06-b3d4-445e-8fab-bdcd72aa33f6.png"
+        }
+      ],
+      "sha256": "6d72f8ee1f4c0220c24c39bf8da8ca3ce1ace1036a8a2f2f93e7dec464cdbaa7",
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "adopted": true
+    },
+    {
+      "id": "VL2Neutral",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-83b76b44-713e-4ab8-a084-da086613918c.png",
+      "prompt_reference": "docs/visual-loop-02/prompts.md#vl2neutral",
+      "reference_inputs": [
+        {
+          "id": "VL2Teen13_screen",
+          "path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-7f36a32c-916d-4b42-a4ff-e54c4457cc47.png"
+        },
+        {
+          "id": "VL2Teen17_screen_padding",
+          "path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-2dfca2a2-e7ab-4d7d-9e32-e6f71d9b8a5b.png"
+        },
+        {
+          "id": "VL2Adult25_gutter",
+          "path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-c57f3b62-c56f-4c1a-83f6-0e25103ef1e6.png"
+        },
+        {
+          "id": "VL2Recovery32_padding",
+          "path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-b9731a5d-ce27-4d7d-bf87-bf29a0a071a7.png"
+        }
+      ],
+      "adopted": true,
+      "sha256": "51df06e77d4fb8604ff64f5c54154072ccd573116b1af551df0f4388a8f1b8fc",
+      "dimensions_px": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "id": "VL2Teen13_gaze_r2",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-b958363d-1c05-4310-a166-471eb73cfda3.png",
+      "prompt_reference": "docs/visual-loop-02/prompts.md#vl2teen13_gaze_r2",
+      "reference_inputs": [
+        {
+          "id": "VL2Teen13_screen",
+          "path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-7f36a32c-916d-4b42-a4ff-e54c4457cc47.png"
+        }
+      ],
+      "sha256": "8fe89c37ad30a35f9fa0dbdfffdb52466b374c11ce9c3ecf75989576b0adf13f",
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "adopted": true,
+      "revision_reason": "Independent Critic R1: gaze/partner relationship repair; one imagegen attempt only"
+    },
+    {
+      "id": "VL2Adult25_gaze_r2",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-003b9d3a-8235-4987-b0c5-df8dab21c5e4.png",
+      "prompt_reference": "docs/visual-loop-02/prompts.md#vl2adult25_gaze_r2",
+      "reference_inputs": [
+        {
+          "id": "VL2Adult25_gutter",
+          "path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-c57f3b62-c56f-4c1a-83f6-0e25103ef1e6.png"
+        }
+      ],
+      "sha256": "66435ab18e347b44891bfb120253a438adf5eaeb577712b77356bb68d9e3a340",
+      "dimensions_px": [
+        1774,
+        887
+      ],
+      "adopted": true,
+      "revision_reason": "Independent Critic R1: gaze/partner relationship repair; one imagegen attempt only"
+    },
+    {
+      "id": "VL2Companions_work_r2",
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-122f5bc5-ecc7-410b-ba08-9c82605f294b.png",
+      "prompt_reference": "docs/visual-loop-02/prompts.md#vl2companions_work_r2",
+      "reference_inputs": [
+        {
+          "id": "VL2Companions",
+          "path": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-b08bdb77-ea52-4641-abbe-9057b4707347.png"
+        }
+      ],
+      "sha256": "f4a001acaad287d80c06a5c326defdbce78bdf9769c8e6dbdfd54cff19cf153e",
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "adopted": true,
+      "revision_reason": "Independent Critic R1: gaze/partner relationship repair; one imagegen attempt only"
+    }
+  ],
+  "known_limits": [
+    "13 and 17 share teen identity; 25/32 use adult jacket and work posture. Exact age understanding needs target-player testing.",
+    "Source drawings have textured fur/paper detail; native reduced-size readability and style cohesion remain a separate gate.",
+    "No layered eyelids/mouth rig or frame-by-frame body animation was generated; each activity is an independent pose sprite.",
+    "Fictional shared places do not claim national authenticity or typical personal ownership."
+  ],
+  "finished_utc": "2026-10-28T02:37:15Z",
+  "wall_clock_elapsed_seconds": 1603,
+  "delegated_budget_minutes": 50,
+  "asset_validation": {
+    "result": "PASS",
+    "asset_count": 9,
+    "transparent_atlas_count": 6,
+    "generated_image_calls": 18,
+    "byte_identity_checked": true,
+    "all_equal_cell_boundaries_alpha_gt32_clear": true,
+    "all_cell_visible_bounds_have_nonzero_margin": true,
+    "audit_method": "PNG IHDR plus lossless decoding for read-only alpha inspection using Python standard library; no pixel writing. Equal boundaries tested at alpha > 32, actual low-alpha metadata retained.",
+    "native_app_gate": "PENDING parent integration and independent Critic; source assets alone do not prove product success"
+  },
+  "work_segments": [
+    {
+      "id": "initial_assets",
+      "started_utc": "2026-10-28T02:10:32Z",
+      "finished_utc": "2026-10-28T02:37:15Z",
+      "elapsed_seconds": 1603,
+      "scope": "8 assets, 14 generation calls plus provenance and alpha audit"
+    },
+    {
+      "id": "neutral_before_choice",
+      "started_utc": "2026-10-28T02:44:23Z",
+      "finished_utc": "2026-10-28T02:47:26Z",
+      "elapsed_seconds": 183,
+      "scope": "One 2x2 neutral atlas, 1 generation call plus source metadata and alpha audit"
+    },
+    {
+      "id": "r2_gaze_and_active_companion",
+      "started_utc": "2026-10-28T02:50:45Z",
+      "finished_utc": "2026-10-28T02:56:39Z",
+      "elapsed_seconds": 354,
+      "scope": "Three bounded one-attempt imagegen corrections requested by independent Critic:13 asking gaze,25 community gaze,owl shared-material grip; metadata and alpha audit"
+    }
+  ],
+  "total_active_work_seconds": 2140,
+  "latest_segment_finished_utc": "2026-10-28T02:56:39Z",
+  "r2_targeted_asset_results": [
+    {
+      "asset": "VL2Teen13",
+      "generation": "VL2Teen13_gaze_r2",
+      "result": "PASS",
+      "source": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-b958363d-1c05-4310-a166-471eb73cfda3.png",
+      "sha256": "8fe89c37ad30a35f9fa0dbdfffdb52466b374c11ce9c3ecf75989576b0adf13f"
+    },
+    {
+      "asset": "VL2Adult25",
+      "generation": "VL2Adult25_gaze_r2",
+      "result": "PASS",
+      "source": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-003b9d3a-8235-4987-b0c5-df8dab21c5e4.png",
+      "sha256": "66435ab18e347b44891bfb120253a438adf5eaeb577712b77356bb68d9e3a340"
+    },
+    {
+      "asset": "VL2Companions",
+      "generation": "VL2Companions_work_r2",
+      "result": "PASS",
+      "source": "/Users/macminim4/.codex/generated_images/01a18045-a64f-7311-9b4b-11ea5bc7bd98/exec-122f5bc5-ecc7-410b-ba08-9c82605f294b.png",
+      "sha256": "f4a001acaad287d80c06a5c326defdbce78bdf9769c8e6dbdfd54cff19cf153e"
+    }
+  ],
+  "rights_status": {
+    "source_class": "AI-generated original output with only repository-owned StoryCast identity reference",
+    "third_party_art_license": "not_applicable: no third-party artwork, fonts or downloaded imagery used",
+    "preview_use": "explicitly authorized by user in Issue16 task",
+    "production_license_review": "not_completed",
+    "copyright_or_exclusivity_claim": "not_claimed",
+    "generated_output_terms": "tool/account terms; this provenance record does not establish legal clearance"
+  }
+}

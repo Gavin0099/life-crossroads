@@ -1,6 +1,6 @@
 # 《人生岔路》開發計畫
 
-> **最後更新**: 2026-10-27
+> **最後更新**: 2026-10-28
 > **Owner**: Gavin0099
 > **Freshness**: Sprint (14d)
 
@@ -27,8 +27,13 @@
 
 ## Current Phase
 
-P1 / 人生體驗 / 目標缺口補強。依2026-10-27使用者授權持續修改及獨立覆審，朝90–95%目標完成度推進；基底PR14 `3177946`。驗收見[本輪補強契約](docs/p1-experience-completion.md)。維持八國完整人生、Draft/HOLD，不合併或發布。工程勾選比例不當作真人娛樂／啟發驗收。
+P1 / VISUAL-LOOP-02 / Issue #16 視覺體驗重製。依使用者2026-10-28指令，精確基底PR15 `81371e0`，3～4 Agent-hours 有界預算；主流程整合、素材製作與獨立Critic。只讀實際frame/trace，Domain、Data、Persistence、Seed、schema與既有30 UI不改；獨立Draft/HOLD、不合併或發布。驗收以遮字原生場景辨識為核心，不能以圖片數或CI代替。
+
 ## Current Sprint
+
+VISUAL-LOOP-02本機整合／三輪capture-critic修正完成：3背景＋6圖集，13/17/25/32讀真實紀錄；145Swift、41Python、兩尺寸60狀態／可行控制／checksum及來源一致。獨立AI Critic四對Go，小窗最大字級越界已修；年齡精確辨識與正式美術／真人仍未過。11台Simulator及210MiB本輪build cache已刪。basic因既有框架過渡欄位逾90日FAIL（5項PASS），沒有關Gate或改框架；待獨立Draft推送、當前HEAD的原30UI與CI。見[逐項驗收](docs/visual-loop-02/VISUAL_REVIEW.md)、[八組Before/After](docs/visual-loop-02/BEFORE_AFTER.md)。素材35m40s、Critic15m38s；主流程觀測區間另列，預算為上限不是必須耗滿。
+
+以下為前輪記錄：
 
 PR15首輪遠端engine140／Python40成功，UI29/30；冷啟後未暫停的測試跨過生活轉場，已用明確階段與單筆紀錄／checksum斷言補同步。標準機1/1、SE1/1定向通過且裝置已刪；產品碼不變，新HEAD CI另核對。
 

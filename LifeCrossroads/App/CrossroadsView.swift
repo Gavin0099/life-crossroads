@@ -249,7 +249,7 @@ struct CrossroadsView: View {
                 if ProcessInfo.processInfo.arguments.contains("-ui-testing") {
                     Text("生活播放狀態").font(.system(size: 1)).foregroundStyle(.clear)
                         .accessibilityIdentifier("worldPlaybackState")
-                        .accessibilityValue(Text(verbatim: "\(store.playback.phase.rawValue)|\(store.playback.paused)|\(world.age)|\(store.session?.traces.count ?? -1)|\(store.playback.phaseToken)|sceneHeight=\(height)"))
+                        .accessibilityValue(Text(verbatim: "\(store.playback.phase.rawValue)|\(store.playback.paused)|\(world.age)|\(store.session?.traces.count ?? -1)|\(store.playback.phaseToken)|sceneHeight=\(height)|reduceMotion=\(reduceMotion)|largeType=\(dynamicTypeSize.isAccessibilitySize)"))
                 }
 #endif
             }
@@ -1090,11 +1090,14 @@ private extension CrossroadsView {
         GeometryReader { geometry in
             VStack(spacing: 0) {
                 HStack {
-                    Text("沐沐 · \(session.state.age)歲").font(.headline)
+                    Text(dynamicTypeSize.isAccessibilitySize ? "\(session.state.age)歲" : "沐沐 · \(session.state.age)歲")
+                        .font(.headline).accessibilityLabel("沐沐 · \(session.state.age)歲")
                         .accessibilityIdentifier("lifeIdentity")
                     Spacer()
-                    Text(store.name(session.state.countryCode) + " · " + stageName(session.state.age))
-                        .font(.subheadline).accessibilityIdentifier("lifeBackground")
+                    Text(store.name(session.state.countryCode) + (dynamicTypeSize.isAccessibilitySize ? "" : " · " + stageName(session.state.age)))
+                        .font(dynamicTypeSize.isAccessibilitySize ? .caption : .subheadline)
+                        .accessibilityLabel(store.name(session.state.countryCode) + " · " + stageName(session.state.age))
+                        .accessibilityIdentifier("lifeBackground")
                 }.padding(.horizontal, 16).padding(.vertical, 6)
                 if store.worldPreviewEnabled, !store.viewingOriginal, let world = store.world {
                     worldStage(world, height: dynamicTypeSize.isAccessibilitySize ? 120 : min(210, max(150, geometry.size.height * 0.33)))

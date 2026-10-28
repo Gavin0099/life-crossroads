@@ -210,3 +210,11 @@ struct LifeWorldScene: View {
 可見時使用GameStore的單一累積鐘，Reduce Motion減少刷新頻率；停留event/ending、隱藏或暫停時沒有持續tick。`.transaction`禁止場景自行啟動隱式重複動畫。正式Actor/後果圖只由本次投影供給；legacy小插圖在新世界模式隱藏。
 
 世界投影在成功保存/恢復的bind邊界更新一次；逐幀只切換只讀frame的moment。`GameStore`不在動畫刷新時讀currentEvent/preview重新抽算候選；age/人物/後果由新session重新投影，不沿用前事件快取。
+
+## VISUAL-LOOP-02：已保存活動的唯讀圖層（2026-10-28）
+
+沿用ADR0005的單向Presentation邊界，沒有移動Domain責任或更改存檔schema。`LifeWorldFrame.committedChoiceID`只在reflecting且最後trace已applied時由projector填入；`.presenting(.living)`可保留資料，但`WorldActivity`仍拒絕把非committedOutcome畫成當前已做行動。資源delta為零不代表沒有做事，不能拿delta決定是否顯示姿態。
+
+完成區間的`.livedFocus`補上`factKey=lifeFocus`與實際`factValue`，直接來自focusHistory而不是猜caption。32歲保留空間可引用這段已完成記憶；只有已保存pacedRole才演出本次短時參與。`WorldActivity.neutralSetting`僅給未選之前的空手觀察姿勢與共用場景，不畫未接受機會。
+
+`WorldActivity`是純Swift的顯示指令，圖集/格位不表示國家真實設備或成效；同伴須有本事件的interacted actor。`LifeWorldScene`只負責CGImage快取、等格與透明邊界裁切、同一motion frame的光影及原生accessibility label。所有PNG原檔保留；既有StoryCast維持未涵蓋年齡/事件。`VISUAL_LOOP_CAPTURE`是測試專用編譯入口，正式App與原30個UI CI案例不編入。

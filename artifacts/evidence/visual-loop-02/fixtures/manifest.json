@@ -1,0 +1,160 @@
+{
+  "baseline" : "81371e0aa257233fadd0355faf36ba8e0edcdc64",
+  "fixtures" : [
+    {
+      "age" : 8,
+      "choice" : "",
+      "country" : "JPN",
+      "decisionCount" : 0,
+      "event" : "child-interest",
+      "household" : "jpn-1",
+      "name" : "08-arrival",
+      "phase" : "choosing",
+      "seed" : 34
+    },
+    {
+      "age" : 13,
+      "choice" : "",
+      "country" : "JPN",
+      "decisionCount" : 3,
+      "event" : "teen-project",
+      "household" : "jpn-1",
+      "name" : "13-before",
+      "phase" : "choosing",
+      "seed" : 34
+    },
+    {
+      "age" : 13,
+      "choice" : "invest",
+      "country" : "JPN",
+      "decisionCount" : 4,
+      "event" : "teen-project",
+      "household" : "jpn-1",
+      "name" : "13-online",
+      "phase" : "reflecting",
+      "seed" : 34
+    },
+    {
+      "age" : 13,
+      "choice" : "offline",
+      "country" : "JPN",
+      "decisionCount" : 4,
+      "event" : "teen-project",
+      "household" : "jpn-1",
+      "name" : "13-paper",
+      "phase" : "reflecting",
+      "seed" : 34
+    },
+    {
+      "age" : 13,
+      "choice" : "ask",
+      "country" : "JPN",
+      "decisionCount" : 4,
+      "event" : "teen-project",
+      "household" : "jpn-1",
+      "name" : "13-ask",
+      "phase" : "reflecting",
+      "seed" : 34
+    },
+    {
+      "age" : 13,
+      "choice" : "rest",
+      "country" : "JPN",
+      "decisionCount" : 4,
+      "event" : "teen-project",
+      "household" : "jpn-1",
+      "name" : "13-rest",
+      "phase" : "reflecting",
+      "seed" : 34
+    },
+    {
+      "age" : 17,
+      "choice" : "remoteStudio",
+      "country" : "JPN",
+      "decisionCount" : 5,
+      "event" : "teen-direction",
+      "household" : "jpn-1",
+      "name" : "17-remote",
+      "phase" : "reflecting",
+      "seed" : 34
+    },
+    {
+      "age" : 25,
+      "choice" : "portfolio",
+      "country" : "JPN",
+      "decisionCount" : 7,
+      "event" : "adult-learning",
+      "household" : "jpn-1",
+      "name" : "25-remote",
+      "phase" : "reflecting",
+      "seed" : 34
+    },
+    {
+      "age" : 17,
+      "choice" : "mentorRelay",
+      "country" : "KEN",
+      "decisionCount" : 5,
+      "event" : "teen-direction",
+      "household" : "ken-1",
+      "name" : "17-collective",
+      "phase" : "reflecting",
+      "seed" : 34
+    },
+    {
+      "age" : 25,
+      "choice" : "cooperate",
+      "country" : "KEN",
+      "decisionCount" : 7,
+      "event" : "adult-learning",
+      "household" : "ken-1",
+      "name" : "25-collective",
+      "phase" : "reflecting",
+      "seed" : 34
+    },
+    {
+      "age" : 32,
+      "choice" : "",
+      "country" : "JPN",
+      "decisionCount" : 7,
+      "event" : "adult-boundary-calendar",
+      "household" : "jpn-1",
+      "name" : "32-prepared",
+      "phase" : "choosing",
+      "seed" : 0
+    },
+    {
+      "age" : 32,
+      "choice" : "pacedRole",
+      "country" : "JPN",
+      "decisionCount" : 8,
+      "event" : "adult-boundary-calendar",
+      "household" : "jpn-1",
+      "name" : "32-participating",
+      "phase" : "reflecting",
+      "seed" : 0
+    },
+    {
+      "age" : 65,
+      "choice" : "",
+      "country" : "JPN",
+      "decisionCount" : 12,
+      "event" : "adult-support-revisit",
+      "household" : "jpn-1",
+      "name" : "65-arrival",
+      "phase" : "choosing",
+      "seed" : 34
+    },
+    {
+      "age" : 80,
+      "choice" : "",
+      "country" : "JPN",
+      "decisionCount" : 14,
+      "event" : "later-review",
+      "household" : "jpn-1",
+      "name" : "80-arrival",
+      "phase" : "choosing",
+      "seed" : 34
+    }
+  ],
+  "source" : "Actual unmodified LifeSession and SaveRepository; no forced events or state edits"
+}

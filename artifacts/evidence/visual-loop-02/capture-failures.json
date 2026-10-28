@@ -1,0 +1,28 @@
+{
+  "excludedFromPassEvidence": [
+    {
+      "attempt": "baseline-SE1",
+      "cause": "Selected iOS27.1 cannot create SE3; corrected runtime selection by supported hardware",
+      "simulatorCreated": false
+    },
+    {
+      "attempt": "baseline-SE2",
+      "cause": "Capture source not wired into Xcode source phase; zero executed tests correctly rejected",
+      "device": "461223EA-DEED-44F7-AFC0-93C29E63900C",
+      "deleted": true
+    },
+    {
+      "attempt": "baseline-SE3",
+      "cause": "Full save exceeded launch environment argument limit; switched to simulator-only file ingress",
+      "device": "E2F048F6-64B4-4933-8015-9027171E8256",
+      "deleted": true
+    },
+    {
+      "attempt": "round3-SE1",
+      "cause": "Capture shell changed while it was executing; shell read offset split build command. Script now frozen before retry; not an App assertion failure.",
+      "deleted": true
+    }
+  ],
+  "fullLogsRetained": "artifacts/governance/visual-loop-02/",
+  "noPriorProductFailureReclassified": true
+}

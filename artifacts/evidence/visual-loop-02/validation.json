@@ -1,0 +1,26 @@
+{
+  "swiftRelease": {
+    "passed": 145,
+    "suites": [
+      20,
+      27,
+      91,
+      7
+    ],
+    "logSHA256": "c180774df0f86de2f68435e5107b28465436e31414eb695d1530f9722d15c8fe",
+    "rawLog": "artifacts/governance/visual-loop-02/swift-release-r2.log"
+  },
+  "python": {
+    "passed": 41,
+    "rawLog": "artifacts/governance/visual-loop-02/python-tests-r2.log"
+  },
+  "basic": {
+    "result": "FAIL",
+    "passedChecks": 5,
+    "warning": "Framework transitional session_envelope key admitted 2026-07-29 exceeded 90 days on 2026-10-28; unchanged pinned framework",
+    "source": "artifacts/governance/basic/drift.log",
+    "frameworkPin": "3bc4db55c9132f81aed4fce328f3622caf15db3c"
+  },
+  "ci": "NOT YET RUN for this branch",
+  "nativeCapture": "See verification.json after final matrix; separate from 30 production UI cases"
+}
