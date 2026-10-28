@@ -49,7 +49,7 @@ public enum LifeStoryComparison {
             case "teen-direction-first-steps": lines.append("沒有舊作品的邀請，小澄仍陪你找到一個新的學習起點。")
             default:
                 if let age = branch.sourceAge {
-                    lines.append("這一頁接續了你\(age)歲留下的選擇：\(trace.eventTitle)。")
+                    lines.append("你\(age)歲留下的故事記錄，影響了現在\(trace.age)歲的「\(trace.eventTitle)」。")
                 }
             }
             if branch.offeredChoiceIDs.contains("leadWorkshop") {

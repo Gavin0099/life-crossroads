@@ -1,0 +1,14 @@
+{
+  "alpha_threshold": 12,
+  "has_alpha_channel": true,
+  "fully_transparent_fraction": 0.674486559221839,
+  "cutline_nontransparent_pixels": {
+    "724": 0,
+    "1448": 0
+  },
+  "byte_identical_to_retained_original": true,
+  "byte_identical_to_generator_original": true,
+  "source_rects_nonoverlapping_and_complete": true,
+  "checked_utc": "2026-10-28T08:30:03.457993+00:00",
+  "method": "Read-only RGBA parser reused from Tests/test_multicast_assets.py; no resampling, drawing, compositing, alpha repair or image conversion."
+}

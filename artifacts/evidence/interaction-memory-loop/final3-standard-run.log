@@ -1,0 +1,172 @@
+Created visual Simulator: ABB92EFA-A8FE-48AD-B3BE-F21FCEBFF4D6 runtime=com.apple.CoreSimulator.SimRuntime.iOS-27-0
+Monitoring boot status for IM-final3-iPhone-17 (ABB92EFA-A8FE-48AD-B3BE-F21FCEBFF4D6).
+[2026-10-28 09:10:11 +0000] Status=1, isTerminal=NO, Elapsed=00:01.
+	Waiting on BackBoard
+
+[2026-10-28 09:10:12 +0000] Status=2, isTerminal=NO, Elapsed=00:02.
+	Waiting on Data Migration
+		Reason:(null)
+		Migration Elapsed:00:00 seconds
+
+[2026-10-28 09:10:12 +0000] Status=2, isTerminal=NO, Elapsed=00:02.
+	Waiting on Data Migration
+		Reason:Gathering plugins
+		Migration Elapsed:00:00 seconds
+
+[2026-10-28 09:10:13 +0000] Status=2, isTerminal=NO, Elapsed=00:03.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:01 seconds
+
+[2026-10-28 09:10:14 +0000] Status=2, isTerminal=NO, Elapsed=00:04.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:02 seconds
+
+[2026-10-28 09:10:15 +0000] Status=2, isTerminal=NO, Elapsed=00:05.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:03 seconds
+
+[2026-10-28 09:10:16 +0000] Status=2, isTerminal=NO, Elapsed=00:06.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:04 seconds
+
+[2026-10-28 09:10:17 +0000] Status=2, isTerminal=NO, Elapsed=00:07.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:05 seconds
+
+[2026-10-28 09:10:18 +0000] Status=2, isTerminal=NO, Elapsed=00:08.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:06 seconds
+
+[2026-10-28 09:10:19 +0000] Status=2, isTerminal=NO, Elapsed=00:09.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:07 seconds
+
+[2026-10-28 09:10:20 +0000] Status=2, isTerminal=NO, Elapsed=00:10.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:08 seconds
+
+[2026-10-28 09:10:21 +0000] Status=2, isTerminal=NO, Elapsed=00:11.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:09 seconds
+
+[2026-10-28 09:10:22 +0000] Status=2, isTerminal=NO, Elapsed=00:12.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:10 seconds
+
+[2026-10-28 09:10:23 +0000] Status=2, isTerminal=NO, Elapsed=00:13.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:11 seconds
+
+[2026-10-28 09:10:24 +0000] Status=2, isTerminal=NO, Elapsed=00:14.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:12 seconds
+
+[2026-10-28 09:10:25 +0000] Status=2, isTerminal=NO, Elapsed=00:15.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.managedconfiguration.migrator (MCProfile.migrator, user-agnostic)
+		Migration Elapsed:00:13 seconds
+
+[2026-10-28 09:10:26 +0000] Status=2, isTerminal=NO, Elapsed=00:16.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.managedconfiguration.migrator (MCProfile.migrator, user-agnostic)
+		Migration Elapsed:00:14 seconds
+
+[2026-10-28 09:10:29 +0000] Status=2, isTerminal=NO, Elapsed=00:19.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.managedconfiguration.migrator (MCProfile.migrator, user-agnostic)
+		Migration Elapsed:00:15 seconds
+
+[2026-10-28 09:10:30 +0000] Status=2, isTerminal=NO, Elapsed=00:19.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.managedconfiguration.migrator (MCProfile.migrator, user-agnostic)
+		Migration Elapsed:00:17 seconds
+
+[2026-10-28 09:10:30 +0000] Status=2, isTerminal=NO, Elapsed=00:20.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.managedconfiguration.migrator (MCProfile.migrator, user-agnostic)
+		Migration Elapsed:00:17 seconds
+
+[2026-10-28 09:10:31 +0000] Status=2, isTerminal=NO, Elapsed=00:20.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.managedconfiguration.migrator (MCProfile.migrator, user-agnostic)
+		Migration Elapsed:00:18 seconds
+
+[2026-10-28 09:10:31 +0000] Status=2, isTerminal=NO, Elapsed=00:21.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.managedconfiguration.migrator (MCProfile.migrator, user-agnostic)
+		Migration Elapsed:00:19 seconds
+
+[2026-10-28 09:10:32 +0000] Status=2, isTerminal=NO, Elapsed=00:22.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.managedconfiguration.migrator (MCProfile.migrator, user-agnostic)
+		Migration Elapsed:00:20 seconds
+
+[2026-10-28 09:10:33 +0000] Status=2, isTerminal=NO, Elapsed=00:23.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.MobileSafari.migrator (MobileSafari.migrator)
+		Migration Elapsed:00:21 seconds
+
+[2026-10-28 09:10:34 +0000] Status=2, isTerminal=NO, Elapsed=00:24.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.MobileSafari.migrator (MobileSafari.migrator)
+		Migration Elapsed:00:22 seconds
+
+[2026-10-28 09:10:35 +0000] Status=4294967295, isTerminal=YES, Elapsed=00:25.
+	Finished
+
+SwiftUI publication regression: no matching runtime issue reported
+Exported 38 attachments for: InteractionCaptureTests/testReplayValidatedNativeScenes():
+File: 1A62A4A6-F0C2-4ED8-A06E-205C3A90A255.png, suggested name: "72-neighbor-reduced-scene_0_89DE1653-2626-4369-BC8D-E016CC9A5ED2.png"
+File: 19716C26-4672-4D6F-A47A-4974B1065DAC.png, suggested name: "72-neighbor-reduced-screen_0_DA373FB1-3C00-41D3-9210-47B675170346.png"
+File: CA0767B4-E91A-4143-8330-73DEEEE2A18A.png, suggested name: "72-ahe-reduced-scene_0_C9F18D31-E4AF-44D9-9C3F-E31E6C74E7EF.png"
+File: B69AE84C-BEB7-494A-8E97-7B6EBD5C6049.png, suggested name: "72-ahe-reduced-screen_0_CF50F52E-4BC3-4121-9A13-8EA797C91476.png"
+File: B197EA39-7B09-4CF2-B0AA-27F536FD0973.png, suggested name: "32-ask-reduced-scene_0_F1C4D343-6587-4DCD-881C-8C6D3517C901.png"
+File: 6C1637F5-7D3F-4E18-85A2-753CC5D1B3EA.png, suggested name: "32-ask-reduced-screen_0_6EC4283F-437E-432F-BF8E-63935EF18452.png"
+File: FA7A241A-B753-4AF8-95E1-9D7B4263634E.png, suggested name: "13-ask-reduced-scene_0_37E80106-7169-42CE-A238-57645A14569C.png"
+File: 693A959A-0A4C-4CE6-A758-468B5864F12C.png, suggested name: "13-ask-reduced-screen_0_80D58B23-53E8-4CC5-91CC-0A86211ADF8A.png"
+File: 42CA5624-9354-4D37-BC1D-5E18F510970B.png, suggested name: "72-neighbor-large-scene_0_84C04EEB-B967-4280-ABD2-9808C170FDA5.png"
+File: 59BE91BE-1A14-42F5-9DE4-927460B33B8F.png, suggested name: "72-neighbor-large-screen_0_330C1872-07E7-4656-A87A-ACDB0AD2858A.png"
+File: 88459DF1-4717-4203-B322-E1251CFF6DE1.png, suggested name: "72-ahe-large-scene_0_26557BEB-15E7-412C-924E-F560022BD40C.png"
+File: 01B70819-28E7-40A5-A56D-06E3E37AC076.png, suggested name: "72-ahe-large-screen_0_CDCD2BB1-07A4-4C90-A3CF-71FA9D32094D.png"
+File: BA3042F1-AD27-422C-8DF4-1EC67041482C.png, suggested name: "32-ask-large-scene_0_1EB6B8A4-50BB-4796-ADE0-09D0907FE880.png"
+File: 032E6CF4-03CA-4580-AAD9-D5FC4E408579.png, suggested name: "32-ask-large-screen_0_6094D475-417B-431C-B768-AAA3829D1D55.png"
+File: EB47CFBF-D4ED-4FE8-A5E0-FFF134FC5EC3.png, suggested name: "13-ask-large-scene_0_8948ACD5-7772-482D-820C-B0558B707550.png"
+File: 3587BB20-5479-4468-A6E2-991E9B8BAA99.png, suggested name: "13-ask-large-screen_0_D73FCC67-3792-4A2B-B3A8-43E1ADA322E4.png"
+File: A44F5CA5-68C7-4F6B-9372-6B0E0DFBADB8.png, suggested name: "72-neighbor-normal-scene_0_C7F2547A-C5F6-4ABD-9865-0C9D313CB29D.png"
+File: 6870C2CF-CC9F-4A87-BC0A-DEEB59972767.png, suggested name: "72-neighbor-normal-screen_0_26FC8BF7-2B5E-448E-BABE-1BEF2C09A74D.png"
+File: A10A0679-791D-4B14-A072-44118811C030.png, suggested name: "72-ahe-normal-scene_0_5EF945F3-5380-4423-A2AC-7D812068BBC3.png"
+File: 22FE3139-688F-4B04-B1D6-2B9EE35C814C.png, suggested name: "72-ahe-normal-screen_0_9064B858-A648-4827-926A-06B9A42EBE94.png"
+File: B54081A9-8ACF-420F-ABC5-0754BE401E78.png, suggested name: "72-ahe-before-normal-scene_0_44970B96-5BD2-4BFA-853A-C58626E6E76A.png"
+File: 4BE2329F-53AE-4E4F-9217-E56E4A8EFB61.png, suggested name: "72-ahe-before-normal-screen_0_BFA4C808-62B5-4A80-8295-E248807A1328.png"
+File: 47ACEF94-C670-4853-BD6C-333B8C42C33D.png, suggested name: "32-participating-normal-scene_0_0489B34D-35A9-49C8-92F5-4661F4BF1FD7.png"
+File: 5AE6EB4B-B21F-423C-A1FF-9328110E1C11.png, suggested name: "32-participating-normal-screen_0_C040F953-A2A5-4237-94D8-5184C25B90BD.png"
+File: C28604DC-FB8B-4572-9333-006168D3E76E.png, suggested name: "32-ask-normal-scene_0_F183F3BE-0C40-4835-A222-E88443699EC2.png"
+File: 483D203F-5503-4DDC-861D-EA61C81BFD98.png, suggested name: "32-ask-normal-screen_0_30181CC1-23C0-4CBB-BAFB-CB4DBB616B9D.png"
+File: B702CC14-2A3D-457D-B1DF-212F37E49F6D.png, suggested name: "13-rest-normal-scene_0_0B85258B-D1E8-4438-95D6-C5207497B220.png"
+File: DAAB0364-4B6E-4252-A48E-2764B449C294.png, suggested name: "13-rest-normal-screen_0_23AB63DE-2701-4BA2-BF9A-4EF468CC805E.png"
+File: C3186B73-FEB7-4217-B8BD-6588FD8C0EB5.png, suggested name: "13-ask-normal-scene_0_27207836-1FE5-4A11-90EF-8FDEABC5F7A8.png"
+File: B652C2D9-B219-4826-875E-F88C87BE3204.png, suggested name: "13-ask-normal-screen_0_D0CC5051-E308-4B16-B533-A6794FEAE88E.png"
+File: 40F74299-0BD8-4922-8AA7-F44D9A4971ED.png, suggested name: "13-before-normal-scene_0_AAF154BA-8F01-4C56-BF85-5967421A58E4.png"
+File: 42040196-FAD8-4BF8-934F-C046CE804335.png, suggested name: "13-before-normal-screen_0_4E176996-C278-4DE9-A654-BDB1C5D000D6.png"
+File: 7F1B3C51-F24C-4521-A47C-87E7B7F5EFB2.png, suggested name: "25-neutral-normal-scene_0_073E7581-6B07-4D8B-A21C-E58DD19BACEA.png"
+File: 600AAC3D-02C7-46D6-8148-9CDAFFFA9D59.png, suggested name: "25-neutral-normal-screen_0_530AA769-0A27-428E-9ACA-913359ECD47E.png"
+File: B971774C-7453-403A-A827-ACFE10BCC848.png, suggested name: "45-neutral-normal-scene_0_0D33C2B5-93E5-407D-B740-718747BE33DE.png"
+File: CEC38E8F-D4B8-4E4C-8A09-42D69EA800F8.png, suggested name: "45-neutral-normal-screen_0_A5507BCF-BCBF-4D98-91D2-163556F57482.png"
+File: 044877F4-6C4E-4854-B334-5B26759F15D8.png, suggested name: "10-before-normal-scene_0_F3586571-6997-4A19-BB49-816EC7F36EA1.png"
+File: AC5F0518-D967-448E-9ECC-C410A4F9DA27.png, suggested name: "10-before-normal-screen_0_D0A9DD20-4300-453E-A83D-5626F8FFDE6C.png"
+
+Generated manifest file with attachment details: /Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/governance/interaction-memory-loop/final3-iPhone-17-attachments/manifest.json
+Exported 38 native screenshots to artifacts/evidence/interaction-memory-loop/final3/iPhone-17
+Deleted visual Simulator: ABB92EFA-A8FE-48AD-B3BE-F21FCEBFF4D6

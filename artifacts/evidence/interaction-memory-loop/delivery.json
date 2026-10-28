@@ -1,0 +1,84 @@
+{
+  "mode": "VALIDATION",
+  "mode_source": "validation_command",
+  "task": "Interaction and relationship memory Loop",
+  "task_authority": "user_request",
+  "scope": [
+    "LifeCrossroads/Presentation",
+    "LifeCrossroads/App/LifeWorldScene.swift",
+    "LifeCrossroads/App/Assets.xcassets/IMNeutralStages.imageset",
+    "LifeCrossroads/App/GameStore.swift (capture only)",
+    "LifeCrossroads/App/CrossroadsView.swift (UI-test diagnostic)",
+    "Tests",
+    "UITests/InteractionCaptureTests.swift",
+    "LifeCrossroads.xcodeproj/project.pbxproj (test sources/resources)",
+    "tools/interaction-memory-loop",
+    "assets/interaction-memory-loop",
+    "docs/interaction-memory-loop",
+    "docs/life-loop-10h/LL09_PLAYTEST.md",
+    "docs/life-loop-10h/LL09_RECORDS.md",
+    "artifacts/evidence/interaction-memory-loop",
+    "PLAN.md",
+    "memory"
+  ],
+  "implementation_commit": "c706b215566828ecb14baa97e6a4004d5f3e8605",
+  "base_commit": "a79f667528b5b4cbeb2e543b6d9ca33a12d680f1",
+  "done": [
+    "真實保存後求助表達與聆聽兩姿勢，不冒稱協作成功",
+    "10→72依準確歷史及現在人物投影回憶，未維持友誼走不同路線",
+    "三中間人生階段中立姿勢，修正文案前因與現在事件錯置、裁切及大字遮臉",
+    "多輪原生修正及獨立工程/視覺覆審，本片未解阻擋0；失敗歷史保留",
+    "8台任務Simulator已delete且fresh inventory不存在；更新LL09空白試玩材料",
+    "canonical writer綁定實作commit，memory guard當前阻擋0；保留歷史警告"
+  ],
+  "claim_ceiling": [
+    "本片功能已修正、可供獨立Draft review",
+    "本機完整157Swift早於最後敘事修正，之後另6定向及獨立6；不是單次最終158全套",
+    "遠端新HEAD CI待建立PR核對，整體成功未聲稱"
+  ],
+  "not_claimed": [
+    "90–95%產品完成",
+    "正式美術批准",
+    "所有活動姿勢年齡辨識",
+    "連續自然角色動畫",
+    "真人兒少理解/娛樂/自發重玩",
+    "實機VoiceOver驗收",
+    "八國資料完全可比",
+    "CI全綠",
+    "合併或發布"
+  ],
+  "evidence_refs": [
+    {
+      "artifact": "artifacts/evidence/interaction-memory-loop/local-tests.json",
+      "result": "PASS"
+    },
+    {
+      "artifact": "artifacts/evidence/interaction-memory-loop/verification.json",
+      "result": "PASS"
+    },
+    {
+      "artifact": "docs/interaction-memory-loop/ENGINEERING_REVIEW.md",
+      "result": "PASS"
+    },
+    {
+      "artifact": "docs/interaction-memory-loop/CRITIC.md",
+      "result": "PASS",
+      "boundary": "僅本片已確認視覺缺陷；產品未完整驗收"
+    },
+    {
+      "artifact": "artifacts/evidence/interaction-memory-loop/basic-drift.log",
+      "result": "FAIL"
+    },
+    {
+      "artifact": "artifacts/evidence/interaction-memory-loop/memory-guard.log",
+      "result": "PASS",
+      "boundary": "當前memory阻擋0，保留歷史provenance/metadata/unbound警告"
+    }
+  ],
+  "risk": [
+    "Basic仍受既有session_envelope過渡鍵91日超90日期限阻擋，沒有關Gate或改框架",
+    "兩姿勢與靜態回憶尚不等於自然連續動畫或孩子能理解",
+    "active-task 95行10190字元達CRITICAL，當輪僅固定範圍交付；另安排有界整理後再擴功能"
+  ],
+  "next_action": "推送獨立Draft並核對最新HEAD CI供Owner review，維持HOLD不合併；正式美術與真人試玩另驗收。"
+}

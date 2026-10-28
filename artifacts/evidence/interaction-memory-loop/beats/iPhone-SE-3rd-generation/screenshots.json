@@ -1,0 +1,16 @@
+{
+  "xcresult": "artifacts/ios/IM-beats-iPhone-SE-3rd-generation-20261028T083939Z.xcresult",
+  "kind": "native iOS App, real replay-validated archives; scene is native element crop",
+  "images": [
+    {
+      "file": "13-listening-normal-scene.png",
+      "sha256": "ad32e25e6f5399b25978e09f32c0f10c1de7c927a9ae8b59d2850b453206db29",
+      "sourceAttachment": "ED0ED576-C5E5-4EAC-B69E-5CFDC3DFCDA3.png"
+    },
+    {
+      "file": "13-expressing-normal-scene.png",
+      "sha256": "1bda622c49470d30791e44e71e556cc2eb5f3ef5484df88195e92d4357da8290",
+      "sourceAttachment": "BBEEF870-E367-4020-B33C-50C083C25647.png"
+    }
+  ]
+}

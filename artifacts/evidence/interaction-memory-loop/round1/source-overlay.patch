@@ -1,0 +1,182 @@
+diff --git a/LifeCrossroads.xcodeproj/project.pbxproj b/LifeCrossroads.xcodeproj/project.pbxproj
+index 3360589..eb23478 100644
+--- a/LifeCrossroads.xcodeproj/project.pbxproj
++++ b/LifeCrossroads.xcodeproj/project.pbxproj
+@@ -4,6 +4,10 @@
+     classes = {};
+     objectVersion = 56;
+     objects = {
++        C20000000000000000000001 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionCaptureTests.swift; sourceTree = "<group>"; };
++        C20000000000000000000002 = {isa = PBXFileReference; lastKnownFileType = folder; path = ../artifacts/evidence/interaction-memory-loop/interaction-fixtures; sourceTree = "<group>"; };
++        C20000000000000000000003 = {isa = PBXBuildFile; fileRef = C20000000000000000000001; };
++        C20000000000000000000004 = {isa = PBXBuildFile; fileRef = C20000000000000000000002; };
+         C18000000000000000000001 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiCastCaptureTests.swift; sourceTree = "<group>"; };
+         C18000000000000000000002 = {isa = PBXFileReference; lastKnownFileType = folder; path = ../artifacts/evidence/multi-cast-loop/cast-fixtures; sourceTree = "<group>"; };
+         C18000000000000000000003 = {isa = PBXBuildFile; fileRef = C18000000000000000000001; };
+@@ -18,7 +22,7 @@
+         A00000000000000000000004 = {isa = PBXNativeTarget; buildConfigurationList = A00000000000000000000011; buildPhases = (A00000000000000000000020, A00000000000000000000021, A00000000000000000000022); buildRules = (); dependencies = (); name = LifeCrossroads; packageProductDependencies = (A00000000000000000000031, A00000000000000000000032, A00000000000000000000033, A00000000000000000000034); productName = LifeCrossroads; productReference = A00000000000000000000008; productType = "com.apple.product-type.application"; };
+         A00000000000000000000005 = {isa = PBXNativeTarget; buildConfigurationList = A00000000000000000000012; buildPhases = (A00000000000000000000023, A00000000000000000000024, A00000000000000000000025); buildRules = (); dependencies = (A00000000000000000000029); name = LifeCrossroadsUITests; productName = LifeCrossroadsUITests; productReference = A00000000000000000000009; productType = "com.apple.product-type.bundle.ui-testing"; };
+         A00000000000000000000006 = {isa = PBXGroup; children = (B20000000000000000000001, B10000000000000000000003, B10000000000000000000001, A00000000000000000000040, A00000000000000000000041, A00000000000000000000042, A00000000000000000000044, A00000000000000000000045, A00000000000000000000046, A00000000000000000000047); name = App; path = LifeCrossroads/App; sourceTree = "<group>"; };
+-        A00000000000000000000007 = {isa = PBXGroup; children = (C18000000000000000000001, C18000000000000000000002, C16000000000000000000001, C16000000000000000000002, A00000000000000000000043); path = UITests; sourceTree = "<group>"; };
++        A00000000000000000000007 = {isa = PBXGroup; children = (C20000000000000000000001, C20000000000000000000002, C18000000000000000000001, C18000000000000000000002, C16000000000000000000001, C16000000000000000000002, A00000000000000000000043); path = UITests; sourceTree = "<group>"; };
+         A00000000000000000000008 = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeCrossroads.app; sourceTree = BUILT_PRODUCTS_DIR; };
+         A00000000000000000000009 = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeCrossroadsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+         A00000000000000000000010 = {isa = XCConfigurationList; buildConfigurations = (A00000000000000000000050, A00000000000000000000051); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+@@ -27,9 +31,9 @@
+         A00000000000000000000020 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (B20000000000000000000002, B10000000000000000000004, B10000000000000000000002, A00000000000000000000060, A00000000000000000000061, A00000000000000000000062, A00000000000000000000066, A00000000000000000000068, A00000000000000000000070); runOnlyForDeploymentPostprocessing = 0; };
+         A00000000000000000000021 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (A00000000000000000000064, A00000000000000000000065, A00000000000000000000069, A00000000000000000000071); runOnlyForDeploymentPostprocessing = 0; };
+         A00000000000000000000022 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (A00000000000000000000067); runOnlyForDeploymentPostprocessing = 0; };
+-        A00000000000000000000023 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (C18000000000000000000003, C16000000000000000000003, A00000000000000000000063); runOnlyForDeploymentPostprocessing = 0; };
++        A00000000000000000000023 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (C20000000000000000000003, C18000000000000000000003, C16000000000000000000003, A00000000000000000000063); runOnlyForDeploymentPostprocessing = 0; };
+         A00000000000000000000024 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+-        A00000000000000000000025 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (C18000000000000000000004, C16000000000000000000004, ); runOnlyForDeploymentPostprocessing = 0; };
++        A00000000000000000000025 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (C20000000000000000000004, C18000000000000000000004, C16000000000000000000004, ); runOnlyForDeploymentPostprocessing = 0; };
+         A00000000000000000000028 = {isa = PBXContainerItemProxy; containerPortal = A00000000000000000000001; proxyType = 1; remoteGlobalIDString = A00000000000000000000004; remoteInfo = LifeCrossroads; };
+         A00000000000000000000029 = {isa = PBXTargetDependency; target = A00000000000000000000004; targetProxy = A00000000000000000000028; };
+         A00000000000000000000030 = {isa = XCLocalSwiftPackageReference; relativePath = "."; };
+diff --git a/LifeCrossroads/App/LifeWorldScene.swift b/LifeCrossroads/App/LifeWorldScene.swift
+index 41b8a49..097e3f8 100644
+--- a/LifeCrossroads/App/LifeWorldScene.swift
++++ b/LifeCrossroads/App/LifeWorldScene.swift
+@@ -21,7 +21,10 @@ struct LifeWorldScene: View {
+             let size = geometry.size
+             ZStack {
+                 if let cast = WorldCastScene.project(frame) {
+-                    castScene(cast, size: size)
++                    if let memory = frame.relationshipMemory, frame.moment == .committedOutcome,
++                       cast.personID == memory.presentPersonID, cast.choiceID == memory.present.choiceID {
++                        relationshipScene(memory, cast: cast, size: size)
++                    } else { castScene(cast, size: size) }
+                 } else if let activity = WorldActivity.project(frame) {
+                     illustratedActivity(activity, size: size)
+                 } else if let setting = WorldActivity.neutralSetting(frame) {
+@@ -81,6 +84,15 @@ struct LifeWorldScene: View {
+                     grounded(protagonist, width: size.width * (working ? 0.65 : 0.43), height: size.height * 0.94,
+                              x: size.width * (working ? 0.39 : 0.29), floor: size.height * 0.98)
+                 }
++                if cast.kind == .requesting {
++                    let listening = !reduced && WorldRequestBeat.project(frame: frame, motion: motion) == .listening
++                    Image(systemName: listening ? "ear" : "questionmark.bubble")
++                        .font(.system(size: min(23, size.height * 0.13), weight: .medium))
++                        .foregroundStyle(StoryPalette.forest)
++                        .padding(8).background(StoryPalette.page.opacity(0.92), in: Circle())
++                        .position(x: size.width * 0.50, y: size.height * 0.23)
++                        .accessibilityHidden(true)
++                }
+             }
+         }
+     }
+@@ -91,8 +103,10 @@ struct LifeWorldScene: View {
+             if cast.age == 10 { return ("StoryCast", 0, 4, 2) }
+             if cast.age == 72 { return ("StoryCast", 4, 4, 2) }
+             if cast.age == 32, WorldActivity.project(frame)?.kind == .protectedRest { return ("VL2Recovery32", 0, 2, 1) }
+-            return ("VL2Neutral", cast.age == 13 ? 0 : cast.age == 17 ? 1 : cast.age == 25 ? 2 : 3, 2, 2)
++            return neutralPose
+         }
++        if cast.kind == .requesting, !reduced,
++           WorldRequestBeat.project(frame: frame, motion: motion) == .listening { return neutralPose }
+         switch cast.kind {
+         case .requesting where cast.age == 13: return ("VL2Teen13", 2, 2, 2)
+         case .explaining: return ("VL2Teen13", 1, 2, 2)
+@@ -117,12 +131,50 @@ struct LifeWorldScene: View {
+         }
+     }
+ 
++    private var neutralPose: CastPose {
++        switch frame.stage {
++        case .childhood: ("StoryCast", 0, 4, 2)
++        case .adolescence: ("IMNeutralStages", 0, 3, 1)
++        case .youngAdult: ("IMNeutralStages", 1, 3, 1)
++        case .middleAge: ("IMNeutralStages", 2, 3, 1)
++        case .laterLife: ("StoryCast", 4, 4, 2)
++        }
++    }
++
++    /// The smaller panel is an actual earlier choice, not an invented childhood with today's cast.
++    private func relationshipScene(_ memory: WorldRelationshipMemory, cast: WorldCastScene, size: CGSize) -> some View {
++        HStack(spacing: 3) {
++            ZStack(alignment: .topLeading) {
++                if let bg = WorldSceneBitmaps.scene("VL2Garden", size: CGSize(width: size.width * 0.32, height: size.height)) {
++                    Image(decorative: bg, scale: 1).resizable()
++                }
++                Color(red: 0.93, green: 0.85, blue: 0.64).opacity(0.25)
++                let w = size.width * 0.32
++                if let mumu = WorldSceneBitmaps.cell(memory.keptFriendship ? "MCMumu" : "StoryCast", index: 0, columns: memory.keptFriendship ? 2 : 4, rows: 2) {
++                    grounded(mumu, width: w * (memory.keptFriendship ? 0.58 : 0.78), height: size.height * 0.66,
++                             x: w * (memory.keptFriendship ? 0.28 : 0.5), floor: size.height * 0.91)
++                }
++                if memory.keptFriendship, let ahe = WorldSceneBitmaps.cell("MCAhe", index: 1, columns: 3, rows: 2) {
++                    grounded(ahe, width: w * 0.51, height: size.height * 0.67, x: w * 0.75, floor: size.height * 0.91)
++                }
++                Text("10歲 · 那時").font(.caption2.bold()).padding(5)
++                    .background(StoryPalette.page.opacity(0.9), in: RoundedRectangle(cornerRadius: 7)).padding(4)
++            }.frame(width: size.width * 0.32, height: size.height).clipped()
++            ZStack(alignment: .topLeading) {
++                castScene(cast, size: CGSize(width: size.width * 0.68 - 3, height: size.height))
++                Text("72歲 · 現在").font(.caption2.bold()).padding(5)
++                    .background(StoryPalette.page.opacity(0.9), in: RoundedRectangle(cornerRadius: 7)).padding(4)
++            }.frame(width: size.width * 0.68 - 3, height: size.height).clipped()
++        }.background(StoryPalette.forest.opacity(0.5))
++    }
++
+     private func neutralScene(background: String, cell: Int, size: CGSize) -> some View {
+         ZStack {
+             if let scene = WorldSceneBitmaps.scene(background, size: size) {
+                 Image(decorative: scene, scale: 1).resizable().frame(width: size.width, height: size.height)
+             }
+-            if let actor = WorldSceneBitmaps.cell("VL2Neutral", index: cell, columns: 2, rows: 2) {
++            let pose = neutralPose
++            if let actor = WorldSceneBitmaps.cell(pose.atlas, index: pose.cell, columns: pose.columns, rows: pose.rows) {
+                 grounded(actor, width: size.width * 0.46, height: size.height * 0.91,
+                          x: size.width * 0.48, floor: size.height * 0.98)
+             }
+@@ -436,7 +488,10 @@ struct LifeWorldScene: View {
+         return ZStack(alignment: .bottom) {
+             Ellipse().fill(StoryPalette.forest.opacity(0.19))
+                 .frame(width: width * 0.48, height: max(4, width * 0.065))
+-            if let portrait = croppedPortrait(character) {
++            let stagePose = neutralPose
++            let agePortrait = protagonist && frame.stage != .childhood && frame.stage != .laterLife
++                ? WorldSceneBitmaps.cell(stagePose.atlas, index: stagePose.cell, columns: stagePose.columns, rows: stagePose.rows) : nil
++            if let portrait = agePortrait ?? croppedPortrait(character) {
+                 Image(decorative: portrait, scale: 1).resizable().scaledToFit()
+                     .frame(width: width, height: width)
+                     .rotationEffect(.degrees(pose.leanDegrees), anchor: .bottom)
+@@ -572,7 +627,7 @@ struct LifeWorldScene: View {
+ 
+     private var spokenScene: String {
+         if let cast = WorldCastScene.project(frame) {
+-            return "\(frame.age)歲，\(cast.description)跨國共用的虛構舞台，不是當地實景。"
++            return "\(frame.age)歲，\(cast.description)\(frame.relationshipMemory?.description ?? "")跨國共用的虛構舞台，不是當地實景。"
+         }
+         let people = frame.actors.map { WorldMomentProjector.personName($0.personID) }.joined(separator: "、")
+         let activity = WorldActivity.project(frame)
+diff --git a/LifeCrossroads/Presentation/LifeWorldFrame.swift b/LifeCrossroads/Presentation/LifeWorldFrame.swift
+index b3eae26..f6c739c 100644
+--- a/LifeCrossroads/Presentation/LifeWorldFrame.swift
++++ b/LifeCrossroads/Presentation/LifeWorldFrame.swift
+@@ -29,11 +29,13 @@ public struct LifeWorldFrame: Equatable, Sendable {
+     public let environmentGaps: [String]
+     /// Present only for an applied, saved trace. Rendering cannot infer an action from resources.
+     public var committedChoiceID: String? = nil
++    public var relationshipMemory: WorldRelationshipMemory? = nil
+ 
+     /// Only presentation may override the moment; authoritative age and evidence stay unchanged.
+     public func presenting(_ moment: LifeWorldMomentKind) -> Self {
+         .init(stage: stage, age: age, visualFromAge: visualFromAge, sceneID: sceneID,
+-              actors: actors, worldChanges: worldChanges, moment: moment, eventID: eventID, environmentGaps: environmentGaps, committedChoiceID: committedChoiceID)
++              actors: actors, worldChanges: worldChanges, moment: moment, eventID: eventID, environmentGaps: environmentGaps, committedChoiceID: committedChoiceID,
++              relationshipMemory: moment == .committedOutcome ? relationshipMemory : nil)
+     }
+ }
+ 
+@@ -110,7 +112,8 @@ public enum WorldMomentProjector {
+         let scene = state.age == 13 && eventID == "teen-project" ? "workshop" : stage == .childhood ? "river" : "community"
+         return .init(stage: stage, age: state.age, visualFromAge: session.jumps.last?.fromAge,
+             sceneID: scene, actors: actors, worldChanges: changes, moment: moment, eventID: eventID, environmentGaps: gaps,
+-            committedChoiceID: session.phase == .reflecting ? session.traces.last?.choiceID : nil)
++            committedChoiceID: session.phase == .reflecting ? session.traces.last?.choiceID : nil,
++            relationshipMemory: WorldRelationshipMemory.project(session: session))
+     }
+ 
+     public static func memoryCaption(_ fact: StoryFact) -> String {

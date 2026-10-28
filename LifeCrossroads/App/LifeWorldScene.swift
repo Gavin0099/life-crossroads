@@ -21,7 +21,10 @@ struct LifeWorldScene: View {
             let size = geometry.size
             ZStack {
                 if let cast = WorldCastScene.project(frame) {
-                    castScene(cast, size: size)
+                    if let memory = frame.relationshipMemory, frame.moment == .committedOutcome,
+                       cast.personID == memory.presentPersonID, cast.choiceID == memory.present.choiceID {
+                        relationshipScene(memory, cast: cast, size: size)
+                    } else { castScene(cast, size: size) }
                 } else if let activity = WorldActivity.project(frame) {
                     illustratedActivity(activity, size: size)
                 } else if let setting = WorldActivity.neutralSetting(frame) {
@@ -81,6 +84,15 @@ struct LifeWorldScene: View {
                     grounded(protagonist, width: size.width * (working ? 0.65 : 0.43), height: size.height * 0.94,
                              x: size.width * (working ? 0.39 : 0.29), floor: size.height * 0.98)
                 }
+                if cast.kind == .requesting {
+                    let listening = !reduced && WorldRequestBeat.project(frame: frame, motion: motion) == .listening
+                    Image(systemName: listening ? "ear" : "questionmark.bubble")
+                        .font(.system(size: min(23, size.height * 0.13), weight: .medium))
+                        .foregroundStyle(StoryPalette.forest)
+                        .padding(8).background(StoryPalette.page.opacity(0.92), in: Circle())
+                        .position(x: size.width * 0.50, y: size.height * 0.23)
+                        .accessibilityHidden(true)
+                }
             }
         }
     }
@@ -91,8 +103,10 @@ struct LifeWorldScene: View {
             if cast.age == 10 { return ("StoryCast", 0, 4, 2) }
             if cast.age == 72 { return ("StoryCast", 4, 4, 2) }
             if cast.age == 32, WorldActivity.project(frame)?.kind == .protectedRest { return ("VL2Recovery32", 0, 2, 1) }
-            return ("VL2Neutral", cast.age == 13 ? 0 : cast.age == 17 ? 1 : cast.age == 25 ? 2 : 3, 2, 2)
+            return neutralPose
         }
+        if cast.kind == .requesting, !reduced,
+           WorldRequestBeat.project(frame: frame, motion: motion) == .listening { return neutralPose }
         switch cast.kind {
         case .requesting where cast.age == 13: return ("VL2Teen13", 2, 2, 2)
         case .explaining: return ("VL2Teen13", 1, 2, 2)
@@ -117,12 +131,53 @@ struct LifeWorldScene: View {
         }
     }
 
+    private var neutralPose: CastPose {
+        switch frame.stage {
+        case .childhood: ("StoryCast", 0, 4, 2)
+        case .adolescence: ("IMNeutralStages", 0, 3, 1)
+        case .youngAdult: ("IMNeutralStages", 1, 3, 1)
+        case .middleAge: ("IMNeutralStages", 2, 3, 1)
+        case .laterLife: ("StoryCast", 4, 4, 2)
+        }
+    }
+
+    /// The smaller panel is an actual earlier choice, not an invented childhood with today's cast.
+    private func relationshipScene(_ memory: WorldRelationshipMemory, cast: WorldCastScene, size: CGSize) -> some View {
+        HStack(spacing: 3) {
+            ZStack(alignment: .topLeading) {
+                if let bg = WorldSceneBitmaps.scene("VL2Garden", size: CGSize(width: size.width * 0.32, height: size.height)) {
+                    Image(decorative: bg, scale: 1).resizable()
+                }
+                Color(red: 0.93, green: 0.85, blue: 0.64).opacity(0.25)
+                let w = size.width * 0.32
+                if let mumu = WorldSceneBitmaps.cell(memory.keptFriendship ? "MCMumu" : "StoryCast", index: 0, columns: memory.keptFriendship ? 2 : 4, rows: 2) {
+                    grounded(mumu, width: w * (memory.keptFriendship ? 0.54 : 0.78), height: size.height * 0.66,
+                             x: w * (memory.keptFriendship ? 0.30 : 0.5), floor: size.height * 0.91)
+                }
+                if memory.keptFriendship, let ahe = WorldSceneBitmaps.cell("MCAhe", index: 1, columns: 3, rows: 2) {
+                    grounded(ahe, width: w * 0.47, height: size.height * 0.67, x: w * 0.74, floor: size.height * 0.91)
+                }
+                Text("10歲 · 那時").font(.system(size: 11, weight: .bold, design: .rounded)).lineLimit(1).padding(5)
+                    .background(StoryPalette.page.opacity(0.9), in: RoundedRectangle(cornerRadius: 7)).padding(4)
+            }.frame(width: size.width * 0.32, height: size.height).clipped()
+            ZStack(alignment: .topLeading) {
+                // Reserve a real caption band. Its compact labels duplicate the full spoken
+                // receipt and the large external age; they must never cover either face.
+                castScene(cast, size: CGSize(width: size.width * 0.68 - 3, height: size.height - 26))
+                    .frame(width: size.width * 0.68 - 3, height: size.height - 26).offset(y: 26)
+                Text("72歲 · 現在").font(.system(size: 11, weight: .bold, design: .rounded)).lineLimit(1).padding(5)
+                    .background(StoryPalette.page.opacity(0.9), in: RoundedRectangle(cornerRadius: 7)).padding(4)
+            }.frame(width: size.width * 0.68 - 3, height: size.height, alignment: .topLeading).clipped()
+        }.background(StoryPalette.forest.opacity(0.5))
+    }
+
     private func neutralScene(background: String, cell: Int, size: CGSize) -> some View {
         ZStack {
             if let scene = WorldSceneBitmaps.scene(background, size: size) {
                 Image(decorative: scene, scale: 1).resizable().frame(width: size.width, height: size.height)
             }
-            if let actor = WorldSceneBitmaps.cell("VL2Neutral", index: cell, columns: 2, rows: 2) {
+            let pose = neutralPose
+            if let actor = WorldSceneBitmaps.cell(pose.atlas, index: pose.cell, columns: pose.columns, rows: pose.rows) {
                 grounded(actor, width: size.width * 0.46, height: size.height * 0.91,
                          x: size.width * 0.48, floor: size.height * 0.98)
             }
@@ -431,12 +486,15 @@ struct LifeWorldScene: View {
         let pose = LifeWorldMotion.pose(elapsedMs: motion.elapsedMs, reduceMotion: reduced, actorIndex: index)
         let protagonist = character.rawValue <= StoryCharacter.elder.rawValue
         let heroFraction = frame.actors.count > 1 ? 0.60 : 0.70
-        let width = min(size.width * (protagonist ? heroFraction : 0.36), size.height * 0.83)
+        let width = min(size.width * (protagonist ? heroFraction : 0.36), size.height * 0.76)
         let x = frame.actors.count > 1 ? size.width * (index == 0 ? 0.36 : 0.72) : size.width * 0.50
         return ZStack(alignment: .bottom) {
             Ellipse().fill(StoryPalette.forest.opacity(0.19))
                 .frame(width: width * 0.48, height: max(4, width * 0.065))
-            if let portrait = croppedPortrait(character) {
+            let stagePose = neutralPose
+            let agePortrait = protagonist && frame.stage != .childhood && frame.stage != .laterLife
+                ? WorldSceneBitmaps.cell(stagePose.atlas, index: stagePose.cell, columns: stagePose.columns, rows: stagePose.rows) : nil
+            if let portrait = agePortrait ?? croppedPortrait(character) {
                 Image(decorative: portrait, scale: 1).resizable().scaledToFit()
                     .frame(width: width, height: width)
                     .rotationEffect(.degrees(pose.leanDegrees), anchor: .bottom)
@@ -444,7 +502,7 @@ struct LifeWorldScene: View {
             }
         }
         .frame(width: width, height: width, alignment: .bottom)
-        .position(x: x, y: size.height * 0.84 - width / 2)
+        .position(x: x, y: size.height * 0.89 - width / 2)
     }
 
     @ViewBuilder private func stageFurniture(size: CGSize) -> some View {
@@ -572,7 +630,7 @@ struct LifeWorldScene: View {
 
     private var spokenScene: String {
         if let cast = WorldCastScene.project(frame) {
-            return "\(frame.age)歲，\(cast.description)跨國共用的虛構舞台，不是當地實景。"
+            return "\(frame.age)歲，\(cast.description)\(frame.relationshipMemory?.description ?? "")跨國共用的虛構舞台，不是當地實景。"
         }
         let people = frame.actors.map { WorldMomentProjector.personName($0.personID) }.joined(separator: "、")
         let activity = WorldActivity.project(frame)

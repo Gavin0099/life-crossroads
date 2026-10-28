@@ -1,0 +1,208 @@
+{
+  "base": "a79f667528b5b4cbeb2e543b6d9ca33a12d680f1",
+  "checks": {
+    "protectedDiffEmpty": true,
+    "iPhone-SE-3rd-generationSourceMatches": true,
+    "iPhone-SE-3rd-generationImageHashes": true,
+    "iPhone-SE-3rd-generationMatrix": true,
+    "iPhone-SE-3rd-generationSupplementImageHashes": true,
+    "iPhone-SE-3rd-generationNoRuntimeWarnings": true,
+    "iPhone-SE-3rd-generationSupplementScope": true,
+    "iPhone-SE-3rd-generationRequestClock": true,
+    "iPhone-SE-3rd-generationRequestSaveInvariant": true,
+    "iPhone-SE-3rd-generationFailureRetry": true,
+    "iPhone-SE-3rd-generationTestsPass": true,
+    "iPhone-17SourceMatches": true,
+    "iPhone-17ImageHashes": true,
+    "iPhone-17Matrix": true,
+    "iPhone-17SupplementImageHashes": true,
+    "iPhone-17NoRuntimeWarnings": true,
+    "iPhone-17SupplementScope": true,
+    "iPhone-17RequestClock": true,
+    "iPhone-17RequestSaveInvariant": true,
+    "iPhone-17FailureRetry": true,
+    "iPhone-17TestsPass": true,
+    "dedicatedSimulatorsDeleted": true,
+    "eightDedicatedDevices": true
+  },
+  "allPass": true,
+  "devices": [
+    {
+      "udid": "D50C928E-A598-4EE0-AE07-7CD044CD409E",
+      "log": "artifacts/evidence/interaction-memory-loop/round1-se-run.log",
+      "deletedReceipt": true
+    },
+    {
+      "udid": "31AF8505-9C49-4C72-8B82-AFA0985CE717",
+      "log": "artifacts/evidence/interaction-memory-loop/final3-se-run.log",
+      "deletedReceipt": true
+    },
+    {
+      "udid": "FAA225ED-87C5-4C37-8D51-177179AD1E14",
+      "log": "artifacts/evidence/interaction-memory-loop/beats-se-run.log",
+      "deletedReceipt": true
+    },
+    {
+      "udid": "7453BC2C-9132-49CD-AD00-6CB4959D56A3",
+      "log": "artifacts/evidence/interaction-memory-loop/final2-standard-run.log",
+      "deletedReceipt": true
+    },
+    {
+      "udid": "62858EB4-42ED-44D1-89A3-FB660EB5BFB8",
+      "log": "artifacts/evidence/interaction-memory-loop/final2-se-run.log",
+      "deletedReceipt": true
+    },
+    {
+      "udid": "B0B73113-63F6-4305-9E6D-09A163B97909",
+      "log": "artifacts/evidence/interaction-memory-loop/final-se-run.log",
+      "deletedReceipt": true
+    },
+    {
+      "udid": "2186B15D-14FD-4AE0-BBB7-65F94689A08F",
+      "log": "artifacts/evidence/interaction-memory-loop/round2-se-run.log",
+      "deletedReceipt": true
+    },
+    {
+      "udid": "ABB92EFA-A8FE-48AD-B3BE-F21FCEBFF4D6",
+      "log": "artifacts/evidence/interaction-memory-loop/final3-standard-run.log",
+      "deletedReceipt": true
+    }
+  ],
+  "finals": [
+    {
+      "hardware": "iPhone-SE-3rd-generation",
+      "captures": 19,
+      "requestBeats": [
+        [
+          "13",
+          "expressing",
+          "8d85eb25d6f21ac085fa4fafec47c110567a6513133614c2ab49c8336a65f1b4",
+          "247"
+        ],
+        [
+          "13",
+          "listening",
+          "8d85eb25d6f21ac085fa4fafec47c110567a6513133614c2ab49c8336a65f1b4",
+          "1458"
+        ],
+        [
+          "32",
+          "expressing",
+          "942b8c7bf91ec42b4e135db52654af9c2dc2da07b6978921bf2c5499fe00f03a",
+          "249"
+        ],
+        [
+          "32",
+          "listening",
+          "942b8c7bf91ec42b4e135db52654af9c2dc2da07b6978921bf2c5499fe00f03a",
+          "1436"
+        ]
+      ],
+      "runtime": {
+        "devicesAndConfigurations": [
+          {
+            "device": {
+              "architecture": "arm64",
+              "deviceId": "31AF8505-9C49-4C72-8B82-AFA0985CE717",
+              "deviceName": "IM-final3-iPhone-SE-3rd-generation",
+              "modelName": "iPhone SE (3rd generation)",
+              "osBuildNumber": "24A434",
+              "osVersion": "27.0",
+              "platform": "iOS Simulator"
+            },
+            "expectedFailures": 0,
+            "failedTests": 0,
+            "passedTests": 1,
+            "skippedTests": 0,
+            "testPlanConfiguration": {
+              "configurationId": "1",
+              "configurationName": "Test Scheme Action"
+            }
+          }
+        ],
+        "environmentDescription": "LifeCrossroads · Built with macOS 27.0",
+        "expectedFailures": 0,
+        "failedTests": 0,
+        "finishTime": 1793178608.56,
+        "passedTests": 1,
+        "result": "Passed",
+        "runtimeWarnings": [],
+        "skippedTests": 0,
+        "startTime": 1793178412.881,
+        "statistics": [],
+        "testFailures": [],
+        "title": "Test - LifeCrossroads",
+        "topInsights": [],
+        "totalTestCount": 1
+      }
+    },
+    {
+      "hardware": "iPhone-17",
+      "captures": 19,
+      "requestBeats": [
+        [
+          "13",
+          "expressing",
+          "8d85eb25d6f21ac085fa4fafec47c110567a6513133614c2ab49c8336a65f1b4",
+          "241"
+        ],
+        [
+          "13",
+          "listening",
+          "8d85eb25d6f21ac085fa4fafec47c110567a6513133614c2ab49c8336a65f1b4",
+          "1404"
+        ],
+        [
+          "32",
+          "expressing",
+          "942b8c7bf91ec42b4e135db52654af9c2dc2da07b6978921bf2c5499fe00f03a",
+          "252"
+        ],
+        [
+          "32",
+          "listening",
+          "942b8c7bf91ec42b4e135db52654af9c2dc2da07b6978921bf2c5499fe00f03a",
+          "1414"
+        ]
+      ],
+      "runtime": {
+        "devicesAndConfigurations": [
+          {
+            "device": {
+              "architecture": "arm64",
+              "deviceId": "ABB92EFA-A8FE-48AD-B3BE-F21FCEBFF4D6",
+              "deviceName": "IM-final3-iPhone-17",
+              "modelName": "iPhone 17",
+              "osBuildNumber": "24A434",
+              "osVersion": "27.0",
+              "platform": "iOS Simulator"
+            },
+            "expectedFailures": 0,
+            "failedTests": 0,
+            "passedTests": 1,
+            "skippedTests": 0,
+            "testPlanConfiguration": {
+              "configurationId": "1",
+              "configurationName": "Test Scheme Action"
+            }
+          }
+        ],
+        "environmentDescription": "LifeCrossroads · Built with macOS 27.0",
+        "expectedFailures": 0,
+        "failedTests": 0,
+        "finishTime": 1793178845.817,
+        "passedTests": 1,
+        "result": "Passed",
+        "runtimeWarnings": [],
+        "skippedTests": 0,
+        "startTime": 1793178656.518,
+        "statistics": [],
+        "testFailures": [],
+        "title": "Test - LifeCrossroads",
+        "topInsights": [],
+        "totalTestCount": 1
+      }
+    }
+  ],
+  "claimBoundary": "Local engineering evidence; no human playtest, official art, real iPhone or overall CI acceptance."
+}

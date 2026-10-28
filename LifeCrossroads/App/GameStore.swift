@@ -28,6 +28,15 @@ final class GameStore: ObservableObject {
     func pulseWorld() {
         guard canAnimateWorld else { return }
         if let ticket = playback.tick(now: now) { advanceWorld(ticket) }
+#if VISUAL_LOOP_CAPTURE && targetEnvironment(simulator)
+        // Observe real elapsed playback, then use the same pause operation as the player.
+        // No synthetic time, result, actor, or engine state is injected.
+        if ProcessInfo.processInfo.arguments.contains("-ui-testing"),
+           ProcessInfo.processInfo.arguments.contains("-visual-loop-capture"), playback.phase == .committedOutcome,
+           let text = ProcessInfo.processInfo.environment["LIFE_CAPTURE_PAUSE_AFTER_MS"],
+           let threshold = Double(text), threshold > 0, threshold < playback.durationMs,
+           playback.phaseElapsedMs >= threshold { playback.setPaused(true, now: now) }
+#endif
     }
     func skipWorld() {
         guard worldPreviewEnabled, session != nil, !viewingOriginal else { return }
@@ -37,10 +46,20 @@ final class GameStore: ObservableObject {
         if let session, let catalog {
             // Project once from the saved/restored session, never from presentation ticks.
             projectedWorld = try? WorldMomentProjector.project(session: session, catalog: catalog)
+#if VISUAL_LOOP_CAPTURE && targetEnvironment(simulator)
+            if ProcessInfo.processInfo.arguments.contains("-ui-testing"),
+               ProcessInfo.processInfo.arguments.contains("-visual-loop-capture"), !restoring, session.phase == .reflecting,
+               let text = ProcessInfo.processInfo.environment["LIFE_CAPTURE_PAUSE_AFTER_MS"],
+               let threshold = Double(text), threshold > 0, threshold < 2000 {
+                playback.setPaused(false, now: now)
+            }
+#endif
             playback.bind(session, now: now, restoring: restoring, reset: reset)
 #if VISUAL_LOOP_CAPTURE && targetEnvironment(simulator)
             if ProcessInfo.processInfo.arguments.contains("-visual-loop-capture") {
-                playback.setPaused(true, now: now)
+                let observeRequest = ProcessInfo.processInfo.environment["LIFE_CAPTURE_PAUSE_AFTER_MS"] != nil
+                    && !restoring && session.phase == .reflecting
+                playback.setPaused(!observeRequest, now: now)
             }
 #endif
         }

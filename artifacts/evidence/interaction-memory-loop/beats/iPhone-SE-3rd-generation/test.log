@@ -1,0 +1,10 @@
+Test Case '-[LifeCrossroadsUITests.InteractionCaptureTests testActualSavedRequestHasTwoVisibleBeats]' started.
+VISUAL_REQUEST 13 expressing archive=8d85eb25d6f21ac085fa4fafec47c110567a6513133614c2ab49c8336a65f1b4 phaseMs=251 pause=actual-clock
+VISUAL_REQUEST 13 listening archive=8d85eb25d6f21ac085fa4fafec47c110567a6513133614c2ab49c8336a65f1b4 phaseMs=1441 pause=actual-clock
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/UITests/InteractionCaptureTests.swift:107: error: -[LifeCrossroadsUITests.InteractionCaptureTests testActualSavedRequestHasTwoVisibleBeats] : Asynchronous wait failed: Exceeded timeout of 8 seconds, with unfulfilled expectations: "Expect predicate `BLOCKPREDICATE(0x106349c20)` for object "worldPlaybackState" StaticText".
+Test Case '-[LifeCrossroadsUITests.InteractionCaptureTests testActualSavedRequestHasTwoVisibleBeats]' failed (57.354 seconds).
+	 Executed 1 test, with 1 failure (0 unexpected) in 57.354 (57.364) seconds
+	 Executed 1 test, with 1 failure (0 unexpected) in 57.354 (57.364) seconds
+	 Executed 1 test, with 1 failure (0 unexpected) in 57.354 (57.366) seconds
+Failing tests:
+** TEST EXECUTE FAILED **

@@ -1,0 +1,42 @@
+{
+  "baseline": "a79f667528b5b4cbeb2e543b6d9ca33a12d680f1",
+  "swiftInitialFull": {
+    "uniquePassed": 157,
+    "failed": [],
+    "boundary": "Initial full suite before the one-line narrative repair; not the final 158 suite."
+  },
+  "swiftFinalFocused": {
+    "uniquePassed": 6,
+    "cases": [
+      "LifePresentationTests.WorldRelationshipMemoryTests testCurrentEventTitleCannotBecomeThePastChoice",
+      "LifePresentationTests.WorldRelationshipMemoryTests testMismatchedBranchSourcesAndActorsCannotCreateMemory",
+      "LifePresentationTests.WorldRelationshipMemoryTests testNoMemoryForInvitationsRestOrRequests",
+      "LifePresentationTests.WorldRelationshipMemoryTests testPairedHistoryUsesExactPastAndPresentReceipts",
+      "LifePresentationTests.WorldRelationshipMemoryTests testReplayRestoreAndOriginalBytesRemainIdentical",
+      "LifePresentationTests.WorldRelationshipMemoryTests testRequestBeatsNeverPromoteToAgreementOrParticipation"
+    ],
+    "failed": []
+  },
+  "pythonFinalFull": {
+    "passed": 45,
+    "log": "final-python.log"
+  },
+  "basic": {
+    "ok": false,
+    "boundary": "Existing pinned framework session_envelope age limit; gate retained, no framework update."
+  },
+  "logs": {
+    "all-swift.log": "cab580f04fcab20a7b538154b7dc1acfaa66e0e5a347d2aba5579aaa588015c7",
+    "final-focused-swift.log": "0ad8986877cb5fcb4c7d19417b3420669a6d37bce126af43634f3f3c887357bd",
+    "final-python.log": "53197ecff6a94a3e805ad78c7212cf482e9372b7835246234df90a295a7d2c78",
+    "basic.log": "62c39b52f59f88c8a66ea62dcdd870e13fbf99bbb61db71233d12b35fbcc9f3e"
+  },
+  "narrativeRedTest": "NOT RUN: SwiftPM lock; pending command was terminated before compilation. Actual Round1 screenshot and source establish the defect.",
+  "notClaimed": [
+    "single final local full 158 Swift run",
+    "human playtest",
+    "physical iPhone QA",
+    "formal art approval",
+    "entire CI success"
+  ]
+}

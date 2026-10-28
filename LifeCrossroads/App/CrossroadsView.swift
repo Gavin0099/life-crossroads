@@ -249,7 +249,7 @@ struct CrossroadsView: View {
                 if ProcessInfo.processInfo.arguments.contains("-ui-testing") {
                     Text("生活播放狀態").font(.system(size: 1)).foregroundStyle(.clear)
                         .accessibilityIdentifier("worldPlaybackState")
-                        .accessibilityValue(Text(verbatim: "\(store.playback.phase.rawValue)|\(store.playback.paused)|\(world.age)|\(store.session?.traces.count ?? -1)|\(store.playback.phaseToken)|sceneHeight=\(height)|reduceMotion=\(reduceMotion)|largeType=\(dynamicTypeSize.isAccessibilitySize)"))
+                        .accessibilityValue(Text(verbatim: "\(store.playback.phase.rawValue)|\(store.playback.paused)|\(world.age)|\(store.session?.traces.count ?? -1)|\(store.playback.phaseToken)|sceneHeight=\(height)|reduceMotion=\(reduceMotion)|largeType=\(dynamicTypeSize.isAccessibilitySize)|phaseMs=\(Int(store.playback.phaseElapsedMs))"))
                 }
 #endif
             }

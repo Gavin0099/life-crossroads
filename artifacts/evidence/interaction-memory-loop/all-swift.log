@@ -1,0 +1,421 @@
+Building for debugging...
+[Computing dependencies]
+[1 / 2] LifePresentationTests-product
+Build complete! (0.67秒)
+Test Suite 'All tests' started at 2026-10-28 16:34:17.716.
+Test Suite 'LifePresentationTests.xctest' started at 2026-10-28 16:34:17.717.
+Test Suite 'LifeWorldFrameTests' started at 2026-10-28 16:34:17.717.
+Test Case '-[LifePresentationTests.LifeWorldFrameTests testChoosingNeverProjectsAnUnmadeChoiceOrFutureSuccess]' started.
+Test Case '-[LifePresentationTests.LifeWorldFrameTests testChoosingNeverProjectsAnUnmadeChoiceOrFutureSuccess]' passed (0.029 seconds).
+Test Case '-[LifePresentationTests.LifeWorldFrameTests testFactsPendingHooksTriggeredHooksAndTaiwanGapsHaveSources]' started.
+Test Case '-[LifePresentationTests.LifeWorldFrameTests testFactsPendingHooksTriggeredHooksAndTaiwanGapsHaveSources]' passed (0.369 seconds).
+Test Case '-[LifePresentationTests.LifeWorldFrameTests testRestAndUnknownEventDoNotInventSupport]' started.
+Test Case '-[LifePresentationTests.LifeWorldFrameTests testRestAndUnknownEventDoNotInventSupport]' passed (0.023 seconds).
+Test Suite 'LifeWorldFrameTests' passed at 2026-10-28 16:34:18.139.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.421 (0.422) seconds
+Test Suite 'ProjectMomentTests' started at 2026-10-28 16:34:18.139.
+Test Case '-[LifePresentationTests.ProjectMomentTests testActualClampedDeltasAndMissingEnvironmentSurviveProjection]' started.
+Test Case '-[LifePresentationTests.ProjectMomentTests testActualClampedDeltasAndMissingEnvironmentSurviveProjection]' passed (0.049 seconds).
+Test Case '-[LifePresentationTests.ProjectMomentTests testChanceBadgeRequiresAnOccurredNonzeroEffectAndNoNewDraw]' started.
+Test Case '-[LifePresentationTests.ProjectMomentTests testChanceBadgeRequiresAnOccurredNonzeroEffectAndNoNewDraw]' passed (1.235 seconds).
+Test Case '-[LifePresentationTests.ProjectMomentTests testCodableRestoreAndFixedSeedReplayProduceIdenticalPresentation]' started.
+Test Case '-[LifePresentationTests.ProjectMomentTests testCodableRestoreAndFixedSeedReplayProduceIdenticalPresentation]' passed (0.197 seconds).
+Test Case '-[LifePresentationTests.ProjectMomentTests testForkUsesItsOwnReactionWithoutRewritingOriginalAndRestoresBoth]' started.
+Test Case '-[LifePresentationTests.ProjectMomentTests testForkUsesItsOwnReactionWithoutRewritingOriginalAndRestoresBoth]' passed (1.127 seconds).
+Test Case '-[LifePresentationTests.ProjectMomentTests testFourActualChoicesHaveDistinctPropsMemoryAndOnlyRecordedPeople]' started.
+Test Case '-[LifePresentationTests.ProjectMomentTests testFourActualChoicesHaveDistinctPropsMemoryAndOnlyRecordedPeople]' passed (0.274 seconds).
+Test Case '-[LifePresentationTests.ProjectMomentTests testUnknownAndUnappliedEventsNeverProduceACommittedReaction]' started.
+Test Case '-[LifePresentationTests.ProjectMomentTests testUnknownAndUnappliedEventsNeverProduceACommittedReaction]' passed (0.100 seconds).
+Test Suite 'ProjectMomentTests' passed at 2026-10-28 16:34:21.122.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 2.982 (2.983) seconds
+Test Suite 'WorldActivityTests' started at 2026-10-28 16:34:21.122.
+Test Case '-[LifePresentationTests.WorldActivityTests testCountryGapsAndResourceSaturationCannotSelectOrEraseActivity]' started.
+Test Case '-[LifePresentationTests.WorldActivityTests testCountryGapsAndResourceSaturationCannotSelectOrEraseActivity]' passed (0.068 seconds).
+Test Case '-[LifePresentationTests.WorldActivityTests testPendingInvitationsAndUnknownAgesCannotBecomeCompletedWork]' started.
+Test Case '-[LifePresentationTests.WorldActivityTests testPendingInvitationsAndUnknownAgesCannotBecomeCompletedWork]' passed (1.079 seconds).
+Test Case '-[LifePresentationTests.WorldActivityTests testRestPreparationRequiresCompletedFocusNotPendingClue]' started.
+Test Case '-[LifePresentationTests.WorldActivityTests testRestPreparationRequiresCompletedFocusNotPendingClue]' passed (0.261 seconds).
+Test Case '-[LifePresentationTests.WorldActivityTests testReviewedRealRoutesRenderDifferentActionsWithoutChangingArchives]' started.
+Test Case '-[LifePresentationTests.WorldActivityTests testReviewedRealRoutesRenderDifferentActionsWithoutChangingArchives]' passed (3.147 seconds).
+Test Case '-[LifePresentationTests.WorldActivityTests testUnmadeChoicesKeepASettingButNeverBorrowWorkingPoses]' started.
+Test Case '-[LifePresentationTests.WorldActivityTests testUnmadeChoicesKeepASettingButNeverBorrowWorkingPoses]' passed (1.285 seconds).
+Test Suite 'WorldActivityTests' passed at 2026-10-28 16:34:26.961.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 5.839 (5.840) seconds
+Test Suite 'WorldCastTests' started at 2026-10-28 16:34:26.961.
+Test Case '-[LifePresentationTests.WorldCastTests testCastingRestoresReplaysAndNeverRewritesOriginalBytes]' started.
+Test Case '-[LifePresentationTests.WorldCastTests testCastingRestoresReplaysAndNeverRewritesOriginalBytes]' passed (8.123 seconds).
+Test Case '-[LifePresentationTests.WorldCastTests testInvitationIsNotParticipationAndRestDoesNotMakeHelpers]' started.
+Test Case '-[LifePresentationTests.WorldCastTests testInvitationIsNotParticipationAndRestDoesNotMakeHelpers]' passed (1.331 seconds).
+Test Case '-[LifePresentationTests.WorldCastTests testNatureContinuationDoesNotInventFirstTimeExperience]' started.
+Test Case '-[LifePresentationTests.WorldCastTests testNatureContinuationDoesNotInventFirstTimeExperience]' passed (0.225 seconds).
+Test Case '-[LifePresentationTests.WorldCastTests testOldFriendAndNewNeighborFollowSameSeedActualHistory]' started.
+Test Case '-[LifePresentationTests.WorldCastTests testOldFriendAndNewNeighborFollowSameSeedActualHistory]' passed (6.920 seconds).
+Test Case '-[LifePresentationTests.WorldCastTests testRealSavedRolesAndActivitiesMatchReviewedStoryMatrix]' started.
+Test Case '-[LifePresentationTests.WorldCastTests testRealSavedRolesAndActivitiesMatchReviewedStoryMatrix]' passed (2.464 seconds).
+Test Case '-[LifePresentationTests.WorldCastTests testRequestWithoutConfirmedHelpUsesRecipientNotSharedWork]' started.
+Test Case '-[LifePresentationTests.WorldCastTests testRequestWithoutConfirmedHelpUsesRecipientNotSharedWork]' passed (0.752 seconds).
+Test Case '-[LifePresentationTests.WorldCastTests testUnknownAndCandidateIdentitiesNeverBecomeStoryCast]' started.
+Test Case '-[LifePresentationTests.WorldCastTests testUnknownAndCandidateIdentitiesNeverBecomeStoryCast]' passed (0.116 seconds).
+Test Suite 'WorldCastTests' passed at 2026-10-28 16:34:46.894.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 19.932 (19.933) seconds
+Test Suite 'WorldPersistenceTests' started at 2026-10-28 16:34:46.894.
+Test Case '-[LifePresentationTests.WorldPersistenceTests testForkOriginalBytesSurvivePresentationAndMidBranchDiskRestore]' started.
+Test Case '-[LifePresentationTests.WorldPersistenceTests testForkOriginalBytesSurvivePresentationAndMidBranchDiskRestore]' passed (68.231 seconds).
+Test Case '-[LifePresentationTests.WorldPersistenceTests testPlaybackIsIndependentOfClockAndKeepsReviewedOpeningFixture]' started.
+Test Case '-[LifePresentationTests.WorldPersistenceTests testPlaybackIsIndependentOfClockAndKeepsReviewedOpeningFixture]' passed (32.607 seconds).
+Test Suite 'WorldPersistenceTests' passed at 2026-10-28 16:36:27.732.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 100.837 (100.838) seconds
+Test Suite 'WorldPlaybackTests' started at 2026-10-28 16:36:27.732.
+Test Case '-[LifePresentationTests.WorldPlaybackTests testAccumulatedClockPauseSpeedAndBackgroundDoNotJump]' started.
+Test Case '-[LifePresentationTests.WorldPlaybackTests testAccumulatedClockPauseSpeedAndBackgroundDoNotJump]' passed (0.013 seconds).
+Test Case '-[LifePresentationTests.WorldPlaybackTests testExactlyOnceStaleGenerationFailureRetryAndRestore]' started.
+Test Case '-[LifePresentationTests.WorldPlaybackTests testExactlyOnceStaleGenerationFailureRetryAndRestore]' passed (0.025 seconds).
+Test Case '-[LifePresentationTests.WorldPlaybackTests testNormalFastAndSkipAreIdenticalForEightCountriesAndRestore]' started.
+Test Case '-[LifePresentationTests.WorldPlaybackTests testNormalFastAndSkipAreIdenticalForEightCountriesAndRestore]' passed (10.222 seconds).
+Test Case '-[LifePresentationTests.WorldPlaybackTests testOffscreenFreezesClockButExplicitContinueAndPausedRestoreRemainReadable]' started.
+Test Case '-[LifePresentationTests.WorldPlaybackTests testOffscreenFreezesClockButExplicitContinueAndPausedRestoreRemainReadable]' passed (0.021 seconds).
+Test Suite 'WorldPlaybackTests' passed at 2026-10-28 16:36:38.013.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 10.281 (10.281) seconds
+Test Suite 'WorldRelationshipMemoryTests' started at 2026-10-28 16:36:38.013.
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testMismatchedBranchSourcesAndActorsCannotCreateMemory]' started.
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testMismatchedBranchSourcesAndActorsCannotCreateMemory]' passed (2.531 seconds).
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testNoMemoryForInvitationsRestOrRequests]' started.
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testNoMemoryForInvitationsRestOrRequests]' passed (1.505 seconds).
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testPairedHistoryUsesExactPastAndPresentReceipts]' started.
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testPairedHistoryUsesExactPastAndPresentReceipts]' passed (0.334 seconds).
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testReplayRestoreAndOriginalBytesRemainIdentical]' started.
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testReplayRestoreAndOriginalBytesRemainIdentical]' passed (1.245 seconds).
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testRequestBeatsNeverPromoteToAgreementOrParticipation]' started.
+Test Case '-[LifePresentationTests.WorldRelationshipMemoryTests testRequestBeatsNeverPromoteToAgreementOrParticipation]' passed (0.512 seconds).
+Test Suite 'WorldRelationshipMemoryTests' passed at 2026-10-28 16:36:44.141.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 6.127 (6.127) seconds
+Test Suite 'LifePresentationTests.xctest' passed at 2026-10-28 16:36:44.141.
+	 Executed 32 tests, with 0 failures (0 unexpected) in 146.419 (146.424) seconds
+Test Suite 'All tests' passed at 2026-10-28 16:36:44.141.
+	 Executed 32 tests, with 0 failures (0 unexpected) in 146.419 (146.425) seconds
+Test Suite 'All tests' started at 2026-10-28 16:36:44.475.
+Test Suite 'LifePersistenceTests.xctest' started at 2026-10-28 16:36:44.476.
+Test Suite 'BirthStoryTests' started at 2026-10-28 16:36:44.476.
+Test Case '-[LifePersistenceTests.BirthStoryTests testBirthDrawOrderingCoverageAndReceiptBinding]' started.
+Test Case '-[LifePersistenceTests.BirthStoryTests testBirthDrawOrderingCoverageAndReceiptBinding]' passed (1.258 seconds).
+Test Case '-[LifePersistenceTests.BirthStoryTests testCompleteParallelDiskReplayAndOriginalBytesAllPhases]' started.
+Test Case '-[LifePersistenceTests.BirthStoryTests testCompleteParallelDiskReplayAndOriginalBytesAllPhases]' passed (25.528 seconds).
+Test Case '-[LifePersistenceTests.BirthStoryTests testParallelRejectsInvalidPairAndSaveDowngrade]' started.
+Test Case '-[LifePersistenceTests.BirthStoryTests testParallelRejectsInvalidPairAndSaveDowngrade]' passed (0.555 seconds).
+Test Case '-[LifePersistenceTests.BirthStoryTests testRealCreationConstraintsAndConditionalContinuationWithoutCountryScripts]' started.
+Test Case '-[LifePersistenceTests.BirthStoryTests testRealCreationConstraintsAndConditionalContinuationWithoutCountryScripts]' passed (0.799 seconds).
+Test Suite 'BirthStoryTests' passed at 2026-10-28 16:37:12.617.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 28.141 (28.141) seconds
+Test Suite 'ExperienceCompletionTests' started at 2026-10-28 16:37:12.617.
+Test Case '-[LifePersistenceTests.ExperienceCompletionTests testCareBoundaryUsesSameMaterialBudgetAndKeepsUnknownDistinct]' started.
+Test Case '-[LifePersistenceTests.ExperienceCompletionTests testCareBoundaryUsesSameMaterialBudgetAndKeepsUnknownDistinct]' passed (0.016 seconds).
+Test Case '-[LifePersistenceTests.ExperienceCompletionTests testFourCompletedFocusIntervalsUnlockDistinctActionsWithoutPromisingParticipation]' started.
+Test Case '-[LifePersistenceTests.ExperienceCompletionTests testFourCompletedFocusIntervalsUnlockDistinctActionsWithoutPromisingParticipation]' passed (0.022 seconds).
+Test Case '-[LifePersistenceTests.ExperienceCompletionTests testFullFocusSaveReplayBranchKeepsOriginalAndRejectsForgedMemories]' started.
+Test Case '-[LifePersistenceTests.ExperienceCompletionTests testFullFocusSaveReplayBranchKeepsOriginalAndRejectsForgedMemories]' passed (21.239 seconds).
+Test Case '-[LifePersistenceTests.ExperienceCompletionTests testLaterRequestsAndRestKeepConfirmedSupportAndPracticedPace]' started.
+Test Case '-[LifePersistenceTests.ExperienceCompletionTests testLaterRequestsAndRestKeepConfirmedSupportAndPracticedPace]' passed (1.074 seconds).
+Test Case '-[LifePersistenceTests.ExperienceCompletionTests testNoHistoryCannotFabricateSupportRecoveryOrEnvironmentContinuation]' started.
+Test Case '-[LifePersistenceTests.ExperienceCompletionTests testNoHistoryCannotFabricateSupportRecoveryOrEnvironmentContinuation]' passed (0.006 seconds).
+Test Case '-[LifePersistenceTests.ExperienceCompletionTests testPowerBoundaryIsOfflineAndMissingSupportDoesNotInventKit]' started.
+Test Case '-[LifePersistenceTests.ExperienceCompletionTests testPowerBoundaryIsOfflineAndMissingSupportDoesNotInventKit]' passed (0.013 seconds).
+Test Case '-[LifePersistenceTests.ExperienceCompletionTests testRecordedSupportAndRestUnlockDifferentVoluntaryContinuations]' started.
+Test Case '-[LifePersistenceTests.ExperienceCompletionTests testRecordedSupportAndRestUnlockDifferentVoluntaryContinuations]' passed (0.006 seconds).
+Test Case '-[LifePersistenceTests.ExperienceCompletionTests testReviewerNoHistoryAndBudgetCounterexamplesDoNotInventOldSupport]' started.
+Test Case '-[LifePersistenceTests.ExperienceCompletionTests testReviewerNoHistoryAndBudgetCounterexamplesDoNotInventOldSupport]' passed (0.477 seconds).
+Test Suite 'ExperienceCompletionTests' passed at 2026-10-28 16:37:35.471.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 22.853 (22.853) seconds
+Test Suite 'OpportunityTests' started at 2026-10-28 16:37:35.471.
+Test Case '-[LifePersistenceTests.OpportunityTests testCompletePairReplayDiskAndIncompatibleFilePreservation]' started.
+Test Case '-[LifePersistenceTests.OpportunityTests testCompletePairReplayDiskAndIncompatibleFilePreservation]' passed (15.570 seconds).
+Test Case '-[LifePersistenceTests.OpportunityTests testLateRememberedRelationshipOutranksAnEarlyCosmeticDifference]' started.
+Test Case '-[LifePersistenceTests.OpportunityTests testLateRememberedRelationshipOutranksAnEarlyCosmeticDifference]' passed (0.106 seconds).
+Test Case '-[LifePersistenceTests.OpportunityTests testMissingInputsNoSupportAndOfflineDoNotInventRoutes]' started.
+Test Case '-[LifePersistenceTests.OpportunityTests testMissingInputsNoSupportAndOfflineDoNotInventRoutes]' passed (0.706 seconds).
+Test Case '-[LifePersistenceTests.OpportunityTests testSameTemplateDefaultAndExplicitMixedFamilyExploration]' started.
+Test Case '-[LifePersistenceTests.OpportunityTests testSameTemplateDefaultAndExplicitMixedFamilyExploration]' passed (0.499 seconds).
+Test Case '-[LifePersistenceTests.OpportunityTests testSameWishAndHouseholdCreateDifferentExecutableOpportunitiesAndAdultRoutes]' started.
+Test Case '-[LifePersistenceTests.OpportunityTests testSameWishAndHouseholdCreateDifferentExecutableOpportunitiesAndAdultRoutes]' passed (0.351 seconds).
+Test Case '-[LifePersistenceTests.OpportunityTests testThresholdsNamesAndCandidateOrderAreIndependent]' started.
+Test Case '-[LifePersistenceTests.OpportunityTests testThresholdsNamesAndCandidateOrderAreIndependent]' passed (0.275 seconds).
+Test Case '-[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportComparisonRetainsActualWorkshopInvitation]' started.
+Test Case '-[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportComparisonRetainsActualWorkshopInvitation]' passed (0.238 seconds).
+Test Case '-[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportDoesNotBypassWorkshopSkillRequirement]' started.
+Test Case '-[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportDoesNotBypassWorkshopSkillRequirement]' passed (0.086 seconds).
+Test Case '-[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportKeepsEarnedTeacherWorkshopAndAdultRoute]' started.
+Test Case '-[LifePersistenceTests.OpportunityTests testZeroFamilyPreparationSupportKeepsEarnedTeacherWorkshopAndAdultRoute]' passed (0.849 seconds).
+Test Suite 'OpportunityTests' passed at 2026-10-28 16:37:54.151.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 18.680 (18.680) seconds
+Test Suite 'SaveRepositoryTests' started at 2026-10-28 16:37:54.151.
+Test Case '-[LifePersistenceTests.SaveRepositoryTests testCorruptAndUnknownVersionFilesThrowAndRetainOriginalBytes]' started.
+Test Case '-[LifePersistenceTests.SaveRepositoryTests testCorruptAndUnknownVersionFilesThrowAndRetainOriginalBytes]' passed (0.451 seconds).
+Test Case '-[LifePersistenceTests.SaveRepositoryTests testFilesystemFailureDoesNotAlterJourneyOrReplaceOtherPath]' started.
+Test Case '-[LifePersistenceTests.SaveRepositoryTests testFilesystemFailureDoesNotAlterJourneyOrReplaceOtherPath]' passed (0.541 seconds).
+Test Case '-[LifePersistenceTests.SaveRepositoryTests testFocusDiskResumeAndOldEngineArchivePreservation]' started.
+Test Case '-[LifePersistenceTests.SaveRepositoryTests testFocusDiskResumeAndOldEngineArchivePreservation]' passed (0.078 seconds).
+Test Case '-[LifePersistenceTests.SaveRepositoryTests testInvalidSnapshotCannotOverwriteAnExistingValidSave]' started.
+Test Case '-[LifePersistenceTests.SaveRepositoryTests testInvalidSnapshotCannotOverwriteAnExistingValidSave]' passed (1.092 seconds).
+Test Case '-[LifePersistenceTests.SaveRepositoryTests testRealDiskRoundTripEveryPhaseKeepsOriginalAndReplaysRemainingLife]' started.
+Test Case '-[LifePersistenceTests.SaveRepositoryTests testRealDiskRoundTripEveryPhaseKeepsOriginalAndReplaysRemainingLife]' passed (21.407 seconds).
+Test Case '-[LifePersistenceTests.SaveRepositoryTests testSingleLifeSaveResumesWithoutChangingLegacySessionResults]' started.
+Test Case '-[LifePersistenceTests.SaveRepositoryTests testSingleLifeSaveResumesWithoutChangingLegacySessionResults]' passed (0.053 seconds).
+Test Suite 'SaveRepositoryTests' passed at 2026-10-28 16:38:17.773.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 23.621 (23.622) seconds
+Test Suite 'LifePersistenceTests.xctest' passed at 2026-10-28 16:38:17.773.
+	 Executed 27 tests, with 0 failures (0 unexpected) in 93.295 (93.297) seconds
+Test Suite 'All tests' passed at 2026-10-28 16:38:17.773.
+	 Executed 27 tests, with 0 failures (0 unexpected) in 93.295 (93.298) seconds
+Test Suite 'All tests' started at 2026-10-28 16:38:17.869.
+Test Suite 'LifeDomainTests.xctest' started at 2026-10-28 16:38:17.869.
+Test Suite 'BranchExperimentTests' started at 2026-10-28 16:38:17.869.
+Test Case '-[LifeDomainTests.BranchExperimentTests testAllCheckpointsPreserveExactPrefixAndOriginalIncludingFirstAndLast]' started.
+Test Case '-[LifeDomainTests.BranchExperimentTests testAllCheckpointsPreserveExactPrefixAndOriginalIncludingFirstAndLast]' passed (12.651 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testChangedChoiceRebuildsFutureHooksAndPreservesEarlierPendingHooksExactlyOnce]' started.
+Test Case '-[LifeDomainTests.BranchExperimentTests testChangedChoiceRebuildsFutureHooksAndPreservesEarlierPendingHooksExactlyOnce]' passed (0.672 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testDecodedForgedMetadataSnapshotsAndAlternativeCannotResumeOrCompare]' started.
+Test Case '-[LifeDomainTests.BranchExperimentTests testDecodedForgedMetadataSnapshotsAndAlternativeCannotResumeOrCompare]' passed (3.208 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testFourCountryTwoFamilyBranchMatrixCompletesAndKeepsOriginal]' started.
+Test Case '-[LifeDomainTests.BranchExperimentTests testFourCountryTwoFamilyBranchMatrixCompletesAndKeepsOriginal]' passed (54.334 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testIndividuallyValidAlternativeFromDifferentSeedOrBackgroundIsRejected]' started.
+Test Case '-[LifeDomainTests.BranchExperimentTests testIndividuallyValidAlternativeFromDifferentSeedOrBackgroundIsRejected]' passed (2.332 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testInvalidForkAndPhaseFailuresDoNotMutateOriginalOrAlternative]' started.
+Test Case '-[LifeDomainTests.BranchExperimentTests testInvalidForkAndPhaseFailuresDoNotMutateOriginalOrAlternative]' passed (4.349 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testPairedCandidateDrawsRemainEqualEvenWhenWeightsOrEligibilityChange]' started.
+Test Case '-[LifeDomainTests.BranchExperimentTests testPairedCandidateDrawsRemainEqualEvenWhenWeightsOrEligibilityChange]' passed (2.450 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testReplayingUnchangedChoicesFromCheckpointExactlyReproducesOriginal]' started.
+Test Case '-[LifeDomainTests.BranchExperimentTests testReplayingUnchangedChoicesFromCheckpointExactlyReproducesOriginal]' passed (3.425 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testSameSeedChoicesAndCodableAtEveryPhaseReproduceCompleteAlternative]' started.
+Test Case '-[LifeDomainTests.BranchExperimentTests testSameSeedChoicesAndCodableAtEveryPhaseReproduceCompleteAlternative]' passed (59.919 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testSingleChangedChoiceActuallyChangesLaterPersonAndLearningRoute]' started.
+Test Case '-[LifeDomainTests.BranchExperimentTests testSingleChangedChoiceActuallyChangesLaterPersonAndLearningRoute]' passed (0.631 seconds).
+Test Case '-[LifeDomainTests.BranchExperimentTests testUnaffordableAlternateRejectedUsingItsOriginalPreChoiceBudget]' started.
+Test Case '-[LifeDomainTests.BranchExperimentTests testUnaffordableAlternateRejectedUsingItsOriginalPreChoiceBudget]' passed (0.557 seconds).
+Test Suite 'BranchExperimentTests' passed at 2026-10-28 16:40:42.399.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 144.529 (144.530) seconds
+Test Suite 'EventSelectionTests' started at 2026-10-28 16:40:42.399.
+Test Case '-[LifeDomainTests.EventSelectionTests testCatalogOrderCannotChangeSelectedEventsOrTraces]' started.
+Test Case '-[LifeDomainTests.EventSelectionTests testCatalogOrderCannotChangeSelectedEventsOrTraces]' passed (0.492 seconds).
+Test Case '-[LifeDomainTests.EventSelectionTests testCatalogRejectsMissingFallbackAndInvalidConditionContract]' started.
+Test Case '-[LifeDomainTests.EventSelectionTests testCatalogRejectsMissingFallbackAndInvalidConditionContract]' passed (0.006 seconds).
+Test Case '-[LifeDomainTests.EventSelectionTests testComparisonKeepsActualEncounterAndSelectionFixed]' started.
+Test Case '-[LifeDomainTests.EventSelectionTests testComparisonKeepsActualEncounterAndSelectionFixed]' passed (0.039 seconds).
+Test Case '-[LifeDomainTests.EventSelectionTests testConditionsShowActualInputsAndIneligibleEventsCannotBeForced]' started.
+Test Case '-[LifeDomainTests.EventSelectionTests testConditionsShowActualInputsAndIneligibleEventsCannotBeForced]' passed (0.018 seconds).
+Test Case '-[LifeDomainTests.EventSelectionTests testEligibleButUnselectedEventCannotBeExecutedDirectly]' started.
+Test Case '-[LifeDomainTests.EventSelectionTests testEligibleButUnselectedEventCannotBeExecutedDirectly]' passed (0.011 seconds).
+Test Case '-[LifeDomainTests.EventSelectionTests testLastContinueCannotFinishAgainstAnotherContentVersion]' started.
+Test Case '-[LifeDomainTests.EventSelectionTests testLastContinueCannotFinishAgainstAnotherContentVersion]' passed (0.154 seconds).
+Test Case '-[LifeDomainTests.EventSelectionTests testOneThousandLivesHaveFifteenSlotsNoDeadlocksAndPreserveStoryAnchors]' started.
+Test Case '-[LifeDomainTests.EventSelectionTests testOneThousandLivesHaveFifteenSlotsNoDeadlocksAndPreserveStoryAnchors]' passed (269.967 seconds).
+Test Case '-[LifeDomainTests.EventSelectionTests testPreselectedSeedsProduceDifferentActualEventsWithSameBackgroundAndPolicy]' started.
+Test Case '-[LifeDomainTests.EventSelectionTests testPreselectedSeedsProduceDifferentActualEventsWithSameBackgroundAndPolicy]' passed (1.114 seconds).
+Test Case '-[LifeDomainTests.EventSelectionTests testPublicSelectorRejectsInvalidStateAndCatalogBeforeProducingTrace]' started.
+Test Case '-[LifeDomainTests.EventSelectionTests testPublicSelectorRejectsInvalidStateAndCatalogBeforeProducingTrace]' passed (0.008 seconds).
+Test Case '-[LifeDomainTests.EventSelectionTests testRestoreReplaysAndRejectsForgedSelectionOrPastConsequencesBeforeContinuation]' started.
+Test Case '-[LifeDomainTests.EventSelectionTests testRestoreReplaysAndRejectsForgedSelectionOrPastConsequencesBeforeContinuation]' passed (0.909 seconds).
+Test Case '-[LifeDomainTests.EventSelectionTests testSameSeedAndPolicyReproduceEveryEventConditionAndOutcome]' started.
+Test Case '-[LifeDomainTests.EventSelectionTests testSameSeedAndPolicyReproduceEveryEventConditionAndOutcome]' passed (2.480 seconds).
+Test Suite 'EventSelectionTests' passed at 2026-10-28 16:45:17.598.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 275.197 (275.198) seconds
+Test Suite 'LC01Tests' started at 2026-10-28 16:45:17.598.
+Test Case '-[LifeDomainTests.LC01Tests testAgeCostsAndResourceInputsFailBeforeArithmetic]' started.
+Test Case '-[LifeDomainTests.LC01Tests testAgeCostsAndResourceInputsFailBeforeArithmetic]' passed (0.042 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testBadIndicatorRangesAndSourceReferencesAreRejected]' started.
+Test Case '-[LifeDomainTests.LC01Tests testBadIndicatorRangesAndSourceReferencesAreRejected]' passed (0.068 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testCatalogAndStateAndTraceCodableRoundTrip]' started.
+Test Case '-[LifeDomainTests.LC01Tests testCatalogAndStateAndTraceCodableRoundTrip]' passed (0.030 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testChildAgencyDoesNotTransferAdultCareResponsibility]' started.
+Test Case '-[LifeDomainTests.LC01Tests testChildAgencyDoesNotTransferAdultCareResponsibility]' passed (0.034 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testChoiceChangeCreatesActualDelayedStoryDifference]' started.
+Test Case '-[LifeDomainTests.LC01Tests testChoiceChangeCreatesActualDelayedStoryDifference]' passed (0.041 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testCorruptJSONAndUnknownSchemaFailExplicitly]' started.
+Test Case '-[LifeDomainTests.LC01Tests testCorruptJSONAndUnknownSchemaFailExplicitly]' passed (0.014 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testCountryNamesAndCodesCannotSetSuccessMultipliers]' started.
+Test Case '-[LifeDomainTests.LC01Tests testCountryNamesAndCodesCannotSetSuccessMultipliers]' passed (0.032 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testDigitalLearningOffersAnIndependentOfflineRoute]' started.
+Test Case '-[LifeDomainTests.LC01Tests testDigitalLearningOffersAnIndependentOfflineRoute]' passed (0.032 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testDigitalThresholdBoundaries]' started.
+Test Case '-[LifeDomainTests.LC01Tests testDigitalThresholdBoundaries]' passed (0.068 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testEightCountriesSixteenFamiliesAndHonestReadiness]' started.
+Test Case '-[LifeDomainTests.LC01Tests testEightCountriesSixteenFamiliesAndHonestReadiness]' passed (0.013 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testEnvironmentCanChangeFeasibilityWithoutConsumingUnavailableChoice]' started.
+Test Case '-[LifeDomainTests.LC01Tests testEnvironmentCanChangeFeasibilityWithoutConsumingUnavailableChoice]' passed (0.031 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testFifteenSkeletonDecisionsCoverEveryStageAndThreeCallbacks]' started.
+Test Case '-[LifeDomainTests.LC01Tests testFifteenSkeletonDecisionsCoverEveryStageAndThreeCallbacks]' passed (0.012 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testFiveStageBoundaries]' started.
+Test Case '-[LifeDomainTests.LC01Tests testFiveStageBoundaries]' passed (0.001 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testForgedOrDuplicateStoryHooksCannotGrantResources]' started.
+Test Case '-[LifeDomainTests.LC01Tests testForgedOrDuplicateStoryHooksCannotGrantResources]' passed (0.010 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testHouseholdTemplatesStayComparableWhenArraysMove]' started.
+Test Case '-[LifeDomainTests.LC01Tests testHouseholdTemplatesStayComparableWhenArraysMove]' passed (0.012 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testInvalidTimeDuplicateDecisionAndVersionAreRejected]' started.
+Test Case '-[LifeDomainTests.LC01Tests testInvalidTimeDuplicateDecisionAndVersionAreRejected]' passed (0.043 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testKeyedRandomHasStableGoldenVectorAndNoSharedStream]' started.
+Test Case '-[LifeDomainTests.LC01Tests testKeyedRandomHasStableGoldenVectorAndNoSharedStream]' passed (0.000 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testManySeededSkeletonLivesStayValidAndCanAlwaysAdvance]' started.
+Test Case '-[LifeDomainTests.LC01Tests testManySeededSkeletonLivesStayValidAndCanAlwaysAdvance]' passed (61.027 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testMissingValueCannotBecomeVerifiedZero]' started.
+Test Case '-[LifeDomainTests.LC01Tests testMissingValueCannotBecomeVerifiedZero]' passed (0.010 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testOfflineChildActivityNeverUsesNationalDigitalRates]' started.
+Test Case '-[LifeDomainTests.LC01Tests testOfflineChildActivityNeverUsesNationalDigitalRates]' passed (0.024 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testOfflineLearningIgnoresDigitalThresholdsAndHasSupport]' started.
+Test Case '-[LifeDomainTests.LC01Tests testOfflineLearningIgnoresDigitalThresholdsAndHasSupport]' passed (0.014 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testPinnedRealStatisticsHaveIndependentExpectedValues]' started.
+Test Case '-[LifeDomainTests.LC01Tests testPinnedRealStatisticsHaveIndependentExpectedValues]' passed (0.004 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testRepositoryRejectsAbsentAndTamperedEvidence]' started.
+Test Case '-[LifeDomainTests.LC01Tests testRepositoryRejectsAbsentAndTamperedEvidence]' passed (0.013 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testRepositoryRejectsAlteredObservationEvenWithIntactSourceHash]' started.
+Test Case '-[LifeDomainTests.LC01Tests testRepositoryRejectsAlteredObservationEvenWithIntactSourceHash]' passed (0.011 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testResourceClampingIsVisibleAndCostsCannotGoNegative]' started.
+Test Case '-[LifeDomainTests.LC01Tests testResourceClampingIsVisibleAndCostsCannotGoNegative]' passed (0.014 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testSameChoiceAcrossCountriesHasExplainableCosts]' started.
+Test Case '-[LifeDomainTests.LC01Tests testSameChoiceAcrossCountriesHasExplainableCosts]' passed (0.023 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testSameCountryFamiliesHaveDifferentTradeoffsAndSupport]' started.
+Test Case '-[LifeDomainTests.LC01Tests testSameCountryFamiliesHaveDifferentTradeoffsAndSupport]' passed (0.013 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testSameSeedAndSerializedResumeProduceIdenticalTrace]' started.
+Test Case '-[LifeDomainTests.LC01Tests testSameSeedAndSerializedResumeProduceIdenticalTrace]' passed (0.016 seconds).
+Test Case '-[LifeDomainTests.LC01Tests testTraceExactlyReconcilesCostEffectsAndProvenance]' started.
+Test Case '-[LifeDomainTests.LC01Tests testTraceExactlyReconcilesCostEffectsAndProvenance]' passed (0.009 seconds).
+Test Suite 'LC01Tests' passed at 2026-10-28 16:46:19.264.
+	 Executed 29 tests, with 0 failures (0 unexpected) in 61.663 (61.666) seconds
+Test Suite 'LC03Tests' started at 2026-10-28 16:46:19.264.
+Test Case '-[LifeDomainTests.LC03Tests testCareFinancingThresholdsHaveIndependentExpectedBudgetsAndNoEffectsWhenRejected]' started.
+Test Case '-[LifeDomainTests.LC03Tests testCareFinancingThresholdsHaveIndependentExpectedBudgetsAndNoEffectsWhenRejected]' passed (0.024 seconds).
+Test Case '-[LifeDomainTests.LC03Tests testCountryNamesAndOrderingNeverChangeCostsOrSupport]' started.
+Test Case '-[LifeDomainTests.LC03Tests testCountryNamesAndOrderingNeverChangeCostsOrSupport]' passed (0.011 seconds).
+Test Case '-[LifeDomainTests.LC03Tests testEightCountriesCompleteRestoreAndReplay]' started.
+Test Case '-[LifeDomainTests.LC03Tests testEightCountriesCompleteRestoreAndReplay]' passed (10.902 seconds).
+Test Case '-[LifeDomainTests.LC03Tests testHouseholdSnapshotComparisonKeepsPastAndShowsWithinCountryDifference]' started.
+Test Case '-[LifeDomainTests.LC03Tests testHouseholdSnapshotComparisonKeepsPastAndShowsWithinCountryDifference]' passed (0.082 seconds).
+Test Case '-[LifeDomainTests.LC03Tests testSameChoiceHasDifferentCostsSupportAndRealFutureRouteConditions]' started.
+Test Case '-[LifeDomainTests.LC03Tests testSameChoiceHasDifferentCostsSupportAndRealFutureRouteConditions]' passed (0.036 seconds).
+Test Case '-[LifeDomainTests.LC03Tests testTaiwanFullBranchPreservesOriginalAndBothCompletedRemaindersOnRestore]' started.
+Test Case '-[LifeDomainTests.LC03Tests testTaiwanFullBranchPreservesOriginalAndBothCompletedRemaindersOnRestore]' passed (1.103 seconds).
+Test Case '-[LifeDomainTests.LC03Tests testTaiwanNativeDefinitionsAndLicensesRemainDistinct]' started.
+Test Case '-[LifeDomainTests.LC03Tests testTaiwanNativeDefinitionsAndLicensesRemainDistinct]' passed (0.004 seconds).
+Test Case '-[LifeDomainTests.LC03Tests testUnknownCostIsRecordedAndCannotBecomeAComparableZero]' started.
+Test Case '-[LifeDomainTests.LC03Tests testUnknownCostIsRecordedAndCannotBecomeAComparableZero]' passed (0.016 seconds).
+Test Case '-[LifeDomainTests.LC03Tests testUnknownLicenseForgedExtractionColumnAndNationalValueAreRejected]' started.
+Test Case '-[LifeDomainTests.LC03Tests testUnknownLicenseForgedExtractionColumnAndNationalValueAreRejected]' passed (0.021 seconds).
+Test Suite 'LC03Tests' passed at 2026-10-28 16:46:31.463.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 12.199 (12.199) seconds
+Test Suite 'LifeExperienceTests' started at 2026-10-28 16:46:31.463.
+Test Case '-[LifeDomainTests.LifeExperienceTests test1024LivesAcrossEightCountriesFamiliesSeedsAndFocusPoliciesHaveNoDeadEnds]' started.
+Test Case '-[LifeDomainTests.LifeExperienceTests test1024LivesAcrossEightCountriesFamiliesSeedsAndFocusPoliciesHaveNoDeadEnds]' passed (467.394 seconds).
+Test Case '-[LifeDomainTests.LifeExperienceTests testCompleteFocusReplayBranchAndPreservedOriginal]' started.
+Test Case '-[LifeDomainTests.LifeExperienceTests testCompleteFocusReplayBranchAndPreservedOriginal]' passed (0.629 seconds).
+Test Case '-[LifeDomainTests.LifeExperienceTests testContextualNarrativeUsesActualHistoryIncludingSeekingAndRecovery]' started.
+Test Case '-[LifeDomainTests.LifeExperienceTests testContextualNarrativeUsesActualHistoryIncludingSeekingAndRecovery]' passed (0.063 seconds).
+Test Case '-[LifeDomainTests.LifeExperienceTests testFocusCreatesReadinessWithoutHiddenPointsAcrossShortAndLongIntervals]' started.
+Test Case '-[LifeDomainTests.LifeExperienceTests testFocusCreatesReadinessWithoutHiddenPointsAcrossShortAndLongIntervals]' passed (0.008 seconds).
+Test Case '-[LifeDomainTests.LifeExperienceTests testFocusDoesNotRerollRevealedEventOrApplyBeforeTimeAdvances]' started.
+Test Case '-[LifeDomainTests.LifeExperienceTests testFocusDoesNotRerollRevealedEventOrApplyBeforeTimeAdvances]' passed (0.043 seconds).
+Test Case '-[LifeDomainTests.LifeExperienceTests testReplayRejectsUnknownVersionsDuplicateAndFutureFocusRecords]' started.
+Test Case '-[LifeDomainTests.LifeExperienceTests testReplayRejectsUnknownVersionsDuplicateAndFutureFocusRecords]' passed (0.030 seconds).
+Test Suite 'LifeExperienceTests' passed at 2026-10-28 16:54:19.631.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 468.168 (468.168) seconds
+Test Suite 'LifeSessionTests' started at 2026-10-28 16:54:19.631.
+Test Case '-[LifeDomainTests.LifeSessionTests testComparisonHoldsChoiceSeedAndPastResourcesFixed]' started.
+Test Case '-[LifeDomainTests.LifeSessionTests testComparisonHoldsChoiceSeedAndPastResourcesFixed]' passed (0.020 seconds).
+Test Case '-[LifeDomainTests.LifeSessionTests testComparisonUsesSelectedChoiceAndStableTemplateAfterFamilyReordering]' started.
+Test Case '-[LifeDomainTests.LifeSessionTests testComparisonUsesSelectedChoiceAndStableTemplateAfterFamilyReordering]' passed (0.018 seconds).
+Test Case '-[LifeDomainTests.LifeSessionTests testDecodedCorruptSessionCannotIndexBeyondCatalog]' started.
+Test Case '-[LifeDomainTests.LifeSessionTests testDecodedCorruptSessionCannotIndexBeyondCatalog]' passed (0.023 seconds).
+Test Case '-[LifeDomainTests.LifeSessionTests testEveryDecisionHasOriginalStoryText]' started.
+Test Case '-[LifeDomainTests.LifeSessionTests testEveryDecisionHasOriginalStoryText]' passed (0.004 seconds).
+Test Case '-[LifeDomainTests.LifeSessionTests testFourCountryEightFamilyPlaythroughsReachReviewAndCannotRepeat]' started.
+Test Case '-[LifeDomainTests.LifeSessionTests testFourCountryEightFamilyPlaythroughsReachReviewAndCannotRepeat]' passed (3.427 seconds).
+Test Case '-[LifeDomainTests.LifeSessionTests testRestExplanationIncludesOnlyExecutedContribution]' started.
+Test Case '-[LifeDomainTests.LifeSessionTests testRestExplanationIncludesOnlyExecutedContribution]' passed (0.012 seconds).
+Test Case '-[LifeDomainTests.LifeSessionTests testRoundAllowancesResetWhileResourcesAndChoicesContinue]' started.
+Test Case '-[LifeDomainTests.LifeSessionTests testRoundAllowancesResetWhileResourcesAndChoicesContinue]' passed (0.027 seconds).
+Test Case '-[LifeDomainTests.LifeSessionTests testSameBackgroundReplayUsesSameTraceAndSessionCodableResumes]' started.
+Test Case '-[LifeDomainTests.LifeSessionTests testSameBackgroundReplayUsesSameTraceAndSessionCodableResumes]' passed (0.034 seconds).
+Test Case '-[LifeDomainTests.LifeSessionTests testUnavailableChoiceDoesNotAdvanceSessionAndRestRemainsPossible]' started.
+Test Case '-[LifeDomainTests.LifeSessionTests testUnavailableChoiceDoesNotAdvanceSessionAndRestRemainsPossible]' passed (0.025 seconds).
+Test Case '-[LifeDomainTests.LifeSessionTests testUnsuccessfulRandomTrialIsNotListedAsContribution]' started.
+Test Case '-[LifeDomainTests.LifeSessionTests testUnsuccessfulRandomTrialIsNotListedAsContribution]' passed (0.011 seconds).
+Test Suite 'LifeSessionTests' passed at 2026-10-28 16:54:23.232.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 3.601 (3.601) seconds
+Test Suite 'RNGV2Tests' started at 2026-10-28 16:54:23.233.
+Test Case '-[LifeDomainTests.RNGV2Tests testCandidateKeysSurviveReorderingAndAdditionAndRemainPairedAcrossCountries]' started.
+Test Case '-[LifeDomainTests.RNGV2Tests testCandidateKeysSurviveReorderingAndAdditionAndRemainPairedAcrossCountries]' passed (0.013 seconds).
+Test Case '-[LifeDomainTests.RNGV2Tests testDynamicWindowsExecuteAtActualAgeAndTraceContinuityWithoutCountryMultipliers]' started.
+Test Case '-[LifeDomainTests.RNGV2Tests testDynamicWindowsExecuteAtActualAgeAndTraceContinuityWithoutCountryMultipliers]' passed (0.027 seconds).
+Test Case '-[LifeDomainTests.RNGV2Tests testFourNewStoryLinesChangeOptionsAndPreserveSourceDecision]' started.
+Test Case '-[LifeDomainTests.RNGV2Tests testFourNewStoryLinesChangeOptionsAndPreserveSourceDecision]' passed (0.224 seconds).
+Test Case '-[LifeDomainTests.RNGV2Tests testHelpDoesNotEraseExperienceAndFactsCannotBeForged]' started.
+Test Case '-[LifeDomainTests.RNGV2Tests testHelpDoesNotEraseExperienceAndFactsCannotBeForged]' passed (0.035 seconds).
+Test Case '-[LifeDomainTests.RNGV2Tests testOneShotCooldownAndMutualExclusionHaveObservableReasons]' started.
+Test Case '-[LifeDomainTests.RNGV2Tests testOneShotCooldownAndMutualExclusionHaveObservableReasons]' passed (0.056 seconds).
+Test Case '-[LifeDomainTests.RNGV2Tests testPolicyValidationRejectsNonfiniteZeroNegativeAndUnknownFields]' started.
+Test Case '-[LifeDomainTests.RNGV2Tests testPolicyValidationRejectsNonfiniteZeroNegativeAndUnknownFields]' passed (0.008 seconds).
+Test Case '-[LifeDomainTests.RNGV2Tests testRaceUsesRecordedWeightsAndIndependentSamples]' started.
+Test Case '-[LifeDomainTests.RNGV2Tests testRaceUsesRecordedWeightsAndIndependentSamples]' passed (0.007 seconds).
+Test Suite 'RNGV2Tests' passed at 2026-10-28 16:54:23.604.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.371 (0.371) seconds
+Test Suite 'StoryBranchTests' started at 2026-10-28 16:54:23.604.
+Test Case '-[LifeDomainTests.StoryBranchTests testAllCountryFamiliesCanFinishWithDiverseChoicesAndBranchNarratives]' started.
+Test Case '-[LifeDomainTests.StoryBranchTests testAllCountryFamiliesCanFinishWithDiverseChoicesAndBranchNarratives]' passed (14.195 seconds).
+Test Case '-[LifeDomainTests.StoryBranchTests testCareBranchRequiresHistoryAndHealthAndCannotBeBypassedThroughResolver]' started.
+Test Case '-[LifeDomainTests.StoryBranchTests testCareBranchRequiresHistoryAndHealthAndCannotBeBypassedThroughResolver]' passed (0.095 seconds).
+Test Case '-[LifeDomainTests.StoryBranchTests testChildhoodFriendshipChangesWhoAppearsAtSeventyTwo]' started.
+Test Case '-[LifeDomainTests.StoryBranchTests testChildhoodFriendshipChangesWhoAppearsAtSeventyTwo]' passed (0.116 seconds).
+Test Case '-[LifeDomainTests.StoryBranchTests testLearningBranchTraceRecordsActualHistoryAndBothSidesOfResourceThreshold]' started.
+Test Case '-[LifeDomainTests.StoryBranchTests testLearningBranchTraceRecordsActualHistoryAndBothSidesOfResourceThreshold]' passed (0.026 seconds).
+Test Case '-[LifeDomainTests.StoryBranchTests testLearningRouteChangesMentorSceneAndWorkshopOpportunity]' started.
+Test Case '-[LifeDomainTests.StoryBranchTests testLearningRouteChangesMentorSceneAndWorkshopOpportunity]' passed (0.062 seconds).
+Test Case '-[LifeDomainTests.StoryBranchTests testPreviewExecutionAndCodableReplayKeepActualVariantAndChoiceSnapshots]' started.
+Test Case '-[LifeDomainTests.StoryBranchTests testPreviewExecutionAndCodableReplayKeepActualVariantAndChoiceSnapshots]' passed (0.114 seconds).
+Test Case '-[LifeDomainTests.StoryBranchTests testSharedCareArrangementUnlocksReciprocalSupport]' started.
+Test Case '-[LifeDomainTests.StoryBranchTests testSharedCareArrangementUnlocksReciprocalSupport]' passed (0.088 seconds).
+Test Case '-[LifeDomainTests.StoryBranchTests testZeroNationalCostIsObservationAndOnlyOccurredLuckContributes]' started.
+Test Case '-[LifeDomainTests.StoryBranchTests testZeroNationalCostIsObservationAndOnlyOccurredLuckContributes]' passed (0.352 seconds).
+Test Suite 'StoryBranchTests' passed at 2026-10-28 16:54:38.652.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 15.048 (15.048) seconds
+Test Suite 'LifeDomainTests.xctest' passed at 2026-10-28 16:54:38.652.
+	 Executed 91 tests, with 0 failures (0 unexpected) in 980.774 (980.783) seconds
+Test Suite 'All tests' passed at 2026-10-28 16:54:38.652.
+	 Executed 91 tests, with 0 failures (0 unexpected) in 980.774 (980.783) seconds
+Test Suite 'All tests' started at 2026-10-28 16:54:39.111.
+Test Suite 'LifeAnalysisTests.xctest' started at 2026-10-28 16:54:39.113.
+Test Suite 'BatchAnalysisTests' started at 2026-10-28 16:54:39.113.
+Test Case '-[LifeAnalysisTests.BatchAnalysisTests testClampUsesNetGainAndSeparatesPartialFullAndLowerBound]' started.
+Test Case '-[LifeAnalysisTests.BatchAnalysisTests testClampUsesNetGainAndSeparatesPartialFullAndLowerBound]' passed (0.002 seconds).
+Test Case '-[LifeAnalysisTests.BatchAnalysisTests testHammingIncludesZeroAndSeparatesStoryVariantFromEventID]' started.
+Test Case '-[LifeAnalysisTests.BatchAnalysisTests testHammingIncludesZeroAndSeparatesStoryVariantFromEventID]' passed (0.001 seconds).
+Test Case '-[LifeAnalysisTests.BatchAnalysisTests testInvalidBatchInputsFailInsteadOfDroppingSamples]' started.
+Test Case '-[LifeAnalysisTests.BatchAnalysisTests testInvalidBatchInputsFailInsteadOfDroppingSamples]' passed (0.011 seconds).
+Test Case '-[LifeAnalysisTests.BatchAnalysisTests testMultiHookLossIsOneAggregateAndNeverAllocatedToEachHook]' started.
+Test Case '-[LifeAnalysisTests.BatchAnalysisTests testMultiHookLossIsOneAggregateAndNeverAllocatedToEachHook]' passed (0.000 seconds).
+Test Case '-[LifeAnalysisTests.BatchAnalysisTests testPoliciesExecuteDifferentChoicesAndSampleOrderDoesNotChangeReport]' started.
+Test Case '-[LifeAnalysisTests.BatchAnalysisTests testPoliciesExecuteDifferentChoicesAndSampleOrderDoesNotChangeReport]' passed (72.142 seconds).
+Test Case '-[LifeAnalysisTests.BatchAnalysisTests testRatesDistinguishNoOpportunityFromObservedZero]' started.
+Test Case '-[LifeAnalysisTests.BatchAnalysisTests testRatesDistinguishNoOpportunityFromObservedZero]' passed (0.000 seconds).
+Test Suite 'BatchAnalysisTests' passed at 2026-10-28 16:55:51.270.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 72.156 (72.157) seconds
+Test Suite 'ExperienceAuditTests' started at 2026-10-28 16:55:51.270.
+Test Case '-[LifeAnalysisTests.ExperienceAuditTests testRecoveryIsAnAvailableStoryNotAClaimOfAcceptedHelp]' started.
+Test Case '-[LifeAnalysisTests.ExperienceAuditTests testRecoveryIsAnAvailableStoryNotAClaimOfAcceptedHelp]' passed (1.143 seconds).
+Test Suite 'ExperienceAuditTests' passed at 2026-10-28 16:55:52.413.
+	 Executed 1 test, with 0 failures (0 unexpected) in 1.143 (1.143) seconds
+Test Suite 'LifeAnalysisTests.xctest' passed at 2026-10-28 16:55:52.413.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 73.299 (73.300) seconds
+Test Suite 'All tests' passed at 2026-10-28 16:55:52.413.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 73.299 (73.301) seconds
+◇ Test run started.
+↳ Testing Library Version: 2084
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.
+◇ Test run started.
+↳ Testing Library Version: 2084
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.
+◇ Test run started.
+↳ Testing Library Version: 2084
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.
+◇ Test run started.
+↳ Testing Library Version: 2084
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.
