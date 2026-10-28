@@ -1,0 +1,16 @@
+{
+  "writer": "governance_tools.memory_record",
+  "implementationCommit": "bc89f88a42d20acc59f6e91ab4aec62ae154b80f",
+  "guardRan": true,
+  "completionClaimAllowed": true,
+  "currentDiffBlockingItems": 0,
+  "warnings": [
+    "test_evidence_artifact_metadata_missing"
+  ],
+  "backgroundWarnings": [
+    "unbound_memory",
+    "test_evidence_provenance_not_found",
+    "test_evidence_linked_commit_mismatch"
+  ],
+  "boundary": "Guard completion refers to this memory update, not framework runtime adoption or clean historical memory."
+}

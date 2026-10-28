@@ -85,3 +85,5 @@
 - P1體驗28aa189：52事件、重心故事與照顧/工具後續；140Swift/40Python/basic6、最終SE2及1024局重播通過，Simulator已刪。獨立核心覆審APPROVED、106檔綁定無差異。待Draft推送及HEAD CI；兒少尚未試玩，資料/實機/美術未完成，不宣稱90–95%、不合併。 <!-- memory_record_projection:active-task-summary:88763e2ed58b98a8886397cad685b1ff46bbd4cea09dcd1acb1a82c90a6958c1 -->
 
 - PR15測試同步3c01772：保留CI29/30失敗證據，標準1/1及SE1/1修正通過、裝置已刪；待推送新HEAD與完整CI。產品未改，真人/資料/美術HOLD，不宣稱90–95%。 <!-- memory_record_projection:active-task-summary:d1b85bdbb1e972185c3f54d78eeefdbecb04798090a6f82a8c2f019c75f65074 -->
+
+- VISUAL-LOOP-02本機完成：13/17/25/32活動圖層接真實紀錄，三輪Critic核心Go；145 Swift/41 Python與60原生狀態PASS，11台Simulator已刪。獨立Draft待push/CI；basic既有框架期限FAIL、精確年齡/真人/正式美術HOLD，不合併發布。 <!-- memory_record_projection:active-task-summary:115a2d3d38944184f19c56add8e948e4715b715774da0568b0cd61c1cd2422e6 -->
