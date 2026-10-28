@@ -223,3 +223,14 @@
 - Validation boundary: artifacts/evidence/interaction-memory-loop/verification.json與local-tests.json：初版全157Swift、最後6定向及獨立6、最後45Python；final3雙尺寸各19狀態，final2精準沿用真時序及保存失敗重試；8台任務Simulator已刪。Basic既有session_envelope91日超90日FAIL；新HEAD遠端CI待核。
 - Next action: 推送獨立Draft並核對最新HEAD CI，保持HOLD；真人/正式美術/連續自然動畫未驗收。active-task達壓力門檻，後續擴功能前另安排有界memory整理，本輪僅收束交付。
 - PLAN reconciliation: `updated`
+
+<!-- memory_record_projection:review-log:81c4666676aba35af2b7734c1926f8bd8392f09563fb6e1768890ee20242af4c -->
+### Canonical memory checkpoint — 2026-10-28-03
+
+- Writer: `governance_tools.memory_record`
+- Record identity: `81c4666676aba35af2b7734c1926f8bd8392f09563fb6e1768890ee20242af4c`
+- Commit binding: `dace2520fed70d572b7c5b3b0559e7f57d63b82f` (bound)
+- Record: FINAL-POLISH：同位求助姿勢、晚年尺度及暖紙UI；三輪與兩獨立覆審完成，Draft/HOLD。
+- Validation boundary: 163 Swift(R2)+final5／48 Python；R3雙機各3/3、26狀態、8實際時點；90保護檔不變；Basic既有91d>90d FAIL。docs/final-polish-loop/VALIDATION.md、artifacts/evidence/final-polish-loop/commit-binding.json。
+- Next action: 推送Draft並核對HEAD CI；再Owner實機與10–15歲試玩，不自動下一Loop。
+- PLAN reconciliation: `updated`

@@ -31,7 +31,7 @@ P1 / FINAL-POLISH-LOOP。Owner2026-10-28固定PR20 `325b698`，只做正式試�
 
 ## Current Sprint
 
-先以相同真實存檔拍SE3／iPhone17基準，由獨立Critic列可觀察問題後局部修正；驗收與預算見[FINAL-POLISH](docs/final-polish-loop/PLAN.md)。原158Swift／45Python／30UI保留；既有治理期限FAIL留證。完成後停在Owner及10～15歲試玩，不自行開下一Loop。
+FINAL-POLISH三輪已收束，實作`dace252`；工程ACCEPT、視覺CONDITIONAL ACCEPT，適合Owner帶領試玩。13／32求助道具與坐姿、72兩路尺度及暖紙層級改善；120ms過渡殘影和大字閱讀仍PARTIAL。Round2完整163Swift、最後修改後5定向、48Python；三輪雙尺寸每批3/3，六台Simulator已delete。90個既有保護檔及原158／45／30測試範圍不變；Basic既有91d>90d FAIL留證。詳[驗證](docs/final-polish-loop/VALIDATION.md)。待獨立Draft推送與當前HEAD CI核對，再進入Owner實機及10～15歲試玩，不自動開下一Loop。
 
 前輪PR20 `325b698`已推送，CI #53完整158Swift／45Python／30UI通過，整體因既有期限FAIL。8台本機及6台CI Simulator已delete；工程及有界視覺覆審阻擋0，正式美術、連續自然動畫及真人理解仍待驗收。
 

@@ -1,0 +1,63 @@
+{
+  "mode": "VALIDATION",
+  "mode_source": "validation_command",
+  "task": "FINAL-POLISH-LOOP bounded local implementation and review",
+  "task_authority": "user_request",
+  "scope": [
+    "App presentation and pure transition",
+    "two request-pose candidates",
+    "additive tests/capture evidence",
+    "PLAN and canonical memory closeout"
+  ],
+  "done": [
+    "three native rounds on two sizes completed",
+    "local implementation committed as dace2520fed70d572b7c5b3b0559e7f57d63b82f",
+    "independent engineering ACCEPT; visual CONDITIONAL ACCEPT; suitable for Owner-led playtest",
+    "canonical memory writer and guard completed without current blockers"
+  ],
+  "claim_ceiling": [
+    "local product bytes and retained native evidence only",
+    "known remaining visual PARTIAL and Basic failure are not waived"
+  ],
+  "not_claimed": [
+    "current new PR CI success",
+    "merge or release",
+    "continuous natural limb animation",
+    "formal art approval",
+    "physical iPhone, human VoiceOver or child gameplay acceptance",
+    "90–95% product completion",
+    "new runtime governance adoption"
+  ],
+  "evidence_refs": [
+    {
+      "artifact": "docs/final-polish-loop/ENGINEERING_REVIEW.md",
+      "result": "PASS"
+    },
+    {
+      "artifact": "docs/final-polish-loop/FINAL_VISUAL_REVIEW.md",
+      "result": "PASS"
+    },
+    {
+      "artifact": "artifacts/evidence/final-polish-loop/evidence-verification.json",
+      "result": "PASS"
+    },
+    {
+      "artifact": "artifacts/evidence/final-polish-loop/commit-binding.json",
+      "result": "PASS"
+    },
+    {
+      "artifact": "artifacts/evidence/final-polish-loop/memory-workflow.json",
+      "result": "PASS"
+    },
+    {
+      "artifact": "artifacts/evidence/final-polish-loop/basic-drift.log",
+      "result": "FAIL"
+    }
+  ],
+  "risk": [
+    "120ms pose dissolve still shows dual hand silhouettes when paused in the transition",
+    "maximum-text readability remains partial although controls reachable",
+    "known framework session_envelope age91d exceeds90d; no framework/date/Gate changed"
+  ],
+  "next_action": "Commit canonical closeout companion, push both commits in one Draft PR based on codex/interaction-memory-loop, verify current-head CI and remote ref, then stop for Owner-led physical iPhone and 10–15-year-old playtesting; no new Loop."
+}
