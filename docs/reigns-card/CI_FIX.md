@@ -27,3 +27,13 @@ iOS18.5 / iPhone16Pro執行7項，6過1失敗，無跳過。失敗發生在`test
 原始失敗摘要與日誌：`artifacts/evidence/reigns-ci-fix/failed-summary.json`、`failed-native-test.log`；來源核對：`failed-source-verification.json`。原始ZIP／xcresult本機保留，不將322MB重複附件加入Git。新CI狀態以PR24當前HEAD的checks與PR說明為準。
 
 Basic既有session_envelope 92/90期限finding仍保留。iOS18.5的Menu無障礙命中問題與人工VoiceOver需實機走讀，座標觸碰測試不等於已通過VoiceOver。17歲仍為舊介面，未授權RC03～06；Draft/HOLD，不合併發布。
+
+## 第二個遠端結果與總時限
+
+677da55的Reigns CI #3（run40821317695）已在iOS18.5完成一般模式7/7、failed0、skipped0；原本Menu案例用真實觸碰及實際切換通過。raw summary、全部一般test.log與source保留在本片`ci3/`。這證明特定Menu測試失敗已排除。
+
+但整體工作在20分鐘上限附近取消：一般批次於05:24匯出58張圖，大字案例進到按「繼續生活」後等待下一階段，05:25:25工作取消，沒有完整的大字summary。因此#3整體不是PASS。保留這個界線，不用7/7推導全部工作通過。
+
+將工作總時限20→25分鐘，給冷啟／build／兩種模式／附件保留足夠時間，所有7＋1案例、逐項斷言與失敗門檻不變。另加`if: always()`的外層清理，僅讀本次capture寫入的device.txt，驗證UUID後刪除仍存在的專用裝置；已刪則記錄alreadyAbsent。#3取消後的原日誌未見delete收據，不能宣稱已驗證該次明確刪除；外層備援避免只依賴被取消shell的trap。
+
+備援清理包含三個正反測試：只刪記錄裝置並保存收據、已刪不碰其他裝置、畸形紀錄在任何裝置操作前拒絕。後續全套57/57 Python通過；實際呼叫本機已刪裝置紀錄，確認alreadyAbsent並保留其他裝置。本次本機兩台專用Simulator均已delete，未操作別的裝置或共用runtime。

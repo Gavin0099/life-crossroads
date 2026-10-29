@@ -10,7 +10,8 @@ permissions:
 jobs:
   native-card-regression:
     runs-on: macos-15
-    timeout-minutes: 20
+    # CI #3 passed all seven light cases, then hit 20m during the final accessible case.
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - name: Exercise the same real choice through original and swipe interfaces
@@ -30,6 +31,9 @@ jobs:
           export RC_RUNTIME="$(sed -n '2p' /tmp/rc-simulator-config)"
           # The inventory only selects hardware/runtime; capture.sh creates/deletes its own device.
           bash tools/reigns-card/capture.sh "$RC_DEVICE_TYPE" 'light accessible' ci
+      - name: Delete only the Simulators recorded by this capture
+        if: always()
+        run: python3 tools/reigns-card/cleanup.py artifacts/evidence/reigns-card/ci
       - name: Preserve native tests, source hashes and screenshots
         if: always()
         uses: actions/upload-artifact@v4
