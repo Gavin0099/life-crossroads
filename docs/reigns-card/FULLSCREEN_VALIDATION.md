@@ -41,6 +41,7 @@
 - 歷史失敗／修正保留在 [Before／After](FULLSCREEN_BEFORE_AFTER.md)，包含工具重複產品、sheet查詢、紙本遮臉及最大字級截斷。
 - 本機Basic仍exit1：5項PASS、drift WARN，既有 `session_envelope` 92天超90天。raw `basic/checks.json`、`basic/drift.log`保留；未更改日期、框架或關Gate。
 - PR21原有9項native accessibility finding不由本片宣稱清除。
+- Canonical daily writer 已將本輪綁定實作提交；memory_workflow --check --run-guard 實際執行，當前diff B0 blocker為0、completion_claim_allowed=true。仍有artifact metadata的report-only warning及歷史記錄finding，原始JSON保留，不宣稱全部記憶已正規化。
 - 當前提交的遠端CI以 [PR24 checks](https://github.com/Gavin0099/life-crossroads/pull/24/checks) 及PR說明最後查核為準；本機 `ci-status.json` 保留查核快照，不為加入CI回報而改變受測HEAD。之前225c282的成功run不算新版證據。
 - 所有本任務建立的Simulator都須delete；最後inventory及每批device.txt由verify-fullscreen.py核對。其餘原有裝置、共用runtime不動。
 - 尚未驗收：Owner版型偏好、真人VoiceOver、實機、兒少發現操作／誤滑／重玩、拖曳保持期間進入背景的原生手勢測試。閒置狀態背景恢復與純模型中斷已有證據，兩者不混稱。

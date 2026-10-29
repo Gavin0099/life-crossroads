@@ -13,11 +13,12 @@
     "Four original save bytes and cold restore preserved",
     "Normal play and branch entry wait for explicit continuation",
     "Large-text truncation and paper teacher occlusion corrected",
-    "Two sizes each 7 native plus1 accessible case passed; 6 owned Simulators deleted"
+    "Two sizes each 7 native plus1 accessible case passed; 6 owned Simulators deleted",
+    "Independent reviewer inspected final SE/17 native screens; no new confirmed P1/P2 for this slice"
   ],
   "claim_ceiling": [
-    "Bounded age13 RC-FULLSCREEN-01",
-    "Independent final review separately recorded; Owner visual acceptance remains required"
+    "RC-FULLSCREEN-01 engineering/native visual gates only",
+    "Owner visual approval, device playability and human VoiceOver remain unverified"
   ],
   "not_claimed": [
     "RC03–06",
