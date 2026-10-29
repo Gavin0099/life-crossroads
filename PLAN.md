@@ -27,11 +27,13 @@
 
 ## Current Phase
 
-P1 / Reigns+ / RC-00～RC-02。Owner 2026-10-29 選定 Issue #23，取代尚未交付的 A/B 試驗方向。唯一基底 PR21 `eb6eff1`；`codex/reigns-card-poc` 實作13歲單事件滑動原型。只改App/Presentation與必要測試，Domain/Data/Persistence/GameStore/Seed/schema不變；新Draft/HOLD，不合併發布。RC-03～06須另經Owner審查，本輪不自動擴充。
+P1 / Reigns+ / RC-FULLSCREEN-01。Owner 2026-10-29 REJECT PR24 的表單版型，授權在同分支改13歲選前與選後全螢幕單卡。主卡至少65%可遊玩安全區、HUD精簡、一般模式固定版型、求助/休息小型操作；大字/VoiceOver保留完整按鈕。保留原選擇模型與save-before-publish，不改Domain/Data/Persistence。Draft/HOLD，不擴其他51事件、不合併發布。
 
 ## Current Sprint
 
-本輪範圍與驗收見 [Reigns+ PLAN](docs/reigns-card/PLAN.md)；前一輪 A/B 已本機checkpoint於`codex/gameplay-ux-ab`，未推送或開PR，不將其測試冒稱本輪通過。Wi-Fi安裝依Owner指示稍後進行。
+驗收依 [RC-FULLSCREEN-01](docs/reigns-card/FULLSCREEN.md)。先前RC00–02的工程測試保留，但舊視覺判定已被Owner REJECT取代；新UI需兩尺寸真實選前/四種選後及保存反例。手機安裝稍後進行。
+
+RC-FULLSCREEN-01本機交付：選前與選後同舞台、四路保存一致；兩尺寸各7項一般＋1項最大字級原生通過。紙本遮老師、大字截斷及非capture分岔自動離場已修正；六台Simulator已delete。詳[原生對照](docs/reigns-card/FULLSCREEN_BEFORE_AFTER.md)及[驗證邊界](docs/reigns-card/FULLSCREEN_VALIDATION.md)。同PR24更新、Owner視覺審查與當前HEAD遠端CI另列；不以此宣稱整體遊戲性通過。
 
 以下為配色修正記錄：
 

@@ -1,0 +1,4 @@
+*.xcresult/
+attachments/
+build.log
+ci-status.json

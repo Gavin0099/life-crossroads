@@ -11,6 +11,7 @@ import AppKit
 struct LifeWorldScene: View {
     let frame: LifeWorldFrame
     let motion: PresentationMotionFrame
+    var portraitCard = false
     @Environment(\.accessibilityReduceMotion) private var systemReduceMotion
     @Environment(\.dynamicTypeSize) private var typeSize
 
@@ -20,7 +21,9 @@ struct LifeWorldScene: View {
         GeometryReader { geometry in
             let size = geometry.size
             ZStack {
-                if let cast = WorldCastScene.project(frame) {
+                if portraitCard, frame.age == 13, frame.eventID == "teen-project" {
+                    portraitStage(size: size)
+                } else if let cast = WorldCastScene.project(frame) {
                     if let memory = frame.relationshipMemory, frame.moment == .committedOutcome,
                        cast.personID == memory.presentPersonID, cast.choiceID == memory.present.choiceID {
                         relationshipScene(memory, cast: cast, size: size)
@@ -61,6 +64,53 @@ struct LifeWorldScene: View {
         .accessibilityIdentifier("lifeWorldScene")
         // No implicit/repeating animation can continue after Gameplay freezes its supplied time.
         .transaction { $0.animation = nil }
+    }
+
+    /// Portrait composition uses the same factual cast/activity selection and original atlas texels.
+    /// Background alone fills the viewport; bodies/tools keep their own aspect ratio and common floor.
+    private func portraitStage(size: CGSize) -> some View {
+        let cast = WorldCastScene.project(frame)
+        let activity = WorldActivity.project(frame)
+        let background = activity?.background ?? cast?.background ?? "VL2Studio"
+        let floor = size.height * 0.94
+        return ZStack {
+            if let scene = WorldSceneBitmaps.scene(background, size: size) {
+                Image(decorative: scene, scale: 1).resizable().frame(width: size.width, height: size.height)
+            }
+            if let cast {
+                let main = castMainPose(cast), other = castCompanionPose(cast)
+                let making = cast.kind == .explaining
+                if let teacher = WorldSceneBitmaps.cell(other.atlas, index: other.cell, columns: other.columns, rows: other.rows) {
+                    // Keep the teacher's face above and beside the foreground paper desk.
+                    grounded(teacher, width: size.width * (making ? 0.55 : 0.48), height: size.height * 0.74,
+                             x: size.width * (making ? 0.72 : 0.74), floor: floor)
+                }
+                if cast.kind == .requesting,
+                   let asking = WorldSceneBitmaps.requestPose(age: 13, listening: false),
+                   let listening = WorldSceneBitmaps.requestPose(age: 13, listening: true) {
+                    let blend = reduced ? 0 : WorldRequestTransition.listeningOpacity(frame: frame, motion: motion)
+                    ZStack {
+                        grounded(asking, width: size.width * 0.55, height: size.height * 0.83,
+                                 x: size.width * 0.30, floor: floor).opacity(1 - blend)
+                        grounded(listening, width: size.width * 0.55, height: size.height * 0.83,
+                                 x: size.width * 0.30, floor: floor).opacity(blend).blendMode(.plusLighter)
+                    }.compositingGroup()
+                } else if let hero = WorldSceneBitmaps.cell(main.atlas, index: main.cell, columns: main.columns, rows: main.rows) {
+                    grounded(hero, width: size.width * (making ? 0.72 : 0.55), height: size.height * 0.83,
+                             x: size.width * (making ? 0.38 : 0.30), floor: floor)
+                }
+            } else if let activity,
+                      let hero = WorldSceneBitmaps.cell(activity.atlas, index: activity.cell, columns: 2, rows: activity.rows) {
+                grounded(hero, width: size.width * 0.94, height: size.height * 0.86,
+                         x: size.width * 0.50, floor: floor)
+            } else {
+                let pose = neutralPose
+                if let hero = WorldSceneBitmaps.cell(pose.atlas, index: pose.cell, columns: pose.columns, rows: pose.rows) {
+                    grounded(hero, width: size.width * 0.60, height: size.height * 0.85,
+                             x: size.width * 0.50, floor: floor)
+                }
+            }
+        }.frame(width: size.width, height: size.height).clipped()
     }
 
     /// Separate people are selected from actual event evidence. Their contacted paper/tools

@@ -1,0 +1,27 @@
+[
+  {
+    "file": "A.png",
+    "source": "artifacts/evidence/reigns-fullscreen/round1/iPhone-SE-3rd-generation/light/rc-scene-card-invest-saved.png",
+    "sha256": "c8da57b85c9588e4fa272b16a474890b0e1bf1e7843252670447b432a7bca166"
+  },
+  {
+    "file": "B.png",
+    "source": "artifacts/evidence/reigns-fullscreen/round1/iPhone-SE-3rd-generation/light/rc-scene-card-rest-saved.png",
+    "sha256": "d445a71005a8c536b051441c1645cd5e09e813d2d42e7d8ed0e7dc946b103a7a"
+  },
+  {
+    "file": "C.png",
+    "source": "artifacts/evidence/reigns-fullscreen/round1/iPhone-SE-3rd-generation/light/rc-scene-card-offline-saved.png",
+    "sha256": "8804099620d0c4e09016cd39c9f4f48459ca94e412ac1b48f6a0076cbe0bcee2"
+  },
+  {
+    "file": "D.png",
+    "source": "artifacts/evidence/reigns-fullscreen/round1/iPhone-SE-3rd-generation/light/rc-scene-first-screen.png",
+    "sha256": "558958f63089c21e5ebb6a709692b84129c1074897af1ea032a4a82d2f65d7d6"
+  },
+  {
+    "file": "E.png",
+    "source": "artifacts/evidence/reigns-fullscreen/round1/iPhone-SE-3rd-generation/light/rc-scene-card-ask-saved.png",
+    "sha256": "ca3a0524e4865175f33150c9171502c24edbb588a9cd11df16384f6213df5247"
+  }
+]

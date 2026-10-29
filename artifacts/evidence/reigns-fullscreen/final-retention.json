@@ -1,0 +1,615 @@
+{
+  "policy": "Retain representative full native screens and scene-only blind witnesses. Duplicate per-choice before/restore attachments omitted; unmodified local xcresult, complete source and test logs retained. Held-drag images have separate receipts.",
+  "exports": [
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-retry-saved.png",
+      "sha256": "ca3a0524e4865175f33150c9171502c24edbb588a9cd11df16384f6213df5247",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-retry-saved.png",
+      "sha256": "a9f578c8750d9fbb8857b47868953811c94b2d6e2f9f16d58c58d665aea437d7",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-save-failed.png",
+      "sha256": "a1f23d98cb57d36ebc312d45d6f7805df5110e34ee9b755aac5d77ee2cf99b2f",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-save-failed.png",
+      "sha256": "b5c1c95ba7ae78fc38a068ae4a9815d35616dc1b56ce36cebc79aae7c4b806fa",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-rest-saved.png",
+      "sha256": "d445a71005a8c536b051441c1645cd5e09e813d2d42e7d8ed0e7dc946b103a7a",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-rest-saved.png",
+      "sha256": "12f8fea697158edb7398ebc376544006f2a1fd03c0f1bc605062e99c74bc90b6",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-preparation-details.png",
+      "sha256": "5e047b7a27b3d9901e935afcc4d5c1f50fb2ea6c5aa57d2961b7c94eb405e96a",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-all-actions.png",
+      "sha256": "969d74774cbb61940362e6e686960a040cfac0159cd467dd85d9c1dfdfb98945",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-first-screen.png",
+      "sha256": "558958f63089c21e5ebb6a709692b84129c1074897af1ea032a4a82d2f65d7d6",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-first-screen.png",
+      "sha256": "06ee56d85498c784d57f5a9d70c4bf02942fd2f6b5866045e5c820b1bd557318",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-card-rest-saved.png",
+      "sha256": "d445a71005a8c536b051441c1645cd5e09e813d2d42e7d8ed0e7dc946b103a7a",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-card-rest-saved.png",
+      "sha256": "6f701ed444bd99389b371700df34c80b1db3fff3ba6aa31b96bcdd9439366fe1",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-card-rest-before.png",
+      "sha256": "558958f63089c21e5ebb6a709692b84129c1074897af1ea032a4a82d2f65d7d6",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-card-rest-before.png",
+      "sha256": "c45606ce999b9782109da99ac443dfee30143a1ddde2ab0e9b1ecd18698fad08",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-card-ask-saved.png",
+      "sha256": "ca3a0524e4865175f33150c9171502c24edbb588a9cd11df16384f6213df5247",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-card-ask-saved.png",
+      "sha256": "877f0d23a62e0885fd629a5179f75217340948ffd68d0baebf22db5f9c144c57",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-card-ask-before.png",
+      "sha256": "558958f63089c21e5ebb6a709692b84129c1074897af1ea032a4a82d2f65d7d6",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-card-ask-before.png",
+      "sha256": "c45606ce999b9782109da99ac443dfee30143a1ddde2ab0e9b1ecd18698fad08",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-card-invest-saved.png",
+      "sha256": "c8da57b85c9588e4fa272b16a474890b0e1bf1e7843252670447b432a7bca166",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-card-invest-saved.png",
+      "sha256": "83b1bb7671f3b76a12910b09f07dd24e58a2a975726885b05854290d1acdaeb5",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-card-invest-before.png",
+      "sha256": "558958f63089c21e5ebb6a709692b84129c1074897af1ea032a4a82d2f65d7d6",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-card-invest-before.png",
+      "sha256": "a5eaf91147f5cb36be57aebe9a03c546cf859a173579e38c86d5bce5c14b6f67",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-card-offline-saved.png",
+      "sha256": "1c8377deae38325a51d537e71281f3551971b9e0e41dc5303cca04c3f065142c",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-card-offline-saved.png",
+      "sha256": "dabb8eaa921c9ab689b5e344980179da36865cf2e64db72160988671fad5aeda",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-card-offline-before.png",
+      "sha256": "558958f63089c21e5ebb6a709692b84129c1074897af1ea032a4a82d2f65d7d6",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-card-offline-before.png",
+      "sha256": "a5eaf91147f5cb36be57aebe9a03c546cf859a173579e38c86d5bce5c14b6f67",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-original-rest-saved.png",
+      "sha256": "14405de812e1f3e8b9f8667561e51f445af951425980eaf0771c2140f1c4af20",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-original-rest-saved.png",
+      "sha256": "f820ff5c9157c6d47f552233944358a6424d8bb20990f40227712bb5975eb174",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-original-rest-before.png",
+      "sha256": "422d09a4ae53264d28d525b4caab43a225a4a4f779f1826baff11e4af09314b6",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-original-rest-before.png",
+      "sha256": "1d58c1dc71bfb3828c355987bcfd9607aedc3373bce8bf1cc421827d77b24d85",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-original-ask-saved.png",
+      "sha256": "6586ad1cfabfd1bc4e60c1e79e8b1b33da5ceeb306ec04e44bd4e5167c5be955",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-original-ask-saved.png",
+      "sha256": "6c31118e311532877f96b84f1138a148b9d4d251af98779cfcd267bcb7a010a9",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-original-ask-before.png",
+      "sha256": "422d09a4ae53264d28d525b4caab43a225a4a4f779f1826baff11e4af09314b6",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-original-ask-before.png",
+      "sha256": "cab6aa230615d4160b52fee0724c8933adad7c5951319328b9b0f3d45bf4365d",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-original-invest-saved.png",
+      "sha256": "c289a1ab5c1c3f0aebf99ceaac68783513363aebe5c67a2c97e6e6412067887b",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-original-invest-saved.png",
+      "sha256": "83ea71dfb84c78db9c00a30c32eda8e694f06ebbf2000df705cebf3bf5335231",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-original-invest-before.png",
+      "sha256": "422d09a4ae53264d28d525b4caab43a225a4a4f779f1826baff11e4af09314b6",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-original-invest-before.png",
+      "sha256": "cab6aa230615d4160b52fee0724c8933adad7c5951319328b9b0f3d45bf4365d",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-original-offline-saved.png",
+      "sha256": "db29db4d0a762ebe226b78e0bd98504f012b6e06997d92b05094676fbd61540b",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-original-offline-saved.png",
+      "sha256": "a366bd937fce8aec32d815356962bf3a4b7cc34840467e08a1f63edfc85728c0",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-original-offline-before.png",
+      "sha256": "422d09a4ae53264d28d525b4caab43a225a4a4f779f1826baff11e4af09314b6",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-original-offline-before.png",
+      "sha256": "cab6aa230615d4160b52fee0724c8933adad7c5951319328b9b0f3d45bf4365d",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-normal-branch-outcome-held.png",
+      "sha256": "1c8377deae38325a51d537e71281f3551971b9e0e41dc5303cca04c3f065142c",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-normal-branch-outcome-held.png",
+      "sha256": "1a8e0c13572634122e9f794fca3342fdb20079843e1023824493dd92205fa151",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-normal-outcome-held.png",
+      "sha256": "bdedf0e4ca8656d631dbd43455c654b4ce8a283b97fddeb76c34ea214def4f1c",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-normal-outcome-held.png",
+      "sha256": "eb356fd9aa27bb134b888c5a3f593f733605f64958d800771acd7ed9d43e17ec",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-swipe-invest-saved.png",
+      "sha256": "c8da57b85c9588e4fa272b16a474890b0e1bf1e7843252670447b432a7bca166",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-swipe-invest-saved.png",
+      "sha256": "61da7bc29c1620d1c8ff1a8640676a01ac716a939d771953daa0075cdfa1ba6d",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-cancelled.png",
+      "sha256": "558958f63089c21e5ebb6a709692b84129c1074897af1ea032a4a82d2f65d7d6",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-cancelled.png",
+      "sha256": "4aec71a99d021c376a4057b3be12f6d115a18c8db2a3f2fbf735fffed387f36f",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-swipe-offline-saved.png",
+      "sha256": "1c8377deae38325a51d537e71281f3551971b9e0e41dc5303cca04c3f065142c",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-swipe-offline-saved.png",
+      "sha256": "16c8688d4c5c071a8db97baabf5401fccadbd08e7f412f54ba3ae5c152e470bc",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-cancelled-2.png",
+      "sha256": "558958f63089c21e5ebb6a709692b84129c1074897af1ea032a4a82d2f65d7d6",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-cancelled-2.png",
+      "sha256": "4aec71a99d021c376a4057b3be12f6d115a18c8db2a3f2fbf735fffed387f36f",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/accessible/rc-scene-rest-saved.png",
+      "sha256": "516c3f9aeec75eb00a1e55a4b4cad91805847a7ac40b37897f5781268f768724",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/accessible/rc-rest-saved.png",
+      "sha256": "e873bb84d2b447b3ce4aed68ce45125f74b854841db628bfb33db07f9b3f3171",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/accessible/rc-preparation-details.png",
+      "sha256": "87f58b0d88d8ffe473ebd88cc3c329334d414caedbd3aaa33b46adb41fb9af3c",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/accessible/rc-scene-all-actions.png",
+      "sha256": "5896e4464d5b5e41a6528f50a3c40d1b34e56d493420b77bd5378ad36c513908",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/accessible/rc-all-actions.png",
+      "sha256": "8d21aad0ba9862dbbd36ed9fef4d4fe1a655f4298fc88d45b9bd5aae47ce3e59",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/accessible/rc-scene-first-screen.png",
+      "sha256": "19ce0ea3b407bdbb1dd1f6a668d1d5e45f5918a07830f9c88bee5f864cfd932a",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/accessible/rc-first-screen.png",
+      "sha256": "070055f9768f24394a93a2a1d7b2aa8bb60eef6090d4f95bbb0fe0d0594655b2",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-retry-saved.png",
+      "sha256": "1b93e31e7e64f4a1dc2dd38bed1d2880a5405827ae654cdff23a0f20856c4b47",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-retry-saved.png",
+      "sha256": "51444d8e02b6519293f33ca2eb8fea64754ef414f4fa90ef107151f2b2451ceb",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-save-failed.png",
+      "sha256": "e4c90225a56270f0cff1f496acdde820104c62b4af145264c39d85c493a7d2d5",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-save-failed.png",
+      "sha256": "64d327185c2c824fb9e37feb5542807b0f40d36d2dae8bcb4a27392a7b30a209",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-rest-saved.png",
+      "sha256": "5eed6bcd7050a8aca9c930bef75eb87e99c10f8f131593fde9cc463664490d53",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-rest-saved.png",
+      "sha256": "d2ff62c40e52b30a99c3d7f754c7a2d13cbd8d35870dda9d17a38f6f030b59e0",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/light/rc-preparation-details.png",
+      "sha256": "3851f824550b70b1ee4ac321e5cd2cc30c8b999619a745e51842f7ef4d37e623",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/light/rc-all-actions.png",
+      "sha256": "3851f824550b70b1ee4ac321e5cd2cc30c8b999619a745e51842f7ef4d37e623",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-first-screen.png",
+      "sha256": "31b09d0abef9693d9e4b16f4b01816ae22ee3656fcd56a29e900a1ea89d1d551",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/light/rc-first-screen.png",
+      "sha256": "f60c1ce6336014b816c4e9321cb052c92a789ecef082893a1b11399fdd608f53",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-card-rest-saved.png",
+      "sha256": "5eed6bcd7050a8aca9c930bef75eb87e99c10f8f131593fde9cc463664490d53",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/light/rc-card-rest-saved.png",
+      "sha256": "4b9255b4e2324b366486c6946bffeac8d8bf06ada2b386dd0b96d658eef6cc0a",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-card-rest-before.png",
+      "sha256": "31b09d0abef9693d9e4b16f4b01816ae22ee3656fcd56a29e900a1ea89d1d551",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-card-rest-before.png",
+      "sha256": "f84e502bcce5320d8a82ac1e773432ca79267b7f711c75d68ed68bc586bc38f3",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-card-ask-saved.png",
+      "sha256": "1b93e31e7e64f4a1dc2dd38bed1d2880a5405827ae654cdff23a0f20856c4b47",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/light/rc-card-ask-saved.png",
+      "sha256": "5c9770983cbed39441a968c90207ee4b485a63b07df47d94943a0f7c468c3e87",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-card-ask-before.png",
+      "sha256": "31b09d0abef9693d9e4b16f4b01816ae22ee3656fcd56a29e900a1ea89d1d551",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-card-ask-before.png",
+      "sha256": "f84e502bcce5320d8a82ac1e773432ca79267b7f711c75d68ed68bc586bc38f3",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-card-invest-saved.png",
+      "sha256": "d69f1b33c392f985945476fe0ee12834eb5ee3d6186901a9aa3cbe1fe3ba6008",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/light/rc-card-invest-saved.png",
+      "sha256": "7231b14f8f4f97dee4af30650c4f77f81e7be01af593eac6662b0044423153b3",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-card-invest-before.png",
+      "sha256": "31b09d0abef9693d9e4b16f4b01816ae22ee3656fcd56a29e900a1ea89d1d551",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-card-invest-before.png",
+      "sha256": "f84e502bcce5320d8a82ac1e773432ca79267b7f711c75d68ed68bc586bc38f3",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-card-offline-saved.png",
+      "sha256": "b08d60f87a0b025761a5fbaa142e7d9bbea2216e39971edc65e4064973b7e5d1",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/light/rc-card-offline-saved.png",
+      "sha256": "6b754d8c22f6fcd542de47dc824a7717c3ed9acf11b098fe30e0e99cee1eead4",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-card-offline-before.png",
+      "sha256": "31b09d0abef9693d9e4b16f4b01816ae22ee3656fcd56a29e900a1ea89d1d551",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-card-offline-before.png",
+      "sha256": "23247d54447d52704ebe883f4285e892fb11baa90cd8fc117c408dd96cd622c7",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-original-rest-saved.png",
+      "sha256": "c094baf66e5377d97e1dea99d11fa7e27a9610c40e341b36beb2e4e908eba413",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-original-rest-saved.png",
+      "sha256": "c6ecee8f3324db2846985d28b4c6b5454fc2bb6fad14fdd28e25f3ae34fcf6b0",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-original-rest-before.png",
+      "sha256": "8b98f1813caf98068602e2a0c1f0d62380394569ae7ad3fc676002aaddc701f6",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-original-rest-before.png",
+      "sha256": "795e0b60aa52918f80f401e53f8eba4f7a83ccbe87822a83adf8976f4666c816",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-original-ask-saved.png",
+      "sha256": "50139ca71b773289fbcbe2aa76b1bcc09a7e681939a1f1624ad4f0e57c55bb33",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-original-ask-saved.png",
+      "sha256": "1a3d07dec53ca0fd9be6996c9f9aea1d5b0f098ef55b8187377ed409077e4cf3",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-original-ask-before.png",
+      "sha256": "8b98f1813caf98068602e2a0c1f0d62380394569ae7ad3fc676002aaddc701f6",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-original-ask-before.png",
+      "sha256": "795e0b60aa52918f80f401e53f8eba4f7a83ccbe87822a83adf8976f4666c816",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-original-invest-saved.png",
+      "sha256": "2c82da83d3c70a3c6ab7da1b7826cd8fc0169c0ac6573a3dc8c6d6158bb46c60",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-original-invest-saved.png",
+      "sha256": "905b7ae15208327b9054c5a5157ea34d0deecbf0039dd89960190c7d64620a81",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-original-invest-before.png",
+      "sha256": "8b98f1813caf98068602e2a0c1f0d62380394569ae7ad3fc676002aaddc701f6",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-original-invest-before.png",
+      "sha256": "642665bae7a89652da4ec57422b433bc362e3b87c7aaf4b33c4cce260d5ee440",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-original-offline-saved.png",
+      "sha256": "404740dc655abeea0df584a78e5001b4b711486a24883a033e1cb02cfa171ef3",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-original-offline-saved.png",
+      "sha256": "403886aee6426f6665507ebd0e5a1b1614a642497d8e48f9d31a00ef2d90cd11",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-original-offline-before.png",
+      "sha256": "8b98f1813caf98068602e2a0c1f0d62380394569ae7ad3fc676002aaddc701f6",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-original-offline-before.png",
+      "sha256": "642665bae7a89652da4ec57422b433bc362e3b87c7aaf4b33c4cce260d5ee440",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-normal-branch-outcome-held.png",
+      "sha256": "b08d60f87a0b025761a5fbaa142e7d9bbea2216e39971edc65e4064973b7e5d1",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-normal-branch-outcome-held.png",
+      "sha256": "21263f0af1c73eed43d064e2ae4e1c23f546edf5ac80fe95bd9a79a0050585a7",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-normal-outcome-held.png",
+      "sha256": "d7949768001bc339263bfab507043c04e991c9bee986c3e067d3e57195eae4d0",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-normal-outcome-held.png",
+      "sha256": "b4b68c2a900828fe49c48444bb97f78b0f76ebb5990cfc1204e4fedf268a4d6f",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-swipe-invest-saved.png",
+      "sha256": "d69f1b33c392f985945476fe0ee12834eb5ee3d6186901a9aa3cbe1fe3ba6008",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-swipe-invest-saved.png",
+      "sha256": "1d0a11ea588e56426cedac8ab8eb17d9d5aaa4f9f4448296d0c057dcd6020667",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-cancelled.png",
+      "sha256": "31b09d0abef9693d9e4b16f4b01816ae22ee3656fcd56a29e900a1ea89d1d551",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-cancelled.png",
+      "sha256": "24694c8ca19b03749fe28316d5f41307f62e770b25d91548e6526d194d8d1ac3",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-swipe-offline-saved.png",
+      "sha256": "b08d60f87a0b025761a5fbaa142e7d9bbea2216e39971edc65e4064973b7e5d1",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-swipe-offline-saved.png",
+      "sha256": "0f4fd57465b2dde9d4d844a73a48bda4943c2160da694adb11c7cba455d05a54",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-cancelled-2.png",
+      "sha256": "31b09d0abef9693d9e4b16f4b01816ae22ee3656fcd56a29e900a1ea89d1d551",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/light/rc-cancelled-2.png",
+      "sha256": "24694c8ca19b03749fe28316d5f41307f62e770b25d91548e6526d194d8d1ac3",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/accessible/rc-scene-rest-saved.png",
+      "sha256": "af2f0d0eb56ebb44e47ee19340457129cf82d62e684b2dc7963e99d4a980bfe6",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/accessible/rc-rest-saved.png",
+      "sha256": "55243ce2669efd837044627664eab05f95a340627c6df6c2f7c6c3b666a66363",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/accessible/rc-preparation-details.png",
+      "sha256": "19688a8d0fbd09359b8e1e56676766dfa78e6e70e41cf757c7945a1078c4b737",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/accessible/rc-scene-all-actions.png",
+      "sha256": "477b08165ec8e058de8a24261a88288051cb4c86e0c0a31345b71acbf99d5b71",
+      "retained": false
+    },
+    {
+      "path": "final/iPhone-17/accessible/rc-all-actions.png",
+      "sha256": "a4216c6a1216e85670e5745c5798f8358b9bd8c04a1b5310a0a8f40c5262e3cf",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/accessible/rc-scene-first-screen.png",
+      "sha256": "abf9728f7664df958a35fa5e28f70cae28ca92023529204d6e60949e5871716b",
+      "retained": true
+    },
+    {
+      "path": "final/iPhone-17/accessible/rc-first-screen.png",
+      "sha256": "3e6e09ccaf31a746d6b8db9e9f547581e06aa80c732536ceb90d59cc88191e6e",
+      "retained": true
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "path": "rc-first-screen.png",
+    "sha256": "d2b5e3d6f8dffd96aa8a0556c20d47a627d9c64d640fbed99aa3b05add6063ff"
+  },
+  {
+    "path": "rc-scene-card-offline-saved.png",
+    "sha256": "1c8377deae38325a51d537e71281f3551971b9e0e41dc5303cca04c3f065142c"
+  },
+  {
+    "path": "rc-card-offline-saved.png",
+    "sha256": "f46bb0ed7998b88f4386f71f937d8d850bfafbe8741be9ac108e7b412778036e"
+  },
+  {
+    "path": "rc-normal-branch-outcome-held.png",
+    "sha256": "460203b481caab23e472bfb17a87873c908b5595e5b227bc2b47e8e07ec507e8"
+  }
+]

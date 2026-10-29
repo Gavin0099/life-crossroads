@@ -1,0 +1,1279 @@
+{
+  "baseline": "225c2828f4ea56c8ae5eb89a414ac506808b6374",
+  "fixture": "artifacts/evidence/interaction-memory-loop/interaction-fixtures/13-before.json",
+  "fixtureSHA256": "c1074e81fb937ec13928efbf9b8012bab9fbcbe0938b1f2cc99f53df90411ebd",
+  "pairedOutcomes": {
+    "iPhone-SE-3rd-generation": {
+      "offline": "93f2c9d2ec3b0c560a2bf9d2cb485bf43f87735f9e405e9e7908b2099d75ab41",
+      "invest": "500a0553a1e23efa62db92261f82c3471bf92eb1755307166e1a8b57b223942f",
+      "ask": "8d85eb25d6f21ac085fa4fafec47c110567a6513133614c2ab49c8336a65f1b4",
+      "rest": "3ea868c9402175d25c1e7447f6ea6b9d2b9eeacf23eab70ac50559ef90f363e7"
+    },
+    "iPhone-17": {
+      "offline": "93f2c9d2ec3b0c560a2bf9d2cb485bf43f87735f9e405e9e7908b2099d75ab41",
+      "invest": "500a0553a1e23efa62db92261f82c3471bf92eb1755307166e1a8b57b223942f",
+      "ask": "8d85eb25d6f21ac085fa4fafec47c110567a6513133614c2ab49c8336a65f1b4",
+      "rest": "3ea868c9402175d25c1e7447f6ea6b9d2b9eeacf23eab70ac50559ef90f363e7"
+    }
+  },
+  "acceptedNativeBatches": [
+    {
+      "hardware": "iPhone-SE-3rd-generation",
+      "mode": "light",
+      "passed": 7,
+      "publicationWarnings": 0
+    },
+    {
+      "hardware": "iPhone-SE-3rd-generation",
+      "mode": "accessible",
+      "passed": 1,
+      "publicationWarnings": 0
+    },
+    {
+      "hardware": "iPhone-17",
+      "mode": "light",
+      "passed": 7,
+      "publicationWarnings": 0
+    },
+    {
+      "hardware": "iPhone-17",
+      "mode": "accessible",
+      "passed": 1,
+      "publicationWarnings": 0
+    }
+  ],
+  "nativeBounds": [
+    {
+      "hardware": "iPhone-SE-3rd-generation",
+      "outcome": false,
+      "rects": {
+        "screen": [
+          0.0,
+          0.0,
+          375.0,
+          667.0
+        ],
+        "hud": [
+          148.5,
+          37.0,
+          78.0,
+          18.0
+        ],
+        "card": [
+          12.0,
+          76.0,
+          351.0,
+          523.0
+        ],
+        "scene": [
+          12.0,
+          136.0,
+          351.0,
+          411.5
+        ],
+        "prompt": [
+          93.75,
+          94.0,
+          187.5,
+          24.0
+        ],
+        "controls": [
+          248.5,
+          611.0,
+          114.5,
+          44.0
+        ]
+      },
+      "cardToFullScreenHeight": 0.7841079460269865
+    },
+    {
+      "hardware": "iPhone-SE-3rd-generation",
+      "outcome": true,
+      "rects": {
+        "screen": [
+          0.0,
+          0.0,
+          375.0,
+          667.0
+        ],
+        "hud": [
+          148.5,
+          37.0,
+          78.0,
+          18.0
+        ],
+        "card": [
+          12.0,
+          76.0,
+          351.0,
+          523.0
+        ],
+        "scene": [
+          12.0,
+          136.0,
+          351.0,
+          463.0
+        ],
+        "prompt": [
+          93.75,
+          81.5,
+          187.5,
+          49.0
+        ],
+        "controls": [
+          213.0,
+          611.0,
+          150.0,
+          44.0
+        ]
+      },
+      "cardToFullScreenHeight": 0.7841079460269865
+    },
+    {
+      "hardware": "iPhone-SE-3rd-generation",
+      "outcome": true,
+      "rects": {
+        "screen": [
+          0.0,
+          0.0,
+          375.0,
+          667.0
+        ],
+        "hud": [
+          148.5,
+          37.0,
+          78.0,
+          18.0
+        ],
+        "card": [
+          12.0,
+          76.0,
+          351.0,
+          523.0
+        ],
+        "scene": [
+          12.0,
+          136.0,
+          351.0,
+          463.0
+        ],
+        "prompt": [
+          93.5,
+          81.5,
+          188.0,
+          49.0
+        ],
+        "controls": [
+          213.0,
+          611.0,
+          150.0,
+          44.0
+        ]
+      },
+      "cardToFullScreenHeight": 0.7841079460269865
+    },
+    {
+      "hardware": "iPhone-SE-3rd-generation",
+      "outcome": true,
+      "rects": {
+        "screen": [
+          0.0,
+          0.0,
+          375.0,
+          667.0
+        ],
+        "hud": [
+          148.5,
+          37.0,
+          78.0,
+          18.0
+        ],
+        "card": [
+          12.0,
+          76.0,
+          351.0,
+          523.0
+        ],
+        "scene": [
+          12.0,
+          136.0,
+          351.0,
+          463.0
+        ],
+        "prompt": [
+          84.0,
+          81.5,
+          207.0,
+          49.0
+        ],
+        "controls": [
+          213.0,
+          611.0,
+          150.0,
+          44.0
+        ]
+      },
+      "cardToFullScreenHeight": 0.7841079460269865
+    },
+    {
+      "hardware": "iPhone-SE-3rd-generation",
+      "outcome": true,
+      "rects": {
+        "screen": [
+          0.0,
+          0.0,
+          375.0,
+          667.0
+        ],
+        "hud": [
+          148.5,
+          37.0,
+          78.0,
+          18.0
+        ],
+        "card": [
+          12.0,
+          76.0,
+          351.0,
+          523.0
+        ],
+        "scene": [
+          12.0,
+          136.0,
+          351.0,
+          463.0
+        ],
+        "prompt": [
+          101.0,
+          81.5,
+          173.0,
+          49.0
+        ],
+        "controls": [
+          213.0,
+          611.0,
+          150.0,
+          44.0
+        ]
+      },
+      "cardToFullScreenHeight": 0.7841079460269865
+    },
+    {
+      "hardware": "iPhone-SE-3rd-generation",
+      "outcome": true,
+      "rects": {
+        "screen": [
+          0.0,
+          0.0,
+          375.0,
+          667.0
+        ],
+        "hud": [
+          148.5,
+          37.0,
+          78.0,
+          18.0
+        ],
+        "card": [
+          12.0,
+          76.0,
+          351.0,
+          523.0
+        ],
+        "scene": [
+          12.0,
+          136.0,
+          351.0,
+          463.0
+        ],
+        "prompt": [
+          93.75,
+          81.5,
+          187.5,
+          49.0
+        ],
+        "controls": [
+          213.0,
+          611.0,
+          150.0,
+          44.0
+        ]
+      },
+      "cardToFullScreenHeight": 0.7841079460269865
+    },
+    {
+      "hardware": "iPhone-SE-3rd-generation",
+      "outcome": true,
+      "rects": {
+        "screen": [
+          0.0,
+          0.0,
+          375.0,
+          667.0
+        ],
+        "hud": [
+          148.5,
+          37.0,
+          78.0,
+          18.0
+        ],
+        "card": [
+          12.0,
+          76.0,
+          351.0,
+          523.0
+        ],
+        "scene": [
+          12.0,
+          136.0,
+          351.0,
+          463.0
+        ],
+        "prompt": [
+          93.5,
+          81.5,
+          188.0,
+          49.0
+        ],
+        "controls": [
+          213.0,
+          611.0,
+          150.0,
+          44.0
+        ]
+      },
+      "cardToFullScreenHeight": 0.7841079460269865
+    },
+    {
+      "hardware": "iPhone-SE-3rd-generation",
+      "outcome": true,
+      "rects": {
+        "screen": [
+          0.0,
+          0.0,
+          375.0,
+          667.0
+        ],
+        "hud": [
+          148.5,
+          37.0,
+          78.0,
+          18.0
+        ],
+        "card": [
+          12.0,
+          76.0,
+          351.0,
+          523.0
+        ],
+        "scene": [
+          12.0,
+          136.0,
+          351.0,
+          463.0
+        ],
+        "prompt": [
+          101.0,
+          81.5,
+          173.0,
+          49.0
+        ],
+        "controls": [
+          213.0,
+          611.0,
+          150.0,
+          44.0
+        ]
+      },
+      "cardToFullScreenHeight": 0.7841079460269865
+    },
+    {
+      "hardware": "iPhone-SE-3rd-generation",
+      "outcome": false,
+      "rects": {
+        "screen": [
+          0.0,
+          0.0,
+          375.0,
+          667.0
+        ],
+        "hud": [
+          148.5,
+          37.0,
+          78.0,
+          18.0
+        ],
+        "card": [
+          12.0,
+          76.0,
+          351.0,
+          523.0
+        ],
+        "scene": [
+          12.0,
+          136.0,
+          351.0,
+          411.5
+        ],
+        "prompt": [
+          93.75,
+          94.0,
+          187.5,
+          24.0
+        ],
+        "controls": [
+          248.5,
+          611.0,
+          114.5,
+          44.0
+        ]
+      },
+      "cardToFullScreenHeight": 0.7841079460269865
+    },
+    {
+      "hardware": "iPhone-SE-3rd-generation",
+      "outcome": false,
+      "rects": {
+        "screen": [
+          0.0,
+          0.0,
+          375.0,
+          667.0
+        ],
+        "hud": [
+          148.5,
+          37.0,
+          78.0,
+          18.0
+        ],
+        "card": [
+          12.0,
+          76.0,
+          351.0,
+          523.0
+        ],
+        "scene": [
+          12.0,
+          136.0,
+          351.0,
+          411.5
+        ],
+        "prompt": [
+          93.75,
+          94.0,
+          187.5,
+          24.0
+        ],
+        "controls": [
+          248.5,
+          611.0,
+          114.5,
+          44.0
+        ]
+      },
+      "cardToFullScreenHeight": 0.7841079460269865
+    },
+    {
+      "hardware": "iPhone-17",
+      "outcome": false,
+      "rects": {
+        "screen": [
+          0.0,
+          0.0,
+          402.0,
+          874.0
+        ],
+        "hud": [
+          162.0,
+          79.0,
+          78.0,
+          18.0
+        ],
+        "card": [
+          12.0,
+          118.0,
+          378.0,
+          654.0
+        ],
+        "scene": [
+          12.0,
+          178.0,
+          378.0,
+          542.6666666666666
+        ],
+        "prompt": [
+          107.33333333333333,
+          136.0,
+          187.33333333333331,
+          24.0
+        ],
+        "controls": [
+          266.66666666666663,
+          784.0,
+          123.33333333333331,
+          44.0
+        ]
+      },
+      "cardToFullScreenHeight": 0.7482837528604119
+    },
+    {
+      "hardware": "iPhone-17",
+      "outcome": true,
+      "rects": {
+        "screen": [
+          0.0,
+          0.0,
+          402.0,
+          874.0
+        ],
+        "hud": [
+          162.0,
+          79.0,
+          78.0,
+          18.0
+        ],
+        "card": [
+          12.0,
+          118.0,
+          378.0,
+          654.0
+        ],
+        "scene": [
+          12.0,
+          178.0,
+          378.0,
+          594.0
+        ],
+        "prompt": [
+          107.33333333333333,
+          123.5,
+          187.33333333333331,
+          49.0
+        ],
+        "controls": [
+          240.0,
+          784.0,
+          150.0,
+          44.0
+        ]
+      },
+      "cardToFullScreenHeight": 0.7482837528604119
+    },
+    {
+      "hardware": "iPhone-17",
+      "outcome": true,
+      "rects": {
+        "screen": [
+          0.0,
+          0.0,
+          402.0,
+          874.0
+        ],
+        "hud": [
+          162.0,
+          79.0,
+          78.0,
+          18.0
+        ],
+        "card": [
+          12.0,
+          118.0,
+          378.0,
+          654.0
+        ],
+        "scene": [
+          12.0,
+          178.0,
+          378.0,
+          594.0
+        ],
+        "prompt": [
+          107.0,
+          123.5,
+          188.0,
+          49.0
+        ],
+        "controls": [
+          240.0,
+          784.0,
+          150.0,
+          44.0
+        ]
+      },
+      "cardToFullScreenHeight": 0.7482837528604119
+    },
+    {
+      "hardware": "iPhone-17",
+      "outcome": true,
+      "rects": {
+        "screen": [
+          0.0,
+          0.0,
+          402.0,
+          874.0
+        ],
+        "hud": [
+          162.0,
+          79.0,
+          78.0,
+          18.0
+        ],
+        "card": [
+          12.0,
+          118.0,
+          378.0,
+          654.0
+        ],
+        "scene": [
+          12.0,
+          178.0,
+          378.0,
+          594.0
+        ],
+        "prompt": [
+          97.5,
+          123.5,
+          207.0,
+          49.0
+        ],
+        "controls": [
+          240.0,
+          784.0,
+          150.0,
+          44.0
+        ]
+      },
+      "cardToFullScreenHeight": 0.7482837528604119
+    },
+    {
+      "hardware": "iPhone-17",
+      "outcome": true,
+      "rects": {
+        "screen": [
+          0.0,
+          0.0,
+          402.0,
+          874.0
+        ],
+        "hud": [
+          162.0,
+          79.0,
+          78.0,
+          18.0
+        ],
+        "card": [
+          12.0,
+          118.0,
+          378.0,
+          654.0
+        ],
+        "scene": [
+          12.0,
+          178.0,
+          378.0,
+          594.0
+        ],
+        "prompt": [
+          30.5,
+          136.0,
+          341.0,
+          24.0
+        ],
+        "controls": [
+          240.0,
+          784.0,
+          150.0,
+          44.0
+        ]
+      },
+      "cardToFullScreenHeight": 0.7482837528604119
+    },
+    {
+      "hardware": "iPhone-17",
+      "outcome": true,
+      "rects": {
+        "screen": [
+          0.0,
+          0.0,
+          402.0,
+          874.0
+        ],
+        "hud": [
+          162.0,
+          79.0,
+          78.0,
+          18.0
+        ],
+        "card": [
+          12.0,
+          118.0,
+          378.0,
+          654.0
+        ],
+        "scene": [
+          12.0,
+          178.0,
+          378.0,
+          594.0
+        ],
+        "prompt": [
+          107.33333333333333,
+          123.5,
+          187.33333333333331,
+          49.0
+        ],
+        "controls": [
+          240.0,
+          784.0,
+          150.0,
+          44.0
+        ]
+      },
+      "cardToFullScreenHeight": 0.7482837528604119
+    },
+    {
+      "hardware": "iPhone-17",
+      "outcome": true,
+      "rects": {
+        "screen": [
+          0.0,
+          0.0,
+          402.0,
+          874.0
+        ],
+        "hud": [
+          162.0,
+          79.0,
+          78.0,
+          18.0
+        ],
+        "card": [
+          12.0,
+          118.0,
+          378.0,
+          654.0
+        ],
+        "scene": [
+          12.0,
+          178.0,
+          378.0,
+          594.0
+        ],
+        "prompt": [
+          107.0,
+          123.5,
+          188.0,
+          49.0
+        ],
+        "controls": [
+          240.0,
+          784.0,
+          150.0,
+          44.0
+        ]
+      },
+      "cardToFullScreenHeight": 0.7482837528604119
+    },
+    {
+      "hardware": "iPhone-17",
+      "outcome": true,
+      "rects": {
+        "screen": [
+          0.0,
+          0.0,
+          402.0,
+          874.0
+        ],
+        "hud": [
+          162.0,
+          79.0,
+          78.0,
+          18.0
+        ],
+        "card": [
+          12.0,
+          118.0,
+          378.0,
+          654.0
+        ],
+        "scene": [
+          12.0,
+          178.0,
+          378.0,
+          594.0
+        ],
+        "prompt": [
+          30.5,
+          136.0,
+          341.0,
+          24.0
+        ],
+        "controls": [
+          240.0,
+          784.0,
+          150.0,
+          44.0
+        ]
+      },
+      "cardToFullScreenHeight": 0.7482837528604119
+    },
+    {
+      "hardware": "iPhone-17",
+      "outcome": false,
+      "rects": {
+        "screen": [
+          0.0,
+          0.0,
+          402.0,
+          874.0
+        ],
+        "hud": [
+          162.0,
+          79.0,
+          78.0,
+          18.0
+        ],
+        "card": [
+          12.0,
+          118.0,
+          378.0,
+          654.0
+        ],
+        "scene": [
+          12.0,
+          178.0,
+          378.0,
+          542.6666666666666
+        ],
+        "prompt": [
+          107.33333333333333,
+          136.0,
+          187.33333333333331,
+          24.0
+        ],
+        "controls": [
+          266.66666666666663,
+          784.0,
+          123.33333333333331,
+          44.0
+        ]
+      },
+      "cardToFullScreenHeight": 0.7482837528604119
+    },
+    {
+      "hardware": "iPhone-17",
+      "outcome": false,
+      "rects": {
+        "screen": [
+          0.0,
+          0.0,
+          402.0,
+          874.0
+        ],
+        "hud": [
+          162.0,
+          79.0,
+          78.0,
+          18.0
+        ],
+        "card": [
+          12.0,
+          118.0,
+          378.0,
+          654.0
+        ],
+        "scene": [
+          12.0,
+          178.0,
+          378.0,
+          542.6666666666666
+        ],
+        "prompt": [
+          107.33333333333333,
+          136.0,
+          187.33333333333331,
+          24.0
+        ],
+        "controls": [
+          266.66666666666663,
+          784.0,
+          123.33333333333331,
+          44.0
+        ]
+      },
+      "cardToFullScreenHeight": 0.7482837528604119
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "final/iPhone-17/accessible/rc-rest-saved.png",
+      "sha256": "55243ce2669efd837044627664eab05f95a340627c6df6c2f7c6c3b666a66363"
+    },
+    {
+      "path": "final/iPhone-17/accessible/rc-preparation-details.png",
+      "sha256": "19688a8d0fbd09359b8e1e56676766dfa78e6e70e41cf757c7945a1078c4b737"
+    },
+    {
+      "path": "final/iPhone-17/accessible/rc-all-actions.png",
+      "sha256": "a4216c6a1216e85670e5745c5798f8358b9bd8c04a1b5310a0a8f40c5262e3cf"
+    },
+    {
+      "path": "final/iPhone-17/accessible/rc-scene-first-screen.png",
+      "sha256": "abf9728f7664df958a35fa5e28f70cae28ca92023529204d6e60949e5871716b"
+    },
+    {
+      "path": "final/iPhone-17/accessible/rc-first-screen.png",
+      "sha256": "3e6e09ccaf31a746d6b8db9e9f547581e06aa80c732536ceb90d59cc88191e6e"
+    },
+    {
+      "path": "final/iPhone-17/light/rc-retry-saved.png",
+      "sha256": "51444d8e02b6519293f33ca2eb8fea64754ef414f4fa90ef107151f2b2451ceb"
+    },
+    {
+      "path": "final/iPhone-17/light/rc-save-failed.png",
+      "sha256": "64d327185c2c824fb9e37feb5542807b0f40d36d2dae8bcb4a27392a7b30a209"
+    },
+    {
+      "path": "final/iPhone-17/light/rc-rest-saved.png",
+      "sha256": "d2ff62c40e52b30a99c3d7f754c7a2d13cbd8d35870dda9d17a38f6f030b59e0"
+    },
+    {
+      "path": "final/iPhone-17/light/rc-preparation-details.png",
+      "sha256": "3851f824550b70b1ee4ac321e5cd2cc30c8b999619a745e51842f7ef4d37e623"
+    },
+    {
+      "path": "final/iPhone-17/light/rc-all-actions.png",
+      "sha256": "3851f824550b70b1ee4ac321e5cd2cc30c8b999619a745e51842f7ef4d37e623"
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-first-screen.png",
+      "sha256": "31b09d0abef9693d9e4b16f4b01816ae22ee3656fcd56a29e900a1ea89d1d551"
+    },
+    {
+      "path": "final/iPhone-17/light/rc-first-screen.png",
+      "sha256": "f60c1ce6336014b816c4e9321cb052c92a789ecef082893a1b11399fdd608f53"
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-card-rest-saved.png",
+      "sha256": "5eed6bcd7050a8aca9c930bef75eb87e99c10f8f131593fde9cc463664490d53"
+    },
+    {
+      "path": "final/iPhone-17/light/rc-card-rest-saved.png",
+      "sha256": "4b9255b4e2324b366486c6946bffeac8d8bf06ada2b386dd0b96d658eef6cc0a"
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-card-ask-saved.png",
+      "sha256": "1b93e31e7e64f4a1dc2dd38bed1d2880a5405827ae654cdff23a0f20856c4b47"
+    },
+    {
+      "path": "final/iPhone-17/light/rc-card-ask-saved.png",
+      "sha256": "5c9770983cbed39441a968c90207ee4b485a63b07df47d94943a0f7c468c3e87"
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-card-invest-saved.png",
+      "sha256": "d69f1b33c392f985945476fe0ee12834eb5ee3d6186901a9aa3cbe1fe3ba6008"
+    },
+    {
+      "path": "final/iPhone-17/light/rc-card-invest-saved.png",
+      "sha256": "7231b14f8f4f97dee4af30650c4f77f81e7be01af593eac6662b0044423153b3"
+    },
+    {
+      "path": "final/iPhone-17/light/rc-scene-card-offline-saved.png",
+      "sha256": "b08d60f87a0b025761a5fbaa142e7d9bbea2216e39971edc65e4064973b7e5d1"
+    },
+    {
+      "path": "final/iPhone-17/light/rc-card-offline-saved.png",
+      "sha256": "6b754d8c22f6fcd542de47dc824a7717c3ed9acf11b098fe30e0e99cee1eead4"
+    },
+    {
+      "path": "final/iPhone-17/light/rc-original-rest-saved.png",
+      "sha256": "c6ecee8f3324db2846985d28b4c6b5454fc2bb6fad14fdd28e25f3ae34fcf6b0"
+    },
+    {
+      "path": "final/iPhone-17/light/rc-original-ask-saved.png",
+      "sha256": "1a3d07dec53ca0fd9be6996c9f9aea1d5b0f098ef55b8187377ed409077e4cf3"
+    },
+    {
+      "path": "final/iPhone-17/light/rc-original-invest-saved.png",
+      "sha256": "905b7ae15208327b9054c5a5157ea34d0deecbf0039dd89960190c7d64620a81"
+    },
+    {
+      "path": "final/iPhone-17/light/rc-original-offline-saved.png",
+      "sha256": "403886aee6426f6665507ebd0e5a1b1614a642497d8e48f9d31a00ef2d90cd11"
+    },
+    {
+      "path": "final/iPhone-17/light/rc-normal-branch-outcome-held.png",
+      "sha256": "21263f0af1c73eed43d064e2ae4e1c23f546edf5ac80fe95bd9a79a0050585a7"
+    },
+    {
+      "path": "final/iPhone-17/light/rc-normal-outcome-held.png",
+      "sha256": "b4b68c2a900828fe49c48444bb97f78b0f76ebb5990cfc1204e4fedf268a4d6f"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/accessible/rc-rest-saved.png",
+      "sha256": "e873bb84d2b447b3ce4aed68ce45125f74b854841db628bfb33db07f9b3f3171"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/accessible/rc-preparation-details.png",
+      "sha256": "87f58b0d88d8ffe473ebd88cc3c329334d414caedbd3aaa33b46adb41fb9af3c"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/accessible/rc-all-actions.png",
+      "sha256": "8d21aad0ba9862dbbd36ed9fef4d4fe1a655f4298fc88d45b9bd5aae47ce3e59"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/accessible/rc-scene-first-screen.png",
+      "sha256": "19ce0ea3b407bdbb1dd1f6a668d1d5e45f5918a07830f9c88bee5f864cfd932a"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/accessible/rc-first-screen.png",
+      "sha256": "070055f9768f24394a93a2a1d7b2aa8bb60eef6090d4f95bbb0fe0d0594655b2"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-retry-saved.png",
+      "sha256": "a9f578c8750d9fbb8857b47868953811c94b2d6e2f9f16d58c58d665aea437d7"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-save-failed.png",
+      "sha256": "b5c1c95ba7ae78fc38a068ae4a9815d35616dc1b56ce36cebc79aae7c4b806fa"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-rest-saved.png",
+      "sha256": "12f8fea697158edb7398ebc376544006f2a1fd03c0f1bc605062e99c74bc90b6"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-preparation-details.png",
+      "sha256": "5e047b7a27b3d9901e935afcc4d5c1f50fb2ea6c5aa57d2961b7c94eb405e96a"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-all-actions.png",
+      "sha256": "969d74774cbb61940362e6e686960a040cfac0159cd467dd85d9c1dfdfb98945"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-first-screen.png",
+      "sha256": "558958f63089c21e5ebb6a709692b84129c1074897af1ea032a4a82d2f65d7d6"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-first-screen.png",
+      "sha256": "06ee56d85498c784d57f5a9d70c4bf02942fd2f6b5866045e5c820b1bd557318"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-card-rest-saved.png",
+      "sha256": "d445a71005a8c536b051441c1645cd5e09e813d2d42e7d8ed0e7dc946b103a7a"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-card-rest-saved.png",
+      "sha256": "6f701ed444bd99389b371700df34c80b1db3fff3ba6aa31b96bcdd9439366fe1"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-card-ask-saved.png",
+      "sha256": "ca3a0524e4865175f33150c9171502c24edbb588a9cd11df16384f6213df5247"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-card-ask-saved.png",
+      "sha256": "877f0d23a62e0885fd629a5179f75217340948ffd68d0baebf22db5f9c144c57"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-card-invest-saved.png",
+      "sha256": "c8da57b85c9588e4fa272b16a474890b0e1bf1e7843252670447b432a7bca166"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-card-invest-saved.png",
+      "sha256": "83b1bb7671f3b76a12910b09f07dd24e58a2a975726885b05854290d1acdaeb5"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-scene-card-offline-saved.png",
+      "sha256": "1c8377deae38325a51d537e71281f3551971b9e0e41dc5303cca04c3f065142c"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-card-offline-saved.png",
+      "sha256": "dabb8eaa921c9ab689b5e344980179da36865cf2e64db72160988671fad5aeda"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-original-rest-saved.png",
+      "sha256": "f820ff5c9157c6d47f552233944358a6424d8bb20990f40227712bb5975eb174"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-original-ask-saved.png",
+      "sha256": "6c31118e311532877f96b84f1138a148b9d4d251af98779cfcd267bcb7a010a9"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-original-invest-saved.png",
+      "sha256": "83ea71dfb84c78db9c00a30c32eda8e694f06ebbf2000df705cebf3bf5335231"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-original-offline-saved.png",
+      "sha256": "a366bd937fce8aec32d815356962bf3a4b7cc34840467e08a1f63edfc85728c0"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-normal-branch-outcome-held.png",
+      "sha256": "1a8e0c13572634122e9f794fca3342fdb20079843e1023824493dd92205fa151"
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/rc-normal-outcome-held.png",
+      "sha256": "eb356fd9aa27bb134b888c5a3f593f733605f64958d800771acd7ed9d43e17ec"
+    },
+    {
+      "path": "layout2/iPhone-SE-3rd-generation/light/rc-unreachable-swipeChoice.png",
+      "sha256": "e7800d66d3298c851aa66a9fc142fbb31a65a5ccce72f5f1dcee61cd790b4a51"
+    },
+    {
+      "path": "layout2/iPhone-SE-3rd-generation/light/rc-first-screen.png",
+      "sha256": "35e7fe8b408bac6e02d00c0d61218f40442b3a40787fb658b2ae7dccf0afdfb6"
+    },
+    {
+      "path": "round1/iPhone-SE-3rd-generation/accessible/rc-first-screen.png",
+      "sha256": "190faf5d915e3431669d2c3210ec3b5e6e15c476271faf79455b5d458a9a94c9"
+    },
+    {
+      "path": "round1/iPhone-SE-3rd-generation/light/rc-first-screen.png",
+      "sha256": "c66371e14a588088f318250215eb13e0699e68b194ea2c0abb8d4e0d82696a9e"
+    },
+    {
+      "path": "round1/iPhone-SE-3rd-generation/light/rc-scene-card-offline-saved.png",
+      "sha256": "8804099620d0c4e09016cd39c9f4f48459ca94e412ac1b48f6a0076cbe0bcee2"
+    },
+    {
+      "path": "round1/iPhone-SE-3rd-generation/light/rc-card-offline-saved.png",
+      "sha256": "3be57281dcaec3fa1217d36a97f6a30c224b15f3acaffce12aa698ac409d3b3b"
+    },
+    {
+      "path": "round2/iPhone-SE-3rd-generation/accessible/rc-first-screen.png",
+      "sha256": "2fd48b2ffb42b9941012c3f6881f4b51591491f6d7ab0ca06fa00f504c5810a5"
+    },
+    {
+      "path": "round2/iPhone-SE-3rd-generation/light/rc-first-screen.png",
+      "sha256": "d2b5e3d6f8dffd96aa8a0556c20d47a627d9c64d640fbed99aa3b05add6063ff"
+    },
+    {
+      "path": "round2/iPhone-SE-3rd-generation/light/rc-scene-card-offline-saved.png",
+      "sha256": "1c8377deae38325a51d537e71281f3551971b9e0e41dc5303cca04c3f065142c"
+    },
+    {
+      "path": "round2/iPhone-SE-3rd-generation/light/rc-card-offline-saved.png",
+      "sha256": "f46bb0ed7998b88f4386f71f937d8d850bfafbe8741be9ac108e7b412778036e"
+    },
+    {
+      "path": "round2/iPhone-SE-3rd-generation/light/rc-normal-branch-outcome-held.png",
+      "sha256": "460203b481caab23e472bfb17a87873c908b5595e5b227bc2b47e8e07ec507e8"
+    }
+  ],
+  "heldPreviews": [
+    {
+      "path": "final/iPhone-17/light/held-preview.json",
+      "evidence": [
+        {
+          "side": "left",
+          "marker": "RC_PREVIEW_HOLD_left",
+          "path": "rc-preview-hold-left.png",
+          "sha256": "445ce215a0eca72b1f77f90dbecef324dfaa89e435769cb63161ca5ab7f8467c"
+        },
+        {
+          "side": "right",
+          "marker": "RC_PREVIEW_HOLD_right",
+          "path": "rc-preview-hold-right.png",
+          "sha256": "3578a5e388e429496f758cea329a70631033d670536fb9a56dbb5fbb5922f117"
+        }
+      ]
+    },
+    {
+      "path": "final/iPhone-SE-3rd-generation/light/held-preview.json",
+      "evidence": [
+        {
+          "side": "left",
+          "marker": "RC_PREVIEW_HOLD_left",
+          "path": "rc-preview-hold-left.png",
+          "sha256": "438571b2cd1c8e257f1832a63d26555886822587233c84f14fb7942e5aa381fa"
+        },
+        {
+          "side": "right",
+          "marker": "RC_PREVIEW_HOLD_right",
+          "path": "rc-preview-hold-right.png",
+          "sha256": "ff9501a838813c5122dada696198d0bdefb7db2501e5ddf6c2f8f671b85bbd2b"
+        }
+      ]
+    },
+    {
+      "path": "round1/iPhone-SE-3rd-generation/light/held-preview.json",
+      "evidence": [
+        {
+          "side": "left",
+          "marker": "RC_PREVIEW_HOLD_left",
+          "path": "rc-preview-hold-left.png",
+          "sha256": "d8364fd1a5bc0441681e91a5524c8a9f5a43ac907a02bf1d1639e417b0b35c91"
+        },
+        {
+          "side": "right",
+          "marker": "RC_PREVIEW_HOLD_right",
+          "path": "rc-preview-hold-right.png",
+          "sha256": "2b7b69a35a9812c3779c69b006ceb27b86defa1f0b34842e0d16ab7b9179eb05"
+        }
+      ]
+    },
+    {
+      "path": "round2/iPhone-SE-3rd-generation/light/held-preview.json",
+      "evidence": [
+        {
+          "side": "left",
+          "marker": "RC_PREVIEW_HOLD_left",
+          "path": "rc-preview-hold-left.png",
+          "sha256": "a03edf6465d66e6f1f6d61246e23dcc15b5c18548f7a2582d753d5de5bf61f1a"
+        },
+        {
+          "side": "right",
+          "marker": "RC_PREVIEW_HOLD_right",
+          "path": "rc-preview-hold-right.png",
+          "sha256": "e6be66946f9084fc5a471e7cab4b93d268a8b447632c59f53261542942c45b51"
+        }
+      ]
+    }
+  ],
+  "protectedUnchanged": [
+    "LifeCrossroads/Domain",
+    "LifeCrossroads/Data",
+    "LifeCrossroads/Persistence",
+    "LifeCrossroads/Resources",
+    "LifeCrossroads/Presentation",
+    "LifeCrossroads/App/GameStore.swift",
+    "LifeCrossroads/App/Assets.xcassets",
+    "Tests",
+    "LifeCrossroads.xcodeproj"
+  ],
+  "ownedSimulatorsDeleted": [
+    "6EE0C128-F824-45AE-80F3-7B16C38DE23B",
+    "AE057CC1-5B50-43FC-8A29-8401AB37C754",
+    "15FF9EE8-8CB6-4B09-888D-6FC876161875",
+    "AA3BBFB1-7FD4-43B4-8D85-633B356C0D4B",
+    "79DF05A7-63A9-41F6-9EAD-53B217211507",
+    "13400969-9228-44C8-9663-17DCC780D6CB"
+  ],
+  "preservedOtherDevices": [
+    "009F9E8B-85F2-49DA-A303-340CD5FC0C4E",
+    "31FF09F8-C006-4127-B4F3-4FD699A966DB",
+    "486BA1F8-2979-4B9C-9484-4C7DEB333786",
+    "65937747-68FF-4A33-A871-2FCFC2A0F623",
+    "697A1DC2-A0CA-4932-8665-9616701F443F",
+    "75A18851-B280-4BDB-8541-4F10F10DEBBB",
+    "8C1D0A79-7C37-408E-AA4F-8CF897C7FE03",
+    "9F9BEFED-B548-4D10-9B0F-21BBF12D96E9",
+    "BC9C1B30-A2E2-4168-A00C-925E96B3FD3E",
+    "E926AACE-517E-4874-BE58-1AC02F5348B2",
+    "F6D49892-3529-459E-A85E-C02D123EEA39",
+    "FF779839-0F49-414C-A384-66B53F3DD916"
+  ],
+  "historicalFailures": [
+    "layout1: build passed; capture runner found two xctestrun outputs before UI launch; own device deleted",
+    "layout2: duplicate background/sheet action ID selected hidden button; scoped query fixed",
+    "round1: paper desk obscured teacher face; native blind critic FAIL; composition corrected",
+    "round1/round2: accessibility stage fixed height truncated prompt; natural text layout corrected"
+  ],
+  "notClaimed": [
+    "Owner visual acceptance",
+    "Human playability",
+    "Manual VoiceOver",
+    "Native held-drag background interruption",
+    "Clean all-CI",
+    "RC03–06",
+    "Phone installation"
+  ]
+}
