@@ -1,0 +1,34 @@
+[
+  {
+    "path": "rc-scene-retry-saved.png",
+    "sha256": "1b93e31e7e64f4a1dc2dd38bed1d2880a5405827ae654cdff23a0f20856c4b47"
+  },
+  {
+    "path": "rc-retry-saved.png",
+    "sha256": "337ab3337fdd58ad7519b81d83df836a14e7718699d6507f9243d7d10513f9e2"
+  },
+  {
+    "path": "rc-scene-save-failed.png",
+    "sha256": "e4c90225a56270f0cff1f496acdde820104c62b4af145264c39d85c493a7d2d5"
+  },
+  {
+    "path": "rc-save-failed.png",
+    "sha256": "cbaeaa8a81ea7b9a5e66f753adbe03a266e13beee0ca0a275f1328e14fd7b8b9"
+  },
+  {
+    "path": "rc-scene-menu-open-decisionUI.png",
+    "sha256": "ef5ec970a4e8fef00c0d582c8af412696d960de711c7da59e9fce5e7e6bca109"
+  },
+  {
+    "path": "rc-menu-open-decisionUI.png",
+    "sha256": "6577c3e1326025edde78487967ea442bc778afa3f85515fc02d53147c1acec94"
+  },
+  {
+    "path": "rc-scene-menu-open-decisionUI-2.png",
+    "sha256": "03f93c4cd31aab811750eb7ee58f8b1c193d31db23a98f481e3b2a729035361f"
+  },
+  {
+    "path": "rc-menu-open-decisionUI-2.png",
+    "sha256": "829d22df79ed73150b626fb5925c5b079e59a4c2f06c68cdffd8192678fba731"
+  }
+]

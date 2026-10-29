@@ -1,0 +1,17 @@
+{
+  "implementation": "d726fb18ad6a537da76e42b498d666a343c59b02",
+  "baseline": "225c2828f4ea56c8ae5eb89a414ac506808b6374",
+  "nativeSources": [
+    {
+      "source": "artifacts/evidence/reigns-fullscreen/final/iPhone-17/source.json",
+      "sha256": "a5f7bbf9951c641fe93385bad0a2805a200f0c8f07cff6b7593b5f94ef469d68",
+      "matchesImplementationCommit": true
+    },
+    {
+      "source": "artifacts/evidence/reigns-fullscreen/final/iPhone-SE-3rd-generation/source.json",
+      "sha256": "a5f7bbf9951c641fe93385bad0a2805a200f0c8f07cff6b7593b5f94ef469d68",
+      "matchesImplementationCommit": true
+    }
+  ],
+  "meaning": "source.json captures pre-commit HEAD plus file digests; every product/test digest now matches the implementation commit. Subsequent companion is evidence/memory only."
+}

@@ -1,0 +1,47 @@
+{
+  "mode": "VALIDATION",
+  "mode_source": "validation_command",
+  "task": "RC-FULLSCREEN-01: age13 pre/post single card on PR24",
+  "task_authority": "user_request and Owner PR24 UI review6486812739",
+  "scope": [
+    "App UI only for teen-project",
+    "Native regression/evidence",
+    "PLAN and canonical daily memory"
+  ],
+  "done": [
+    "Fullscreen default before/after published outcome",
+    "Four original save bytes and cold restore preserved",
+    "Normal play and branch entry wait for explicit continuation",
+    "Large-text truncation and paper teacher occlusion corrected",
+    "Two sizes each 7 native plus1 accessible case passed; 6 owned Simulators deleted",
+    "Independent reviewer inspected final SE/17 native screens; no new confirmed P1/P2 for this slice"
+  ],
+  "claim_ceiling": [
+    "RC-FULLSCREEN-01 engineering/native visual gates only",
+    "Owner visual approval, device playability and human VoiceOver remain unverified"
+  ],
+  "not_claimed": [
+    "RC03–06",
+    "Owner visual acceptance",
+    "Human VoiceOver/playability",
+    "Native held-drag background interruption",
+    "Fresh remote CI success",
+    "Phone installation",
+    "Merge/release",
+    "All prior accessibility findings cleared"
+  ],
+  "evidence_refs": [
+    "artifacts/evidence/reigns-fullscreen/evidence-verification.json",
+    "artifacts/evidence/reigns-fullscreen/test-summary.json",
+    "artifacts/evidence/reigns-fullscreen/basic/checks.json",
+    "docs/reigns-card/FULLSCREEN_REVIEW.md",
+    "docs/reigns-card/FULLSCREEN_BEFORE_AFTER.md",
+    "docs/reigns-card/FULLSCREEN_VALIDATION.md"
+  ],
+  "risk": [
+    "Known session_envelope expiry92/90 remains",
+    "Previous nine native accessibility findings remain",
+    "Large text requires scrolling"
+  ],
+  "next_action": "Update same Draft PR24, verify exact HEAD CI, stop for Owner visual review"
+}

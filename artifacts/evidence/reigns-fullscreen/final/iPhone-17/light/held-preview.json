@@ -1,0 +1,14 @@
+[
+  {
+    "side": "left",
+    "marker": "RC_PREVIEW_HOLD_left",
+    "path": "rc-preview-hold-left.png",
+    "sha256": "445ce215a0eca72b1f77f90dbecef324dfaa89e435769cb63161ca5ab7f8467c"
+  },
+  {
+    "side": "right",
+    "marker": "RC_PREVIEW_HOLD_right",
+    "path": "rc-preview-hold-right.png",
+    "sha256": "3578a5e388e429496f758cea329a70631033d670536fb9a56dbb5fbb5922f117"
+  }
+]

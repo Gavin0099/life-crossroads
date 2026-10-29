@@ -1,0 +1,33 @@
+{
+  "base": "5c20fa7cad81565aa7638165515da4b5288ce47a",
+  "productionUnchanged": [
+    "LifeCrossroads/App",
+    "LifeCrossroads/Domain",
+    "LifeCrossroads/Data",
+    "LifeCrossroads/Persistence",
+    "LifeCrossroads/Presentation"
+  ],
+  "pythonPassed": 54,
+  "targetedNative": {
+    "passed": 1,
+    "failed": 0,
+    "os": "27.1",
+    "hardware": "iPhone16Pro"
+  },
+  "historicalLocalFailure": "0/1: new HUD minimum44 incorrectly applied to existing system toolbar42; scope corrected, save assertions retained",
+  "ownedSimulatorsDeleted": [
+    "94C0F229-B458-410F-93C7-CD8B3519BE2F",
+    "1C274359-ED9E-4B1D-801C-6C02A5B26841"
+  ],
+  "signedPhysicalAppBuilt": true,
+  "codesignVerified": true,
+  "appBinarySHA256": "f4eaf125e4e8df411815e7dafd9d0c00c2a1aeaa53a9241f3d74251dac9da84d",
+  "installed": false,
+  "notClaimed": [
+    "iOS18.5 fix before new remote CI",
+    "Human VoiceOver",
+    "Child fun",
+    "RC03\u201306",
+    "Merge/release"
+  ]
+}

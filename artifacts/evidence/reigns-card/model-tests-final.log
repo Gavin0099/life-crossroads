@@ -1,0 +1,51 @@
+Building for production...
+[Computing dependencies]
+[1 / 2] LifePresentation-product
+[2 / 5] LifePresentation
+[3 / 6] LifePresentation
+[10 / 11] LifePresentationTests-product
+[11 / 12] LifePersistenceTests-product
+[11 / 12] LifePresentationTests-product
+[15 / 19] LifePresentationTests-product
+[17 / 19] LifePresentationTests-product
+[19 / 21] LifePersistenceTests-product
+Build complete! (14.13秒)
+Test Suite 'Selected tests' started at 2026-10-29 10:28:24.158.
+Test Suite 'LifePresentationTests.xctest' started at 2026-10-29 10:28:24.161.
+Test Suite 'DecisionCardModelTests' started at 2026-10-29 10:28:24.161.
+Test Case '-[LifePresentationTests.DecisionCardModelTests testAllFourButtonsKeepExactChoiceIDsWithoutMutatingLife]' started.
+Test Case '-[LifePresentationTests.DecisionCardModelTests testAllFourButtonsKeepExactChoiceIDsWithoutMutatingLife]' passed (0.032 seconds).
+Test Case '-[LifePresentationTests.DecisionCardModelTests testOnlyReviewedFourChoiceEventCanEnableSwipe]' started.
+Test Case '-[LifePresentationTests.DecisionCardModelTests testOnlyReviewedFourChoiceEventCanEnableSwipe]' passed (0.017 seconds).
+Test Case '-[LifePresentationTests.DecisionCardModelTests testReleaseThresholdAndDirectionUseFinalActualPosition]' started.
+Test Case '-[LifePresentationTests.DecisionCardModelTests testReleaseThresholdAndDirectionUseFinalActualPosition]' passed (0.021 seconds).
+Test Case '-[LifePresentationTests.DecisionCardModelTests testRepeatedRequestsOnlyCommitOnceAndFailedSaveCanRetry]' started.
+Test Case '-[LifePresentationTests.DecisionCardModelTests testRepeatedRequestsOnlyCommitOnceAndFailedSaveCanRetry]' passed (0.015 seconds).
+Test Case '-[LifePresentationTests.DecisionCardModelTests testUnavailablePreviewBlocksButtonsAndSwipesWithActualReason]' started.
+Test Case '-[LifePresentationTests.DecisionCardModelTests testUnavailablePreviewBlocksButtonsAndSwipesWithActualReason]' passed (0.011 seconds).
+Test Case '-[LifePresentationTests.DecisionCardModelTests testVerticalDiagonalAndInterruptedGesturesCannotSubmit]' started.
+Test Case '-[LifePresentationTests.DecisionCardModelTests testVerticalDiagonalAndInterruptedGesturesCannotSubmit]' passed (0.013 seconds).
+Test Suite 'DecisionCardModelTests' passed at 2026-10-29 10:28:24.271.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.109 (0.110) seconds
+Test Suite 'LifePresentationTests.xctest' passed at 2026-10-29 10:28:24.271.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.109 (0.110) seconds
+Test Suite 'Selected tests' passed at 2026-10-29 10:28:24.271.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.109 (0.113) seconds
+Test Suite 'Selected tests' started at 2026-10-29 10:28:24.450.
+Test Suite 'LifePersistenceTests.xctest' started at 2026-10-29 10:28:24.452.
+Test Suite 'LifePersistenceTests.xctest' passed at 2026-10-29 10:28:24.452.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-29 10:28:24.453.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.002) seconds
+Test Suite 'Selected tests' started at 2026-10-29 10:28:24.649.
+Test Suite 'LifeDomainTests.xctest' started at 2026-10-29 10:28:24.651.
+Test Suite 'LifeDomainTests.xctest' passed at 2026-10-29 10:28:24.651.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-29 10:28:24.651.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.002) seconds
+Test Suite 'Selected tests' started at 2026-10-29 10:28:24.814.
+Test Suite 'LifeAnalysisTests.xctest' started at 2026-10-29 10:28:24.815.
+Test Suite 'LifeAnalysisTests.xctest' passed at 2026-10-29 10:28:24.815.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-29 10:28:24.815.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds

@@ -1,0 +1,7 @@
+failed-ci*/
+*.xcresult/
+build.log
+device*.json
+
+attachments/
+ci-status.json

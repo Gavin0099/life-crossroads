@@ -1,0 +1,60 @@
+Building for production...
+[Computing dependencies]
+[Pre-planning 1 / 472]
+[Planning deferred tasks]
+[13 / 50]
+[14 / 51] LifeDomain
+[16 / 52] LifeDomain
+[22 / 64] LifeAnalysis
+[27 / 68] LifePersistence
+[30 / 64] LifeData
+[33 / 60] LifePresentation
+[39 / 59] LifePresentationTests-product
+[42 / 61] LifePersistenceTests-product
+[45 / 63] LifePersistenceTests-product
+[47 / 63] LifePersistenceTests-product
+[47 / 63] LifePresentationTests-product
+[52 / 63] LifePresentationTests-product
+[54 / 63] LifeAnalysis
+[57 / 59] LifePresentationTests-product
+[63 / 65] LifePersistenceTests-product
+Build complete! (35.86秒)
+Test Suite 'Selected tests' started at 2026-10-29 10:21:13.294.
+Test Suite 'LifePresentationTests.xctest' started at 2026-10-29 10:21:13.298.
+Test Suite 'DecisionCardModelTests' started at 2026-10-29 10:21:13.298.
+Test Case '-[LifePresentationTests.DecisionCardModelTests testAllFourButtonsKeepExactChoiceIDsWithoutMutatingLife]' started.
+Test Case '-[LifePresentationTests.DecisionCardModelTests testAllFourButtonsKeepExactChoiceIDsWithoutMutatingLife]' passed (0.031 seconds).
+Test Case '-[LifePresentationTests.DecisionCardModelTests testOnlyReviewedFourChoiceEventCanEnableSwipe]' started.
+Test Case '-[LifePresentationTests.DecisionCardModelTests testOnlyReviewedFourChoiceEventCanEnableSwipe]' passed (0.012 seconds).
+Test Case '-[LifePresentationTests.DecisionCardModelTests testReleaseThresholdAndDirectionUseFinalActualPosition]' started.
+Test Case '-[LifePresentationTests.DecisionCardModelTests testReleaseThresholdAndDirectionUseFinalActualPosition]' passed (0.012 seconds).
+Test Case '-[LifePresentationTests.DecisionCardModelTests testRepeatedRequestsOnlyCommitOnceAndFailedSaveCanRetry]' started.
+Test Case '-[LifePresentationTests.DecisionCardModelTests testRepeatedRequestsOnlyCommitOnceAndFailedSaveCanRetry]' passed (0.009 seconds).
+Test Case '-[LifePresentationTests.DecisionCardModelTests testUnavailablePreviewBlocksButtonsAndSwipesWithActualReason]' started.
+Test Case '-[LifePresentationTests.DecisionCardModelTests testUnavailablePreviewBlocksButtonsAndSwipesWithActualReason]' passed (0.010 seconds).
+Test Case '-[LifePresentationTests.DecisionCardModelTests testVerticalDiagonalAndInterruptedGesturesCannotSubmit]' started.
+Test Case '-[LifePresentationTests.DecisionCardModelTests testVerticalDiagonalAndInterruptedGesturesCannotSubmit]' passed (0.011 seconds).
+Test Suite 'DecisionCardModelTests' passed at 2026-10-29 10:21:13.385.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.086 (0.087) seconds
+Test Suite 'LifePresentationTests.xctest' passed at 2026-10-29 10:21:13.385.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.086 (0.087) seconds
+Test Suite 'Selected tests' passed at 2026-10-29 10:21:13.385.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.086 (0.092) seconds
+Test Suite 'Selected tests' started at 2026-10-29 10:21:13.569.
+Test Suite 'LifePersistenceTests.xctest' started at 2026-10-29 10:21:13.571.
+Test Suite 'LifePersistenceTests.xctest' passed at 2026-10-29 10:21:13.571.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-29 10:21:13.571.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.002) seconds
+Test Suite 'Selected tests' started at 2026-10-29 10:21:13.767.
+Test Suite 'LifeDomainTests.xctest' started at 2026-10-29 10:21:13.768.
+Test Suite 'LifeDomainTests.xctest' passed at 2026-10-29 10:21:13.768.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-29 10:21:13.769.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.002) seconds
+Test Suite 'Selected tests' started at 2026-10-29 10:21:13.955.
+Test Suite 'LifeAnalysisTests.xctest' started at 2026-10-29 10:21:13.956.
+Test Suite 'LifeAnalysisTests.xctest' passed at 2026-10-29 10:21:13.956.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-29 10:21:13.956.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds

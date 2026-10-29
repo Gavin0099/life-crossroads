@@ -1130,7 +1130,7 @@ final class LifeCrossroadsUITests: XCTestCase {
 
     private func launch(seed: String, largestText: Bool = false, failingSaves: String? = nil, world: Bool = false, overview: Bool = false, randomBirth: Bool = false) -> XCUIApplication {
         let app = XCUIApplication()
-        app.launchArguments += ["-ui-testing", "-legacy-event-first", "-reset-save", "-life-seed", seed,
+        app.launchArguments += ["-ui-testing", "-decision-ui-original", "-legacy-event-first", "-reset-save", "-life-seed", seed,
                                 "-AppleLanguages", "(zh-Hant)", "-AppleLocale", "zh_TW"]
         if !overview { app.launchArguments += ["-legacy-life-overview"] }
         if largestText {

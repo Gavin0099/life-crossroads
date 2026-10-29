@@ -1,0 +1,13 @@
+{
+  "head": "677da55696925a022b24d920b41dd1e595640003",
+  "runID": 40821317695,
+  "artifactID": 12875746505,
+  "transport": "GitHub connector artifact; selected ZIP entries with CRC validation",
+  "fullArchiveSHAIndependentlyVerified": false,
+  "sourceMatchesHead": true,
+  "lightPassed": 7,
+  "lightFailed": 0,
+  "accessible": "interrupted; no completed summary",
+  "workflow": "cancelled at20m boundary; not a pass",
+  "explicitSimulatorDeletion": "not evidenced in cancellation log; remote runner is ephemeral"
+}

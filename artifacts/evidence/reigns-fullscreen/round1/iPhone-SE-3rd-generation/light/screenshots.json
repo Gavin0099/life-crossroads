@@ -1,0 +1,14 @@
+[
+  {
+    "path": "rc-first-screen.png",
+    "sha256": "c66371e14a588088f318250215eb13e0699e68b194ea2c0abb8d4e0d82696a9e"
+  },
+  {
+    "path": "rc-scene-card-offline-saved.png",
+    "sha256": "8804099620d0c4e09016cd39c9f4f48459ca94e412ac1b48f6a0076cbe0bcee2"
+  },
+  {
+    "path": "rc-card-offline-saved.png",
+    "sha256": "3be57281dcaec3fa1217d36a97f6a30c224b15f3acaffce12aa698ac409d3b3b"
+  }
+]

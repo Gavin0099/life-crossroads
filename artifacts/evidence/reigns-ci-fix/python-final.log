@@ -1,0 +1,7 @@
+........................Could not verify SwiftUI runtime issues: Expected a completed, passing XCTest summary: result='Failed', passed=6, failed=1, skipped=0
+..............................
+----------------------------------------------------------------------
+Ran 54 tests in 62.099s
+
+OK
+SwiftUI publication regression: no matching runtime issue reported

@@ -1,0 +1,105 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test-without-building -xctestrun .build/reigns-fullscreen/Build/Products/LifeCrossroads_iphonesimulator27.1-arm64.xctestrun -destination "platform=iOS Simulator,id=94C0F229-B458-410F-93C7-CD8B3519BE2F" -parallel-testing-enabled NO -collect-test-diagnostics never -resultBundlePath artifacts/evidence/reigns-ci-fix/local-menu/iPhone-16-Pro/light/result.xcresult "-only-testing:LifeCrossroadsUITests/ReignsCardTests/testFailedSaveBackgroundModeSwitchAndRetryPreserveOriginal"
+
+Writing result bundle at path:
+	/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/reigns-ci-fix/local-menu/iPhone-16-Pro/light/result.xcresult
+
+2026-10-29 12:59:34.345 xcodebuild[3574:714742] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 12:59:42.661836+0800 LifeCrossroadsUITests-Runner[3692:715692] [Default] Running tests...
+objc[3692]: Class UIAccessibilityLoaderWebShared is implemented in both /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.434.0.nMklRF/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x106228398) and /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.434.0.nMklRF/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x106360310). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-10-29 12:59:47.685.
+Test Suite 'LifeCrossroadsUITests.xctest' started at 2026-10-29 12:59:47.687.
+Test Suite 'ReignsCardTests' started at 2026-10-29 12:59:47.687.
+Test Case '-[LifeCrossroadsUITests.ReignsCardTests testFailedSaveBackgroundModeSwitchAndRetryPreserveOriginal]' started.
+    t =     0.02s Start Test at 2026-10-29 12:59:47.711
+    t =     0.17s Set Up
+    t =     0.18s Open com.gavin0099.LifeCrossroads
+    t =     0.18s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 12:59:48.257 xcodebuild[3574:714742] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 12:59:48.257 xcodebuild[3574:714742] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 12:59:48.273 xcodebuild[3574:714742] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     1.66s         Setting up automation session
+    t =     3.99s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =     6.36s Waiting 10.0s for "resumeLife" Button to exist
+    t =     7.41s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =     7.41s         Checking existence of `"resumeLife" Button`
+    t =     7.50s Tap "resumeLife" Button
+    t =     7.50s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     7.51s     Find the "resumeLife" Button
+    t =     7.54s     Check for interrupting elements affecting "resumeLife" Button
+    t =     7.58s     Synthesize event
+    t =     8.05s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     8.91s Waiting 5.0s for "decisionUIMenu" Button to exist
+    t =     9.96s     Checking `Expect predicate `existsNoRetry == 1` for object "decisionUIMenu" Button`
+    t =     9.96s         Checking existence of `"decisionUIMenu" Button`
+    t =     9.99s Waiting 5.0s for "swipeDetails" Button to exist
+    t =    11.05s     Checking `Expect predicate `existsNoRetry == 1` for object "swipeDetails" Button`
+    t =    11.05s         Checking existence of `"swipeDetails" Button`
+    t =    11.07s Find the "uiTestArchiveChecksum" StaticText
+    t =    11.08s Waiting 5.0s for "decisionUIMenu" Button to exist
+    t =    12.13s     Checking `Expect predicate `existsNoRetry == 1` for object "decisionUIMenu" Button`
+    t =    12.13s         Checking existence of `"decisionUIMenu" Button`
+    t =    12.15s Find the "decisionUIMenu" Button
+    t =    12.17s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    12.18s Tap Target Application 'com.gavin0099.LifeCrossroads'[0.00, 0.00] -> (368.0, 88.0)
+    t =    12.18s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    12.18s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    12.20s     Check for interrupting elements affecting "人生岔路" Application
+    t =    12.21s     Synthesize event
+    t =    12.22s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    12.22s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    12.24s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    12.53s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    13.76s Waiting 5.0s for "decisionUI.standard" Button to exist
+    t =    14.76s     Checking `Expect predicate `existsNoRetry == 1` for object "decisionUI.standard" Button`
+    t =    14.76s         Checking existence of `"decisionUI.standard" Button`
+    t =    14.79s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    14.95s Added attachment named 'rc-menu-open-decisionUI.standard'
+    t =    14.95s Checking existence of `"lifeWorldScene" Other`
+    t =    14.97s Checking existence of `"swipeActionsSheet" ScrollView`
+    t =    14.98s Checking existence of `"lifeWorldScene" Other`
+    t =    15.00s Find the "lifeWorldScene" Other
+    t =    15.10s Added attachment named 'rc-scene-menu-open-decisionUI.standard'
+    t =    15.10s Tap "decisionUI.standard" Button
+    t =    15.10s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    15.11s     Find the "decisionUI.standard" Button
+    t =    15.12s     Check for interrupting elements affecting "decisionUI.standard" Button
+    t =    15.14s     Synthesize event
+    t =    15.44s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    17.48s Waiting 5.0s for "choice.offline" Button to exist
+    t =    18.51s     Checking `Expect predicate `existsNoRetry == 1` for object "choice.offline" Button`
+    t =    18.51s         Checking existence of `"choice.offline" Button`
+    t =    18.58s Find the "uiTestArchiveChecksum" StaticText
+    t =    18.62s Waiting 5.0s for "decisionUIMenu" Button to exist
+    t =    19.65s     Checking `Expect predicate `existsNoRetry == 1` for object "decisionUIMenu" Button`
+    t =    19.65s         Checking existence of `"decisionUIMenu" Button`
+    t =    19.69s Find the "decisionUIMenu" Button
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/UITests/ReignsCardTests.swift:256: error: -[LifeCrossroadsUITests.ReignsCardTests testFailedSaveBackgroundModeSwitchAndRetryPreserveOriginal] : XCTAssertGreaterThanOrEqual failed: ("42.0") is less than ("44.0")
+    t =    20.24s Tear Down
+Test Case '-[LifeCrossroadsUITests.ReignsCardTests testFailedSaveBackgroundModeSwitchAndRetryPreserveOriginal]' failed (20.496 seconds).
+Test Suite 'ReignsCardTests' failed at 2026-10-29 13:00:08.206.
+	 Executed 1 test, with 1 failure (0 unexpected) in 20.496 (20.519) seconds
+Test Suite 'LifeCrossroadsUITests.xctest' failed at 2026-10-29 13:00:08.207.
+	 Executed 1 test, with 1 failure (0 unexpected) in 20.496 (20.520) seconds
+Test Suite 'Selected tests' failed at 2026-10-29 13:00:08.207.
+	 Executed 1 test, with 1 failure (0 unexpected) in 20.496 (20.522) seconds
+2026-10-29 13:00:08.262 xcodebuild[3574:714742] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 13:00:08.262 xcodebuild[3574:714742] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 13:00:08.263 xcodebuild[3574:714742] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 13:00:08.304 xcodebuild[3574:714742] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 13:00:08.304 xcodebuild[3574:714742] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 13:00:08.305 xcodebuild[3574:714742] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 13:00:08.588 xcodebuild[3574:714742] [MT] IDETestOperationsObserverDebug: 36.183 elapsed -- Testing started completed.
+2026-10-29 13:00:08.588 xcodebuild[3574:714742] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-29 13:00:08.588 xcodebuild[3574:714742] [MT] IDETestOperationsObserverDebug: 36.183 sec, +36.183 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/reigns-ci-fix/local-menu/iPhone-16-Pro/light/result.xcresult
+
+Failing tests:
+	ReignsCardTests.testFailedSaveBackgroundModeSwitchAndRetryPreserveOriginal()
+
+** TEST EXECUTE FAILED **
+
+Testing started

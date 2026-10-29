@@ -1,0 +1,22 @@
+[
+  {
+    "path": "rc-rest-saved.png",
+    "sha256": "55243ce2669efd837044627664eab05f95a340627c6df6c2f7c6c3b666a66363"
+  },
+  {
+    "path": "rc-preparation-details.png",
+    "sha256": "19688a8d0fbd09359b8e1e56676766dfa78e6e70e41cf757c7945a1078c4b737"
+  },
+  {
+    "path": "rc-all-actions.png",
+    "sha256": "a4216c6a1216e85670e5745c5798f8358b9bd8c04a1b5310a0a8f40c5262e3cf"
+  },
+  {
+    "path": "rc-scene-first-screen.png",
+    "sha256": "abf9728f7664df958a35fa5e28f70cae28ca92023529204d6e60949e5871716b"
+  },
+  {
+    "path": "rc-first-screen.png",
+    "sha256": "3e6e09ccaf31a746d6b8db9e9f547581e06aa80c732536ceb90d59cc88191e6e"
+  }
+]

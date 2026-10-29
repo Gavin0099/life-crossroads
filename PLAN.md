@@ -1,6 +1,6 @@
 # 《人生岔路》開發計畫
 
-> **最後更新**: 2026-10-28
+> **最後更新**: 2026-10-29
 > **Owner**: Gavin0099
 > **Freshness**: Sprint (14d)
 
@@ -27,9 +27,17 @@
 
 ## Current Phase
 
-P1 / Owner試玩回饋 / 文字與背景對比修正。Owner2026-10-29回報實機看不到字，授權查詢iOS配色skill並直接修正；接續PR21 `45d3ff9`。只修淺／深色與提高對比的成對色票及實際文字，無新內容／Domain／Data／Persistence／Seed／schema改動。這是有界bugfix，不重開已結束的FINAL-POLISH美術Loop；Draft/HOLD不合併發布。
+P1 / Reigns+ / RC-FULLSCREEN-01。Owner 2026-10-29 REJECT PR24 的表單版型，授權在同分支改13歲選前與選後全螢幕單卡。主卡至少65%可遊玩安全區、HUD精簡、一般模式固定版型、求助/休息小型操作；大字/VoiceOver保留完整按鈕。保留原選擇模型與save-before-publish，不改Domain/Data/Persistence。Draft/HOLD，不擴其他51事件、不合併發布。
 
 ## Current Sprint
+
+Owner已CONDITIONAL ACCEPT 5c20fa7的13歲全螢幕版型，先實機驗收再決定是否統一17歲多選項。本輪只修PR24遠端CI：保留xcresult查明iOS18.5是6/7（新HUD選單AX點擊失敗），改用可見按鈕中心的真實觸碰並要求選單展開／切換後存檔不變；失敗摘要在拒絕前保存。接著核對新HEAD CI並準備Wi-Fi更新，未授權擴充RC03～06。
+
+驗收依 [RC-FULLSCREEN-01](docs/reigns-card/FULLSCREEN.md)。先前RC00–02的工程測試保留，但舊視覺判定已被Owner REJECT取代；新UI需兩尺寸真實選前/四種選後及保存反例。手機安裝稍後進行。
+
+RC-FULLSCREEN-01本機交付：選前與選後同舞台、四路保存一致；兩尺寸各7項一般＋1項最大字級原生通過。紙本遮老師、大字截斷及非capture分岔自動離場已修正；六台Simulator已delete。詳[原生對照](docs/reigns-card/FULLSCREEN_BEFORE_AFTER.md)及[驗證邊界](docs/reigns-card/FULLSCREEN_VALIDATION.md)。同PR24更新、Owner視覺審查與當前HEAD遠端CI另列；不以此宣稱整體遊戲性通過。
+
+以下為配色修正記錄：
 
 文字可讀性修正的原生基準已重現：系統深色白字配固定奶油底。改為具四種外觀變體的語意色票；主文字最低10.73:1、次文字7.17:1。雙尺寸淺／深／高對比大字與真實存檔不變性取證、剩餘原生audit finding及Wi-Fi安裝狀態見[本輪驗證](docs/readability/VALIDATION.md)。原生capture成功不等於audit全綠或完整VoiceOver驗收。Basic既有期限仍FAIL，不更改Gate。
 

@@ -15,6 +15,7 @@ struct CrossroadsView: View {
     @State private var showParallelPicker = false
     @State private var parallelRows: [BranchComparisonRow]?
     @State private var showFocus = false
+    @State private var swipeDecision = !ProcessInfo.processInfo.arguments.contains("-decision-ui-original")
     @State private var showSources = false
     @State private var showTrace = false
     @State private var showEventStory = false
@@ -37,6 +38,7 @@ struct CrossroadsView: View {
             .background(store.worldPreviewEnabled ? worldPaper : StoryPalette.page)
             .navigationTitle("人生岔路")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar(showsSwipeExperiment ? .hidden : .visible, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     if store.viewingOriginal {
@@ -45,6 +47,14 @@ struct CrossroadsView: View {
                     } else if store.session != nil {
                         Button("首頁", systemImage: "house") { store.home() }
                             .accessibilityLabel("回首頁，保留目前進度")
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    if swipeExperimentAvailable {
+                        Menu("決策方式", systemImage: "hand.draw") {
+                            Button("原本的選項") { swipeDecision = false }.accessibilityIdentifier("decisionUI.standard")
+                            Button("Reigns+ 滑動卡") { swipeDecision = true }.accessibilityIdentifier("decisionUI.swipe")
+                        }.accessibilityIdentifier("decisionUIMenu")
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
@@ -63,7 +73,9 @@ struct CrossroadsView: View {
                 }
             }
             .safeAreaInset(edge: .bottom) {
-                if store.worldPreviewEnabled && store.session != nil && !store.viewingOriginal && store.session?.phase != .ended {
+                if showsSwipeExperiment {
+                    EmptyView() // All four actions are on the card screen.
+                } else if store.worldPreviewEnabled && store.session != nil && !store.viewingOriginal && store.session?.phase != .ended {
                     playbackControls
                 } else if store.session?.phase == .reflecting {
                     Button(store.session.map { $0.traces.count == $0.plannedDecisionCount } == true ? "翻開人生回憶冊" : "走向下一段") { store.next() }
@@ -134,7 +146,9 @@ struct CrossroadsView: View {
             .onDisappear { store.suspendWorld(true) }
             .task(id: worldTaskID) {
                 store.suspendWorld(worldSuspended)
-                if voiceOver { store.pauseWorld(true) }
+                // Every published card outcome waits for explicit continuation, including
+                // branch entry and cold restore, which do not pass through submitSwipeChoice.
+                if voiceOver || (showsSwipeExperiment && swipeOutcome != nil) { store.pauseWorld(true) }
                 while store.canAnimateWorld && !worldSuspended {
                     do { try await Task.sleep(for: .milliseconds(reduceMotion ? 250 : 50)) }
                     catch { return }
@@ -146,7 +160,18 @@ struct CrossroadsView: View {
     }
 
     @ViewBuilder private var rootContent: some View {
-        if showsLifeOverview, let session = store.session, let catalog = store.catalog {
+        if showsSwipeExperiment, let event = swipeEvent, let world = store.world, let session = store.session {
+            DecisionSwipeCard(event: event, world: world,
+                motion: store.playback.motion(reduceMotion: reduceMotion), country: store.name(session.state.countryCode),
+                previews: event.choices.compactMap { store.preview($0.id) }, context: shortStory(event),
+                reduceMotion: reduceMotion, outcome: swipeOutcome,
+                submit: submitSwipeChoice, continueLife: {
+                    store.next()
+                    if store.session?.phase == .choosing { store.pauseWorld(voiceOver) }
+                }, home: { store.home() }, useOriginal: { swipeDecision = false }, sources: { showSources = true })
+                .id("\(session.state.countryCode)/\(session.state.householdID)/\(session.state.seed)/\(session.traces.count)")
+                .overlay(alignment: .bottomLeading) { archiveChecksum.opacity(0.01).allowsHitTesting(false) }
+        } else if showsLifeOverview, let session = store.session, let catalog = store.catalog {
             lifeOverview(session, catalog: catalog)
         } else if store.worldPreviewEnabled, !store.viewingOriginal,
            let session = store.session, session.phase != .ended, let world = store.world {
@@ -154,6 +179,34 @@ struct CrossroadsView: View {
         } else {
             legacyPage
         }
+    }
+
+    private var swipeExperimentAvailable: Bool {
+        !store.viewingOriginal && store.worldPreviewEnabled && store.playback.phase == .eventPaused
+            && store.session?.phase == .choosing && store.session?.state.age == 13
+            && store.currentEvent.map(DecisionCardModel.supports) == true
+    }
+    private var swipeOutcome: ConsequenceTrace? {
+        guard !store.viewingOriginal, store.worldPreviewEnabled,
+              store.session?.phase == .reflecting, let trace = store.session?.traces.last,
+              trace.age == 13, trace.eventID == "teen-project", trace.applied else { return nil }
+        return trace
+    }
+    private var swipeEvent: DecisionSkeleton? {
+        store.currentEvent ?? (swipeOutcome == nil ? nil : store.catalog?.decisions.first { $0.id == "teen-project" })
+    }
+    private var showsSwipeExperiment: Bool { swipeDecision && (swipeExperimentAvailable || swipeOutcome != nil) }
+
+    private func submitSwipeChoice(_ id: String) -> Bool {
+        guard swipeExperimentAvailable, let before = store.session else { return false }
+        store.choose(id)
+        guard let saved = store.session, saved.phase == .reflecting,
+              saved.traces.count == before.traces.count + 1,
+              let trace = saved.traces.last else { return false }
+        let matches = trace.eventID == "teen-project" && trace.choiceID == id && trace.applied
+        // Keep the published result on the same stage until the player continues.
+        if matches { store.pauseWorld(true) }
+        return matches
     }
 
     private var legacyPage: some View {

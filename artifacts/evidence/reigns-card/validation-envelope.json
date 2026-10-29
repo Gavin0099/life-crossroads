@@ -1,0 +1,44 @@
+{
+  "mode": "VALIDATION",
+  "mode_source": "validation_command",
+  "task": "Issue23 Reigns+ RC-00–02 teen-project PoC",
+  "task_authority": "user_request",
+  "scope": [
+    "App/Presentation single age13 event",
+    "Additive model/native tests and native CI job",
+    "Evidence, PLAN and canonical daily memory"
+  ],
+  "done": [
+    "Swipe preview/cancel/release threshold and four original alternatives",
+    "Original store save-before-publish retained; paired archives and cold restore identical",
+    "Independent review P2 digital explanation fixed and retested",
+    "Six task-created Simulators deleted"
+  ],
+  "claim_ceiling": [
+    "Bounded RC00–02 PoC, default original UI",
+    "Engineering ACCEPT; Visual CONDITIONAL ACCEPT; Owner trial candidate"
+  ],
+  "not_claimed": [
+    "RC03–06",
+    "Manual VoiceOver or child fun",
+    "Native held-drag interruption",
+    "Fresh HEAD CI success",
+    "Phone installation",
+    "Merge/release",
+    "All accessibility findings resolved"
+  ],
+  "evidence_refs": [
+    "artifacts/evidence/reigns-card/evidence-verification.json",
+    "artifacts/evidence/reigns-card/test-summary.json",
+    "artifacts/evidence/reigns-card/basic-checks.json",
+    "docs/reigns-card/REVIEW.md",
+    "docs/reigns-card/BEFORE_AFTER.md",
+    "docs/reigns-card/VALIDATION.md"
+  ],
+  "risk": [
+    "Existing session_envelope expiry92/90 remains FAIL",
+    "Prior nine native accessibility findings remain",
+    "Maximum text needs scrolling"
+  ],
+  "next_action": "Create independent Draft PR based on codex/final-polish-loop; check exact HEAD CI; stop for Owner review"
+}
