@@ -1,0 +1,9 @@
+{
+  "artifactID": 12872962362,
+  "archiveSHA256": "2a6822b8c3e19d31e76848eb76fdd1925600cef6101c0f2c62f38aaa2c21411d",
+  "workflowRun": 40816153774,
+  "reportedCheckout": "33184c082463fdc90e2b072968681ee0b1e34ab3",
+  "comparedPRHead": "5c20fa7cad81565aa7638165515da4b5288ce47a",
+  "sourceMismatches": [],
+  "passed": true
+}

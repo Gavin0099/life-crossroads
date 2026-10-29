@@ -31,6 +31,8 @@ P1 / Reigns+ / RC-FULLSCREEN-01。Owner 2026-10-29 REJECT PR24 的表單版型�
 
 ## Current Sprint
 
+Owner已CONDITIONAL ACCEPT 5c20fa7的13歲全螢幕版型，先實機驗收再決定是否統一17歲多選項。本輪只修PR24遠端CI：保留xcresult查明iOS18.5是6/7（新HUD選單AX點擊失敗），改用可見按鈕中心的真實觸碰並要求選單展開／切換後存檔不變；失敗摘要在拒絕前保存。接著核對新HEAD CI並準備Wi-Fi更新，未授權擴充RC03～06。
+
 驗收依 [RC-FULLSCREEN-01](docs/reigns-card/FULLSCREEN.md)。先前RC00–02的工程測試保留，但舊視覺判定已被Owner REJECT取代；新UI需兩尺寸真實選前/四種選後及保存反例。手機安裝稍後進行。
 
 RC-FULLSCREEN-01本機交付：選前與選後同舞台、四路保存一致；兩尺寸各7項一般＋1項最大字級原生通過。紙本遮老師、大字截斷及非capture分岔自動離場已修正；六台Simulator已delete。詳[原生對照](docs/reigns-card/FULLSCREEN_BEFORE_AFTER.md)及[驗證邊界](docs/reigns-card/FULLSCREEN_VALIDATION.md)。同PR24更新、Owner視覺審查與當前HEAD遠端CI另列；不以此宣稱整體遊戲性通過。

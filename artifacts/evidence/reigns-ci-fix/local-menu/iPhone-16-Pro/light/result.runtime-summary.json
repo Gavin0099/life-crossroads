@@ -1,0 +1,46 @@
+{
+  "devicesAndConfigurations": [
+    {
+      "device": {
+        "architecture": "arm64",
+        "deviceId": "94C0F229-B458-410F-93C7-CD8B3519BE2F",
+        "deviceName": "ReignsCard-iPhone-16-Pro",
+        "modelName": "iPhone 16 Pro",
+        "osBuildNumber": "24A434",
+        "osVersion": "27.0",
+        "platform": "iOS Simulator"
+      },
+      "expectedFailures": 0,
+      "failedTests": 1,
+      "passedTests": 0,
+      "skippedTests": 0,
+      "testPlanConfiguration": {
+        "configurationId": "1",
+        "configurationName": "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription": "LifeCrossroads · Built with macOS 27.0",
+  "expectedFailures": 0,
+  "failedTests": 1,
+  "finishTime": 1793250008.589,
+  "passedTests": 0,
+  "result": "Failed",
+  "runtimeWarnings": [],
+  "skippedTests": 0,
+  "startTime": 1793249972.282,
+  "statistics": [],
+  "testFailures": [
+    {
+      "failureText": "XCTAssertGreaterThanOrEqual failed: (\"42.0\") is less than (\"44.0\")",
+      "targetName": "LifeCrossroadsUITests",
+      "testIdentifier": 1,
+      "testIdentifierString": "ReignsCardTests/testFailedSaveBackgroundModeSwitchAndRetryPreserveOriginal()",
+      "testIdentifierURL": "test://com.apple.xcode/LifeCrossroads/LifeCrossroadsUITests/ReignsCardTests/testFailedSaveBackgroundModeSwitchAndRetryPreserveOriginal",
+      "testName": "testFailedSaveBackgroundModeSwitchAndRetryPreserveOriginal()"
+    }
+  ],
+  "title": "Test - LifeCrossroads",
+  "topInsights": [],
+  "totalTestCount": 1
+}

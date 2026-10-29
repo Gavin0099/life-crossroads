@@ -1,0 +1,15 @@
+........................Could not verify SwiftUI runtime issues: XCTest did not pass: result='Failed', passed=6, failed=1, skipped=0
+.......................F......
+======================================================================
+FAIL: test_empty_runtime_summary_cannot_pass_and_still_cleans_up (test_simulator_cleanup.SimulatorCleanupTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/Tests/test_simulator_cleanup.py", line 115, in test_empty_runtime_summary_cannot_pass_and_still_cleans_up
+    self.assertIn("Expected a completed, passing XCTest summary", result.stderr)
+AssertionError: 'Expected a completed, passing XCTest summary' not found in "Could not verify SwiftUI runtime issues: XCTest did not pass: result='Passed', passed=0, failed=None, skipped=None\n"
+
+----------------------------------------------------------------------
+Ran 54 tests in 29.145s
+
+FAILED (failures=1)
+SwiftUI publication regression: no matching runtime issue reported

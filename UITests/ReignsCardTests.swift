@@ -60,9 +60,13 @@ import XCTest
         continueAfterFailure = false
         let app = try open(swipe: true, failSave: true)
         let before = try checksum(app)
-        app.buttons["decisionUIMenu"].tap(); app.buttons["decisionUI.standard"].tap()
+        openDecisionMenu(app, expecting: "decisionUI.standard")
+        app.buttons["decisionUI.standard"].tap()
+        XCTAssertTrue(app.buttons["choice.offline"].waitForExistence(timeout: 5))
         XCTAssertEqual(try checksum(app), before)
-        app.buttons["decisionUIMenu"].tap(); app.buttons["decisionUI.swipe"].tap()
+        openDecisionMenu(app, expecting: "decisionUI.swipe")
+        app.buttons["decisionUI.swipe"].tap()
+        XCTAssertTrue(app.buttons["swipeDetails"].waitForExistence(timeout: 5))
         XCTAssertEqual(try checksum(app), before)
         XCUIDevice.shared.press(.home); app.activate()
         XCTAssertTrue(app.buttons["swipeChoice.ask"].waitForExistence(timeout: 5))
@@ -244,6 +248,28 @@ import XCTest
         XCTAssertLessThanOrEqual(prompt.height, 58, "Normal-size prompt must remain at most two lines")
         XCTAssertFalse(app.descendants(matching: .any)["worldPlaybackControls"].exists)
         print("RC_LAYOUT outcome=\(outcome) screen=\(app.frame) hud=\(hud) card=\(card.frame) scene=\(app.otherElements["lifeWorldScene"].frame) prompt=\(prompt) controls=\(controls) ratio=\(card.frame.height / usable)")
+    }
+    private func openDecisionMenu(_ app: XCUIApplication, expecting actionID: String) {
+        let menu = app.buttons["decisionUIMenu"]
+        XCTAssertTrue(menu.waitForExistence(timeout: 5))
+        let bounds = menu.frame
+        if actionID == "decisionUI.standard" {
+            // The new fullscreen HUD promises 44pt controls. The original UI uses
+            // the system navigation toolbar, whose reported frame differs by OS.
+            XCTAssertGreaterThanOrEqual(bounds.width, 44)
+            XCTAssertGreaterThanOrEqual(bounds.height, 44)
+        } else {
+            XCTAssertGreaterThan(bounds.width, 0)
+            XCTAssertGreaterThan(bounds.height, 0)
+        }
+        XCTAssertTrue(app.frame.contains(bounds), "Never tap an offscreen menu by coordinates")
+        // iOS 18.5 reports this SwiftUI Menu's AX hit point as {-1,-1} despite a
+        // visible 44pt frame. Exercise a real touch at its measured center, then
+        // require the actual menu action before continuing; no synthetic store action.
+        app.coordinate(withNormalizedOffset: .zero)
+            .withOffset(CGVector(dx: bounds.midX, dy: bounds.midY)).tap()
+        XCTAssertTrue(app.buttons[actionID].waitForExistence(timeout: 5))
+        shot("menu-open-" + actionID, app)
     }
     private func action(_ id: String, _ app: XCUIApplication) -> XCUIElement {
         let sheet = app.scrollViews["swipeActionsSheet"]
