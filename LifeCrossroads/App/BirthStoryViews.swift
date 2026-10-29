@@ -15,7 +15,7 @@ struct BirthRevealView: View {
                         .font(.title.bold()).accessibilityIdentifier("birthCountry").accessibilityValue(session.state.countryCode)
                     CompactStoryScene(age: 8, person: "", sceneID: "birthStoryScene").frame(height: 180)
                     Text("先翻開出生背景；接著陪沐沐走進童年。這張圖是童年造型與想像場景。")
-                        .font(.caption).foregroundStyle(.secondary)
+                        .font(.caption).foregroundStyle(StoryPalette.secondaryInk)
                     if let family = catalog.households.first(where: { $0.id == session.state.householdID }) {
                         Text(BirthStory.household(family)).font(.body)
                         Text("虛構家庭：" + family.label).font(.subheadline)

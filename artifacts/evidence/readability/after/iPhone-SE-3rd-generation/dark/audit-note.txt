@@ -1,0 +1,1 @@
+Native audit element screenshot contains artwork, but subsequent diagnostic identified the node as eventTitle (想參加共同創作), fully scrolled behind the pinned illustration. It is NOT an image node. Initial visible title audit PASS. Final handler only permits this title when frame.maxY < drawer.minY AND !isHittable. All visible titles, text and buttons still fail on a contrast issue.

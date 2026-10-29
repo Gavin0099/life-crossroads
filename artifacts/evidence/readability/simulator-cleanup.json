@@ -1,0 +1,50 @@
+{
+  "checked_at": "2026-10-29T01:09:07.387466+00:00",
+  "owned_only": [
+    {
+      "udid": "2498E196-F31E-44B7-BF93-02CCCFF704D9",
+      "deleted": true
+    },
+    {
+      "udid": "2C0A6173-AE5B-4A7A-A608-4AED36E6079B",
+      "deleted": true
+    },
+    {
+      "udid": "61668558-EA58-4E70-BDD2-51B114C799CD",
+      "deleted": true
+    },
+    {
+      "udid": "6559520B-9FC1-4007-B161-EB4EBE6DF972",
+      "deleted": true
+    },
+    {
+      "udid": "71E72D28-0055-4BC5-9213-B8B70A78B297",
+      "deleted": true
+    },
+    {
+      "udid": "9B3FD1B1-E590-48E7-9A23-E715952CDC96",
+      "deleted": true
+    },
+    {
+      "udid": "9D93470C-0B9D-403E-AD6A-F02253666CDF",
+      "deleted": true
+    },
+    {
+      "udid": "C7C43D47-1B11-418B-A9F3-364BD1A72470",
+      "deleted": true
+    },
+    {
+      "udid": "D565349A-56E6-4D9D-854B-4D631BB1327A",
+      "deleted": true
+    },
+    {
+      "udid": "D8E1E301-B1B0-4A66-AC45-7752A3E3815A",
+      "deleted": true
+    },
+    {
+      "udid": "ED9C10AE-C278-40A1-B6F8-128FEB0F61C9",
+      "deleted": true
+    }
+  ],
+  "remaining_devices_not_modified": 12
+}

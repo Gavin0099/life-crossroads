@@ -1,0 +1,182 @@
+[
+  {
+    "path": "LifeCrossroads/App/Assets.xcassets/VL2Teen13.imageset/VL2Teen13.png",
+    "sha256": "8fe89c37ad30a35f9fa0dbdfffdb52466b374c11ce9c3ecf75989576b0adf13f",
+    "bytes": 1207776,
+    "dimensions_px": {
+      "width": 1254,
+      "height": 1254
+    },
+    "png_bit_depth": 8,
+    "png_color_type": 6,
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "fully_transparent_fraction": 0.6411654952954374,
+    "grid": {
+      "columns": 2,
+      "rows": 2,
+      "x_edges_px": [
+        0,
+        627,
+        1254
+      ],
+      "y_edges_px": [
+        0,
+        627,
+        1254
+      ]
+    },
+    "selected_cell": {
+      "index": 2,
+      "source_rect_px": {
+        "x": 0,
+        "y": 627,
+        "width": 627,
+        "height": 627
+      },
+      "visible_alpha_bbox_px": {
+        "x": 114,
+        "y": 689,
+        "width": 434,
+        "height": 496
+      }
+    },
+    "visible_pixels_on_split_lines": 0,
+    "alpha_threshold": 12
+  },
+  {
+    "path": "LifeCrossroads/App/Assets.xcassets/MCMumu.imageset/MCMumu.png",
+    "sha256": "3fc4e1e79cbcbd921bd3dd79c87db999848326d5e3ed83d3eb6322c57107989c",
+    "bytes": 1260187,
+    "dimensions_px": {
+      "width": 1254,
+      "height": 1254
+    },
+    "png_bit_depth": 8,
+    "png_color_type": 6,
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "fully_transparent_fraction": 0.6799447509596087,
+    "grid": {
+      "columns": 2,
+      "rows": 2,
+      "x_edges_px": [
+        0,
+        627,
+        1254
+      ],
+      "y_edges_px": [
+        0,
+        627,
+        1254
+      ]
+    },
+    "selected_cell": {
+      "index": 2,
+      "source_rect_px": {
+        "x": 0,
+        "y": 627,
+        "width": 627,
+        "height": 627
+      },
+      "visible_alpha_bbox_px": {
+        "x": 83,
+        "y": 660,
+        "width": 504,
+        "height": 555
+      }
+    },
+    "visible_pixels_on_split_lines": 0,
+    "alpha_threshold": 12
+  },
+  {
+    "path": "assets/final-polish-loop/originals/teen13-listening-v1.png",
+    "sha256": "a2e685d31d7b14413a766a5e1bd7c335b9e78ffff2a0c2df0a449f82753044ab",
+    "bytes": 1195916,
+    "dimensions_px": {
+      "width": 1254,
+      "height": 1254
+    },
+    "png_bit_depth": 8,
+    "png_color_type": 6,
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "fully_transparent_fraction": 0.6476875275036947,
+    "grid": {
+      "columns": 2,
+      "rows": 2,
+      "x_edges_px": [
+        0,
+        627,
+        1254
+      ],
+      "y_edges_px": [
+        0,
+        627,
+        1254
+      ]
+    },
+    "selected_cell": {
+      "index": 2,
+      "source_rect_px": {
+        "x": 0,
+        "y": 627,
+        "width": 627,
+        "height": 627
+      },
+      "visible_alpha_bbox_px": {
+        "x": 114,
+        "y": 686,
+        "width": 384,
+        "height": 501
+      }
+    },
+    "visible_pixels_on_split_lines": 0,
+    "alpha_threshold": 12
+  },
+  {
+    "path": "assets/final-polish-loop/originals/adult32-listening-v1.png",
+    "sha256": "f5359a055aa919bedea972cbc352861d1f3b6cdb9e9a213d5a6cb922907585eb",
+    "bytes": 1193934,
+    "dimensions_px": {
+      "width": 1254,
+      "height": 1254
+    },
+    "png_bit_depth": 8,
+    "png_color_type": 6,
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "fully_transparent_fraction": 0.6784897578148649,
+    "grid": {
+      "columns": 2,
+      "rows": 2,
+      "x_edges_px": [
+        0,
+        627,
+        1254
+      ],
+      "y_edges_px": [
+        0,
+        627,
+        1254
+      ]
+    },
+    "selected_cell": {
+      "index": 2,
+      "source_rect_px": {
+        "x": 0,
+        "y": 627,
+        "width": 627,
+        "height": 627
+      },
+      "visible_alpha_bbox_px": {
+        "x": 83,
+        "y": 656,
+        "width": 505,
+        "height": 561
+      }
+    },
+    "visible_pixels_on_split_lines": 0,
+    "alpha_threshold": 12
+  }
+]

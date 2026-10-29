@@ -1,0 +1,17 @@
+{
+  "implementation_commit": "a6dacc0913b6fb78c637b566f565eef9b55256c7",
+  "native_source_bindings": [
+    {
+      "source": "artifacts/evidence/readability/delivery/iPhone-17/source.json",
+      "files": 41,
+      "mismatches": []
+    },
+    {
+      "source": "artifacts/evidence/readability/delivery/iPhone-SE-3rd-generation/source.json",
+      "files": 41,
+      "mismatches": []
+    }
+  ],
+  "signed_phone_build_matches_implementation": true,
+  "phone_installation": "NOT_INSTALLED_DEVICE_UNAVAILABLE"
+}

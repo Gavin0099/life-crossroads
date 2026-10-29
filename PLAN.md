@@ -27,11 +27,17 @@
 
 ## Current Phase
 
-P1 / INTERACTION-MEMORY-LOOP。使用者2026-10-28授權有界Loop，以PR19 a79f667為基底，優先改善求助／聆聽／合作的可見差異及10→72歲關係記憶；必要時補三個易混淆中間年齡的中立姿勢。只改Presentation、App、素材及驗證，不改Domain、Data、Persistence、Seed或schema。獨立Draft/HOLD，不合併發布。
+P1 / Owner試玩回饋 / 文字與背景對比修正。Owner2026-10-29回報實機看不到字，授權查詢iOS配色skill並直接修正；接續PR21 `45d3ff9`。只修淺／深色與提高對比的成對色票及實際文字，無新內容／Domain／Data／Persistence／Seed／schema改動。這是有界bugfix，不重開已結束的FINAL-POLISH美術Loop；Draft/HOLD不合併發布。
 
 ## Current Sprint
 
-本輪本機整合與驗證已完成：求助兩pose讀共同clock、10→72真實關係記憶、三個中立年齡造型；獨立Loop抓到並修正前因錯置、頭尾裁切及大字標籤佈局。初版157 Swift、最後6定向、45 Python通過；最後雙機各19場景，兩機各4真時點與保存失敗重試，8台專用Simulator均delete。原核心及30UI未改；詳[驗收](docs/interaction-memory-loop/VALIDATION.md)。獨立工程與視覺覆審已無未解確認阻擋，待獨立Draft推送及最新HEAD CI；既有治理期限FAIL保留，真人與正式美術仍HOLD，不宣稱90–95%。
+文字可讀性修正的原生基準已重現：系統深色白字配固定奶油底。改為具四種外觀變體的語意色票；主文字最低10.73:1、次文字7.17:1。雙尺寸淺／深／高對比大字與真實存檔不變性取證、剩餘原生audit finding及Wi-Fi安裝狀態見[本輪驗證](docs/readability/VALIDATION.md)。原生capture成功不等於audit全綠或完整VoiceOver驗收。Basic既有期限仍FAIL，不更改Gate。
+
+以下為已停止的FINAL-POLISH交付記錄：
+
+FINAL-POLISH已建立Draft PR21，原基底325b698不變。CI54揭露新增AX前綴造成4項原史UI不一致，6ec388d移除前綴，未弱化原測試；兩項原完整人生回歸2/2，修正後雙尺寸各3/3、21狀態及8實際時點、來源綁定通過，九台本機Simulator已delete。獨立工程local ACCEPT、視覺CONDITIONAL、Owner試玩候選；殘影／大字PARTIAL。新HEAD完整CI待PR結果；Basic既有91d>90d FAIL。遵守4 Agent-hours上限停止，不開新Loop、不合併發布。詳[驗證](docs/final-polish-loop/VALIDATION.md)及[CI修正](docs/final-polish-loop/CI_CORRECTION.md)。
+
+前輪PR20 `325b698`已推送，CI #53完整158Swift／45Python／30UI通過，整體因既有期限FAIL。8台本機及6台CI Simulator已delete；工程及有界視覺覆審阻擋0，正式美術、連續自然動畫及真人理解仍待驗收。
 
 前輪MULTI-CAST PR19 a79f667已推送Draft。CI run40648422339的152 Swift／44 Python／30 UI通過，整體因既有session_envelope期限FAIL；沒有關Gate。11台專用Simulator已刪。四位正式人物已接實際紀錄，貓狗五齡只候選；三輪視覺Critic保留年齡／互動及真人驗收缺口。詳docs/multi-cast-loop/VALIDATION.md與PR19最終CI補註。
 

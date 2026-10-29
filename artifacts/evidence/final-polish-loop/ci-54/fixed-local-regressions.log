@@ -1,0 +1,7 @@
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testBirthStoryParallelOriginalSaveFailureAndFullComparison]' passed (475.437 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testWorldFullLifeForkPreservesOriginalAndComparesRemainder]' passed (432.846 seconds).
+	 Executed 2 tests, with 0 failures (0 unexpected) in 908.284 (908.287) seconds
+	 Executed 2 tests, with 0 failures (0 unexpected) in 908.284 (908.288) seconds
+	 Executed 2 tests, with 0 failures (0 unexpected) in 908.284 (908.289) seconds
+SwiftUI publication regression: no matching runtime issue reported
+Deleted test Simulator: F7FC82FF-0504-4054-92A5-C9E3F3AE2E93

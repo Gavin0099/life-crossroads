@@ -1,0 +1,297 @@
+{
+  "schema_version": 1,
+  "task": "FINAL-POLISH-LOOP",
+  "base_commit": "325b69896553fb6c479e415c0c0991e76ef78a26",
+  "agent": "/root/final_polish_pose_edits",
+  "created_utc": "2026-10-28T11:18:03.730045+00:00",
+  "timebox": {
+    "first_observed_clock_utc": "2026-10-28T11:11:41Z",
+    "conservative_start_utc": "2026-10-28T11:10:00Z",
+    "maximum_active_wall_minutes": 25,
+    "note": "Initial read output was truncated; do not claim conservative start is an exact observed clock.",
+    "completed_utc": "2026-10-28T11:18:23Z",
+    "observed_clock_span_seconds": 402,
+    "conservative_wall_upper_bound_seconds": 503
+  },
+  "generator": {
+    "tool": "image_gen.imagegen",
+    "model": "not_returned_by_tool",
+    "local_edit_count": 2,
+    "targeted_retry_count": 0,
+    "fallback_used": false
+  },
+  "approval": {
+    "formal_art_approval": false,
+    "human_visual_review": false,
+    "legal_review_complete": false,
+    "rights_note": "Edited existing recorded project AI assets only. No external artwork inputs and no asserted CC license. User authorization covers Draft candidates and integration; formal legal/art release is not claimed."
+  },
+  "provenance": {
+    "references": [
+      {
+        "path": "LifeCrossroads/App/Assets.xcassets/VL2Teen13.imageset/VL2Teen13.png",
+        "sha256": "8fe89c37ad30a35f9fa0dbdfffdb52466b374c11ce9c3ecf75989576b0adf13f",
+        "bytes": 1207776,
+        "dimensions_px": {
+          "width": 1254,
+          "height": 1254
+        },
+        "png_bit_depth": 8,
+        "png_color_type": 6,
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "fully_transparent_fraction": 0.6411654952954374,
+        "grid": {
+          "columns": 2,
+          "rows": 2,
+          "x_edges_px": [
+            0,
+            627,
+            1254
+          ],
+          "y_edges_px": [
+            0,
+            627,
+            1254
+          ]
+        },
+        "selected_cell": {
+          "index": 2,
+          "source_rect_px": {
+            "x": 0,
+            "y": 627,
+            "width": 627,
+            "height": 627
+          },
+          "visible_alpha_bbox_px": {
+            "x": 114,
+            "y": 689,
+            "width": 434,
+            "height": 496
+          }
+        },
+        "visible_pixels_on_split_lines": 0,
+        "alpha_threshold": 12
+      },
+      {
+        "path": "LifeCrossroads/App/Assets.xcassets/MCMumu.imageset/MCMumu.png",
+        "sha256": "3fc4e1e79cbcbd921bd3dd79c87db999848326d5e3ed83d3eb6322c57107989c",
+        "bytes": 1260187,
+        "dimensions_px": {
+          "width": 1254,
+          "height": 1254
+        },
+        "png_bit_depth": 8,
+        "png_color_type": 6,
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "fully_transparent_fraction": 0.6799447509596087,
+        "grid": {
+          "columns": 2,
+          "rows": 2,
+          "x_edges_px": [
+            0,
+            627,
+            1254
+          ],
+          "y_edges_px": [
+            0,
+            627,
+            1254
+          ]
+        },
+        "selected_cell": {
+          "index": 2,
+          "source_rect_px": {
+            "x": 0,
+            "y": 627,
+            "width": 627,
+            "height": 627
+          },
+          "visible_alpha_bbox_px": {
+            "x": 83,
+            "y": 660,
+            "width": 504,
+            "height": 555
+          }
+        },
+        "visible_pixels_on_split_lines": 0,
+        "alpha_threshold": 12
+      }
+    ],
+    "external_art_inputs": [],
+    "originals_retained": true,
+    "copy_policy": "Outputs copied byte-for-byte from built-in imagegen. Existing PNG parser used read-only. Runtime fixed source-rectangle cropping is allowed; no pixels edited in Python."
+  },
+  "assets": [
+    {
+      "path": "assets/final-polish-loop/originals/teen13-listening-v1.png",
+      "sha256": "a2e685d31d7b14413a766a5e1bd7c335b9e78ffff2a0c2df0a449f82753044ab",
+      "bytes": 1195916,
+      "dimensions_px": {
+        "width": 1254,
+        "height": 1254
+      },
+      "png_bit_depth": 8,
+      "png_color_type": 6,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "fully_transparent_fraction": 0.6476875275036947,
+      "grid": {
+        "columns": 2,
+        "rows": 2,
+        "x_edges_px": [
+          0,
+          627,
+          1254
+        ],
+        "y_edges_px": [
+          0,
+          627,
+          1254
+        ]
+      },
+      "selected_cell": {
+        "index": 2,
+        "source_rect_px": {
+          "x": 0,
+          "y": 627,
+          "width": 627,
+          "height": 627
+        },
+        "visible_alpha_bbox_px": {
+          "x": 114,
+          "y": 686,
+          "width": 384,
+          "height": 501
+        }
+      },
+      "visible_pixels_on_split_lines": 0,
+      "alpha_threshold": 12,
+      "name": "FPTeen13Listening",
+      "kind": "localEditCandidateAtlas",
+      "formal_character_id": "mumu",
+      "selected_cell_indices": [
+        2
+      ],
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18233-b311-79b1-bace-08cbf9d38e52/exec-903543ba-09b4-4aa8-9ee1-8897b44f550f.png",
+      "retained_original": "assets/final-polish-loop/originals/teen13-listening-v1.png",
+      "byte_identical_to_tool_output": true,
+      "prompt_file": "assets/final-polish-loop/prompts/teen13-listening-v1.txt",
+      "edit_reference": "LifeCrossroads/App/Assets.xcassets/VL2Teen13.imageset/VL2Teen13.png",
+      "source_commit": "325b69896553fb6c479e415c0c0991e76ef78a26",
+      "source_reference_sha256": "8fe89c37ad30a35f9fa0dbdfffdb52466b374c11ce9c3ecf75989576b0adf13f",
+      "activity": "requesting/listening unconfirmed help",
+      "age": 13,
+      "approved_for_app": false,
+      "draft_integration_allowed": true,
+      "approval_scope": "Only bottom-left cell 2 may be considered for Draft integration; no formal Owner art approval. Other generated cells are unreviewed and must not replace current assets.",
+      "common_early_late_render_rect_px": {
+        "x": 114,
+        "y": 686,
+        "width": 434,
+        "height": 501
+      },
+      "common_render_rect_coordinate_system": "top-left origin in full 1254x1254 atlas",
+      "render_warning": "Original expressing pose and edited listening pose require the SAME fixed crop/transform to avoid independent alpha-trim centering drift. Do not claim native transition PASS before actual capture.",
+      "self_review": {
+        "identity": "ACCEPT for candidate: face/round ears/muzzle/tail/clothing retained",
+        "props": "ACCEPT: same notebook and stance",
+        "neutral_meaning": "ACCEPT: closed relaxed mouth and lowered hand; no success or agreement shown",
+        "native_continuity": "NOT_RUN by asset agent; parent integrates and captures",
+        "fine_texture": "PARTIAL: imagegen may alter minor texture or a few edge pixels; not pixel-identical outside edit"
+      },
+      "integrated_asset_name": "FPListening13",
+      "integrated_path": "LifeCrossroads/App/Assets.xcassets/FPListening13.imageset/FPListening13.png",
+      "integration_status": "Integrated into Draft App via reviewed common request crop; native Round3 and independent review retained separately"
+    },
+    {
+      "path": "assets/final-polish-loop/originals/adult32-listening-v1.png",
+      "sha256": "f5359a055aa919bedea972cbc352861d1f3b6cdb9e9a213d5a6cb922907585eb",
+      "bytes": 1193934,
+      "dimensions_px": {
+        "width": 1254,
+        "height": 1254
+      },
+      "png_bit_depth": 8,
+      "png_color_type": 6,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "fully_transparent_fraction": 0.6784897578148649,
+      "grid": {
+        "columns": 2,
+        "rows": 2,
+        "x_edges_px": [
+          0,
+          627,
+          1254
+        ],
+        "y_edges_px": [
+          0,
+          627,
+          1254
+        ]
+      },
+      "selected_cell": {
+        "index": 2,
+        "source_rect_px": {
+          "x": 0,
+          "y": 627,
+          "width": 627,
+          "height": 627
+        },
+        "visible_alpha_bbox_px": {
+          "x": 83,
+          "y": 656,
+          "width": 505,
+          "height": 561
+        }
+      },
+      "visible_pixels_on_split_lines": 0,
+      "alpha_threshold": 12,
+      "name": "FPAdult32Listening",
+      "kind": "localEditCandidateAtlas",
+      "formal_character_id": "mumu",
+      "selected_cell_indices": [
+        2
+      ],
+      "source_original_path": "/Users/macminim4/.codex/generated_images/01a18233-b311-79b1-bace-08cbf9d38e52/exec-7aa15226-0c0a-4672-9a88-f354ac92cf5b.png",
+      "retained_original": "assets/final-polish-loop/originals/adult32-listening-v1.png",
+      "byte_identical_to_tool_output": true,
+      "prompt_file": "assets/final-polish-loop/prompts/adult32-listening-v1.txt",
+      "edit_reference": "LifeCrossroads/App/Assets.xcassets/MCMumu.imageset/MCMumu.png",
+      "source_commit": "325b69896553fb6c479e415c0c0991e76ef78a26",
+      "source_reference_sha256": "3fc4e1e79cbcbd921bd3dd79c87db999848326d5e3ed83d3eb6322c57107989c",
+      "activity": "consulting/listening unconfirmed arrangement",
+      "age": 32,
+      "approved_for_app": false,
+      "draft_integration_allowed": true,
+      "approval_scope": "Only bottom-left cell 2 may be considered for Draft integration; no formal Owner art approval. Other generated cells are unreviewed and must not replace current assets.",
+      "common_early_late_render_rect_px": {
+        "x": 83,
+        "y": 656,
+        "width": 505,
+        "height": 561
+      },
+      "common_render_rect_coordinate_system": "top-left origin in full 1254x1254 atlas",
+      "render_warning": "Original expressing pose and edited listening pose require the SAME fixed crop/transform to avoid independent alpha-trim centering drift. Do not claim native transition PASS before actual capture.",
+      "self_review": {
+        "identity": "ACCEPT for candidate: face/round ears/muzzle/tail/clothing retained",
+        "props": "ACCEPT: same seated stool, paper, shoulder bag",
+        "neutral_meaning": "ACCEPT: closed relaxed mouth and lowered hand; no success or agreement shown",
+        "native_continuity": "NOT_RUN by asset agent; parent integrates and captures",
+        "fine_texture": "PARTIAL: imagegen may alter minor texture or a few edge pixels; not pixel-identical outside edit"
+      },
+      "integrated_asset_name": "FPListening32",
+      "integrated_path": "LifeCrossroads/App/Assets.xcassets/FPListening32.imageset/FPListening32.png",
+      "integration_status": "Integrated into Draft App via reviewed common request crop; native Round3 and independent review retained separately"
+    }
+  ],
+  "limitations": [
+    "Not added to Assets.xcassets by asset agent. Parent owns integration.",
+    "No native capture, UI testing, independent Critic, or human approval performed by asset agent.",
+    "Only bottom-left selected cells are proposed. The other three generated cells are not adopted."
+  ],
+  "integration_owner": "root",
+  "integration_evidence": "artifacts/evidence/final-polish-loop/round3"
+}

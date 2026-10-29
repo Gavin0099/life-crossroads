@@ -1,0 +1,60 @@
+{
+  "result": "PASS",
+  "captures": [
+    {
+      "path": "round1/iPhone-17",
+      "tests": 3,
+      "screenshots": 60,
+      "matrixStates": 26,
+      "requestSamples": 6,
+      "simulator": "7B082A3B-7BCD-42A8-8CAC-EDE28696A9E1",
+      "deleted": true
+    },
+    {
+      "path": "round1/iPhone-SE-3rd-generation",
+      "tests": 3,
+      "screenshots": 60,
+      "matrixStates": 26,
+      "requestSamples": 6,
+      "simulator": "F3B0844F-2652-4807-B8D5-799841DEDE69",
+      "deleted": true
+    },
+    {
+      "path": "round2/iPhone-17",
+      "tests": 3,
+      "screenshots": 60,
+      "matrixStates": 26,
+      "requestSamples": 6,
+      "simulator": "0C9F33F0-1B9D-4172-884C-49DA278B2F8D",
+      "deleted": true
+    },
+    {
+      "path": "round2/iPhone-SE-3rd-generation",
+      "tests": 3,
+      "screenshots": 60,
+      "matrixStates": 26,
+      "requestSamples": 6,
+      "simulator": "88035B1E-F3DA-49C0-A6B5-0A416412E7FE",
+      "deleted": true
+    },
+    {
+      "path": "round3/iPhone-17",
+      "tests": 3,
+      "screenshots": 62,
+      "matrixStates": 26,
+      "requestSamples": 8,
+      "simulator": "4E8EC611-3E96-4092-B727-68020AE9A5DB",
+      "deleted": true
+    },
+    {
+      "path": "round3/iPhone-SE-3rd-generation",
+      "tests": 3,
+      "screenshots": 62,
+      "matrixStates": 26,
+      "requestSamples": 8,
+      "simulator": "9C0F8B3B-5979-4270-AADC-94F41E15022A",
+      "deleted": true
+    }
+  ],
+  "failures": []
+}

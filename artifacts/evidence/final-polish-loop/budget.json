@@ -1,0 +1,27 @@
+{
+  "task": "FINAL-POLISH-LOOP",
+  "maximum_agent_seconds": 14400,
+  "accounting": "Conservative wall time: root includes tool and CI waits; children sum active turns, idle waits excluded. Not a measured CPU/token cost.",
+  "root_start_utc": "2026-10-28T11:00:00Z",
+  "checkpoint_utc": "2026-10-28T14:18:35.578466+00:00",
+  "root_pending": "Final push and exact HEAD CI snapshot only; stop at four-hour conservative wall+active-child cap even if remote CI pending.",
+  "children": [
+    {
+      "agent": "final_polish_pose_edits",
+      "conservative_seconds": 503
+    },
+    {
+      "agent": "final_polish_critic",
+      "conservative_seconds": 960
+    },
+    {
+      "agent": "final_polish_engineering",
+      "conservative_seconds": 818
+    }
+  ],
+  "subagent_total_seconds": 2281,
+  "rounds": 3,
+  "new_loop_authorized": false,
+  "substantive_corrections": 3,
+  "last_correction": "Remove AX label override after original CI regression; no new art iteration."
+}

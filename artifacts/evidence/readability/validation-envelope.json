@@ -1,0 +1,41 @@
+{
+  "mode": "VALIDATION",
+  "mode_source": "validation_command",
+  "task": "Owner iPhone text/background readability fix",
+  "task_authority": "user_request",
+  "scope": [
+    "Six App display files and ten Color Sets",
+    "Additive color regression and native capture tests",
+    "Readability evidence, PLAN and canonical daily memory"
+  ],
+  "done": [
+    "Reproduced original Dark Mode defect",
+    "Paired light/dark/high-contrast palette integrated in native app",
+    "51 Python tests and 6 native captures passed; 42 screenshots; archives unchanged",
+    "All 11 task-created Simulators deleted"
+  ],
+  "claim_ceiling": [
+    "Bounded palette bugfix, not all accessibility findings resolved",
+    "Native audit retains 9 findings separately from capture PASS"
+  ],
+  "not_claimed": [
+    "New HEAD CI success",
+    "New palette installed on physical phone",
+    "Complete VoiceOver, child testing, formal visual approval",
+    "Merge/release or governance update"
+  ],
+  "evidence_refs": [
+    "artifacts/evidence/readability/contrast.json",
+    "artifacts/evidence/readability/native-validation.json",
+    "artifacts/evidence/readability/protected-surfaces.json",
+    "artifacts/evidence/readability/simulator-cleanup.json",
+    "artifacts/evidence/readability/python.log",
+    "artifacts/evidence/readability/basic-checks.json",
+    "docs/readability/BEFORE_AFTER.md"
+  ],
+  "risk": [
+    "Native audit findings remain recorded",
+    "Existing governance session_envelope expiry remains FAIL"
+  ],
+  "next_action": "Update existing Draft PR21; install signed build when Owner iPhone reconnects; no merge"
+}

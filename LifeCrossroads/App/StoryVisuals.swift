@@ -2,9 +2,19 @@ import SwiftUI
 import LifeDomain
 
 enum StoryPalette {
-    static let forest = Color(red: 0.15, green: 0.36, blue: 0.29)
+    // Foreground and surface are paired assets with light, dark and increased-contrast variants.
+    static let forest = Color("StoryAccent")
+    static let ink = Color("StoryInk")
+    static let secondaryInk = Color("StorySecondaryInk")
+    static let page = Color("StoryPage")
+    static let illustratedPaper = Color("StoryPaper")
+    static let button = Color("StoryButton")
+    static let buttonPressed = Color("StoryButtonPressed")
+    static let onButton = Color("StoryOnButton")
+    // Painted props remain light in the artwork: their ink must not turn white in Dark Mode.
+    static let sceneInk = Color("StorySceneInk")
+    static let scenePaper = Color("StoryScenePaper")
     static let amber = Color(red: 0.87, green: 0.63, blue: 0.27)
-    static let page = Color(.systemGroupedBackground)
 }
 
 /// The same fictional cast accompanies every country. Species never encode nationality.
@@ -73,9 +83,9 @@ struct StoryScene: View {
             }
             .overlay(alignment: .topLeading) {
                 Text(chapter).font(.caption.weight(.bold))
-                    .foregroundStyle(.white)
+                    .foregroundStyle(StoryPalette.onButton)
                     .padding(.horizontal, 12).padding(.vertical, 8)
-                    .background(StoryPalette.forest, in: Capsule())
+                    .background(StoryPalette.button, in: Capsule())
                     .padding(14)
             }
         }
@@ -120,7 +130,7 @@ struct StoryEyebrow: View {
     var body: some View {
         Label(title, systemImage: icon)
             .font(.caption.weight(.bold))
-            .foregroundStyle(.secondary)
+            .foregroundStyle(StoryPalette.secondaryInk)
     }
 }
 
@@ -140,7 +150,7 @@ struct CountryContextCard: View {
                 observationRow(indicator)
             }
             Text("國家平均不能推定沐沐的設備、帳單或可用服務；同一國家的家庭也可能不同。")
-                .font(.footnote).foregroundStyle(.secondary)
+                .font(.footnote).foregroundStyle(StoryPalette.secondaryInk)
             Text("河畔是大家共用的想像舞台，不是\(country.name)的實景。")
                 .font(.footnote)
                 .accessibilityIdentifier("countryStageBoundary")
@@ -151,7 +161,7 @@ struct CountryContextCard: View {
             DisclosureGroup("查看數字與來源") {
                 VStack(alignment: .leading, spacing: 16) {
                     Text("畫面比例約至小數一位；以下保留資料包的原值。")
-                        .font(.caption).foregroundStyle(.secondary)
+                        .font(.caption).foregroundStyle(StoryPalette.secondaryInk)
                     ForEach(country.indicators.map(\.indicator), id: \.self) { indicator in
                         sourceDetails(indicator)
                     }
@@ -178,10 +188,10 @@ struct CountryContextCard: View {
                 Text("約 \(value.formatted(.number.precision(.fractionLength(0...1))))\(observation.unit == "% of population" ? "%" : " \(observation.unit)")")
                     .font(.title3.weight(.bold)).monospacedDigit()
                 Text("\(String(observation.year))年 · \(observation.unit == "% of population" ? "單位：全國人口百分比" : "單位：\(observation.unit)")")
-                    .font(.caption).foregroundStyle(.secondary)
+                    .font(.caption).foregroundStyle(StoryPalette.secondaryInk)
             } else {
                 Text("尚無可用資料，待確認來源。")
-                    .font(.subheadline).foregroundStyle(.secondary)
+                    .font(.subheadline).foregroundStyle(StoryPalette.secondaryInk)
             }
         }
         .accessibilityElement(children: .combine)
@@ -203,7 +213,7 @@ struct CountryContextCard: View {
                     Text(source.attribution).font(.caption)
                     Text(source.url).font(.caption).textSelection(.enabled)
                     Text("資料版本：\(observation.dataVersion) · 授權：\(source.license)")
-                        .font(.caption).foregroundStyle(.secondary)
+                        .font(.caption).foregroundStyle(StoryPalette.secondaryInk)
                 } else {
                     Text("來源紀錄待確認；不能視為已驗證資料。")
                         .font(.footnote)

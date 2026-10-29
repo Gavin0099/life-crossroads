@@ -33,7 +33,7 @@ struct LifeWorldScene: View {
                 if let background = croppedBackground(size: size) {
                     Image(decorative: background, scale: 1).resizable()
                         .frame(width: size.width, height: size.height)
-                } else { StoryPalette.forest.opacity(0.25) }
+                } else { StoryPalette.sceneInk.opacity(0.25) }
                 LinearGradient(colors: [.clear, Color(red: 0.97, green: 0.92, blue: 0.78).opacity(0.20)],
                                startPoint: .top, endPoint: .bottom)
                 if !typeSize.isAccessibilitySize {
@@ -80,18 +80,22 @@ struct LifeWorldScene: View {
                     grounded(companion, width: size.width * (working ? 0.33 : 0.40), height: size.height * 0.90,
                              x: size.width * (working ? 0.79 : 0.72), floor: size.height * 0.98)
                 }
-                if let protagonist = WorldSceneBitmaps.cell(main.atlas, index: main.cell, columns: main.columns, rows: main.rows) {
+                if cast.kind == .requesting,
+                   let asking = WorldSceneBitmaps.requestPose(age: cast.age, listening: false),
+                   let listening = WorldSceneBitmaps.requestPose(age: cast.age, listening: true) {
+                    let blend = reduced ? 0 : WorldRequestTransition.listeningOpacity(frame: frame, motion: motion)
+                    // Both poses use one reviewed crop, scale and floor. No independent
+                    // alpha trim, timer or implicit animation may move the held objects.
+                    ZStack {
+                        grounded(asking, width: size.width * 0.43, height: size.height * 0.94,
+                                 x: size.width * 0.29, floor: size.height * 0.98).opacity(1 - blend)
+                        grounded(listening, width: size.width * 0.43, height: size.height * 0.94,
+                                 x: size.width * 0.29, floor: size.height * 0.98)
+                            .opacity(blend).blendMode(.plusLighter)
+                    }.compositingGroup()
+                } else if let protagonist = WorldSceneBitmaps.cell(main.atlas, index: main.cell, columns: main.columns, rows: main.rows) {
                     grounded(protagonist, width: size.width * (working ? 0.65 : 0.43), height: size.height * 0.94,
                              x: size.width * (working ? 0.39 : 0.29), floor: size.height * 0.98)
-                }
-                if cast.kind == .requesting {
-                    let listening = !reduced && WorldRequestBeat.project(frame: frame, motion: motion) == .listening
-                    Image(systemName: listening ? "ear" : "questionmark.bubble")
-                        .font(.system(size: min(23, size.height * 0.13), weight: .medium))
-                        .foregroundStyle(StoryPalette.forest)
-                        .padding(8).background(StoryPalette.page.opacity(0.92), in: Circle())
-                        .position(x: size.width * 0.50, y: size.height * 0.23)
-                        .accessibilityHidden(true)
                 }
             }
         }
@@ -105,8 +109,6 @@ struct LifeWorldScene: View {
             if cast.age == 32, WorldActivity.project(frame)?.kind == .protectedRest { return ("VL2Recovery32", 0, 2, 1) }
             return neutralPose
         }
-        if cast.kind == .requesting, !reduced,
-           WorldRequestBeat.project(frame: frame, motion: motion) == .listening { return neutralPose }
         switch cast.kind {
         case .requesting where cast.age == 13: return ("VL2Teen13", 2, 2, 2)
         case .explaining: return ("VL2Teen13", 1, 2, 2)
@@ -151,24 +153,26 @@ struct LifeWorldScene: View {
                 Color(red: 0.93, green: 0.85, blue: 0.64).opacity(0.25)
                 let w = size.width * 0.32
                 if let mumu = WorldSceneBitmaps.cell(memory.keptFriendship ? "MCMumu" : "StoryCast", index: 0, columns: memory.keptFriendship ? 2 : 4, rows: 2) {
-                    grounded(mumu, width: w * (memory.keptFriendship ? 0.54 : 0.78), height: size.height * 0.66,
+                    // A shared childhood height cap makes the two histories comparable;
+                    // the solo route stays solo instead of inventing a childhood companion.
+                    grounded(mumu, width: w * 0.54, height: size.height * 0.42,
                              x: w * (memory.keptFriendship ? 0.30 : 0.5), floor: size.height * 0.91)
                 }
                 if memory.keptFriendship, let ahe = WorldSceneBitmaps.cell("MCAhe", index: 1, columns: 3, rows: 2) {
-                    grounded(ahe, width: w * 0.47, height: size.height * 0.67, x: w * 0.74, floor: size.height * 0.91)
+                    grounded(ahe, width: w * 0.47, height: size.height * 0.42, x: w * 0.74, floor: size.height * 0.91)
                 }
-                Text("10歲 · 那時").font(.system(size: 11, weight: .bold, design: .rounded)).lineLimit(1).padding(5)
-                    .background(StoryPalette.page.opacity(0.9), in: RoundedRectangle(cornerRadius: 7)).padding(4)
+                Text("10歲 · 那時").foregroundStyle(StoryPalette.sceneInk).font(.system(size: 11, weight: .bold, design: .rounded)).lineLimit(1).padding(5)
+                    .background(StoryPalette.scenePaper, in: RoundedRectangle(cornerRadius: 7)).padding(4)
             }.frame(width: size.width * 0.32, height: size.height).clipped()
             ZStack(alignment: .topLeading) {
                 // Reserve a real caption band. Its compact labels duplicate the full spoken
                 // receipt and the large external age; they must never cover either face.
                 castScene(cast, size: CGSize(width: size.width * 0.68 - 3, height: size.height - 26))
                     .frame(width: size.width * 0.68 - 3, height: size.height - 26).offset(y: 26)
-                Text("72歲 · 現在").font(.system(size: 11, weight: .bold, design: .rounded)).lineLimit(1).padding(5)
-                    .background(StoryPalette.page.opacity(0.9), in: RoundedRectangle(cornerRadius: 7)).padding(4)
+                Text("72歲 · 現在").foregroundStyle(StoryPalette.sceneInk).font(.system(size: 11, weight: .bold, design: .rounded)).lineLimit(1).padding(5)
+                    .background(StoryPalette.scenePaper, in: RoundedRectangle(cornerRadius: 7)).padding(4)
             }.frame(width: size.width * 0.68 - 3, height: size.height, alignment: .topLeading).clipped()
-        }.background(StoryPalette.forest.opacity(0.5))
+        }.background(StoryPalette.illustratedPaper)
     }
 
     private func neutralScene(background: String, cell: Int, size: CGSize) -> some View {
@@ -213,7 +217,7 @@ struct LifeWorldScene: View {
                 let portrait = companion.cropping(to: CGRect(x: 0, y: 0, width: companion.width, height: Int(Double(companion.height) * 0.64))) ?? companion
                 fitted(portrait, width: actorWidth * 0.20, height: actorHeight * 0.26)
                     .padding(1).background(Color(red: 0.93, green: 0.92, blue: 0.82))
-                    .overlay(RoundedRectangle(cornerRadius: 3).stroke(StoryPalette.forest, lineWidth: 1.5))
+                    .overlay(RoundedRectangle(cornerRadius: 3).stroke(StoryPalette.sceneInk, lineWidth: 1.5))
                     .clipShape(RoundedRectangle(cornerRadius: 3))
                     .position(x: size.width * 0.43 + actorWidth * 0.365,
                               y: size.height * 0.52 - actorHeight * 0.18)
@@ -349,7 +353,7 @@ struct LifeWorldScene: View {
                     Text(evidence.prop.title).fontWeight(.semibold)
                 }
                 .font(.system(size: min(11, max(9, size.height * 0.043))))
-                .foregroundStyle(StoryPalette.forest)
+                .foregroundStyle(StoryPalette.sceneInk)
                 .padding(.horizontal, 7).padding(.vertical, 3)
                 .background(Color(red: 0.99, green: 0.95, blue: 0.82), in: RoundedRectangle(cornerRadius: 3))
                 .overlay(RoundedRectangle(cornerRadius: 3).stroke(.brown.opacity(0.30), lineWidth: 0.7))
@@ -380,7 +384,7 @@ struct LifeWorldScene: View {
             Image(systemName: symbol).font(.system(size: 16, weight: .medium))
             Text(title).font(.system(size: 9, weight: .semibold))
         }
-        .foregroundStyle(StoryPalette.forest)
+        .foregroundStyle(StoryPalette.sceneInk)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(red: 0.99, green: 0.95, blue: 0.82), in: RoundedRectangle(cornerRadius: 3))
         .overlay(RoundedRectangle(cornerRadius: 3).stroke(.brown.opacity(0.45), style: StrokeStyle(lineWidth: 0.8, dash: sealed ? [3, 2] : [])))
@@ -423,10 +427,10 @@ struct LifeWorldScene: View {
                             .frame(width: w * 0.36, height: h * 0.43).rotationEffect(.degrees(-14))
                             .position(x: w * 0.50, y: h * 0.25)
                         Path { p in p.move(to: .init(x: w * 0.41, y: h * 0.17)); p.addLine(to: .init(x: w * 0.57, y: h * 0.33)) }
-                            .stroke(StoryPalette.forest.opacity(0.6), lineWidth: 1)
+                            .stroke(StoryPalette.sceneInk.opacity(0.6), lineWidth: 1)
                     } else {
                         Image(systemName: "leaf").font(.system(size: max(13, h * 0.40)))
-                            .foregroundStyle(StoryPalette.forest).position(x: w * 0.54, y: h * 0.43)
+                            .foregroundStyle(StoryPalette.sceneInk).position(x: w * 0.54, y: h * 0.43)
                     }
                 }
             }
@@ -445,10 +449,10 @@ struct LifeWorldScene: View {
                         p.addLine(to: .init(x: w * 0.40, y: h * 0.58)); p.addLine(to: .init(x: w * 0.17, y: h * 0.58))
                         p.move(to: .init(x: w * 0.56, y: h * 0.31)); p.addLine(to: .init(x: w * 0.82, y: h * 0.31))
                         p.move(to: .init(x: w * 0.56, y: h * 0.48)); p.addLine(to: .init(x: w * 0.77, y: h * 0.48))
-                    }.stroke(StoryPalette.forest.opacity(0.65), lineWidth: 1.2)
+                    }.stroke(StoryPalette.sceneInk.opacity(0.65), lineWidth: 1.2)
                     if prop == .onlineGuide {
                         Image(systemName: "wifi").font(.system(size: max(12, h * 0.35), weight: .semibold))
-                            .foregroundStyle(StoryPalette.forest).position(x: w * 0.80, y: h * 0.72)
+                            .foregroundStyle(StoryPalette.sceneInk).position(x: w * 0.80, y: h * 0.72)
                     } else {
                         Rectangle().fill(Color(red: 0.68, green: 0.31, blue: 0.22))
                             .frame(width: 4, height: h * 0.80).position(x: w * 0.50, y: h * 0.55)
@@ -462,7 +466,7 @@ struct LifeWorldScene: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 3).fill(Color(red: 0.79, green: 0.64, blue: 0.42))
                 Rectangle().fill(Color(red: 0.93, green: 0.85, blue: 0.66)).frame(height: 5)
-                Image(systemName: "leaf").font(.system(size: 24)).foregroundStyle(StoryPalette.forest)
+                Image(systemName: "leaf").font(.system(size: 24)).foregroundStyle(StoryPalette.sceneInk)
             }.padding(.horizontal, 9).padding(.vertical, 3).rotationEffect(.degrees(-5))
         }
     }
@@ -489,7 +493,7 @@ struct LifeWorldScene: View {
         let width = min(size.width * (protagonist ? heroFraction : 0.36), size.height * 0.76)
         let x = frame.actors.count > 1 ? size.width * (index == 0 ? 0.36 : 0.72) : size.width * 0.50
         return ZStack(alignment: .bottom) {
-            Ellipse().fill(StoryPalette.forest.opacity(0.19))
+            Ellipse().fill(StoryPalette.sceneInk.opacity(0.19))
                 .frame(width: width * 0.48, height: max(4, width * 0.065))
             let stagePose = neutralPose
             let agePortrait = protagonist && frame.stage != .childhood && frame.stage != .laterLife
@@ -584,7 +588,7 @@ struct LifeWorldScene: View {
         let progress = currentOutcome ? LifeWorldMotion.arrival(phaseElapsedMs: motion.phaseElapsedMs, reduceMotion: reduced) : 1
         return Image(systemName: Self.tokenSymbol(change))
             .font(.system(size: min(16, size.height * 0.07), weight: .medium))
-            .foregroundStyle(StoryPalette.forest)
+            .foregroundStyle(StoryPalette.sceneInk)
             .frame(width: min(22, size.width * 0.065), height: min(24, size.height * 0.09))
             .scaleEffect(0.94 + progress * 0.06)
             .offset(y: (1 - progress) * 4)
@@ -664,6 +668,20 @@ struct LifeWorldScene: View {
     private static func atlas(_ name: String) -> CGImage? {
         if let image = atlasCache[name] { return image }
         let image = load(name); atlasCache[name] = image; return image
+    }
+    /// Alpha unions measured from the source and edited index-2 cells, retained
+    /// in assets/final-polish-loop/alpha-audit.json. Never trim endpoints separately.
+    static func requestPose(age: Int, listening: Bool) -> CGImage? {
+        guard age == 13 || age == 32 else { return nil }
+        let name = age == 13 ? (listening ? "FPListening13" : "VL2Teen13")
+                             : (listening ? "FPListening32" : "MCMumu")
+        let key = "request-\(name)"
+        if let cached = cellCache[key] { return cached }
+        let rect = age == 13 ? CGRect(x: 114, y: 686, width: 434, height: 501)
+                             : CGRect(x: 83, y: 656, width: 505, height: 561)
+        guard let image = atlas(name), let crop = image.cropping(to: rect) else { return nil }
+        cellCache[key] = crop
+        return crop
     }
     static func scene(_ name: String, size: CGSize) -> CGImage? {
         guard let image = atlas(name), size.width > 0, size.height > 0 else { return nil }

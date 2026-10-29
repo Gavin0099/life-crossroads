@@ -1,0 +1,10 @@
+{
+  "capture_head": "c74fadfaf6d6a063bf4e57260ba16cb1827c2118",
+  "overlay": "one-line removal of extra chosenAction accessibilityLabel",
+  "crossroads_sha256": "2c6691e3944495527f6250b7f25e8fbab54d2bb03cc5b2e670ed2dd5bc240fd5",
+  "original_ui_tests_sha256": "34601237b99c4805d2a4236d36b68261b2cc6a7ccae3ce88f500530be77d8cd8",
+  "log_sha256": "df18925d4b139b98c02d03df5e2846e645aa1591f0cedd08f658bac67d7fb7cc",
+  "passed": 2,
+  "failed": 0,
+  "deleted_device": "F7FC82FF-0504-4054-92A5-C9E3F3AE2E93"
+}

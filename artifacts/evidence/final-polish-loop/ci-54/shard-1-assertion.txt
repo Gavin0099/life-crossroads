@@ -1,0 +1,12 @@
+    t =   162.67s Checking existence of `"history.8.event" StaticText`
+    t =   162.78s Find the "history.8.event" StaticText
+    t =   163.08s Find the "history.8.event" StaticText
+    t =   163.23s Find the "history.8.event" StaticText
+    t =   163.35s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =   163.48s Find the "history.8.event" StaticText
+    t =   163.65s Find the "history.8.event" StaticText
+    t =   163.78s Find the "history.8.choice" StaticText
+/Users/runner/work/life-crossroads/life-crossroads/UITests/LifeCrossroadsUITests.swift:1093: error: -[LifeCrossroadsUITests.LifeCrossroadsUITests testForkPreservesOriginalResumesAfterRelaunchAndComparesFullRemainder] : XCTAssertEqual failed: ("和大人把紙箱做成會動的玩具") is not equal to ("這次選擇之後，和大人把紙箱做成會動的玩具")
+    t =   164.63s Tear Down
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testForkPreservesOriginalResumesAfterRelaunchAndComparesFullRemainder]' failed (164.903 seconds).
+Test Case '-[LifeCrossroadsUITests.LifeCrossroadsUITests testMaximumTextCanReachActionsReasonComparisonAndContinue]' started.

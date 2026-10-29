@@ -1,0 +1,352 @@
+{
+  "base": "45d3ff98e3be6ec9a95de462ec36e82fc8016ea0",
+  "captured_source_matches_current_files": true,
+  "capture_runs_passed": 6,
+  "native_screenshots": 42,
+  "retained_audit_findings": 9,
+  "archive_checksums_unchanged_and_equal_across_appearances": true,
+  "runs": [
+    {
+      "device": "iPhone-17",
+      "appearance": "light",
+      "capture": "PASS",
+      "screenshots": 7,
+      "audit": [
+        {
+          "screen": "home",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "birth",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "13-before",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "choices",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "13-ask",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "explanation",
+          "retained_findings": 1,
+          "result": "FINDINGS_RETAINED"
+        },
+        {
+          "screen": "72-ahe",
+          "retained_findings": 0,
+          "result": "PASS"
+        }
+      ],
+      "clipped_text_not_audited": 7,
+      "archive_checksums": {
+        "13-before": "c1074e81fb937ec13928efbf9b8012bab9fbcbe0938b1f2cc99f53df90411ebd",
+        "13-ask": "8d85eb25d6f21ac085fa4fafec47c110567a6513133614c2ab49c8336a65f1b4",
+        "72-ahe": "92bd9243fdfaadc47e8611e855b7e59d1b9f6c336bd0d60437d5f274128fd932"
+      },
+      "settings": [
+        "light",
+        "disabled",
+        "large"
+      ],
+      "source": "artifacts/evidence/readability/delivery/iPhone-17/source.json",
+      "test_log": "artifacts/evidence/readability/delivery/iPhone-17/light/test.log"
+    },
+    {
+      "device": "iPhone-17",
+      "appearance": "dark",
+      "capture": "PASS",
+      "screenshots": 7,
+      "audit": [
+        {
+          "screen": "home",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "birth",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "13-before",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "choices",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "13-ask",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "explanation",
+          "retained_findings": 1,
+          "result": "FINDINGS_RETAINED"
+        },
+        {
+          "screen": "72-ahe",
+          "retained_findings": 0,
+          "result": "PASS"
+        }
+      ],
+      "clipped_text_not_audited": 7,
+      "archive_checksums": {
+        "13-before": "c1074e81fb937ec13928efbf9b8012bab9fbcbe0938b1f2cc99f53df90411ebd",
+        "13-ask": "8d85eb25d6f21ac085fa4fafec47c110567a6513133614c2ab49c8336a65f1b4",
+        "72-ahe": "92bd9243fdfaadc47e8611e855b7e59d1b9f6c336bd0d60437d5f274128fd932"
+      },
+      "settings": [
+        "dark",
+        "disabled",
+        "large"
+      ],
+      "source": "artifacts/evidence/readability/delivery/iPhone-17/source.json",
+      "test_log": "artifacts/evidence/readability/delivery/iPhone-17/dark/test.log"
+    },
+    {
+      "device": "iPhone-17",
+      "appearance": "dark-high-large",
+      "capture": "PASS",
+      "screenshots": 7,
+      "audit": [
+        {
+          "screen": "home",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "birth",
+          "retained_findings": 2,
+          "result": "FINDINGS_RETAINED"
+        },
+        {
+          "screen": "13-before",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "choices",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "13-ask",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "explanation",
+          "retained_findings": 1,
+          "result": "FINDINGS_RETAINED"
+        },
+        {
+          "screen": "72-ahe",
+          "retained_findings": 0,
+          "result": "PASS"
+        }
+      ],
+      "clipped_text_not_audited": 2,
+      "archive_checksums": {
+        "13-before": "c1074e81fb937ec13928efbf9b8012bab9fbcbe0938b1f2cc99f53df90411ebd",
+        "13-ask": "8d85eb25d6f21ac085fa4fafec47c110567a6513133614c2ab49c8336a65f1b4",
+        "72-ahe": "92bd9243fdfaadc47e8611e855b7e59d1b9f6c336bd0d60437d5f274128fd932"
+      },
+      "settings": [
+        "dark",
+        "enabled",
+        "accessibility-extra-extra-extra-large"
+      ],
+      "source": "artifacts/evidence/readability/delivery/iPhone-17/source.json",
+      "test_log": "artifacts/evidence/readability/delivery/iPhone-17/dark-high-large/test.log"
+    },
+    {
+      "device": "iPhone-SE-3rd-generation",
+      "appearance": "light",
+      "capture": "PASS",
+      "screenshots": 7,
+      "audit": [
+        {
+          "screen": "home",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "birth",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "13-before",
+          "retained_findings": 1,
+          "result": "FINDINGS_RETAINED"
+        },
+        {
+          "screen": "choices",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "13-ask",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "explanation",
+          "retained_findings": 1,
+          "result": "FINDINGS_RETAINED"
+        },
+        {
+          "screen": "72-ahe",
+          "retained_findings": 0,
+          "result": "PASS"
+        }
+      ],
+      "clipped_text_not_audited": 7,
+      "archive_checksums": {
+        "13-before": "c1074e81fb937ec13928efbf9b8012bab9fbcbe0938b1f2cc99f53df90411ebd",
+        "13-ask": "8d85eb25d6f21ac085fa4fafec47c110567a6513133614c2ab49c8336a65f1b4",
+        "72-ahe": "92bd9243fdfaadc47e8611e855b7e59d1b9f6c336bd0d60437d5f274128fd932"
+      },
+      "settings": [
+        "light",
+        "disabled",
+        "large"
+      ],
+      "source": "artifacts/evidence/readability/delivery/iPhone-SE-3rd-generation/source.json",
+      "test_log": "artifacts/evidence/readability/delivery/iPhone-SE-3rd-generation/light/test.log"
+    },
+    {
+      "device": "iPhone-SE-3rd-generation",
+      "appearance": "dark",
+      "capture": "PASS",
+      "screenshots": 7,
+      "audit": [
+        {
+          "screen": "home",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "birth",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "13-before",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "choices",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "13-ask",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "explanation",
+          "retained_findings": 1,
+          "result": "FINDINGS_RETAINED"
+        },
+        {
+          "screen": "72-ahe",
+          "retained_findings": 0,
+          "result": "PASS"
+        }
+      ],
+      "clipped_text_not_audited": 7,
+      "archive_checksums": {
+        "13-before": "c1074e81fb937ec13928efbf9b8012bab9fbcbe0938b1f2cc99f53df90411ebd",
+        "13-ask": "8d85eb25d6f21ac085fa4fafec47c110567a6513133614c2ab49c8336a65f1b4",
+        "72-ahe": "92bd9243fdfaadc47e8611e855b7e59d1b9f6c336bd0d60437d5f274128fd932"
+      },
+      "settings": [
+        "dark",
+        "disabled",
+        "large"
+      ],
+      "source": "artifacts/evidence/readability/delivery/iPhone-SE-3rd-generation/source.json",
+      "test_log": "artifacts/evidence/readability/delivery/iPhone-SE-3rd-generation/dark/test.log"
+    },
+    {
+      "device": "iPhone-SE-3rd-generation",
+      "appearance": "dark-high-large",
+      "capture": "PASS",
+      "screenshots": 7,
+      "audit": [
+        {
+          "screen": "home",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "birth",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "13-before",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "choices",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "13-ask",
+          "retained_findings": 0,
+          "result": "PASS"
+        },
+        {
+          "screen": "explanation",
+          "retained_findings": 1,
+          "result": "FINDINGS_RETAINED"
+        },
+        {
+          "screen": "72-ahe",
+          "retained_findings": 0,
+          "result": "PASS"
+        }
+      ],
+      "clipped_text_not_audited": 1,
+      "archive_checksums": {
+        "13-before": "c1074e81fb937ec13928efbf9b8012bab9fbcbe0938b1f2cc99f53df90411ebd",
+        "13-ask": "8d85eb25d6f21ac085fa4fafec47c110567a6513133614c2ab49c8336a65f1b4",
+        "72-ahe": "92bd9243fdfaadc47e8611e855b7e59d1b9f6c336bd0d60437d5f274128fd932"
+      },
+      "settings": [
+        "dark",
+        "enabled",
+        "accessibility-extra-extra-extra-large"
+      ],
+      "source": "artifacts/evidence/readability/delivery/iPhone-SE-3rd-generation/source.json",
+      "test_log": "artifacts/evidence/readability/delivery/iPhone-SE-3rd-generation/dark-high-large/test.log"
+    }
+  ],
+  "limits": [
+    "Capture PASS does not mean native audit is clear",
+    "Excluded clipped drawer static text was not audited; other findings retained",
+    "No full VoiceOver or child acceptance",
+    "iPhone signed build succeeded; phone unavailable, new palette not installed"
+  ]
+}

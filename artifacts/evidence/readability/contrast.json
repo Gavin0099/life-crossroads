@@ -1,0 +1,258 @@
+{
+  "standard": "WCAG 2 relative luminance; Apple HIG 4.5 minimum, 7 for small text",
+  "pass": true,
+  "pairs": [
+    {
+      "appearance": "light",
+      "foreground": "StoryInk",
+      "background": "StoryPaper",
+      "ratio": 11.495691533690628,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "light",
+      "foreground": "StorySecondaryInk",
+      "background": "StoryPaper",
+      "ratio": 7.686237820452846,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "light",
+      "foreground": "StoryAccent",
+      "background": "StoryPaper",
+      "ratio": 7.053486807908,
+      "minimum": 4.5
+    },
+    {
+      "appearance": "light",
+      "foreground": "StoryInk",
+      "background": "StoryPage",
+      "ratio": 10.726954134010024,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "light",
+      "foreground": "StorySecondaryInk",
+      "background": "StoryPage",
+      "ratio": 7.172245386147792,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "light",
+      "foreground": "StoryAccent",
+      "background": "StoryPage",
+      "ratio": 6.581807562557559,
+      "minimum": 4.5
+    },
+    {
+      "appearance": "light",
+      "foreground": "StoryOnButton",
+      "background": "StoryButton",
+      "ratio": 7.8613261367369605,
+      "minimum": 4.5
+    },
+    {
+      "appearance": "light",
+      "foreground": "StoryOnButton",
+      "background": "StoryButtonPressed",
+      "ratio": 10.617681268063452,
+      "minimum": 4.5
+    },
+    {
+      "appearance": "light",
+      "foreground": "StorySceneInk",
+      "background": "StoryScenePaper",
+      "ratio": 11.495691533690628,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "dark",
+      "foreground": "StoryInk",
+      "background": "StoryPaper",
+      "ratio": 12.745519870061916,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "dark",
+      "foreground": "StorySecondaryInk",
+      "background": "StoryPaper",
+      "ratio": 9.460082454391953,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "dark",
+      "foreground": "StoryAccent",
+      "background": "StoryPaper",
+      "ratio": 9.383606191868521,
+      "minimum": 4.5
+    },
+    {
+      "appearance": "dark",
+      "foreground": "StoryInk",
+      "background": "StoryPage",
+      "ratio": 15.173456569482834,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "dark",
+      "foreground": "StorySecondaryInk",
+      "background": "StoryPage",
+      "ratio": 11.26216519442338,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "dark",
+      "foreground": "StoryAccent",
+      "background": "StoryPage",
+      "ratio": 11.171120712925111,
+      "minimum": 4.5
+    },
+    {
+      "appearance": "dark",
+      "foreground": "StoryOnButton",
+      "background": "StoryButton",
+      "ratio": 7.8613261367369605,
+      "minimum": 4.5
+    },
+    {
+      "appearance": "dark",
+      "foreground": "StoryOnButton",
+      "background": "StoryButtonPressed",
+      "ratio": 10.617681268063452,
+      "minimum": 4.5
+    },
+    {
+      "appearance": "dark",
+      "foreground": "StorySceneInk",
+      "background": "StoryScenePaper",
+      "ratio": 11.495691533690628,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "high",
+      "foreground": "StoryInk",
+      "background": "StoryPaper",
+      "ratio": 16.93245173067629,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "high",
+      "foreground": "StorySecondaryInk",
+      "background": "StoryPaper",
+      "ratio": 12.812298764399513,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "high",
+      "foreground": "StoryAccent",
+      "background": "StoryPaper",
+      "ratio": 12.05634507774196,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "high",
+      "foreground": "StoryInk",
+      "background": "StoryPage",
+      "ratio": 16.93245173067629,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "high",
+      "foreground": "StorySecondaryInk",
+      "background": "StoryPage",
+      "ratio": 12.812298764399513,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "high",
+      "foreground": "StoryAccent",
+      "background": "StoryPage",
+      "ratio": 12.05634507774196,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "high",
+      "foreground": "StoryOnButton",
+      "background": "StoryButton",
+      "ratio": 11.945066454159615,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "high",
+      "foreground": "StoryOnButton",
+      "background": "StoryButtonPressed",
+      "ratio": 14.857708359116511,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "high",
+      "foreground": "StorySceneInk",
+      "background": "StoryScenePaper",
+      "ratio": 11.495691533690628,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "dark+high",
+      "foreground": "StoryInk",
+      "background": "StoryPaper",
+      "ratio": 18.19767236678228,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "dark+high",
+      "foreground": "StorySecondaryInk",
+      "background": "StoryPaper",
+      "ratio": 16.557467688250263,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "dark+high",
+      "foreground": "StoryAccent",
+      "background": "StoryPaper",
+      "ratio": 16.506718320187094,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "dark+high",
+      "foreground": "StoryInk",
+      "background": "StoryPage",
+      "ratio": 19.350312503022135,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "dark+high",
+      "foreground": "StorySecondaryInk",
+      "background": "StoryPage",
+      "ratio": 17.60621729904163,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "dark+high",
+      "foreground": "StoryAccent",
+      "background": "StoryPage",
+      "ratio": 17.552253467208622,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "dark+high",
+      "foreground": "StoryOnButton",
+      "background": "StoryButton",
+      "ratio": 11.945066454159615,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "dark+high",
+      "foreground": "StoryOnButton",
+      "background": "StoryButtonPressed",
+      "ratio": 14.857708359116511,
+      "minimum": 7.0
+    },
+    {
+      "appearance": "dark+high",
+      "foreground": "StorySceneInk",
+      "background": "StoryScenePaper",
+      "ratio": 11.495691533690628,
+      "minimum": 7.0
+    }
+  ]
+}

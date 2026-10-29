@@ -1,0 +1,30 @@
+[
+  {
+    "path": "readability-72-ahe-dark-high-large-screen.png",
+    "sha256": "77d655ccaf5b338efd77a67cddc5d2713f10abf6646bba740d4d6b886133883f"
+  },
+  {
+    "path": "readability-explanation-dark-high-large-screen.png",
+    "sha256": "33eddc5705c70f9974a4c38afae90f43a2cf631667149126ec9a1ab2d37f0526"
+  },
+  {
+    "path": "readability-13-ask-dark-high-large-screen.png",
+    "sha256": "d8db73128b058416d83c823b22f08f85e19dcfb4bd7e73d40853b5b09e33c0ac"
+  },
+  {
+    "path": "readability-choices-dark-high-large-screen.png",
+    "sha256": "20413794cd227fd449d070cffccf4e7e4a4c3722dd30b40f2eea4212ad2c8f7e"
+  },
+  {
+    "path": "readability-13-before-dark-high-large-screen.png",
+    "sha256": "7b3b07319aef6d70489c6f89c20e0cb6d73479b70a93ebd72b6a16408ab4a38b"
+  },
+  {
+    "path": "readability-birth-dark-high-large-screen.png",
+    "sha256": "ac64362662e9ff49c687bcdfda9f1d03c6dfc9ca07fb47d8df8651c9e27dea58"
+  },
+  {
+    "path": "readability-home-dark-high-large-screen.png",
+    "sha256": "232fdbbf85659c8115e0f4bf4a553a0298f38075c7f5501c7cfb50cc40a64c23"
+  }
+]

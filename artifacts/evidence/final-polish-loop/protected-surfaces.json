@@ -1,0 +1,462 @@
+{
+  "base": "325b69896553fb6c479e415c0c0991e76ef78a26",
+  "result": "PASS",
+  "preExistingFileCount": 90,
+  "preExistingTestMethodCounts": {
+    "swift": 158,
+    "python": 45,
+    "originalUI": 30
+  },
+  "files": [
+    {
+      "path": ".github/workflows/governance-drift.yml",
+      "sha256": "8059d9df1b2ac25cda8d04f5be832d5bc958ea59b65d60633f9c12e9f137338f",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/App/GameStore.swift",
+      "sha256": "9537f5ba6a2be50f8869e19c1e6b62e71b553b0d588ce0681b4c81b47e519d4c",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Data/BirthStory.swift",
+      "sha256": "c56c1fdff96fb10c82d8e3338d8425db9948c8a2d088ec03062c5f1e8e520f1b",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Data/EventNarratives.swift",
+      "sha256": "2909c739c3af0578656fde034e347457e019850eb2e0db06b3687e8179017409",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Data/LifeNarrative.swift",
+      "sha256": "315db310aa1716c3facc60dfe985cf01fb4a776db6674f1104e33704d3ea6cd2",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Data/Resources/catalog.json",
+      "sha256": "9370a4264d0bf49c655f26364cfb10a5713e329e99c234532c1351912602fc77",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Data/Resources/raw/taiwan-digital-national-row-2023.json",
+      "sha256": "cd05946f6220575df895ac44c53636d0e9da66442254b54d99234b9c3a7ef0eb",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Data/Resources/raw/taiwan-nhe-national-row-2023.json",
+      "sha256": "324702b38d254a7b9a744b6128c2926dc815ab543b123baf2d01c85545553d14",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Data/Resources/raw/wdi-che-gdp-2023-lc03.json",
+      "sha256": "2f41ded2530efeb5f3bdfc97e63721d2d12c0be1109e4d3156c2b3f941d4ecde",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Data/Resources/raw/wdi-electricity-2023.json",
+      "sha256": "333a7f27d6ab8a9cb335fded93f07ed9e8e46de41f8ff24c3aa4a9ea54a2e58b",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Data/Resources/raw/wdi-internet-2023.json",
+      "sha256": "21b95c877b48a47ff474c856d6e723ceb8c3a4eab4c5b19a536e4ddb7ce859eb",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Data/Resources/raw/wdi-oop-2023-lc03.json",
+      "sha256": "32e3e82596d405e97ee60c3b8342a3dbe4faa801450e0328dff92802ae2f847c",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Data/StatisticsRepository.swift",
+      "sha256": "0e99eda0d0542ee8eb57a1d6fbb65af8b4a2b09e693db570e7d2b7a4831bc0d2",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/BirthDraw.swift",
+      "sha256": "9cbfcd7a7535310277ba138046929113fd3ac8a5fea4e07a9be1626fb35b3080",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/BranchComparisonEngine.swift",
+      "sha256": "2148dbfaf4ebd2b2b2f106daf3f98e4edccfeb12ca622401afd5f7f2320b1284",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/BranchExperiment.swift",
+      "sha256": "367c709201a6ffbfb4a7ca4dd1f2ed91f0e7532b8e3da58e9a58c5c8322ea4cb",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/ConsequenceTrace.swift",
+      "sha256": "0aa587c059a91f535c13159474e0b6693dfc4bd73239613a46ab07128ef4554f",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/CreativeOpportunity.swift",
+      "sha256": "0eb3a695d3bf3f1460aaf653f737945739fe5eb7ec267731c3cfa2335854b260",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/DecisionResolver.swift",
+      "sha256": "3bdf73d6579bc34b4569bf3bf9ea4fcacb156aa36dd04d790d4d20e5f09d4778",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/EnvironmentComparison.swift",
+      "sha256": "89058c6eb174ebae8ea4f02fb9eb963627cb1032f34932e675e7e17c30769061",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/EnvironmentOpportunity.swift",
+      "sha256": "8741863d34008bc2bded72ef4ee2927578e1f968f7c78c359c2cc71df94e40b8",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/EventPolicy.swift",
+      "sha256": "9f7e5015ba15d76f9daa80800fc29770eb4655320a8d458ec32af31242b0a51e",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/EventSelector.swift",
+      "sha256": "9cf476cd9aa9d053b7acb3c14a00efaad2b6215237b8203a7ed92a4a2de96fdd",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/IndicatorContract.swift",
+      "sha256": "80f67874e43ee6304651ee7d0ec4304a1e43a494be230eecfd01f3a28f340544",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/LifeFocus.swift",
+      "sha256": "2ee82f5088723fd8b338402237d24505f22e90473bbf0203e6a99ed9825235c7",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/LifeSession.swift",
+      "sha256": "0299a551d9e4c269546726b05c30ff6fb712f16efca1a2c1c51519d82e919b9f",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/LifeState.swift",
+      "sha256": "1c3e812e69977aa90793f6bef89c30577f9d07a101bb1fee68ad0c57f320cd00",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/Models.swift",
+      "sha256": "68685befb41185aa11d4dc3b4d2019f8873f38a8bf8717a3c361820518ab54c1",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/ParallelLifeExperiment.swift",
+      "sha256": "5363d6f3cb1853e732e8af6a2fbcc7b6809e9fb23f5352476f11b81ead66bd6b",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/RandomSource.swift",
+      "sha256": "746e01eff6f8ef03af1902354c8c62c09c3dc74e33e6b2a4c096a6e4a210bb03",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/StoryBranchEngine.swift",
+      "sha256": "e471130eb24fb7deb2ab304cb7c39fde998c5d2d48522c7accd56eabd35a3165",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Domain/StoryMemory.swift",
+      "sha256": "35201f12747df3f2faa005c35ee0c1ff4d7c8089fe13339852f54651c92fa91c",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Persistence/SaveRepository.swift",
+      "sha256": "8b2ec480d65e76027e84ee99461f9d8d4ebca75503b353c7a4262d1dbf077044",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Presentation/LifeWorldFrame.swift",
+      "sha256": "526a7952909dcb539347da70ef240be68c3075dc17c86e54cae90962d0e9f543",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Presentation/WorldCastScene.swift",
+      "sha256": "63c0231f3cd6c54c6649b2960e70748e761c7183a8b17ecd941108348f261232",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Presentation/WorldPlayback.swift",
+      "sha256": "381a2923740f8119824f5c38cf54b3a0475d496a2c020cf0772e9a1d4d056414",
+      "unchanged": true
+    },
+    {
+      "path": "LifeCrossroads/Presentation/WorldRelationshipMemory.swift",
+      "sha256": "199e8c39757a621d26662013731982ce35aa850c8a5d8f504d2a0f6f051446a4",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/LifeAnalysisTests/BatchAnalysisTests.swift",
+      "sha256": "f9c38de9d17b1e33956c01598b30f3efb6de847075ebc851b8144fa212ef5850",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/LifeAnalysisTests/ExperienceAuditTests.swift",
+      "sha256": "e82f3332dae1d06c5640b459c5022133fc41ace00ef4e0b5ce0c471be8ea2d18",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/LifeDomainTests/BranchExperimentTests.swift",
+      "sha256": "66233b7986c51a89c5a02bde316e40620e03dddb9ed25ccafab2d92d6dd346f2",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/LifeDomainTests/EventSelectionTests.swift",
+      "sha256": "f7b3b23c866764126f1949c422a7f06cdfb92ba84218ed7745201a8ffb4503f5",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/LifeDomainTests/LC01Tests.swift",
+      "sha256": "bf3f0d77b8428d704a312d799abe7d325405ca11c52b1385dd700d78279aa1ca",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/LifeDomainTests/LC03Tests.swift",
+      "sha256": "5794eab2d55bec31bf462cfc1a7349dd9bf930519be14f4938172df31aa9c5ca",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/LifeDomainTests/LifeExperienceTests.swift",
+      "sha256": "c1de7b4916356e3173b8827ff2fc0f7435ec0802e94b548d4c79a5ecc15bb084",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/LifeDomainTests/LifeSessionTests.swift",
+      "sha256": "1532fffb451d3597cff386d6b3cb787d53c199108c028ecff4e864176b128c98",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/LifeDomainTests/RNGV2Tests.swift",
+      "sha256": "65df973fb0145c30bb189ae6414a657f4a67bf4b846cb2fc72cb26d9a5e6a32e",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/LifeDomainTests/StoryBranchTests.swift",
+      "sha256": "99e9140c9e3381ca18aa929c5b015863ad30a1e1445dc355ca632ba8f5390a30",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/LifeDomainTests/StoryFixture.swift",
+      "sha256": "757de966e4667dec9a3e2990d9797127b582b6412869bf0b13d098357c41b589",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/LifePersistenceTests/BirthStoryTests.swift",
+      "sha256": "962813105b11101255582686942a0070b32688600f10911bad510d23d447d7ef",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/LifePersistenceTests/ExperienceCompletionTests.swift",
+      "sha256": "094f7ca5dd88e4876083c802bd31c33a95afe36cba700b7078c67f012656e78e",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/LifePersistenceTests/OpportunityTests.swift",
+      "sha256": "5642a471dbc9c6dd3b473e043401c39c864acc6246263467f1eb8923bcd7883a",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/LifePersistenceTests/SaveRepositoryTests.swift",
+      "sha256": "61271ac295dcb33202481708e6727db0740f04d5e39e8207a16b6cdbac8db17f",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/LifePresentationTests/LifeWorldFrameTests.swift",
+      "sha256": "cc489b35992aa23d413196f38ced00ac381d77e413efd239afaafc221888a28a",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/LifePresentationTests/ProjectMomentTests.swift",
+      "sha256": "fc05d64e34a7c1ea2d7e0796ffb805a9c21766ac00fd33fac23c161471c222ed",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/LifePresentationTests/WorldActivityTests.swift",
+      "sha256": "132b15c23aaf2efe794fc6f98682c0cc5f4099838ed99c16f34017c9c2f6734c",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/LifePresentationTests/WorldCastTests.swift",
+      "sha256": "cdb90a4e42f008844306478cbfd02fe74fdb074fb5ecdc4f223c0dd5b8b418c0",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/LifePresentationTests/WorldPersistenceTests.swift",
+      "sha256": "3e9dd26619386ef20566649f723ba7b32e037458b3fa988a71e54eab89160c26",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/LifePresentationTests/WorldPlaybackTests.swift",
+      "sha256": "a2adedda3c94e67f3f0a2e0f74cfcc5f7cc69f6162b018b836707f7a8e1e78f1",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/LifePresentationTests/WorldRelationshipMemoryTests.swift",
+      "sha256": "e68da15b1bb20f08d024bee5b1f10b91dfa7a284c15c39a353869521b45dea8d",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/test_batch_report.py",
+      "sha256": "692d6dd90d870d4c2c8d6e9119f6b881c04f5fa7c82577baaf08b6eafa39ef4b",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/test_data_generation.py",
+      "sha256": "ac968fb2dfde461214f8d42bf654d2b3a7b46f5f8a0c4fd9abebdb1cef9d800e",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/test_environment_report.py",
+      "sha256": "aed51aa0f64f77589fe7ab809a8714d303d3720f75547fb643bb84e7ab63a87f",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/test_experience_content.py",
+      "sha256": "0137702834507fda6e8165260f158a753f712422b8ada671aa7818f64756ca0b",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/test_experience_summary.py",
+      "sha256": "879456298f11085d7b6502cfcf388cf50d71b556a1a2c743e52ea88168d593c8",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/test_interaction_assets.py",
+      "sha256": "9006194a69aa906198244286bb3a4662ed3ec3707a417d1fd0e0f6756d505d97",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/test_ios_runtime.py",
+      "sha256": "ee82a98c6de30553e13a66311485a1d10d96d9a895664bc7c5602c3adc93083a",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/test_ios_shards.py",
+      "sha256": "c1652b76f391b308d5313495cfe2c56b6f47fcc8b9beb1fef46428b3dda9d505",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/test_lc03_data.py",
+      "sha256": "d3423ff47361f48af3b527fbb7ffe7d295a69eb6bf49fdd662a469988536d641",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/test_multicast_assets.py",
+      "sha256": "3818845c4b4d663875016416a59f91e1ad7e531d75d1edebf5c77278b26051a5",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/test_simulator_cleanup.py",
+      "sha256": "b8f04fa400fdad97b72e42748ed13aa2832ead421f45652593a8b5d118f9cba2",
+      "unchanged": true
+    },
+    {
+      "path": "Tests/test_visual_assets.py",
+      "sha256": "6510dab3c0f0f5dd00721becc8d2de9759e4152998fa5d674ac4d63fb50774a3",
+      "unchanged": true
+    },
+    {
+      "path": "UITests/LifeCrossroadsUITests.swift",
+      "sha256": "34601237b99c4805d2a4236d36b68261b2cc6a7ccae3ce88f500530be77d8cd8",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/build-data.py",
+      "sha256": "31e91f05fbaff2b68358c0b4a1ee472c7905ed3be57068bfea70080619c33a06",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/capture-life-loop-baseline.py",
+      "sha256": "6f4b3c7924ee04645131a8d594b3b7d7c54546341e4ab72b567dae736f31b51b",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/check-ios-runtime.py",
+      "sha256": "fe73aa75f1aff70bc81d74f543b16e1c8b28625d841d066bf99b6c847309e581",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/compare-batch-reports.py",
+      "sha256": "4f1f7a5a8c6de2654b4ad4be553eb0d599845ff8154036c6def64c17d0e1d7bd",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/experience_content.py",
+      "sha256": "85d8e84fff24a069ca8288d9eddfc1c1134a56f25e4308f3874990946c91c87b",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/governance-check.py",
+      "sha256": "5b8dacfc62f5f258615319235207d36046b2e08dc604fdd52be6ecca1015a3ad",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/governance-check.sh",
+      "sha256": "2f094b20f003b840c727c9679e1e44c7c68e472d781476424f7fc8208e87ea30",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/governance-setup.sh",
+      "sha256": "bdda7edb5155dee90e46fe243fd54204120ffd8e52bd120c81b7123e72c66869",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/ios-check.sh",
+      "sha256": "98f336d536f04ee196089763cd712c04d66a58c7e98706f3cd73289026e99b37",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/ios-test-shards.py",
+      "sha256": "620d8f1556764db0834adeba21db8dbed13855f5dbc5a8e54aa8f6deb14d02fe",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/lc03_data.py",
+      "sha256": "27b4412ccb072bb570b1b8546c319dfc4c0f1359e254ca536e5371453a396024",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/opportunity_content.py",
+      "sha256": "ecebc8dad0c638711ccd57225d657420f46b4245740f7e6e2ab95f66f1145d41",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/render-batch-report.py",
+      "sha256": "0f216c3aa29511a142ffad8838e093a07c6e173596599d9b036329c6179875f5",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/render-environment-report.py",
+      "sha256": "3bb5e310732649fab407682fcc3a51734e50106482d6a71340537a8c2fc17c2e",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/rng_v2_content.py",
+      "sha256": "b1324b00a8aa29e40adaead65d77ee1a4862694e584661a47cb67fc00693ba29",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/run-rng-v2-evidence.py",
+      "sha256": "86a5bccf1441af8401befd73dae23875838bee579bba38cfcab0fc16e55fb07c",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/summarize-experience.py",
+      "sha256": "837a91ca6f860bb2b7a604fd6e3842079a169a3bef5526ab526fc70152f9ca36",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/verify-lc03-downloads.py",
+      "sha256": "cf253d520ab4e4be848439e9f472c1e886714303b0efbdfa249f8b6d2e455b8e",
+      "unchanged": true
+    }
+  ]
+}
