@@ -1,0 +1,54 @@
+{
+  "samples": [
+    {
+      "pixels": "3246",
+      "rgb": "67,79,73"
+    },
+    {
+      "pixels": "2674",
+      "rgb": "66,78,72"
+    },
+    {
+      "pixels": "399",
+      "rgb": "249,245,237"
+    },
+    {
+      "pixels": "397",
+      "rgb": "68,80,75"
+    },
+    {
+      "pixels": "238",
+      "rgb": "70,81,76"
+    },
+    {
+      "pixels": "112",
+      "rgb": "30,41,36"
+    },
+    {
+      "pixels": "97",
+      "rgb": "67,80,73"
+    },
+    {
+      "pixels": "92",
+      "rgb": "68,81,75"
+    },
+    {
+      "pixels": "77",
+      "rgb": "68,81,76"
+    },
+    {
+      "pixels": "74",
+      "rgb": "66,79,72"
+    },
+    {
+      "pixels": "37",
+      "rgb": "71,82,77"
+    },
+    {
+      "pixels": "30",
+      "rgb": "66,79,73"
+    }
+  ],
+  "source": "artifacts/evidence/readability/native-toolbar-element.png",
+  "purpose": "Pixel sample only; does not dismiss native contrast audit finding"
+}

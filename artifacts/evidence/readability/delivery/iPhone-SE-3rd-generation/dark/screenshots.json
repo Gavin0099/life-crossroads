@@ -1,0 +1,30 @@
+[
+  {
+    "path": "readability-72-ahe-dark-screen.png",
+    "sha256": "26887e8f9215df8ef1b0532f46b93a939a58cc2b768905aea367229e3e0381ca"
+  },
+  {
+    "path": "readability-explanation-dark-screen.png",
+    "sha256": "4c9f7dee5d6f37ef40ade097788d7d6d089170f7c9bb2e29c86c0a9637835cd9"
+  },
+  {
+    "path": "readability-13-ask-dark-screen.png",
+    "sha256": "26c7d4d5aeb2d2666f8bf7ad1506dfe34472805767ac662ce1852d181db2e1bf"
+  },
+  {
+    "path": "readability-choices-dark-screen.png",
+    "sha256": "dadf52c92bb4cfb2a5079b539a60ae1a7bab63435f8953b53ef07513fd3de513"
+  },
+  {
+    "path": "readability-13-before-dark-screen.png",
+    "sha256": "63e5f0b165a4ee39a10410c07a4269cd48f4093cb7c26373611b2e831d4a4f1b"
+  },
+  {
+    "path": "readability-birth-dark-screen.png",
+    "sha256": "ee58e8ee3013db8dedc3a02b7edde8538ad292cab67713f3fb86c4dc9e3e8f12"
+  },
+  {
+    "path": "readability-home-dark-screen.png",
+    "sha256": "677f6b78f01100ce1bae11189b1bafba8fd2b12033a9e41f6830f64cf769fff5"
+  }
+]

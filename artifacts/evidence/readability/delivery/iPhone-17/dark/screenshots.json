@@ -1,0 +1,30 @@
+[
+  {
+    "path": "readability-72-ahe-dark-screen.png",
+    "sha256": "a50c5c36f55c01ef54ee4b6d062fd491b1a18747c25e250f513d612b3f4fa176"
+  },
+  {
+    "path": "readability-explanation-dark-screen.png",
+    "sha256": "423e334824433f6f24e26cec6f051f29c191207d644760a65cc1695387935356"
+  },
+  {
+    "path": "readability-13-ask-dark-screen.png",
+    "sha256": "a62bf29f4d85bfb1f4ad8972045ca6a37971d7932eb2bce9de200148855ffde7"
+  },
+  {
+    "path": "readability-choices-dark-screen.png",
+    "sha256": "2bad1614f1c44e635714c690f64e2f583094335bca2854d218742707899ff800"
+  },
+  {
+    "path": "readability-13-before-dark-screen.png",
+    "sha256": "bc9f904ff499afbe8c5cf4a85430d36c1962b525f3afec6907e674ae822cb028"
+  },
+  {
+    "path": "readability-birth-dark-screen.png",
+    "sha256": "cbea07725145403c422d379f14dfd752c45f68b613fc20983ff348dc6935d16a"
+  },
+  {
+    "path": "readability-home-dark-screen.png",
+    "sha256": "fffb9367c9410636b2ef7323bb8e90cb155a0230b3f2894064855c807a796a6b"
+  }
+]

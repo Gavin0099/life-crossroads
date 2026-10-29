@@ -1,0 +1,14 @@
+[
+  {
+    "path": "readability-13-before-dark-screen.png",
+    "sha256": "dc0bb60aa6ed3be02c8d32ab966f944dee2bbe137adced7f5f694baea189247a"
+  },
+  {
+    "path": "readability-birth-dark-screen.png",
+    "sha256": "921ec0d8781ab6fd5505cfb4dda1218af749c28b9c50d2344d4608ae90169e28"
+  },
+  {
+    "path": "readability-home-dark-screen.png",
+    "sha256": "3c0057a482c12de29023e38e49ef6af102050d5040c5821f60f0238675d15f61"
+  }
+]

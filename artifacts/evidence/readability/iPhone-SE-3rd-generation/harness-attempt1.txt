@@ -1,0 +1,1 @@
+First build succeeded. Runner setup failed before tests: KeyError TestConfigurations. xctestrun uses legacy format; added existing format fallback. No UI tests ran. Device: 71E72D28-0055-4BC5-9213-B8B70A78B297

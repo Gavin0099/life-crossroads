@@ -27,9 +27,13 @@
 
 ## Current Phase
 
-P1 / FINAL-POLISH-LOOP。Owner2026-10-28固定PR20 `325b698`，只做正式試玩前的角色一致性、自然互動、畫面層級及雙尺寸品質收尾。最多三輪、4 Agent-hours；獨立Draft基底codex/interaction-memory-loop，HOLD不合併發布。無新內容／Domain／Data／Persistence／Seed／schema改動。
+P1 / Owner試玩回饋 / 文字與背景對比修正。Owner2026-10-29回報實機看不到字，授權查詢iOS配色skill並直接修正；接續PR21 `45d3ff9`。只修淺／深色與提高對比的成對色票及實際文字，無新內容／Domain／Data／Persistence／Seed／schema改動。這是有界bugfix，不重開已結束的FINAL-POLISH美術Loop；Draft/HOLD不合併發布。
 
 ## Current Sprint
+
+文字可讀性修正的原生基準已重現：系統深色白字配固定奶油底。改為具四種外觀變體的語意色票；主文字最低10.73:1、次文字7.17:1。雙尺寸淺／深／高對比大字與真實存檔不變性取證、剩餘原生audit finding及Wi-Fi安裝狀態見[本輪驗證](docs/readability/VALIDATION.md)。原生capture成功不等於audit全綠或完整VoiceOver驗收。Basic既有期限仍FAIL，不更改Gate。
+
+以下為已停止的FINAL-POLISH交付記錄：
 
 FINAL-POLISH已建立Draft PR21，原基底325b698不變。CI54揭露新增AX前綴造成4項原史UI不一致，6ec388d移除前綴，未弱化原測試；兩項原完整人生回歸2/2，修正後雙尺寸各3/3、21狀態及8實際時點、來源綁定通過，九台本機Simulator已delete。獨立工程local ACCEPT、視覺CONDITIONAL、Owner試玩候選；殘影／大字PARTIAL。新HEAD完整CI待PR結果；Basic既有91d>90d FAIL。遵守4 Agent-hours上限停止，不開新Loop、不合併發布。詳[驗證](docs/final-polish-loop/VALIDATION.md)及[CI修正](docs/final-polish-loop/CI_CORRECTION.md)。
 

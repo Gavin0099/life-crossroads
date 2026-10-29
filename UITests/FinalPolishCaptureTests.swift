@@ -174,3 +174,127 @@ import XCTest
     }
 }
 #endif
+
+#if VISUAL_LOOP_CAPTURE
+/// Uses real restored sessions and OS appearance, not mocked text or screenshots.
+@MainActor final class ReadabilityCaptureTests: XCTestCase {
+    func testReadableStoryScreensAndUnchangedArchive() throws {
+        continueAfterFailure = false
+        let variant = ProcessInfo.processInfo.environment["READABILITY_VARIANT"] ?? "light"
+        let app = XCUIApplication()
+        app.launchArguments = ["-ui-testing", "-reset-save", "-AppleLanguages", "(zh-Hant)", "-AppleLocale", "zh_TW"]
+        app.launch()
+        XCTAssertTrue(app.buttons["randomBirth"].waitForExistence(timeout: 10))
+        try capture("home", app: app, variant: variant)
+        reveal(app.buttons["randomBirth"], in: app)
+        app.buttons["randomBirth"].tap()
+        XCTAssertTrue(app.buttons["enterChildhood"].waitForExistence(timeout: 10))
+        try capture("birth", app: app, variant: variant)
+        app.terminate()
+
+        let directory = try XCTUnwrap(Bundle(for: Self.self).url(forResource: "interaction-fixtures", withExtension: nil))
+        for name in ["13-before", "13-ask", "72-ahe"] {
+            app.launchArguments = ["-ui-testing", "-reset-save", "-visual-loop-capture", "-AppleLanguages", "(zh-Hant)", "-AppleLocale", "zh_TW"]
+            app.launchEnvironment["LIFE_VISUAL_ARCHIVE_PATH"] = directory.appendingPathComponent(name + ".json").path
+            app.launch()
+            XCTAssertTrue(app.buttons["resumeLife"].waitForExistence(timeout: 10)); app.buttons["resumeLife"].tap()
+            XCTAssertTrue(app.otherElements["lifeWorldScene"].waitForExistence(timeout: 5))
+            let checksum = try XCTUnwrap(app.staticTexts["uiTestArchiveChecksum"].value as? String)
+            XCTAssertEqual(checksum.count, 64)
+            try capture(name, app: app, variant: variant)
+            if name == "13-before" {
+                let choice = app.buttons["choice.ask"]
+                reveal(choice, in: app)
+                XCTAssertTrue(choice.isHittable)
+                try capture("choices", app: app, variant: variant)
+            }
+            if name == "13-ask" {
+                let why = app.buttons["whyResult"]
+                reveal(why, in: app)
+                XCTAssertTrue(why.isHittable); why.tap()
+                XCTAssertTrue(app.buttons["closeTrace"].waitForExistence(timeout: 5))
+                try capture("explanation", app: app, variant: variant)
+                app.buttons["closeTrace"].tap()
+            }
+            XCTAssertEqual(checksum, app.staticTexts["uiTestArchiveChecksum"].value as? String)
+            print("READABILITY_ARCHIVE \(variant) \(name) \(checksum)")
+            app.terminate()
+        }
+    }
+
+    private func capture(_ name: String, app: XCUIApplication, variant: String) throws {
+        let shot = XCTAttachment(screenshot: app.screenshot())
+        shot.name = "readability-\(name)-\(variant)-screen"; shot.lifetime = .keepAlways; add(shot)
+        // Apple's native audit is additional evidence; the actual named sRGB pairs
+        // are also measured independently, including high-contrast variants.
+        var findings: [String] = []
+        try app.performAccessibilityAudit(for: .contrast) { issue in
+            let element = issue.element
+            print("READABILITY_ISSUE \(name) \(variant) id=\(element?.identifier ?? "nil") label=\(element?.label ?? "nil") \(issue.compactDescription)")
+            // Apple's audit samples the AX rectangle even when the scroll mask or
+            // pinned world/footer covers that rectangle. Audit fully visible text;
+            // retain clipped findings separately rather than claiming those were tested.
+            // The selected action is scrolled completely into view before this audit.
+            let drawer = app.scrollViews["worldDecisionDrawer"]
+            if let element, element.elementType == .staticText, drawer.exists,
+               drawer.staticTexts.matching(NSPredicate(format: "label == %@", element.label)).firstMatch.exists {
+                var viewport = drawer.frame
+                let footer = app.descendants(matching: .any).matching(identifier: "worldPlaybackControls").firstMatch
+                if footer.exists { viewport.size.height = max(0, min(viewport.maxY, footer.frame.minY) - viewport.minY) }
+                if !viewport.contains(element.frame) {
+                    print("READABILITY_CLIPPED_TEXT_NOT_AUDITED \(name) \(variant) label=\(element.label) frame=\(element.frame) viewport=\(viewport)")
+                    return true
+                }
+            }
+            findings.append("\(element?.identifier ?? "nil")|\(element?.label ?? "nil")|\(issue.compactDescription)")
+            return true // retain all audit findings; do not stop capture at the first native-tool finding
+        }
+        let report = XCTAttachment(string: findings.joined(separator: "\n"))
+        report.name = "readability-\(name)-\(variant)-audit.txt"; report.lifetime = .keepAlways; add(report)
+        print("READABILITY_AUDIT \(name) \(variant) visibleFindings=\(findings.count) result=\(findings.isEmpty ? "PASS" : "FINDINGS_RETAINED")")
+    }
+    private func reveal(_ element: XCUIElement, in app: XCUIApplication) {
+        for _ in 0..<32 {
+            if ["lifeWorldScene", "resumeBranch", "enterChildhood"].contains(element.identifier), element.exists, element.isHittable { return }
+            let sheet = ["closeTrace", "closeComparison", "closeBranchComparison", "closeForkPicker", "closeFullEvent", "cancelParallel", "enterChildhood"].contains { app.buttons[$0].exists }
+            let footer = app.buttons["continueLife"].exists && !sheet
+            let worldFooter = app.descendants(matching: .any).matching(identifier: "worldPlaybackControls").firstMatch
+            let pinnedDrawer = app.scrollViews["worldDecisionDrawer"]
+            let comparisonScroll = app.scrollViews.containing(.staticText, identifier: "branchComparisonTitle").firstMatch
+            let scroll = comparisonScroll.exists ? comparisonScroll : app.scrollViews["eventStoryScroll"].exists ? app.scrollViews["eventStoryScroll"] : pinnedDrawer.exists && !sheet ? pinnedDrawer : app.scrollViews.firstMatch
+            let scrollTop = max(app.frame.minY + 90, scroll.exists ? scroll.frame.minY + 8 : 100)
+            let footerTop = worldFooter.exists && !sheet ? worldFooter.frame.minY - 8 : app.frame.maxY - (footer ? 110 : 24)
+            let bottom = min(footerTop, scroll.exists ? scroll.frame.maxY - 8 : footerTop)
+            if element.exists && element.isHittable && element.frame.minY >= scrollTop && element.frame.maxY <= bottom {
+                if pinnedDrawer.exists && !sheet {
+                    print("LL07_REVEALED \(element.identifier): target=\(element.frame), visible=\(scrollTop)...\(bottom), controls=\(worldFooter.exists ? worldFooter.frame : .zero)")
+                }
+                return
+            }
+            // Drag within the actual scroll viewport, excluding the pinned world and control strip.
+            let scrollHeight = max(44, bottom - scrollTop)
+            if pinnedDrawer.exists && !sheet {
+                // A full-height flick can overshoot an SE target and oscillate forever.
+                // Move its observed center toward the viewport center and stop before release.
+                let distance = element.exists ? element.frame.midY - (scrollTop + bottom) / 2 : scrollHeight
+                let delta = min(scrollHeight * 0.55, max(-scrollHeight * 0.55, distance))
+                let fromY = scrollTop + scrollHeight * (delta >= 0 ? 0.78 : 0.22)
+                let toY = fromY - delta
+                print("LL07_REVEAL \(element.identifier): target=\(element.exists ? element.frame : .zero), viewport=\(scroll.frame), drag=\(fromY)->\(toY)")
+                let from = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: (fromY - app.frame.minY) / app.frame.height))
+                let to = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: (toY - app.frame.minY) / app.frame.height))
+                from.press(forDuration: 0.05, thenDragTo: to, withVelocity: .slow, thenHoldForDuration: 0.2)
+                continue
+            }
+            let upperY = scrollTop + scrollHeight * 0.2
+            let lowerY = scrollTop + scrollHeight * 0.8
+            let upper = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: (upperY - app.frame.minY) / app.frame.height))
+            let lower = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: (lowerY - app.frame.minY) / app.frame.height))
+            if element.exists && element.frame.midY < scrollTop { upper.press(forDuration: 0.05, thenDragTo: lower) }
+            else { lower.press(forDuration: 0.05, thenDragTo: upper) }
+        }
+        let failure = XCTAttachment(screenshot: app.screenshot()); failure.name = "unrevealed"; failure.lifetime = .keepAlways; add(failure)
+        XCTFail("Could not reveal an unobscured tap target: \(element.identifier); exists=\(element.exists)")
+    }
+}
+#endif

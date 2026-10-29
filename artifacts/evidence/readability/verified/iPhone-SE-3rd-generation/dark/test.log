@@ -1,0 +1,204 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test-without-building -xctestrun .build/readability/Build/Products/LifeCrossroads_iphonesimulator27.1-arm64.xctestrun -destination "platform=iOS Simulator,id=2C0A6173-AE5B-4A7A-A608-4AED36E6079B" -parallel-testing-enabled NO -collect-test-diagnostics never -resultBundlePath artifacts/evidence/readability/verified/iPhone-SE-3rd-generation/dark/result.xcresult "-only-testing:LifeCrossroadsUITests/ReadabilityCaptureTests"
+
+Writing result bundle at path:
+	/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/readability/verified/iPhone-SE-3rd-generation/dark/result.xcresult
+
+2026-10-29 08:45:34.379 xcodebuild[6408:60188] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 08:45:42.501393+0800 LifeCrossroadsUITests-Runner[6498:61172] [Default] Running tests...
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-10-29 08:45:49.449.
+Test Suite 'LifeCrossroadsUITests.xctest' started at 2026-10-29 08:45:49.450.
+Test Suite 'ReadabilityCaptureTests' started at 2026-10-29 08:45:49.450.
+Test Case '-[LifeCrossroadsUITests.ReadabilityCaptureTests testReadableStoryScreensAndUnchangedArchive]' started.
+    t =     0.01s Start Test at 2026-10-29 08:45:49.460
+    t =     0.27s Set Up
+    t =     0.28s Open com.gavin0099.LifeCrossroads
+    t =     0.29s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 08:45:50.177 xcodebuild[6408:60188] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 08:45:50.177 xcodebuild[6408:60188] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 08:45:50.203 xcodebuild[6408:60188] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+objc[6498]: Class UIAccessibilityLoaderWebShared is implemented in both /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.434.0.nMklRF/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x10a8c8398) and /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.434.0.nMklRF/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x10aa00310). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+    t =     2.39s         Setting up automation session
+    t =     4.58s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =     6.15s Waiting 10.0s for "randomBirth" Button to exist
+    t =     7.25s     Checking `Expect predicate `existsNoRetry == 1` for object "randomBirth" Button`
+    t =     7.25s         Checking existence of `"randomBirth" Button`
+    t =     7.32s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     7.39s Added attachment named 'readability-home-dark-screen'
+READABILITY_AUDIT home dark contrast=PASS
+    t =     7.67s Find the "randomBirth" Button
+    t =     7.70s Checking existence of `"closeTrace" Button`
+    t =     7.73s Checking existence of `"closeComparison" Button`
+    t =     7.75s Checking existence of `"closeBranchComparison" Button`
+    t =     7.77s Checking existence of `"closeForkPicker" Button`
+    t =     7.80s Checking existence of `"closeFullEvent" Button`
+    t =     7.83s Checking existence of `"cancelParallel" Button`
+    t =     7.85s Checking existence of `"enterChildhood" Button`
+    t =     7.87s Checking existence of `"continueLife" Button`
+    t =     7.90s Checking existence of `ScrollView (First Match)`
+    t =     7.95s Checking existence of `"eventStoryScroll" ScrollView`
+    t =     7.97s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =     8.00s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     8.02s Checking existence of `ScrollView (First Match)`
+    t =     8.03s Find the ScrollView (First Match)
+    t =     8.05s Checking existence of `"worldPlaybackControls" Any`
+    t =     8.11s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     8.13s Checking existence of `ScrollView at {{0.0, 0.0}, {375.0, 667.0}}`
+    t =     8.15s Find the ScrollView at {{0.0, 0.0}, {375.0, 667.0}}
+    t =     8.17s Checking existence of `"randomBirth" Button`
+    t =     8.20s Find the "randomBirth" Button
+    t =     8.25s Find the "randomBirth" Button
+    t =     8.28s Find the "randomBirth" Button
+    t =     8.31s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =     8.33s Tap "randomBirth" Button
+    t =     8.33s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     8.34s     Find the "randomBirth" Button
+    t =     8.36s     Check for interrupting elements affecting "randomBirth" Button
+    t =     8.39s     Synthesize event
+    t =     8.80s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     8.99s Waiting 10.0s for "enterChildhood" Button to exist
+    t =    10.08s     Checking `Expect predicate `existsNoRetry == 1` for object "enterChildhood" Button`
+    t =    10.08s         Checking existence of `"enterChildhood" Button`
+    t =    10.14s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    10.24s Added attachment named 'readability-birth-dark-screen'
+READABILITY_AUDIT birth dark contrast=PASS
+    t =    10.46s Terminate com.gavin0099.LifeCrossroads:6561
+2026-10-29 08:45:59.938 xcodebuild[6408:60188] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 08:45:59.939 xcodebuild[6408:60188] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 08:45:59.940 xcodebuild[6408:60188] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    11.53s Open com.gavin0099.LifeCrossroads
+    t =    11.53s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 08:46:00.981 xcodebuild[6408:60188] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 08:46:00.981 xcodebuild[6408:60188] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 08:46:00.986 xcodebuild[6408:60188] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    11.76s         Setting up automation session
+    t =    13.72s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =    15.30s Waiting 10.0s for "resumeLife" Button to exist
+    t =    16.38s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =    16.38s         Checking existence of `"resumeLife" Button`
+    t =    16.44s Tap "resumeLife" Button
+    t =    16.44s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    16.44s     Find the "resumeLife" Button
+    t =    16.47s     Check for interrupting elements affecting "resumeLife" Button
+    t =    16.49s     Synthesize event
+    t =    16.82s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    17.56s Waiting 5.0s for "lifeWorldScene" Other to exist
+    t =    18.62s     Checking `Expect predicate `existsNoRetry == 1` for object "lifeWorldScene" Other`
+    t =    18.62s         Checking existence of `"lifeWorldScene" Other`
+    t =    18.67s Find the "uiTestArchiveChecksum" StaticText
+    t =    18.71s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    18.80s Added attachment named 'readability-13-before-dark-screen'
+READABILITY_AUDIT 13-before dark contrast=PASS
+    t =    19.11s Find the "choice.ask" Button
+    t =    19.18s Checking existence of `"closeTrace" Button`
+    t =    19.24s Checking existence of `"closeComparison" Button`
+    t =    19.29s Checking existence of `"closeBranchComparison" Button`
+    t =    19.35s Checking existence of `"closeForkPicker" Button`
+    t =    19.42s Checking existence of `"closeFullEvent" Button`
+    t =    19.47s Checking existence of `"cancelParallel" Button`
+    t =    19.52s Checking existence of `"enterChildhood" Button`
+    t =    19.58s Checking existence of `"continueLife" Button`
+    t =    19.63s Checking existence of `ScrollView (First Match)`
+    t =    19.71s Checking existence of `"eventStoryScroll" ScrollView`
+    t =    19.77s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    19.82s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    19.85s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    19.91s Find the "worldDecisionDrawer" ScrollView
+    t =    19.96s Checking existence of `"worldPlaybackControls" Any`
+    t =    20.00s Find the "worldPlaybackControls" Any
+    t =    20.04s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    20.09s Find the "worldDecisionDrawer" ScrollView
+    t =    20.15s Checking existence of `"choice.ask" Button`
+    t =    20.20s Find the "choice.ask" Button
+    t =    20.29s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    20.34s Checking existence of `"choice.ask" Button`
+    t =    20.39s Find the "choice.ask" Button
+    t =    20.45s Find the "choice.ask" Button
+    t =    20.50s Checking existence of `"choice.ask" Button`
+    t =    20.55s Find the "choice.ask" Button
+    t =    20.60s Find the "worldDecisionDrawer" ScrollView
+LL07_REVEAL choice.ask: target=(16.0, 716.0, 343.0, 88.0), viewport=(0.0, 301.0, 375.0, 366.0), drag=541.44->377.5400000000001
+    t =    20.66s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    20.69s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    20.72s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    20.75s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    20.78s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.81] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.57] with velocity of 250.00 pixels per second, and then hold for 0.2 seconds 
+    t =    20.78s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    20.79s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    20.82s     Check for interrupting elements affecting "人生岔路" Application
+    t =    20.86s     Synthesize event
+    t =    20.87s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    20.90s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    20.93s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    20.96s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    21.00s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    22.18s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    22.18s Find the "choice.ask" Button
+    t =    22.24s Checking existence of `"closeTrace" Button`
+    t =    22.29s Checking existence of `"closeComparison" Button`
+    t =    22.34s Checking existence of `"closeBranchComparison" Button`
+    t =    22.39s Checking existence of `"closeForkPicker" Button`
+    t =    22.44s Checking existence of `"closeFullEvent" Button`
+    t =    22.50s Checking existence of `"cancelParallel" Button`
+    t =    22.56s Checking existence of `"enterChildhood" Button`
+    t =    22.61s Checking existence of `"continueLife" Button`
+    t =    22.66s Checking existence of `ScrollView (First Match)`
+    t =    22.74s Checking existence of `"eventStoryScroll" ScrollView`
+    t =    22.79s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    22.84s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    22.87s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    22.92s Find the "worldDecisionDrawer" ScrollView
+    t =    22.98s Checking existence of `"worldPlaybackControls" Any`
+    t =    23.01s Find the "worldPlaybackControls" Any
+    t =    23.07s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    23.13s Find the "worldDecisionDrawer" ScrollView
+    t =    23.20s Checking existence of `"choice.ask" Button`
+    t =    23.26s Find the "choice.ask" Button
+    t =    23.33s Find the "choice.ask" Button
+    t =    23.39s Find the "choice.ask" Button
+    t =    23.45s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    23.50s Find the "choice.ask" Button
+    t =    23.56s Find the "choice.ask" Button
+    t =    23.61s Checking existence of `"worldPlaybackControls" Other`
+    t =    23.64s Find the "worldPlaybackControls" Other
+LL07_REVEALED choice.ask: target=(16.0, 562.0, 343.0, 88.0), visible=309.0...607.0, controls=(0.0, 615.0, 375.0, 52.0)
+    t =    23.68s Find the "choice.ask" Button
+    t =    23.75s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    23.82s Added attachment named 'readability-choices-dark-screen'
+    t =    24.07s Find the Any (Descendant with identity binding to AX element pid: 6608, elementOrHash.elementID: 4869931168.77)
+    t =    24.11s Find the "eventTitle" StaticText
+    t =    24.14s Find the "eventTitle" StaticText
+READABILITY_ISSUE choices dark id=eventTitle label=想參加共同創作 Contrast failed
+    t =    24.18s Find the "eventTitle" StaticText
+    t =    24.21s Find the Any (Descendant with identity binding to AX element pid: 6608, elementOrHash.elementID: 4869931168.77)
+    t =    24.25s Checking existence of `"eventTitle" StaticText`
+    t =    24.28s Find the "eventTitle" StaticText
+/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/UITests/FinalPolishCaptureTests.swift:230: error: -[LifeCrossroadsUITests.ReadabilityCaptureTests testReadableStoryScreensAndUnchangedArchive] : Contrast failed
+    t =    24.63s Tear Down
+Test Case '-[LifeCrossroadsUITests.ReadabilityCaptureTests testReadableStoryScreensAndUnchangedArchive]' failed (24.860 seconds).
+Test Suite 'ReadabilityCaptureTests' failed at 2026-10-29 08:46:14.320.
+	 Executed 1 test, with 1 failure (0 unexpected) in 24.860 (24.870) seconds
+Test Suite 'LifeCrossroadsUITests.xctest' failed at 2026-10-29 08:46:14.321.
+	 Executed 1 test, with 1 failure (0 unexpected) in 24.860 (24.871) seconds
+Test Suite 'Selected tests' failed at 2026-10-29 08:46:14.321.
+	 Executed 1 test, with 1 failure (0 unexpected) in 24.860 (24.873) seconds
+2026-10-29 08:46:14.410 xcodebuild[6408:60188] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 08:46:14.411 xcodebuild[6408:60188] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 08:46:14.411 xcodebuild[6408:60188] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 08:46:14.436 xcodebuild[6408:60188] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 08:46:14.436 xcodebuild[6408:60188] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 08:46:14.437 xcodebuild[6408:60188] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 08:46:14.714 xcodebuild[6408:60188] [MT] IDETestOperationsObserverDebug: 41.893 elapsed -- Testing started completed.
+2026-10-29 08:46:14.714 xcodebuild[6408:60188] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-29 08:46:14.714 xcodebuild[6408:60188] [MT] IDETestOperationsObserverDebug: 41.893 sec, +41.893 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/readability/verified/iPhone-SE-3rd-generation/dark/result.xcresult
+
+Failing tests:
+	ReadabilityCaptureTests.testReadableStoryScreensAndUnchangedArchive()
+
+** TEST EXECUTE FAILED **
+
+Testing started

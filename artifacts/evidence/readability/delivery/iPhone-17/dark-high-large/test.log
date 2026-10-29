@@ -1,0 +1,805 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test-without-building -xctestrun .build/readability/Build/Products/LifeCrossroads_iphonesimulator27.1-arm64.xctestrun -destination "platform=iOS Simulator,id=D565349A-56E6-4D9D-854B-4D631BB1327A" -parallel-testing-enabled NO -collect-test-diagnostics never -resultBundlePath artifacts/evidence/readability/delivery/iPhone-17/dark-high-large/result.xcresult "-only-testing:LifeCrossroadsUITests/ReadabilityCaptureTests"
+
+Writing result bundle at path:
+	/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/readability/delivery/iPhone-17/dark-high-large/result.xcresult
+
+2026-10-29 09:07:13.550 xcodebuild[12379:167216] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 09:07:14.629814+0800 LifeCrossroadsUITests-Runner[12401:167485] [Default] Running tests...
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-10-29 09:07:16.961.
+Test Suite 'LifeCrossroadsUITests.xctest' started at 2026-10-29 09:07:16.962.
+Test Suite 'ReadabilityCaptureTests' started at 2026-10-29 09:07:16.962.
+Test Case '-[LifeCrossroadsUITests.ReadabilityCaptureTests testReadableStoryScreensAndUnchangedArchive]' started.
+    t =     0.00s Start Test at 2026-10-29 09:07:16.964
+    t =     0.02s Set Up
+    t =     0.02s Open com.gavin0099.LifeCrossroads
+    t =     0.03s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 09:07:17.060 xcodebuild[12379:167216] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 09:07:17.060 xcodebuild[12379:167216] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 09:07:17.070 xcodebuild[12379:167216] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     0.50s         Setting up automation session
+objc[12401]: Class UIAccessibilityLoaderWebShared is implemented in both /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.434.0.nMklRF/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x109bc4398) and /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.434.0.nMklRF/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x10a0e0310). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+    t =     2.45s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =     4.05s Waiting 10.0s for "randomBirth" Button to exist
+    t =     5.10s     Checking `Expect predicate `existsNoRetry == 1` for object "randomBirth" Button`
+    t =     5.10s         Checking existence of `"randomBirth" Button`
+    t =     5.20s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     5.28s Added attachment named 'readability-home-dark-high-large-screen'
+    t =     5.58s Added attachment named 'readability-home-dark-high-large-audit.txt'
+READABILITY_AUDIT home dark-high-large visibleFindings=0 result=PASS
+    t =     5.58s Find the "randomBirth" Button
+    t =     5.60s Checking existence of `"closeTrace" Button`
+    t =     5.62s Checking existence of `"closeComparison" Button`
+    t =     5.63s Checking existence of `"closeBranchComparison" Button`
+    t =     5.65s Checking existence of `"closeForkPicker" Button`
+    t =     5.67s Checking existence of `"closeFullEvent" Button`
+    t =     5.69s Checking existence of `"cancelParallel" Button`
+    t =     5.71s Checking existence of `"enterChildhood" Button`
+    t =     5.73s Checking existence of `"continueLife" Button`
+    t =     5.75s Checking existence of `ScrollView (First Match)`
+    t =     5.78s Checking existence of `"eventStoryScroll" ScrollView`
+    t =     5.80s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =     5.81s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     5.83s Checking existence of `ScrollView (First Match)`
+    t =     5.84s Find the ScrollView (First Match)
+    t =     5.85s Checking existence of `"worldPlaybackControls" Any`
+    t =     5.89s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     5.91s Checking existence of `ScrollView at {{0.0, 0.0}, {402.0, 874.0}}`
+    t =     5.92s Find the ScrollView at {{0.0, 0.0}, {402.0, 874.0}}
+    t =     5.93s Checking existence of `"randomBirth" Button`
+    t =     5.95s Find the "randomBirth" Button
+    t =     5.98s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =     5.99s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     6.01s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     6.02s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     6.03s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     6.05s Checking existence of `"randomBirth" Button`
+    t =     6.07s Find the "randomBirth" Button
+    t =     6.09s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.80] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.28] with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =     6.09s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     6.09s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     6.10s     Check for interrupting elements affecting "人生岔路" Application
+    t =     6.12s     Synthesize event
+    t =     6.12s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     6.14s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     6.15s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     6.16s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     6.18s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     7.39s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     8.92s Find the "randomBirth" Button
+    t =     8.96s Checking existence of `"closeTrace" Button`
+    t =     8.98s Checking existence of `"closeComparison" Button`
+    t =     9.00s Checking existence of `"closeBranchComparison" Button`
+    t =     9.02s Checking existence of `"closeForkPicker" Button`
+    t =     9.04s Checking existence of `"closeFullEvent" Button`
+    t =     9.06s Checking existence of `"cancelParallel" Button`
+    t =     9.08s Checking existence of `"enterChildhood" Button`
+    t =     9.10s Checking existence of `"continueLife" Button`
+    t =     9.11s Checking existence of `ScrollView (First Match)`
+    t =     9.15s Checking existence of `"eventStoryScroll" ScrollView`
+    t =     9.16s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =     9.18s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.19s Checking existence of `ScrollView (First Match)`
+    t =     9.21s Find the ScrollView (First Match)
+    t =     9.22s Checking existence of `"worldPlaybackControls" Any`
+    t =     9.26s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.28s Checking existence of `ScrollView at {{0.0, 0.0}, {402.0, 874.0}}`
+    t =     9.29s Find the ScrollView at {{0.0, 0.0}, {402.0, 874.0}}
+    t =     9.30s Checking existence of `"randomBirth" Button`
+    t =     9.32s Find the "randomBirth" Button
+    t =     9.34s Find the "randomBirth" Button
+    t =     9.37s Find the "randomBirth" Button
+    t =     9.39s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =     9.40s Tap "randomBirth" Button
+    t =     9.40s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     9.41s     Find the "randomBirth" Button
+    t =     9.43s     Check for interrupting elements affecting "randomBirth" Button
+    t =     9.44s     Synthesize event
+    t =     9.73s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     9.79s Waiting 10.0s for "enterChildhood" Button to exist
+    t =    10.83s     Checking `Expect predicate `existsNoRetry == 1` for object "enterChildhood" Button`
+    t =    10.83s         Checking existence of `"enterChildhood" Button`
+    t =    10.91s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    11.03s Added attachment named 'readability-birth-dark-high-large-screen'
+    t =    11.38s Find the Any (Descendant with identity binding to AX element pid: 12441, elementOrHash.elementID: 4866253888.117)
+    t =    11.41s Find the "先翻開出生背景；接著陪沐沐走進童年。這張圖是童年造型與想像場景。" StaticText
+    t =    11.45s Find the "先翻開出生背景；接著陪沐沐走進童年。這張圖是童年造型與想像場景。" StaticText
+READABILITY_ISSUE birth dark-high-large id= label=先翻開出生背景；接著陪沐沐走進童年。這張圖是童年造型與想像場景。 Contrast failed
+    t =    11.48s Find the "先翻開出生背景；接著陪沐沐走進童年。這張圖是童年造型與想像場景。" StaticText
+    t =    11.51s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    11.55s Find the "先翻開出生背景；接著陪沐沐走進童年。這張圖是童年造型與想像場景。" StaticText
+    t =    11.58s Checking existence of `StaticText (First Match)`
+    t =    11.63s Find the "先翻開出生背景；接著陪沐沐走進童年。這張圖是童年造型與想像場景。" StaticText
+    t =    11.66s Find the "先翻開出生背景；接著陪沐沐走進童年。這張圖是童年造型與想像場景。" StaticText
+    t =    11.69s Find the Any (Descendant with identity binding to AX element pid: 12441, elementOrHash.elementID: 4866254528.118)
+    t =    11.72s Find the "家裡的設備要和其他人輪流使用。活動就在較近的生活圈，往返負擔比較少。有可以一起準備、商量的社區夥伴；需要時，你能試著開口。" StaticText
+    t =    11.76s Find the "家裡的設備要和其他人輪流使用。活動就在較近的生活圈，往返負擔比較少。有可以一起準備、商量的社區夥伴；需要時，你能試著開口。" StaticText
+READABILITY_ISSUE birth dark-high-large id= label=家裡的設備要和其他人輪流使用。活動就在較近的生活圈，往返負擔比較少。有可以一起準備、商量的社區夥伴；需要時，你能試著開口。 Contrast failed
+    t =    11.79s Find the "家裡的設備要和其他人輪流使用。活動就在較近的生活圈，往返負擔比較少。有可以一起準備、商量的社區夥伴；需要時，你能試著開口。" StaticText
+    t =    11.82s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    11.86s Find the "家裡的設備要和其他人輪流使用。活動就在較近的生活圈，往返負擔比較少。有可以一起準備、商量的社區夥伴；需要時，你能試著開口。" StaticText
+    t =    11.89s Checking existence of `StaticText (First Match)`
+    t =    11.94s Find the "家裡的設備要和其他人輪流使用。活動就在較近的生活圈，往返負擔比較少。有可以一起準備、商量的社區夥伴；需要時，你能試著開口。" StaticText
+    t =    11.97s Find the "家裡的設備要和其他人輪流使用。活動就在較近的生活圈，往返負擔比較少。有可以一起準備、商量的社區夥伴；需要時，你能試著開口。" StaticText
+    t =    12.00s Added attachment named 'readability-birth-dark-high-large-audit.txt'
+READABILITY_AUDIT birth dark-high-large visibleFindings=2 result=FINDINGS_RETAINED
+    t =    12.00s Terminate com.gavin0099.LifeCrossroads:12441
+2026-10-29 09:07:28.967 xcodebuild[12379:167216] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 09:07:28.968 xcodebuild[12379:167216] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 09:07:28.968 xcodebuild[12379:167216] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    13.06s Open com.gavin0099.LifeCrossroads
+    t =    13.06s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 09:07:30.025 xcodebuild[12379:167216] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 09:07:30.025 xcodebuild[12379:167216] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 09:07:30.033 xcodebuild[12379:167216] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    13.27s         Setting up automation session
+    t =    15.12s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =    16.79s Waiting 10.0s for "resumeLife" Button to exist
+    t =    17.86s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =    17.86s         Checking existence of `"resumeLife" Button`
+    t =    17.92s Tap "resumeLife" Button
+    t =    17.92s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    17.92s     Find the "resumeLife" Button
+    t =    17.94s     Check for interrupting elements affecting "resumeLife" Button
+    t =    17.96s     Synthesize event
+    t =    18.26s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    18.94s Waiting 5.0s for "lifeWorldScene" Other to exist
+    t =    19.97s     Checking `Expect predicate `existsNoRetry == 1` for object "lifeWorldScene" Other`
+    t =    19.97s         Checking existence of `"lifeWorldScene" Other`
+    t =    20.05s Find the "uiTestArchiveChecksum" StaticText
+    t =    20.09s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    20.20s Added attachment named 'readability-13-before-dark-high-large-screen'
+    t =    20.53s Added attachment named 'readability-13-before-dark-high-large-audit.txt'
+READABILITY_AUDIT 13-before dark-high-large visibleFindings=0 result=PASS
+    t =    20.53s Find the "choice.ask" Button
+    t =    20.58s Checking existence of `"closeTrace" Button`
+    t =    20.62s Checking existence of `"closeComparison" Button`
+    t =    20.66s Checking existence of `"closeBranchComparison" Button`
+    t =    20.71s Checking existence of `"closeForkPicker" Button`
+    t =    20.75s Checking existence of `"closeFullEvent" Button`
+    t =    20.80s Checking existence of `"cancelParallel" Button`
+    t =    20.84s Checking existence of `"enterChildhood" Button`
+    t =    20.88s Checking existence of `"continueLife" Button`
+    t =    20.93s Checking existence of `ScrollView (First Match)`
+    t =    20.99s Checking existence of `"eventStoryScroll" ScrollView`
+    t =    21.03s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    21.07s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    21.10s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    21.14s Find the "worldDecisionDrawer" ScrollView
+    t =    21.19s Checking existence of `"worldPlaybackControls" Any`
+    t =    21.22s Find the "worldPlaybackControls" Any
+    t =    21.25s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    21.30s Find the "worldDecisionDrawer" ScrollView
+    t =    21.34s Checking existence of `"choice.ask" Button`
+    t =    21.39s Find the "choice.ask" Button
+    t =    21.44s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    21.49s Checking existence of `"choice.ask" Button`
+    t =    21.53s Find the "choice.ask" Button
+    t =    21.58s Find the "choice.ask" Button
+    t =    21.63s Checking existence of `"choice.ask" Button`
+    t =    21.67s Find the "choice.ask" Button
+    t =    21.72s Find the "worldDecisionDrawer" ScrollView
+LL07_REVEAL choice.ask: target=(16.0, 1665.9999999999998, 370.0, 211.33333333333326), viewport=(0.0, 311.3333333333333, 402.0, 562.6666666666667), drag=678.6533333333334->425.28666666666675
+    t =    21.76s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    21.79s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    21.82s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    21.85s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    21.88s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.78] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.49] with velocity of 250.00 pixels per second, and then hold for 0.2 seconds 
+    t =    21.88s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    21.88s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    21.91s     Check for interrupting elements affecting "人生岔路" Application
+    t =    21.94s     Synthesize event
+    t =    21.95s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    21.97s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    22.00s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    22.03s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    22.06s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    23.59s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    23.61s Find the "choice.ask" Button
+    t =    23.67s Checking existence of `"closeTrace" Button`
+    t =    23.72s Checking existence of `"closeComparison" Button`
+    t =    23.76s Checking existence of `"closeBranchComparison" Button`
+    t =    23.80s Checking existence of `"closeForkPicker" Button`
+    t =    23.85s Checking existence of `"closeFullEvent" Button`
+    t =    23.89s Checking existence of `"cancelParallel" Button`
+    t =    23.93s Checking existence of `"enterChildhood" Button`
+    t =    23.98s Checking existence of `"continueLife" Button`
+    t =    24.02s Checking existence of `ScrollView (First Match)`
+    t =    24.08s Checking existence of `"eventStoryScroll" ScrollView`
+    t =    24.13s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    24.17s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    24.20s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    24.24s Find the "worldDecisionDrawer" ScrollView
+    t =    24.29s Checking existence of `"worldPlaybackControls" Any`
+    t =    24.32s Find the "worldPlaybackControls" Any
+    t =    24.35s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    24.39s Find the "worldDecisionDrawer" ScrollView
+    t =    24.44s Checking existence of `"choice.ask" Button`
+    t =    24.49s Find the "choice.ask" Button
+    t =    24.54s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    24.58s Checking existence of `"choice.ask" Button`
+    t =    24.63s Find the "choice.ask" Button
+    t =    24.68s Find the "choice.ask" Button
+    t =    24.72s Checking existence of `"choice.ask" Button`
+    t =    24.77s Find the "choice.ask" Button
+    t =    24.81s Find the "worldDecisionDrawer" ScrollView
+LL07_REVEAL choice.ask: target=(16.0, 1422.6666666666667, 370.0, 211.33333333333303), viewport=(0.0, 311.3333333333333, 402.0, 562.6666666666667), drag=678.6533333333334->425.28666666666675
+    t =    24.86s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    24.89s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    24.91s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    24.94s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    24.97s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.78] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.49] with velocity of 250.00 pixels per second, and then hold for 0.2 seconds 
+    t =    24.97s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    24.97s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    25.00s     Check for interrupting elements affecting "人生岔路" Application
+    t =    25.04s     Synthesize event
+    t =    25.04s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    25.07s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    25.10s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    25.13s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    25.16s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    26.70s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    26.71s Find the "choice.ask" Button
+    t =    26.77s Checking existence of `"closeTrace" Button`
+    t =    26.81s Checking existence of `"closeComparison" Button`
+    t =    26.86s Checking existence of `"closeBranchComparison" Button`
+    t =    26.90s Checking existence of `"closeForkPicker" Button`
+    t =    26.95s Checking existence of `"closeFullEvent" Button`
+    t =    26.99s Checking existence of `"cancelParallel" Button`
+    t =    27.04s Checking existence of `"enterChildhood" Button`
+    t =    27.08s Checking existence of `"continueLife" Button`
+    t =    27.12s Checking existence of `ScrollView (First Match)`
+    t =    27.19s Checking existence of `"eventStoryScroll" ScrollView`
+    t =    27.23s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    27.27s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    27.30s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    27.34s Find the "worldDecisionDrawer" ScrollView
+    t =    27.39s Checking existence of `"worldPlaybackControls" Any`
+    t =    27.42s Find the "worldPlaybackControls" Any
+    t =    27.45s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    27.49s Find the "worldDecisionDrawer" ScrollView
+    t =    27.54s Checking existence of `"choice.ask" Button`
+    t =    27.58s Find the "choice.ask" Button
+    t =    27.64s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    27.68s Checking existence of `"choice.ask" Button`
+    t =    27.73s Find the "choice.ask" Button
+    t =    27.77s Find the "choice.ask" Button
+    t =    27.82s Checking existence of `"choice.ask" Button`
+    t =    27.86s Find the "choice.ask" Button
+    t =    27.91s Find the "worldDecisionDrawer" ScrollView
+LL07_REVEAL choice.ask: target=(16.0, 1179.333333333333, 370.0, 211.33333333333326), viewport=(0.0, 311.3333333333333, 402.0, 562.6666666666663), drag=678.6533333333334->425.28666666666675
+    t =    27.95s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    27.98s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    28.01s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    28.04s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    28.07s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.78] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.49] with velocity of 250.00 pixels per second, and then hold for 0.2 seconds 
+    t =    28.07s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    28.07s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    28.10s     Check for interrupting elements affecting "人生岔路" Application
+    t =    28.13s     Synthesize event
+    t =    28.13s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    28.16s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    28.19s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    28.22s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    28.25s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    29.78s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    29.78s Find the "choice.ask" Button
+    t =    29.84s Checking existence of `"closeTrace" Button`
+    t =    29.88s Checking existence of `"closeComparison" Button`
+    t =    29.93s Checking existence of `"closeBranchComparison" Button`
+    t =    29.97s Checking existence of `"closeForkPicker" Button`
+    t =    30.01s Checking existence of `"closeFullEvent" Button`
+    t =    30.06s Checking existence of `"cancelParallel" Button`
+    t =    30.10s Checking existence of `"enterChildhood" Button`
+    t =    30.14s Checking existence of `"continueLife" Button`
+    t =    30.19s Checking existence of `ScrollView (First Match)`
+    t =    30.25s Checking existence of `"eventStoryScroll" ScrollView`
+    t =    30.29s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    30.33s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    30.36s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    30.41s Find the "worldDecisionDrawer" ScrollView
+    t =    30.45s Checking existence of `"worldPlaybackControls" Any`
+    t =    30.48s Find the "worldPlaybackControls" Any
+    t =    30.52s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    30.56s Find the "worldDecisionDrawer" ScrollView
+    t =    30.61s Checking existence of `"choice.ask" Button`
+    t =    30.65s Find the "choice.ask" Button
+    t =    30.70s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    30.75s Checking existence of `"choice.ask" Button`
+    t =    30.79s Find the "choice.ask" Button
+    t =    30.84s Find the "choice.ask" Button
+    t =    30.89s Checking existence of `"choice.ask" Button`
+    t =    30.93s Find the "choice.ask" Button
+    t =    30.98s Find the "worldDecisionDrawer" ScrollView
+LL07_REVEAL choice.ask: target=(16.0, 935.9999999999997, 370.0, 211.33333333333337), viewport=(0.0, 311.3333333333333, 402.0, 562.6666666666663), drag=678.6533333333334->425.28666666666675
+    t =    31.02s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    31.05s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    31.08s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    31.11s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    31.13s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.78] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.49] with velocity of 250.00 pixels per second, and then hold for 0.2 seconds 
+    t =    31.13s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    31.14s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    31.17s     Check for interrupting elements affecting "人生岔路" Application
+    t =    31.20s     Synthesize event
+    t =    31.20s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    31.23s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    31.26s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    31.29s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    31.32s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    32.86s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    32.87s Find the "choice.ask" Button
+    t =    32.93s Checking existence of `"closeTrace" Button`
+    t =    32.98s Checking existence of `"closeComparison" Button`
+    t =    33.02s Checking existence of `"closeBranchComparison" Button`
+    t =    33.06s Checking existence of `"closeForkPicker" Button`
+    t =    33.11s Checking existence of `"closeFullEvent" Button`
+    t =    33.15s Checking existence of `"cancelParallel" Button`
+    t =    33.20s Checking existence of `"enterChildhood" Button`
+    t =    33.24s Checking existence of `"continueLife" Button`
+    t =    33.28s Checking existence of `ScrollView (First Match)`
+    t =    33.34s Checking existence of `"eventStoryScroll" ScrollView`
+    t =    33.38s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    33.43s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    33.46s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    33.50s Find the "worldDecisionDrawer" ScrollView
+    t =    33.54s Checking existence of `"worldPlaybackControls" Any`
+    t =    33.57s Find the "worldPlaybackControls" Any
+    t =    33.61s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    33.65s Find the "worldDecisionDrawer" ScrollView
+    t =    33.70s Checking existence of `"choice.ask" Button`
+    t =    33.74s Find the "choice.ask" Button
+    t =    33.80s Find the "choice.ask" Button
+    t =    33.84s Find the "choice.ask" Button
+    t =    33.89s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    33.94s Checking existence of `"choice.ask" Button`
+    t =    33.98s Find the "choice.ask" Button
+    t =    34.03s Find the "choice.ask" Button
+    t =    34.07s Checking existence of `"choice.ask" Button`
+    t =    34.12s Find the "choice.ask" Button
+    t =    34.16s Find the "worldDecisionDrawer" ScrollView
+LL07_REVEAL choice.ask: target=(16.0, 692.6666666666665, 370.0, 211.33333333333314), viewport=(0.0, 311.33333333333337, 402.0, 562.6666666666666), drag=678.6533333333334->429.98666666666713
+    t =    34.21s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    34.24s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    34.26s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    34.29s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    34.32s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.78] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.49] with velocity of 250.00 pixels per second, and then hold for 0.2 seconds 
+    t =    34.32s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    34.32s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    34.35s     Check for interrupting elements affecting "人生岔路" Application
+    t =    34.38s     Synthesize event
+    t =    34.39s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    34.42s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    34.45s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    34.47s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    34.50s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    36.02s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    36.03s Find the "choice.ask" Button
+    t =    36.10s Checking existence of `"closeTrace" Button`
+    t =    36.15s Checking existence of `"closeComparison" Button`
+    t =    36.19s Checking existence of `"closeBranchComparison" Button`
+    t =    36.23s Checking existence of `"closeForkPicker" Button`
+    t =    36.28s Checking existence of `"closeFullEvent" Button`
+    t =    36.32s Checking existence of `"cancelParallel" Button`
+    t =    36.37s Checking existence of `"enterChildhood" Button`
+    t =    36.41s Checking existence of `"continueLife" Button`
+    t =    36.45s Checking existence of `ScrollView (First Match)`
+    t =    36.51s Checking existence of `"eventStoryScroll" ScrollView`
+    t =    36.56s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    36.60s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    36.63s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    36.67s Find the "worldDecisionDrawer" ScrollView
+    t =    36.72s Checking existence of `"worldPlaybackControls" Any`
+    t =    36.75s Find the "worldPlaybackControls" Any
+    t =    36.78s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    36.82s Find the "worldDecisionDrawer" ScrollView
+    t =    36.87s Checking existence of `"choice.ask" Button`
+    t =    36.92s Find the "choice.ask" Button
+    t =    36.97s Find the "choice.ask" Button
+    t =    37.02s Find the "choice.ask" Button
+    t =    37.06s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    37.11s Find the "choice.ask" Button
+    t =    37.15s Find the "choice.ask" Button
+    t =    37.20s Checking existence of `"worldPlaybackControls" Other`
+    t =    37.23s Find the "worldPlaybackControls" Other
+LL07_REVEALED choice.ask: target=(16.0, 453.99999999999983, 370.0, 211.3333333333332), visible=319.33333333333326...780.0, controls=(0.0, 788.0, 402.0, 52.0)
+    t =    37.26s Find the "choice.ask" Button
+    t =    37.31s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    37.42s Added attachment named 'readability-choices-dark-high-large-screen'
+    t =    37.81s Find the Any (Descendant with identity binding to AX element pid: 12452, elementOrHash.elementID: 4453759520.106)
+    t =    37.84s Find the "用線上圖解製作互動作品" StaticText
+    t =    37.88s Find the "用線上圖解製作互動作品" StaticText
+READABILITY_ISSUE choices dark-high-large id= label=用線上圖解製作互動作品 Contrast failed
+    t =    37.91s Find the "用線上圖解製作互動作品" StaticText
+    t =    37.94s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    37.98s Find the "用線上圖解製作互動作品" StaticText
+    t =    38.02s Checking existence of `StaticText (First Match)`
+    t =    38.05s Find the "worldDecisionDrawer" ScrollView
+    t =    38.10s Checking existence of `"worldPlaybackControls" Any`
+    t =    38.13s Find the "worldPlaybackControls" Any
+    t =    38.16s Find the "用線上圖解製作互動作品" StaticText
+    t =    38.20s Find the "用線上圖解製作互動作品" StaticText
+    t =    38.23s Find the "用線上圖解製作互動作品" StaticText
+READABILITY_CLIPPED_TEXT_NOT_AUDITED choices dark-high-large label=用線上圖解製作互動作品 frame=(16.0, -54.666666666666686, 370.0, 211.33333333333326) viewport=(0.0, 311.33333333333326, 402.0, 476.66666666666674)
+    t =    38.26s Added attachment named 'readability-choices-dark-high-large-audit.txt'
+READABILITY_AUDIT choices dark-high-large visibleFindings=0 result=PASS
+    t =    38.26s Find the "uiTestArchiveChecksum" StaticText
+READABILITY_ARCHIVE dark-high-large 13-before c1074e81fb937ec13928efbf9b8012bab9fbcbe0938b1f2cc99f53df90411ebd
+    t =    38.31s Terminate com.gavin0099.LifeCrossroads:12452
+2026-10-29 09:07:55.277 xcodebuild[12379:167216] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 09:07:55.277 xcodebuild[12379:167216] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 09:07:55.278 xcodebuild[12379:167216] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    39.37s Open com.gavin0099.LifeCrossroads
+    t =    39.37s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 09:07:56.336 xcodebuild[12379:167216] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 09:07:56.336 xcodebuild[12379:167216] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 09:07:56.339 xcodebuild[12379:167216] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    39.58s         Setting up automation session
+    t =    41.41s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =    43.13s Waiting 10.0s for "resumeLife" Button to exist
+    t =    44.16s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =    44.17s         Checking existence of `"resumeLife" Button`
+    t =    44.25s Tap "resumeLife" Button
+    t =    44.25s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    44.25s     Find the "resumeLife" Button
+    t =    44.27s     Check for interrupting elements affecting "resumeLife" Button
+    t =    44.29s     Synthesize event
+    t =    44.60s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    44.60s Waiting 5.0s for "lifeWorldScene" Other to exist
+    t =    45.63s     Checking `Expect predicate `existsNoRetry == 1` for object "lifeWorldScene" Other`
+    t =    45.63s         Checking existence of `"lifeWorldScene" Other`
+    t =    45.70s Find the "uiTestArchiveChecksum" StaticText
+    t =    45.74s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    45.85s Added attachment named 'readability-13-ask-dark-high-large-screen'
+    t =    46.18s Added attachment named 'readability-13-ask-dark-high-large-audit.txt'
+READABILITY_AUDIT 13-ask dark-high-large visibleFindings=0 result=PASS
+    t =    46.18s Find the "whyResult" Button
+    t =    46.22s Checking existence of `"closeTrace" Button`
+    t =    46.26s Checking existence of `"closeComparison" Button`
+    t =    46.30s Checking existence of `"closeBranchComparison" Button`
+    t =    46.33s Checking existence of `"closeForkPicker" Button`
+    t =    46.37s Checking existence of `"closeFullEvent" Button`
+    t =    46.41s Checking existence of `"cancelParallel" Button`
+    t =    46.44s Checking existence of `"enterChildhood" Button`
+    t =    46.48s Checking existence of `"continueLife" Button`
+    t =    46.52s Checking existence of `ScrollView (First Match)`
+    t =    46.57s Checking existence of `"eventStoryScroll" ScrollView`
+    t =    46.61s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    46.65s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    46.67s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    46.71s Find the "worldDecisionDrawer" ScrollView
+    t =    46.75s Checking existence of `"worldPlaybackControls" Any`
+    t =    46.78s Find the "worldPlaybackControls" Any
+    t =    46.81s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    46.85s Find the "worldDecisionDrawer" ScrollView
+    t =    46.89s Checking existence of `"whyResult" Button`
+    t =    46.93s Find the "whyResult" Button
+    t =    46.98s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    47.01s Checking existence of `"whyResult" Button`
+    t =    47.05s Find the "whyResult" Button
+    t =    47.09s Find the "whyResult" Button
+    t =    47.13s Checking existence of `"whyResult" Button`
+    t =    47.17s Find the "whyResult" Button
+    t =    47.21s Find the "worldDecisionDrawer" ScrollView
+LL07_REVEAL whyResult: target=(16.0, 1811.9999999999998, 317.66666666666663, 155.33333333333326), viewport=(0.0, 311.3333333333333, 402.0, 562.6666666666667), drag=678.6533333333334->425.28666666666675
+    t =    47.25s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    47.27s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    47.30s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    47.33s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    47.36s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.78] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.49] with velocity of 250.00 pixels per second, and then hold for 0.2 seconds 
+    t =    47.36s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    47.36s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    47.39s     Check for interrupting elements affecting "人生岔路" Application
+    t =    47.42s     Synthesize event
+    t =    47.42s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    47.45s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    47.48s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    47.50s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    47.53s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    49.06s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    49.07s Find the "whyResult" Button
+    t =    49.13s Checking existence of `"closeTrace" Button`
+    t =    49.17s Checking existence of `"closeComparison" Button`
+    t =    49.20s Checking existence of `"closeBranchComparison" Button`
+    t =    49.24s Checking existence of `"closeForkPicker" Button`
+    t =    49.28s Checking existence of `"closeFullEvent" Button`
+    t =    49.31s Checking existence of `"cancelParallel" Button`
+    t =    49.35s Checking existence of `"enterChildhood" Button`
+    t =    49.39s Checking existence of `"continueLife" Button`
+    t =    49.43s Checking existence of `ScrollView (First Match)`
+    t =    49.48s Checking existence of `"eventStoryScroll" ScrollView`
+    t =    49.52s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    49.55s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    49.58s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    49.62s Find the "worldDecisionDrawer" ScrollView
+    t =    49.65s Checking existence of `"worldPlaybackControls" Any`
+    t =    49.69s Find the "worldPlaybackControls" Any
+    t =    49.72s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    49.76s Find the "worldDecisionDrawer" ScrollView
+    t =    49.80s Checking existence of `"whyResult" Button`
+    t =    49.83s Find the "whyResult" Button
+    t =    49.88s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    49.92s Checking existence of `"whyResult" Button`
+    t =    49.96s Find the "whyResult" Button
+    t =    50.00s Find the "whyResult" Button
+    t =    50.04s Checking existence of `"whyResult" Button`
+    t =    50.08s Find the "whyResult" Button
+    t =    50.12s Find the "worldDecisionDrawer" ScrollView
+LL07_REVEAL whyResult: target=(16.0, 1568.6666666666667, 317.66666666666663, 155.33333333333303), viewport=(0.0, 311.3333333333333, 402.0, 562.6666666666667), drag=678.6533333333334->425.28666666666675
+    t =    50.15s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    50.18s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    50.21s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    50.23s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    50.26s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.78] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.49] with velocity of 250.00 pixels per second, and then hold for 0.2 seconds 
+    t =    50.26s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    50.26s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    50.29s     Check for interrupting elements affecting "人生岔路" Application
+    t =    50.32s     Synthesize event
+    t =    50.32s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    50.35s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    50.38s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    50.40s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    50.43s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    51.96s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    51.97s Find the "whyResult" Button
+    t =    52.02s Checking existence of `"closeTrace" Button`
+    t =    52.06s Checking existence of `"closeComparison" Button`
+    t =    52.09s Checking existence of `"closeBranchComparison" Button`
+    t =    52.13s Checking existence of `"closeForkPicker" Button`
+    t =    52.17s Checking existence of `"closeFullEvent" Button`
+    t =    52.20s Checking existence of `"cancelParallel" Button`
+    t =    52.24s Checking existence of `"enterChildhood" Button`
+    t =    52.28s Checking existence of `"continueLife" Button`
+    t =    52.31s Checking existence of `ScrollView (First Match)`
+    t =    52.37s Checking existence of `"eventStoryScroll" ScrollView`
+    t =    52.40s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    52.44s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    52.47s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    52.50s Find the "worldDecisionDrawer" ScrollView
+    t =    52.54s Checking existence of `"worldPlaybackControls" Any`
+    t =    52.57s Find the "worldPlaybackControls" Any
+    t =    52.61s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    52.64s Find the "worldDecisionDrawer" ScrollView
+    t =    52.69s Checking existence of `"whyResult" Button`
+    t =    52.72s Find the "whyResult" Button
+    t =    52.77s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    52.81s Checking existence of `"whyResult" Button`
+    t =    52.85s Find the "whyResult" Button
+    t =    52.89s Find the "whyResult" Button
+    t =    52.93s Checking existence of `"whyResult" Button`
+    t =    52.97s Find the "whyResult" Button
+    t =    53.01s Find the "worldDecisionDrawer" ScrollView
+LL07_REVEAL whyResult: target=(16.0, 1325.333333333333, 317.66666666666663, 155.33333333333326), viewport=(0.0, 311.3333333333333, 402.0, 562.6666666666663), drag=678.6533333333334->425.28666666666675
+    t =    53.04s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    53.07s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    53.10s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    53.12s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    53.15s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.78] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.49] with velocity of 250.00 pixels per second, and then hold for 0.2 seconds 
+    t =    53.15s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    53.15s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    53.18s     Check for interrupting elements affecting "人生岔路" Application
+    t =    53.21s     Synthesize event
+    t =    53.21s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    53.24s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    53.27s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    53.30s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    53.32s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    54.85s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    54.86s Find the "whyResult" Button
+    t =    54.92s Checking existence of `"closeTrace" Button`
+    t =    54.96s Checking existence of `"closeComparison" Button`
+    t =    55.00s Checking existence of `"closeBranchComparison" Button`
+    t =    55.03s Checking existence of `"closeForkPicker" Button`
+    t =    55.07s Checking existence of `"closeFullEvent" Button`
+    t =    55.11s Checking existence of `"cancelParallel" Button`
+    t =    55.14s Checking existence of `"enterChildhood" Button`
+    t =    55.18s Checking existence of `"continueLife" Button`
+    t =    55.22s Checking existence of `ScrollView (First Match)`
+    t =    55.27s Checking existence of `"eventStoryScroll" ScrollView`
+    t =    55.31s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    55.34s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    55.37s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    55.41s Find the "worldDecisionDrawer" ScrollView
+    t =    55.45s Checking existence of `"worldPlaybackControls" Any`
+    t =    55.48s Find the "worldPlaybackControls" Any
+    t =    55.51s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    55.55s Find the "worldDecisionDrawer" ScrollView
+    t =    55.59s Checking existence of `"whyResult" Button`
+    t =    55.63s Find the "whyResult" Button
+    t =    55.67s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    55.71s Checking existence of `"whyResult" Button`
+    t =    55.75s Find the "whyResult" Button
+    t =    55.79s Find the "whyResult" Button
+    t =    55.83s Checking existence of `"whyResult" Button`
+    t =    55.86s Find the "whyResult" Button
+    t =    55.90s Find the "worldDecisionDrawer" ScrollView
+LL07_REVEAL whyResult: target=(16.0, 1081.9999999999998, 317.66666666666663, 155.33333333333326), viewport=(0.0, 311.3333333333333, 402.0, 562.6666666666663), drag=678.6533333333334->425.28666666666675
+    t =    55.94s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    55.97s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    56.00s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    56.02s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    56.05s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.78] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.49] with velocity of 250.00 pixels per second, and then hold for 0.2 seconds 
+    t =    56.05s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    56.05s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    56.08s     Check for interrupting elements affecting "人生岔路" Application
+    t =    56.11s     Synthesize event
+    t =    56.11s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    56.14s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    56.16s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    56.19s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    56.22s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    57.75s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    57.76s Find the "whyResult" Button
+    t =    57.82s Checking existence of `"closeTrace" Button`
+    t =    57.86s Checking existence of `"closeComparison" Button`
+    t =    57.89s Checking existence of `"closeBranchComparison" Button`
+    t =    57.93s Checking existence of `"closeForkPicker" Button`
+    t =    57.97s Checking existence of `"closeFullEvent" Button`
+    t =    58.00s Checking existence of `"cancelParallel" Button`
+    t =    58.04s Checking existence of `"enterChildhood" Button`
+    t =    58.07s Checking existence of `"continueLife" Button`
+    t =    58.11s Checking existence of `ScrollView (First Match)`
+    t =    58.17s Checking existence of `"eventStoryScroll" ScrollView`
+    t =    58.20s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    58.24s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    58.26s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    58.30s Find the "worldDecisionDrawer" ScrollView
+    t =    58.34s Checking existence of `"worldPlaybackControls" Any`
+    t =    58.37s Find the "worldPlaybackControls" Any
+    t =    58.41s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    58.44s Find the "worldDecisionDrawer" ScrollView
+    t =    58.48s Checking existence of `"whyResult" Button`
+    t =    58.52s Find the "whyResult" Button
+    t =    58.57s Find the "whyResult" Button
+    t =    58.61s Find the "whyResult" Button
+    t =    58.65s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    58.69s Checking existence of `"whyResult" Button`
+    t =    58.72s Find the "whyResult" Button
+    t =    58.76s Find the "whyResult" Button
+    t =    58.80s Checking existence of `"whyResult" Button`
+    t =    58.84s Find the "whyResult" Button
+    t =    58.88s Find the "worldDecisionDrawer" ScrollView
+LL07_REVEAL whyResult: target=(16.0, 838.6666666666665, 317.66666666666663, 155.33333333333314), viewport=(0.0, 311.33333333333337, 402.0, 562.6666666666666), drag=678.6533333333334->425.28666666666675
+    t =    58.92s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    58.94s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    58.97s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    58.99s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    59.02s Press Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.78] for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.50, 0.49] with velocity of 250.00 pixels per second, and then hold for 0.2 seconds 
+    t =    59.02s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    59.02s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    59.05s     Check for interrupting elements affecting "人生岔路" Application
+    t =    59.08s     Synthesize event
+    t =    59.08s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    59.11s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    59.14s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    59.16s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    59.19s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    60.72s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    60.73s Find the "whyResult" Button
+    t =    60.78s Checking existence of `"closeTrace" Button`
+    t =    60.82s Checking existence of `"closeComparison" Button`
+    t =    60.85s Checking existence of `"closeBranchComparison" Button`
+    t =    60.89s Checking existence of `"closeForkPicker" Button`
+    t =    60.93s Checking existence of `"closeFullEvent" Button`
+    t =    60.97s Checking existence of `"cancelParallel" Button`
+    t =    61.00s Checking existence of `"enterChildhood" Button`
+    t =    61.04s Checking existence of `"continueLife" Button`
+    t =    61.08s Checking existence of `ScrollView (First Match)`
+    t =    61.13s Checking existence of `"eventStoryScroll" ScrollView`
+    t =    61.17s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    61.21s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    61.23s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    61.27s Find the "worldDecisionDrawer" ScrollView
+    t =    61.31s Checking existence of `"worldPlaybackControls" Any`
+    t =    61.34s Find the "worldPlaybackControls" Any
+    t =    61.37s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    61.41s Find the "worldDecisionDrawer" ScrollView
+    t =    61.45s Checking existence of `"whyResult" Button`
+    t =    61.48s Find the "whyResult" Button
+    t =    61.53s Find the "whyResult" Button
+    t =    61.57s Find the "whyResult" Button
+    t =    61.61s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    61.65s Find the "whyResult" Button
+    t =    61.69s Find the "whyResult" Button
+    t =    61.73s Checking existence of `"worldPlaybackControls" Other`
+    t =    61.76s Find the "worldPlaybackControls" Other
+LL07_REVEALED whyResult: target=(16.0, 595.333333333333, 317.66666666666663, 155.33333333333337), visible=319.33333333333326...780.0, controls=(0.0, 788.0, 402.0, 52.0)
+    t =    61.79s Find the "whyResult" Button
+    t =    61.84s Tap "whyResult" Button
+    t =    61.84s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    61.84s     Find the "whyResult" Button
+    t =    61.88s     Check for interrupting elements affecting "whyResult" Button
+    t =    61.91s     Synthesize event
+    t =    62.20s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    62.64s Waiting 5.0s for "closeTrace" Button to exist
+    t =    63.66s     Checking `Expect predicate `existsNoRetry == 1` for object "closeTrace" Button`
+    t =    63.66s         Checking existence of `"closeTrace" Button`
+    t =    63.75s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    63.85s Added attachment named 'readability-explanation-dark-high-large-screen'
+    t =    64.12s Find the Any (Descendant with identity binding to AX element pid: 12767, elementOrHash.elementID: 4907144512.135)
+    t =    64.16s Find the "closeTrace" Button
+    t =    64.20s Find the "closeTrace" Button
+READABILITY_ISSUE explanation dark-high-large id=closeTrace label=完成 Contrast failed
+    t =    64.23s Find the "closeTrace" Button
+    t =    64.27s Find the "closeTrace" Button
+    t =    64.31s Find the "closeTrace" Button
+    t =    64.35s Added attachment named 'readability-explanation-dark-high-large-audit.txt'
+READABILITY_AUDIT explanation dark-high-large visibleFindings=1 result=FINDINGS_RETAINED
+    t =    64.35s Tap "closeTrace" Button
+    t =    64.35s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    64.35s     Find the "closeTrace" Button
+    t =    64.40s     Check for interrupting elements affecting "closeTrace" Button
+    t =    64.44s     Synthesize event
+    t =    64.73s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    65.09s Find the "uiTestArchiveChecksum" StaticText
+READABILITY_ARCHIVE dark-high-large 13-ask 8d85eb25d6f21ac085fa4fafec47c110567a6513133614c2ab49c8336a65f1b4
+    t =    65.14s Terminate com.gavin0099.LifeCrossroads:12767
+2026-10-29 09:08:22.115 xcodebuild[12379:167216] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 09:08:22.116 xcodebuild[12379:167216] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 09:08:22.116 xcodebuild[12379:167216] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    66.22s Open com.gavin0099.LifeCrossroads
+    t =    66.22s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 09:08:23.183 xcodebuild[12379:167216] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 09:08:23.183 xcodebuild[12379:167216] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 09:08:23.192 xcodebuild[12379:167216] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    66.43s         Setting up automation session
+    t =    68.30s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =    70.26s Waiting 10.0s for "resumeLife" Button to exist
+    t =    71.32s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =    71.32s         Checking existence of `"resumeLife" Button`
+    t =    71.41s Tap "resumeLife" Button
+    t =    71.41s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    71.41s     Find the "resumeLife" Button
+    t =    71.43s     Check for interrupting elements affecting "resumeLife" Button
+    t =    71.45s     Synthesize event
+    t =    71.75s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    71.80s Waiting 5.0s for "lifeWorldScene" Other to exist
+    t =    72.85s     Checking `Expect predicate `existsNoRetry == 1` for object "lifeWorldScene" Other`
+    t =    72.85s         Checking existence of `"lifeWorldScene" Other`
+    t =    72.91s Find the "uiTestArchiveChecksum" StaticText
+    t =    72.95s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    73.06s Added attachment named 'readability-72-ahe-dark-high-large-screen'
+    t =    73.40s Find the Any (Descendant with identity binding to AX element pid: 12913, elementOrHash.elementID: 4428347296.81)
+    t =    73.43s Find the "你10歲留下的故事記錄，影響了現在72歲的「和阿禾再做一架風車」。" StaticText
+    t =    73.46s Find the "你10歲留下的故事記錄，影響了現在72歲的「和阿禾再做一架風車」。" StaticText
+READABILITY_ISSUE 72-ahe dark-high-large id= label=你10歲留下的故事記錄，影響了現在72歲的「和阿禾再做一架風車」。 Contrast failed
+    t =    73.49s Find the "你10歲留下的故事記錄，影響了現在72歲的「和阿禾再做一架風車」。" StaticText
+    t =    73.52s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    73.56s Find the "你10歲留下的故事記錄，影響了現在72歲的「和阿禾再做一架風車」。" StaticText
+    t =    73.59s Checking existence of `StaticText (First Match)`
+    t =    73.62s Find the "worldDecisionDrawer" ScrollView
+    t =    73.66s Checking existence of `"worldPlaybackControls" Any`
+    t =    73.69s Find the "worldPlaybackControls" Any
+    t =    73.72s Find the "你10歲留下的故事記錄，影響了現在72歲的「和阿禾再做一架風車」。" StaticText
+    t =    73.76s Find the "你10歲留下的故事記錄，影響了現在72歲的「和阿禾再做一架風車」。" StaticText
+    t =    73.79s Find the "你10歲留下的故事記錄，影響了現在72歲的「和阿禾再做一架風車」。" StaticText
+READABILITY_CLIPPED_TEXT_NOT_AUDITED 72-ahe dark-high-large label=你10歲留下的故事記錄，影響了現在72歲的「和阿禾再做一架風車」。 frame=(16.0, 663.3333333333335, 348.3333333333333, 290.66666666666686) viewport=(0.0, 311.3333333333333, 402.0, 476.6666666666667)
+    t =    73.82s Added attachment named 'readability-72-ahe-dark-high-large-audit.txt'
+READABILITY_AUDIT 72-ahe dark-high-large visibleFindings=0 result=PASS
+    t =    73.82s Find the "uiTestArchiveChecksum" StaticText
+READABILITY_ARCHIVE dark-high-large 72-ahe 92bd9243fdfaadc47e8611e855b7e59d1b9f6c336bd0d60437d5f274128fd932
+    t =    73.86s Terminate com.gavin0099.LifeCrossroads:12913
+2026-10-29 09:08:30.826 xcodebuild[12379:167216] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 09:08:30.827 xcodebuild[12379:167216] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 09:08:30.828 xcodebuild[12379:167216] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    74.92s Tear Down
+Test Case '-[LifeCrossroadsUITests.ReadabilityCaptureTests testReadableStoryScreensAndUnchangedArchive]' passed (75.078 seconds).
+Test Suite 'ReadabilityCaptureTests' passed at 2026-10-29 09:08:32.042.
+	 Executed 1 test, with 0 failures (0 unexpected) in 75.078 (75.080) seconds
+Test Suite 'LifeCrossroadsUITests.xctest' passed at 2026-10-29 09:08:32.043.
+	 Executed 1 test, with 0 failures (0 unexpected) in 75.078 (75.081) seconds
+Test Suite 'Selected tests' passed at 2026-10-29 09:08:32.044.
+	 Executed 1 test, with 0 failures (0 unexpected) in 75.078 (75.082) seconds
+2026-10-29 09:08:32.078 xcodebuild[12379:167216] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 09:08:32.078 xcodebuild[12379:167216] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 09:08:32.079 xcodebuild[12379:167216] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 09:08:32.362 xcodebuild[12379:167216] [MT] IDETestOperationsObserverDebug: 78.856 elapsed -- Testing started completed.
+2026-10-29 09:08:32.362 xcodebuild[12379:167216] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-29 09:08:32.362 xcodebuild[12379:167216] [MT] IDETestOperationsObserverDebug: 78.856 sec, +78.856 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/readability/delivery/iPhone-17/dark-high-large/result.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started

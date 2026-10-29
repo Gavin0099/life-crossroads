@@ -17,7 +17,7 @@ struct BranchPickerView: View {
                 VStack(alignment: .leading, spacing: 18) {
                     Text("原來的人生會留在回憶冊。選一個日子，換個行動，再親自走完後面的故事。")
                     Text("同樣的背景與種子；共有機會使用相同亂數。行動改變後，能遇到的故事與可用選項也可能改變。")
-                        .font(.footnote).foregroundStyle(.secondary)
+                        .font(.footnote).foregroundStyle(StoryPalette.secondaryInk)
                     if let error { Text(error).foregroundStyle(.red) }
                     if let checkpoint, let index = selectedIndex {
                         Text("\(original.traces[index].age)歲 · \(original.traces[index].eventTitle)").font(.title2.bold())
@@ -122,7 +122,7 @@ struct BranchComparisonView: View {
                     }
                     } label: { Text("展開完整人生紀錄").accessibilityIdentifier("fullLifeTimeline") }
                     Text("回顧結束不代表這個年齡死亡。相同種子也不保證遇到相同事件，因為先前選擇會改變資格與權重。")
-                        .font(.footnote).foregroundStyle(.secondary)
+                        .font(.footnote).foregroundStyle(StoryPalette.secondaryInk)
                 }.padding()
             }.navigationTitle("人生故事對照").navigationBarTitleDisplayMode(.inline)
                 .toolbar { Button("關閉") { dismiss() }.accessibilityIdentifier("closeBranchComparison") }

@@ -56,18 +56,18 @@ struct ProjectWorkshopView: View {
                             .font(.caption).accessibilityIdentifier("projectGap")
                     }
                     Text("本次實際參與：" + moment.influences.joined(separator: "、"))
-                        .font(.caption).foregroundStyle(.secondary)
+                        .font(.caption).foregroundStyle(StoryPalette.secondaryInk)
                         .accessibilityIdentifier("projectInfluences")
                     Text("取自這次已保存的選擇紀錄；作品是否完成、後續機會仍待後面的故事。")
-                        .font(.caption).foregroundStyle(.secondary)
+                        .font(.caption).foregroundStyle(StoryPalette.secondaryInk)
                         .accessibilityIdentifier("projectReceipt").accessibilityValue(testReceipt)
                 }
                 Text("共用的想像工作室 · 不是各國實景")
-                    .font(.caption2).foregroundStyle(.secondary)
+                    .font(.caption2).foregroundStyle(StoryPalette.secondaryInk)
             }
             .padding(14)
             .background(StoryPalette.illustratedPaper, in: RoundedRectangle(cornerRadius: 16))
-            .overlay(RoundedRectangle(cornerRadius: 16).stroke(StoryPalette.forest.opacity(0.16), lineWidth: 1))
+            .overlay(RoundedRectangle(cornerRadius: 16).stroke(StoryPalette.sceneInk.opacity(0.16), lineWidth: 1))
         }
     }
 
@@ -86,13 +86,13 @@ struct ProjectWorkshopView: View {
                 VStack(alignment: .leading, spacing: 5) {
                     HStack(alignment: .bottom, spacing: 3) {
                         ForEach(0..<5) { index in
-                            RoundedRectangle(cornerRadius: 2).fill(index.isMultiple(of: 2) ? StoryPalette.forest.opacity(0.65) : StoryPalette.amber)
+                            RoundedRectangle(cornerRadius: 2).fill(index.isMultiple(of: 2) ? StoryPalette.sceneInk.opacity(0.65) : StoryPalette.amber)
                                 .frame(width: 9, height: CGFloat(20 + index * 3))
                         }
                     }
-                    RoundedRectangle(cornerRadius: 2).fill(StoryPalette.forest.opacity(0.25)).frame(width: 86, height: 5)
+                    RoundedRectangle(cornerRadius: 2).fill(StoryPalette.sceneInk.opacity(0.25)).frame(width: 86, height: 5)
                 }.offset(x: -geometry.size.width * 0.29, y: -geometry.size.height * 0.28)
-                Ellipse().fill(StoryPalette.forest.opacity(0.09)).frame(width: geometry.size.width * 0.88, height: 30)
+                Ellipse().fill(StoryPalette.sceneInk.opacity(0.09)).frame(width: geometry.size.width * 0.88, height: 30)
                     .offset(y: geometry.size.height * 0.39)
                 HStack(alignment: .bottom, spacing: 0) {
                     StoryPortrait(character: .protagonist(age: moment?.age ?? 13))
@@ -135,7 +135,7 @@ struct ProjectWorkshopView: View {
             Image(systemName: symbol).font(.system(size: 36, weight: .medium))
             Text(propTitle).font(.caption2.bold())
         }
-        .foregroundStyle(StoryPalette.forest)
+        .foregroundStyle(StoryPalette.sceneInk)
         .frame(width: 96, height: 66)
         .background(Color(red: 0.99, green: 0.97, blue: 0.91), in: RoundedRectangle(cornerRadius: 10))
         .overlay(RoundedRectangle(cornerRadius: 10).stroke(.white.opacity(0.7)))

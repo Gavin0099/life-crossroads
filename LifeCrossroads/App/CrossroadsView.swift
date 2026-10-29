@@ -142,7 +142,7 @@ struct CrossroadsView: View {
                     store.pulseWorld()
                 }
             }
-        }.tint(accent)
+        }.foregroundStyle(StoryPalette.ink).tint(accent)
     }
 
     @ViewBuilder private var rootContent: some View {
@@ -237,7 +237,7 @@ struct CrossroadsView: View {
         VStack(alignment: .leading, spacing: 5) {
             if !dynamicTypeSize.isAccessibilitySize {
                 Text("共用想像場景 · 非各國實景")
-                    .font(.caption2).foregroundStyle(.secondary).padding(.horizontal, 8)
+                    .font(.caption2).foregroundStyle(StoryPalette.secondaryInk).padding(.horizontal, 8)
                     .accessibilityHidden(true) // Also retained in the scene's spoken label.
             }
         LifeWorldScene(frame: world, motion: store.playback.motion(reduceMotion: reduceMotion))
@@ -337,7 +337,7 @@ struct CrossroadsView: View {
             StoryEyebrow(title: "一本由你參與的人生故事", icon: "book.closed")
             Text("P1 整合預覽 0.1 · 八國完整人生")
                 .font(.caption.weight(.semibold))
-                .foregroundStyle(.secondary)
+                .foregroundStyle(StoryPalette.secondaryInk)
                 .accessibilityLabel("P1 整合預覽版，八國完整人生，仍待資料、美術與兒少測試驗收")
                 .accessibilityIdentifier("previewBuildStatus")
             HStack(spacing: 12) {
@@ -360,7 +360,7 @@ struct CrossroadsView: View {
                 else { store.start(randomBirth: true) }
             }.buttonStyle(JourneyButtonStyle()).disabled(store.catalog == nil)
                 .accessibilityIdentifier("randomBirth")
-            Text(BirthDraw.scope).font(.footnote).foregroundStyle(.secondary)
+            Text(BirthDraw.scope).font(.footnote).foregroundStyle(StoryPalette.secondaryInk)
             DisclosureGroup(isExpanded: $exploreBirth) {
                 VStack(alignment: .leading, spacing: 18) {
                     StoryEyebrow(title: "第一頁 · 選一個起點", icon: "map")
@@ -370,7 +370,7 @@ struct CrossroadsView: View {
                     if let household = store.selectedHousehold {
                         Text(household.label).font(.subheadline).fixedSize(horizontal: false, vertical: true)
                         Text("兩種家庭各有支持與限制，是虛構示例，不代表這個國家的每個家庭。")
-                            .font(.footnote).foregroundStyle(.secondary)
+                            .font(.footnote).foregroundStyle(StoryPalette.secondaryInk)
                     }
                 }.card()
                 Button("陪沐沐開始一段人生", systemImage: "pawprint") {
@@ -392,12 +392,12 @@ struct CrossroadsView: View {
             Toggle("減少動態效果", isOn: $reducedLifeMotion)
                 .accessibilityIdentifier("worldReduceMotion")
             Text("關閉可回到事件優先介面；使用同一份人生與存檔。")
-                .font(.caption).foregroundStyle(.secondary)
+                .font(.caption).foregroundStyle(StoryPalette.secondaryInk)
             Toggle("使用較短的故事文字", isOn: $shortText).font(.subheadline)
             Text("15段選擇，沒有唯一的好人生。環境影響機會，選擇留下故事，也有些事不由自己控制。")
-                .font(.subheadline).foregroundStyle(.secondary)
+                .font(.subheadline).foregroundStyle(StoryPalette.secondaryInk)
             Text("動物角色演出虛構故事；所有國家共用這座想像的河畔舞台，不是各國生活的實景。包含工作變動與照顧情境，可休息或回首頁。每次操作自動保存一組人生；關閉後可續玩。建立新人生會先詢問是否取代紀錄。")
-                .font(.footnote).foregroundStyle(.secondary)
+                .font(.footnote).foregroundStyle(StoryPalette.secondaryInk)
         }
     }
 
@@ -455,10 +455,10 @@ struct CrossroadsView: View {
                 Text("沐沐 · \(session.state.age)歲").font(.system(.title3, design: .rounded).bold())
                 Spacer(minLength: 8)
                 Text("\(min(session.plannedDecisionCount, session.traces.count + (session.phase == .choosing ? 1 : 0))) / \(session.plannedDecisionCount)")
-                    .font(.caption.monospacedDigit()).foregroundStyle(.secondary)
+                    .font(.caption.monospacedDigit()).foregroundStyle(StoryPalette.secondaryInk)
             }
             Text("\(store.name(session.state.countryCode)) · \(stageName(session.state.age))")
-                .font(.caption).foregroundStyle(.secondary)
+                .font(.caption).foregroundStyle(StoryPalette.secondaryInk)
             ProgressView(value: Double(session.traces.count), total: Double(session.plannedDecisionCount))
                 .accessibilityLabel("已完成\(session.traces.count)段，共\(session.plannedDecisionCount)段")
         }
@@ -495,7 +495,7 @@ struct CrossroadsView: View {
                 if !store.worldPreviewEnabled { Text(event.storyQuestion).font(.subheadline.weight(.semibold)) }
                 if event.id == "teen-project" && !store.worldPreviewEnabled {
                     Text("創作桌：圖解、材料，也可以先休息。共用想像場景，非各國實景。")
-                        .font(.caption).foregroundStyle(.secondary).accessibilityIdentifier("projectSceneCaption")
+                        .font(.caption).foregroundStyle(StoryPalette.secondaryInk).accessibilityIdentifier("projectSceneCaption")
                 }
             }
             if !showsLifeOverview && store.worldPreviewEnabled {
@@ -539,7 +539,7 @@ struct CrossroadsView: View {
                                 Text("家庭試算；部分環境成本未知，不能作跨國總成本比較。")
                                     .font(.caption).accessibilityIdentifier("choiceDataLimit.\(choice.id)")
                             }
-                            if !showsLifeOverview { Text("基本影響：\(deltaText(choice.effect))").font(.caption).foregroundStyle(.secondary) }
+                            if !showsLifeOverview { Text("基本影響：\(deltaText(choice.effect))").font(.caption).foregroundStyle(StoryPalette.secondaryInk) }
                             if !preview.applied {
                                 Text(preview.unavailableReasons.joined(separator: "\n")).font(.footnote)
                             }
@@ -552,7 +552,7 @@ struct CrossroadsView: View {
                         .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
-                    .foregroundStyle(preview.applied ? Color.primary : Color.secondary)
+                    .foregroundStyle(preview.applied ? StoryPalette.ink : StoryPalette.secondaryInk)
                     .disabled(!preview.applied).accessibilityIdentifier("choice.\(choice.id)")
                 }
             }
@@ -579,7 +579,7 @@ struct CrossroadsView: View {
             }.accessibilityIdentifier("compareChoice")
             if event.id == "teen-project" {
                 Text("試算線上與紙本選項：只有需要網路的行動，才會使用數位環境規則。比較不會替你選擇。")
-                    .font(.footnote).foregroundStyle(.secondary).accessibilityIdentifier("digitalLearningGuide")
+                    .font(.footnote).foregroundStyle(StoryPalette.secondaryInk).accessibilityIdentifier("digitalLearningGuide")
             }
             if store.worldPreviewEnabled || !shortText {
                 DisclosureGroup("完整故事與問題") {
@@ -599,8 +599,8 @@ struct CrossroadsView: View {
                 ResourcePanel(resources: session.state.resources).padding(.top, 14)
             } label: { Label("人物與近況", systemImage: "person.crop.rectangle").font(.subheadline.weight(.semibold)) }
             Text("額度每回合重新安排；健康、人際、技能與財務及選擇紀錄會延續。基本影響之外，實際支持或機會事件會在選後說明。")
-                .font(.caption).foregroundStyle(.secondary)
-            Text("人生種子：\(String(session.state.seed))").font(.caption2.monospaced()).foregroundStyle(.secondary)
+                .font(.caption).foregroundStyle(StoryPalette.secondaryInk)
+            Text("人生種子：\(String(session.state.seed))").font(.caption2.monospaced()).foregroundStyle(StoryPalette.secondaryInk)
                 .accessibilityIdentifier("lifeSeed").accessibilityValue(String(session.state.seed))
         }
     }
@@ -629,9 +629,9 @@ struct CrossroadsView: View {
                     if selected.weightSteps.contains(where: { $0.ruleID == "recent-category" }) { Text("最近已遇過相近的事情，這次讓其他類型也多一些機會。").font(.subheadline) }
                 }
                 Text("這份紀錄說明事件如何入選；它不表示本次行動的成本或資源一定受運氣影響。")
-                    .font(.footnote).foregroundStyle(.secondary)
+                    .font(.footnote).foregroundStyle(StoryPalette.secondaryInk)
                 Text("種子：\(String(selection.seed)) · 候選\(selection.candidates.count)件 · 符合條件\(selection.eligibleEventIDs.count)件")
-                    .font(.caption).foregroundStyle(.secondary)
+                    .font(.caption).foregroundStyle(StoryPalette.secondaryInk)
             }.padding(.top, 10)
         } label: {
             Text("怎麼遇到這件事？").accessibilityIdentifier("eventSelectionDetails")
@@ -705,7 +705,7 @@ struct CrossroadsView: View {
                         .frame(width: 88, height: 68)
                 }
             }
-            Text(trace.eventTitle).font(.subheadline).foregroundStyle(.secondary)
+            Text(trace.eventTitle).font(.subheadline).foregroundStyle(StoryPalette.secondaryInk)
                 .accessibilityIdentifier("outcomeEvent").accessibilityValue(trace.eventID)
             if let moment { ProjectWorkshopView(moment: moment, showArtwork: !store.worldPreviewEnabled, showMetrics: !showsLifeOverview) }
             if showsLifeOverview {
@@ -750,9 +750,9 @@ struct CrossroadsView: View {
             }
             selectionDetails(trace.eventSelection)
             Text("時間、精力和材料額度只用於這一回合；下一回合會重新安排，剩下的格數不會累積。")
-                .font(.footnote).foregroundStyle(.secondary).accessibilityIdentifier("roundBudgetExplanation")
+                .font(.footnote).foregroundStyle(StoryPalette.secondaryInk).accessibilityIdentifier("roundBudgetExplanation")
             Text("健康、財務安全、人際與技能會延續；選擇也會留下紀錄。沒有唯一正確的答案，下一段仍能調整或求助。")
-                .font(.footnote).foregroundStyle(.secondary)
+                .font(.footnote).foregroundStyle(StoryPalette.secondaryInk)
         }
     }
 
@@ -780,17 +780,17 @@ struct CrossroadsView: View {
                 CompactStoryScene(age: session.state.age, person: session.traces.last?.recurringPerson ?? "", sceneID: "endingScene")
                     .frame(width: 160, height: 100)
             }
-            Text("人生種子：\(String(session.state.seed))").font(.caption.monospaced()).foregroundStyle(.secondary)
+            Text("人生種子：\(String(session.state.seed))").font(.caption.monospaced()).foregroundStyle(StoryPalette.secondaryInk)
                 .accessibilityIdentifier("endingSeed").accessibilityValue(String(session.state.seed))
             branchActions
             Button("同背景、同種子，再走一次", systemImage: "arrow.counterclockwise") { restartAction = .sameSeed }
                 .buttonStyle(JourneyButtonStyle()).accessibilityIdentifier("replaySame")
-            Text("同樣的背景與運氣；做相同選擇才會重現，也可以嘗試改選。").font(.footnote).foregroundStyle(.secondary)
+            Text("同樣的背景與運氣；做相同選擇才會重現，也可以嘗試改選。").font(.footnote).foregroundStyle(StoryPalette.secondaryInk)
             Button("同背景，換個運氣", systemImage: "shuffle") { restartAction = .newSeed }
                 .buttonStyle(.bordered).controlSize(.large).accessibilityIdentifier("replayNewSeed")
-            Text("保留國家與家庭，改用新的種子；有些事件仍可能一樣。").font(.footnote).foregroundStyle(.secondary)
+            Text("保留國家與家庭，改用新的種子；有些事件仍可能一樣。").font(.footnote).foregroundStyle(StoryPalette.secondaryInk)
             Text("有選擇，有限制，也有一路相伴的人。這些數字描述故事裡的變化，不評定人生的價值。")
-                .foregroundStyle(.secondary)
+                .foregroundStyle(StoryPalette.secondaryInk)
             VStack(alignment: .leading, spacing: 14) {
                 Text("我現在的模樣").font(.title3.bold())
                 ResourcePanel(resources: session.state.resources)
@@ -817,10 +817,10 @@ struct CrossroadsView: View {
                         Text(trace.choiceTitle).font(.subheadline)
                             .accessibilityIdentifier("history.\(trace.age).choice").accessibilityValue(trace.choiceID)
                         if let branch = trace.storyBranch {
-                            Text(branch.explanation).font(.footnote).foregroundStyle(.secondary)
+                            Text(branch.explanation).font(.footnote).foregroundStyle(StoryPalette.secondaryInk)
                         }
                         Text(deltaText(trace.resourcesAfter - trace.resourcesBefore))
-                            .font(.caption).foregroundStyle(.secondary)
+                            .font(.caption).foregroundStyle(StoryPalette.secondaryInk)
                             .accessibilityIdentifier("history.\(trace.age).resources").accessibilityValue(historyResources(trace))
                     }.fixedSize(horizontal: false, vertical: true)
                     if let companion = StoryCharacter.companion(named: trace.recurringPerson) {
@@ -829,9 +829,9 @@ struct CrossroadsView: View {
                 }.frame(maxWidth: .infinity, alignment: .leading).card()
             }
             Button("換個環境，開始新人生") { store.home() }.frame(maxWidth: .infinity)
-            Text("人生種子：\(String(session.state.seed))").font(.caption.monospaced()).foregroundStyle(.secondary)
+            Text("人生種子：\(String(session.state.seed))").font(.caption.monospaced()).foregroundStyle(StoryPalette.secondaryInk)
             Text("晚年回顧是本版故事收束，不表示角色在這個年齡死亡。")
-                .font(.caption).foregroundStyle(.secondary)
+                .font(.caption).foregroundStyle(StoryPalette.secondaryInk)
         }
     }
 
@@ -910,7 +910,7 @@ struct CrossroadsView: View {
                     ForEach(usedObservations, id: \.indicator) { observation in
                         if let value = observation.value {
                             Text("\(observation.title ?? observation.indicator)：\(value, specifier: "%.2f") \(observation.unit)（\(observation.year.formatted(.number.grouping(.never))))")
-                                .font(.footnote).foregroundStyle(.secondary)
+                                .font(.footnote).foregroundStyle(StoryPalette.secondaryInk)
                         }
                     }
                 }
@@ -944,7 +944,7 @@ struct CrossroadsView: View {
                 .font(.footnote)
             if let selected = presentation.traces.first {
                 Text("選前資源：健康\(selected.resourcesBefore.health) · 財務\(selected.resourcesBefore.financial) · 人際\(selected.resourcesBefore.relationships) · 技能\(selected.resourcesBefore.skills)")
-                    .font(.caption).foregroundStyle(.secondary).accessibilityIdentifier("comparisonPreState")
+                    .font(.caption).foregroundStyle(StoryPalette.secondaryInk).accessibilityIdentifier("comparisonPreState")
                     .accessibilityValue("health=\(selected.resourcesBefore.health);financial=\(selected.resourcesBefore.financial);relationships=\(selected.resourcesBefore.relationships);skills=\(selected.resourcesBefore.skills)")
             }
             ForEach(presentation.traces, id: \.householdID) { trace in
@@ -954,7 +954,7 @@ struct CrossroadsView: View {
                     Text("時間\(trace.finalCost.time) · 精力\(trace.finalCost.energy) · 材料\(trace.finalCost.materials)")
                     Label(trace.applied ? "目前可以安排" : "目前資源不足，還能求助或休息",
                           systemImage: trace.applied ? "checkmark.circle" : "clock.badge.questionmark")
-                        .font(.footnote).foregroundStyle(.secondary)
+                        .font(.footnote).foregroundStyle(StoryPalette.secondaryInk)
                     if trace.applied { Text(deltaText(trace.resourcesAfter - trace.resourcesBefore)).font(.footnote) }
                     } else {
                         Text("資料不足以比較總成本與可行性。不是成本為0或沒有服務。")
@@ -972,7 +972,7 @@ struct CrossroadsView: View {
                 }.card()
             }
             Text("這是模型內的情境比較，不能證明現實因果，也不代表哪個國家或人生比較有價值。國內也有不同家庭與可取得的支持。")
-                .font(.footnote).foregroundStyle(.secondary)
+                .font(.footnote).foregroundStyle(StoryPalette.secondaryInk)
         }
     }
 
@@ -1013,7 +1013,7 @@ struct CrossroadsView: View {
                 DisclosureGroup("查看遊戲設計假設") {
                     ForEach(catalog.assumptions, id: \.id) { item in
                         VStack(alignment: .leading, spacing: 6) {
-                            Text(item.statement); Text(item.limitation).foregroundStyle(.secondary)
+                            Text(item.statement); Text(item.limitation).foregroundStyle(StoryPalette.secondaryInk)
                         }.font(.footnote).padding(.vertical, 8)
                     }
                 }
@@ -1249,8 +1249,8 @@ private struct DetailSheet<Content: View>: View {
 struct JourneyButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label.font(.headline).frame(maxWidth: .infinity).padding(.vertical, 17)
-            .background(accent.opacity(configuration.isPressed ? 0.78 : 1), in: RoundedRectangle(cornerRadius: 18))
-            .foregroundStyle(.white).contentShape(Rectangle())
+            .background(configuration.isPressed ? StoryPalette.buttonPressed : StoryPalette.button, in: RoundedRectangle(cornerRadius: 18))
+            .foregroundStyle(StoryPalette.onButton).contentShape(Rectangle())
     }
 }
 

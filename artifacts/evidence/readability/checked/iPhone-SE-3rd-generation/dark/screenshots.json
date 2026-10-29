@@ -1,0 +1,18 @@
+[
+  {
+    "path": "readability-choices-dark-screen.png",
+    "sha256": "85b765dd39c36ba5bb63721cdc3f6df867dd2b83770242695541e947503b4cb4"
+  },
+  {
+    "path": "readability-13-before-dark-screen.png",
+    "sha256": "a70693a86ddf411276da033cfe925b7a64118b5bb9f01f74bf7cd1bba5f5db8b"
+  },
+  {
+    "path": "readability-birth-dark-screen.png",
+    "sha256": "b4dab7de68c9a5c2504a5ff3e5cba6e41eb3858d46423297a343b74ac2770c69"
+  },
+  {
+    "path": "readability-home-dark-screen.png",
+    "sha256": "872648835a244762cc3879e60c310d898e14ff069bbe648fe51a93fdc83542d0"
+  }
+]

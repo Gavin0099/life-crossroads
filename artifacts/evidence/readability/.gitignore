@@ -1,0 +1,4 @@
+# Bulky native result bundles stay local; retain screenshots, exact test logs and hashes.
+**/*.xcresult/
+**/attachments/
+**/build.log
