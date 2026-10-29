@@ -1,0 +1,39 @@
+name: Reigns card PoC
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  native-card-regression:
+    runs-on: macos-15
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Exercise the same real choice through original and swipe interfaces
+        run: |
+          python3 - <<'PY' > /tmp/rc-simulator-config
+          import json, subprocess
+          inventory = json.loads(subprocess.check_output(['xcrun', 'simctl', 'list', 'devices', 'available', '-j']))
+          phones = [(runtime, device) for runtime, devices in inventory['devices'].items() if 'iOS' in runtime
+                    for device in devices if device.get('isAvailable') and 'iPhone' in device.get('deviceTypeIdentifier', '')]
+          if not phones:
+              raise SystemExit('No iPhone Simulator configuration available')
+          runtime, device = phones[0]
+          print(device['deviceTypeIdentifier'].rsplit('.', 1)[-1])
+          print(runtime)
+          PY
+          RC_DEVICE_TYPE="$(sed -n '1p' /tmp/rc-simulator-config)"
+          export RC_RUNTIME="$(sed -n '2p' /tmp/rc-simulator-config)"
+          # The inventory only selects hardware/runtime; capture.sh creates/deletes its own device.
+          bash tools/reigns-card/capture.sh "$RC_DEVICE_TYPE" 'light accessible' ci
+      - name: Preserve native tests, source hashes and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reigns-card-native
+          path: artifacts/evidence/reigns-card/ci/
+          if-no-files-found: warn

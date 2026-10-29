@@ -1,0 +1,102 @@
+[
+  {
+    "path": "rc-retry-saved.png",
+    "sha256": "f85196745bab8a1c36bb02700d04dc4a479d1feee0eda002f08b7ee88697706d"
+  },
+  {
+    "path": "rc-save-failed.png",
+    "sha256": "c0eba85ec1c5bcaebe4c3c34b5fe51440dc53b734a338ab82c1b6ea5fae83842"
+  },
+  {
+    "path": "rc-rest-saved.png",
+    "sha256": "2e26819d8268d1074e0d000150724fdffe066266c100d1e2906ffe8e384152dc"
+  },
+  {
+    "path": "rc-all-actions.png",
+    "sha256": "f3140e65b749b73233407739ee4143beb9b2420d22e609aaf4c7e0b02142f53d"
+  },
+  {
+    "path": "rc-first-screen.png",
+    "sha256": "f3140e65b749b73233407739ee4143beb9b2420d22e609aaf4c7e0b02142f53d"
+  },
+  {
+    "path": "rc-card-rest-saved.png",
+    "sha256": "c49732e24553ed979ddba08c366067af5d64696fc7edbaee382528abe4ddad04"
+  },
+  {
+    "path": "rc-card-rest-before.png",
+    "sha256": "45bf83121e71d09496490b8eda8f9eb2fd629e276c0bbe83607b2adb6c00d1b9"
+  },
+  {
+    "path": "rc-card-ask-saved.png",
+    "sha256": "bea6616f5aeb9b5098bf4b28e4d121f32c0bd64e87e5ee3e68e0155b3c5e80d4"
+  },
+  {
+    "path": "rc-card-ask-before.png",
+    "sha256": "45bf83121e71d09496490b8eda8f9eb2fd629e276c0bbe83607b2adb6c00d1b9"
+  },
+  {
+    "path": "rc-card-invest-saved.png",
+    "sha256": "b0e0f9132f10109b9069ad05656e1d625010c039cdef540831cf2e42d70ff134"
+  },
+  {
+    "path": "rc-card-invest-before.png",
+    "sha256": "45bf83121e71d09496490b8eda8f9eb2fd629e276c0bbe83607b2adb6c00d1b9"
+  },
+  {
+    "path": "rc-card-offline-saved.png",
+    "sha256": "c97dda0af1870d77424316ba43f69e97850dcdfb53fe3e3e20de70223a47a8fe"
+  },
+  {
+    "path": "rc-card-offline-before.png",
+    "sha256": "e1b5d92e7c137c4bccfda447fb30b72f060f84ac58599aeb6ef4732004b6c9a6"
+  },
+  {
+    "path": "rc-original-rest-saved.png",
+    "sha256": "6ee36b485a32f0fbe7e9c09b5f35ba7b5a5049e4438e0693bb0be905f0b9b94d"
+  },
+  {
+    "path": "rc-original-rest-before.png",
+    "sha256": "956c4640ed973dee715d41c57e4e04d658e6d7b14331e6814f2f711657c7e616"
+  },
+  {
+    "path": "rc-original-ask-saved.png",
+    "sha256": "f85775ddee0a9f5495c956cfdd59214d32f1d12c94f93bc0d2b0e8396f8e210b"
+  },
+  {
+    "path": "rc-original-ask-before.png",
+    "sha256": "956c4640ed973dee715d41c57e4e04d658e6d7b14331e6814f2f711657c7e616"
+  },
+  {
+    "path": "rc-original-invest-saved.png",
+    "sha256": "1ba261af73b8b88102d831e2f055bc4f7bad11405108e10571b8a327c9de79f7"
+  },
+  {
+    "path": "rc-original-invest-before.png",
+    "sha256": "d3b0c189c4c51c33d991f6393910aeccd07546f6933b481f9be05b59459d8755"
+  },
+  {
+    "path": "rc-original-offline-saved.png",
+    "sha256": "c187814e323f739e209c4e5e31936c9f533b7d2c2175a6c0a245a7f2070531bf"
+  },
+  {
+    "path": "rc-original-offline-before.png",
+    "sha256": "d3b0c189c4c51c33d991f6393910aeccd07546f6933b481f9be05b59459d8755"
+  },
+  {
+    "path": "rc-swipe-invest-saved.png",
+    "sha256": "14da7067d8b21a1978ec315da2d2ed5f4a779fd065a358da71cc4cfc3aa67800"
+  },
+  {
+    "path": "rc-cancelled.png",
+    "sha256": "99efa30da12b6affadd544ba5250370d40affc5826a8748ee4ca201b7cc8bd59"
+  },
+  {
+    "path": "rc-swipe-offline-saved.png",
+    "sha256": "f5186e41aeaa1eff549139f8ce444976054c3c3ded46f2f1a31f3cd28cf89d9c"
+  },
+  {
+    "path": "rc-cancelled-2.png",
+    "sha256": "99efa30da12b6affadd544ba5250370d40affc5826a8748ee4ca201b7cc8bd59"
+  }
+]

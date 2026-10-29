@@ -15,6 +15,7 @@ struct CrossroadsView: View {
     @State private var showParallelPicker = false
     @State private var parallelRows: [BranchComparisonRow]?
     @State private var showFocus = false
+    @State private var swipeDecision = ProcessInfo.processInfo.arguments.contains("-decision-ui-swipe")
     @State private var showSources = false
     @State private var showTrace = false
     @State private var showEventStory = false
@@ -48,6 +49,14 @@ struct CrossroadsView: View {
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
+                    if swipeExperimentAvailable {
+                        Menu("決策方式", systemImage: "hand.draw") {
+                            Button("原本的選項") { swipeDecision = false }.accessibilityIdentifier("decisionUI.standard")
+                            Button("Reigns+ 滑動卡") { swipeDecision = true }.accessibilityIdentifier("decisionUI.swipe")
+                        }.accessibilityIdentifier("decisionUIMenu")
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
                     Button("說明與資料", systemImage: "info.circle") { showSources = true }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
@@ -63,7 +72,9 @@ struct CrossroadsView: View {
                 }
             }
             .safeAreaInset(edge: .bottom) {
-                if store.worldPreviewEnabled && store.session != nil && !store.viewingOriginal && store.session?.phase != .ended {
+                if showsSwipeExperiment {
+                    EmptyView() // All four actions are on the card screen.
+                } else if store.worldPreviewEnabled && store.session != nil && !store.viewingOriginal && store.session?.phase != .ended {
                     playbackControls
                 } else if store.session?.phase == .reflecting {
                     Button(store.session.map { $0.traces.count == $0.plannedDecisionCount } == true ? "翻開人生回憶冊" : "走向下一段") { store.next() }
@@ -146,7 +157,14 @@ struct CrossroadsView: View {
     }
 
     @ViewBuilder private var rootContent: some View {
-        if showsLifeOverview, let session = store.session, let catalog = store.catalog {
+        if showsSwipeExperiment, let event = store.currentEvent, let world = store.world, let session = store.session {
+            DecisionSwipeCard(event: event, world: world,
+                motion: store.playback.motion(reduceMotion: reduceMotion), country: store.name(session.state.countryCode),
+                previews: event.choices.compactMap { store.preview($0.id) }, context: shortStory(event),
+                reduceMotion: reduceMotion, submit: submitSwipeChoice)
+                .id("\(session.state.countryCode)/\(session.state.householdID)/\(session.state.seed)/\(session.traces.count)")
+                .overlay(alignment: .bottomLeading) { archiveChecksum.opacity(0.01).allowsHitTesting(false) }
+        } else if showsLifeOverview, let session = store.session, let catalog = store.catalog {
             lifeOverview(session, catalog: catalog)
         } else if store.worldPreviewEnabled, !store.viewingOriginal,
            let session = store.session, session.phase != .ended, let world = store.world {
@@ -154,6 +172,22 @@ struct CrossroadsView: View {
         } else {
             legacyPage
         }
+    }
+
+    private var swipeExperimentAvailable: Bool {
+        !store.viewingOriginal && store.worldPreviewEnabled && store.playback.phase == .eventPaused
+            && store.session?.phase == .choosing && store.session?.state.age == 13
+            && store.currentEvent.map(DecisionCardModel.supports) == true
+    }
+    private var showsSwipeExperiment: Bool { swipeExperimentAvailable && swipeDecision }
+
+    private func submitSwipeChoice(_ id: String) -> Bool {
+        guard swipeExperimentAvailable, let before = store.session else { return false }
+        store.choose(id)
+        guard let saved = store.session, saved.phase == .reflecting,
+              saved.traces.count == before.traces.count + 1,
+              let trace = saved.traces.last else { return false }
+        return trace.eventID == "teen-project" && trace.choiceID == id && trace.applied
     }
 
     private var legacyPage: some View {

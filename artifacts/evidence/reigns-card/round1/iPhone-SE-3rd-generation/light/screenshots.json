@@ -1,0 +1,42 @@
+[
+  {
+    "path": "rc-retry-saved.png",
+    "sha256": "42e97bcf8caeb207a5c928b4f6e631ee5bd10f37c440f21116bcbf99870c0ce9"
+  },
+  {
+    "path": "rc-save-failed.png",
+    "sha256": "9f5893bba47d6ff5ef59ae698886ce08430a27900103462898b1a8370c2e9258"
+  },
+  {
+    "path": "rc-rest-saved.png",
+    "sha256": "30912a7b5f5b6e97d48ab5d0ae69b4e001abf224dba5a0a97b3e6c62aed30c11"
+  },
+  {
+    "path": "rc-all-actions.png",
+    "sha256": "020dd4c866ebe15b57489c1c19f68c0d7a09938e34bceb391c0a7f6279dafd3d"
+  },
+  {
+    "path": "rc-first-screen.png",
+    "sha256": "020dd4c866ebe15b57489c1c19f68c0d7a09938e34bceb391c0a7f6279dafd3d"
+  },
+  {
+    "path": "rc-original-offline-before.png",
+    "sha256": "6e31384da28ec348d80884283dec97ffbd32e145629b7a485d02090d1d45719f"
+  },
+  {
+    "path": "rc-swipe-invest-saved.png",
+    "sha256": "bcf210f860b003c858e4e938795d40048ae1c13c3f3be95ffbde35a0d80795bc"
+  },
+  {
+    "path": "rc-cancelled.png",
+    "sha256": "cd095298c6de349e6f00f7eff1b079758b77d50a1d2833b1b3052436a6e1c7a9"
+  },
+  {
+    "path": "rc-swipe-offline-saved.png",
+    "sha256": "c738c31d1da00be85dc3c60b88910f90ed9de05df204d3299289e65f91c51efd"
+  },
+  {
+    "path": "rc-cancelled-2.png",
+    "sha256": "38438d13ff19b77d8fbcb08c6c9a12d26c8379beb1d05b7e24d83ddf499d7f78"
+  }
+]

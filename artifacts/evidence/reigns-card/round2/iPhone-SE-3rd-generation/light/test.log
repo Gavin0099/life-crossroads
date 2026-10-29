@@ -1,0 +1,1209 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test-without-building -xctestrun .build/reigns-card/Build/Products/LifeCrossroads_iphonesimulator27.1-arm64.xctestrun -destination "platform=iOS Simulator,id=ACC3E27B-5E3A-4EFE-8935-9021B12F0ED8" -parallel-testing-enabled NO -collect-test-diagnostics never -resultBundlePath artifacts/evidence/reigns-card/round2/iPhone-SE-3rd-generation/light/result.xcresult "-only-testing:LifeCrossroadsUITests/ReignsCardTests"
+
+Writing result bundle at path:
+	/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/reigns-card/round2/iPhone-SE-3rd-generation/light/result.xcresult
+
+2026-10-29 10:29:10.606 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:29:21.306508+0800 LifeCrossroadsUITests-Runner[41057:352683] [Default] Running tests...
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-10-29 10:29:30.174.
+Test Suite 'LifeCrossroadsUITests.xctest' started at 2026-10-29 10:29:30.176.
+Test Suite 'ReignsCardTests' started at 2026-10-29 10:29:30.177.
+Test Case '-[LifeCrossroadsUITests.ReignsCardTests testFailedSaveBackgroundModeSwitchAndRetryPreserveOriginal]' started.
+    t =     0.00s Start Test at 2026-10-29 10:29:30.178
+objc[41057]: Class UIAccessibilityLoaderWebShared is implemented in both /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.434.0.nMklRF/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x107d64398) and /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.434.0.nMklRF/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x107e9c310). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+    t =     0.19s Set Up
+    t =     0.20s Open com.gavin0099.LifeCrossroads
+    t =     0.20s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 10:29:30.764 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 10:29:30.764 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 10:29:30.780 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     1.89s         Setting up automation session
+    t =     4.35s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =     6.87s Waiting 10.0s for "resumeLife" Button to exist
+    t =     7.94s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =     7.94s         Checking existence of `"resumeLife" Button`
+    t =     8.05s Tap "resumeLife" Button
+    t =     8.05s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     8.05s     Find the "resumeLife" Button
+    t =     8.08s     Check for interrupting elements affecting "resumeLife" Button
+    t =     8.12s     Synthesize event
+    t =     8.61s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     9.44s Waiting 5.0s for "decisionUIMenu" Button to exist
+    t =    10.52s     Checking `Expect predicate `existsNoRetry == 1` for object "decisionUIMenu" Button`
+    t =    10.52s         Checking existence of `"decisionUIMenu" Button`
+    t =    10.58s Waiting 5.0s for "swipeChoice.offline" Button to exist
+    t =    11.66s     Checking `Expect predicate `existsNoRetry == 1` for object "swipeChoice.offline" Button`
+    t =    11.66s         Checking existence of `"swipeChoice.offline" Button`
+    t =    11.71s Find the "uiTestArchiveChecksum" StaticText
+    t =    11.74s Tap "decisionUIMenu" Button
+    t =    11.74s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    11.74s     Find the "decisionUIMenu" Button
+    t =    11.77s     Check for interrupting elements affecting "decisionUIMenu" Button
+    t =    11.81s     Synthesize event
+    t =    12.12s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    13.03s Tap "decisionUI.standard" Button
+    t =    13.03s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    13.04s     Find the "decisionUI.standard" Button
+    t =    13.07s     Check for interrupting elements affecting "decisionUI.standard" Button
+    t =    13.10s     Synthesize event
+    t =    13.40s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    15.23s Find the "uiTestArchiveChecksum" StaticText
+    t =    15.48s Tap "decisionUIMenu" Button
+    t =    15.48s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    15.60s     Find the "decisionUIMenu" Button
+    t =    16.01s     Check for interrupting elements affecting "decisionUIMenu" Button
+    t =    16.33s     Synthesize event
+    t =    16.88s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    17.67s Tap "decisionUI.swipe" Button
+    t =    17.67s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    17.67s     Find the "decisionUI.swipe" Button
+    t =    17.75s     Check for interrupting elements affecting "decisionUI.swipe" Button
+    t =    17.78s     Synthesize event
+    t =    18.09s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    19.75s Find the "uiTestArchiveChecksum" StaticText
+    t =    19.78s Pressing Home button
+    t =    20.27s Open com.gavin0099.LifeCrossroads
+    t =    20.28s     Activate com.gavin0099.LifeCrossroads
+    t =    20.73s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =    20.90s Waiting 5.0s for "swipeChoice.ask" Button to exist
+    t =    21.97s     Checking `Expect predicate `existsNoRetry == 1` for object "swipeChoice.ask" Button`
+    t =    21.97s         Checking existence of `"swipeChoice.ask" Button`
+    t =    22.19s Find the "uiTestArchiveChecksum" StaticText
+    t =    22.22s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    22.26s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    22.29s Checking existence of `ScrollView (First Match)`
+    t =    22.32s Find the ScrollView (First Match)
+    t =    22.36s Checking existence of `"worldPlaybackControls" Any`
+    t =    22.42s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    22.45s Checking existence of `ScrollView at {{0.0, 0.0}, {375.0, 667.0}}`
+    t =    22.48s Find the ScrollView at {{0.0, 0.0}, {375.0, 667.0}}
+    t =    22.51s Checking existence of `"swipeChoice.ask" Button`
+    t =    22.54s Find the "swipeChoice.ask" Button
+    t =    22.60s Find the "swipeChoice.ask" Button
+    t =    22.64s Find the "swipeChoice.ask" Button
+    t =    22.68s Tap "swipeChoice.ask" Button
+    t =    22.68s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    22.69s     Find the "swipeChoice.ask" Button
+    t =    22.73s     Check for interrupting elements affecting "swipeChoice.ask" Button
+    t =    22.79s     Synthesize event
+    t =    23.11s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    23.76s Waiting 5.0s for "需要留意" Alert to exist
+    t =    24.85s     Checking `Expect predicate `existsNoRetry == 1` for object "需要留意" Alert`
+    t =    24.85s         Checking existence of `"需要留意" Alert`
+    t =    24.95s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    25.08s Added attachment named 'rc-save-failed'
+    t =    25.08s Tap "知道了" Button
+    t =    25.08s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    25.10s     Find the "知道了" Button
+    t =    25.17s     Check for interrupting elements affecting "知道了" Button
+    t =    25.32s     Synthesize event
+    t =    25.65s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    26.52s Find the "uiTestArchiveChecksum" StaticText
+    t =    26.55s Checking existence of `"chosenAction" StaticText`
+    t =    26.59s Find the "lifeWorldScene" Other
+    t =    26.62s Find the "swipeStatus" StaticText
+    t =    26.65s Tap "swipeChoice.ask" Button
+    t =    26.65s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    26.66s     Find the "swipeChoice.ask" Button
+    t =    26.69s     Check for interrupting elements affecting "swipeChoice.ask" Button
+    t =    26.74s     Synthesize event
+    t =    27.14s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    27.26s Waiting 5.0s for "chosenAction" StaticText to exist
+    t =    28.34s     Checking `Expect predicate `existsNoRetry == 1` for object "chosenAction" StaticText`
+    t =    28.34s         Checking existence of `"chosenAction" StaticText`
+    t =    28.38s Find the "chosenAction" StaticText
+    t =    28.42s Find the "uiTestArchiveChecksum" StaticText
+    t =    28.46s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    28.54s Added attachment named 'rc-retry-saved'
+    t =    28.54s Terminate com.gavin0099.LifeCrossroads:41343
+2026-10-29 10:29:58.753 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:29:58.753 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:29:58.757 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    29.57s Tear Down
+Test Case '-[LifeCrossroadsUITests.ReignsCardTests testFailedSaveBackgroundModeSwitchAndRetryPreserveOriginal]' passed (29.647 seconds).
+Test Case '-[LifeCrossroadsUITests.ReignsCardTests testFirstScreenAndAllButtonAlternativesAccessible]' started.
+    t =     0.00s Start Test at 2026-10-29 10:29:59.826
+    t =     0.03s Set Up
+    t =     0.03s Open com.gavin0099.LifeCrossroads
+    t =     0.04s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 10:29:59.865 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 10:29:59.865 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 10:29:59.876 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     0.27s         Setting up automation session
+    t =     2.74s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =     4.45s Waiting 10.0s for "resumeLife" Button to exist
+    t =     5.52s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =     5.52s         Checking existence of `"resumeLife" Button`
+    t =     5.61s Tap "resumeLife" Button
+    t =     5.61s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     5.62s     Find the "resumeLife" Button
+    t =     5.67s     Check for interrupting elements affecting "resumeLife" Button
+    t =     5.75s     Synthesize event
+    t =     6.12s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     6.74s Waiting 5.0s for "decisionUIMenu" Button to exist
+    t =     7.78s     Checking `Expect predicate `existsNoRetry == 1` for object "decisionUIMenu" Button`
+    t =     7.78s         Checking existence of `"decisionUIMenu" Button`
+    t =     7.85s Waiting 5.0s for "swipeChoice.offline" Button to exist
+    t =     8.88s     Checking `Expect predicate `existsNoRetry == 1` for object "swipeChoice.offline" Button`
+    t =     8.88s         Checking existence of `"swipeChoice.offline" Button`
+    t =     8.92s Find the "uiTestArchiveChecksum" StaticText
+    t =     8.95s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.03s Added attachment named 'rc-first-screen'
+    t =     9.03s Find the "swipeChoice.offline" Button
+    t =     9.08s Find the "swipeChoice.offline" Button
+    t =     9.12s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.15s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =     9.18s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.20s Checking existence of `ScrollView (First Match)`
+    t =     9.23s Find the ScrollView (First Match)
+    t =     9.26s Checking existence of `"worldPlaybackControls" Any`
+    t =     9.32s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.36s Checking existence of `ScrollView at {{0.0, 0.0}, {375.0, 667.0}}`
+    t =     9.38s Find the ScrollView at {{0.0, 0.0}, {375.0, 667.0}}
+    t =     9.41s Checking existence of `"swipeChoice.offline" Button`
+    t =     9.45s Find the "swipeChoice.offline" Button
+    t =     9.49s Find the "swipeChoice.offline" Button
+    t =     9.53s Find the "swipeChoice.offline" Button
+    t =     9.57s Find the "swipeChoice.offline" Button
+    t =     9.61s Find the "swipeChoice.offline" Button
+    t =     9.65s Find the "swipeChoice.offline" Button
+    t =     9.68s Find the "swipeChoice.offline" Button
+    t =     9.71s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =     9.74s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.77s Checking existence of `ScrollView (First Match)`
+    t =     9.80s Find the ScrollView (First Match)
+    t =     9.83s Checking existence of `"worldPlaybackControls" Any`
+    t =     9.89s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.93s Checking existence of `ScrollView at {{0.0, 0.0}, {375.0, 667.0}}`
+    t =     9.96s Find the ScrollView at {{0.0, 0.0}, {375.0, 667.0}}
+    t =     9.99s Checking existence of `"swipeChoice.invest" Button`
+    t =    10.02s Find the "swipeChoice.invest" Button
+    t =    10.08s Find the "swipeChoice.invest" Button
+    t =    10.12s Find the "swipeChoice.invest" Button
+    t =    10.16s Find the "swipeChoice.invest" Button
+    t =    10.20s Find the "swipeChoice.invest" Button
+    t =    10.24s Find the "swipeChoice.invest" Button
+    t =    10.28s Find the "swipeChoice.invest" Button
+    t =    10.31s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    10.34s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    10.37s Checking existence of `ScrollView (First Match)`
+    t =    10.39s Find the ScrollView (First Match)
+    t =    10.42s Checking existence of `"worldPlaybackControls" Any`
+    t =    10.48s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    10.51s Checking existence of `ScrollView at {{0.0, 0.0}, {375.0, 667.0}}`
+    t =    10.54s Find the ScrollView at {{0.0, 0.0}, {375.0, 667.0}}
+    t =    10.57s Checking existence of `"swipeChoice.ask" Button`
+    t =    10.60s Find the "swipeChoice.ask" Button
+    t =    10.64s Find the "swipeChoice.ask" Button
+    t =    10.68s Find the "swipeChoice.ask" Button
+    t =    10.72s Find the "swipeChoice.ask" Button
+    t =    10.77s Find the "swipeChoice.ask" Button
+    t =    10.80s Find the "swipeChoice.ask" Button
+    t =    10.84s Find the "swipeChoice.ask" Button
+    t =    10.88s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    10.91s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    10.94s Checking existence of `ScrollView (First Match)`
+    t =    10.97s Find the ScrollView (First Match)
+    t =    11.00s Checking existence of `"worldPlaybackControls" Any`
+    t =    11.06s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    11.09s Checking existence of `ScrollView at {{0.0, 0.0}, {375.0, 667.0}}`
+    t =    11.12s Find the ScrollView at {{0.0, 0.0}, {375.0, 667.0}}
+    t =    11.15s Checking existence of `"swipeChoice.rest" Button`
+    t =    11.18s Find the "swipeChoice.rest" Button
+    t =    11.22s Find the "swipeChoice.rest" Button
+    t =    11.26s Find the "swipeChoice.rest" Button
+    t =    11.30s Find the "swipeChoice.rest" Button
+    t =    11.34s Find the "swipeChoice.rest" Button
+    t =    11.38s Find the "swipeChoice.rest" Button
+    t =    11.42s Find the "swipeChoice.rest" Button
+    t =    11.45s Find the "uiTestArchiveChecksum" StaticText
+    t =    11.48s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    11.57s Added attachment named 'rc-all-actions'
+    t =    11.57s Tap "swipeChoice.rest" Button
+    t =    11.57s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    11.57s     Find the "swipeChoice.rest" Button
+    t =    11.61s     Check for interrupting elements affecting "swipeChoice.rest" Button
+    t =    11.65s     Synthesize event
+    t =    11.96s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    12.00s Waiting 5.0s for "chosenAction" StaticText to exist
+    t =    13.03s     Checking `Expect predicate `existsNoRetry == 1` for object "chosenAction" StaticText`
+    t =    13.03s         Checking existence of `"chosenAction" StaticText`
+    t =    13.08s Find the "chosenAction" StaticText
+    t =    13.11s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    13.18s Added attachment named 'rc-rest-saved'
+    t =    13.19s Terminate com.gavin0099.LifeCrossroads:42012
+2026-10-29 10:30:13.037 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:30:13.037 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:30:13.040 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    14.27s Tear Down
+Test Case '-[LifeCrossroadsUITests.ReignsCardTests testFirstScreenAndAllButtonAlternativesAccessible]' passed (14.293 seconds).
+Test Case '-[LifeCrossroadsUITests.ReignsCardTests testFourChoicesMatchOriginalUIAndColdRestore]' started.
+    t =     0.00s Start Test at 2026-10-29 10:30:14.119
+    t =     0.02s Set Up
+    t =     0.02s Open com.gavin0099.LifeCrossroads
+    t =     0.03s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 10:30:14.148 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 10:30:14.148 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 10:30:14.155 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     0.25s         Setting up automation session
+    t =     2.92s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =     4.72s Waiting 10.0s for "resumeLife" Button to exist
+    t =     5.77s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =     5.77s         Checking existence of `"resumeLife" Button`
+    t =     5.84s Tap "resumeLife" Button
+    t =     5.84s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     5.85s     Find the "resumeLife" Button
+    t =     5.87s     Check for interrupting elements affecting "resumeLife" Button
+    t =     5.90s     Synthesize event
+    t =     6.23s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     7.13s Waiting 5.0s for "decisionUIMenu" Button to exist
+    t =     8.14s     Checking `Expect predicate `existsNoRetry == 1` for object "decisionUIMenu" Button`
+    t =     8.15s         Checking existence of `"decisionUIMenu" Button`
+    t =     8.22s Find the "uiTestArchiveChecksum" StaticText
+    t =     8.26s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     8.34s Added attachment named 'rc-original-offline-before'
+    t =     8.34s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =     8.38s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     8.42s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =     8.47s Find the "worldDecisionDrawer" ScrollView
+    t =     8.54s Checking existence of `"worldPlaybackControls" Any`
+    t =     8.66s Find the "worldPlaybackControls" Any
+    t =     8.84s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =     8.91s Find the "worldDecisionDrawer" ScrollView
+    t =     8.98s Checking existence of `"choice.offline" Button`
+    t =     9.04s Find the "choice.offline" Button
+    t =     9.12s Find the "choice.offline" Button
+    t =     9.22s Find the "choice.offline" Button
+    t =     9.39s Checking existence of `"choice.offline" Button`
+    t =     9.48s Find the "choice.offline" Button
+    t =     9.57s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.62s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.66s Press Target Application 'com.gavin0099.LifeCrossroads'[0.00, 0.00] -> (187.5, 541.4) for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.00, 0.00] -> (187.5, 392.4) with velocity of 250.00 pixels per second, and then hold for 0.2 seconds 
+    t =     9.66s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     9.66s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.71s     Check for interrupting elements affecting "人生岔路" Application
+    t =     9.76s     Synthesize event
+    t =     9.77s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.81s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.86s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.91s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.96s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    11.11s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    11.12s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    11.16s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    11.20s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    11.25s Find the "worldDecisionDrawer" ScrollView
+    t =    11.30s Checking existence of `"worldPlaybackControls" Any`
+    t =    11.35s Find the "worldPlaybackControls" Any
+    t =    11.39s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    11.44s Find the "worldDecisionDrawer" ScrollView
+    t =    11.59s Checking existence of `"choice.offline" Button`
+    t =    11.64s Find the "choice.offline" Button
+    t =    11.71s Find the "choice.offline" Button
+    t =    11.76s Find the "choice.offline" Button
+    t =    11.81s Find the "choice.offline" Button
+    t =    11.86s Tap "choice.offline" Button
+    t =    11.86s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    11.86s     Find the "choice.offline" Button
+    t =    11.91s     Check for interrupting elements affecting "choice.offline" Button
+    t =    11.95s     Synthesize event
+    t =    12.24s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    12.27s Waiting 5.0s for "chosenAction" StaticText to exist
+    t =    13.31s     Checking `Expect predicate `existsNoRetry == 1` for object "chosenAction" StaticText`
+    t =    13.31s         Checking existence of `"chosenAction" StaticText`
+    t =    13.35s Find the "chosenAction" StaticText
+    t =    13.38s Checking existence of `"decisionUIMenu" Button`
+    t =    13.41s Find the "uiTestArchiveChecksum" StaticText
+    t =    13.45s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    13.51s Added attachment named 'rc-original-offline-saved'
+RC_SAVED ui=original choice=offline before=c1074e81fb937ec13928efbf9b8012bab9fbcbe0938b1f2cc99f53df90411ebd after=93f2c9d2ec3b0c560a2bf9d2cb485bf43f87735f9e405e9e7908b2099d75ab41
+    t =    13.51s Terminate com.gavin0099.LifeCrossroads:42382
+2026-10-29 10:30:27.646 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:30:27.646 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:30:27.648 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    14.59s Open com.gavin0099.LifeCrossroads
+    t =    14.59s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 10:30:28.714 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 10:30:28.714 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 10:30:28.722 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    14.80s         Setting up automation session
+    t =    17.06s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =    18.77s Waiting 10.0s for "resumeLife" Button to exist
+    t =    19.84s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =    19.84s         Checking existence of `"resumeLife" Button`
+    t =    19.92s Tap "resumeLife" Button
+    t =    19.92s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    19.92s     Find the "resumeLife" Button
+    t =    19.95s     Check for interrupting elements affecting "resumeLife" Button
+    t =    19.98s     Synthesize event
+    t =    20.32s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    20.35s Waiting 5.0s for "chosenAction" StaticText to exist
+    t =    21.40s     Checking `Expect predicate `existsNoRetry == 1` for object "chosenAction" StaticText`
+    t =    21.40s         Checking existence of `"chosenAction" StaticText`
+    t =    21.45s Find the "uiTestArchiveChecksum" StaticText
+    t =    21.48s Find the "chosenAction" StaticText
+    t =    21.53s Terminate com.gavin0099.LifeCrossroads:42799
+2026-10-29 10:30:35.657 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:30:35.658 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:30:35.658 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    22.58s Open com.gavin0099.LifeCrossroads
+    t =    22.58s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 10:30:36.696 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 10:30:36.696 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 10:30:36.703 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    22.79s         Setting up automation session
+    t =    24.88s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =    26.56s Waiting 10.0s for "resumeLife" Button to exist
+    t =    27.57s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =    27.57s         Checking existence of `"resumeLife" Button`
+    t =    27.63s Tap "resumeLife" Button
+    t =    27.63s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    27.63s     Find the "resumeLife" Button
+    t =    27.65s     Check for interrupting elements affecting "resumeLife" Button
+    t =    27.68s     Synthesize event
+    t =    28.00s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    28.85s Waiting 5.0s for "decisionUIMenu" Button to exist
+    t =    29.88s     Checking `Expect predicate `existsNoRetry == 1` for object "decisionUIMenu" Button`
+    t =    29.88s         Checking existence of `"decisionUIMenu" Button`
+    t =    29.96s Find the "uiTestArchiveChecksum" StaticText
+    t =    30.00s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    30.09s Added attachment named 'rc-original-invest-before'
+    t =    30.09s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    30.14s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    30.19s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    30.23s Find the "worldDecisionDrawer" ScrollView
+    t =    30.28s Checking existence of `"worldPlaybackControls" Any`
+    t =    30.33s Find the "worldPlaybackControls" Any
+    t =    30.38s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    30.42s Find the "worldDecisionDrawer" ScrollView
+    t =    30.47s Checking existence of `"choice.invest" Button`
+    t =    30.51s Find the "choice.invest" Button
+    t =    30.57s Find the "choice.invest" Button
+    t =    30.63s Find the "choice.invest" Button
+    t =    30.68s Find the "choice.invest" Button
+    t =    30.72s Tap "choice.invest" Button
+    t =    30.72s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    30.72s     Find the "choice.invest" Button
+    t =    30.77s     Check for interrupting elements affecting "choice.invest" Button
+    t =    30.82s     Synthesize event
+    t =    31.12s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    31.13s Waiting 5.0s for "chosenAction" StaticText to exist
+    t =    32.17s     Checking `Expect predicate `existsNoRetry == 1` for object "chosenAction" StaticText`
+    t =    32.18s         Checking existence of `"chosenAction" StaticText`
+    t =    32.23s Find the "chosenAction" StaticText
+    t =    32.26s Checking existence of `"decisionUIMenu" Button`
+    t =    32.30s Find the "uiTestArchiveChecksum" StaticText
+    t =    32.33s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    32.39s Added attachment named 'rc-original-invest-saved'
+RC_SAVED ui=original choice=invest before=c1074e81fb937ec13928efbf9b8012bab9fbcbe0938b1f2cc99f53df90411ebd after=500a0553a1e23efa62db92261f82c3471bf92eb1755307166e1a8b57b223942f
+    t =    32.39s Terminate com.gavin0099.LifeCrossroads:43033
+2026-10-29 10:30:46.524 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:30:46.525 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:30:46.526 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    33.46s Open com.gavin0099.LifeCrossroads
+    t =    33.46s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 10:30:47.583 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 10:30:47.583 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 10:30:47.588 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    33.68s         Setting up automation session
+    t =    35.68s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =    37.31s Waiting 10.0s for "resumeLife" Button to exist
+    t =    38.34s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =    38.34s         Checking existence of `"resumeLife" Button`
+    t =    38.40s Tap "resumeLife" Button
+    t =    38.40s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    38.40s     Find the "resumeLife" Button
+    t =    38.42s     Check for interrupting elements affecting "resumeLife" Button
+    t =    38.44s     Synthesize event
+    t =    38.77s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    38.79s Waiting 5.0s for "chosenAction" StaticText to exist
+    t =    39.80s     Checking `Expect predicate `existsNoRetry == 1` for object "chosenAction" StaticText`
+    t =    39.80s         Checking existence of `"chosenAction" StaticText`
+    t =    39.85s Find the "uiTestArchiveChecksum" StaticText
+    t =    39.88s Find the "chosenAction" StaticText
+    t =    39.91s Terminate com.gavin0099.LifeCrossroads:43433
+2026-10-29 10:30:54.043 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:30:54.044 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:30:54.045 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    40.96s Open com.gavin0099.LifeCrossroads
+    t =    40.96s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 10:30:55.083 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 10:30:55.083 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 10:30:55.088 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    41.18s         Setting up automation session
+    t =    43.13s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =    44.82s Waiting 10.0s for "resumeLife" Button to exist
+    t =    45.87s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =    45.87s         Checking existence of `"resumeLife" Button`
+    t =    45.95s Tap "resumeLife" Button
+    t =    45.95s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    45.95s     Find the "resumeLife" Button
+    t =    45.97s     Check for interrupting elements affecting "resumeLife" Button
+    t =    45.99s     Synthesize event
+    t =    46.31s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    47.17s Waiting 5.0s for "decisionUIMenu" Button to exist
+    t =    48.21s     Checking `Expect predicate `existsNoRetry == 1` for object "decisionUIMenu" Button`
+    t =    48.21s         Checking existence of `"decisionUIMenu" Button`
+    t =    48.27s Find the "uiTestArchiveChecksum" StaticText
+    t =    48.31s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    48.39s Added attachment named 'rc-original-ask-before'
+    t =    48.39s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    48.43s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    48.46s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    48.50s Find the "worldDecisionDrawer" ScrollView
+    t =    48.54s Checking existence of `"worldPlaybackControls" Any`
+    t =    48.58s Find the "worldPlaybackControls" Any
+    t =    48.62s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    48.66s Find the "worldDecisionDrawer" ScrollView
+    t =    48.70s Checking existence of `"choice.ask" Button`
+    t =    48.75s Find the "choice.ask" Button
+    t =    48.80s Checking existence of `"choice.ask" Button`
+    t =    48.84s Find the "choice.ask" Button
+    t =    48.88s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    48.92s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    48.95s Press Target Application 'com.gavin0099.LifeCrossroads'[0.00, 0.00] -> (187.5, 541.4) for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.00, 0.00] -> (187.5, 392.4) with velocity of 250.00 pixels per second, and then hold for 0.2 seconds 
+    t =    48.95s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    48.95s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    48.99s     Check for interrupting elements affecting "人生岔路" Application
+    t =    49.03s     Synthesize event
+    t =    49.03s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    49.06s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    49.10s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    49.13s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    49.17s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    50.31s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    50.31s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    50.36s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    50.40s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    50.44s Find the "worldDecisionDrawer" ScrollView
+    t =    50.48s Checking existence of `"worldPlaybackControls" Any`
+    t =    50.52s Find the "worldPlaybackControls" Any
+    t =    50.56s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    50.60s Find the "worldDecisionDrawer" ScrollView
+    t =    50.65s Checking existence of `"choice.ask" Button`
+    t =    50.69s Find the "choice.ask" Button
+    t =    50.74s Find the "choice.ask" Button
+    t =    50.79s Find the "choice.ask" Button
+    t =    50.83s Checking existence of `"choice.ask" Button`
+    t =    50.87s Find the "choice.ask" Button
+    t =    50.92s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    50.95s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    50.98s Press Target Application 'com.gavin0099.LifeCrossroads'[0.00, 0.00] -> (187.5, 541.4) for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.00, 0.00] -> (187.5, 392.4) with velocity of 250.00 pixels per second, and then hold for 0.2 seconds 
+    t =    50.98s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    50.99s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    51.02s     Check for interrupting elements affecting "人生岔路" Application
+    t =    51.06s     Synthesize event
+    t =    51.07s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    51.10s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    51.14s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    51.17s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    51.21s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    52.35s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    52.36s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    52.41s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    52.44s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    52.48s Find the "worldDecisionDrawer" ScrollView
+    t =    52.52s Checking existence of `"worldPlaybackControls" Any`
+    t =    52.56s Find the "worldPlaybackControls" Any
+    t =    52.60s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    52.64s Find the "worldDecisionDrawer" ScrollView
+    t =    52.68s Checking existence of `"choice.ask" Button`
+    t =    52.72s Find the "choice.ask" Button
+    t =    52.78s Find the "choice.ask" Button
+    t =    52.82s Find the "choice.ask" Button
+    t =    52.87s Find the "choice.ask" Button
+    t =    52.91s Tap "choice.ask" Button
+    t =    52.91s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    52.91s     Find the "choice.ask" Button
+    t =    52.96s     Check for interrupting elements affecting "choice.ask" Button
+    t =    53.00s     Synthesize event
+    t =    53.29s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    53.29s Waiting 5.0s for "chosenAction" StaticText to exist
+    t =    54.35s     Checking `Expect predicate `existsNoRetry == 1` for object "chosenAction" StaticText`
+    t =    54.35s         Checking existence of `"chosenAction" StaticText`
+    t =    54.40s Find the "chosenAction" StaticText
+    t =    54.44s Checking existence of `"decisionUIMenu" Button`
+    t =    54.47s Find the "uiTestArchiveChecksum" StaticText
+    t =    54.50s Find the "lifeWorldScene" Other
+    t =    54.53s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    54.60s Added attachment named 'rc-original-ask-saved'
+RC_SAVED ui=original choice=ask before=c1074e81fb937ec13928efbf9b8012bab9fbcbe0938b1f2cc99f53df90411ebd after=8d85eb25d6f21ac085fa4fafec47c110567a6513133614c2ab49c8336a65f1b4
+    t =    54.60s Terminate com.gavin0099.LifeCrossroads:43674
+2026-10-29 10:31:08.726 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:31:08.727 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:31:08.727 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    55.68s Open com.gavin0099.LifeCrossroads
+    t =    55.68s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 10:31:09.800 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 10:31:09.800 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 10:31:09.808 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    55.89s         Setting up automation session
+    t =    57.85s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =    59.46s Waiting 10.0s for "resumeLife" Button to exist
+    t =    60.49s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =    60.49s         Checking existence of `"resumeLife" Button`
+    t =    60.57s Tap "resumeLife" Button
+    t =    60.57s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    60.57s     Find the "resumeLife" Button
+    t =    60.59s     Check for interrupting elements affecting "resumeLife" Button
+    t =    60.61s     Synthesize event
+    t =    60.93s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    60.93s Waiting 5.0s for "chosenAction" StaticText to exist
+    t =    61.94s     Checking `Expect predicate `existsNoRetry == 1` for object "chosenAction" StaticText`
+    t =    61.94s         Checking existence of `"chosenAction" StaticText`
+    t =    62.00s Find the "uiTestArchiveChecksum" StaticText
+    t =    62.03s Find the "chosenAction" StaticText
+    t =    62.06s Terminate com.gavin0099.LifeCrossroads:44150
+2026-10-29 10:31:16.188 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:31:16.189 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:31:16.189 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    63.12s Open com.gavin0099.LifeCrossroads
+    t =    63.12s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 10:31:17.238 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 10:31:17.238 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 10:31:17.241 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    63.33s         Setting up automation session
+    t =    65.28s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =    67.02s Waiting 10.0s for "resumeLife" Button to exist
+    t =    68.07s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =    68.08s         Checking existence of `"resumeLife" Button`
+    t =    68.15s Tap "resumeLife" Button
+    t =    68.15s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    68.15s     Find the "resumeLife" Button
+    t =    68.17s     Check for interrupting elements affecting "resumeLife" Button
+    t =    68.19s     Synthesize event
+    t =    68.51s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    69.35s Waiting 5.0s for "decisionUIMenu" Button to exist
+    t =    70.39s     Checking `Expect predicate `existsNoRetry == 1` for object "decisionUIMenu" Button`
+    t =    70.39s         Checking existence of `"decisionUIMenu" Button`
+    t =    70.46s Find the "uiTestArchiveChecksum" StaticText
+    t =    70.51s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    70.58s Added attachment named 'rc-original-rest-before'
+    t =    70.58s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    70.62s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    70.65s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    70.69s Find the "worldDecisionDrawer" ScrollView
+    t =    70.74s Checking existence of `"worldPlaybackControls" Any`
+    t =    70.77s Find the "worldPlaybackControls" Any
+    t =    70.81s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    70.85s Find the "worldDecisionDrawer" ScrollView
+    t =    70.90s Checking existence of `"choice.rest" Button`
+    t =    70.93s Find the "choice.rest" Button
+    t =    70.98s Checking existence of `"choice.rest" Button`
+    t =    71.03s Find the "choice.rest" Button
+    t =    71.08s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    71.11s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    71.14s Press Target Application 'com.gavin0099.LifeCrossroads'[0.00, 0.00] -> (187.5, 541.4) for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.00, 0.00] -> (187.5, 392.4) with velocity of 250.00 pixels per second, and then hold for 0.2 seconds 
+    t =    71.14s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    71.14s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    71.18s     Check for interrupting elements affecting "人生岔路" Application
+    t =    71.22s     Synthesize event
+    t =    71.22s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    71.25s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    71.29s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    71.33s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    71.36s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    72.50s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    72.51s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    72.55s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    72.59s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    72.63s Find the "worldDecisionDrawer" ScrollView
+    t =    72.67s Checking existence of `"worldPlaybackControls" Any`
+    t =    72.71s Find the "worldPlaybackControls" Any
+    t =    72.74s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    72.79s Find the "worldDecisionDrawer" ScrollView
+    t =    72.83s Checking existence of `"choice.rest" Button`
+    t =    72.87s Find the "choice.rest" Button
+    t =    72.92s Checking existence of `"choice.rest" Button`
+    t =    72.97s Find the "choice.rest" Button
+    t =    73.01s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    73.04s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    73.08s Press Target Application 'com.gavin0099.LifeCrossroads'[0.00, 0.00] -> (187.5, 541.4) for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.00, 0.00] -> (187.5, 392.4) with velocity of 250.00 pixels per second, and then hold for 0.2 seconds 
+    t =    73.08s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    73.08s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    73.11s     Check for interrupting elements affecting "人生岔路" Application
+    t =    73.15s     Synthesize event
+    t =    73.16s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    73.19s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    73.23s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    73.26s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    73.30s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    74.43s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    74.43s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    74.48s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    74.51s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    74.56s Find the "worldDecisionDrawer" ScrollView
+    t =    74.60s Checking existence of `"worldPlaybackControls" Any`
+    t =    74.64s Find the "worldPlaybackControls" Any
+    t =    74.68s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    74.72s Find the "worldDecisionDrawer" ScrollView
+    t =    74.76s Checking existence of `"choice.rest" Button`
+    t =    74.80s Find the "choice.rest" Button
+    t =    74.85s Find the "choice.rest" Button
+    t =    74.90s Find the "choice.rest" Button
+    t =    74.95s Find the "choice.rest" Button
+    t =    74.99s Tap "choice.rest" Button
+    t =    74.99s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    74.99s     Find the "choice.rest" Button
+    t =    75.03s     Check for interrupting elements affecting "choice.rest" Button
+    t =    75.07s     Synthesize event
+    t =    75.36s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    75.36s Waiting 5.0s for "chosenAction" StaticText to exist
+    t =    76.41s     Checking `Expect predicate `existsNoRetry == 1` for object "chosenAction" StaticText`
+    t =    76.41s         Checking existence of `"chosenAction" StaticText`
+    t =    76.46s Find the "chosenAction" StaticText
+    t =    76.50s Checking existence of `"decisionUIMenu" Button`
+    t =    76.53s Find the "uiTestArchiveChecksum" StaticText
+    t =    76.56s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    76.63s Added attachment named 'rc-original-rest-saved'
+RC_SAVED ui=original choice=rest before=c1074e81fb937ec13928efbf9b8012bab9fbcbe0938b1f2cc99f53df90411ebd after=3ea868c9402175d25c1e7447f6ea6b9d2b9eeacf23eab70ac50559ef90f363e7
+    t =    76.63s Terminate com.gavin0099.LifeCrossroads:44461
+2026-10-29 10:31:30.755 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:31:30.755 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:31:30.755 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    77.66s Open com.gavin0099.LifeCrossroads
+    t =    77.66s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 10:31:31.781 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 10:31:31.781 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 10:31:31.784 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    77.88s         Setting up automation session
+    t =    79.99s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =    81.79s Waiting 10.0s for "resumeLife" Button to exist
+    t =    82.82s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =    82.82s         Checking existence of `"resumeLife" Button`
+    t =    82.89s Tap "resumeLife" Button
+    t =    82.89s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    82.90s     Find the "resumeLife" Button
+    t =    82.92s     Check for interrupting elements affecting "resumeLife" Button
+    t =    82.94s     Synthesize event
+    t =    83.26s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    83.26s Waiting 5.0s for "chosenAction" StaticText to exist
+    t =    84.32s     Checking `Expect predicate `existsNoRetry == 1` for object "chosenAction" StaticText`
+    t =    84.32s         Checking existence of `"chosenAction" StaticText`
+    t =    84.38s Find the "uiTestArchiveChecksum" StaticText
+    t =    84.41s Find the "chosenAction" StaticText
+    t =    84.44s Terminate com.gavin0099.LifeCrossroads:44948
+2026-10-29 10:31:38.566 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:31:38.567 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:31:38.568 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    85.49s Open com.gavin0099.LifeCrossroads
+    t =    85.49s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 10:31:39.613 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 10:31:39.613 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 10:31:39.615 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    85.71s         Setting up automation session
+    t =    87.65s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =    89.37s Waiting 10.0s for "resumeLife" Button to exist
+    t =    90.42s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =    90.43s         Checking existence of `"resumeLife" Button`
+    t =    90.49s Tap "resumeLife" Button
+    t =    90.49s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    90.49s     Find the "resumeLife" Button
+    t =    90.51s     Check for interrupting elements affecting "resumeLife" Button
+    t =    90.53s     Synthesize event
+    t =    90.85s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    91.41s Waiting 5.0s for "decisionUIMenu" Button to exist
+    t =    92.46s     Checking `Expect predicate `existsNoRetry == 1` for object "decisionUIMenu" Button`
+    t =    92.46s         Checking existence of `"decisionUIMenu" Button`
+    t =    92.52s Waiting 5.0s for "swipeChoice.offline" Button to exist
+    t =    93.54s     Checking `Expect predicate `existsNoRetry == 1` for object "swipeChoice.offline" Button`
+    t =    93.54s         Checking existence of `"swipeChoice.offline" Button`
+    t =    93.58s Find the "uiTestArchiveChecksum" StaticText
+    t =    93.62s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    93.68s Added attachment named 'rc-card-offline-before'
+    t =    93.68s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =    93.71s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    93.73s Checking existence of `ScrollView (First Match)`
+    t =    93.76s Find the ScrollView (First Match)
+    t =    93.78s Checking existence of `"worldPlaybackControls" Any`
+    t =    93.84s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    93.87s Checking existence of `ScrollView at {{0.0, 0.0}, {375.0, 667.0}}`
+    t =    93.89s Find the ScrollView at {{0.0, 0.0}, {375.0, 667.0}}
+    t =    93.92s Checking existence of `"swipeChoice.offline" Button`
+    t =    93.95s Find the "swipeChoice.offline" Button
+    t =    93.98s Find the "swipeChoice.offline" Button
+    t =    94.02s Find the "swipeChoice.offline" Button
+    t =    94.05s Find the "swipeChoice.offline" Button
+    t =    94.07s Tap "swipeChoice.offline" Button
+    t =    94.07s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    94.08s     Find the "swipeChoice.offline" Button
+    t =    94.10s     Check for interrupting elements affecting "swipeChoice.offline" Button
+    t =    94.14s     Synthesize event
+    t =    94.42s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    94.49s Waiting 5.0s for "chosenAction" StaticText to exist
+    t =    95.55s     Checking `Expect predicate `existsNoRetry == 1` for object "chosenAction" StaticText`
+    t =    95.56s         Checking existence of `"chosenAction" StaticText`
+    t =    95.61s Find the "chosenAction" StaticText
+    t =    95.64s Checking existence of `"decisionUIMenu" Button`
+    t =    95.67s Find the "uiTestArchiveChecksum" StaticText
+    t =    95.71s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    95.77s Added attachment named 'rc-card-offline-saved'
+RC_SAVED ui=card choice=offline before=c1074e81fb937ec13928efbf9b8012bab9fbcbe0938b1f2cc99f53df90411ebd after=93f2c9d2ec3b0c560a2bf9d2cb485bf43f87735f9e405e9e7908b2099d75ab41
+    t =    95.77s Terminate com.gavin0099.LifeCrossroads:45198
+2026-10-29 10:31:49.900 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:31:49.901 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:31:49.901 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    96.82s Open com.gavin0099.LifeCrossroads
+    t =    96.83s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 10:31:50.944 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 10:31:50.944 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 10:31:50.948 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    97.04s         Setting up automation session
+    t =    98.98s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =   100.59s Waiting 10.0s for "resumeLife" Button to exist
+    t =   101.60s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =   101.61s         Checking existence of `"resumeLife" Button`
+    t =   101.68s Tap "resumeLife" Button
+    t =   101.68s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =   101.68s     Find the "resumeLife" Button
+    t =   101.70s     Check for interrupting elements affecting "resumeLife" Button
+    t =   101.72s     Synthesize event
+    t =   102.03s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =   102.05s Waiting 5.0s for "chosenAction" StaticText to exist
+    t =   103.09s     Checking `Expect predicate `existsNoRetry == 1` for object "chosenAction" StaticText`
+    t =   103.09s         Checking existence of `"chosenAction" StaticText`
+    t =   103.15s Find the "uiTestArchiveChecksum" StaticText
+    t =   103.18s Find the "chosenAction" StaticText
+    t =   103.22s Terminate com.gavin0099.LifeCrossroads:45582
+2026-10-29 10:31:57.349 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:31:57.350 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:31:57.351 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =   104.26s Open com.gavin0099.LifeCrossroads
+    t =   104.26s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 10:31:58.380 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 10:31:58.380 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 10:31:58.382 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =   104.47s         Setting up automation session
+    t =   106.42s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =   108.17s Waiting 10.0s for "resumeLife" Button to exist
+    t =   109.24s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =   109.24s         Checking existence of `"resumeLife" Button`
+    t =   109.31s Tap "resumeLife" Button
+    t =   109.31s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =   109.31s     Find the "resumeLife" Button
+    t =   109.33s     Check for interrupting elements affecting "resumeLife" Button
+    t =   109.35s     Synthesize event
+    t =   109.66s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =   110.21s Waiting 5.0s for "decisionUIMenu" Button to exist
+    t =   111.25s     Checking `Expect predicate `existsNoRetry == 1` for object "decisionUIMenu" Button`
+    t =   111.25s         Checking existence of `"decisionUIMenu" Button`
+    t =   111.31s Waiting 5.0s for "swipeChoice.offline" Button to exist
+    t =   112.36s     Checking `Expect predicate `existsNoRetry == 1` for object "swipeChoice.offline" Button`
+    t =   112.36s         Checking existence of `"swipeChoice.offline" Button`
+    t =   112.40s Find the "uiTestArchiveChecksum" StaticText
+    t =   112.43s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =   112.49s Added attachment named 'rc-card-invest-before'
+    t =   112.49s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =   112.52s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =   112.55s Checking existence of `ScrollView (First Match)`
+    t =   112.57s Find the ScrollView (First Match)
+    t =   112.60s Checking existence of `"worldPlaybackControls" Any`
+    t =   112.64s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =   112.67s Checking existence of `ScrollView at {{0.0, 0.0}, {375.0, 667.0}}`
+    t =   112.70s Find the ScrollView at {{0.0, 0.0}, {375.0, 667.0}}
+    t =   112.73s Checking existence of `"swipeChoice.invest" Button`
+    t =   112.76s Find the "swipeChoice.invest" Button
+    t =   112.79s Find the "swipeChoice.invest" Button
+    t =   112.82s Find the "swipeChoice.invest" Button
+    t =   112.85s Find the "swipeChoice.invest" Button
+    t =   112.88s Tap "swipeChoice.invest" Button
+    t =   112.88s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =   112.88s     Find the "swipeChoice.invest" Button
+    t =   112.91s     Check for interrupting elements affecting "swipeChoice.invest" Button
+    t =   112.94s     Synthesize event
+    t =   113.23s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =   113.27s Waiting 5.0s for "chosenAction" StaticText to exist
+    t =   114.30s     Checking `Expect predicate `existsNoRetry == 1` for object "chosenAction" StaticText`
+    t =   114.30s         Checking existence of `"chosenAction" StaticText`
+    t =   114.34s Find the "chosenAction" StaticText
+    t =   114.38s Checking existence of `"decisionUIMenu" Button`
+    t =   114.41s Find the "uiTestArchiveChecksum" StaticText
+    t =   114.45s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =   114.52s Added attachment named 'rc-card-invest-saved'
+RC_SAVED ui=card choice=invest before=c1074e81fb937ec13928efbf9b8012bab9fbcbe0938b1f2cc99f53df90411ebd after=500a0553a1e23efa62db92261f82c3471bf92eb1755307166e1a8b57b223942f
+    t =   114.52s Terminate com.gavin0099.LifeCrossroads:45818
+2026-10-29 10:32:08.648 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:32:08.649 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:32:08.649 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =   115.58s Open com.gavin0099.LifeCrossroads
+    t =   115.58s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 10:32:09.697 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 10:32:09.697 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 10:32:09.703 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =   115.78s         Setting up automation session
+    t =   117.77s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =   119.40s Waiting 10.0s for "resumeLife" Button to exist
+    t =   120.46s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =   120.46s         Checking existence of `"resumeLife" Button`
+    t =   120.53s Tap "resumeLife" Button
+    t =   120.53s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =   120.53s     Find the "resumeLife" Button
+    t =   120.55s     Check for interrupting elements affecting "resumeLife" Button
+    t =   120.57s     Synthesize event
+    t =   120.88s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =   120.89s Waiting 5.0s for "chosenAction" StaticText to exist
+    t =   121.95s     Checking `Expect predicate `existsNoRetry == 1` for object "chosenAction" StaticText`
+    t =   121.95s         Checking existence of `"chosenAction" StaticText`
+    t =   122.01s Find the "uiTestArchiveChecksum" StaticText
+    t =   122.04s Find the "chosenAction" StaticText
+    t =   122.08s Terminate com.gavin0099.LifeCrossroads:46287
+2026-10-29 10:32:16.203 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:32:16.203 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:32:16.204 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =   123.14s Open com.gavin0099.LifeCrossroads
+    t =   123.15s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 10:32:17.265 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 10:32:17.265 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 10:32:17.267 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =   123.36s         Setting up automation session
+    t =   125.31s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =   127.03s Waiting 10.0s for "resumeLife" Button to exist
+    t =   128.08s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =   128.08s         Checking existence of `"resumeLife" Button`
+    t =   128.14s Tap "resumeLife" Button
+    t =   128.14s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =   128.15s     Find the "resumeLife" Button
+    t =   128.16s     Check for interrupting elements affecting "resumeLife" Button
+    t =   128.18s     Synthesize event
+    t =   128.49s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =   129.03s Waiting 5.0s for "decisionUIMenu" Button to exist
+    t =   130.07s     Checking `Expect predicate `existsNoRetry == 1` for object "decisionUIMenu" Button`
+    t =   130.07s         Checking existence of `"decisionUIMenu" Button`
+    t =   130.13s Waiting 5.0s for "swipeChoice.offline" Button to exist
+    t =   131.19s     Checking `Expect predicate `existsNoRetry == 1` for object "swipeChoice.offline" Button`
+    t =   131.19s         Checking existence of `"swipeChoice.offline" Button`
+    t =   131.22s Find the "uiTestArchiveChecksum" StaticText
+    t =   131.25s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =   131.31s Added attachment named 'rc-card-ask-before'
+    t =   131.32s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =   131.34s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =   131.37s Checking existence of `ScrollView (First Match)`
+    t =   131.39s Find the ScrollView (First Match)
+    t =   131.41s Checking existence of `"worldPlaybackControls" Any`
+    t =   131.46s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =   131.50s Checking existence of `ScrollView at {{0.0, 0.0}, {375.0, 667.0}}`
+    t =   131.52s Find the ScrollView at {{0.0, 0.0}, {375.0, 667.0}}
+    t =   131.55s Checking existence of `"swipeChoice.ask" Button`
+    t =   131.57s Find the "swipeChoice.ask" Button
+    t =   131.61s Find the "swipeChoice.ask" Button
+    t =   131.64s Find the "swipeChoice.ask" Button
+    t =   131.67s Find the "swipeChoice.ask" Button
+    t =   131.70s Tap "swipeChoice.ask" Button
+    t =   131.70s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =   131.70s     Find the "swipeChoice.ask" Button
+    t =   131.73s     Check for interrupting elements affecting "swipeChoice.ask" Button
+    t =   131.76s     Synthesize event
+    t =   132.05s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =   132.06s Waiting 5.0s for "chosenAction" StaticText to exist
+    t =   133.11s     Checking `Expect predicate `existsNoRetry == 1` for object "chosenAction" StaticText`
+    t =   133.11s         Checking existence of `"chosenAction" StaticText`
+    t =   133.16s Find the "chosenAction" StaticText
+    t =   133.20s Checking existence of `"decisionUIMenu" Button`
+    t =   133.23s Find the "uiTestArchiveChecksum" StaticText
+    t =   133.26s Find the "lifeWorldScene" Other
+    t =   133.29s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =   133.36s Added attachment named 'rc-card-ask-saved'
+RC_SAVED ui=card choice=ask before=c1074e81fb937ec13928efbf9b8012bab9fbcbe0938b1f2cc99f53df90411ebd after=8d85eb25d6f21ac085fa4fafec47c110567a6513133614c2ab49c8336a65f1b4
+    t =   133.36s Terminate com.gavin0099.LifeCrossroads:46566
+2026-10-29 10:32:27.482 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:32:27.482 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:32:27.483 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =   134.41s Open com.gavin0099.LifeCrossroads
+    t =   134.41s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 10:32:28.528 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 10:32:28.528 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 10:32:28.531 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =   134.62s         Setting up automation session
+    t =   136.57s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =   138.18s Waiting 10.0s for "resumeLife" Button to exist
+    t =   139.22s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =   139.22s         Checking existence of `"resumeLife" Button`
+    t =   139.29s Tap "resumeLife" Button
+    t =   139.29s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =   139.30s     Find the "resumeLife" Button
+    t =   139.32s     Check for interrupting elements affecting "resumeLife" Button
+    t =   139.34s     Synthesize event
+    t =   139.65s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =   139.65s Waiting 5.0s for "chosenAction" StaticText to exist
+    t =   140.67s     Checking `Expect predicate `existsNoRetry == 1` for object "chosenAction" StaticText`
+    t =   140.67s         Checking existence of `"chosenAction" StaticText`
+    t =   140.73s Find the "uiTestArchiveChecksum" StaticText
+    t =   140.76s Find the "chosenAction" StaticText
+    t =   140.80s Terminate com.gavin0099.LifeCrossroads:46936
+2026-10-29 10:32:34.921 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:32:34.921 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:32:34.922 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =   141.86s Open com.gavin0099.LifeCrossroads
+    t =   141.86s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 10:32:35.978 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 10:32:35.978 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 10:32:35.981 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =   142.07s         Setting up automation session
+    t =   144.05s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =   145.76s Waiting 10.0s for "resumeLife" Button to exist
+    t =   146.81s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =   146.81s         Checking existence of `"resumeLife" Button`
+    t =   146.88s Tap "resumeLife" Button
+    t =   146.88s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =   146.88s     Find the "resumeLife" Button
+    t =   146.90s     Check for interrupting elements affecting "resumeLife" Button
+    t =   146.92s     Synthesize event
+    t =   147.24s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =   147.79s Waiting 5.0s for "decisionUIMenu" Button to exist
+    t =   148.82s     Checking `Expect predicate `existsNoRetry == 1` for object "decisionUIMenu" Button`
+    t =   148.83s         Checking existence of `"decisionUIMenu" Button`
+    t =   148.89s Waiting 5.0s for "swipeChoice.offline" Button to exist
+    t =   149.96s     Checking `Expect predicate `existsNoRetry == 1` for object "swipeChoice.offline" Button`
+    t =   149.96s         Checking existence of `"swipeChoice.offline" Button`
+    t =   150.00s Find the "uiTestArchiveChecksum" StaticText
+    t =   150.03s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =   150.10s Added attachment named 'rc-card-rest-before'
+    t =   150.10s Checking existence of `"worldDecisionDrawer" ScrollView`
+    t =   150.12s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =   150.15s Checking existence of `ScrollView (First Match)`
+    t =   150.18s Find the ScrollView (First Match)
+    t =   150.20s Checking existence of `"worldPlaybackControls" Any`
+    t =   150.25s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =   150.28s Checking existence of `ScrollView at {{0.0, 0.0}, {375.0, 667.0}}`
+    t =   150.31s Find the ScrollView at {{0.0, 0.0}, {375.0, 667.0}}
+    t =   150.33s Checking existence of `"swipeChoice.rest" Button`
+    t =   150.36s Find the "swipeChoice.rest" Button
+    t =   150.39s Find the "swipeChoice.rest" Button
+    t =   150.42s Find the "swipeChoice.rest" Button
+    t =   150.46s Find the "swipeChoice.rest" Button
+    t =   150.49s Tap "swipeChoice.rest" Button
+    t =   150.49s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =   150.49s     Find the "swipeChoice.rest" Button
+    t =   150.52s     Check for interrupting elements affecting "swipeChoice.rest" Button
+    t =   150.55s     Synthesize event
+    t =   150.84s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =   150.86s Waiting 5.0s for "chosenAction" StaticText to exist
+    t =   151.92s     Checking `Expect predicate `existsNoRetry == 1` for object "chosenAction" StaticText`
+    t =   151.92s         Checking existence of `"chosenAction" StaticText`
+    t =   151.97s Find the "chosenAction" StaticText
+    t =   152.00s Checking existence of `"decisionUIMenu" Button`
+    t =   152.04s Find the "uiTestArchiveChecksum" StaticText
+    t =   152.07s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =   152.13s Added attachment named 'rc-card-rest-saved'
+RC_SAVED ui=card choice=rest before=c1074e81fb937ec13928efbf9b8012bab9fbcbe0938b1f2cc99f53df90411ebd after=3ea868c9402175d25c1e7447f6ea6b9d2b9eeacf23eab70ac50559ef90f363e7
+    t =   152.13s Terminate com.gavin0099.LifeCrossroads:47217
+2026-10-29 10:32:46.261 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:32:46.261 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:32:46.262 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =   153.20s Open com.gavin0099.LifeCrossroads
+    t =   153.20s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 10:32:47.322 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 10:32:47.322 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 10:32:47.325 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =   153.41s         Setting up automation session
+    t =   155.37s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =   157.04s Waiting 10.0s for "resumeLife" Button to exist
+    t =   158.07s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =   158.08s         Checking existence of `"resumeLife" Button`
+    t =   158.14s Tap "resumeLife" Button
+    t =   158.14s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =   158.14s     Find the "resumeLife" Button
+    t =   158.16s     Check for interrupting elements affecting "resumeLife" Button
+    t =   158.18s     Synthesize event
+    t =   158.51s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =   158.51s Waiting 5.0s for "chosenAction" StaticText to exist
+    t =   159.55s     Checking `Expect predicate `existsNoRetry == 1` for object "chosenAction" StaticText`
+    t =   159.56s         Checking existence of `"chosenAction" StaticText`
+    t =   159.62s Find the "uiTestArchiveChecksum" StaticText
+    t =   159.66s Find the "chosenAction" StaticText
+    t =   159.69s Terminate com.gavin0099.LifeCrossroads:47591
+2026-10-29 10:32:53.817 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:32:53.817 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:32:53.817 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =   160.77s Tear Down
+Test Case '-[LifeCrossroadsUITests.ReignsCardTests testFourChoicesMatchOriginalUIAndColdRestore]' passed (160.896 seconds).
+Test Case '-[LifeCrossroadsUITests.ReignsCardTests testRealSwipeDirectionsCancelAndVerticalScroll]' started.
+    t =     0.00s Start Test at 2026-10-29 10:32:55.015
+    t =     0.02s Set Up
+    t =     0.02s Open com.gavin0099.LifeCrossroads
+    t =     0.02s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 10:32:55.036 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 10:32:55.036 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 10:32:55.039 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     0.23s         Setting up automation session
+    t =     2.22s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =     3.91s Waiting 10.0s for "resumeLife" Button to exist
+    t =     4.98s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =     4.98s         Checking existence of `"resumeLife" Button`
+    t =     5.05s Tap "resumeLife" Button
+    t =     5.05s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     5.05s     Find the "resumeLife" Button
+    t =     5.07s     Check for interrupting elements affecting "resumeLife" Button
+    t =     5.09s     Synthesize event
+    t =     5.41s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     5.96s Waiting 5.0s for "decisionUIMenu" Button to exist
+    t =     7.01s     Checking `Expect predicate `existsNoRetry == 1` for object "decisionUIMenu" Button`
+    t =     7.01s         Checking existence of `"decisionUIMenu" Button`
+    t =     7.07s Waiting 5.0s for "swipeChoice.offline" Button to exist
+    t =     8.12s     Checking `Expect predicate `existsNoRetry == 1` for object "swipeChoice.offline" Button`
+    t =     8.12s         Checking existence of `"swipeChoice.offline" Button`
+    t =     8.17s Find the "uiTestArchiveChecksum" StaticText
+    t =     8.20s Find the "lifeWorldScene" Other
+    t =     8.23s Press Target Application 'com.gavin0099.LifeCrossroads'[0.00, 0.00] -> (187.5, 269.0) for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.00, 0.00] -> (232.5, 269.0) with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =     8.23s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     8.23s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     8.26s     Check for interrupting elements affecting "人生岔路" Application
+    t =     8.29s     Synthesize event
+    t =     8.29s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     8.32s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     8.35s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     8.37s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     8.40s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     8.90s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     8.90s Find the "uiTestArchiveChecksum" StaticText
+    t =     8.95s Checking existence of `"chosenAction" StaticText`
+    t =     8.98s Find the "swipeStatus" StaticText
+    t =     9.01s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.07s Added attachment named 'rc-cancelled'
+    t =     9.07s Find the "lifeWorldScene" Other
+    t =     9.10s Press Target Application 'com.gavin0099.LifeCrossroads'[0.00, 0.00] -> (187.5, 269.0) for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.00, 0.00] -> (202.5, 209.0) with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =     9.10s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =     9.11s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.13s     Check for interrupting elements affecting "人生岔路" Application
+    t =     9.16s     Synthesize event
+    t =     9.17s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.19s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.22s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.25s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.27s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =     9.79s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    10.21s Find the "uiTestArchiveChecksum" StaticText
+    t =    10.25s Checking existence of `"chosenAction" StaticText`
+    t =    10.28s Swipe down Target Application 'com.gavin0099.LifeCrossroads'
+    t =    10.28s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    10.29s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    10.31s     Check for interrupting elements affecting "人生岔路" Application
+    t =    10.34s     Synthesize event
+    t =    10.76s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    11.23s Find the "lifeWorldScene" Other
+    t =    11.26s Press Target Application 'com.gavin0099.LifeCrossroads'[0.00, 0.00] -> (187.5, 269.0) for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.00, 0.00] -> (62.5, 269.0) with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =    11.26s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    11.26s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    11.29s     Check for interrupting elements affecting "人生岔路" Application
+    t =    11.32s     Synthesize event
+    t =    11.32s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    11.34s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    11.37s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    11.40s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    11.43s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    12.09s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    12.17s Waiting 5.0s for "chosenAction" StaticText to exist
+    t =    13.23s     Checking `Expect predicate `existsNoRetry == 1` for object "chosenAction" StaticText`
+    t =    13.23s         Checking existence of `"chosenAction" StaticText`
+    t =    13.28s Find the "chosenAction" StaticText
+    t =    13.31s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    13.38s Added attachment named 'rc-swipe-offline-saved'
+    t =    13.38s Terminate com.gavin0099.LifeCrossroads:47850
+2026-10-29 10:33:08.400 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:33:08.400 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:33:08.400 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    14.43s Open com.gavin0099.LifeCrossroads
+    t =    14.43s     Launch com.gavin0099.LifeCrossroads
+2026-10-29 10:33:09.444 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-29 10:33:09.444 xcodebuild[40726:350938] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-29 10:33:09.451 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    14.64s         Setting up automation session
+    t =    16.64s         Wait for com.gavin0099.LifeCrossroads to idle
+    t =    18.34s Waiting 10.0s for "resumeLife" Button to exist
+    t =    19.39s     Checking `Expect predicate `existsNoRetry == 1` for object "resumeLife" Button`
+    t =    19.39s         Checking existence of `"resumeLife" Button`
+    t =    19.49s Tap "resumeLife" Button
+    t =    19.49s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    19.49s     Find the "resumeLife" Button
+    t =    19.51s     Check for interrupting elements affecting "resumeLife" Button
+    t =    19.53s     Synthesize event
+    t =    19.85s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    20.42s Waiting 5.0s for "decisionUIMenu" Button to exist
+    t =    21.47s     Checking `Expect predicate `existsNoRetry == 1` for object "decisionUIMenu" Button`
+    t =    21.48s         Checking existence of `"decisionUIMenu" Button`
+    t =    21.52s Waiting 5.0s for "swipeChoice.offline" Button to exist
+    t =    22.57s     Checking `Expect predicate `existsNoRetry == 1` for object "swipeChoice.offline" Button`
+    t =    22.57s         Checking existence of `"swipeChoice.offline" Button`
+    t =    22.61s Find the "uiTestArchiveChecksum" StaticText
+    t =    22.64s Find the "lifeWorldScene" Other
+    t =    22.68s Press Target Application 'com.gavin0099.LifeCrossroads'[0.00, 0.00] -> (187.5, 269.0) for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.00, 0.00] -> (232.5, 269.0) with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =    22.68s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    22.68s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    22.71s     Check for interrupting elements affecting "人生岔路" Application
+    t =    22.73s     Synthesize event
+    t =    22.74s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    22.76s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    22.79s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    22.81s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    22.84s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    23.34s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    23.35s Find the "uiTestArchiveChecksum" StaticText
+    t =    23.39s Checking existence of `"chosenAction" StaticText`
+    t =    23.42s Find the "swipeStatus" StaticText
+    t =    23.45s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    23.52s Added attachment named 'rc-cancelled'
+    t =    23.52s Find the "lifeWorldScene" Other
+    t =    23.55s Press Target Application 'com.gavin0099.LifeCrossroads'[0.00, 0.00] -> (187.5, 269.0) for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.00, 0.00] -> (202.5, 209.0) with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =    23.55s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    23.55s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    23.58s     Check for interrupting elements affecting "人生岔路" Application
+    t =    23.61s     Synthesize event
+    t =    23.61s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    23.64s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    23.67s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    23.69s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    23.72s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    24.25s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    24.64s Find the "uiTestArchiveChecksum" StaticText
+    t =    24.67s Checking existence of `"chosenAction" StaticText`
+    t =    24.70s Swipe down Target Application 'com.gavin0099.LifeCrossroads'
+    t =    24.70s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    24.71s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    24.73s     Check for interrupting elements affecting "人生岔路" Application
+    t =    24.76s     Synthesize event
+    t =    25.18s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    25.68s Find the "lifeWorldScene" Other
+    t =    25.73s Press Target Application 'com.gavin0099.LifeCrossroads'[0.00, 0.00] -> (187.5, 269.0) for 0.1 seconds, then drag to Target Application 'com.gavin0099.LifeCrossroads'[0.00, 0.00] -> (312.5, 269.0) with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =    25.73s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    25.73s     Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    25.76s     Check for interrupting elements affecting "人生岔路" Application
+    t =    25.79s     Synthesize event
+    t =    25.79s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    25.82s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    25.85s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    25.88s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    25.90s         Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    26.57s     Wait for com.gavin0099.LifeCrossroads to idle
+    t =    26.59s Waiting 5.0s for "chosenAction" StaticText to exist
+    t =    27.63s     Checking `Expect predicate `existsNoRetry == 1` for object "chosenAction" StaticText`
+    t =    27.63s         Checking existence of `"chosenAction" StaticText`
+    t =    27.68s Find the "chosenAction" StaticText
+    t =    27.71s Find the Target Application 'com.gavin0099.LifeCrossroads'
+    t =    27.78s Added attachment named 'rc-swipe-invest-saved'
+    t =    27.78s Terminate com.gavin0099.LifeCrossroads:48386
+2026-10-29 10:33:22.801 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:33:22.801 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:33:22.801 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    28.83s Tear Down
+Test Case '-[LifeCrossroadsUITests.ReignsCardTests testRealSwipeDirectionsCancelAndVerticalScroll]' passed (28.865 seconds).
+Test Suite 'ReignsCardTests' passed at 2026-10-29 10:33:23.880.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 233.700 (233.704) seconds
+Test Suite 'LifeCrossroadsUITests.xctest' passed at 2026-10-29 10:33:23.881.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 233.700 (233.704) seconds
+Test Suite 'Selected tests' passed at 2026-10-29 10:33:23.881.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 233.700 (233.708) seconds
+2026-10-29 10:33:23.952 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:33:23.953 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:33:23.955 xcodebuild[40726:350938] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-29 10:33:24.242 xcodebuild[40726:350938] [MT] IDETestOperationsObserverDebug: 256.060 elapsed -- Testing started completed.
+2026-10-29 10:33:24.242 xcodebuild[40726:350938] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-29 10:33:24.242 xcodebuild[40726:350938] [MT] IDETestOperationsObserverDebug: 256.060 sec, +256.060 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/macminim4/Documents/Codex/2026-10-22/aj4/life-crossroads/artifacts/evidence/reigns-card/round2/iPhone-SE-3rd-generation/light/result.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started

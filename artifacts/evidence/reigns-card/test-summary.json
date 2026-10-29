@@ -1,0 +1,16 @@
+{
+  "fullSwift": {
+    "uniquePassed": 169,
+    "failures": [],
+    "log": "swift-tests.log"
+  },
+  "finalModel": {
+    "passed": 6,
+    "log": "model-tests-final.log"
+  },
+  "python": {
+    "passed": 51,
+    "log": "python-tests.log"
+  },
+  "note": "Full Swift before narrow cancelled-flag correction; final six model cases re-run. Native batches carry separate source hashes."
+}

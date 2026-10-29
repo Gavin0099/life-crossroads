@@ -1,6 +1,6 @@
 # 《人生岔路》開發計畫
 
-> **最後更新**: 2026-10-28
+> **最後更新**: 2026-10-29
 > **Owner**: Gavin0099
 > **Freshness**: Sprint (14d)
 
@@ -27,9 +27,13 @@
 
 ## Current Phase
 
-P1 / Owner試玩回饋 / 文字與背景對比修正。Owner2026-10-29回報實機看不到字，授權查詢iOS配色skill並直接修正；接續PR21 `45d3ff9`。只修淺／深色與提高對比的成對色票及實際文字，無新內容／Domain／Data／Persistence／Seed／schema改動。這是有界bugfix，不重開已結束的FINAL-POLISH美術Loop；Draft/HOLD不合併發布。
+P1 / Reigns+ / RC-00～RC-02。Owner 2026-10-29 選定 Issue #23，取代尚未交付的 A/B 試驗方向。唯一基底 PR21 `eb6eff1`；`codex/reigns-card-poc` 實作13歲單事件滑動原型。只改App/Presentation與必要測試，Domain/Data/Persistence/GameStore/Seed/schema不變；新Draft/HOLD，不合併發布。RC-03～06須另經Owner審查，本輪不自動擴充。
 
 ## Current Sprint
+
+本輪範圍與驗收見 [Reigns+ PLAN](docs/reigns-card/PLAN.md)；前一輪 A/B 已本機checkpoint於`codex/gameplay-ux-ab`，未推送或開PR，不將其測試冒稱本輪通過。Wi-Fi安裝依Owner指示稍後進行。
+
+以下為配色修正記錄：
 
 文字可讀性修正的原生基準已重現：系統深色白字配固定奶油底。改為具四種外觀變體的語意色票；主文字最低10.73:1、次文字7.17:1。雙尺寸淺／深／高對比大字與真實存檔不變性取證、剩餘原生audit finding及Wi-Fi安裝狀態見[本輪驗證](docs/readability/VALIDATION.md)。原生capture成功不等於audit全綠或完整VoiceOver驗收。Basic既有期限仍FAIL，不更改Gate。
 
